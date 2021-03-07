@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  7 MAR 2021 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  7 MAR 2021 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -90,16 +90,40 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] (./intro.tex
 <<1>>
-) (./uwthesis.bbl [1
+) (./development.tex [1
 
 
 
-]) [2
+]
+<<2>>
+) (./maintenance.tex [2
+
+]
+<<3>>
+) (./repair.tex [3
+
+]
+<<4>>
+) (./often.tex [4
+
+]
+<<5>>
+) (./theory.tex [5
+
+]
+<<6>>
+) (./next.tex [6
+
+]
+<<7>>
+) (./uwthesis.bbl [7
+
+]) [8
 
 ] (./uwthesis.aux) ) 
 Here is how much of TeX's memory you used:
- 440 strings out of 492609
- 4850 string characters out of 6129033
+ 457 strings out of 492609
+ 5035 string characters out of 6129033
  64823 words of memory out of 5000000
  4413 multiletter control sequences out of 15000+600000
  8638 words of font info for 30 fonts, out of 8000000 for 9000
@@ -112,10 +136,10 @@ s/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb>
-Output written on uwthesis.pdf (9 pages, 75766 bytes).
+Output written on uwthesis.pdf (15 pages, 79315 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

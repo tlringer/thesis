@@ -1,3 +1,9 @@
 \contentsline {chapter}{\@textofLoF }{ii}% 
 \contentsline {chapter}{\numberline {\@textofChapter \ 1:}Introduction}{1}% 
-\contentsline {chapter}{\@textofBIB }{2}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 2:}Proof Development}{2}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 3:}Proof Maintenance}{3}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 4:}Proof Repair}{4}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 5:}Often, Practically}{5}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 6:}Under the Hood}{6}% 
+\contentsline {chapter}{\numberline {\@textofChapter \ 7:}The Next Era}{7}% 
+\contentsline {chapter}{\@textofBIB }{8}% 

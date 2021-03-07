@@ -1,76 +1,1260 @@
- 
-Bibtex (bib) file for the thesis style document.
- 
-@string{Knuth="Donald E. Knuth"}
- 
-@book{book,
-   author = knuth,
-   title = "The {\TeX} book",
-   publisher = "Addison-Wesley",
-   year = 1984}
- 
-@book{Tbook,
-   author = knuth,
-   title = "{\TeX}: The Program",
-   publisher = "Addison-Wesley",
-   year = 1986}
- 
-@book{Metafont,
-   author = knuth,
-   title = "The Metafont book",
-   publisher = "Addison-Wesley",
-   year = 1986}
- 
-@book{CMT,
-   author = knuth,
-   title = "Computer Modern Typefaces",
-   publisher = "Addison-Wesley",
-   year = 1986}
- 
-@book{Lbook,
-   author = "Leslie Lamport",
-   title = "{\LaTeX}: A Document Preparation System",
-   edition = "2nd",
-   publisher = "Addison-Wesley",
-   year = 1994}
- 
-@book{companion,
-   author = "M{ichel} Goossens and F{rank} Mittelbach and A{lexander} Samarin",
-   title = "The {\LaTeX} Companion",
-   publisher = "Addison-Wesley",
-   year = 1994}
- 
-@article{TUG:h-l,
-  author = "Editor",
-  title = "Hyphenation Exception Log",
-  journal = "TUGboat",
-  volume = 7,
-  number = 3,
-  year = 1986,
-  pages = "145"}
- 
- 
-@book{Hamlet,
-   author = "William Shakespeare",
-   title = "Hamlet",
-   publisher = "F.S.~Crofts~\&~Co., Inc.",
-   address = "NY",
-   year = 1946,
-   note = "Act~I, Scene~3, Lines~70-72, are apropos."}
- 
-Following author fields is not standard
-@book{JTeX,
-   author = "{Spivak, M.D., Ph.D.}",
-   title = "The Joy of {\TeX}",
-   publisher = "American Mathematical Society",
-   address = "RI",
-   year = 1986}
- 
-@book{PCTeX,
-   author = "{Spivak, M.D., Ph.D.}",
-   title = "PC{\TeX}\ Manual",
-   publisher = "Personal {\TeX}, Inc.",
-   address = "CA",
-   year = 1985}
- 
- 
+@inproceedings{Aydemir2008,
+ author = {Aydemir, Brian and Chargu{\'e}raud, Arthur and Pierce, Benjamin C. and Pollack, Randy and Weirich, Stephanie},
+ title = {Engineering Formal Metatheory},
+ booktitle = {Proceedings of the 35th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+ series = {POPL '08},
+ year = {2008},
+ isbn = {978-1-59593-689-9},
+ location = {San Francisco, California, USA},
+ pages = {3--15},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/1328438.1328443},
+ doi = {10.1145/1328438.1328443},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {proof-organization},
+}
+
+@article{BauerGLSSS16,
+  author    = {Andrej Bauer and
+               Jason Gross and
+               Peter LeFanu Lumsdaine and
+               Mike Shulman and
+               Matthieu Sozeau and
+               Bas Spitters},
+  title     = {The HoTT Library: {A} formalization of homotopy type theory in Coq},
+  journal   = {CoRR},
+  volume    = {abs/1610.04591},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1610.04591},
+  timestamp = {Wed, 02 Nov 2016 09:51:26 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/BauerGLSSS16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Blazy:2006:FVC:2164821.2164865,
+ author = {Blazy, Sandrine and Dargaye, Zaynah and Leroy, Xavier},
+ title = {Formal Verification of a C Compiler Front-end},
+ booktitle = {Proceedings of the 14th International Conference on Formal Methods},
+ series = {FM'06},
+ year = {2006},
+ isbn = {3-540-37215-6, 978-3-540-37215-8},
+ location = {Hamilton, Canada},
+ pages = {460--475},
+ numpages = {16},
+ url = {http://dx.doi.org/10.1007/11813040_31},
+ doi = {10.1007/11813040_31},
+ acmid = {2164865},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+} 
+
+@inproceedings{Blanchette2013,
+ author = {Paulson, L. C. and Blanchette, J. C.},
+ title = {Three years of experience with {Sledgehammer}, a practical link between automatic and interactive theorem provers},
+ editor = {Sutcliffe, G. and Schulz, S. and Ternovska, E.},
+ booktitle = {International Workshop on the Implementation of Logics (IWIL 2010)},
+ series = {EPiC Series},
+ volume = {2},
+ pages = {1--11},
+ year = {2012},
+ publisher = {EasyChair}
+}
+
+@inproceedings{Bobot2013,
+  TITLE = {Preserving User Proofs Across Specification Changes},
+  AUTHOR = {Bobot, Fran{\c c}ois and Filli{\^a}tre, Jean-Christophe and March{\'e}, Claude and Melquiond, Guillaume and Paskevich, Andrei},
+  URL = {https://hal.inria.fr/hal-00875395},
+  BOOKTITLE = {{Fifth Working Conference on Verified Software: Theories, Tools and Experiments}},
+  ADDRESS = {Atherton, United States},
+  EDITOR = {Ernie Cohen and Andrey Rybalchenko},
+  PUBLISHER = {{Springer}},
+  VOLUME = {8164},
+  PAGES = {191--201},
+  YEAR = {2013},
+  MONTH = May,
+  PDF = {https://hal.inria.fr/hal-00875395/file/main.pdf},
+  keywords = {proof-development},
+}
+
+@Inproceedings{Boite2004,
+author="Boite, Olivier",
+editor="Slind, Konrad
+and Bunker, Annette
+and Gopalakrishnan, Ganesh",
+title="Proof Reuse with Extended Inductive Types",
+bookTitle="Theorem Proving in Higher Order Logics: 17th International Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004. Proceedings",
+year="2004",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="50--65",
+isbn="978-3-540-30142-4",
+doi="10.1007/978-3-540-30142-4_4",
+url="http://dx.doi.org/10.1007/978-3-540-30142-4_4",
+keywords = {proof-organization, proof-development}
+}
+
+@inproceedings{Barthe:2001:TIP:646793.704711,
+ author = {Barthe, Gilles and Pons, Olivier},
+ title = {Type Isomorphisms and Proof Reuse in Dependent Type Theory},
+ booktitle = {Proceedings of the 4th International Conference on Foundations of Software Science and Computation Structures},
+ series = {FoSSaCS '01},
+ year = {2001},
+ isbn = {3-540-41864-4},
+ pages = {57--71},
+ numpages = {15},
+ url = {http://dl.acm.org/citation.cfm?id=646793.704711},
+ acmid = {704711},
+ publisher = {Springer-Verlag},
+ address = {London, UK, UK},
+} 
+
+@inproceedings{Johnsen2004,
+author="Johnsen, Einar Broch
+and L{\"u}th, Christoph",
+editor="Slind, Konrad
+and Bunker, Annette
+and Gopalakrishnan, Ganesh",
+title="Theorem Reuse by Proof Term Transformation",
+series= {TPHOLs 2004},
+booktitle="Theorem Proving in Higher Order Logics: 17th International Conference",
+year="2004",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="152--167",
+abstract="Proof reuse addresses the issue of how proofs of theorems in a specific setting can be used to prove other theorems in different settings. This paper proposes an approach where theorems are generalised by abstracting their proofs from the original setting. The approach is based on a representation of proofs as logical framework proof terms, using the theorem prover Isabelle. The logical framework allows type-specific inference rules to be handled uniformly in the abstraction process and the prover's automated proof tactics may be used freely. This way, established results become more generally applicable; for example, theorems about a data type can be reapplied to other types. The paper also considers how to reapply such abstracted theorems, and suggests an approach based on mappings between operations and types, and on systematically exploiting the dependencies between theorems.",
+isbn="978-3-540-30142-4",
+doi="10.1007/978-3-540-30142-4_12",
+url="https://doi.org/10.1007/978-3-540-30142-4_12"
+}
+
+@inproceedings{Felty1994,
+author="Felty, Amy
+and Howe, Douglas",
+editor="Pfenning, Frank",
+title="Generalization and reuse of tactic proofs",
+series={LPAR '94},
+booktitle="Logic Programming and Automated Reasoning: 5th International Conference",
+year="1994",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="1--15",
+abstract="A tactic proof is a tree-structured sequent proof where steps may be justified by tactic programs. We describe a prototype of a generic interactive theorem-proving system that supports the construction and manipulation of tactic proofs containing metavariables. The emphasis is on proof reuse. Examples of proof reuse are proof by analogy and reconstruction of partial proofs as part of recovering from errors in definitions or in proof strategies. Our reuse operations involve solving higherorder unification problems, and their effectiveness relies on a proof-generalization step that is done after a tactic is applied. The prototype is implemented in $\lambda$Prolog.",
+isbn="978-3-540-48573-5",
+doi="10.1007/3-540-58216-9_25",
+url="https://doi.org/10.1007/3-540-58216-9_25"
+}
+
+@book{chlipala:cpdt,
+  author    = {Adam Chlipala},
+  title     = {Certified Programming with Dependent Types - {A} Pragmatic Introduction
+               to the Coq Proof Assistant},
+  publisher = {{MIT} Press},
+  year      = {2013},
+  url       = {http://mitpress.mit.edu/books/certified-programming-dependent-types},
+  isbn      = {978-0-262-02665-9},
+  timestamp = {Mon, 11 May 2015 16:37:23 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/books/daglib/0035083},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{pons00,
+author = {Pons, Olivier},
+year = {2000},
+month = {12},
+pages = {217-232},
+series = {TYPES '00},
+title = {Generalization in Type Theory Based Proof Assistants}
+}
+
+@inproceedings{Chlipala2013,
+ author = {Chlipala, Adam},
+ title = {The {Bedrock} Structured Programming System: Combining Generative Metaprogramming and {Hoare} Logic in an Extensible Program Verifier},
+ booktitle = {Proceedings of the 18th ACM SIGPLAN International Conference on Functional Programming},
+ series = {ICFP '13},
+ year = {2013},
+ isbn = {978-1-4503-2326-0},
+ location = {Boston, Massachusetts, USA},
+ pages = {391--402},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2500365.2500592},
+ doi = {10.1145/2500365.2500592},
+ acmid = {2500592},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@inproceedings{Claessen2013,
+author="Claessen, Koen
+and Johansson, Moa
+and Ros{\'e}n, Dan
+and Smallbone, Nicholas",
+editor="Bonacina, Maria Paola",
+title="Automating Inductive Proofs Using Theory Exploration",
+series="CADE-24",
+booktitle="24th International Conference on Automated Deduction",
+year="2013",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="392--406",
+isbn="978-3-642-38574-2",
+doi="10.1007/978-3-642-38574-2_27",
+url="http://dx.doi.org/10.1007/978-3-642-38574-2_27"
+}
+
+
+@inproceedings{component-synthesis,
+ author = {Feng, Yu and Martins, Ruben and Wang, Yuepeng and Dillig, Isil and Reps, Thomas W.},
+ title = {Component-based Synthesis for Complex APIs},
+ booktitle = {Proceedings of the 44th ACM SIGPLAN Symposium on Principles of Programming Languages},
+ series = {POPL 2017},
+ year = {2017},
+ isbn = {978-1-4503-4660-3},
+ location = {Paris, France},
+ pages = {599--612},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/3009837.3009851},
+ doi = {10.1145/3009837.3009851},
+ acmid = {3009851},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Component-based, Petri-net, Program Synthesis, Type-directed},
+}
+
+@article{bundyreasoning,
+  title     = "The interaction of representation and reasoning",
+  author    = "Alan Bundy",
+  year      = "2013",
+  doi       = "10.1098/rspa.2013.0194",
+  volume    = "469",
+  journal   = "Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+  issn      = "1364-5021",
+  publisher = "Royal Society of London",
+  number    = "2157",
+}
+
+@inproceedings{tgck-cicm14,
+  author =       {Thibault Gauthier and Cezary Kaliszyk},
+  title =        {Matching concepts across {HOL} libraries},
+  booktitle = {CICM '14},
+  editor = {Stephen Watt and James Davenport and Alan Sexton and Petr Sojka and Josef Urban},
+  series = {LNCS},
+  volume    = {8543},
+  pages = {267-281},
+  year =         2014,
+  doi = {10.1007/978-3-319-08434-3_20},
+  publisher = {Springer Verlag}
+}
+
+@misc{equality,
+  author = {Adam Chlipala},
+  title = {Library Equality},
+  url = {http://adam.chlipala.net/cpdt/html/Equality.html},
+  year = {2017}
+} 
+
+@misc{CzajkaHammer,
+    author = {Czajka, Lukasz and Kaliszyk, Cezary},
+    title  = {Hammer for Coq: Automation for Dependent Type Theory},
+    url    = {http://cl-informatik.uibk.ac.at/cek/coqhammer/},
+    year   = {2017}
+}
+
+@misc{HaRe,
+  title = {HaRe: The Haskell Refactoring Tool},
+  url = {http://github.com/RefactoringTools/HaRe},
+  year = {2017}
+}
+
+@misc{lean,
+  title = {Lean Theorem Prover},
+  url = {http://github.com/leanprover/lean},
+  year = {2017}
+}
+
+@misc{agda,
+  title = {Agda},
+  url = {http://wiki.portal.chalmers.se/agda/pmwiki.php},
+  year = {2017}
+}
+
+@misc{isabellehol,
+  title = {Isabelle/HOL: A Proof Assistant for Higher-Order Logic},
+  url = {http://isabelle.in.tum.de/doc/tutorial.pdf},
+  year = {2017}
+}
+
+@misc{coq,
+  title = {Coq},
+  url = {http://coq.inria.fr/},
+  year = {2017}
+}
+
+@misc{decidable,
+  title = {Library Coq.Logic.Decidable},
+  url = {http://coq.inria.fr/library/Coq.Logic.Decidable.html},
+  year = {2017}
+}
+
+@article{Dagand17jfp,
+  author    = {Pierre{-}{\'{E}}variste Dagand},
+  title     = {The essence of ornaments},
+  journal   = {J. Funct. Program.},
+  volume    = {27},
+  pages     = {e9},
+  year      = {2017},
+  url       = {https://doi.org/10.1017/S0956796816000356},
+  doi       = {10.1017/S0956796816000356},
+  timestamp = {Sat, 27 May 2017 14:24:34 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/jfp/Dagand17},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Celik:2017:IRP:3155562.3155588,
+ author = {Celik, Ahmet and Palmskog, Karl and Gligoric, Milos},
+ title = {iCoq: Regression Proof Selection for Large-scale Verification Projects},
+ booktitle = {Proceedings of the 32Nd IEEE/ACM International Conference on Automated Software Engineering},
+ series = {ASE 2017},
+ year = {2017},
+ isbn = {978-1-5386-2684-9},
+ location = {Urbana-Champaign, IL, USA},
+ pages = {171--182},
+ numpages = {12},
+ url = {http://dl.acm.org/citation.cfm?id=3155562.3155588},
+ acmid = {3155588},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
+@inproceedings{Delaware2013ICFP,
+ author = {Delaware, Benjamin and Keuchel, Steven and Schrijvers, Tom and Oliveira, Bruno C.d.S.},
+ title = {Modular Monadic Meta-theory},
+ booktitle = {Proceedings of the 18th ACM SIGPLAN International Conference on Functional Programming},
+ series = {ICFP '13},
+ year = {2013},
+ isbn = {978-1-4503-2326-0},
+ location = {Boston, Massachusetts, USA},
+ pages = {319--330},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2500365.2500587},
+ doi = {10.1145/2500365.2500587},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {proof-organization},
+}
+
+@inproceedings{Delaware2013POPL,
+ author = {Delaware, Benjamin and d. S. Oliveira, Bruno C. and Schrijvers, Tom},
+ title = {Meta-theory \`{a} La Carte},
+ booktitle = {Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+ series = {POPL '13},
+ year = {2013},
+ isbn = {978-1-4503-1832-7},
+ location = {Rome, Italy},
+ pages = {207--218},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2429069.2429094},
+ doi = {10.1145/2429069.2429094},
+ acmid = {2429094},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@inproceedings{Gonthier2011,
+ author = {Gonthier, Georges and Ziliani, Beta and Nanevski, Aleksandar and Dreyer, Derek},
+ title = {How to Make Ad Hoc Proof Automation Less Ad Hoc},
+ booktitle = {Proceedings of the 16th ACM SIGPLAN International Conference on Functional Programming},
+ series = {ICFP '11},
+ year = {2011},
+ isbn = {978-1-4503-0865-6},
+ location = {Tokyo, Japan},
+ pages = {163--175},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/2034773.2034798},
+ doi = {10.1145/2034773.2034798},
+ acmid = {2034798},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@INPROCEEDINGS{Hofmann97,
+    author = {Martin Hofmann},
+    title = {Syntax and Semantics of Dependent Types},
+    booktitle = {Semantics and Logics of Computation},
+    year = {1997},
+    pages = {79--130},
+    publisher = {Cambridge University Press}
+}
+
+@book{idris,
+  title={Type-Driven Development with Idris},
+  author={Brady, E.},
+  isbn={9781617293023},
+  url={https://books.google.com/books?id=eWzEjwEACAAJ},
+  year={2016},
+  publisher={Manning Publications Company}
+}
+
+@article{JohanssonRSC14,
+  author    = {Moa Johansson and
+               Dan Ros{\'{e}}n and
+               Nicholas Smallbone and
+               Koen Claessen},
+  title     = {Hipster: Integrating Theory Exploration in a Proof Assistant},
+  journal   = {CoRR},
+  volume    = {abs/1405.3426},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1405.3426},
+  timestamp = {Mon, 02 Jun 2014 08:30:36 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/JohanssonRSC14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{jungloid,
+ author = {Mandelin, David and Xu, Lin and Bod\'{\i}k, Rastislav and Kimelman, Doug},
+ title = {Jungloid Mining: Helping to Navigate the API Jungle},
+ booktitle = {Proceedings of the 2005 ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ series = {PLDI '05},
+ year = {2005},
+ isbn = {1-59593-056-6},
+ location = {Chicago, IL, USA},
+ pages = {48--61},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1065010.1065018},
+ doi = {10.1145/1065010.1065018},
+ acmid = {1065018},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {mining, program synthesis, reuse},
+}
+
+@Article{Kaivola2003,
+author="Kaivola, Roope
+and Kohatsu, Katherine",
+title="Proof engineering in the large: formal verification of Pentium®4 floating-point divider",
+journal="International Journal on Software Tools for Technology Transfer",
+year="2003",
+volume="4",
+number="3",
+pages="323--334",
+issn="1433-2779",
+doi="10.1007/s10009-002-0081-6",
+url="http://dx.doi.org/10.1007/s10009-002-0081-6"
+}
+
+
+@inproceedings{Klein2014,
+  author="Klein, Gerwin",
+  editor="Jones, Cliff and Pihlajasaari, Pekka and Sun, Jun",
+  title="Proof Engineering Considered Essential",
+  series={FM 2014},
+  booktitle="Formal Methods: 19th International Symposium",
+  year="2014",
+  publisher="Springer International Publishing",
+  address="Cham",
+  pages="16--21",
+  isbn="978-3-319-06410-9",
+  doi="10.1007/978-3-319-06410-9_2",
+  url="http://dx.doi.org/10.1007/978-3-319-06410-9_2"
+}
+
+@article{Leroy:2009:FVR:1538788.1538814,
+ author = {Leroy, Xavier},
+ title = {Formal Verification of a Realistic Compiler},
+ journal = {Commun. ACM},
+ issue_date = {July 2009},
+ volume = {52},
+ number = {7},
+ month = jul,
+ year = {2009},
+ issn = {0001-0782},
+ pages = {107--115},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/1538788.1538814},
+ doi = {10.1145/1538788.1538814},
+ acmid = {1538814},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{leroy:compcert,
+    author = {Xavier Leroy},
+    title = {Formal certification of a compiler back-end, or:
+                   programming a compiler with a proof assistant},
+    booktitle = {33rd ACM symposium on Principles of Programming Languages},
+    year = 2006,
+    publisher = {ACM Press},
+    pages = {42--54},
+    url = {http://gallium.inria.fr/~xleroy/publi/compiler-certif.pdf},
+    urlpublisher = {http://doi.acm.org/10.1145/1111037.1111042},
+    hal = {http://hal.inria.fr/inria-00000963/},
+    abstract = {This paper reports on the development and formal certification (proof
+    of semantic preservation) of a compiler from Cminor (a C-like
+    imperative language) to PowerPC assembly code, using the Coq proof
+    assistant both for programming the compiler and for proving its
+    correctness.  Such a certified compiler is useful in the context of
+    formal methods applied to the certification of critical software: the
+    certification of the compiler guarantees that the safety properties
+    proved on the source code hold for the executable compiled code as well.},
+  pubkind = {conf-int-mono}
+}
+
+@inproceedings{letouzey2008extraction,
+  title={Extraction in coq: An overview},
+  author={Letouzey, Pierre},
+  booktitle={Conference on Computability in Europe},
+  pages={359--369},
+  year={2008},
+  organization={Springer}
+}
+
+@inproceedings{liquid-types,
+ author = {Rondon, Patrick M. and Kawaguci, Ming and Jhala, Ranjit},
+ title = {Liquid Types},
+ booktitle = {Proceedings of the 29th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ series = {PLDI '08},
+ year = {2008},
+ isbn = {978-1-59593-860-2},
+ location = {Tucson, AZ, USA},
+ pages = {159--169},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1375581.1375602},
+ doi = {10.1145/1375581.1375602},
+ acmid = {1375602},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dependent types, hindley-milner, predicate abstraction, type inference},
+}
+
+@inproceedings{ltac,
+  author    = {David Delahaye},
+  title     = {A Tactic Language for the System Coq},
+  booktitle = {Logic for Programming and Automated Reasoning, 7th International Conference,
+               {LPAR} 2000, Reunion Island, France, November 11-12, 2000, Proceedings},
+  pages     = {85--95},
+  year      = {2000},
+  url       = {http://dx.doi.org/10.1007/3-540-44404-1_7},
+  doi       = {10.1007/3-540-44404-1_7},
+  timestamp = {Tue, 21 Jun 2011 16:43:07 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/lpar/Delahaye00},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Magaud2002,
+author="Magaud, Nicolas
+and Bertot, Yves",
+editor="Callaghan, Paul
+and Luo, Zhaohui
+and McKinna, James
+and Pollack, Robert",
+title="Changing Data Structures in Type Theory: A Study of Natural Numbers",
+series={TYPES 2000},
+booktitle="Types for Proofs and Programs: International Workshop",
+year="2002",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="181--196",
+abstract="In type-theory based proof systems that provide inductive structures, computation tools are automatically associated to inductive definitions. Choosing a particular representation for a given concept has a strong influence on proof structure. We propose a method to make the change from one representation to another easier, by systematically translating proofs from one context to another. We show how this method works by using it on natural numbers, for which a unary representation (based on Peano axioms) and a binary representation are available. This method leads to an automatic translation tool that we have implemented in Coq and successfully applied to several arithmetical theorems.",
+isbn="978-3-540-45842-5",
+doi="10.1007/3-540-45842-5_12",
+url="https://doi.org/10.1007/3-540-45842-5_12"
+}
+
+@inproceedings{Miraldo:2017:TDS:3122975.3122976,
+ author = {Miraldo, Victor Cacciari and Dagand, Pierre-\'{E}variste and Swierstra, Wouter},
+ title = {Type-directed Diffing of Structured Data},
+ booktitle = {Proceedings of the 2Nd ACM SIGPLAN International Workshop on Type-Driven Development},
+ series = {TyDe 2017},
+ year = {2017},
+ isbn = {978-1-4503-5183-6},
+ location = {Oxford, UK},
+ pages = {2--15},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/3122975.3122976},
+ doi = {10.1145/3122975.3122976},
+ acmid = {3122976},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Agda, Datatype Generic Programming, De- pendently typed programming, Version Control},
+}
+
+@article{mtac,
+  author    = {Beta Ziliani and
+               Derek Dreyer and
+               Neelakantan R. Krishnaswami and
+               Aleksandar Nanevski and
+               Viktor Vafeiadis},
+  title     = {Mtac: {A} monad for typed tactic programming in Coq},
+  journal   = {J. Funct. Program.},
+  volume    = {25},
+  year      = {2015},
+  url       = {http://dx.doi.org/10.1017/S0956796815000118},
+  doi       = {10.1017/S0956796815000118},
+  timestamp = {Tue, 26 Jan 2016 16:08:20 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/jfp/ZilianiDKNV15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@INPROCEEDINGS{Mulhern06proofweaving,
+    author = {Anne Mulhern},
+    title = {Proof Weaving},
+    booktitle = {In Proceedings of the First Informal ACM SIGPLAN Workshop on Mechanizing Metatheory},
+    year = {2006},
+    keywords = {proof-organization, proof-development}
+}
+
+@inproceedings{Murphy-Hill:2014:PLC:2593882.2593898,
+ author = {Murphy-Hill, Emerson and Grossman, Dan},
+ title = {How Programming Languages Will Co-evolve with Software Engineering: A Bright Decade Ahead},
+ booktitle = {Proceedings of the on Future of Software Engineering},
+ series = {FOSE 2014},
+ year = {2014},
+ isbn = {978-1-4503-2865-4},
+ location = {Hyderabad, India},
+ pages = {145--154},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2593882.2593898},
+ doi = {10.1145/2593882.2593898},
+ acmid = {2593898},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Programming languages, future, software engineering},
+} 
+
+@inproceedings{pernsteiner:neutrons,
+    author="Pernsteiner, Stuart
+    and Loncaric, Calvin
+    and Torlak, Emina
+    and Tatlock, Zachary
+    and Wang, Xi
+    and Ernst, Michael D.
+    and Jacky, Jonathan",
+    editor="Chaudhuri, Swarat
+    and Farzan, Azadeh",
+    title="Investigating Safety of a Radiotherapy Machine Using System Models with Pluggable Checkers",
+    series={CAV 2016},
+    booktitle="Computer Aided Verification: 28th International Conference",
+    year="2016",
+    publisher="Springer International Publishing",
+    address="Cham",
+    pages="23--41",
+    isbn="978-3-319-41540-6",
+    doi="10.1007/978-3-319-41540-6_2",
+    url="http://dx.doi.org/10.1007/978-3-319-41540-6_2"
+}
+
+@inproceedings{plse-coevolve-djg-fose14,
+  author = {Murphy-Hill, Emerson and Grossman, Dan},
+  title = {How Programming Languages Will Co-evolve with Software Engineering: A Bright Decade Ahead},
+  booktitle = {Proceedings of the on Future of Software Engineering},
+  series = {FOSE 2014},
+  year = {2014},
+  isbn = {978-1-4503-2865-4},
+  location = {Hyderabad, India},
+  pages = {145--154},
+  numpages = {10},
+  url = {http://doi.acm.org/10.1145/2593882.2593898},
+  doi = {10.1145/2593882.2593898},
+  acmid = {2593898},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {Programming languages, future, software engineering}
+}
+
+@inproceedings{proof-eng,
+ author = {Woos, Doug and Wilcox, James R. and Anton, Steve and Tatlock, Zachary and Ernst, Michael D. and Anderson, Thomas},
+ title = {Planning for Change in a Formal Verification of the Raft Consensus Protocol},
+ booktitle = {Proceedings of the 5th ACM SIGPLAN Conference on Certified Programs and Proofs},
+ series = {CPP 2016},
+ year = {2016},
+ isbn = {978-1-4503-4127-1},
+ location = {St. Petersburg, FL, USA},
+ pages = {154--165},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2854065.2854081},
+ doi = {10.1145/2854065.2854081},
+ acmid = {2854081},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Coq, Formal verification, Raft, Verdi, distributed systems, proof assistants},
+} 
+
+@Inproceedings{Roe2016,
+author="Roe, Kenneth
+and Smith, Scott",
+editor="Blanchette, Jasmin Christian
+and Merz, Stephan",
+title="{CoqPIE}: An {IDE} Aimed at Improving Proof Development Productivity",
+bookTitle="Interactive Theorem Proving: 7th International Conference, ITP 2016, Nancy, France, August 22-25, 2016, Proceedings",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="491--499",
+isbn="978-3-319-43144-4",
+doi="10.1007/978-3-319-43144-4_32",
+url="http://dx.doi.org/10.1007/978-3-319-43144-4_32",
+keywords = {proof-development},
+}
+
+@inproceedings{rtac,
+  author    = {Gregory Malecha and
+               Jesper Bengtson},
+  title     = {Extensible and Efficient Automation Through Reflective Tactics},
+  booktitle = {Programming Languages and Systems - 25th European Symposium on Programming,
+               {ESOP} 2016, Held as Part of the European Joint Conferences on Theory
+               and Practice of Software, {ETAPS} 2016, Eindhoven, The Netherlands,
+               April 2-8, 2016, Proceedings},
+  pages     = {532--559},
+  year      = {2016},
+  url       = {http://dx.doi.org/10.1007/978-3-662-49498-1_21},
+  doi       = {10.1007/978-3-662-49498-1_21},
+  timestamp = {Tue, 22 Mar 2016 15:54:03 +0100},
+  biburl    = {http://dblp2.uni-trier.de/rec/bib/conf/esop/MalechaB16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{scala-dot,
+  title={Foundations of path-dependent types},
+  author={Nada Amin and Tiark Rompf and Martin Odersky},
+  booktitle={OOPSLA},
+  year={2014}
+}
+
+@inproceedings{scala-vobj,
+  title={A Nominal Theory of Objects with Dependent Types},
+  author={Martin Odersky and Vincent Cremet and Christine R\"{o}ckl and Matthias Zenger},
+  booktitle={ECOOP},
+  year={2003}
+}
+
+@inproceedings{selsam:lean,
+    author="Selsam, Daniel
+    and de Moura, Leonardo",
+    editor="Olivetti, Nicola
+    and Tiwari, Ashish",
+    title="Congruence Closure in Intensional Type Theory",
+    series={IJCAR 2016},
+    booktitle="Automated Reasoning: 8th International Joint Conference",
+    year="2016",
+    publisher="Springer International Publishing",
+    address="Cham",
+    pages="99--115",
+    isbn="978-3-319-40229-1",
+    doi="10.1007/978-3-319-40229-1_8",
+    url="http://dx.doi.org/10.1007/978-3-319-40229-1_8"
+}
+
+@book{software-foundations,
+  author = {Benjamin C. Pierce and Arthur Azevedo de Amorim and Chris Casinghino and Marco Gaboardi and Michael Greenberg and Cat\v{a}lin Hri\c{t}cu and Vilhelm Sj\"{o}berg and Brent Yorgey},
+  title = {Software Foundations},
+  year = {2016},
+  publisher = {Electronic textbook},
+  note = {Version 4.0.  \texttt{http://www.cis.upenn.edu/~bcpierce/sf}},
+  ebook = {http://www.cis.upenn.edu/~bcpierce/sf},
+  japanese = {http://proofcafe.org/sf}
+}
+
+@MISC{Sozeau14towardsa,
+    author = {Matthieu Sozeau},
+    title = {Towards a better-behaved unification algorithm for Coq Beta Ziliani},
+    year = {2014}
+}
+
+@inproceedings{synquid,
+ author = {Polikarpova, Nadia and Kuraj, Ivan and Solar-Lezama, Armando},
+ title = {Program Synthesis from Polymorphic Refinement Types},
+ booktitle = {Proceedings of the 37th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ series = {PLDI '16},
+ year = {2016},
+ isbn = {978-1-4503-4261-2},
+ location = {Santa Barbara, CA, USA},
+ pages = {522--538},
+ numpages = {17},
+ url = {http://doi.acm.org/10.1145/2908080.2908093},
+ doi = {10.1145/2908080.2908093},
+ acmid = {2908093},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Functional Programming, Predicate Abstraction, Program Synthesis, Refinement Types},
+}
+
+@unpublished{tabareau:hal-01559073,
+  TITLE = {{Equivalences for Free!}},
+  AUTHOR = {Tabareau, Nicolas and Tanter, {\'E}ric and Sozeau, Matthieu},
+  URL = {https://hal.inria.fr/hal-01559073},
+  NOTE = {working paper or preprint},
+  YEAR = {2017},
+  MONTH = Jul,
+  PDF = {https://hal.inria.fr/hal-01559073/file/main.pdf},
+  HAL_ID = {hal-01559073},
+  HAL_VERSION = {v2},
+}
+
+@article{type-classes,
+ author = {Hall, Cordelia V. and Hammond, Kevin and Peyton Jones, Simon L. and Wadler, Philip L.},
+ title = {Type Classes in Haskell},
+ journal = {ACM Trans. Program. Lang. Syst.},
+ issue_date = {March 1996},
+ volume = {18},
+ number = {2},
+ month = mar,
+ year = {1996},
+ issn = {0164-0925},
+ pages = {109--138},
+ numpages = {30},
+ url = {http://doi.acm.org/10.1145/227699.227700},
+ doi = {10.1145/227699.227700},
+ acmid = {227700},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Haskell, functional programming, type classes, types},
+}
+
+@inproceedings{type-families,
+ author = {Stolarek, Jan and Peyton Jones, Simon and Eisenberg, Richard A.},
+ title = {Injective Type Families for Haskell},
+ booktitle = {Proceedings of the 2015 ACM SIGPLAN Symposium on Haskell},
+ series = {Haskell '15},
+ year = {2015},
+ isbn = {978-1-4503-3808-0},
+ location = {Vancouver, BC, Canada},
+ pages = {118--128},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2804302.2804314},
+ doi = {10.1145/2804302.2804314},
+ acmid = {2804314},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Haskell, functional dependencies, injectivity, type families, type-level programming},
+}
+
+@inproceedings{wilcox:verdi,
+    author = {James R. Wilcox and Doug Woos and Pavel Panchekha and Zachary
+	Tatlock and Xi Wang and Michael D. Ernst and Thomas Anderson},
+    title = {Verdi: A framework for implementing and formally verifying distributed systems},
+    booktitle = {PLDI 2015, Proceedings of the {ACM} {SIGPLAN} 2015
+    Conference on Programming Language Design and Implementation},
+    pages = {357--368},
+    address = {Portland, OR, USA},
+    month = {June~15--17,},
+    year = {2015}
+}
+
+@inproceedings{Williams:2014:OP:2633628.2633631,
+ author = {Williams, Thomas and Dagand, Pierre-\'{E}variste and R{\'e}my, Didier},
+ title = {Ornaments in Practice},
+ booktitle = {Proceedings of the 10th ACM SIGPLAN Workshop on Generic Programming},
+ series = {WGP '14},
+ year = {2014},
+ isbn = {978-1-4503-3042-8},
+ location = {Gothenburg, Sweden},
+ pages = {15--24},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2633628.2633631},
+ doi = {10.1145/2633628.2633631},
+ acmid = {2633631},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {code inference, datatypes, dependent types, generalized algebraic datatypes, ornament, refactoring},
+}
+
+@inproceedings{z3,
+ author = {De Moura, Leonardo and Bj{\o}rner, Nikolaj},
+ title = {Z3: An Efficient SMT Solver},
+ booktitle = {Proceedings of the Theory and Practice of Software, 14th International Conference on Tools and Algorithms for the Construction and Analysis of Systems},
+ series = {TACAS'08/ETAPS'08},
+ year = {2008},
+ isbn = {3-540-78799-2, 978-3-540-78799-0},
+ location = {Budapest, Hungary},
+ pages = {337--340},
+ numpages = {4},
+ url = {http://dl.acm.org/citation.cfm?id=1792734.1792766},
+ acmid = {1792766},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+} 
+
+@inproceedings{ZilianiS15,
+  author    = {Beta Ziliani and
+               Matthieu Sozeau},
+  title     = {A unification algorithm for Coq featuring universe polymorphism and
+               overloading},
+  booktitle = {Proceedings of the 20th {ACM} {SIGPLAN} International Conference on
+               Functional Programming, {ICFP} 2015, Vancouver, BC, Canada, September
+               1-3, 2015},
+  pages     = {179--191},
+  year      = {2015},
+  url       = {http://doi.acm.org/10.1145/2784731.2784751},
+  doi       = {10.1145/2784731.2784751},
+  timestamp = {Tue, 08 Sep 2015 09:21:43 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icfp/ZilianiS15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Huffman2013,
+author="Huffman, Brian
+and Kun{\v{c}}ar, Ond{\v{r}}ej",
+editor="Gonthier, Georges
+and Norrish, Michael",
+title="Lifting and Transfer: A Modular Design for Quotients in Isabelle/HOL",
+series={CPP 2013},
+booktitle="Certified Programs and Proofs: Third International Conference",
+year="2013",
+publisher="Springer International Publishing",
+address="Cham",
+pages="131--146",
+isbn="978-3-319-03545-1",
+doi="10.1007/978-3-319-03545-1_9",
+url="https://doi.org/10.1007/978-3-319-03545-1_9"
+}
+
+@article{ZimmermannH15,
+  author    = {Th{\'{e}}o Zimmermann and
+               Hugo Herbelin},
+  title     = {Automatic and Transparent Transfer of Theorems along Isomorphisms
+               in the Coq Proof Assistant},
+  journal   = {CoRR},
+  volume    = {abs/1505.05028},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1505.05028},
+  timestamp = {Wed, 07 Jun 2017 14:40:14 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/ZimmermannH15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings {certikos,
+author = {Ronghui Gu and Zhong Shao and Hao Chen and Xiongnan (Newman) Wu and Jieung Kim and Vilhelm Sj{\"o}berg and David Costanzo},
+title = {CertiKOS: An Extensible Architecture for Building Certified Concurrent {OS} Kernels},
+booktitle = {12th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 16)},
+year = {2016},
+isbn = {978-1-931971-33-1},
+address = {GA},
+pages = {653--669},
+url = {https://www.usenix.org/conference/osdi16/technical-sessions/presentation/gu},
+publisher = {{USENIX} Association},
+}
+
+@misc{verdicommit,
+    author = {Karl Palmskog},
+    title  = {Commit to verdi-raft: Port to Coq 8.6},
+    url    = {http://github.com/uwplse/verdi-raft/pull/43/files},
+    year   = {2017}
+}
+
+@misc{coq87commit,
+   author = {Guillaume Melquiond},
+   title = {Commit to coq: Make IZR use a compact representation of integers},
+   url = {http://github.com/coq/coq/commit/a4a76c253474ac4ce523b70d0150ea5dcf546385},
+   year = {2017}
+}
+
+@misc{compcertcommit,
+   author = {Xavier Leroy},
+   title = {Commit to CompCert: lib/Integers.v},
+   url = {http://github.com/AbsInt/CompCert/commit/6f3225b0623b9c97eed7d40ddc320b08c79c6518},
+   year = {2013}
+}
+
+@misc{usera,
+   author = {User A},
+   title = {Software Foundations Solution},
+   url = {http://github.com/blindFS/Software-Foundations-Solutions},
+   year = {2017}
+}
+
+@misc{userb,
+   author = {User B},
+   title = {Software Foundations Solution},
+   url = {http://github.com/marshall-lee/software_foundations},
+   year = {2017}
+}
+
+@misc{coq84commit,
+   author = {letouzey},
+   title = {Commit to coq: change definition of divide (compat with Znumtheory)},
+   url = {http://github.com/coq/coq/commit/81c4c8bc418cdf42cc88249952dbba465068202c},
+   year = {2011}
+}
+
+@misc{coq87news,
+   author = {Maxime D\'{e}nes},
+   title = {Coq 8.7 beta 1 is out},
+   url = {http://coq.inria.fr/news/137.html},
+   year = {2017}
+}
+
+@misc{coqPR,
+   author = {Matej Kosik},
+   title = {Coq Pull Request \# 652: Put all plugins behind an ``API''},
+   url = {http://github.com/coq/coq/pull/652},
+   year = {2017} 
+}
+
+@misc{proofgeneral,
+  title = {Proof General},
+  url = {http://proofgeneral.github.io/},
+  year = {2017}
+}
+
+@misc{travis,
+  title = {Travis CI},
+  url = {http://travis-ci.org/},
+  year = {2017}
+}
+
+@misc{hints,
+  title = {Coq Reference Manual, Section 8.9: Controlling Automation},
+  url = {http://coq.inria.fr/refman/tactics.html},
+  year = {2017}
+}
+
+@book{rippling,
+  author = {Bundy, Alan and Basin, David and Hutter, Dieter and Ireland, Andrew},
+  title = {Rippling: Meta-Level Guidance for Mathematical Reasoning},
+  year = {2005},
+  isbn = {9780521834490},
+  publisher = {Cambridge University Press},
+  address = {New York, NY, USA},
+}
+
+@book{Miller:2012:PHL:2331097,
+ author = {Miller, Dale and Nadathur, Gopalan},
+ title = {Programming with Higher-Order Logic},
+ year = {2012},
+ isbn = {052187940X, 9780521879408},
+ edition = {1st},
+ publisher = {Cambridge University Press},
+ address = {New York, NY, USA},
+}
+
+@article{Mens:2004:SSR:972215.972286,
+ author = {Mens, Tom and Tourw{\'e}, Tom},
+ title = {A Survey of Software Refactoring},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {February 2004},
+ volume = {30},
+ number = {2},
+ month = feb,
+ year = {2004},
+ issn = {0098-5589},
+ pages = {126--139},
+ numpages = {14},
+ url = {http://dx.doi.org/10.1109/TSE.2004.1265817},
+ doi = {10.1109/TSE.2004.1265817},
+ acmid = {972286},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {Coding tools and techniques, programming environments/construction tools, restructuring, reverse engineering, and reengineering.},
+} 
+
+@article{DBLP:journals/ftpl/GulwaniPS17,
+  author    = {Sumit Gulwani and
+               Oleksandr Polozov and
+               Rishabh Singh},
+  title     = {Program Synthesis},
+  journal   = {Foundations and Trends in Programming Languages},
+  volume    = {4},
+  number    = {1-2},
+  pages     = {1--119},
+  year      = {2017},
+  url       = {https://doi.org/10.1561/2500000010},
+  doi       = {10.1561/2500000010},
+  timestamp = {Tue, 08 Aug 2017 01:00:00 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/ftpl/GulwaniPS17},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{differential-assertion-checking-2,
+author = {Lahiri, Shuvendu and McMillan, Kenneth and  and Hawblitzel, Chris},
+title = {Differential Assertion Checking},
+booktitle = {Foundations of Software Engineering (FSE'13)},
+year = {2013},
+month = {August},
+publisher = {ACM},
+url = {https://www.microsoft.com/en-us/research/publication/differential-assertion-checking-2/},
+address = {},
+pages = {},
+journal = {},
+volume = {},
+chapter = {},
+isbn = {},
+}
+
+@inproceedings{Bourke_DKK_12,
+    publisher        = {Springer},
+    author           = {Bourke, Timothy and Daum, Matthias and Klein, Gerwin and Kolanski, Rafal},
+    month            = jul,
+    editor           = {{Makarius Wenzel}},
+    year             = {2012},
+    keywords         = {large-scale proofs, isabelle/hol, interactive theorem proving},
+    title            = {Challenges and Experiences in Managing Large-Scale Proofs},
+    booktitle        = {Conferences on Intelligent Computer Mathematics (CICM) / Mathematical Knowledge Management},
+    pages            = {32-48},
+    address          = {Bremen, Germany}
+  }
+
+@inproceedings{Whiteside2011,
+author="Whiteside, Iain
+and Aspinall, David
+and Dixon, Lucas
+and Grov, Gudmund",
+editor="Davenport, James H.
+and Farmer, William M.
+and Urban, Josef
+and Rabe, Florian",
+title="Towards Formal Proof Script Refactoring",
+booktitle="Intelligent Computer Mathematics: 18th Symposium, Calculemus 2011, and 10th International Conference, MKM 2011, Bertinoro, Italy, July 18-23, 2011. Proceedings",
+year="2011",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="260--275",
+abstract="We propose proof script refactorings as a robust tool for constructing, restructuring, and maintaining formal proof developments. We argue that a formal approach is vital, and illustrate by defining and proving correct a number of valuable refactorings in a simplified proof script and declarative proof language of our own design.",
+isbn="978-3-642-22673-1",
+doi="10.1007/978-3-642-22673-1_18",
+url="https://doi.org/10.1007/978-3-642-22673-1_18"
+}
+
+@inproceedings{Cai:2014:TCH:2594291.2594304,
+ author = {Cai, Yufei and Giarrusso, Paolo G. and Rendel, Tillmann and Ostermann, Klaus},
+ title = {A Theory of Changes for Higher-order Languages: Incrementalizing {$\lambda$}-calculi by Static Differentiation},
+ booktitle = {Proceedings of the 35th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ series = {PLDI '14},
+ year = {2014},
+ isbn = {978-1-4503-2784-8},
+ location = {Edinburgh, United Kingdom},
+ pages = {145--155},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2594291.2594304},
+ doi = {10.1145/2594291.2594304},
+ acmid = {2594304},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Agda, first-class functions, formalization, incremental computation, performance},
+} 
+
+@inproceedings{Pei:2014:APR:2731750.2731779,
+ author = {Pei, Yu and Furia, Carlo A. and Nordio, Martin and Meyer, Bertrand},
+ title = {Automatic Program Repair by Fixing Contracts},
+ booktitle = {Proceedings of the 17th International Conference on Fundamental Approaches to Software Engineering - Volume 8411},
+ year = {2014},
+ isbn = {978-3-642-54803-1},
+ pages = {246--260},
+ numpages = {15},
+ url = {http://dx.doi.org/10.1007/978-3-642-54804-8_17},
+ doi = {10.1007/978-3-642-54804-8_17},
+ acmid = {2731779},
+ publisher = {Springer-Verlag New York, Inc.},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Long:2016:APG:2837614.2837617,
+ author = {Long, Fan and Rinard, Martin},
+ title = {Automatic Patch Generation by Learning Correct Code},
+ booktitle = {Proceedings of the 43rd Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+ series = {POPL '16},
+ year = {2016},
+ isbn = {978-1-4503-3549-2},
+ location = {St. Petersburg, FL, USA},
+ pages = {298--312},
+ numpages = {15},
+ url = {http://doi.acm.org/10.1145/2837614.2837617},
+ doi = {10.1145/2837614.2837617},
+ acmid = {2837617},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Code correctness model, Learning correct code, Program repair},
+} 
+
+@inproceedings{Le:2017:SSS:3106237.3106309,
+ author = {Le, Xuan-Bach D. and Chu, Duc-Hiep and Lo, David and Le Goues, Claire and Visser, Willem},
+ title = {S3: Syntax- and Semantic-guided Repair Synthesis via Programming by Examples},
+ booktitle = {Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering},
+ series = {ESEC/FSE 2017},
+ year = {2017},
+ isbn = {978-1-4503-5105-8},
+ location = {Paderborn, Germany},
+ pages = {593--604},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/3106237.3106309},
+ doi = {10.1145/3106237.3106309},
+ acmid = {3106309},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Inductive Synthesis, Program Repair, Programming by Examples, Symbolic Execution},
+} 
+
+@inproceedings{Mechtaev:2016:ASM:2884781.2884807,
+ author = {Mechtaev, Sergey and Yi, Jooyong and Roychoudhury, Abhik},
+ title = {Angelix: Scalable Multiline Program Patch Synthesis via Symbolic Analysis},
+ booktitle = {Proceedings of the 38th International Conference on Software Engineering},
+ series = {ICSE '16},
+ year = {2016},
+ isbn = {978-1-4503-3900-1},
+ location = {Austin, Texas},
+ pages = {691--701},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2884781.2884807},
+ doi = {10.1145/2884781.2884807},
+ acmid = {2884807},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {angelic forest, multiline patch, program repair, scalable semantics-based repair},
+} 
+
+@article{Monperrus2015,
+ title = {{Automatic Software Repair: a Bibliography}},
+ author = {Monperrus, Martin},
+ url = {https://hal.archives-ouvertes.fr/hal-01206501/file/survey-automatic-repair.pdf},
+ journal = {{ACM Computing Surveys}},
+ publisher = {{Association for Computing Machinery}},
+ year = {2017},
+}
+
+@incollection{Autexier:2010:CMH:1986659.1986663,
+ author = {Autexier, Serge and Hutter, Dieter and Mossakowski, Till},
+ chapter = {Change Management for Heterogeneous Development Graphs},
+ title = {Verification, Induction Termination Analysis},
+ editor = {Siegler, Simon and Wasser, Nathan},
+ year = {2010},
+ isbn = {3-642-17171-0, 978-3-642-17171-0},
+ pages = {54--80},
+ numpages = {27},
+ url = {http://dl.acm.org/citation.cfm?id=1986659.1986663},
+ acmid = {1986663},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+}
+
+@inproceedings{873647,
+author={D. Hutter},
+booktitle={ASE 2000},
+title={Management of change in structured verification},
+year={2000},
+volume={},
+number={},
+pages={23-31},
+keywords={data structures;formal specification;graph theory;management of change;program verification;truth maintenance;data structure;evolutionary formal program development;formal methods;formal specification;graph;management of change;program verification;structured verification;truth maintenance system;Artificial intelligence;Modular construction;Refining;Terminology},
+doi={10.1109/ASE.2000.873647},
+ISSN={1938-4300},
+month={Sept},
+}
+
+@inproceedings{Autexier:2010:SCI:1860559.1860580,
+ author = {Autexier, Serge and M\"{u}ller, Normen},
+ title = {Semantics-based Change Impact Analysis for Heterogeneous Collections of Documents},
+ booktitle = {Proceedings of the 10th ACM Symposium on Document Engineering},
+ series = {DocEng '10},
+ year = {2010},
+ isbn = {978-1-4503-0231-9},
+ location = {Manchester, United Kingdom},
+ pages = {97--106},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1860559.1860580},
+ doi = {10.1145/1860559.1860580},
+ acmid = {1860580},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {change impact analysis, document collections, document management, graph rewriting, semantics},
+} 
+
+

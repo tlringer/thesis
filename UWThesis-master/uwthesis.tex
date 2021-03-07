@@ -59,25 +59,80 @@
 % --- sample stuff only -----
 % These format the sample code in this document
 
-\usepackage{alltt}  % 
-\newenvironment{demo}
-  {\begin{alltt}\leftskip3em
-     \def\\{\ttfamily\char`\\}%
-     \def\{{\ttfamily\char`\{}%
-     \def\}{\ttfamily\char`\}}}
-  {\end{alltt}}
- 
-% metafont font.  If logo not available, use the second form
-%
-% \font\mffont=logosl10 scaled\magstep1
-\let\mffont=\sf
-% --- end-of-sample-stuff ---
- 
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{color,xcolor}
+\usepackage{mathpartir}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[noend]{algorithm, algorithmic}
+ \usepackage{flushend}
+%\hypersetup{draft} % TODO remove me before submission, works around bib hyperref issues for now
 
+\DeclareGraphicsExtensions{.pdf}
+
+\floatname{algorithm}{\footnotesize{Pseudocode:}}
+
+\lstdefinelanguage{coq}{
+    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstdefinelanguage{ml4}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
+\lstset{language=coq} % default
 
 
 \begin{document}
- 
+
+
+\newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
+\newcommand{\sysname}{\textsc{Pumpkin}\xspace}
+
+\newcommand{\ltacforall}{$\color{blue}\forall$\hspace{0.05cm}}
+\newcommand{\ltacexists}{$\color{blue}\exists$\hspace{0.05cm}}
+\newcommand{\ltacba}{\textcolor{magenta}{-}\hspace{-0.03cm}}
+\newcommand{\ltacbb}{\textcolor{magenta}{+}\hspace{-0.03cm}}
+\newcommand{\ltacbc}{\textcolor{magenta}{*}\hspace{-0.03cm}}
+\newcommand{\remove}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\fails}[1]{#1\textcolor{red}{\textbf{\sffamily X}}}
+\newcommand{\succeeds}[1]{#1\textcolor{teal}{\textbf{\checkmark}}}
+\newcommand{\reducedstrut}{\vrule width 0pt height .9\ht\strutbox depth .9\dp\strutbox\relax}
+\newcommand{\diff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{orange!35}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\inv}{^{\raisebox{0.2ex}{$\scriptscriptstyle-1$}}}
+\newcommand{\IFRETURN}[2]{\STATE \algorithmicif\ {#1}\ \algorithmicthen\ \textbf{return} {#2} }
+\newcommand{\RETURNIFELSE}[3]{\IF {#1} \THEN \STATE \textbf{return} {#2} \ELSE \STATE \textbf{return} {#3}}
+
 % ==========   Preliminary pages
 %
 % ( revised 2012 for electronic submission )
@@ -128,9 +183,7 @@ This is my thesis.
 % ----- acknowledgments
 %
 \acknowledgments{% \vskip2pc
-  % {\narrower\noindent
-  A long acknowledgment section will go here at some point.
-  % \par}
+  Dan, Zach, Derek, the Coq community, Valentin, my family, PLSE lab, Qi.
 }
 
 %

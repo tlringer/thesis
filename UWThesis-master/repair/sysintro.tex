@@ -1,0 +1,429 @@
+\section{Generating Reusable Patches}
+\label{sec:sys}
+
+We identify five components that are key to finding reusable patches.
+We implement these components in a prototype Coq plugin, which we call
+\sysnamelong (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting The Coq Hacker), or \sysname.\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH/tree/cpp18}}
+
+We focus the \sysname prototype on the proof assistant Coq~\cite{coq}.
+In Coq, each theorem is a type, and a proof of that theorem is a term that inhabits that type. 
+Rather than write proof terms directly, users write proof scripts in a high-level tactic language;
+Coq then uses these scripts to guide search for a proof term.
+%We discuss supporting other proof assistants in Section~\ref{sec:future}.
+
+The \sysname repository contains 
+a detailed user guide.
+To use \sysname, the programmer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a
+change. \sysname generalizes the example adaptation into a \textit{reusable patch}: a function
+that can be used to fix other broken proofs, which \sysname defines as a Coq term.
+We focus on the problem of \textit{finding} these patches;
+we discuss how to extend \sysname to automatically \textit{apply} patches it finds in Section~\ref{sec:future}.
+
+We motivate the core components (Section~\ref{sec:coreintro}) and describe how they
+compose to find patches (Section~\ref{sec:composeintro}). We find patches for 
+real code in Section~\ref{sec:case}, and we describe our implementation
+in Section~\ref{sec:core}.
+
+\begin{figure*}[ht]
+\begin{minipage}{0.50\textwidth}
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=1]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=2,lastline=2]{repair/introex.tex}
+\lstinputlisting[firstline=3, lastline=8]{repair/introex.tex}
+\lstinputlisting[firstline=1, lastline=4]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introexterm.tex}
+\lstinputlisting[firstline=6, lastline=9]{repair/introexterm.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=9, lastline=9]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=10,lastline=10]{repair/introex.tex}
+\lstinputlisting[firstline=11, lastline=16]{repair/introex.tex}
+\lstinputlisting[firstline=11, lastline=14]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=15,lastline=15]{repair/introexterm.tex}
+\lstinputlisting[firstline=16, lastline=19]{repair/introexterm.tex}
+\end{minipage}
+\vspace{-.4cm}
+\setlength{\belowcaptionskip}{-4pt}
+\caption{Two proofs with different conclusions (top) and the
+corresponding proof terms (bottom) with relevant type information. We highlight the change in theorem conclusion and
+the difference in terms that corresponds to a patch.}
+\label{fig:example}
+\end{figure*}
+
+\subsection{Motivating the Core}
+\label{sec:coreintro}
+
+We identify and isolate
+five core components critical to finding reusable patches:
+
+\begin{enumerate}
+\item \textit{Semantic differencing} between terms
+\item \textit{Patch specialization} to arguments
+\item \textit{Patch abstraction} of arguments or functions
+\item \textit{Patch inversion} to reverse a patch
+\item \textit{Lemma factoring} to break a term into parts
+\end{enumerate}
+
+The semantic differencing component finds the difference between two terms, which produces a \textit{candidate} for
+a reusable patch. %However, this candidate may not be the final patch the tool is looking for.
+ %: It may be too general or too specific,
+%for example. 
+The other components modify the candidate to try to produce a patch.
+To motivate this workflow, consider using \sysname to search the proofs in
+Figure~\ref{fig:example} for a patch between conclusions. We invoke the plugin using \lstinline{old} and \lstinline{new}
+as the example change:
+
+\begin{lstlisting}[language=ml4]
+    Patch Proof old new as patch.
+\end{lstlisting}
+
+\sysname first determines the type that a patch from \lstinline{new} to \lstinline{old} should have.
+To determine this, it semantically \textit{diffs} the types and finds this goal type (line 2):
+
+\begin{lstlisting}[language=coq]
+    (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= p}@) -> (@\diff{n <= p + 1}@)
+\end{lstlisting}
+
+It then breaks each inductive proof into cases and determines an intermediate goal type for the candidate.
+%recursively searches each case for a candidate.
+In the base case, for example, it \textit{diffs} the types and determines that a candidate
+between the base cases of \lstinline{new} and \lstinline{old} should have this type (lines 11 and 12):
+
+\begin{lstlisting}
+    (@\diff{(fun p0 => n <= p0)}@) m -> (@\diff{(fun p0 => n <= p0 + 1)}@) m
+\end{lstlisting}
+
+It then \textit{diffs} the terms (line 13) for such a candidate:
+
+\begin{lstlisting}
+    fun n m p H0 H1 =>(@\vspace{-0.04cm}@)
+      (fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H)(@\vspace{-0.04cm}@)
+    : (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
+\end{lstlisting}
+
+This candidate is close, but it is not yet a patch. This candidate
+maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
+be applied to \lstinline{p}).
+\sysname \textit{abstracts} this candidate by \lstinline{m} (line 11), which lifts it out of the base case:
+
+\begin{lstlisting}
+    fun (@\diff{n0}@) n m p H0 H1 =>(@\vspace{-0.04cm}@)
+      (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
+    : (@\ltacforall@) (@\diff{n0}@) n m p, n <= m -> m <= p -> n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
+\end{lstlisting}
+
+%This produces a candidate that is closer: It is not yet a patch, but applying it to \lstinline{p} (line 16),
+%the argument to the conclusion of \lstinline{le_ind}, will produce a patch.
+\sysname then \textit{specializes} this candidate to \lstinline{p} (line 16), the argument
+to the conclusion of \lstinline{le_ind}. This produces a patch:
+
+\begin{lstlisting}
+    patch n m p H0 H1 := (@\vspace{-0.04cm}@)
+      (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)(@\vspace{-0.04cm}@)
+    : (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
+\end{lstlisting}
+
+The user can then use \lstinline{patch} to fix other broken proofs.
+For example, given a proof that applies \lstinline{old}, the user can use \lstinline{patch} to prove the same conclusion
+by applying \lstinline{new}:
+
+\begin{lstlisting}[language=coq]
+    (@\succeeds{apply old.}@)(@\vspace{-0.1cm}@)
+    (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
+\end{lstlisting}
+
+This simple example uses only three components. The other components help turn candidates
+into patches in similar ways. We discuss all five components in more detail in the
+rest of this section.
+
+\paragraph{Semantic Differencing} The tool should be able to identify the semantic difference between terms.
+The semantic difference is the difference between two terms that corresponds to
+the difference between their types. Consider the base case terms in Figure~\ref{fig:example} (line 13):
+
+\begin{lstlisting}[language=coq]
+    (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@)(@\vspace{-0.1cm}@)
+    (@\phantom{le\_plus\_trans n m 1}@) H : (@\diff{n <= m}@)
+\end{lstlisting}
+
+The semantic differencing component first identifies the difference in their types, or the \textit{goal type}:
+
+\begin{lstlisting}
+    (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
+\end{lstlisting}
+
+It then finds a difference in terms that has that type:
+
+\begin{lstlisting}[language=coq]
+    fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
+\end{lstlisting}
+
+%This is the core of any patching procedure: The terms that it finds are candidates for reusable patches.
+%The other components modify these candidates to find true patches.
+ % (for example, in this case, the abstraction component  may generalize this function to work with nu
+
+% TODO this erases type differencing stuff for fixpoints, but maybe that's OK
+% Also, doesn't talk about zooming into functions and so on
+This is the \emph{candidate} for a reusable patch that the other components modify to find a patch.
+
+Differencing operates over terms and types. Differencing tactics
+is insufficient, since tactics and hints may mask patches
+(line 5).\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
+are additional examples in the repository (\lstinline{Cex.v}).}
+Furthermore, differencing is aware of the semantics of terms and types.
+Simply exploring the syntactic difference %between terms 
+makes it hard to identify
+which changes are meaningful.
+For example, in the inductive case (line 14), the inductive hypothesis
+changes:
+
+\begin{lstlisting}[language=coq]
+    ... (IHle : (@\diff{n <= m0 + 1}@)) ...(@\vspace{-0.08cm}@)
+    ... (IHle : (@\diff{n <= m0}@)) ...
+\end{lstlisting}
+
+However, the type of \lstinline{IHle} changes for \emph{any} two inductive proofs over \lstinline{le}
+with different conclusions. A syntactic differencing component 
+may identify this change as a candidate.
+Our semantic differencing component knows that it can ignore this change.
+
+\paragraph{Patch Specialization} The tool should be able to specialize a patch candidate to specific arguments as determined by
+the differences in terms. To find a patch for Figure~\ref{fig:example}, for example, \sysname
+must specialize the patch candidate to \lstinline{p} to produce the final patch.
+
+%Consider searching two proofs of theorems with hypotheses for a patch between conclusions:
+
+%\begin{lstlisting}[language=coq]
+ %   (@\ltacforall@) n m p, n <= m -> m <= p -> n <= p + 1
+  %  (@\ltacforall@) n m p, n <= m -> m <= p -> n <= p
+%\end{lstlisting}
+
+%Semantic differencing determines the goal type:
+
+%\begin{lstlisting}[language=coq]
+ %   (@\ltacforall@) n m p, n <= m -> m <= p -> n <= p -> n <= p + 1
+%\end{lstlisting}
+
+%A patch of this type may not show up explicitly in the difference of terms.
+%The tool may instead find an abstract patch candidate:
+
+%\begin{lstlisting}[language=coq]
+ %   fun n m p H0 H1 =>
+  %    (fun (@\diff{n0}@) (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)
+   % : (@\ltacforall@) n m p (@\diff{n0}@),
+   %   n <= m -> m <= p -> n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
+%\end{lstlisting}
+
+%This does not quite have the correct type, but it \emph{does} have the correct type
+%if we specialize it to \lstinline{p}:
+
+%\begin{lstlisting}[language=coq]
+ %   fun n m p H0 H1 =>
+  %    (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)
+   % : (@\ltacforall@) n m p,
+    %  n <= m -> m <= p -> n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
+%\end{lstlisting}
+
+\paragraph{Patch Abstraction} A tool should be able to abstract patch candidates of this form by the common argument:
+
+\begin{lstlisting}[language=coq]
+    candidate : P' t -> P t(@\vspace{-0.08cm}@)
+    candidate_abs : (@\ltacforall@) (@\diff{t0}@), P' (@\diff{t0}@) -> P (@\diff{t0}@)
+\end{lstlisting}
+and it should be able to abstract patch candidates of this form by the common function:
+
+\begin{lstlisting}[language=coq]
+    candidate : P t' -> P t(@\vspace{-0.08cm}@)
+    candidate_abs : (@\ltacforall@) (@\diff{P0}@), (@\diff{P0}@) t' -> (@\diff{P0}@) t
+\end{lstlisting} 
+
+This is necessary because the tool may find candidates in an applied form.
+For example, when searching for a patch between the proofs in Figure~\ref{fig:example},
+\sysname finds a candidate in the difference of base cases. To produce a patch, 
+\sysname must abstract the candidate by the argument \lstinline{m}.
+Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
+
+\paragraph{Patch Inversion} The tool should be able to invert a patch candidate.
+This is necessary to search for isomorphisms. %in both directions (that is, to find isomorphisms) between propositionally equal types.
+It is also necessary to search for implications between propositionally
+equal types, since candidates may appear in the wrong direction.
+For example, consider two list lemmas (we write \lstinline{length} as \lstinline{len}):
+
+\begin{lstlisting}[language=coq]
+    old : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len l(@\vspace{-0.08cm}@)
+    new : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len (rev l)
+\end{lstlisting} 
+
+If \sysname searches the difference in proofs of these lemmas for a patch from the 
+conclusion of \lstinline{new} to the conclusion of \lstinline{old},
+it may find a candidate \emph{backwards}: %, as a patch from \lstinline{old} to \lstinline{new}:
+
+\begin{lstlisting}
+    candidate l' l (H : (@\diff{old}@) l' l) :=(@\vspace{-0.04cm}@)
+      eq_ind_r ... (@\diff{(rev\_length l)}@)(@\vspace{-0.04cm}@)
+   : (@\ltacforall@) l' l, (@\diff{old}@) l' l -> (@\diff{new}@) l' l
+\end{lstlisting}
+
+The component can invert this to get the patch: %from \lstinline{new} to \lstinline{old}:
+
+\begin{lstlisting}
+    patch l' l (H : (@\diff{new}@) l' l) :=(@\vspace{-0.04cm}@)
+      eq_ind_r ... (@\diff{(eq\_sym (rev\_length l))}@)(@\vspace{-0.04cm}@)
+   : (@\ltacforall@) l' l, (@\diff{new}@) l' l -> (@\diff{old}@) l' l
+\end{lstlisting}
+
+We can then use this patch to port proofs.
+For example, if we add this patch to a hint database~\cite{hints},
+we can port this proof:
+
+\begin{lstlisting}
+    Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
+      len (rev (l' ++ l)) = len (rev l) + len (rev l').(@\vspace{-0.04cm}@)
+    Proof.(@\vspace{-0.04cm}@)
+      intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)
+\end{lstlisting}
+to this proof:
+
+\begin{lstlisting}
+      intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)
+\end{lstlisting}
+
+Rewrites like \lstinline{candidate} are \textit{invertible}:
+We can invert any rewrite in one direction by rewriting in the opposite direction.
+In contrast, it is not possible to invert the patch \sysname
+found for Figure~\ref{fig:example}.
+Inversion will necessarily sometimes fail, since not all terms are invertible.
+%Not all terms are invertible. It is not possible, for example, to invert the patch 
+%Inversion will necessarily sometimes fail.
+
+\paragraph{Lemma Factoring} The tool should be able to factor a term into a sequence of lemmas.
+This can help break other problems, like abstraction, into smaller subproblems.
+It is also necessary to invert certain terms.
+Consider inverting an arbitrary sequence of two rewrites:
+
+\begin{lstlisting}
+    t := (@\diff{eq\_ind\_r G ...}@) ((@\diff{eq\_ind\_r F ...}@))
+\end{lstlisting}
+
+We can view \lstinline{t} as a term that composes two functions:
+
+\begin{lstlisting}
+    g := (@\diff{eq\_ind\_r G ...}@)(@\vspace{-0.04cm}@)
+    f := (@\diff{eq\_ind\_r F ...}@)(@\vspace{-0.04cm}@)
+    t := g $\circ$ f
+\end{lstlisting}
+
+The inverse of \lstinline{t} is the following:
+
+\begin{lstlisting}
+    t$\inv$ := f$\inv$ $\circ$ g$\inv$
+\end{lstlisting}
+
+To invert \lstinline{t}, \sysname identifies the factors \lstinline{[f; g]}, 
+inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
+then folds and applies the inverse factors in the opposite direction.
+
+\subsection{Composing Components}
+\label{sec:composeintro}
+
+% Note about tactics?
+
+The components come together to form a proof patch finding procedure:
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\renewcommand{\thealgorithm}{}
+\footnotesize
+\caption{\footnotesize{find\_patch(term, term', direction)}}
+    \STATE \diff{\textit{diff} types of term and term' for goals}
+    \STATE \diff{\textit{diff} term and term' for candidates}
+    \IF{there are candidates}
+      \STATE \diff{\textit{factor}, \textit{abstract}, \textit{specialize}, and/or \textit{invert} candidates}
+      \IFRETURN{there are patches}{patches}
+    \ENDIF
+    \IF{direction is forwards}
+      \STATE find\_patch(term', term, backwards) for candidates
+      \STATE \textit{factor} and \textit{invert} candidates
+      \IFRETURN{there are patches}{patches}
+    \ENDIF
+    \RETURN failure
+\end{algorithmic}
+\label{alg:patching}	
+\end{algorithm}
+
+\begin{figure*}[ht]
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=1]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=2,lastline=2]{repair/compcert.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=4, lastline=4]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/compcert.tex}
+\end{minipage}
+\vspace{-.3cm}
+%\setlength{\belowcaptionskip}{-4pt}
+\caption[Caption for LOF]{Old (left) and new (right) definitions of \lstinline{int} in CompCert.}
+\label{fig:int}
+\end{figure*}
+
+\sysname infers a \textit{configuration} from the example change.
+This configuration customizes the highlighted lines for an entire class of changes:
+It determines what to diff on lines 1 and 2,
+and how to use the components on line 4.
+
+For example, to find a patch for Figure~\ref{fig:example},
+\sysname used the configuration for changes in conclusions of two proofs
+that induct over the same hypothesis. Given two such
+proofs:
+
+%We describe one
+%such procedure in this section; we descibe three more
+%in Section~\ref{sec:case}.
+\begin{lstlisting}[language=coq]
+    (@\ltacforall@) x, H x -> (@\diff{P}@) x(@\vspace{-0.1cm}@)
+    (@\ltacforall@) x, H x -> (@\diff{P'}@) x
+\end{lstlisting}
+\sysname searches for a patch with this type:
+
+\begin{lstlisting}[language=coq]
+    (@\ltacforall@) x, H x -> (@\diff{P'}@) x -> (@\diff{P}@) x
+\end{lstlisting}
+using this configuration:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+%  Is it really necessary to say that an algorithm might do initialization?
+%  \STATE Build trees for search
+  %\STATE build trees for proofs
+  %\REPEAT
+    \STATE \textit{diff} conclusion types for goals
+    \STATE \textit{diff} conclusion terms for candidates
+    \STATE \textbf{if} there are candidates \textbf{then}
+    \STATE \hspace*{1em} \textit{abstract} and then \textit{specialize} candidates
+\end{algorithmic}
+\end{algorithm}
+
+Section~\ref{sec:case} describes real-world examples that demonstrate more configurations.
+
+%Scenarios from real-world examples in Section~\ref{sec:case} demonstrate more configurations.
+%We discuss more configurations in Section~\ref{sec:case},
+%and we describe our implementation in Section~\ref{sec:core}.
+
+%We show three more procedures
+%in Section~\ref{sec:case}.
+
+%The type of this term takes the conclusion of \lstinline{new} to the conclusion of \lstinline{old} (line 5):
+
+%\begin{lstlisting}
+%    n <= p -> n <= p + 1
+%\end{lstlisting}
+
+%TODO If both passes fail, the algorithm defaults to returning a function that always produces the old term.
+
+
+

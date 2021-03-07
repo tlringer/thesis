@@ -1,0 +1,120 @@
+\section{Conclusions \& Future Work}
+\label{sec:future}
+
+Our vision is a future of proof automation in ITP that 
+adapts proofs to breaking changes. This will unify the spirit of ITP---collaboration
+between the programmer and the tool---with the realities of modern proof engineering:
+Verification projects are large, specifications evolve over time,
+and dependencies change and break backward-compatibility. Too much of the burden
+of change rests on the programmer; not enough rests on the tool.
+
+We conclude with a discussion of improvements that can help bring this vision to life.
+% We have already discussed some small changes 
+These improvements are driven by our experiences using the \sysname prototype
+and by conversations within the ITP community.
+
+%\subsection{Improving Core Components} We have shown that the five core components are key to a good proof patching tool.
+%With that in mind, our implementation is far from perfect. 
+%Three components in particular that have natural extensions that will improve performance significantly:
+
+%\paragraph{Semantic Search} Search is the most complex component, and so it is naturally the one
+%with the most room for improvement. One difficulty in search is determining when to reduce terms;
+%exploring this possibility will produce patches for scenarios that \sysname cannot yet handle.
+%\sysname has trouble inferring the arguments for specialization for certain kinds of proofs, especially
+%those that pass through intermediate lemmas; improving search to support these cases will make the tool
+%simpler to use. \sysname cannot infer the most efficient direction to search first,
+%and instead relies on the user to supply the most efficient direction; using a simple heuristic like proof term size
+%may cut the runtime of \sysname in half for certain pairs of proofs.
+
+%\paragraph{Patch Abstraction} The abstraction component supports different strategies, but none of the current
+%strategies use type information to guide which terms to abstract. Extending abstraction with
+%semantics-aware strategies will not only cut down on the number of candidates that abstraction produces,
+%but will also succeed in some cases on which abstraction currently fails.
+
+%\paragraph{Patch Inversion} The inversion algorithm is currently aware only of symmetry properties of the equality types;
+%in all other cases, it defaults to swapping subterms. It may be possible to use the subterm swapping functionality
+%to infer symmetry properties of types, much like \lstinline{eq_sym}: First, generate a trivial reflexive application
+%of the induction principle for the type. Then, swap some terms in that term. Inversion can then use these symmetry properties 
+%to generate reverse induction principles like \lstinline{eq_ind_r}. That way, inversion can be strategic 
+%about swapping subterms, and it never has to specialize to a particular type like \lstinline{eq}.
+
+%\subsection{Improving Change Support} 
+%\label{sec:futurechange}
+
+%The ideal tool should support diverse changes.
+%In addition to the component improvements we have already discussed,
+%we see three ways to improve support:
+
+\paragraph{Supporting structural changes.} Coq programmers often
+make structural changes. It is common, for example, to
+add new hypotheses, constructors, or parameters to a type.
+The ideal tool should find patches for
+these changes. %These are common changes;
+%supporting these changes will make \sysname more useful.
+Existing work in proof reuse~\cite{Boite2004, Mulhern06proofweaving}
+and type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976} may help guide these improvements.
+
+\paragraph{Exploring new components.} The core components of \sysname are critical to searching for patches
+in Coq, but they may not be sufficient for the ideal tool. While we find the flexibility of these components promising thus far, in implementing new features, we may discover new components. For example, patches for certain structural changes
+may be program transformations as opposed to terms;
+supporting these patches may reveal new components.
+
+\paragraph{Modeling diverse proof styles.} Coq programmers use diverse proof styles;
+the ideal tool should support many different styles.
+Proofs about decidable domains that apply the term \lstinline{dec_not_not}
+pose difficulties for abstraction and inversion; the ideal tool should support these. 
+\sysname has limited support for changes in hypotheses, fixpoints, constructors, 
+pattern matching, and nested induction; the ideal tool should implement these features.
+
+\paragraph{Improving user experience.} The ideal proof patching tool should
+be natural for programmers to use. A future patching tool
+can produce tactics from the patches it finds, that way programmers
+can remove references to old specifications. A future patching tool can integrate 
+with an IDE (such as Proof General~\cite{proofgeneral})
+or continuous integration (CI) system (such as Travis~\cite{travis}) to suggest
+patches at natural steps in the development process.
+
+%The ideal tool should support this workflow. A future patch finding tool
+%can produce tactics from the patches it finds, 
+%or can integrate with an IDE to suggest patches to programmers as they make changes or update dependencies.
+% TODO old references, Travis
+
+\paragraph{Handling version updates.} Updating Coq versions is an ideal use case for finding proof patches:
+When the client updates Coq, a tool can automatically search commits to the standard library or to \lstinline{coq-contribs}
+for patches.
+In this case, the example comes from the Coq developers, not from the library client---the 
+client never has to look at the changes that the Coq developers make.
+The ideal tool should fully support updates in Coq versions.
+\sysname can patch certain changes in the standard library, but it 
+does not yet search for those changes automatically and determine which configuration to use depending on
+what has changed. Furthermore, as proof assistant versions change, so may the AST and the plugin interface.
+To fully support version updates, the tool should support different language versions.
+
+\paragraph{Isolating changes.} Programmers sometimes make multiple changes to a verification project in the same commit;
+the ideal tool should break down large changes into small, isolated changes to find patches.
+This will help in finding benchmarks, supporting library and version updates, and integrating
+with CI systems. We may draw on work in change and dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes, then use the factoring component
+to break these changes into smaller parts.
+
+\paragraph{Supporting other proof assistants.} Coq is just one of many proof assistants;
+ideal tools should support different proof assistants. While
+\sysname focuses on Coq, the underlying concepts extend to other proof assistants with constructive
+logics (for example, Lean~\cite{lean} and Agda~\cite{agda}).
+Proof assistants with non-constructive logics (for example, Isabelle/HOL~\cite{isabellehol})
+may benefit from a different approach; this is similar to the problem of finding patches for proofs of decidable domains in Coq, 
+since classical properties provably hold for decidable propositions~\cite{decidable}.
+
+\paragraph{Applying patches.} The ideal tool should not only find patches, but also apply the
+patches it finds automatically to fix broken proofs. 
+In some cases, this may be as simple as adding the patches as hints to a hint database, so that proofs go through with no changes.
+However, hint databases in Coq cannot support certain terms~\cite{hints}, and adding too many
+hints may impede performance.
+More generally, we can integrate \sysname with a transfer tactic~\cite{Huffman2013, ZimmermannH15},
+which is a perfect fit: 
+Transfer tactics automatically adapt proofs between isomorphic types and implications, but they do
+not find these functions; \sysname finds these functions, but it does not apply them.
+
+
+
+
+

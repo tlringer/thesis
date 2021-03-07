@@ -1,0 +1,100 @@
+\section{Introduction}
+
+%Proof assistants allow programmers to verify everything from distributed systems~\cite{wilcox:verdi} and compilers~\cite{leroy:compcert} to
+%formalizations of mathematics~\cite{DBLP:journals/corr/BauerGLSSS16}. 
+
+Proof automation makes verification more accessible to programmers, but it is often intractable
+without programmer guidance. In \textit{interactive theorem proving} (ITP), the programmer guides the 
+proof search process. The guidance reduces the search space to make proof automation more tractable.
+This in turns helps the programmer, who does not have to manually verify the entire system.
+
+%Interactive theorem provers allow programmers to guide proof search and interactively 
+%verify everything from distributed systems~\cite{wilcox:verdi} and compilers~\cite{leroy:compcert} to
+%formalizations of mathematics~\cite{DBLP:journals/corr/BauerGLSSS16}. In many of these theorem provers, programmers use
+
+%In these languages, programmers write precise specifications of programs
+%and prove implementations correct with respect to the specifications.
+
+Despite automation, programming in these proof assistants is brittle: Even a minor change to a definition or theorem
+can break many dependent proofs. This is a major source of development inefficiency in proof assistants
+based on dependent type theory~\cite{proof-eng, Aydemir2008, Delaware2013ICFP}.
+
+Traditional proof automation does not consider how proofs, definitions, and theorems change over time.
+Instead, it is driven by the state of the current proof, sometimes with supplementary
+information from other proofs, definitions, and theorems (as in hint databases~\cite{hints} and rippling~\cite{rippling}).
+This puts the burden of dealing with brittleness on the programmer. 
+
+We present a new approach to proof automation that accounts for breaking changes. %:
+%searching the difference in versions of a proof, definition, or theorem. 
+%We reimagine the problem of proof reuse~\cite{Boite2004, Mulhern06proofweaving} 
+%in the context of traditional automation for ITP. 
+In our approach, the programmer guides proof search 
+by providing an \textit{example} of how to adapt proofs to changes in definitions or theorems.
+A tool then generalizes the example adaptation into a \textit{reusable patch} that the programmer can use to fix
+other broken proofs.
+
+In doing so, we chart a path for a future %of ITP 
+that moves the burden of brittleness
+away from the programmer and into proof automation. 
+Programmers typically address brittleness through design principles that make proofs
+resilient to change~\cite{proof-eng, Aydemir2008, Delaware2013ICFP}, or through program-specific proof automation~\cite{chlipala:cpdt}.
+These techniques, while useful, have limitations: 
+Planning a verification effort around future change is challenging, and program-specific automation requires specialized knowledge.
+The programmer's ability to anticipate likely changes determines the robustness of both techniques in
+the face of change. %The robustness of both techniques in the face of change is determined by the programmer's ability to anticipate likely changes. 
+Even then, many breaking changes are outside of the programmer's control. Updating proof assistant
+versions, for example, can break proofs regardless of planning or automation~\cite{verdicommit}.
+
+\begin{figure*}[ht]
+\begin{minipage}{0.48\textwidth}
+\centering
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=3]{repair/izr.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=4,lastline=5]{repair/izr.tex}
+\lstinputlisting[firstline=6, lastline=6]{repair/izr.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=8, lastline=10]{repair/izr.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=11,lastline=12]{repair/izr.tex}
+\lstinputlisting[firstline=13, lastline=13]{repair/izr.tex}
+\end{minipage}
+\vspace{-.3cm}
+%\setlength{\belowcaptionskip}{-2pt}
+\caption[Caption]{Old (left) and new (right) definitions of \lstinline{IZR} in Coq.
+The old definition applies injection from naturals to reals and conversion of positives to
+naturals; the new definition applies injection from positives to reals.}
+\label{fig:izr}
+\end{figure*}
+
+
+We identify a set of core components that are critical to searching an example for patches in Coq.
+We use the components to build %four different 
+a procedure for finding patches %for non-structural changes 
+in a Coq plugin as a 
+proof-of-concept.
+Case studies on real projects like CompCert~\cite{leroy:compcert} and the Coq standard library
+suggest that patches are useful for realistic scenarios, and that it is simple to compose the components 
+to handle different classes of changes.
+We test the boundaries of the components on a suite of tests
+and show how our findings can help build the future we envision.
+
+In summary, we contribute the following:
+
+\begin{enumerate}
+%\item We develop new foundations for proof automation in ITP that account for breaking changes. % TODO reword
+\item We identify a set of core components that are key to searching for patches.
+\item We demonstrate that these core components are useful on real changes in Coq code.
+\item We explore how to drive a future that moves the burden of change in ITP away from the programmer and into automated tooling.
+\end{enumerate}
+
+% TODO fix contributions
+
+% evaluation stuff in contributions too
+
+% SOMEWHERE: we focus on non-structural changes
+
+
+

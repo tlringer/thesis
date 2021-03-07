@@ -1,0 +1,229 @@
+\documentclass[sigplan,screen,10pt]{acmart}%\settopmatter{printfolios=true}
+%\citestyle{acmauthoryear}   %% For author/year citations
+
+%\usepackage[hyphens]{url}
+\usepackage{enumerate}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{color,xcolor}
+\usepackage{mathpartir}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[noend]{algorithm, algorithmic}
+ \usepackage{flushend}
+%\hypersetup{draft} % TODO remove me before submission, works around bib hyperref issues for now
+
+\DeclareGraphicsExtensions{.pdf}
+
+\floatname{algorithm}{\footnotesize{Pseudocode:}}
+
+\lstdefinelanguage{coq}{
+    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstdefinelanguage{ml4}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
+\lstset{language=coq} % default
+
+%%% The following is specific to CPP'18 and the paper
+%%% 'Adapting Proof Automation to Adapt Proofs'
+%%% by Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
+%%%
+\setcopyright{acmlicensed}
+\acmPrice{15.00}
+\acmDOI{10.1145/3167094}
+\acmYear{2018}
+\copyrightyear{2018}
+\acmISBN{978-1-4503-5586-5/18/01}
+\acmConference[CPP'18]{7th ACM SIGPLAN International Conference on Certified Programs and Proofs}{January 8--9, 2018}{Los Angeles, CA, USA}
+%\setcopyright{}
+%\acmPrice{}
+%\acmDOI{}
+%\acmYear{}
+%\copyrightyear{}
+%\acmJournal{}
+%\acmVolume{}
+%\acmNumber{}
+%\acmArticle{}
+%\acmMonth{}
+
+\setlength\intextsep{6pt}
+
+ \begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10010940.10010992.10010998.10010999</concept_id>
+<concept_desc>Software and its engineering~Software verification</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011074.10011111.10011113</concept_id>
+<concept_desc>Software and its engineering~Software evolution</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011006.10011050.10011056</concept_id>
+<concept_desc>Software and its engineering~Programming by example</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~Software verification}
+\ccsdesc[500]{Software and its engineering~Software evolution}
+\ccsdesc[300]{Software and its engineering~Programming by example}
+
+\keywords{proof automation, proof repair, proof evolution}
+
+\begin{document}
+
+\newcommand{\nate}[1]{\textbf{\textcolor{orange}{Nate: #1}}}
+\newcommand{\talia}[1]{\textbf{\textcolor{blue}{Talia: #1}}}
+\newcommand{\john}[1]{\textbf{\textcolor{green}{John: #1}}}
+
+\newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
+\newcommand{\sysname}{\textsc{Pumpkin}\xspace}
+
+\newcommand{\ltacforall}{$\color{blue}\forall$\hspace{0.05cm}}
+\newcommand{\ltacexists}{$\color{blue}\exists$\hspace{0.05cm}}
+\newcommand{\ltacba}{\textcolor{magenta}{-}\hspace{-0.03cm}}
+\newcommand{\ltacbb}{\textcolor{magenta}{+}\hspace{-0.03cm}}
+\newcommand{\ltacbc}{\textcolor{magenta}{*}\hspace{-0.03cm}}
+\newcommand{\remove}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\fails}[1]{#1\textcolor{red}{\textbf{\sffamily X}}}
+\newcommand{\succeeds}[1]{#1\textcolor{teal}{\textbf{\checkmark}}}
+\newcommand{\reducedstrut}{\vrule width 0pt height .9\ht\strutbox depth .9\dp\strutbox\relax}
+\newcommand{\diff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{orange!35}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\inv}{^{\raisebox{0.2ex}{$\scriptscriptstyle-1$}}}
+\newcommand{\IFRETURN}[2]{\STATE \algorithmicif\ {#1}\ \algorithmicthen\ \textbf{return} {#2} }
+\newcommand{\RETURNIFELSE}[3]{\IF {#1} \THEN \STATE \textbf{return} {#2} \ELSE \STATE \textbf{return} {#3}}
+
+
+\title{Adapting Proof Automation to Adapt Proofs}
+%\subtitle{Subtitle Text, if any}
+
+\author{Talia Ringer}
+\affiliation{
+  \institution{University of Washington, USA}
+}
+
+\author{Nathaniel Yazdani}
+\affiliation{
+  \institution{University of Washington, USA}
+}
+
+\author{John Leo}
+\affiliation{
+  \institution{Halfaya Research, USA}  
+}
+
+\author{Dan Grossman}
+\affiliation{
+  \institution{University of Washington, USA}
+}
+
+\begin{abstract} 
+We extend proof automation in an interactive theorem prover
+to analyze \emph{changes} in specifications and proofs.
+Our approach leverages the history
+of changes to specifications and proofs to search for a patch
+that can be applied to other specifications and proofs that need
+to change in analogous ways.
+
+We identify and implement five core components that are key to
+searching for a patch. We build a patch finding procedure
+from these components, which we configure for various classes of changes.
+We implement this procedure in a Coq plugin as a proof-of-concept and 
+use it on real Coq code to 
+change specifications, port definitions of a type, and update the 
+Coq standard library. We show how our findings
+help drive a future that moves the burden of dealing with the brittleness of small changes 
+in an interactive theorem prover away from the programmer and into automated tooling.
+\end{abstract}
+
+% TODO worth mentioning eval there? Also, does this place too much emphasis on
+% the tool?
+
+
+%
+%\begin{CCSXML}
+%\end{CCSXML}
+%
+
+%\ccsdesc[]{}
+%\ccsdesc[]{}
+%\ccsdesc[]{}
+
+%\keywords{}
+
+\bibliographystyle{ACM-Reference-Format}
+
+\maketitle
+
+%\category{CR-number}{subcategory}{third-level}
+
+% general terms are not compulsory anymore,
+% you may leave them out
+%\terms
+%term1, term2
+
+%\keywords
+%keyword1, keyword2
+
+\input{introduction}
+
+%\input{sysoverview}
+
+%\input{changes}
+
+\input{reimagined}
+
+\input{sysintro}
+
+\input{casestudies}
+
+\input{core}
+
+%\input{search}
+
+\input{evaluation}
+
+\input{future}
+
+\input{related}
+
+%\input{conclusions}
+
+\input{acknowledgements}
+
+\bibliography{pumpkinbib}
+
+\end{document}

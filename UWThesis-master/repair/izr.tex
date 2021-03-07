@@ -1,0 +1,13 @@
+Definition IZR (z:Z) : R := (@\vspace{-0.05cm}@)
+  match z with  (@\vspace{-0.05cm}@)
+  | Z0 => 0 (@\vspace{-0.05cm}@)
+  | Zpos n => INR (Pos.to_nat n) (@\vspace{-0.05cm}@)
+  | Zneg n => - INR (Pos.to_nat n) (@\vspace{-0.05cm}@)
+  end.
+
+Definition IZR (z:Z) : R := (@\vspace{-0.05cm}@)
+  match z with (@\vspace{-0.05cm}@)
+  | Z0 => 0 (@\vspace{-0.05cm}@)
+  | Zpos n => IPR n (@\vspace{-0.05cm}@)
+  | Zneg n => - IPR n (@\vspace{-0.05cm}@)
+  end.

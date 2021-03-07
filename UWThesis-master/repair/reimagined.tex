@@ -1,0 +1,65 @@
+\section{Automation, Reimagined}
+
+Traditional proof automation considers only the current state of
+theorems, proofs, and definitions. This is a missed opportunity: Verification projects 
+are rarely static. Like other software, these projects evolve over time.
+
+Currently, the burden of change largely falls on programmers.
+This does not have to be true. Proof automation
+can view theorems, proofs, and definitions as fluid entities:
+When a proof or specification changes,
+a tool can search the difference between the old and new versions
+for a \emph{reusable patch} that can fix broken proofs.
+
+\paragraph{Status Quo} Experienced Coq programmers use design principles and custom tactics to make proofs
+resilient to change. These techniques are useful for large proof developments, but they 
+%require expertise. Even then, they 
+place the burden of change on the programmer. This can be problematic
+when change occurs outside of the programmer's control. % How to ward off Adam Chlipala here?
+
+Consider a commit from the upcoming Coq 8.7 release~\cite{coq87commit}. 
+This commit redefined injection from integers to reals (Figure~\ref{fig:izr}).
+This change broke 18 proofs in the standard library. 
+
+The Coq developer who committed the change fixed the broken proofs, then
+made an additional 12 commits to address the change in \lstinline{coq-contribs},
+a regression suite of projects that the Coq developers maintain as versions change.
+Many of these changes were simple. For example, the developer wrote a lemma that describes the change:
+
+\lstset{language=coq, aboveskip=3pt, belowskip=3pt}
+\begin{lstlisting}
+    Lemma INR_IPR : (@\ltacforall@)p, INR (Pos.to_nat p) = IPR p.
+\end{lstlisting}
+
+The developer then used this lemma to fix broken proofs within the standard library. 
+For example, one proof broke on this line:
+
+\begin{lstlisting}
+    (@\fails{rewrite Pos2Nat.inj\_sub by trivial.}@)
+\end{lstlisting}
+
+It succeeded with the lemma:
+
+\begin{lstlisting}
+    rewrite (@\diff{<- 3!INR\_IPR}@), (@\succeeds{Pos2Nat.inj\_sub by trivial.}@)
+\end{lstlisting}
+
+These changes are outside-facing: Coq users have to make similar changes to their own proofs when
+they update to Coq 8.7. The Coq developer can update some tactics to account for this, but it is 
+impossible to account for every tactic that users could use.
+Furthermore, while the developer responsible for the changes knows about
+the lemma that describes the change, the Coq user does not. The Coq user must determine
+how the definition has changed and how to address the change, perhaps by reading documentation or by
+talking to the developers. 
+
+\paragraph{Our Vision} When a user updates Coq, a tool can determine
+that the definition has changed, then analyze changes in the standard library and in \lstinline{coq-contribs}
+that resulted from the change in definition (in this case, rewriting by the lemma).
+It can extract a reusable patch from those changes, which it can automatically apply within broken user proofs.
+The user never has to consider how the definition has changed.
+
+% TODO talk about the search space
+
+% This isn't an example we actually handle yet, but I think that's OK for this section
+% Mostly just had dependency issues trying to pull this code and so on, since I'm no on 8.7
+% But it's topical and outside-facing

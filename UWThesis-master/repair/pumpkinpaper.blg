@@ -1,0 +1,150 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pumpkinpaper.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: pumpkinbib.bib
+Warning--no key, author in hints
+Warning--no author, editor, organization, or key in hints
+Warning--to sort, need author or key in hints
+Warning--no key, author in coq
+Warning--no author, editor, organization, or key in coq
+Warning--to sort, need author or key in coq
+Warning--no key, author in proofgeneral
+Warning--no author, editor, organization, or key in proofgeneral
+Warning--to sort, need author or key in proofgeneral
+Warning--no key, author in travis
+Warning--no author, editor, organization, or key in travis
+Warning--to sort, need author or key in travis
+Warning--no key, author in lean
+Warning--no author, editor, organization, or key in lean
+Warning--to sort, need author or key in lean
+Warning--no key, author in agda
+Warning--no author, editor, organization, or key in agda
+Warning--to sort, need author or key in agda
+Warning--no key, author in isabellehol
+Warning--no author, editor, organization, or key in isabellehol
+Warning--to sort, need author or key in isabellehol
+Warning--no key, author in decidable
+Warning--no author, editor, organization, or key in decidable
+Warning--to sort, need author or key in decidable
+Warning--no key, author in HaRe
+Warning--no author, editor, organization, or key in HaRe
+Warning--to sort, need author or key in HaRe
+Warning--no key, author in agda
+Warning--no key, author in agda
+Warning--no key, author in coq
+Warning--no key, author in coq
+Warning--no key, author in decidable
+Warning--no key, author in decidable
+Warning--no key, author in HaRe
+Warning--no key, author in HaRe
+Warning--no key, author in hints
+Warning--no key, author in hints
+Warning--no key, author in isabellehol
+Warning--no key, author in isabellehol
+Warning--no key, author in lean
+Warning--no key, author in lean
+Warning--no key, author in proofgeneral
+Warning--no key, author in proofgeneral
+Warning--no key, author in travis
+Warning--no key, author in travis
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in agda
+Warning--no author, editor, organization, or key in agda
+Warning--no key, author in coq
+Warning--no author, editor, organization, or key in coq
+Warning--no key, author in hints
+Warning--no author, editor, organization, or key in hints
+Warning--no key, author in HaRe
+Warning--no author, editor, organization, or key in HaRe
+Warning--no key, author in isabellehol
+Warning--no author, editor, organization, or key in isabellehol
+Warning--no key, author in lean
+Warning--no author, editor, organization, or key in lean
+Warning--no key, author in decidable
+Warning--no author, editor, organization, or key in decidable
+Warning--no key, author in proofgeneral
+Warning--no author, editor, organization, or key in proofgeneral
+Warning--no key, author in travis
+Warning--no author, editor, organization, or key in travis
+Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--require articleno with numpages field in Autexier:2010:SCI:1860559.1860580
+Warning--require articleno with numpages field in Aydemir2008
+Warning--require articleno with numpages field in Barthe:2001:TIP:646793.704711
+Warning--page numbers missing in both pages and numpages fields in bundyreasoning
+Warning--require articleno with numpages field in Cai:2014:TCH:2594291.2594304
+Warning--require articleno with numpages field in Celik:2017:IRP:3155562.3155588
+Warning--require articleno with numpages field in Chlipala2013
+Warning--empty address in chlipala:cpdt
+Warning--require articleno with numpages field in Delaware2013POPL
+Warning--require articleno with numpages field in Delaware2013ICFP
+Warning--empty address in tgck-cicm14
+Warning--require articleno with numpages field in Gonthier2011
+Warning--empty address in Hofmann97
+Warning--empty publisher in 873647
+Warning--empty address in 873647
+Warning--no journal in differential-assertion-checking-2
+Warning--no number and no volume in differential-assertion-checking-2
+Warning--require articleno with numpages field in Le:2017:SSS:3106237.3106309
+Warning--empty address in leroy:compcert
+Warning--require articleno with numpages field in Long:2016:APG:2837614.2837617
+Warning--require articleno with numpages field in Mechtaev:2016:ASM:2884781.2884807
+Warning--require articleno with numpages field in Mens:2004:SSR:972215.972286
+Warning--require articleno with numpages field in Miraldo:2017:TDS:3122975.3122976
+Warning--no number and no volume in Monperrus2015
+Warning--page numbers missing in both pages and numpages fields in Monperrus2015
+Warning--empty publisher in Mulhern06proofweaving
+Warning--empty address in Mulhern06proofweaving
+Warning--page numbers missing in both pages and numpages fields in Mulhern06proofweaving
+Warning--empty address in Blanchette2013
+Warning--require articleno with numpages field in Pei:2014:APR:2731750.2731779
+Warning--empty booktitle in pons00
+Warning--empty publisher in pons00
+Warning--empty address in pons00
+Warning--require articleno with numpages field in Williams:2014:OP:2633628.2633631
+Warning--require articleno with numpages field in proof-eng
+Warning--page numbers missing in both pages and numpages fields in ZimmermannH15
+You've used 65 entries,
+            5551 wiz_defined-function locations,
+            1788 strings with 30352 characters,
+and the built_in function-call counts, 78749 in all, are:
+= -- 9276
+> -- 2177
+< -- 1
++ -- 640
+- -- 2239
+* -- 6108
+:= -- 8107
+add.period$ -- 320
+call.type$ -- 65
+change.case$ -- 395
+chr.to.int$ -- 63
+cite$ -- 201
+duplicate$ -- 5364
+empty$ -- 3899
+format.name$ -- 910
+if$ -- 16600
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 206
+newline$ -- 674
+num.names$ -- 470
+pop$ -- 2192
+preamble$ -- 1
+purify$ -- 717
+quote$ -- 0
+skip$ -- 1435
+stack$ -- 0
+substring$ -- 10358
+swap$ -- 508
+text.length$ -- 2975
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 892
+warning$ -- 100
+while$ -- 510
+width$ -- 0
+write$ -- 1343
+(There were 100 warnings)

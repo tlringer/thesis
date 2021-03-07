@@ -2,6 +2,13 @@
 \addvspace {5\p@ }
 \addvspace {5\p@ }
 \addvspace {5\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Caption}}{5}{figure.4.1}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Two proofs with different conclusions (top) and the corresponding proof terms (bottom) with relevant type information. We highlight the change in theorem conclusion and the difference in terms that corresponds to a patch.}}{8}{figure.4.2}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption for LOF}}{14}{figure.4.3}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption for LOF}}{16}{figure.4.4}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption for LOF}}{20}{figure.4.5}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces The type of (left) and tree for (right) the induction principle \lstinline {nat_ind}. The solid edges represent hypotheses, and the dotted edges represent the proof obligations for each case in an inductive proof.}}{24}{figure.4.6}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Two proof terms \lstinline {old} (left) and \lstinline {new} (right) that contain the same proof of a stronger lemma.}}{28}{figure.4.7}% 
 \addvspace {5\p@ }
 \addvspace {5\p@ }
 \addvspace {5\p@ }

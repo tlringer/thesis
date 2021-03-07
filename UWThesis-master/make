@@ -1,0 +1,1 @@
+latex uwthesis && bibtex uwthesis && latex uwthesis && pdflatex uwthesis

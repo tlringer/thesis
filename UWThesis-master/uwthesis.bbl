@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+
+\bibitem{TUG:h-l}
+Editor.
+\newblock Hyphenation exception log.
+\newblock {\em TUGboat}, 7(3):145, 1986.
+
+\bibitem{companion}
+M{ichel} Goossens, F{rank} Mittelbach, and A{lexander} Samarin.
+\newblock {\em The {\LaTeX} Companion}.
+\newblock Addison-Wesley, 1994.
+
+\bibitem{book}
+Donald~E. Knuth.
+\newblock {\em The {\TeX} book}.
+\newblock Addison-Wesley, 1984.
+
+\bibitem{Tbook}
+Donald~E. Knuth.
+\newblock {\em {\TeX}: The Program}.
+\newblock Addison-Wesley, 1986.
+
+\bibitem{CMT}
+Donald~E. Knuth.
+\newblock {\em Computer Modern Typefaces}.
+\newblock Addison-Wesley, 1986.
+
+\bibitem{Metafont}
+Donald~E. Knuth.
+\newblock {\em The Metafont book}.
+\newblock Addison-Wesley, 1986.
+
+\bibitem{Lbook}
+Leslie Lamport.
+\newblock {\em {\LaTeX}: A Document Preparation System}.
+\newblock Addison-Wesley, 2nd edition, 1994.
+
+\bibitem{Hamlet}
+William Shakespeare.
+\newblock {\em Hamlet}.
+\newblock F.S.~Crofts~\&~Co., Inc., NY, 1946.
+\newblock Act~I, Scene~3, Lines~70-72, are apropos.
+
+\bibitem{PCTeX}
+{Spivak, M.D., Ph.D.}
+\newblock {\em PC{\TeX}\ Manual}.
+\newblock Personal {\TeX}, Inc., CA, 1985.
+
+\bibitem{JTeX}
+{Spivak, M.D., Ph.D.}
+\newblock {\em The Joy of {\TeX}}.
+\newblock American Mathematical Society, RI, 1986.
+
+\end{thebibliography}

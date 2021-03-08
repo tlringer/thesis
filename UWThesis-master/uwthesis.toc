@@ -1,70 +1,70 @@
 \vspace {-\cftbeforepartskip }
-\contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Introduction}}{15}{chapter.1}% 
-\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Proof Development}}{17}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Maintenance}}{19}{chapter.3}% 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair}}{21}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Introduction}{21}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Automation, Reimagined}{22}{section.4.2}% 
-\contentsline {paragraph}{Status Quo}{22}{section.4.2}% 
-\contentsline {paragraph}{Our Vision}{23}{lstnumber.-9.1}% 
-\contentsline {section}{\numberline {4.3}Generating Reusable Patches}{23}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Motivating the Core}{24}{subsection.4.3.1}% 
-\contentsline {paragraph}{Semantic Differencing}{25}{lstnumber.-28.2}% 
-\contentsline {paragraph}{Patch Specialization}{26}{lstnumber.-32.2}% 
-\contentsline {paragraph}{Patch Abstraction}{26}{lstnumber.-32.2}% 
-\contentsline {paragraph}{Patch Inversion}{26}{lstnumber.-34.2}% 
-\contentsline {paragraph}{Lemma Factoring}{27}{lstnumber.-39.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Composing Components}{27}{subsection.4.3.2}% 
-\contentsline {section}{\numberline {4.4}Case Studies: Changes in the Wild}{28}{section.4.4}% 
-\contentsline {paragraph}{Identifying Changes}{29}{Item.11}% 
-\contentsline {subsection}{\numberline {4.4.1}Updating Definitions}{29}{subsection.4.4.1}% 
-\contentsline {paragraph}{Replay}{30}{subsection.4.4.1}% 
-\contentsline {paragraph}{Search}{30}{lstnumber.-56.1}% 
-\contentsline {paragraph}{Apply}{30}{lstnumber.-57.1}% 
-\contentsline {subsubsection}{Core Components}{30}{lstnumber.-59.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Porting Definitions}{31}{subsection.4.4.2}% 
-\contentsline {paragraph}{Replay}{31}{subsection.4.4.2}% 
-\contentsline {paragraph}{Search}{31}{lstnumber.-64.2}% 
-\contentsline {paragraph}{Apply}{31}{lstnumber.-65.2}% 
-\contentsline {subsubsection}{Core Components}{32}{lstnumber.-67.1}% 
-\contentsline {subsection}{\numberline {4.4.3}Updating Proof Assistant Versions}{32}{subsection.4.4.3}% 
-\contentsline {paragraph}{Replay}{33}{subsection.4.4.3}% 
-\contentsline {paragraph}{Search}{33}{lstnumber.-74.2}% 
-\contentsline {paragraph}{Apply}{33}{lstnumber.-75.2}% 
-\contentsline {subsubsection}{Core Components}{33}{lstnumber.-77.1}% 
-\contentsline {section}{\numberline {4.5}Inside the Core}{34}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Inside the Components}{34}{subsection.4.5.1}% 
-\contentsline {subsubsection}{Semantic Differencing}{34}{subsection.4.5.1}% 
-\contentsline {subsubsection}{Patch Specialization}{35}{figure.caption.10}% 
-\contentsline {subsubsection}{Patch Abstraction}{36}{figure.caption.10}% 
-\contentsline {subsubsection}{Patch Inversion}{37}{lstnumber.-88.3}% 
-\contentsline {subsubsection}{Lemma Factoring}{37}{lstnumber.-89.2}% 
-\contentsline {subsection}{\numberline {4.5.2}Inside the Procedure}{38}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Trusted Computing Base}{38}{subsection.4.5.3}% 
-\contentsline {section}{\numberline {4.6}Testing Boundaries}{38}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Patch Generation Suite}{39}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}Three Challenges}{40}{subsection.4.6.2}% 
-\contentsline {paragraph}{A Challenge for Differencing}{40}{subsection.4.6.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{41}{lstnumber.-96.9}% 
-\contentsline {paragraph}{A Challenge for Abstraction}{41}{lstnumber.-99.4}% 
-\contentsline {subsection}{\numberline {4.6.3}Performance}{42}{subsection.4.6.3}% 
-\contentsline {section}{\numberline {4.7}Conclusions \& Future Work}{42}{section.4.7}% 
-\contentsline {paragraph}{Supporting structural changes.}{43}{section.4.7}% 
-\contentsline {paragraph}{Exploring new components.}{43}{section.4.7}% 
-\contentsline {paragraph}{Modeling diverse proof styles.}{43}{section.4.7}% 
-\contentsline {paragraph}{Improving user experience.}{43}{section.4.7}% 
-\contentsline {paragraph}{Handling version updates.}{43}{section.4.7}% 
-\contentsline {paragraph}{Isolating changes.}{44}{section.4.7}% 
-\contentsline {paragraph}{Supporting other proof assistants.}{44}{section.4.7}% 
-\contentsline {paragraph}{Applying patches.}{44}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Related Work}{44}{section.4.8}% 
-\contentsline {paragraph}{Proof Reuse}{44}{section.4.8}% 
-\contentsline {paragraph}{Proof Automation}{45}{section.4.8}% 
-\contentsline {paragraph}{Proof Engineering}{46}{section.4.8}% 
-\contentsline {paragraph}{Refactoring}{46}{section.4.8}% 
-\contentsline {paragraph}{Differencing \& Incremental Computation}{46}{section.4.8}% 
-\contentsline {paragraph}{Programming by Example}{46}{section.4.8}% 
-\contentsline {paragraph}{Program Repair}{47}{section.4.8}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Often, Practically}}{49}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Under the Hood}}{51}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {The Next Era}}{53}{chapter.7}% 
+\contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Introduction}}{11}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Proof Development}}{13}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Maintenance}}{15}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair}}{17}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction}{17}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Automation, Reimagined}{18}{section.4.2}% 
+\contentsline {paragraph}{Status Quo}{18}{section.4.2}% 
+\contentsline {paragraph}{Our Vision}{19}{lstnumber.-9.1}% 
+\contentsline {section}{\numberline {4.3}Generating Reusable Patches}{19}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Motivating the Core}{20}{subsection.4.3.1}% 
+\contentsline {paragraph}{Semantic Differencing}{21}{lstnumber.-28.2}% 
+\contentsline {paragraph}{Patch Specialization}{22}{lstnumber.-32.2}% 
+\contentsline {paragraph}{Patch Abstraction}{22}{lstnumber.-32.2}% 
+\contentsline {paragraph}{Patch Inversion}{22}{lstnumber.-34.2}% 
+\contentsline {paragraph}{Lemma Factoring}{23}{lstnumber.-39.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Composing Components}{23}{subsection.4.3.2}% 
+\contentsline {section}{\numberline {4.4}Case Studies: Changes in the Wild}{24}{section.4.4}% 
+\contentsline {paragraph}{Identifying Changes}{25}{Item.11}% 
+\contentsline {subsection}{\numberline {4.4.1}Updating Definitions}{25}{subsection.4.4.1}% 
+\contentsline {paragraph}{Replay}{26}{subsection.4.4.1}% 
+\contentsline {paragraph}{Search}{26}{lstnumber.-56.1}% 
+\contentsline {paragraph}{Apply}{26}{lstnumber.-57.1}% 
+\contentsline {subsubsection}{Core Components}{26}{lstnumber.-59.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Porting Definitions}{27}{subsection.4.4.2}% 
+\contentsline {paragraph}{Replay}{27}{subsection.4.4.2}% 
+\contentsline {paragraph}{Search}{27}{lstnumber.-64.2}% 
+\contentsline {paragraph}{Apply}{27}{lstnumber.-65.2}% 
+\contentsline {subsubsection}{Core Components}{28}{lstnumber.-67.1}% 
+\contentsline {subsection}{\numberline {4.4.3}Updating Proof Assistant Versions}{28}{subsection.4.4.3}% 
+\contentsline {paragraph}{Replay}{29}{subsection.4.4.3}% 
+\contentsline {paragraph}{Search}{29}{lstnumber.-74.2}% 
+\contentsline {paragraph}{Apply}{29}{lstnumber.-75.2}% 
+\contentsline {subsubsection}{Core Components}{29}{lstnumber.-77.1}% 
+\contentsline {section}{\numberline {4.5}Inside the Core}{30}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Inside the Components}{30}{subsection.4.5.1}% 
+\contentsline {subsubsection}{Semantic Differencing}{30}{subsection.4.5.1}% 
+\contentsline {subsubsection}{Patch Specialization}{31}{figure.caption.8}% 
+\contentsline {subsubsection}{Patch Abstraction}{32}{figure.caption.8}% 
+\contentsline {subsubsection}{Patch Inversion}{33}{lstnumber.-88.3}% 
+\contentsline {subsubsection}{Lemma Factoring}{33}{lstnumber.-89.2}% 
+\contentsline {subsection}{\numberline {4.5.2}Inside the Procedure}{34}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Trusted Computing Base}{34}{subsection.4.5.3}% 
+\contentsline {section}{\numberline {4.6}Testing Boundaries}{34}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Patch Generation Suite}{35}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Three Challenges}{36}{subsection.4.6.2}% 
+\contentsline {paragraph}{A Challenge for Differencing}{36}{subsection.4.6.2}% 
+\contentsline {paragraph}{A Challenge for Inversion}{37}{lstnumber.-96.9}% 
+\contentsline {paragraph}{A Challenge for Abstraction}{37}{lstnumber.-99.4}% 
+\contentsline {subsection}{\numberline {4.6.3}Performance}{38}{subsection.4.6.3}% 
+\contentsline {section}{\numberline {4.7}Conclusions \& Future Work}{38}{section.4.7}% 
+\contentsline {paragraph}{Supporting structural changes.}{39}{section.4.7}% 
+\contentsline {paragraph}{Exploring new components.}{39}{section.4.7}% 
+\contentsline {paragraph}{Modeling diverse proof styles.}{39}{section.4.7}% 
+\contentsline {paragraph}{Improving user experience.}{39}{section.4.7}% 
+\contentsline {paragraph}{Handling version updates.}{39}{section.4.7}% 
+\contentsline {paragraph}{Isolating changes.}{40}{section.4.7}% 
+\contentsline {paragraph}{Supporting other proof assistants.}{40}{section.4.7}% 
+\contentsline {paragraph}{Applying patches.}{40}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Related Work}{40}{section.4.8}% 
+\contentsline {paragraph}{Proof Reuse}{40}{section.4.8}% 
+\contentsline {paragraph}{Proof Automation}{41}{section.4.8}% 
+\contentsline {paragraph}{Proof Engineering}{42}{section.4.8}% 
+\contentsline {paragraph}{Refactoring}{42}{section.4.8}% 
+\contentsline {paragraph}{Differencing \& Incremental Computation}{42}{section.4.8}% 
+\contentsline {paragraph}{Programming by Example}{42}{section.4.8}% 
+\contentsline {paragraph}{Program Repair}{43}{section.4.8}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Often, Practically}}{45}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Under the Hood}}{47}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {The Next Era}}{49}{chapter.7}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  7 MAR 2021 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  7 MAR 2021 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1649,37 +1649,14 @@ Package microtype Info: Character `013' is missing
 ] [7] [8
 
 
-] [9] [10
-
-
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 23
-6.
+5.
  (./uwthesis.toc)
 \tf@toc=\write5
 \openout5 = `uwthesis.toc'.
 
- [11] [12
-
-
-]
-Package tocbasic Info: character protrusion at lof deactivated on input line 23
-7.
- (./uwthesis.lof
-Overfull \hbox (2.19597pt too wide) in paragraph at lines 7--7
- \OT1/pplj/m/n/10.95 (-20) ence in terms that cor-re-sponds to a patch. []  
- []
-
-
-Overfull \hbox (13.81105pt too wide) in paragraph at lines 12--12
- \OT1/pplj/m/n/10.95 (-20) con-tain the same proof of a stronger lemma. []  
- []
-
-)
-\tf@lof=\write6
-\openout6 = `uwthesis.lof'.
-
- (./intro.tex [13] [14
+ (./intro.tex [9] [10
 
 
 ]
@@ -1699,17 +1676,17 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-) (./development.tex [15] [16
+) (./development.tex [11] [12
 
 
 ]
 chapter 2.
-) (./maintenance.tex [17] [18
+) (./maintenance.tex [13] [14
 
 
 ]
 chapter 3.
-) (./repair.tex [19] [20
+) (./repair.tex [15] [16
 
 
 ]
@@ -1719,7 +1696,7 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 52.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-[21]) (./repair/reimagined.tex [22]
+[17]) (./repair/reimagined.tex [18]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 31.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1734,12 +1711,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 31.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 38.
-) (./repair/sysintro.tex [23]
+) (./repair/sysintro.tex [19]
 (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [24] [25] [26]
+) [20] [21] [22]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 338.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
@@ -1747,22 +1724,22 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 338.
  (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) [27]) (./repair/casestudies.tex
-[28] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) [23]) (./repair/casestudies.tex
+[24] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[29]
+[25]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
- [30]
+ [26]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 316--318
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[31] (./repair/divide.tex) (./repair/divide.tex) [32] [33]) (./repair/core.tex
-[34]
-<repair/nat_ind.pdf, id=583, 391.4625pt x 200.75pt>
+[27] (./repair/divide.tex) (./repair/divide.tex) [28] [29]) (./repair/core.tex
+[30]
+<repair/nat_ind.pdf, id=555, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 154.
@@ -1770,59 +1747,59 @@ Package pdftex.def Info: repair/nat_ind.pdf  used on input line 154.
 
 Underfull \vbox (badness 1337) has occurred while \output is active []
 
- [35]
+ [31]
 Underfull \vbox (badness 1478) has occurred while \output is active []
 
- [36 <./repair/nat_ind.pdf>] [37]) (./repair/evaluation.tex
+ [32 <./repair/nat_ind.pdf>] [33]) (./repair/evaluation.tex
 Underfull \vbox (badness 2671) has occurred while \output is active []
 
- [38]
+ [34]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 46.
 
-[39]
+[35]
 Underfull \vbox (badness 1189) has occurred while \output is active []
 
- [40]
-[41]) (./repair/future.tex [42]
+ [36]
+[37]) (./repair/future.tex [38]
 Overfull \hbox (10.59421pt too wide) in paragraph at lines 69--76
 [] []\OT1/pplj/m/sc/10.95 (-20) i m -p r o v -i n g u s e r e x -p e -r i -e n 
 c e .[] \OT1/pplj/m/n/10.95 (-20) The ideal proof patch-ing tool should
  []
 
-[43]) (./repair/related.tex [44]
+[39]) (./repair/related.tex [40]
 Underfull \vbox (badness 1540) has occurred while \output is active []
 
- [45]
+ [41]
 Underfull \vbox (badness 1540) has occurred while \output is active []
 
- [46]))
-(./often.tex [47] [48
+ [42]))
+(./often.tex [43] [44
 
 
 ]
 chapter 5.
-) (./theory.tex [49] [50
+) (./theory.tex [45] [46
 
 
 ]
 chapter 6.
-) (./next.tex [51] [52
+) (./next.tex [47] [48
 
 
 ]
 chapter 7.
-) (./uwthesis.bbl [53] [54
+) (./uwthesis.bbl [49] [50
 
 
-] [55] [56]
+] [51] [52]
 Underfull \hbox (badness 1242) in paragraph at lines 195--200
 []\OT1/pplj/m/n/10.95 (+20) Benjamin Delaware, Steven Keuchel, Tom Schri-jvers,
  and
  []
 
-[57] [58] [59] [60]
+[53] [54] [55] [56]
 Underfull \hbox (badness 1852) in paragraph at lines 459--465
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -1846,25 +1823,25 @@ Underfull \hbox (badness 4805) in paragraph at lines 459--465
 c text-book, 2016.  Ver-sion 4.0.
  []
 
-[61] [62]) [63]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
+[57] [58]) [59]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 265.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 265.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
  ) 
 Here is how much of TeX's memory you used:
- 40544 strings out of 492609
- 758730 string characters out of 6129033
+ 40525 strings out of 492609
+ 758489 string characters out of 6129033
  1066695 words of memory out of 5000000
- 42560 multiletter control sequences out of 15000+600000
+ 42550 multiletter control sequences out of 15000+600000
  601873 words of font info for 595 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,10n,71p,9083b,1393s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1881,10 +1858,10 @@ st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (63 pages, 318256 bytes).
+Output written on uwthesis.pdf (59 pages, 316216 bytes).
 PDF statistics:
- 1247 PDF objects out of 1440 (max. 8388607)
- 1148 compressed objects within 12 object streams
- 603 named destinations out of 1000 (max. 500000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 1125 compressed objects within 12 object streams
+ 597 named destinations out of 1000 (max. 500000)
  64674 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -1,48 +1,8 @@
-%  ========================================================================
-%  Copyright (c) 1985 The University of Washington
-%
-%  Licensed under the Apache License, Version 2.0 (the "License");
-%  you may not use this file except in compliance with the License.
-%  You may obtain a copy of the License at
-%
-%      http://www.apache.org/licenses/LICENSE-2.0
-%
-%  Unless required by applicable law or agreed to in writing, software
-%  distributed under the License is distributed on an "AS IS" BASIS,
-%  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-%  See the License for the specific language governing permissions and
-%  limitations under the License.
-%  ========================================================================
-%
-
-% Documentation for University of Washington thesis LaTeX document class
-% by Jim Fox
-% fox@washington.edu
-%
-%    Revised 2020/02/24, added \caption()[]{} option.  No ToC.
-%
-%    Revised for version 2015/03/03 of uwthesis.cls
-%    Revised, 2016/11/22, for cleanup of sample copyright and title pages
-%
-%    This document is contained in a single file ONLY because
-%    I wanted to be able to distribute it easily.  A real thesis ought
-%    to be contained on many files (e.g., one for each chapter, at least).
-%
-%    To help you identify the files and sections in this large file
-%    I use the string '==========' to identify new files.
-%
-%    To help you ignore the unusual things I do with this sample document
-%    I try to use the notation
-%       
-%    % --- sample stuff only -----
-%    special stuff for my document, but you don't need it in your thesis
-%    % --- end-of-sample-stuff ---
-
-
-%    Printed in twoside style now that that's allowed
-%
- 
-\documentclass [11pt, proquest] {uwthesis}[2020/02/24]
+\documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,
+                footinclude=true,cleardoublepage=empty,abstractoff,%
+                BCOR=5mm,paper=letter,fontsize=11pt,letterpaper,%
+                american,%
+                ]{scrreprt}
  
 %
 % The following line would print the thesis in a postscript font 
@@ -59,22 +19,55 @@
 % --- sample stuff only -----
 % These format the sample code in this document
 
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{enumerate}
-\usepackage{xspace}
-\usepackage{listings}
-\usepackage{color,xcolor}
-\usepackage{mathpartir}
+\usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{xspace} % to get the spacing after macros right
+\usepackage{mparhack} % get marginpar right
+\usepackage{fixltx2e} % fixes some LaTeX stuff
+\usepackage[printonlyused,smaller]{acronym}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+\usepackage{listings}
+\usepackage[eulerchapternumbers,parts,linedheaders]{classicthesis}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage[shorthand,inference]{semantic}  % EnerJ proofs.
+\usepackage{supertabular}
+\usepackage{subcaption}
+\usepackage{mathpartir}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage{color,xcolor}
+\usepackage{chngcntr}
+\usepackage[update,prepend]{epstopdf}
+\usepackage{rotating}
+\usepackage{enumerate}
 \usepackage{siunitx}
 \usepackage[noend]{algorithm, algorithmic}
- \usepackage{flushend}
+\usepackage{flushend}
 %\hypersetup{draft} % TODO remove me before submission, works around bib hyperref issues for now
 
 \DeclareGraphicsExtensions{.pdf}
 
 \floatname{algorithm}{\footnotesize{Pseudocode:}}
+
+\hypersetup{
+    colorlinks=false,
+    hidelinks,
+    linktocpage=true,
+    breaklinks=true,
+    hypertexnames=true,
+    pdftitle={Proof Engineering Tools for a New Era},
+    pdfauthor={\textcopyright\ Talia Ringer, University of Washington},
+    pdfsubject={},
+    pdfkeywords={},
+    pdfcreator={pdfLaTeX},
+    pdfproducer={LaTeX with hyperref and classicthesis}
+}
 
 \lstdefinelanguage{coq}{
     keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with},
@@ -133,30 +126,60 @@
 \newcommand{\IFRETURN}[2]{\STATE \algorithmicif\ {#1}\ \algorithmicthen\ \textbf{return} {#2} }
 \newcommand{\RETURNIFELSE}[3]{\IF {#1} \THEN \STATE \textbf{return} {#2} \ELSE \STATE \textbf{return} {#3}}
 
-% ==========   Preliminary pages
-%
-% ( revised 2012 for electronic submission )
-%
-
-\prelimpages
+\definecolor{thecolor}{RGB}{38,90,18}
  
 %
 % ----- copyright and title pages
 %
-\Title{Proof Engineering Tools for a New Era}
-\Author{Talia Ringer}
-\Year{2021}
-\Program{Computer Science \& Engineering}
+% TITLE PAGE
+\begin{titlepage}
+	% if you want the titlepage to be centered, uncomment and fine-tune the line below (KOMA classes environment)
+	\begin{addmargin}[-1cm]{-3cm}
+    \begin{center}
+        \large
+        \hfill
+        \vfill
+        \begingroup
+            \color{thecolor}\spacedallcaps{Proof Engineering Tools} \\
+            \color{thecolor}\spacedallcaps{for a New Era} \\ \bigskip
+        \endgroup
+        \spacedlowsmallcaps{Talia Ringer}
+        \vfill
+        A dissertation \\
+        submitted in partial fulfillment of the \\
+        requirements for the degree of \\
+        \medskip
+        Doctor of Philosophy \\
+        \bigskip
+        University of Washington \\
+        \smallskip
+        2021
+        \vfill
+        Reading Committee: \\
+        \smallskip
+        TODO, Chair \\
+        \smallskip
+        TODO \\
+        \smallskip
+        TODO
+        \vfill
+        Program Authorized to Offer Degree: \\
+        \smallskip
+        Computer Science \& Engineering
+    \end{center}
+  \end{addmargin}
+\end{titlepage}
 
-\Chair{Name of Chairperson}{Title of Chair}{Department of Chair}
-\Signature{First committee member}
-\Signature{Next committee member}
-\Signature{etc}
 
-\copyrightpage
-
-\titlepage  
-
+% COPYRIGHT PAGE
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{20ex}
+    \textcopyright\ Copyright 2021 \\
+    \bigskip
+    Talia Ringer
+\end{center}
  
 %
 % ----- signature and quoteslip are gone
@@ -165,12 +188,47 @@
 %
 % ----- abstract
 %
+% ABSTRACT
+\cleardoublepage
+\thispagestyle{empty}
+\pdfbookmark[1]{Abstract}{Abstract}
 
+\begin{center}
+    \spacedlowsmallcaps{Abstract} \\
+    \bigskip
+    {\color{thecolor}
+    \spacedallcaps{Proof Engineering Tools} \\
+    \spacedallcaps{for a New Era} \\
+    }
+    \bigskip
+    Talia Ringer \\
+    \bigskip
+    Chairs of the Supervisory Committee: \\
+    TODO \\
+    Computer Science \& Engineering \\
+    \bigskip
+\end{center}
 
-\setcounter{page}{-1}
-\abstract{%
-This is my thesis.
-}
+Abstract will go here.
+
+%
+% ----- acknowledgments
+%
+% ACKS
+\pdfbookmark[1]{Acknowledgments}{acknowledgments}
+\chapter*{Acknowledgments}
+Dan, Zach, Derek, the Coq community, Valentin, my family, PLSE lab, Qi.
+
+% DEDICATION
+\thispagestyle{empty}
+%\phantomsection
+%\refstepcounter{dummy}
+\pdfbookmark[1]{Dedication}{Dedication}
+\vspace*{3cm}
+\chapter*{Dedication}
+\begin{center}
+    To my parents. Hope this fits on your fridge.
+\end{center}
  
 %
 % ----- contents & etc.
@@ -180,27 +238,7 @@ This is my thesis.
 %\listoftables  % I have no tables
  
 %
-% ----- acknowledgments
-%
-\acknowledgments{% \vskip2pc
-  Dan, Zach, Derek, the Coq community, Valentin, my family, PLSE lab, Qi.
-}
-
-%
-% ----- dedication
-%
-\dedication{\begin{center}To my parents. Hope this fits on your fridge.\end{center}}
-
-%
 % end of the preliminary pages
- 
- 
- 
-%
-% ==========      Text pages
-%
-
-\textpages
  
 % ========== Chapter 1
  
@@ -217,8 +255,6 @@ This is my thesis.
 \input{theory}
 
 \input{next}
-
-\printendnotes
 
 %
 % ==========   Bibliography

@@ -3,21 +3,6 @@
                 BCOR=5mm,paper=letter,fontsize=11pt,letterpaper,%
                 american,%
                 ]{scrreprt}
- 
-%
-% The following line would print the thesis in a postscript font 
-
-% \usepackage{natbib}
-% \def\bibpreamble{\protect\addcontentsline{toc}{chapter}{Bibliography}}
-
-\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
- 
-
-% ==========   Local defs and mods
-%
-
-% --- sample stuff only -----
-% These format the sample code in this document
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -102,7 +87,9 @@
 
 
 \begin{document}
-
+\raggedbottom
+\pagenumbering{roman}
+\pagestyle{plain}
 
 \newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
 \newcommand{\sysname}{\textsc{Pumpkin}\xspace}
@@ -212,6 +199,7 @@
 Abstract will go here.
 
 % DEDICATION
+\cleardoublepage
 \thispagestyle{empty}
 %\phantomsection
 %\refstepcounter{dummy}
@@ -220,26 +208,41 @@ Abstract will go here.
 \begin{center}
     To my parents. Hope this fits on your fridge.
 \end{center}
+ 
+\cleardoublepage
 
-%
-% ----- acknowledgments
-%
+% CONTENTS
+\renewcommand{\contentsname}{Contents}
+\pagestyle{scrheadings}
+\setcounter{tocdepth}{1} % <-- 2 includes up to subsections in the ToC
+\setcounter{secnumdepth}{3} % <-- 3 numbers up to subsubsections
+\manualmark
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\phantomsection
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+
+\tableofcontents
+
+
+% Resturn to ordinary header marks.
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\clearpage
+
+\cleardoublepage
+
+
 % ACKS
+\cleardoublepage
 \pdfbookmark[1]{Acknowledgments}{acknowledgments}
 \chapter*{Acknowledgments}
-Dan, Zach, Derek, the Coq community, Valentin, my family, PLSE lab, Qi.
- 
-%
-% ----- contents & etc.
-%
-\tableofcontents
-%\listoffigures
-%\listoftables  % I have no tables
- 
-%
-% end of the preliminary pages
- 
-% ========== Chapter 1
+Dan, Zach, Derek, the Coq community, coauthors, Valentin, my family, PLSE lab, Qi.
+
+\pagenumbering{arabic}
+\cleardoublepage
+
+% TODO can use "parts" here instead of just chapters
  
 \input{intro}
 

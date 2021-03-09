@@ -4,7 +4,6 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--to sort, need author or key in hints
-Warning--to sort, need author or key in coq
 Warning--to sort, need author or key in proofgeneral
 Warning--to sort, need author or key in travis
 Warning--to sort, need author or key in lean
@@ -13,46 +12,48 @@ Warning--to sort, need author or key in isabellehol
 Warning--to sort, need author or key in decidable
 Warning--to sort, need author or key in HaRe
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--empty journal in degree-of-interest
 Warning--empty booktitle in pons00
-You've used 93 entries,
+Warning--there's a number but no volume in Wiedijk2009
+You've used 151 entries,
             2118 wiz_defined-function locations,
-            1040 strings with 21233 characters,
-and the built_in function-call counts, 35284 in all, are:
-= -- 3598
-> -- 1501
-< -- 55
-+ -- 590
-- -- 488
-* -- 2222
-:= -- 5388
-add.period$ -- 297
-call.type$ -- 93
-change.case$ -- 500
+            1360 strings with 31338 characters,
+and the built_in function-call counts, 57742 in all, are:
+= -- 5899
+> -- 2516
+< -- 85
++ -- 998
+- -- 830
+* -- 3734
+:= -- 8926
+add.period$ -- 487
+call.type$ -- 151
+change.case$ -- 842
 chr.to.int$ -- 0
-cite$ -- 104
-duplicate$ -- 1519
-empty$ -- 2907
-format.name$ -- 488
-if$ -- 7904
+cite$ -- 163
+duplicate$ -- 2418
+empty$ -- 4645
+format.name$ -- 830
+if$ -- 12798
 int.to.chr$ -- 0
-int.to.str$ -- 93
-missing$ -- 77
-newline$ -- 440
-num.names$ -- 198
-pop$ -- 661
+int.to.str$ -- 151
+missing$ -- 122
+newline$ -- 722
+num.names$ -- 318
+pop$ -- 1055
 preamble$ -- 1
-purify$ -- 411
+purify$ -- 696
 quote$ -- 0
-skip$ -- 1236
+skip$ -- 1944
 stack$ -- 0
-substring$ -- 2060
-swap$ -- 525
-text.length$ -- 55
+substring$ -- 3457
+swap$ -- 815
+text.length$ -- 85
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 362
-warning$ -- 11
-while$ -- 343
-width$ -- 95
-write$ -- 1062
-(There were 11 warnings)
+type$ -- 594
+warning$ -- 12
+while$ -- 563
+width$ -- 154
+write$ -- 1731
+(There were 12 warnings)

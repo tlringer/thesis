@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  7 MAR 2021 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 MAR 2021 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,6 +1072,11 @@ Package csquotes Info: ... configuration file loaded successfully.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 ))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+\everycr=\toks56
+\minrowclearance=\skip119
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
@@ -1105,14 +1110,14 @@ Package grfext Info: Graphics extension search list:
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 \c@r@tfl@t=\count166
-\rotFPtop=\skip119
-\rotFPbot=\skip120
+\rotFPtop=\skip120
+\rotFPbot=\skip121
 \rot@float@box=\box55
-\rot@mess@toks=\toks56
+\rot@mess@toks=\toks57
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks57
+\@enLab=\toks58
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -1138,12 +1143,12 @@ Package: expl3 2019-05-28 L3 programming layer (code)
 \l_tmpb_dim=\dimen278
 \g_tmpa_dim=\dimen279
 \g_tmpb_dim=\dimen280
-\c_zero_skip=\skip121
-\c_max_skip=\skip122
-\l_tmpa_skip=\skip123
-\l_tmpb_skip=\skip124
-\g_tmpa_skip=\skip125
-\g_tmpb_skip=\skip126
+\c_zero_skip=\skip122
+\c_max_skip=\skip123
+\l_tmpa_skip=\skip124
+\l_tmpb_skip=\skip125
+\g_tmpa_skip=\skip126
+\g_tmpb_skip=\skip127
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
@@ -1310,8 +1315,8 @@ Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_unit_prefix_base_int=\count338
 \l__siunitx_unit_prefix_gram_int=\count339
 \l__siunitx_number_product_int=\count340
-\c__siunitx_one_fill_skip=\skip127
-\l__siunitx_table_unit_align_skip=\skip128
+\c__siunitx_one_fill_skip=\skip128
+\l__siunitx_table_unit_align_skip=\skip129
 \l__siunitx_table_exponent_dim=\dimen310
 \l__siunitx_table_integer_dim=\dimen311
 \l__siunitx_table_mantissa_dim=\dimen312
@@ -1325,8 +1330,8 @@ Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_post_box=\box79
 \l__siunitx_table_mantissa_box=\box80
 \l__siunitx_table_result_box=\box81
-\l__siunitx_table_number_align_skip=\skip129
-\l__siunitx_table_text_align_skip=\skip130
+\l__siunitx_table_number_align_skip=\skip130
+\l__siunitx_table_text_align_skip=\skip131
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 ))
@@ -1337,12 +1342,12 @@ nment
 (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count341
-\float@exts=\toks58
+\float@exts=\toks59
 \float@box=\box82
-\@float@everytoks=\toks59
+\@float@everytoks=\toks60
 \@floatcapt=\box83
 )
-\@float@every@algorithm=\toks60
+\@float@every@algorithm=\toks61
 \c@algorithm=\count342
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
@@ -1351,14 +1356,14 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@line=\count344
 \c@ALC@rem=\count345
 \c@ALC@depth=\count346
-\ALC@tlm=\skip131
-\algorithmicindent=\skip132
+\ALC@tlm=\skip132
+\algorithmicindent=\skip133
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sttools/flushend.sty
 Package: flushend 2017/03/27 v3.3 Balancing columns in twocolumn mode
-\flushend@@lastskip@a=\skip133
-\flushend@@lastskip@b=\skip134
-\flushend@@lastskip@c=\skip135
+\flushend@@lastskip@a=\skip134
+\flushend@@lastskip@b=\skip135
+\flushend@@lastskip@c=\skip136
 \flushend@@penalty@a=\count347
 \flushend@@lastkern@a=\dimen319
 \var@@temp@spread=\dimen320
@@ -1370,8 +1375,24 @@ Package: flushend 2017/03/27 v3.3 Balancing columns in twocolumn mode
 \flushend@@tempbox@c=\box87
 \@viper=\box88
 \hold@viper=\box89
-\atColsBreak=\toks61
-\atColsEnd=\toks62
+\atColsBreak=\toks62
+\atColsEnd=\toks63
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+Package cleveref Info: `listings' support loaded on input line 3131.
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 55.
 Package hyperref Info: Option `linktocpage' set `true' on input line 55.
@@ -1383,28 +1404,28 @@ Package csquotes Info: ... none found.
 (./uwthesis.aux)
 \openout1 = `uwthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 89.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 104
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 104.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1414,9 +1435,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count348
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
 
 (./uwthesis.out) (./uwthesis.out)
 \@outlinefile=\write4
@@ -1428,7 +1449,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message with `\usepackage{bookmark}'
-(scrreprt)           before \begin{document} on input line 89.
+(scrreprt)           before \begin{document} on input line 104.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1447,15 +1468,15 @@ e 164.
 \scratchbox=\box91
 \nofMPsegments=\count351
 \nofMParguments=\count352
-\everyMPshowfont=\toks63
+\everyMPshowfont=\toks64
 \MPscratchCnt=\count353
 \MPscratchDim=\dimen324
 \MPnumerator=\count354
 \makeMPintoPDFobject=\count355
-\everyMPtoPDFconversion=\toks64
+\everyMPtoPDFconversion=\toks65
 )
 \c@lstlisting=\count356
-LaTeX Info: Redefining \microtypecontext on input line 89.
+LaTeX Info: Redefining \microtypecontext on input line 104.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1556,51 +1577,51 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 89.
-
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 104
+.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 89.
-
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 104
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 89.
-
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 104
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 89.
-
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 104
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 89.
+(Font)              scaled to size 11.40997pt on input line 104.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 89.
+(Font)              scaled to size 8.33606pt on input line 104.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 89.
+(Font)              scaled to size 6.25204pt on input line 104.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 89.
+(Font)              scaled to size 11.40997pt on input line 104.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 89.
+(Font)              scaled to size 8.33606pt on input line 104.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 89.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 89.
-
+(Font)              scaled to size 6.25204pt on input line 104.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 104
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1628,13 +1649,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 166
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 226
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 166.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 226.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 166.
+(Font)              using `OMS/cmsy/m/n' instead on input line 226.
 
 [3] [4
 
@@ -1650,20 +1671,20 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 22
+Package tocbasic Info: character protrusion at toc deactivated on input line 28
 4.
  (./uwthesis.toc)
 \tf@toc=\write5
 \openout5 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 231.
+(Font)              scaled to size 10.42007pt on input line 291.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 231.
+(Font)              scaled to size 7.91925pt on input line 291.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 231.
+(Font)              scaled to size 10.42007pt on input line 291.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 231.
+(Font)              scaled to size 7.91925pt on input line 291.
  [9
 
 
@@ -1709,7 +1730,155 @@ chapter 2.
 
 ]
 chapter 3.
-) (./repair.tex [7] [8
+(./maintenance/introduction.tex [7]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 51.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 51.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 51.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 51.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 51.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 51.
+) (./maintenance/plugin.tex
+Package microtype Info: Character `013' is missing
+(microtype)             in font `OT1/pplj/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+ [8]
+<maintenance/fig/architecture.png, id=225, 963.6pt x 542.025pt>
+File: maintenance/fig/architecture.png Graphic file (type png)
+<use maintenance/fig/architecture.png>
+Package pdftex.def Info: maintenance/fig/architecture.png  used on input line 6
+5.
+(pdftex.def)             Requested size: 268.80103pt x 151.19528pt.
+ [9]
+Overfull \hbox (18.63603pt too wide) in paragraph at lines 103--110
+[] []\OT1/pplj/m/sc/10.95 (-20) a n e x -a m -p l e : d e f i n -i n g a n d e 
+x -t e n d -i n g a n i n -d u c -t i v e t y p e[] \OT1/pplj/m/n/10.95 (-20) T
+o
+ []
+
+[10 <./maintenance/fig/architecture.png (PNG copy)>] [11]
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 229.
+
+Overfull \hbox (151.40047pt too wide) in paragraph at lines 227--246
+ [][] 
+ []
+
+
+Overfull \hbox (65.57079pt too wide) in paragraph at lines 253--272
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+[][][]|\OT1/pplj/m/n/10.95 (+20) Num-ber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) of to-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) ses-sions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) in-ter-ac-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) ses-sions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) tive proof
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\OT1/pplj/m/n/10.95 (+20) sub-ses-sions
+ []
+
+
+Overfull \hbox (0.99925pt too wide) in paragraph at lines 278--287
+[] []\OT1/pplj/m/sc/10.95 (-20) m e t a -d a t a f o r t w o c h a l -l e n g e
+ s[] \OT1/pplj/m/n/10.95 (-20) The meta-data be-yond the state
+ []
+
+[12]) (./maintenance/study.tex
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 7.
+ [13] [14] [15]
+<maintenance/fig/example-graph.png, id=335, 729.47531pt x 405.76593pt>
+File: maintenance/fig/example-graph.png Graphic file (type png)
+<use maintenance/fig/example-graph.png>
+Package pdftex.def Info: maintenance/fig/example-graph.png  used on input line 
+211.
+(pdftex.def)             Requested size: 235.19897pt x 130.826pt.
+ [16] [17 <./maintenance/fig/example-graph.png>]
+Overfull \hbox (2.8685pt too wide) in paragraph at lines 309--314
+\OT1/pplj/m/n/10.95 (-20) and spec-i-fi-ca-tions, and whether those changes re-
+veal pat-terns amenable
+ []
+
+[18] [19] [20]
+Overfull \hbox (172.67001pt too wide) in paragraph at lines 454--544
+[][] 
+ []
+
+<maintenance/fig/diffs1.png, id=417, 360.34625pt x 324.21124pt>
+File: maintenance/fig/diffs1.png Graphic file (type png)
+<use maintenance/fig/diffs1.png>
+Package pdftex.def Info: maintenance/fig/diffs1.png  used on input line 554.
+(pdftex.def)             Requested size: 96.43243pt x 86.7615pt.
+<maintenance/fig/diffs2.png, id=418, 500.87125pt x 371.3875pt>
+File: maintenance/fig/diffs2.png Graphic file (type png)
+<use maintenance/fig/diffs2.png>
+Package pdftex.def Info: maintenance/fig/diffs2.png  used on input line 559.
+(pdftex.def)             Requested size: 134.06512pt x 99.40892pt.
+[21 <./maintenance/fig/diffs1.png> <./maintenance/fig/diffs2.png>] [22]
+<maintenance/fig/refactor.png, id=437, 254.9525pt x 233.87375pt>
+File: maintenance/fig/refactor.png Graphic file (type png)
+<use maintenance/fig/refactor.png>
+Package pdftex.def Info: maintenance/fig/refactor.png  used on input line 668.
+(pdftex.def)             Requested size: 63.84082pt x 58.56107pt.
+
+[23 <./maintenance/fig/refactor.png>]
+<maintenance/fig/patch.png, id=450, 660.4675pt x 397.485pt>
+File: maintenance/fig/patch.png Graphic file (type png)
+<use maintenance/fig/patch.png>
+Package pdftex.def Info: maintenance/fig/patch.png  used on input line 749.
+(pdftex.def)             Requested size: 157.92041pt x 95.0405pt.
+ [24 <./maintenance/fig/patch.png>]
+Overfull \hbox (0.67659pt too wide) in paragraph at lines 790--798
+[] []\OT1/pplj/m/sc/10.95 (-20) l e s s o n s f o r a u -t o m a -t i o n[] \OT
+1/pplj/m/n/10.95 (-20) Au-toma-tion may help with these sorts
+ []
+
+<maintenance/fig/bad.png, id=462, 455.7025pt x 162.6075pt>
+File: maintenance/fig/bad.png Graphic file (type png)
+<use maintenance/fig/bad.png>
+Package pdftex.def Info: maintenance/fig/bad.png  used on input line 824.
+(pdftex.def)             Requested size: 117.60205pt x 41.96184pt.
+[25 <./maintenance/fig/bad.png>] [26]) (./maintenance/discussion.tex [27]
+[28] [29] [30] [31]) (./maintenance/related.tex [32]
+Overfull \hbox (24.99403pt too wide) in paragraph at lines 56--72
+[] []\OT1/pplj/m/sc/10.95 (-20) i d e n -t i -f y -i n g , c l a s -s i -f y -i
+ n g , & v i -s u -a l -i z -i n g c h a n g e s[] \OT1/pplj/m/n/10.95 (-20) Th
+e \OT1/pplj/m/sc/10.95 (-20) REPLica
+ []
+
+)) (./repair.tex [33] [34
 
 
 ]
@@ -1719,156 +1888,137 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 52.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-[9]) (./repair/reimagined.tex
-Package microtype Info: Character `013' is missing
-(microtype)             in font `OT1/pplj/m/sc/10'.
-(microtype)             Ignoring protrusion settings for this character.
- [10]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 31.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 31.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 31.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 31.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 31.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 31.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+[35]) (./repair/reimagined.tex [36]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 38.
-) (./repair/sysintro.tex [11]
+) (./repair/sysintro.tex [37]
 (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [12] [13] [14]
+) [38] [39] [40]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 338.
-LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 338.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 338.
  (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) [15]) (./repair/casestudies.tex
-[16] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) [41]) (./repair/casestudies.tex
+[42] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[17]
+[43]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
- [18]
+ [44]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 316--318
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[19] (./repair/divide.tex) (./repair/divide.tex) [20] [21]) (./repair/core.tex
-[22]
-<repair/nat_ind.pdf, id=570, 391.4625pt x 200.75pt>
+[45] (./repair/divide.tex) (./repair/divide.tex) [46] [47]) (./repair/core.tex
+[48]
+<repair/nat_ind.pdf, id=1028, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 154.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
- [23] [24 <./repair/nat_ind.pdf>] [25]) (./repair/evaluation.tex [26]
+ [49] [50 <./repair/nat_ind.pdf>] [51]) (./repair/evaluation.tex [52]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 46.
 
-[27] [28] [29]) (./repair/future.tex [30]
+[53] [54] [55] [56]) (./repair/future.tex
 Overfull \hbox (10.59421pt too wide) in paragraph at lines 69--76
 [] []\OT1/pplj/m/sc/10.95 (-20) i m -p r o v -i n g u s e r e x -p e -r i -e n 
 c e .[] \OT1/pplj/m/n/10.95 (-20) The ideal proof patch-ing tool should
  []
 
-[31]) (./repair/related.tex [32] [33] [34])) (./often.tex [35] [36
+[57]) (./repair/related.tex [58] [59] [60])) (./often.tex [61] [62
 
 
 ]
 chapter 5.
-) (./theory.tex [37] [38
+) (./theory.tex [63] [64
 
 
 ]
 chapter 6.
-) (./next.tex [39] [40
+) (./next.tex [65] [66
 
 
 ]
 chapter 7.
-) (./uwthesis.bbl [41] [42
+) (./uwthesis.bbl [67] [68
 
 
-] [43] [44]
-Underfull \hbox (badness 1242) in paragraph at lines 195--200
-[]\OT1/pplj/m/n/10.95 (+20) Benjamin Delaware, Steven Keuchel, Tom Schri-jvers,
- and
+] [69] [70] [71] [72] [73] [74] [75] [76]
+Underfull \hbox (badness 1454) in paragraph at lines 613--618
+[]\OT1/pplj/m/n/10.95 (+20) Tamara Mun-zner, Fran-cois Guim-bretiere, Ser-dar T
+asiran,
  []
 
-[45] [46] [47] [48]
-Underfull \hbox (badness 1852) in paragraph at lines 459--465
+[77] [78]
+Underfull \hbox (badness 1163) in paragraph at lines 699--705
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 459--465
-\OT1/pplj/m/n/10.95 (+20) Cas-ingh-ino, Marco Gaboardi, Michael Green-berg, Cat
-[]alin
- []
-
-
-Underfull \hbox (badness 4582) in paragraph at lines 459--465
+Underfull \hbox (badness 3396) in paragraph at lines 699--705
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 459--465
+Underfull \hbox (badness 3657) in paragraph at lines 699--705
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
-[49] [50]) [51]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 268.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 268.
+
+LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
+(Font)              using `OMS/pplj/m/n' instead on input line 721.
+
+[79] [80] [81]) [82]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 268.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 268.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 268.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
  ) 
 Here is how much of TeX's memory you used:
- 40609 strings out of 492609
- 759782 string characters out of 6129033
- 1067695 words of memory out of 5000000
- 42595 multiletter control sequences out of 15000+600000
- 610757 words of font info for 628 fonts, out of 8000000 for 9000
+ 42808 strings out of 492609
+ 805398 string characters out of 6129033
+ 1131695 words of memory out of 5000000
+ 44501 multiletter control sequences out of 15000+600000
+ 615648 words of font info for 680 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,14n,71p,9083b,1393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,14n,71p,9083b,2337s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/
-fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
-ype1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (61 pages, 318791 bytes).
+xlive/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
+/palatino/uplri8a.pfb>
+Output written on uwthesis.pdf (92 pages, 612047 bytes).
 PDF statistics:
- 1244 PDF objects out of 1440 (max. 8388607)
- 1147 compressed objects within 12 object streams
- 609 named destinations out of 1000 (max. 500000)
- 79530 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1795 PDF objects out of 2073 (max. 8388607)
+ 1648 compressed objects within 17 object streams
+ 808 named destinations out of 1000 (max. 500000)
+ 80133 words of extra memory for PDF output out of 89155 (max. 10000000)
 

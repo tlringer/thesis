@@ -1,0 +1,104 @@
+\section{Related Work}
+
+We consider work on analysis of development processes
+and on identifying, classifying, and visualizing changes, in
+proof engineering and in software engineering more generally.
+
+\paragraph{Analysis of Development Processes}
+
+\toolname instruments Coq's REPL to collect fine-grained data on
+proof engineering development processes.
+Outside of the context of ITPs, \toolname is not the first
+tool to collect data at this level of granularity.
+Mylar~\cite{mylar} monitors Java development activity 
+and uses it to visualize codebases to make them easier
+to navigate.
+The Solstice~\cite{MusluBEN2015} plugin instruments the IDE to
+make program analysis possible at this level of granularity.
+Several studies have used video 
+recordings~\cite{Robillard2004, ko-explore}, sometimes combined with 
+IDE instrumentation~\cite{comprehension},
+to study how programmers develop and change code.
+\toolname brings fine-grained analysis to an ITP,
+taking advantage of an interaction model that is especially common for ITPs
+to build instrumentation that is minimally invasive, decoupled from the UI, 
+and captures all information that the user sends to the ITP.
+
+There have been a number of recent studies on the development 
+processes and productivity of proof engineers, drawing on sources like
+version control history~\cite{Andronick2012, Zhang2012, Staples2014},
+archives and libraries~\cite{Blanchette2015, Matichuk2015, Wiedijk2009,
+Aspinall2016},
+project logs~\cite{Andronick2012, Zhang2012}, 
+artifacts~\cite{Staples2013, Matichuk2015, Aspinall2016},
+meeting notes~\cite{Andronick2012, Zhang2012},
+and personal experiences~\cite{Bourke12, Woos2016}.
+Collecting proof development data 
+at the level of user interaction was, until now, 
+an unaddressed opportunity to understand 
+proof development processes~\cite{PGL-045}.
+This has not gone unnoticed.
+For example, one study~\cite{Zhang2012} of proof development processes cited 
+lack of precision of version control data as a limitation in measuring 
+the size and timing of changes.
+Another study~\cite{Matichuk2015} assumed that proof development is linear,
+but noted that this assumption did not reflect the interative
+nature of proof development (like that observed in Section~\ref{sec:pat4}).
+The study cited this assumption as a threat to validity, and noted
+that this threat is inherent to using an artifact with complete 
+proofs.
+\toolname collects more precise data that may alleviate or eliminate
+these limitations and provide insights into proof development processes 
+that other  techniques lack access to.
+
+\paragraph{Identifying, Classifying, \& Visualizing Changes}
+
+The \toolname analyses identify, classify, and visualize changes to proof
+scripts and terms over time in the context of an ITP.
+There is a wealth of work along these lines beyond the context of an ITP.
+Type-directed diffing~\cite{Miraldo2017}
+describes a general framework
+for representing changes in algebraic datatypes.
+Existing work~\cite{code-decay} analyzes a large repository and collects 
+data on changes to quantify code decay.
+TreeJuxtaposer~\cite{tree-comparison} implements structural comparison of
+very large trees, which can be used to represent both terms and proofs
+scripts. 
+Previous work has also studied the types of mistakes that users make
+while writing their code~\cite{causes-of-error}.
+Adapting these techniques to Coq and applying them to analyze
+the collected data may help improve the \toolname analyses to reveal
+new insights, even using the same data.
+
+There is some work along these lines within the context of an ITP.
+The proof repair tool \textsc{PUMPKIN PATCH}~\cite{Ringer2018} 
+is evaluated on case studies identified using a manual change analysis of 
+Git commits.
+The proof refactoring and repair tool Chick~\cite{robert2018} includes 
+a classification of changes to terms and types in a language similar to Gallina.
+This classification is similar to ours in that it includes adding, moving,
+or deleting information, though it does not include any breakdown of
+changes in content or syntax.
+The IDEs CoqIDE~\cite{proof-diff}, CoqPIE~\cite{Roe2016},
+and PeaCoq~\cite{peacoq} all have support for visualizing changes
+during development. 
+The machine learning tool Proverbot9001~\cite{proverbot9001}
+uses similar search trees to the ones that we use to visualize proof state,
+though without information on intermediate failing steps.
+
+The novelty in the \toolname analyses, classifications, and visualizations
+come from the fact that these are run on, derived from, and produced using
+remote logs of live ITP development data.
+The changes themselves and the patterns that they reveal suggest
+ways to continue to improve and to measure the improvement of
+proof engineering tools.
+
+% TODO peruse related work \forall of these
+% TODO peruse citing articles \forall of these
+
+\iffalse
+% Talia: IMO not necessary after all; sorry
+These include degree-of-interest trees,~\cite{degree-of-interest}
+fish-eye views,~\cite{fish-eye} and menus.~\cite{menus}
+\fi
+

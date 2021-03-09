@@ -26,7 +26,7 @@
 \usepackage{mathpartir}
 \usepackage{csquotes}
 \usepackage{amsfonts}
-\usepackage{color,xcolor}
+\usepackage{color,xcolor,colortbl}
 \usepackage{chngcntr}
 \usepackage[update,prepend]{epstopdf}
 \usepackage{rotating}
@@ -34,7 +34,7 @@
 \usepackage{siunitx}
 \usepackage[noend]{algorithm, algorithmic}
 \usepackage{flushend}
-%\hypersetup{draft} % TODO remove me before submission, works around bib hyperref issues for now
+\usepackage{cleveref}
 
 \DeclareGraphicsExtensions{.pdf}
 
@@ -55,8 +55,9 @@
 }
 
 \lstdefinelanguage{coq}{
-    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with},
-    basicstyle=\footnotesize\ttfamily,
+    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with, Qed, Defined,
+Parameter, Axiom},
+    basicstyle=\linespread{0.95}\small\ttfamily,
     keywordstyle=\color{blue},
     commentstyle=\itshape\rmfamily,
     showstringspaces=false,
@@ -69,9 +70,23 @@
     escapeinside={(@}{@)},
 }
 
+\lstdefinelanguage{ocaml}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
 \lstdefinelanguage{ml4}{
     keywords={let, rec, val, if, else, match, with, then, in},
-    basicstyle=\footnotesize\ttfamily,
+    basicstyle=\linespread{0.95}\small\ttfamily,
     keywordstyle=\color{blue},
     commentstyle=\itshape\rmfamily,
     showstringspaces=false,
@@ -112,6 +127,51 @@
 \newcommand{\inv}{^{\raisebox{0.2ex}{$\scriptscriptstyle-1$}}}
 \newcommand{\IFRETURN}[2]{\STATE \algorithmicif\ {#1}\ \algorithmicthen\ \textbf{return} {#2} }
 \newcommand{\RETURNIFELSE}[3]{\IF {#1} \THEN \STATE \textbf{return} {#2} \ELSE \STATE \textbf{return} {#3}}
+
+% TODO color consistency etc
+
+% acronyms
+\newcommand\toolname{\textsc{REPLica}\xspace}
+
+% highlighting with boxes
+\newcommand{\codediff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{green!25}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\indpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{blue!30}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\refactorpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{orange!60}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\repairpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{purple!70}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\pddpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{gray!30}{\reducedstrut#1\/}%
+  \endgroup
+}
+
+% Table highlighting
+\newcommand{\indpat}[1]{\cellcolor{blue!30}{#1}} % extending inductive types
+\newcommand{\refactorpat}[1]{\cellcolor{orange!60}{#1}} % refactoring
+\newcommand{\repairpat}[1]{\cellcolor{purple!70}{#1}} % repair
+\newcommand{\pddpat}[1]{\cellcolor{gray!20}{#1}} % proof-driven development
+\newcommand{\na}[1]{\cellcolor{black!50}{#1}} % N/A
+\newcommand{\todo}[1]{}
 
 \definecolor{thecolor}{RGB}{38,90,18}
  
@@ -237,7 +297,14 @@ Abstract will go here.
 \cleardoublepage
 \pdfbookmark[1]{Acknowledgments}{acknowledgments}
 \chapter*{Acknowledgments}
-Dan, Zach, Derek, the Coq community, coauthors, Valentin, my family, PLSE lab, Qi.
+I've always believed the acknowledgments section to be one of the most important parts of a paper.
+But there's never enough room to thank everyone I want to thank.
+Now that I have the chance---where do I begin?
+
+Dan, Jeff Foster, Zach, Derek, Alexandra, the Coq community (Emilio J. Gallego Arias, Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
+Matthieu, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas), coauthors, Valentin, my family, PLSE lab (especially Chandra oh my gosh), 
+UCSD Programming Systems group, Misha,
+PL Twitter, students, Qi.
 
 \pagenumbering{arabic}
 \cleardoublepage

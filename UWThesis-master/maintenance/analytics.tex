@@ -1,0 +1,292 @@
+%% For double-blind review submission, w/o CCS and ACM Reference (max submission space)
+\documentclass[sigplan,screen]{acmart}\settopmatter{}
+%% For double-blind review submission, w/ CCS and ACM Reference
+%\documentclass[sigplan,review,anonymous]{acmart}\settopmatter{printfolios=true}
+%% For single-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[sigplan,review]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For single-blind review submission, w/ CCS and ACM Reference
+%\documentclass[sigplan,review]{acmart}\settopmatter{printfolios=true}
+%% For final camera-ready submission, w/ required CCS and ACM Reference
+%\documentclass[sigplan]{acmart}\settopmatter{}
+
+%%% The following is specific to CPP '20 and the paper
+%%% 'REPLICA: REPL Instrumentation for Coq Analysis'
+%%% by Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
+%%%
+\setcopyright{acmlicensed}
+\acmPrice{15.00}
+\acmDOI{10.1145/3372885.3373823}
+\acmYear{2020}
+\copyrightyear{2020}
+\acmISBN{978-1-4503-7097-4/20/01}
+\acmConference[CPP '20]{Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs}{January 20--21, 2020}{New Orleans, LA, USA}
+\acmBooktitle{Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP '20), January 20--21, 2020, New Orleans, LA, USA}
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%\citestyle{acmauthoryear}  %% For author/year citations
+%\citestyle{acmnumeric}     %% For numeric citations
+%\setcitestyle{nosort}      %% With 'acmnumeric', to disable automatic
+                            %% sorting of references within a single citation;
+                            %% e.g., \cite{Smith99,Carpenter05,Baker12}
+                            %% rendered as [14,5,2] rather than [2,5,14].
+%\setcitesyle{nocompress}   %% With 'acmnumeric', to disable automatic
+                            %% compression of sequential references within a
+                            %% single citation;
+                            %% e.g., \cite{Baker12,Baker14,Baker16}
+                            %% rendered as [2,3,4] rather than [2-4].
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Note: Authors migrating a paper from traditional SIGPLAN
+%% proceedings format to PACMPL format must update the
+%% '\documentclass' and topmatter commands above; see
+%% 'acmart-pacmpl-template.tex'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+\usepackage{xspace}
+\usepackage{cleveref}
+\usepackage{color, colortbl}
+\usepackage{csquotes}
+
+\lstdefinelanguage{coq}{
+    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with, Qed, Defined,
+Parameter, Axiom},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstdefinelanguage{ocaml}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
+\lstset{language=coq} % default
+
+% acronyms
+\newcommand\toolname{\textsc{REPLica}\xspace}
+
+% highlighting with boxes
+\newcommand{\reducedstrut}{\vrule width 0pt height .9\ht\strutbox depth .9\dp\strutbox\relax}
+\newcommand{\codediff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{green!25}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\indpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{blue!30}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\refactorpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{orange!60}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\repairpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{purple!70}{\reducedstrut#1\/}%
+  \endgroup
+}
+\newcommand{\pddpatt}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%  
+  \colorbox{gray!30}{\reducedstrut#1\/}%
+  \endgroup
+}
+
+% Table highlighting
+\newcommand{\indpat}[1]{\cellcolor{blue!30}{#1}} % extending inductive types
+\newcommand{\refactorpat}[1]{\cellcolor{orange!60}{#1}} % refactoring
+\newcommand{\repairpat}[1]{\cellcolor{purple!70}{#1}} % repair
+\newcommand{\pddpat}[1]{\cellcolor{gray!20}{#1}} % proof-driven development
+\newcommand{\na}[1]{\cellcolor{black!50}{#1}} % N/A
+\newcommand{\todo}[1]{}
+%% \newcommand{\todo}[1]{\colorbox{red!50}{#1}}
+
+\usepackage{balance}
+\begin{document}
+
+%% Title information
+\title[\toolname]{\toolname: REPL Instrumentation for Coq Analysis}         %% [Short Title] is optional;
+                                        %% when present, will be used in
+                                        %% header instead of Full Title.
+%\titlenote{with title note}             %% \titlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+%\subtitle{Subtitle}                     %% \subtitle is optional
+%\subtitlenote{with subtitle note}       %% \subtitlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+
+
+%% Author information
+%% Contents and number of authors suppressed with 'anonymous'.
+%% Each author should be introduced by \author, followed by
+%% \authornote (optional), \orcid (optional), \affiliation, and
+%% \email.
+%% An author may have multiple affiliations and/or emails; repeat the
+%% appropriate command.
+%% Many elements are not rendered, but should be provided for metadata
+%% extraction tools.
+
+\author{Talia Ringer}
+\affiliation{
+  \institution{University of Washington}
+  \country{USA}                    %% \country is recommended
+}
+\email{tringer@cs.washington.edu}          %% \email is recommended
+
+\author{Alex Sanchez-Stern}
+\affiliation{
+  \institution{University of California, San Diego}
+  \country{USA}                    %% \country is recommended
+}
+\email{alexss@eng.ucsd.edu}          %% \email is recommended
+
+\author{Dan Grossman}
+\affiliation{
+  \institution{University of Washington}
+  \country{USA}                    %% \country is recommended
+}
+\email{djg@cs.washington.edu}          %% \email is recommended
+
+\author{Sorin Lerner}
+\affiliation{
+  \institution{University of California, San Diego}
+  \country{USA}                    %% \country is recommended
+}
+\email{lerner@cs.ucsd.edu}          %% \email is recommended
+
+
+%% Abstract
+%% Note: \begin{abstract}...\end{abstract} environment must come
+%% before \maketitle command
+\begin{abstract}
+Proof engineering tools make it easier to develop
+and maintain large systems verified using interactive theorem provers. 
+Developing useful proof engineering tools hinges on
+understanding the development processes of proof engineers.
+This paper breaks down one barrier to achieving that understanding: 
+remotely collecting granular data on proof developments as they happen.
+
+We have built a tool called \toolname that instruments Coq's interaction model
+in order to collect fine-grained data on proof developments.
+It is decoupled from the user interface, and designed in a way that
+generalizes to other interactive theorem provers with similar 
+interaction models.
+
+We have used \toolname to collect data over the span of a month from a group
+of intermediate through expert proof engineers---enough data to reconstruct
+hundreds of interactive sessions.
+The data reveals patterns in fixing proofs and in changing
+programs and specifications useful for the improvement of proof
+engineering tools.
+Our experiences conducting this study suggest design considerations
+both at the level of the study and at the level of the interactive theorem
+prover that can facilitate future studies of this kind.
+\end{abstract}
+
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003120.10003121.10003122.10003334</concept_id>
+<concept_desc>Human-centered computing~User studies</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011006</concept_id>
+<concept_desc>Software and its engineering~Software notations and tools</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011074.10011099.10011692</concept_id>
+<concept_desc>Software and its engineering~Formal software verification</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011074.10011111.10011113</concept_id>
+<concept_desc>Software and its engineering~Software evolution</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~User studies}
+\ccsdesc[500]{Software and its engineering~Software notations and tools}
+\ccsdesc[500]{Software and its engineering~Formal software verification}
+\ccsdesc[500]{Software and its engineering~Software evolution}
+
+%% Keywords
+%% comma separated list
+\keywords{proof engineering, user interaction, study methodologies}  %% \keywords are mandatory in final camera-ready submission
+
+
+%% \maketitle
+%% Note: \maketitle command must come after title commands, author
+%% commands, abstract environment, Computing Classification System
+%% environment and commands, and keywords command.
+\maketitle
+
+\input{introduction}
+\input{plugin}
+\input{study}
+\input{discussion}
+\input{related}
+
+%% Acknowledgments
+\begin{acks}
+We thank Emilio J. Gallego Arias for designing the initial version of the hooks
+into the REPL that enabled this study.
+We thank Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
+Vincent Laporte, and Th\'{e}o Zimmermann for help improving, finalizing,
+and merging the hooks for distribution in Coq 8.10.
+We thank Jason Gross for alpha testing \toolname before the study began
+and reporting bugs.
+We thank Dimitar Bounov, Martin Kellogg, Chandrakana Nandi, Doug Woos,
+and Karl Palmskog for help writing and filming the study recruitment video.
+We thank all who participated in the study or helped distribute
+promotional materials.
+We thank the UW PLSE lab, the UCSD Programming Systems group,
+and the anonymous reviewers for feedback.
+This material is based upon work supported by the \grantsponsor{GS100000001}{National Science Foundation}{http://dx.doi.org/10.13039/100000001} Graduate Research Fellowship under Grant No.~\grantnum{GS100000001}{DGE-1256082}. Any opinions, findings, and conclusions or recommendations expressedin this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+\end{acks}
+
+
+%% Bibliography
+\balance
+\bibliography{analytics.bib}
+
+
+%% Appendix
+%\appendix
+%\section{Appendix}
+
+%Text of appendix \ldots
+
+\end{document}

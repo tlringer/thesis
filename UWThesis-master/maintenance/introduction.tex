@@ -1,0 +1,97 @@
+\section{Introduction}
+
+The days of verifying only toy programs in interactive theorem provers
+(ITPs) are long gone.
+The last two decades have marked a new era of verification at scale,
+reaching large and critical systems like operating system kernels,
+machine learning systems, compilers, web browser kernels, and 
+file systems---an era of \textit{proof engineering}~\cite{PGL-045}.
+
+In order to build useful proof engineering tools,
+it is crucial to understand the development processes of proof engineers.
+Data on the changes to programs, specifications, 
+and proofs that proof engineers make,
+for example, can guide tools for proof maintenance to support
+features that matter.
+
+Existing studies of proof development analyze coarse-grained data like
+version control history, archives, project logs, or %static code 
+artifacts, or build on personal experiences~\cite{Andronick2012, Zhang2012,
+Staples2014, Blanchette2015, Staples2013, Matichuk2015, Wiedijk2009,
+Aspinall2016, Bourke12, Woos2016}.
+These methods, while valuable, lack access to information on
+many of the processes that lead to the final artifact.
+For example, proof engineers may not plan for failing proofs or debugging
+statements to reach the final artifact, and may not even commit
+these to version control.
+In addition, data from version control may include
+many changes at once, which
+can be difficult to separate into smaller changes~\cite{Ringer2018}.
+Personal experiences may not be enough to supplement
+this, as proof engineers may forget or omit 
+details like \emph{how} they discovered bugs in specifications.
+
+This paper shows how to instrument the ITP Coq~\cite{coq} to remotely collect
+fine-grained data on proof development processes.
+We have built a Coq plugin (Section~\ref{sec:plugin}) called \toolname 
+(REPL Instrumentation for Coq Analysis) that listens to the Read Eval Print
+Loop (REPL)---a simple loop that all user interaction with Coq passes through---to collect data that the proof engineer sends to Coq during development.
+This includes data difficult to obtain from other sources, like failed
+proof attempts and incremental changes to definitions. 
+\toolname collects this data regardless of the proof engineer's 
+user interface (UI), and it does so in a way that
+generalizes to other REPL-based ITPs like 
+HOL~\cite{hol-interact, hol4-interact} and Idris~\cite{idris-repl}.
+
+We have used \toolname to collect a month's worth of data on 
+the proof developments of 8 intermediate to expert Coq users
+(Section~\ref{sec:deployment}). The collected data is granular enough to
+allow us to reconstruct hundreds of interactive sessions.
+It is publicly available with the proof engineers' 
+consent.\footnote{\url{http://github.com/uwplse/analytics-data}}
+
+We have visualized and analyzed this data to classify hundreds of fixes 
+to broken proofs (Section~\ref{sec:q1}) and changes to programs and 
+specifications (Section~\ref{sec:q2}).
+Our analysis suggests that our users most often fixed proofs by stepping 
+up above those proofs in the UI and fixing something else, like a specification.
+It reveals four patterns of changes to programs and specifications
+among those users particularly amenable to automation: 
+incremental development of inductive types, repetitive refactoring
+of identifiers, repetitive repair of specifications, and interactive
+discovery of programs and specifications.
+Both the changes we have classified and our findings about them suggest
+natural ways to improve existing proof engineering tools like 
+machine learning tools for proofs~\cite{proverbot9001,
+Komendantskaya2012, Heras2013, Nagashima2018, Gauthier2017b, Yang2019}, 
+proof refactoring tools~\cite{wibergh2019, WhitesidePhD, Dietrich2013,
+adams2015, Bourke12, Roe2016, robert2018},
+and proof repair tools~\cite{Ringer2018, robert2018}.
+
+Our experiences collecting and analyzing this data have helped
+us to identify three wishes (Section~\ref{sec:discussion}), 
+the fulfillment of which may facilitate future studies of proof development:
+better abstraction of user environments, more information
+about user interaction, and more users.
+We discuss important design considerations
+for both study designers and ITP designers who hope to grant each wish.
+
+In summary, we contribute the following:
+
+\begin{enumerate}
+    \item We build \toolname, a tool that instruments Coq to collect
+    fine-grained proof development data.
+    \item We use \toolname to collect and publish a month's 
+    worth of data on 8 proof engineers' developments in Coq.
+    \item We visualize and analyze the data to classify hundreds of fixes
+    to broken proofs and changes to programs and specifications.
+    \item We discuss the patterns behind these changes and how they suggest
+    improvements to proof engineering tools.
+    \item We discuss design considerations both for the study designer and
+    for the ITP designer that can facilitate future studies of 
+    proof development.
+\end{enumerate}
+
+
+
+

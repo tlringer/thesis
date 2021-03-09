@@ -1,0 +1,279 @@
+\section{Conclusions \& Future Work}
+\label{sec:discussion}
+
+We built \toolname, a Coq plugin that remotely collects fine-grained
+proof development data in a way that is decoupled from the UI.
+Using \toolname, we collected data on changes to proofs, programs,
+and specifications at a level of granularity not previously
+seen for an ITP.
+Visualization and analysis of this data revealed evidence in our study
+population of development patterns, at times confirming folk knowledge---like 
+that discovering  the correct program or specification was often a
+conversation with the proof itself, even for experts---and providing
+useful insights and benchmarks for tools.
+
+The infrastructure that we have built and the data that we have collected
+using it are publicly available.
+We hope to see it used as benchmarks for the improvement of
+proof engineering tools, and as data for future studies.
+We hope to see the infrastructure that we have built reused or
+adapted to other ITPs for future studies.
+
+\paragraph{Three Wishes}
+We would like for our experiences building and using \toolname
+to help the community conduct more studies of proof development processes.
+We thus conclude with three wishes, the fulfillment of which would help
+address the challenges that we encountered along the way:
+
+\begin{enumerate}
+\item Better abstraction of user environments (Section~\ref{sec:wish1})
+\item More information about user interaction (Section~\ref{sec:wish2})
+\item More users (Section~\ref{sec:wish3})
+\end{enumerate}
+We discuss how to grant each wish both at the level of study design
+and at the level of ITP design in order to facilitate future studies of 
+this kind.
+
+\subsection{Wish: Better Abstraction of User Environments}
+\label{sec:wish1}
+
+In order to cast as broad of a net as possible for potential users, we
+designed \toolname to be independent of the UI, 
+the version of Coq, and the build system. Coq's plugin infrastructure
+and interaction model offered a promising avenue for this,
+%Together with the Coq developers, we were able to extend the plugin API
+%with a hook to listen to Coq's REPL.
+and Coq's resource file infrastructure meant that users could load the plugin
+universally with just one LOC in one location.
+All of this gave us the impression of independence from the details of
+the UI, ITP version, and build system.
+
+We later found that, while this infrastructure was useful,
+the impression of total independence was somewhat of an illusion; 
+all of these details mattered.
+In particular, while \toolname itself was UI-independent, the analyses
+that we ran did not achieve full independence.
+For example, we found that depending on the version of Coq and what
+event triggers a cancellation, different UIs use different mechanisms
+for cancellation (recall these mechanisms from Section~\ref{sec:plugin}). 
+Our analyses had to deal with all of these mechanisms.
+
+In addition, partway through the study, we received a bug 
+report that noted that one common build system for Coq compiles files by
+default using a flag that disables loading the Coq resource file.
+This is one possible explanation for the lack of data that some users sent.
+To remedy this, we must ask future users of \toolname
+to compile all of their Coq projects without using this flag;
+we have updated the \toolname documentation to account for this. 
+
+\paragraph{The Study Designer} Without help from the ITP designer,
+the study designer cannot achieve full abstraction from these details.
+The study designer may, however, work around the lack of full abstraction.
+We recommend testing the study infrastructure with 
+many different environments for many different scenarios.
+It may help to identify potential users early and survey their
+development environments before even beginning to test,
+covering likely scenarios in advance.
+It may also help to build in a short trial period on the final users
+before the final data collection begins, thereby
+covering their particular development environments.
+The latter has the additional benefit of giving the study designer
+time to discover and discuss with users possible confounding
+variables for analysis, like development style or project phase.
+
+We had the foresight to test \toolname with \lstinline{coqtop}, 
+Proof General, and CoqIDE, but we did not anticipate User 5's custom
+UI, which treated failures differently from the others.
+We also did not anticipate the behavior of different
+build systems on Coq's resource file, since we tested only one
+build configuration.
+We could have avoided both of these issues with our recommendations.
+Instead, we had to work around both issues after deployment.
+
+\paragraph{The ITP Designer} 
+Most of the power to grant this wish is in the hands of the ITP designer.
+Full abstraction over development environments may not be possible, but the
+ITP designer may design the interaction model with this as a goal.
+The REPL and state machine already strive for this---and come
+close to achieving it---but their current implementations in Coq fall short.
+Improvements to abstraction here may be minimal, like
+providing fewer mechanisms for UIs to accomplish the same thing,
+or providing a way to guarantee that a plugin is always loaded for all
+build systems.
+
+For a more radical approach, the ITP designer may look to other 
+interaction models.
+For example, Isabelle/HOL has recently moved away from its REPL,
+instead favoring the Prover IDE (PIDE)~\cite{Wenzel2012} framework
+as its interaction model.
+With PIDE, UIs and ITPs communicate using an asynchronous protocol to manage
+versions of a document~\cite{Wenzel2014}, annotating the document with 
+new information when it becomes available~\cite{Wenzel2012}.
+Personal communication suggests that there is an ongoing attempt to 
+to centralize functionality like the build system into PIDE.
+While centralization may limit the potential for customization by different
+UIs, it may make studies of fine-grained proof development data easier,
+since the instrumentation may occur at a higher level,
+guaranteeing more uniform interaction.
+
+\subsection{Wish: More Information about User Interaction}
+\label{sec:wish2}
+
+By observing state machine messages through the plugin API,
+we were able to log data at high enough granularity to reconstruct
+hundreds of interactive sessions. This helped us identify incremental
+changes to tactics and terms that are difficult to gather from other sources.
+
+The hooks that we designed together with the Coq developers, however, 
+were not perfect.
+There was no way for us to use those hooks to listen to the messages
+that Coq sent back to the UI.
+Making this change would have required modifying Coq again, and by the time
+we realized this, it was too late.
+Listening to those responses would have given us more insight into user
+behavior.
+It would have also helped us distinguish between failures and stepping up.
+Instead, we had to distinguish between these using IDE-specific heuristics,
+which left us with no automatic way to distinguish failures from stepping up
+for User 5's custom UI.
+
+We also found that once we had collected granular data, 
+analyzing it was sometimes difficult. 
+For example, sometimes users defined a term, stepped up and changed
+an earlier term, then stepped back down and changed the original term.
+For such a change, our visualization script constructed 3 consecutive commits;
+to determine that the original term had changed, we had to look at 
+the difference between the 1st and the 3rd commits.
+Sometimes, changes occurred over tens of commits, or over several sessions.
+Thus, manual analysis of changes for Q2 was tedious, and involved
+not only inspecting thousands of diffs but also understanding each 
+session well enough to track term information over time.
+
+We considered automating the analysis for Q2, but we found
+automatically classifying changes in terms to be prohibitively difficult.
+While part of this was due to the inherent difficulty of the problem,
+part of this was also due to missing information:
+When the UI backed up to an earlier state, we did not know what was below 
+the command or tactic corresponding to that state in the file. 
+So, when a user copied and pasted a term and then modified both versions,
+or made several changes at once to a term before stepping 
+down below it, even manually deciding whether it was the same term 
+that had changed or a new term entirely proved to be difficult.
+
+\paragraph{The Study Designer}
+To grant this wish, we recommend that the study designer run a beta test, complete with analysis, as we did---and that they do so early,
+as we did not.
+That way, there is enough time to address needs discovered during testing,
+for example by communicating with ITP designers.
+It may also help to use multiple methods for data collection,
+for example by augmenting the collected data with information from the IDE
+to track the state of definitions in the file below the location to
+which the user has stepped.
+
+The beta testing phase was extremely useful to us; as a result we
+reworked our server infrastructure to receive and easily
+analyze larger amounts of data, and we tested data backup
+infrastructure and network failure resilience code. 
+We also discovered and reported a 
+bug\footnote{\url{http://github.com/coq/coq/issues/8989}} in CoqIDE and 
+Proof General that had made it impossible for us to tell which 
+sessions corresponded to which files; the fix was marked as critical 
+and backported to Coq 8.9, so only the analyses for Users 5 (custom UI), 8 (Coq 8.8), and 10 (Coq 8.8) were impacted.
+However, while we discovered the lack of response information in the plugin hooks
+during this period, we did not have enough time to coordinate with Coq developers on
+changes to the hooks. 
+Leaving more time between testing and the final study would have helped us.
+
+\paragraph{The ITP Designer} 
+By implementing hooks like the one that we helped implement for Coq,
+the ITP designer can make it easier for researchers to study 
+proof development processes. 
+To grant this wish, we recommend that these hooks expose not just 
+request information, but also response information, 
+especially error information.
+
+Augmenting the interaction model with more information
+about the file may also help.
+For example,
+the interaction model could expose a simple and uniform way for UIs
+to track that a definition in a new state corresponds to a definition 
+in a previous state (that is, that the user did not remove that
+definition from the file and replace it with something entirely new). 
+This could make it much simpler for an analysis to track changes to a definition over time,
+and to choose the granularity with which to inspect changes.
+There is some tension between this and the wish for abstraction from
+Section~\ref{sec:wish1}, but it may be worth weighing the tradeoffs.
+
+\subsection{Wish: More Users}
+\label{sec:wish3}
+
+We attempted to recruit a large and representative sample of Coq proof
+engineers.
+In our attempts to recruit users, we contacted programming
+languages groups at several universities that were known to be working
+with Coq, and emailed \lstinline{coq-club} with our project
+pitch. We included a promotional video in the hopes of
+attracting as many users as possible.
+
+In the end, however, we were able to recruit only 12 users,
+all of whom were intermediate through expert users with at least two years
+of Coq experience. We received interactive sessions for just 8 of 12
+of these users. While this data was rich and granular, with just 8 users,
+we were not able to reach broad conclusions about proof engineers more generally.
+
+Part of this was likely due to the demographics of the
+community: Compared to other programming environments,
+Coq has only a small number of users,
+many of whom have or are pursuing graduate degrees.
+However, part of this may have been due to
+deterrents in our screening process, or poor incentives for our users.
+
+\paragraph{The Study Designer}
+The study designer may fulfill this in part by casting as broad of a net
+as possible, carefully considering any deterrents in screening criteria.
+It may help to use welcoming language to encourage potential users
+who are unsure if they qualify.
+To reach beginner users, it may help to recruit students.
+To reach a more international audience, it may help to distribute
+promotional materials and consent forms in multiple languages.
+It may also help to consider incentives that appeal to proof engineers.
+However, until the ITP user community grows significantly, it will continue 
+to be difficult to conduct large-scale studies of proof engineering.
+
+We reached users from different institutions, but
+most of our users had similar levels of expertise. We suspect that this was
+in part because we asked for users to have at least a year of 
+experience using Coq, so as to avoid mixing in data from
+users learning Coq for the first time.
+We also required fluency in English to ensure that users understood
+the consent forms.
+Both of these may have deterred users.
+One potential user who did not participate noted that we did not make
+it clear in our recruitment materials that data from occasional rather
+than frequent Coq users was still useful to us.
+The same potential user noted that we could have engaged more
+with community leaders, thereby giving others in the community
+more incentive to participate.
+We considered monetary incentives, but ultimately decided they were less
+tempting to the community than appeals to improving tools.
+Perhaps this was misguided or attracted a more advanced population,
+and perhaps we could have considered a different incentive.
+
+\paragraph{The ITP Designer}
+The ITP designer may help reduce the costs of participating in these studies. 
+We suspect that the primary gains here will come from continuing to 
+break down barriers to using plugins and other outside tooling. 
+Some examples of this include reducing the brittleness of plugin APIs 
+over time, improving build and distribution systems, making it possible 
+to prove that a plugin does not interact with a kernel in a way that 
+could compromise soundness of the system, 
+and providing more support for users who port proof developments
+and tools between ITP versions.
+
+Of course, continuing to improve the ITP itself may continue 
+to expand the community to reach more users. 
+This may cause a positive feedback loop, helping to collect more data 
+in order to drive further improvements to the ITP, in turn continuing to help
+the community grow.
+
+

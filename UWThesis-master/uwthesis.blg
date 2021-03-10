@@ -3,40 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-Warning--I didn't find a database entry for "stdlib"
-Warning--I didn't find a database entry for "emiliodom"
-Warning--I didn't find a database entry for "adamchlipala"
-Warning--I didn't find a database entry for "mcbride"
-Warning--I didn't find a database entry for "Williams2017"
-Warning--I didn't find a database entry for "ko2016programming"
-Warning--I didn't find a database entry for "dagand2014transporting"
-Warning--I didn't find a database entry for "hstocoqv"
-Warning--I didn't find a database entry for "univalent2013homotopy"
-Warning--I didn't find a database entry for "tabareau2017equivalences"
-Warning--I didn't find a database entry for "bernardy2012proofs"
-Warning--I didn't find a database entry for "Timany2015FirstST"
-Warning--I didn't find a database entry for "boutillier:tel-01054723"
-Warning--I didn't find a database entry for "Dagand:2013:CTO:2591370.2591396"
-Warning--I didn't find a database entry for "ko2013relational"
-Warning--I didn't find a database entry for "dagand2017essence"
-Warning--I didn't find a database entry for "magaud2000changing"
-Warning--I didn't find a database entry for "barthe2001type"
-Warning--I didn't find a database entry for "magaud2003changing"
-Warning--I didn't find a database entry for "huffman2013lifting"
-Warning--I didn't find a database entry for "zimmermann2015automatic"
-Warning--I didn't find a database entry for "cohen:hal-01414881"
-Warning--I didn't find a database entry for "cohen2016cubical"
-Warning--I didn't find a database entry for "felty1994generalization"
-Warning--I didn't find a database entry for "caplan1995logical"
-Warning--I didn't find a database entry for "pons2000generalization"
-Warning--I didn't find a database entry for "johnsen2004theorem"
-Warning--I didn't find a database entry for "Delaware:2011:PLT:2048066.2048113"
-Warning--I didn't find a database entry for "Delaware:2013:MLC:2429069.2429094"
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1803-08150"
-Warning--I didn't find a database entry for "McDonell:2016:GTS:2951913.2951914"
-Warning--I didn't find a database entry for "miltner2017synthesizing"
-Warning--I didn't find a database entry for "ringer2018adapting"
-Warning--I didn't find a database entry for "sozeau:equations"
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
 Warning--to sort, need author or key in travis
@@ -46,48 +12,49 @@ Warning--to sort, need author or key in isabellehol
 Warning--to sort, need author or key in decidable
 Warning--to sort, need author or key in HaRe
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty journal in degree-of-interest
 Warning--empty booktitle in pons00
 Warning--there's a number but no volume in Wiedijk2009
-You've used 151 entries,
+You've used 189 entries,
             2118 wiz_defined-function locations,
-            1401 strings with 32184 characters,
-and the built_in function-call counts, 57742 in all, are:
-= -- 5899
-> -- 2516
-< -- 85
-+ -- 998
-- -- 830
-* -- 3734
-:= -- 8926
-add.period$ -- 487
-call.type$ -- 151
-change.case$ -- 842
+            1532 strings with 37154 characters,
+and the built_in function-call counts, 71444 in all, are:
+= -- 7319
+> -- 3070
+< -- 103
++ -- 1222
+- -- 1010
+* -- 4555
+:= -- 11072
+add.period$ -- 621
+call.type$ -- 189
+change.case$ -- 1044
 chr.to.int$ -- 0
-cite$ -- 163
-duplicate$ -- 2418
-empty$ -- 4645
-format.name$ -- 830
-if$ -- 12798
+cite$ -- 202
+duplicate$ -- 3003
+empty$ -- 5779
+format.name$ -- 1010
+if$ -- 15837
 int.to.chr$ -- 0
-int.to.str$ -- 151
-missing$ -- 122
-newline$ -- 722
-num.names$ -- 318
-pop$ -- 1055
+int.to.str$ -- 189
+missing$ -- 154
+newline$ -- 915
+num.names$ -- 396
+pop$ -- 1317
 preamble$ -- 1
-purify$ -- 696
+purify$ -- 861
 quote$ -- 0
-skip$ -- 1944
+skip$ -- 2387
 stack$ -- 0
-substring$ -- 3457
-swap$ -- 815
-text.length$ -- 85
+substring$ -- 4259
+swap$ -- 1005
+text.length$ -- 103
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 594
-warning$ -- 12
-while$ -- 563
-width$ -- 154
-write$ -- 1731
-(There were 46 warnings)
+type$ -- 744
+warning$ -- 13
+while$ -- 699
+width$ -- 192
+write$ -- 2173
+(There were 13 warnings)

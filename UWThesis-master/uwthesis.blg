@@ -3,6 +3,40 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
+Warning--I didn't find a database entry for "stdlib"
+Warning--I didn't find a database entry for "emiliodom"
+Warning--I didn't find a database entry for "adamchlipala"
+Warning--I didn't find a database entry for "mcbride"
+Warning--I didn't find a database entry for "Williams2017"
+Warning--I didn't find a database entry for "ko2016programming"
+Warning--I didn't find a database entry for "dagand2014transporting"
+Warning--I didn't find a database entry for "hstocoqv"
+Warning--I didn't find a database entry for "univalent2013homotopy"
+Warning--I didn't find a database entry for "tabareau2017equivalences"
+Warning--I didn't find a database entry for "bernardy2012proofs"
+Warning--I didn't find a database entry for "Timany2015FirstST"
+Warning--I didn't find a database entry for "boutillier:tel-01054723"
+Warning--I didn't find a database entry for "Dagand:2013:CTO:2591370.2591396"
+Warning--I didn't find a database entry for "ko2013relational"
+Warning--I didn't find a database entry for "dagand2017essence"
+Warning--I didn't find a database entry for "magaud2000changing"
+Warning--I didn't find a database entry for "barthe2001type"
+Warning--I didn't find a database entry for "magaud2003changing"
+Warning--I didn't find a database entry for "huffman2013lifting"
+Warning--I didn't find a database entry for "zimmermann2015automatic"
+Warning--I didn't find a database entry for "cohen:hal-01414881"
+Warning--I didn't find a database entry for "cohen2016cubical"
+Warning--I didn't find a database entry for "felty1994generalization"
+Warning--I didn't find a database entry for "caplan1995logical"
+Warning--I didn't find a database entry for "pons2000generalization"
+Warning--I didn't find a database entry for "johnsen2004theorem"
+Warning--I didn't find a database entry for "Delaware:2011:PLT:2048066.2048113"
+Warning--I didn't find a database entry for "Delaware:2013:MLC:2429069.2429094"
+Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1803-08150"
+Warning--I didn't find a database entry for "McDonell:2016:GTS:2951913.2951914"
+Warning--I didn't find a database entry for "miltner2017synthesizing"
+Warning--I didn't find a database entry for "ringer2018adapting"
+Warning--I didn't find a database entry for "sozeau:equations"
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
 Warning--to sort, need author or key in travis
@@ -17,7 +51,7 @@ Warning--empty booktitle in pons00
 Warning--there's a number but no volume in Wiedijk2009
 You've used 151 entries,
             2118 wiz_defined-function locations,
-            1360 strings with 31338 characters,
+            1401 strings with 32184 characters,
 and the built_in function-call counts, 57742 in all, are:
 = -- 5899
 > -- 2516
@@ -56,4 +90,4 @@ warning$ -- 12
 while$ -- 563
 width$ -- 154
 write$ -- 1731
-(There were 12 warnings)
+(There were 46 warnings)

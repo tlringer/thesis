@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 MAR 2021 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 MAR 2021 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -968,53 +968,24 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip111
 \dth@everypar=\toks48
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/semantic/semantic.sty
-Package: semantic 2003/10/28 v2.0(epsilon) 
-
-Semantic Package v2.0(epsilon) [2003/10/28]
-CVSId: $Id: semantic.dtx,v 1.11 2003/10/28 13:45:57 turtle Exp $
-\c@@@conflict=\count154
-Loading features: 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/semantic/ligature.sty
-\@pushedtoks=\toks49
-\@seentoks=\toks50
-)
- math mode ligatures,
-(/usr/local/texlive/2019/texmf-dist/tex/latex/semantic/shrthand.sty)
- short hands,
-(/usr/local/texlive/2019/texmf-dist/tex/latex/semantic/infernce.sty
-\@@tempa=\toks51
-\@@tempb=\toks52
-\@@pSpace=\skip112
-\@@pEnd=\skip113
-\@@nSpace=\skip114
-\@@aLineBox=\box47
-)
- inference rules,
-and general definitions.
-
-\@@maxwidth=\dimen256
-\@@pLineBox=\box48
-\@@cBox=\box49
-\@@pBox=\box50
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count155
-\ST@wd=\dimen257
-\ST@rightskip=\skip115
-\ST@leftskip=\skip116
-\ST@parfillskip=\skip117
-\ST@pageleft=\dimen258
-\ST@headht=\dimen259
-\ST@tailht=\dimen260
-\ST@pagesofar=\dimen261
-\ST@pboxht=\dimen262
-\ST@lineht=\dimen263
-\ST@stretchht=\dimen264
-\ST@prevht=\dimen265
-\ST@toadd=\dimen266
-\ST@dimen=\dimen267
-\ST@pbox=\box51
+\c@tracingst=\count154
+\ST@wd=\dimen256
+\ST@rightskip=\skip112
+\ST@leftskip=\skip113
+\ST@parfillskip=\skip114
+\ST@pageleft=\dimen257
+\ST@headht=\dimen258
+\ST@tailht=\dimen259
+\ST@pagesofar=\dimen260
+\ST@pboxht=\dimen261
+\ST@lineht=\dimen262
+\ST@stretchht=\dimen263
+\ST@prevht=\dimen264
+\ST@toadd=\dimen265
+\ST@dimen=\dimen266
+\ST@pbox=\box47
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
@@ -1025,43 +996,43 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen268
-\captionmargin@=\dimen269
-\captionwidth=\dimen270
-\caption@tempdima=\dimen271
-\caption@indent=\dimen272
-\caption@parindent=\dimen273
-\caption@hangindent=\dimen274
+\captionmargin=\dimen267
+\captionmargin@=\dimen268
+\captionwidth=\dimen269
+\caption@tempdima=\dimen270
+\caption@indent=\dimen271
+\caption@parindent=\dimen272
+\caption@hangindent=\dimen273
 )
 Package caption Info: KOMA-Script document class.
-\c@caption@flags=\count156
-\c@ContinuedFloat=\count157
+\c@caption@flags=\count155
+\c@ContinuedFloat=\count156
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: supertabular package is loaded.
 )
-\c@subfigure=\count158
-\c@subtable=\count159
+\c@subfigure=\count157
+\c@subtable=\count158
 )
 (./mathpartir.sty
 Package: mathpartir 2015/11/06 version 1.3.1 Math Paragraph for Typesetting Inf
 erence Rules
-\mpr@andskip=\skip118
-\mpr@lista=\toks53
-\mpr@listb=\toks54
-\mpr@hlist=\box52
-\mpr@vlist=\box53
-\mpr@right=\box54
+\mpr@andskip=\skip115
+\mpr@lista=\toks49
+\mpr@listb=\toks50
+\mpr@hlist=\box48
+\mpr@vlist=\box49
+\mpr@right=\box50
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019/05/10 v5.2e context-sensitive quotations (JAW)
-\csq@reset=\count160
-\csq@gtype=\count161
-\csq@glevel=\count162
-\csq@qlevel=\count163
-\csq@maxlvl=\count164
-\csq@tshold=\count165
-\csq@ltx@everypar=\toks55
+\csq@reset=\count159
+\csq@gtype=\count160
+\csq@glevel=\count161
+\csq@qlevel=\count162
+\csq@maxlvl=\count163
+\csq@tshold=\count164
+\csq@ltx@everypar=\toks51
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019/05/10 v5.2e csquotes generic definitions (JAW)
@@ -1074,8 +1045,8 @@ File: csquotes.cfg
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
-\everycr=\toks56
-\minrowclearance=\skip119
+\everycr=\toks52
+\minrowclearance=\skip116
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
@@ -1109,15 +1080,15 @@ Package grfext Info: Graphics extension search list:
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count166
-\rotFPtop=\skip120
-\rotFPbot=\skip121
-\rot@float@box=\box55
-\rot@mess@toks=\toks57
+\c@r@tfl@t=\count165
+\rotFPtop=\skip117
+\rotFPbot=\skip118
+\rot@float@box=\box51
+\rot@mess@toks=\toks53
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks58
+\@enLab=\toks54
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -1125,213 +1096,213 @@ Package: expl3 2019-05-28 L3 programming layer (loader)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2019-05-28 L3 programming layer (code)
-\c_max_int=\count167
-\l_tmpa_int=\count168
-\l_tmpb_int=\count169
-\g_tmpa_int=\count170
-\g_tmpb_int=\count171
-\g__kernel_prg_map_int=\count172
-\c__ior_term_ior=\count173
-\c_log_iow=\count174
-\l_iow_line_count_int=\count175
-\l__iow_line_target_int=\count176
-\l__iow_one_indent_int=\count177
-\l__iow_indent_int=\count178
-\c_zero_dim=\dimen275
-\c_max_dim=\dimen276
-\l_tmpa_dim=\dimen277
-\l_tmpb_dim=\dimen278
-\g_tmpa_dim=\dimen279
-\g_tmpb_dim=\dimen280
-\c_zero_skip=\skip122
-\c_max_skip=\skip123
-\l_tmpa_skip=\skip124
-\l_tmpb_skip=\skip125
-\g_tmpa_skip=\skip126
-\g_tmpb_skip=\skip127
+\c_max_int=\count166
+\l_tmpa_int=\count167
+\l_tmpb_int=\count168
+\g_tmpa_int=\count169
+\g_tmpb_int=\count170
+\g__kernel_prg_map_int=\count171
+\c__ior_term_ior=\count172
+\c_log_iow=\count173
+\l_iow_line_count_int=\count174
+\l__iow_line_target_int=\count175
+\l__iow_one_indent_int=\count176
+\l__iow_indent_int=\count177
+\c_zero_dim=\dimen274
+\c_max_dim=\dimen275
+\l_tmpa_dim=\dimen276
+\l_tmpb_dim=\dimen277
+\g_tmpa_dim=\dimen278
+\g_tmpb_dim=\dimen279
+\c_zero_skip=\skip119
+\c_max_skip=\skip120
+\l_tmpa_skip=\skip121
+\l_tmpb_skip=\skip122
+\g_tmpa_skip=\skip123
+\g_tmpb_skip=\skip124
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count179
-\l__intarray_loop_int=\count180
-\c__intarray_sp_dim=\dimen281
-\g__intarray_font_int=\count181
-\c__fp_leading_shift_int=\count182
-\c__fp_middle_shift_int=\count183
-\c__fp_trailing_shift_int=\count184
-\c__fp_big_leading_shift_int=\count185
-\c__fp_big_middle_shift_int=\count186
-\c__fp_big_trailing_shift_int=\count187
-\c__fp_Bigg_leading_shift_int=\count188
-\c__fp_Bigg_middle_shift_int=\count189
-\c__fp_Bigg_trailing_shift_int=\count190
-\c__kernel_randint_max_int=\count191
-\g__fp_array_int=\count192
-\l__fp_array_loop_int=\count193
-\l__sort_length_int=\count194
-\l__sort_min_int=\count195
-\l__sort_top_int=\count196
-\l__sort_max_int=\count197
-\l__sort_true_max_int=\count198
-\l__sort_block_int=\count199
-\l__sort_begin_int=\count266
-\l__sort_end_int=\count267
-\l__sort_A_int=\count268
-\l__sort_B_int=\count269
-\l__sort_C_int=\count270
-\l__tl_analysis_normal_int=\count271
-\l__tl_analysis_index_int=\count272
-\l__tl_analysis_nesting_int=\count273
-\l__tl_analysis_type_int=\count274
-\l__regex_internal_a_int=\count275
-\l__regex_internal_b_int=\count276
-\l__regex_internal_c_int=\count277
-\l__regex_balance_int=\count278
-\l__regex_group_level_int=\count279
-\l__regex_mode_int=\count280
-\c__regex_cs_in_class_mode_int=\count281
-\c__regex_cs_mode_int=\count282
-\l__regex_catcodes_int=\count283
-\l__regex_default_catcodes_int=\count284
-\c__regex_catcode_D_int=\count285
-\c__regex_catcode_S_int=\count286
-\c__regex_catcode_L_int=\count287
-\c__regex_catcode_O_int=\count288
-\c__regex_catcode_A_int=\count289
-\c__regex_all_catcodes_int=\count290
-\l__regex_show_lines_int=\count291
-\l__regex_min_state_int=\count292
-\l__regex_max_state_int=\count293
-\l__regex_left_state_int=\count294
-\l__regex_right_state_int=\count295
-\l__regex_capturing_group_int=\count296
-\l__regex_min_pos_int=\count297
-\l__regex_max_pos_int=\count298
-\l__regex_curr_pos_int=\count299
-\l__regex_start_pos_int=\count300
-\l__regex_success_pos_int=\count301
-\l__regex_curr_char_int=\count302
-\l__regex_curr_catcode_int=\count303
-\l__regex_last_char_int=\count304
-\l__regex_case_changed_char_int=\count305
-\l__regex_curr_state_int=\count306
-\l__regex_step_int=\count307
-\l__regex_min_active_int=\count308
-\l__regex_max_active_int=\count309
-\l__regex_replacement_csnames_int=\count310
-\l__regex_match_count_int=\count311
-\l__regex_min_submatch_int=\count312
-\l__regex_submatch_int=\count313
-\l__regex_zeroth_submatch_int=\count314
-\g__regex_trace_regex_int=\count315
-\c_empty_box=\box56
-\l_tmpa_box=\box57
-\l_tmpb_box=\box58
-\g_tmpa_box=\box59
-\g_tmpb_box=\box60
-\l__box_top_dim=\dimen282
-\l__box_bottom_dim=\dimen283
-\l__box_left_dim=\dimen284
-\l__box_right_dim=\dimen285
-\l__box_top_new_dim=\dimen286
-\l__box_bottom_new_dim=\dimen287
-\l__box_left_new_dim=\dimen288
-\l__box_right_new_dim=\dimen289
-\l__box_internal_box=\box61
-\l__coffin_internal_box=\box62
-\l__coffin_internal_dim=\dimen290
-\l__coffin_offset_x_dim=\dimen291
-\l__coffin_offset_y_dim=\dimen292
-\l__coffin_x_dim=\dimen293
-\l__coffin_y_dim=\dimen294
-\l__coffin_x_prime_dim=\dimen295
-\l__coffin_y_prime_dim=\dimen296
-\c_empty_coffin=\box63
-\l__coffin_aligned_coffin=\box64
-\l__coffin_aligned_internal_coffin=\box65
-\l_tmpa_coffin=\box66
-\l_tmpb_coffin=\box67
-\g_tmpa_coffin=\box68
-\g_tmpb_coffin=\box69
-\l__coffin_bounding_shift_dim=\dimen297
-\l__coffin_left_corner_dim=\dimen298
-\l__coffin_right_corner_dim=\dimen299
-\l__coffin_bottom_corner_dim=\dimen300
-\l__coffin_top_corner_dim=\dimen301
-\l__coffin_scaled_total_height_dim=\dimen302
-\l__coffin_scaled_width_dim=\dimen303
-\c__coffin_empty_coffin=\box70
-\l__coffin_display_coffin=\box71
-\l__coffin_display_coord_coffin=\box72
-\l__coffin_display_pole_coffin=\box73
-\l__coffin_display_offset_dim=\dimen304
-\l__coffin_display_x_dim=\dimen305
-\l__coffin_display_y_dim=\dimen306
+\l_keys_choice_int=\count178
+\l__intarray_loop_int=\count179
+\c__intarray_sp_dim=\dimen280
+\g__intarray_font_int=\count180
+\c__fp_leading_shift_int=\count181
+\c__fp_middle_shift_int=\count182
+\c__fp_trailing_shift_int=\count183
+\c__fp_big_leading_shift_int=\count184
+\c__fp_big_middle_shift_int=\count185
+\c__fp_big_trailing_shift_int=\count186
+\c__fp_Bigg_leading_shift_int=\count187
+\c__fp_Bigg_middle_shift_int=\count188
+\c__fp_Bigg_trailing_shift_int=\count189
+\c__kernel_randint_max_int=\count190
+\g__fp_array_int=\count191
+\l__fp_array_loop_int=\count192
+\l__sort_length_int=\count193
+\l__sort_min_int=\count194
+\l__sort_top_int=\count195
+\l__sort_max_int=\count196
+\l__sort_true_max_int=\count197
+\l__sort_block_int=\count198
+\l__sort_begin_int=\count199
+\l__sort_end_int=\count266
+\l__sort_A_int=\count267
+\l__sort_B_int=\count268
+\l__sort_C_int=\count269
+\l__tl_analysis_normal_int=\count270
+\l__tl_analysis_index_int=\count271
+\l__tl_analysis_nesting_int=\count272
+\l__tl_analysis_type_int=\count273
+\l__regex_internal_a_int=\count274
+\l__regex_internal_b_int=\count275
+\l__regex_internal_c_int=\count276
+\l__regex_balance_int=\count277
+\l__regex_group_level_int=\count278
+\l__regex_mode_int=\count279
+\c__regex_cs_in_class_mode_int=\count280
+\c__regex_cs_mode_int=\count281
+\l__regex_catcodes_int=\count282
+\l__regex_default_catcodes_int=\count283
+\c__regex_catcode_D_int=\count284
+\c__regex_catcode_S_int=\count285
+\c__regex_catcode_L_int=\count286
+\c__regex_catcode_O_int=\count287
+\c__regex_catcode_A_int=\count288
+\c__regex_all_catcodes_int=\count289
+\l__regex_show_lines_int=\count290
+\l__regex_min_state_int=\count291
+\l__regex_max_state_int=\count292
+\l__regex_left_state_int=\count293
+\l__regex_right_state_int=\count294
+\l__regex_capturing_group_int=\count295
+\l__regex_min_pos_int=\count296
+\l__regex_max_pos_int=\count297
+\l__regex_curr_pos_int=\count298
+\l__regex_start_pos_int=\count299
+\l__regex_success_pos_int=\count300
+\l__regex_curr_char_int=\count301
+\l__regex_curr_catcode_int=\count302
+\l__regex_last_char_int=\count303
+\l__regex_case_changed_char_int=\count304
+\l__regex_curr_state_int=\count305
+\l__regex_step_int=\count306
+\l__regex_min_active_int=\count307
+\l__regex_max_active_int=\count308
+\l__regex_replacement_csnames_int=\count309
+\l__regex_match_count_int=\count310
+\l__regex_min_submatch_int=\count311
+\l__regex_submatch_int=\count312
+\l__regex_zeroth_submatch_int=\count313
+\g__regex_trace_regex_int=\count314
+\c_empty_box=\box52
+\l_tmpa_box=\box53
+\l_tmpb_box=\box54
+\g_tmpa_box=\box55
+\g_tmpb_box=\box56
+\l__box_top_dim=\dimen281
+\l__box_bottom_dim=\dimen282
+\l__box_left_dim=\dimen283
+\l__box_right_dim=\dimen284
+\l__box_top_new_dim=\dimen285
+\l__box_bottom_new_dim=\dimen286
+\l__box_left_new_dim=\dimen287
+\l__box_right_new_dim=\dimen288
+\l__box_internal_box=\box57
+\l__coffin_internal_box=\box58
+\l__coffin_internal_dim=\dimen289
+\l__coffin_offset_x_dim=\dimen290
+\l__coffin_offset_y_dim=\dimen291
+\l__coffin_x_dim=\dimen292
+\l__coffin_y_dim=\dimen293
+\l__coffin_x_prime_dim=\dimen294
+\l__coffin_y_prime_dim=\dimen295
+\c_empty_coffin=\box59
+\l__coffin_aligned_coffin=\box60
+\l__coffin_aligned_internal_coffin=\box61
+\l_tmpa_coffin=\box62
+\l_tmpb_coffin=\box63
+\g_tmpa_coffin=\box64
+\g_tmpb_coffin=\box65
+\l__coffin_bounding_shift_dim=\dimen296
+\l__coffin_left_corner_dim=\dimen297
+\l__coffin_right_corner_dim=\dimen298
+\l__coffin_bottom_corner_dim=\dimen299
+\l__coffin_top_corner_dim=\dimen300
+\l__coffin_scaled_total_height_dim=\dimen301
+\l__coffin_scaled_width_dim=\dimen302
+\c__coffin_empty_coffin=\box66
+\l__coffin_display_coffin=\box67
+\l__coffin_display_coord_coffin=\box68
+\l__coffin_display_pole_coffin=\box69
+\l__coffin_display_offset_dim=\dimen303
+\l__coffin_display_x_dim=\dimen304
+\l__coffin_display_y_dim=\dimen305
 \g__file_internal_ior=\read2
-\l__seq_internal_a_int=\count316
-\l__seq_internal_b_int=\count317
-\c__deprecation_minus_one=\count318
+\l__seq_internal_a_int=\count315
+\l__seq_internal_b_int=\count316
+\c__deprecation_minus_one=\count317
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
-\l__driver_internal_box=\box74
-\l__driver_color_stack_int=\count319
+\l__driver_internal_box=\box70
+\l__driver_color_stack_int=\count318
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2019-05-28 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count320
-\g__xparse_grabber_int=\count321
-\l__xparse_m_args_int=\count322
-\l__xparse_v_nesting_int=\count323
+\l__xparse_current_arg_int=\count319
+\g__xparse_grabber_int=\count320
+\l__xparse_m_args_int=\count321
+\l__xparse_v_nesting_int=\count322
 )
 Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 )
-\l__siunitx_tmp_box=\box75
-\l__siunitx_tmp_dim=\dimen307
-\l__siunitx_tmp_int=\count324
-\l__siunitx_number_mantissa_length_int=\count325
-\l__siunitx_number_uncert_length_int=\count326
-\l__siunitx_round_int=\count327
-\l__siunitx_process_decimal_int=\count328
-\l__siunitx_process_uncertainty_int=\count329
-\l__siunitx_process_fixed_int=\count330
-\l__siunitx_process_integer_min_int=\count331
-\l__siunitx_process_precision_int=\count332
-\l__siunitx_group_min_int=\count333
-\l__siunitx_angle_marker_box=\box76
-\l__siunitx_angle_unit_box=\box77
-\l__siunitx_angle_marker_dim=\dimen308
-\l__siunitx_angle_unit_dim=\dimen309
-\l__siunitx_unit_int=\count334
-\l__siunitx_unit_denominator_int=\count335
-\l__siunitx_unit_numerator_int=\count336
-\l__siunitx_unit_prefix_int=\count337
-\l__siunitx_unit_prefix_base_int=\count338
-\l__siunitx_unit_prefix_gram_int=\count339
-\l__siunitx_number_product_int=\count340
-\c__siunitx_one_fill_skip=\skip128
-\l__siunitx_table_unit_align_skip=\skip129
-\l__siunitx_table_exponent_dim=\dimen310
-\l__siunitx_table_integer_dim=\dimen311
-\l__siunitx_table_mantissa_dim=\dimen312
-\l__siunitx_table_marker_dim=\dimen313
-\l__siunitx_table_result_dim=\dimen314
-\l__siunitx_table_uncert_dim=\dimen315
-\l__siunitx_table_fill_pre_dim=\dimen316
-\l__siunitx_table_fill_post_dim=\dimen317
-\l__siunitx_table_fill_mid_dim=\dimen318
-\l__siunitx_table_pre_box=\box78
-\l__siunitx_table_post_box=\box79
-\l__siunitx_table_mantissa_box=\box80
-\l__siunitx_table_result_box=\box81
-\l__siunitx_table_number_align_skip=\skip130
-\l__siunitx_table_text_align_skip=\skip131
+\l__siunitx_tmp_box=\box71
+\l__siunitx_tmp_dim=\dimen306
+\l__siunitx_tmp_int=\count323
+\l__siunitx_number_mantissa_length_int=\count324
+\l__siunitx_number_uncert_length_int=\count325
+\l__siunitx_round_int=\count326
+\l__siunitx_process_decimal_int=\count327
+\l__siunitx_process_uncertainty_int=\count328
+\l__siunitx_process_fixed_int=\count329
+\l__siunitx_process_integer_min_int=\count330
+\l__siunitx_process_precision_int=\count331
+\l__siunitx_group_min_int=\count332
+\l__siunitx_angle_marker_box=\box72
+\l__siunitx_angle_unit_box=\box73
+\l__siunitx_angle_marker_dim=\dimen307
+\l__siunitx_angle_unit_dim=\dimen308
+\l__siunitx_unit_int=\count333
+\l__siunitx_unit_denominator_int=\count334
+\l__siunitx_unit_numerator_int=\count335
+\l__siunitx_unit_prefix_int=\count336
+\l__siunitx_unit_prefix_base_int=\count337
+\l__siunitx_unit_prefix_gram_int=\count338
+\l__siunitx_number_product_int=\count339
+\c__siunitx_one_fill_skip=\skip125
+\l__siunitx_table_unit_align_skip=\skip126
+\l__siunitx_table_exponent_dim=\dimen309
+\l__siunitx_table_integer_dim=\dimen310
+\l__siunitx_table_mantissa_dim=\dimen311
+\l__siunitx_table_marker_dim=\dimen312
+\l__siunitx_table_result_dim=\dimen313
+\l__siunitx_table_uncert_dim=\dimen314
+\l__siunitx_table_fill_pre_dim=\dimen315
+\l__siunitx_table_fill_post_dim=\dimen316
+\l__siunitx_table_fill_mid_dim=\dimen317
+\l__siunitx_table_pre_box=\box74
+\l__siunitx_table_post_box=\box75
+\l__siunitx_table_mantissa_box=\box76
+\l__siunitx_table_result_box=\box77
+\l__siunitx_table_number_align_skip=\skip127
+\l__siunitx_table_text_align_skip=\skip128
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 ))
@@ -1341,42 +1312,42 @@ nment
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count341
-\float@exts=\toks59
-\float@box=\box82
-\@float@everytoks=\toks60
-\@floatcapt=\box83
+\c@float@type=\count340
+\float@exts=\toks55
+\float@box=\box78
+\@float@everytoks=\toks56
+\@floatcapt=\box79
 )
-\@float@every@algorithm=\toks61
-\c@algorithm=\count342
+\@float@every@algorithm=\toks57
+\c@algorithm=\count341
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count343
-\c@ALC@line=\count344
-\c@ALC@rem=\count345
-\c@ALC@depth=\count346
-\ALC@tlm=\skip132
-\algorithmicindent=\skip133
+\c@ALC@unique=\count342
+\c@ALC@line=\count343
+\c@ALC@rem=\count344
+\c@ALC@depth=\count345
+\ALC@tlm=\skip129
+\algorithmicindent=\skip130
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sttools/flushend.sty
 Package: flushend 2017/03/27 v3.3 Balancing columns in twocolumn mode
-\flushend@@lastskip@a=\skip134
-\flushend@@lastskip@b=\skip135
-\flushend@@lastskip@c=\skip136
-\flushend@@penalty@a=\count347
-\flushend@@lastkern@a=\dimen319
-\var@@temp@spread=\dimen320
-\var@@temp@a=\dimen321
-\flushend@@page@rule=\dimen322
-\flushend@@varbox@a=\box84
-\flushend@@varbox@c=\box85
-\flushend@@tempbox@a=\box86
-\flushend@@tempbox@c=\box87
-\@viper=\box88
-\hold@viper=\box89
-\atColsBreak=\toks62
-\atColsEnd=\toks63
+\flushend@@lastskip@a=\skip131
+\flushend@@lastskip@b=\skip132
+\flushend@@lastskip@c=\skip133
+\flushend@@penalty@a=\count346
+\flushend@@lastkern@a=\dimen318
+\var@@temp@spread=\dimen319
+\var@@temp@a=\dimen320
+\flushend@@page@rule=\dimen321
+\flushend@@varbox@a=\box80
+\flushend@@varbox@c=\box81
+\flushend@@tempbox@a=\box82
+\flushend@@tempbox@c=\box83
+\@viper=\box84
+\hold@viper=\box85
+\atColsBreak=\toks58
+\atColsEnd=\toks59
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1394,38 +1365,89 @@ LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `amsthm' support loaded on input line 3026.
 Package cleveref Info: `listings' support loaded on input line 3131.
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 55.
-Package hyperref Info: Option `linktocpage' set `true' on input line 55.
-Package hyperref Info: Option `breaklinks' set `true' on input line 55.
-Package hyperref Info: Option `hypertexnames' set `true' on input line 55.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/scalerel/scalerel.sty
+Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchi
+ng of objects, relative to a reference object or in absolute terms
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count347
+\calc@Bcount=\count348
+\calc@Adimen=\dimen322
+\calc@Bdimen=\dimen323
+\calc@Askip=\skip134
+\calc@Bskip=\skip135
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count349
+\calc@Cskip=\skip136
+)
+\thesrwidth=\skip137
+\thesrheight=\skip138
+\srblobheight=\skip139
+\srblobdepth=\skip140
+\mnxsrwidth=\skip141
+\LMex=\skip142
+\LMpt=\skip143
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/mdwtools/syntax.sty
+Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
+\grammarparsep=\skip144
+\grammarindent=\dimen324
+\sdstartspace=\skip145
+\sdendspace=\skip146
+\sdmidskip=\skip147
+\sdtokskip=\skip148
+\sdfinalskip=\skip149
+\sdrulewidth=\dimen325
+\sdcirclediam=\dimen326
+\sdindent=\dimen327
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 57.
+Package hyperref Info: Option `linktocpage' set `true' on input line 57.
+Package hyperref Info: Option `breaklinks' set `true' on input line 57.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 57.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./uwthesis.aux)
+(./uwthesis.aux
+
+LaTeX Warning: Label `sec:case' multiply defined.
+
+
+LaTeX Warning: Label `sec:case@cref' multiply defined.
+
+)
 \openout1 = `uwthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 104
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 106
 .
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
-\AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 104.
+\AtBeginShipoutBox=\box86
+Package hyperref Info: Link coloring OFF on input line 106.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1433,11 +1455,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count348
+\c@section@level=\count350
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 106.
+LaTeX Info: Redefining \pageref on input line 106.
+LaTeX Info: Redefining \nameref on input line 106.
 
 (./uwthesis.out) (./uwthesis.out)
 \@outlinefile=\write4
@@ -1449,7 +1471,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message with `\usepackage{bookmark}'
-(scrreprt)           before \begin{document} on input line 104.
+(scrreprt)           before \begin{document} on input line 106.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1459,24 +1481,24 @@ File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 164.
-\BKM@id=\count349
+\BKM@id=\count351
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count350
-\scratchdimen=\dimen323
-\scratchbox=\box91
-\nofMPsegments=\count351
-\nofMParguments=\count352
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count353
-\MPscratchDim=\dimen324
-\MPnumerator=\count354
-\makeMPintoPDFobject=\count355
-\everyMPtoPDFconversion=\toks65
+\scratchcounter=\count352
+\scratchdimen=\dimen328
+\scratchbox=\box87
+\nofMPsegments=\count353
+\nofMParguments=\count354
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count355
+\MPscratchDim=\dimen329
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
+\everyMPtoPDFconversion=\toks61
 )
-\c@lstlisting=\count356
-LaTeX Info: Redefining \microtypecontext on input line 104.
+\c@lstlisting=\count358
+LaTeX Info: Redefining \microtypecontext on input line 106.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1577,50 +1599,50 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 104
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 106
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 104
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 106
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 104
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 106
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 104
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 106
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 104.
+(Font)              scaled to size 11.40997pt on input line 106.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 104.
+(Font)              scaled to size 8.33606pt on input line 106.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 104.
+(Font)              scaled to size 6.25204pt on input line 106.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 104.
+(Font)              scaled to size 11.40997pt on input line 106.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 104.
+(Font)              scaled to size 8.33606pt on input line 106.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 104.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 104
+(Font)              scaled to size 6.25204pt on input line 106.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 106
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1649,13 +1671,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 245
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 247
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 245.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 247.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 245.
+(Font)              using `OMS/cmsy/m/n' instead on input line 247.
 
 [3] [4
 
@@ -1672,19 +1694,19 @@ Package microtype Info: Character `013' is missing
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 30
-3.
+5.
  (./uwthesis.toc)
 \tf@toc=\write5
 \openout5 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 310.
+(Font)              scaled to size 10.42007pt on input line 312.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 310.
+(Font)              scaled to size 7.91925pt on input line 312.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 310.
+(Font)              scaled to size 10.42007pt on input line 312.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 310.
+(Font)              scaled to size 7.91925pt on input line 312.
  [9
 
 
@@ -1730,58 +1752,7 @@ chapter 2.
 
 ]
 chapter 3.
-(./maintenance/introduction.tex
-LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 8.
-
-
-LaTeX Warning: Citation `PGL-045' on page 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Andronick2012' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Zhang2012' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Staples2014' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Blanchette2015' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Staples2013' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Matichuk2015' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Wiedijk2009' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Aspinall2016' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Bourke12' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Woos2016' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Ringer2018' on page 7 undefined on input line 29.
-
-
-LaTeX Warning: Citation `coq' on page 7 undefined on input line 34.
-
-
-LaTeX Warning: Citation `hol-interact' on page 7 undefined on input line 44.
-
-
-LaTeX Warning: Citation `hol4-interact' on page 7 undefined on input line 44.
-
-
-LaTeX Warning: Citation `idris-repl' on page 7 undefined on input line 44.
-
+(./maintenance/introduction.tex [7]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 51.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1794,68 +1765,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 51.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 51.
-[7]
-
-LaTeX Warning: Citation `proverbot9001' on page 8 undefined on input line 66.
-
-
-LaTeX Warning: Citation `Komendantskaya2012' on page 8 undefined on input line 
-66.
-
-
-LaTeX Warning: Citation `Heras2013' on page 8 undefined on input line 66.
-
-
-LaTeX Warning: Citation `Nagashima2018' on page 8 undefined on input line 66.
-
-
-LaTeX Warning: Citation `Gauthier2017b' on page 8 undefined on input line 66.
-
-
-LaTeX Warning: Citation `Yang2019' on page 8 undefined on input line 66.
-
-
-LaTeX Warning: Citation `wibergh2019' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `WhitesidePhD' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Dietrich2013' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `adams2015' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Bourke12' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Roe2016' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `robert2018' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Ringer2018' on page 8 undefined on input line 69.
-
-
-LaTeX Warning: Citation `robert2018' on page 8 undefined on input line 69.
-
 ) (./maintenance/plugin.tex
-
-LaTeX Warning: Citation `coq-commands' on page 8 undefined on input line 15.
-
-
-LaTeX Warning: Citation `coqide' on page 8 undefined on input line 15.
-
-
-LaTeX Warning: Citation `Aspinall2000' on page 8 undefined on input line 16.
-
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[8]
-<maintenance/fig/architecture.png, id=129, 963.6pt x 542.025pt>
+ [8]
+<maintenance/fig/architecture.png, id=241, 963.6pt x 542.025pt>
 File: maintenance/fig/architecture.png Graphic file (type png)
 <use maintenance/fig/architecture.png>
 Package pdftex.def Info: maintenance/fig/architecture.png  used on input line 6
@@ -1868,15 +1783,7 @@ x -t e n d -i n g a n i n -d u c -t i v e t y p e[] \OT1/pplj/m/n/10.95 (-20) T
 o
  []
 
-
-LaTeX Warning: Citation `GallegoArias2016SerAPI' on page 10 undefined on input 
-line 113.
-
-[10 <./maintenance/fig/architecture.png (PNG copy)>]
-
-LaTeX Warning: Citation `coqrc' on page 11 undefined on input line 167.
-
-[11]
+[10 <./maintenance/fig/architecture.png (PNG copy)>] [11]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 229.
 
@@ -1930,258 +1837,68 @@ Overfull \hbox (0.99925pt too wide) in paragraph at lines 278--287
  s[] \OT1/pplj/m/n/10.95 (-20) The meta-data be-yond the state
  []
 
-[12]) (./maintenance/study.tex [13] [14] [15]
-
-LaTeX Warning: Citation `proverbot9001' on page 16 undefined on input line 159.
-
-
-
-LaTeX Warning: Citation `Komendantskaya2012' on page 16 undefined on input line
- 159.
-
-
-LaTeX Warning: Citation `Nagashima2018' on page 16 undefined on input line 159.
-
-
-
-LaTeX Warning: Citation `Gauthier2017b' on page 16 undefined on input line 159.
-
-
-
-LaTeX Warning: Citation `Yang2019' on page 16 undefined on input line 159.
-
-
-LaTeX Warning: Citation `Ringer2018' on page 16 undefined on input line 160.
-
-
-LaTeX Warning: Citation `robert2018' on page 16 undefined on input line 160.
-
-<maintenance/fig/example-graph.png, id=223, 729.47531pt x 405.76593pt>
+[12]) (./maintenance/study.tex
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 7.
+ [13] [14] [15]
+<maintenance/fig/example-graph.png, id=351, 729.47531pt x 405.76593pt>
 File: maintenance/fig/example-graph.png Graphic file (type png)
 <use maintenance/fig/example-graph.png>
 Package pdftex.def Info: maintenance/fig/example-graph.png  used on input line 
 211.
 (pdftex.def)             Requested size: 235.19897pt x 130.826pt.
-[16]
-
-LaTeX Warning: Citation `Komendantskaya2012' on page 17 undefined on input line
- 244.
-
-
-LaTeX Warning: Citation `coqhammer' on page 17 undefined on input line 247.
-
-[17 <./maintenance/fig/example-graph.png>]
+ [16] [17 <./maintenance/fig/example-graph.png>]
 Overfull \hbox (2.8685pt too wide) in paragraph at lines 309--314
 \OT1/pplj/m/n/10.95 (-20) and spec-i-fi-ca-tions, and whether those changes re-
 veal pat-terns amenable
  []
 
-[18] [19]
+[18] [19] [20]
 Overfull \hbox (172.67001pt too wide) in paragraph at lines 454--544
 [][] 
  []
 
-[20]
-<maintenance/fig/diffs1.png, id=302, 360.34625pt x 324.21124pt>
+<maintenance/fig/diffs1.png, id=433, 360.34625pt x 324.21124pt>
 File: maintenance/fig/diffs1.png Graphic file (type png)
 <use maintenance/fig/diffs1.png>
 Package pdftex.def Info: maintenance/fig/diffs1.png  used on input line 554.
 (pdftex.def)             Requested size: 96.43243pt x 86.7615pt.
-<maintenance/fig/diffs2.png, id=303, 500.87125pt x 371.3875pt>
+<maintenance/fig/diffs2.png, id=434, 500.87125pt x 371.3875pt>
 File: maintenance/fig/diffs2.png Graphic file (type png)
 <use maintenance/fig/diffs2.png>
 Package pdftex.def Info: maintenance/fig/diffs2.png  used on input line 559.
 (pdftex.def)             Requested size: 134.06512pt x 99.40892pt.
- [21 <./maintenance/fig/diffs1.png> <./maintenance/fig/diffs2.png>]
-
-LaTeX Warning: Citation `Boite2004' on page 22 undefined on input line 637.
-
-
-LaTeX Warning: Citation `Mulhern06proofweaving' on page 22 undefined on input l
-ine 639.
-
-[22]
-<maintenance/fig/refactor.png, id=320, 254.9525pt x 233.87375pt>
+[21 <./maintenance/fig/diffs1.png> <./maintenance/fig/diffs2.png>] [22]
+<maintenance/fig/refactor.png, id=453, 254.9525pt x 233.87375pt>
 File: maintenance/fig/refactor.png Graphic file (type png)
 <use maintenance/fig/refactor.png>
 Package pdftex.def Info: maintenance/fig/refactor.png  used on input line 668.
 (pdftex.def)             Requested size: 63.84082pt x 58.56107pt.
 
-
-LaTeX Warning: Citation `wibergh2019' on page 23 undefined on input line 707.
-
-
-LaTeX Warning: Citation `robert2018' on page 23 undefined on input line 707.
-
-
-LaTeX Warning: Citation `PGL-045' on page 23 undefined on input line 709.
-
 [23 <./maintenance/fig/refactor.png>]
-<maintenance/fig/patch.png, id=328, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=466, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 749.
 (pdftex.def)             Requested size: 157.92041pt x 95.0405pt.
-
-
-LaTeX Warning: Citation `Ringer2018' on page 24 undefined on input line 793.
-
-
-LaTeX Warning: Citation `Ringer2019' on page 24 undefined on input line 793.
-
-
+ [24 <./maintenance/fig/patch.png>]
 Overfull \hbox (0.67659pt too wide) in paragraph at lines 790--798
 [] []\OT1/pplj/m/sc/10.95 (-20) l e s s o n s f o r a u -t o m a -t i o n[] \OT
 1/pplj/m/n/10.95 (-20) Au-toma-tion may help with these sorts
  []
 
-[24 <./maintenance/fig/patch.png>]
-<maintenance/fig/bad.png, id=338, 455.7025pt x 162.6075pt>
+<maintenance/fig/bad.png, id=478, 455.7025pt x 162.6075pt>
 File: maintenance/fig/bad.png Graphic file (type png)
 <use maintenance/fig/bad.png>
 Package pdftex.def Info: maintenance/fig/bad.png  used on input line 824.
 (pdftex.def)             Requested size: 117.60205pt x 41.96184pt.
- [25 <./maintenance/fig/bad.png>]
-
-LaTeX Warning: Citation `murraybp' on page 26 undefined on input line 885.
-
-
-LaTeX Warning: Citation `Paraskevopoulou2015' on page 26 undefined on input lin
-e 889.
-
-
-LaTeX Warning: Citation `FRAPBook' on page 26 undefined on input line 890.
-
-
-LaTeX Warning: Citation `Roe2016' on page 26 undefined on input line 891.
-
-
-LaTeX Warning: Citation `Aspinall2016b' on page 26 undefined on input line 893.
-
-
-) (./maintenance/discussion.tex [26] [27]
-
-LaTeX Warning: Citation `Wenzel2012' on page 28 undefined on input line 107.
-
-
-LaTeX Warning: Citation `Wenzel2014' on page 28 undefined on input line 110.
-
-
-LaTeX Warning: Citation `Wenzel2012' on page 28 undefined on input line 111.
-
-[28] [29] [30]) (./maintenance/related.tex [31]
-
-LaTeX Warning: Citation `mylar' on page 32 undefined on input line 13.
-
-
-LaTeX Warning: Citation `MusluBEN2015' on page 32 undefined on input line 16.
-
-
-LaTeX Warning: Citation `Robillard2004' on page 32 undefined on input line 19.
-
-
-LaTeX Warning: Citation `ko-explore' on page 32 undefined on input line 19.
-
-
-LaTeX Warning: Citation `comprehension' on page 32 undefined on input line 20.
-
-
-LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 29.
-
-
-LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 29.
-
-
-LaTeX Warning: Citation `Staples2014' on page 32 undefined on input line 29.
-
-
-LaTeX Warning: Citation `Blanchette2015' on page 32 undefined on input line 31.
-
-
-
-LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 31.
-
-
-LaTeX Warning: Citation `Wiedijk2009' on page 32 undefined on input line 31.
-
-
-LaTeX Warning: Citation `Aspinall2016' on page 32 undefined on input line 31.
-
-
-LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 32.
-
-
-LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 32.
-
-
-LaTeX Warning: Citation `Staples2013' on page 32 undefined on input line 33.
-
-
-LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 33.
-
-
-LaTeX Warning: Citation `Aspinall2016' on page 32 undefined on input line 33.
-
-
-LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 34.
-
-
-LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 34.
-
-
-LaTeX Warning: Citation `Bourke12' on page 32 undefined on input line 35.
-
-
-LaTeX Warning: Citation `Woos2016' on page 32 undefined on input line 35.
-
-
-LaTeX Warning: Citation `PGL-045' on page 32 undefined on input line 39.
-
-
-LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 41.
-
-
-LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 44.
-
-
-LaTeX Warning: Citation `Miraldo2017' on page 32 undefined on input line 59.
-
-
-LaTeX Warning: Citation `code-decay' on page 32 undefined on input line 62.
-
-
-LaTeX Warning: Citation `tree-comparison' on page 32 undefined on input line 64
-.
-
-
-LaTeX Warning: Citation `causes-of-error' on page 32 undefined on input line 68
-.
-
-
+[25 <./maintenance/fig/bad.png>] [26]) (./maintenance/discussion.tex [27]
+[28] [29] [30] [31]) (./maintenance/related.tex [32]
 Overfull \hbox (24.99403pt too wide) in paragraph at lines 56--72
 [] []\OT1/pplj/m/sc/10.95 (-20) i d e n -t i -f y -i n g , c l a s -s i -f y -i
  n g , & v i -s u -a l -i z -i n g c h a n g e s[] \OT1/pplj/m/n/10.95 (-20) Th
 e \OT1/pplj/m/sc/10.95 (-20) REPLica
  []
-
-[32]
-
-LaTeX Warning: Citation `Ringer2018' on page 33 undefined on input line 74.
-
-
-LaTeX Warning: Citation `robert2018' on page 33 undefined on input line 77.
-
-
-LaTeX Warning: Citation `proof-diff' on page 33 undefined on input line 82.
-
-
-LaTeX Warning: Citation `Roe2016' on page 33 undefined on input line 82.
-
-
-LaTeX Warning: Citation `peacoq' on page 33 undefined on input line 83.
-
-
-LaTeX Warning: Citation `proverbot9001' on page 33 undefined on input line 85.
 
 )) (./repair.tex [33] [34
 
@@ -2189,352 +1906,56 @@ LaTeX Warning: Citation `proverbot9001' on page 33 undefined on input line 85.
 ]
 chapter 4.
 (./repair/introduction.tex
-
-LaTeX Warning: Citation `proof-eng' on page 35 undefined on input line 20.
-
-
-LaTeX Warning: Citation `Aydemir2008' on page 35 undefined on input line 20.
-
-
-LaTeX Warning: Citation `Delaware2013ICFP' on page 35 undefined on input line 2
-0.
-
-
-LaTeX Warning: Citation `hints' on page 35 undefined on input line 24.
-
-
-LaTeX Warning: Citation `rippling' on page 35 undefined on input line 24.
-
-
-LaTeX Warning: Citation `proof-eng' on page 35 undefined on input line 40.
-
-
-LaTeX Warning: Citation `Aydemir2008' on page 35 undefined on input line 40.
-
-
-LaTeX Warning: Citation `Delaware2013ICFP' on page 35 undefined on input line 4
-0.
-
-
-LaTeX Warning: Citation `chlipala:cpdt' on page 35 undefined on input line 40.
-
-
-LaTeX Warning: Citation `verdicommit' on page 35 undefined on input line 46.
-
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 52.
+ (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-(./repair/izr.tex) (./repair/izr.tex)
-
-LaTeX Warning: Citation `leroy:compcert' on page 35 undefined on input line 78.
-
-
 [35]) (./repair/reimagined.tex [36]
-
-LaTeX Warning: Citation `coq87commit' on page 37 undefined on input line 20.
-
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 38.
-) (./repair/sysintro.tex
-
-LaTeX Warning: Citation `coq' on page 37 undefined on input line 8.
-
-[37] (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
+) (./repair/sysintro.tex [37]
+(./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [38] [39] [40]
-
-LaTeX Warning: Citation `hints' on page 41 undefined on input line 277.
-
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 338.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 338.
-(./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) [41]) (./repair/casestudies.tex [42]
+ (./repair/compcert.tex) (./repair/compcert.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) [41]) (./repair/casestudies.tex
+[42] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-
-LaTeX Warning: Citation `compcertcommit' on page 43 undefined on input line 96.
-
-
 [43]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
  [44]
-
-LaTeX Warning: Citation `usera' on page 45 undefined on input line 220.
-
-
-LaTeX Warning: Citation `userb' on page 45 undefined on input line 220.
-
-
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 316--318
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[45] (./repair/divide.tex) (./repair/divide.tex)
-
-LaTeX Warning: Citation `coq84commit' on page 46 undefined on input line 503.
-
-[46] [47]) (./repair/core.tex
-
-LaTeX Warning: Citation `Hofmann97' on page 48 undefined on input line 87.
-
+[45] (./repair/divide.tex) (./repair/divide.tex) [46] [47]) (./repair/core.tex
 [48]
-<repair/nat_ind.pdf, id=820, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1044, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 154.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
-
-
-LaTeX Warning: Citation `equality' on page 49 undefined on input line 163.
-
-[49] [50 <./repair/nat_ind.pdf>] [51]
-
-LaTeX Warning: Citation `coq87news' on page 52 undefined on input line 337.
-
-
-LaTeX Warning: Citation `coqPR' on page 52 undefined on input line 340.
-
-) (./repair/evaluation.tex [52]
+ [49] [50 <./repair/nat_ind.pdf>] [51]) (./repair/evaluation.tex [52]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 46.
 
-[53]
-
-LaTeX Warning: Citation `equality' on page 54 undefined on input line 125.
-
-[54] [55] [56]) (./repair/future.tex
-
-LaTeX Warning: Citation `Boite2004' on page 57 undefined on input line 54.
-
-
-LaTeX Warning: Citation `Mulhern06proofweaving' on page 57 undefined on input l
-ine 54.
-
-
-LaTeX Warning: Citation `Miraldo:2017:TDS:3122975.3122976' on page 57 undefined
- on input line 55.
-
-
-LaTeX Warning: Citation `proofgeneral' on page 57 undefined on input line 73.
-
-
-LaTeX Warning: Citation `travis' on page 57 undefined on input line 74.
-
-
+[53] [54] [55] [56]) (./repair/future.tex
 Overfull \hbox (10.59421pt too wide) in paragraph at lines 69--76
 [] []\OT1/pplj/m/sc/10.95 (-20) i m -p r o v -i n g u s e r e x -p e -r i -e n 
 c e .[] \OT1/pplj/m/n/10.95 (-20) The ideal proof patch-ing tool should
  []
 
-[57]
-
-LaTeX Warning: Citation `873647' on page 58 undefined on input line 96.
-
-
-LaTeX Warning: Citation `Autexier:2010:CMH:1986659.1986663' on page 58 undefine
-d on input line 96.
-
-
-LaTeX Warning: Citation `Celik:2017:IRP:3155562.3155588' on page 58 undefined o
-n input line 96.
-
-
-LaTeX Warning: Citation `lean' on page 58 undefined on input line 102.
-
-
-LaTeX Warning: Citation `agda' on page 58 undefined on input line 102.
-
-
-LaTeX Warning: Citation `isabellehol' on page 58 undefined on input line 103.
-
-
-LaTeX Warning: Citation `decidable' on page 58 undefined on input line 105.
-
-
-LaTeX Warning: Citation `hints' on page 58 undefined on input line 110.
-
-
-LaTeX Warning: Citation `Huffman2013' on page 58 undefined on input line 112.
-
-
-LaTeX Warning: Citation `ZimmermannH15' on page 58 undefined on input line 112.
-
-
-) (./repair/related.tex [58]
-
-LaTeX Warning: Citation `Barthe:2001:TIP:646793.704711' on page 59 undefined on
- input line 10.
-
-
-LaTeX Warning: Citation `Magaud2002' on page 59 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Huffman2013' on page 59 undefined on input line 11.
-
-
-LaTeX Warning: Citation `ZimmermannH15' on page 59 undefined on input line 11.
-
-
-LaTeX Warning: Citation `tabareau:hal-01559073' on page 59 undefined on input l
-ine 11.
-
-
-LaTeX Warning: Citation `Boite2004' on page 59 undefined on input line 18.
-
-
-LaTeX Warning: Citation `Mulhern06proofweaving' on page 59 undefined on input l
-ine 19.
-
-
-LaTeX Warning: Citation `Felty1994' on page 59 undefined on input line 21.
-
-
-LaTeX Warning: Citation `pons00' on page 59 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Johnsen2004' on page 59 undefined on input line 21.
-
-
-LaTeX Warning: Citation `chlipala:cpdt' on page 59 undefined on input line 30.
-
-
-LaTeX Warning: Citation `Blanchette2013' on page 59 undefined on input line 32.
-
-
-
-LaTeX Warning: Citation `CzajkaHammer' on page 59 undefined on input line 33.
-
-
-LaTeX Warning: Citation `chlipala:cpdt' on page 59 undefined on input line 39.
-
-
-LaTeX Warning: Citation `Chlipala2013' on page 59 undefined on input line 39.
-
-
-LaTeX Warning: Citation `Gonthier2011' on page 59 undefined on input line 40.
-
-
-LaTeX Warning: Citation `rippling' on page 59 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Miller:2012:PHL:2331097' on page 59 undefined on input
- line 50.
-
-
-LaTeX Warning: Citation `selsam:lean' on page 59 undefined on input line 52.
-
-[59]
-
-LaTeX Warning: Citation `bundyreasoning' on page 60 undefined on input line 56.
-
-
-
-LaTeX Warning: Citation `tgck-cicm14' on page 60 undefined on input line 59.
-
-
-LaTeX Warning: Citation `proof-eng' on page 60 undefined on input line 63.
-
-
-LaTeX Warning: Citation `Aydemir2008' on page 60 undefined on input line 64.
-
-
-LaTeX Warning: Citation `Delaware2013POPL' on page 60 undefined on input line 6
-4.
-
-
-LaTeX Warning: Citation `Delaware2013ICFP' on page 60 undefined on input line 6
-4.
-
-
-LaTeX Warning: Citation `certikos' on page 60 undefined on input line 65.
-
-
-LaTeX Warning: Citation `Dagand17jfp' on page 60 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Williams:2014:OP:2633628.2633631' on page 60 undefined
- on input line 67.
-
-
-LaTeX Warning: Citation `873647' on page 60 undefined on input line 76.
-
-
-LaTeX Warning: Citation `Autexier:2010:CMH:1986659.1986663' on page 60 undefine
-d on input line 76.
-
-
-LaTeX Warning: Citation `Celik:2017:IRP:3155562.3155588' on page 60 undefined o
-n input line 77.
-
-
-LaTeX Warning: Citation `Mens:2004:SSR:972215.972286' on page 60 undefined on i
-nput line 81.
-
-
-LaTeX Warning: Citation `HaRe' on page 60 undefined on input line 82.
-
-
-LaTeX Warning: Citation `Whiteside2011' on page 60 undefined on input line 84.
-
-
-LaTeX Warning: Citation `Bourke_DKK_12' on page 60 undefined on input line 84.
-
-
-LaTeX Warning: Citation `Roe2016' on page 60 undefined on input line 85.
-
-
-LaTeX Warning: Citation `Bobot2013' on page 60 undefined on input line 85.
-
-
-LaTeX Warning: Citation `Miraldo:2017:TDS:3122975.3122976' on page 60 undefined
- on input line 93.
-
-
-LaTeX Warning: Citation `Autexier:2010:SCI:1860559.1860580' on page 60 undefine
-d on input line 95.
-
-
-LaTeX Warning: Citation `differential-assertion-checking-2' on page 60 undefine
-d on input line 97.
-
-
-LaTeX Warning: Citation `Cai:2014:TCH:2594291.2594304' on page 60 undefined on 
-input line 99.
-
-[60]
-
-LaTeX Warning: Citation `DBLP:journals/ftpl/GulwaniPS17' on page 61 undefined o
-n input line 104.
-
-
-LaTeX Warning: Citation `Pei:2014:APR:2731750.2731779' on page 61 undefined on 
-input line 112.
-
-
-LaTeX Warning: Citation `Long:2016:APG:2837614.2837617' on page 61 undefined on
- input line 112.
-
-
-LaTeX Warning: Citation `Le:2017:SSS:3106237.3106309' on page 61 undefined on i
-nput line 112.
-
-
-LaTeX Warning: Citation `Mechtaev:2016:ASM:2884781.2884807' on page 61 undefine
-d on input line 112.
-
-
-LaTeX Warning: Citation `Monperrus2015' on page 61 undefined on input line 112.
-
-
-)) (./often.tex [61] [62
+[57]) (./repair/related.tex [58] [59] [60])) (./often.tex [61] [62
 
 
 ]
@@ -2575,31 +1996,11 @@ line 54.
 
 LaTeX Warning: Citation `mcbride' on page 64 undefined on input line 61.
 
-
-LaTeX Warning: Reference `sec:alg' on page 64 undefined on input line 66.
-
-
-LaTeX Warning: Reference `sec:impl' on page 64 undefined on input line 67.
-
 ) (./often/devoid/example.tex
 
 LaTeX Warning: Citation `hstocoqv' on page 64 undefined on input line 7.
 
-[64]
-
-LaTeX Warning: Reference `sec:impl' on page 65 undefined on input line 13.
-
-[65]) (./often/devoid/spec.tex
-
-LaTeX Warning: Reference `sec:findalg' on page 66 undefined on input line 7.
-
-
-LaTeX Warning: Reference `sec:liftspec' on page 66 undefined on input line 8.
-
-
-LaTeX Warning: Reference `sec:liftalg' on page 66 undefined on input line 8.
-
-[66]
+[64] [65]) (./often/devoid/spec.tex [66]
 
 LaTeX Warning: Citation `univalent2013homotopy' on page 67 undefined on input l
 ine 40.
@@ -2629,54 +2030,332 @@ Overfull \hbox (19.00084pt too wide) in paragraph at lines 147--148
 
  []
 
-) (./often/devoid/algorithms.tex
+) (./often/devoid/algorithms.tex [69]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 45.
 
-LaTeX Warning: Reference `fig:syntax' on page 69 undefined on input line 13.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (2.41995pt too wide) in paragraph at lines 42--66
+[]$[]$  $[]$
+ []
 
-[69]
 
-LaTeX Warning: Reference `fig:common' on page 70 undefined on input line 31.
+LaTeX Warning: Citation `Timany2015FirstST' on page 70 undefined on input line 
+66.
 
 
-! LaTeX Error: Environment grammar undefined.
+LaTeX Warning: Citation `Timany2015FirstST' on page 70 undefined on input line 
+66.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.44 \begin{grammar}
-                    
-? X
- 
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--96
+[]$[]$
+ []
+
+[70]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 122.
+
+
+Overfull \hbox (57.78168pt too wide) in paragraph at lines 121--157
+ [][] 
+ []
+
+
+Overfull \hbox (54.74294pt too wide) in paragraph at lines 121--157
+ [][] 
+ []
+
+[71] [72]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 219
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 219.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 219.
+
+
+Overfull \hbox (10.49026pt too wide) in paragraph at lines 223--231
+\OT1/pplj/m/n/10.95 (-20) Figure []22[] shows the in-ter-est-ing deriva-tions f
+or the judg-ment $[]$
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 235.
+
+
+Overfull \hbox (59.9401pt too wide) in paragraph at lines 234--262
+ [][] 
+ []
+
+
+Overfull \hbox (56.84816pt too wide) in paragraph at lines 234--262
+ [][] 
+ []
+
+[73] [74]
+Underfull \hbox (badness 10000) in paragraph at lines 314--340
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 344.
+
+
+Overfull \hbox (58.00378pt too wide) in paragraph at lines 343--377
+ [][] 
+ []
+
+[75]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 408.
+
+[76]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 450.
+
+) (./often/devoid/implementation.tex [77]
+
+LaTeX Warning: Citation `boutillier:tel-01054723' on page 78 undefined on input
+ line 44.
+
+[78]
+
+LaTeX Warning: Citation `univalent2013homotopy' on page 79 undefined on input l
+ine 110.
+
+[79]) (./often/devoid/casestudy.tex
+
+LaTeX Warning: Citation `tabareau2017equivalences' on page 80 undefined on inpu
+t line 12.
+
+[80]
+LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 96.
+ [81]) (./often/devoid/related.tex
+
+LaTeX Warning: Citation `mcbride' on page 82 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Dagand:2013:CTO:2591370.2591396' on page 82 undefined 
+on input line 7.
+
+
+LaTeX Warning: Citation `ko2013relational' on page 82 undefined on input line 7
+.
+
+
+LaTeX Warning: Citation `dagand2014transporting' on page 82 undefined on input 
+line 7.
+
+
+LaTeX Warning: Citation `ko2016programming' on page 82 undefined on input line 
+7.
+
+
+LaTeX Warning: Citation `dagand2017essence' on page 82 undefined on input line 
+7.
+
+
+LaTeX Warning: Citation `Williams2017' on page 82 undefined on input line 9.
+
+
+LaTeX Warning: Citation `mcbride' on page 82 undefined on input line 11.
+
+
+LaTeX Warning: Citation `ko2016programming' on page 82 undefined on input line 
+13.
+
+[82]
+
+LaTeX Warning: Citation `ko2016programming' on page 83 undefined on input line 
+17.
+
+
+LaTeX Warning: Citation `magaud2000changing' on page 83 undefined on input line
+ 20.
+
+
+LaTeX Warning: Citation `barthe2001type' on page 83 undefined on input line 20.
+
+
+
+LaTeX Warning: Citation `magaud2003changing' on page 83 undefined on input line
+ 20.
+
+
+LaTeX Warning: Citation `huffman2013lifting' on page 83 undefined on input line
+ 20.
+
+
+LaTeX Warning: Citation `zimmermann2015automatic' on page 83 undefined on input
+ line 20.
+
+
+LaTeX Warning: Citation `cohen:hal-01414881' on page 83 undefined on input line
+ 20.
+
+
+LaTeX Warning: Citation `univalent2013homotopy' on page 83 undefined on input l
+ine 21.
+
+
+LaTeX Warning: Citation `cohen2016cubical' on page 83 undefined on input line 2
+2.
+
+
+LaTeX Warning: Citation `tabareau2017equivalences' on page 83 undefined on inpu
+t line 24.
+
+
+LaTeX Warning: Citation `cohen:hal-01414881' on page 83 undefined on input line
+ 36.
+
+
+LaTeX Warning: Citation `felty1994generalization' on page 83 undefined on input
+ line 50.
+
+
+LaTeX Warning: Citation `caplan1995logical' on page 83 undefined on input line 
+50.
+
+
+LaTeX Warning: Citation `pons2000generalization' on page 83 undefined on input 
+line 51.
+
+
+LaTeX Warning: Citation `johnsen2004theorem' on page 83 undefined on input line
+ 51.
+
+
+LaTeX Warning: Citation `Delaware:2011:PLT:2048066.2048113' on page 83 undefine
+d on input line 52.
+
+
+LaTeX Warning: Citation `Delaware:2013:MLC:2429069.2429094' on page 83 undefine
+d on input line 52.
+
+[83]
+
+LaTeX Warning: Citation `DBLP:journals/corr/abs-1803-08150' on page 84 undefine
+d on input line 56.
+
+
+LaTeX Warning: Citation `McDonell:2016:GTS:2951913.2951914' on page 84 undefine
+d on input line 57.
+
+
+LaTeX Warning: Citation `miltner2017synthesizing' on page 84 undefined on input
+ line 61.
+
+
+LaTeX Warning: Citation `ringer2018adapting' on page 84 undefined on input line
+ 63.
+
+) (./often/devoid/conclusions.tex
+
+LaTeX Warning: Citation `ringer2018adapting' on page 84 undefined on input line
+ 18.
+
+
+LaTeX Warning: Citation `sozeau:equations' on page 84 undefined on input line 2
+3.
+
+)) (./theory.tex [84] [85] [86
+
+
+]
+chapter 6.
+) (./next.tex [87] [88
+
+
+]
+chapter 7.
+) (./uwthesis.bbl [89] [90
+
+
+] [91] [92] [93] [94] [95] [96] [97] [98]
+Underfull \hbox (badness 1454) in paragraph at lines 613--618
+[]\OT1/pplj/m/n/10.95 (+20) Tamara Mun-zner, Fran-cois Guim-bretiere, Ser-dar T
+asiran,
+ []
+
+[99] [100]
+Underfull \hbox (badness 1163) in paragraph at lines 699--705
+[]\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
+
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 699--705
+\OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
+pplj/m/it/10.95 (+20) Soft-ware
+ []
+
+
+Underfull \hbox (badness 3657) in paragraph at lines 699--705
+\OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
+c text-book, 2016.  Ver-sion 4.0.
+ []
+
+
+LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
+(Font)              using `OMS/pplj/m/n' instead on input line 721.
+
+[101] [102] [103]) [104]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
+ (./uwthesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
+Package rerunfilecheck Info: File `uwthesis.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
+ ) 
 Here is how much of TeX's memory you used:
- 42541 strings out of 492609
- 801763 string characters out of 6129033
- 1131695 words of memory out of 5000000
- 44405 multiletter control sequences out of 15000+600000
- 615138 words of font info for 601 fonts, out of 8000000 for 9000
+ 43443 strings out of 492609
+ 814520 string characters out of 6129033
+ 1127786 words of memory out of 5000000
+ 44822 multiletter control sequences out of 15000+600000
+ 628428 words of font info for 739 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,14n,71p,9083b,2337s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-d
-ist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist/
-fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/font
-s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
-/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/pa
-latino/uplri8a.pfb>
-Output written on uwthesis.pdf (79 pages, 588558 bytes).
+ 64i,20n,71p,9083b,2331s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
+er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
+ype1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/p
+alatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino
+/uplri8a.pfb>
+Output written on uwthesis.pdf (114 pages, 736526 bytes).
 PDF statistics:
- 1405 PDF objects out of 1440 (max. 8388607)
- 1269 compressed objects within 13 object streams
- 733 named destinations out of 1000 (max. 500000)
- 83497 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 2243 PDF objects out of 2487 (max. 8388607)
+ 2065 compressed objects within 21 object streams
+ 1025 named destinations out of 1200 (max. 500000)
+ 92997 words of extra memory for PDF output out of 106986 (max. 10000000)
 

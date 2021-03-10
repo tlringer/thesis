@@ -57,8 +57,7 @@
 }
 
 \lstdefinelanguage{coq}{
-    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, fun, Require, Import, Fixpoint, match, end, with, Qed, Defined,
-Parameter, Axiom},
+    keywords={Repair, module, Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, Type, Prop, Set, fun, fix, forall, equire, Import, Fixpoint, match, end, with, as, return, struct, Qed, Defined, let, Parameter, Axiom},
     basicstyle=\linespread{0.95}\small\ttfamily,
     keywordstyle=\color{blue},
     commentstyle=\itshape\rmfamily,
@@ -136,12 +135,6 @@ Parameter, Axiom},
 \newcommand\toolname{\textsc{REPLica}\xspace}
 
 % highlighting with boxes
-\newcommand{\codediff}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{0pt}%  
-  \colorbox{green!25}{\reducedstrut#1\/}%
-  \endgroup
-}
 \newcommand{\indpatt}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%  
@@ -166,6 +159,48 @@ Parameter, Axiom},
   \colorbox{gray!30}{\reducedstrut#1\/}%
   \endgroup
 }
+\newcommand{\codediff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the difference between two code blocks
+\newcommand{\codesima}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesimb}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{red!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesimc}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{yellow!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesimd}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{green!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesime}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{blue!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codeauto}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{cyan!30}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight automatically-generated terms
 
 % Table highlighting
 \newcommand{\indpat}[1]{\cellcolor{blue!30}{#1}} % extending inductive types
@@ -187,12 +222,14 @@ Parameter, Axiom},
 \newcommand\Pil{\smallmath{$\pi_l$}} % left projection
 \newcommand\Pir{\smallmath{$\pi_r$}} % right projection
 \newcommand\toolnameb{\textsc{Devoid}\xspace} % DEVOID tool name
-\newcommand{\codeauto}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{0pt}%
-  \colorbox{cyan!30}{\reducedstrut#1\/}%
-  \endgroup
-} % to highlight automatically-generated terms
+
+\newcommand\toolnamec{\textsc{Pumpkin P}i\xspace} % tool name
+\newcommand\company{Galois\xspace} % company name
+\newcommand{\mysubsubsec}[1]{\vspace{0.40em} \noindent {{\textbf{#1.}}}}
+
+% https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
 
 \definecolor{thecolor}{RGB}{38,90,18}
  
@@ -322,10 +359,22 @@ I've always believed the acknowledgments section to be one of the most important
 But there's never enough room to thank everyone I want to thank.
 Now that I have the chance---where do I begin?
 
-Dan, Jeff Foster, Zach, Derek, Alexandra, the Coq community (Emilio J. Gallego Arias, Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
-Matthieu Sozeau, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas Tabareau, Cyril Cohen, Pierre-Marie P\'{e}drot, Yves Bertot, Tej Chajed), coauthors, Valentin, Carlo, my family, PLSE lab (especially Chandra oh my gosh), James Wilcox, Jasper Hugunin, Marisa Kirisame,
+We got other wonderful feedback on the paper from 
+Cyril Cohen, Tej Chajed, Ben Delaware, Jacob Van Geffen, Janno, James Wilcox, Chandrakana Nandi, 
+Martin Kellogg, Audrey Seo, James Decker,
+and Ben Kushigian.
+And we got wonderful feedback on e-graph integration for future work from 
+Max Willsey, Chandrakana Nandi, Remy Wang, Zach Tatlock, Bas Spitters, Steven Lyubomirsky, Andrew Liu, Mike He, Ben Kushigian, 
+Gus Smith, and Bill Zorn.
+The Coq developers have for years given us frequent and efficient feedback on plugin APIs for tool implementation.
+
+Dan Grossman, Jeff Foster, Zach Tatlock, Derek Dreyer, Alexandra Silva, the Coq community (Emilio J. Gallego Arias, Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
+Matthieu Sozeau, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas Tabareau, Cyril Cohen, Pierre-Marie P\'{e}drot, Yves Bertot, Tej Chajed, Ben Delaware, Janno), coauthors, Valentin Robert, my family, PLSE lab (especially Chandrakana Nandi oh my gosh), James Wilcox, Jasper Hugunin, Marisa Kirisame,
+Jacob Van Geffen, Martin Kellogg, Audrey Seo, James Decker, Ben Kushigian, Gus Smith,
+Max Willsey, Zach Tatlock, Steven Lyubomirsky, Andrew Liu, Mike He, Ben Kushigian, Bill Zorn,
+Anders M\"ortberg, Conor McBride, Carlo Angiuli, Bas Spitters, 
 UCSD Programming Systems group, Misha,
-PL Twitter, Roy, Vikram, Esther, Ellie, Mer, students, Qi.
+PL Twitter, Roy, Vikram, Esther, Ellie, Mer, students, Qi, Saba.
 
 \pagenumbering{arabic}
 \cleardoublepage

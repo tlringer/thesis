@@ -151,7 +151,23 @@
 \contentsline {subsection}{\numberline {6.6.2}Performance}{89}{subsection.6.6.2}% 
 \contentsline {section}{\numberline {6.7}Related Work}{90}{section.6.7}% 
 \contentsline {section}{\numberline {6.8}Conclusions \& Future Work}{92}{section.6.8}% 
-\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Under the Hood}}{95}{chapter.7}% 
-\contentsline {part}{IV\hspace {1em}\spacedlowsmallcaps {Closing}}{97}{part.4}% 
-\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Conclusion}}{99}{chapter.8}% 
-\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {The Next Era}}{101}{chapter.9}% 
+\contentsline {section}{\numberline {6.9}Introduction}{93}{section.6.9}% 
+\contentsline {section}{\numberline {6.10}A Simple Motivating Example}{95}{section.6.10}% 
+\contentsline {section}{\numberline {6.11}Problem Definition}{97}{section.6.11}% 
+\contentsline {subsection}{\numberline {6.11.1}Scope: Type Equivalences}{98}{subsection.6.11.1}% 
+\contentsline {subsection}{\numberline {6.11.2}Goal: Transport with a Twist}{99}{subsection.6.11.2}% 
+\contentsline {section}{\numberline {6.12}The Transformation}{100}{section.6.12}% 
+\contentsline {subsection}{\numberline {6.12.1}The Configuration}{100}{subsection.6.12.1}% 
+\contentsline {subsection}{\numberline {6.12.2}The Proof Term Transformation}{104}{subsection.6.12.2}% 
+\contentsline {subsection}{\numberline {6.12.3}Specifying Correct Configurations}{106}{subsection.6.12.3}% 
+\contentsline {section}{\numberline {6.13}Decompiling Proof Terms to Tactics}{108}{section.6.13}% 
+\contentsline {section}{\numberline {6.14}Implementation}{110}{section.6.14}% 
+\contentsline {subsection}{\numberline {6.14.1}Implementing the Transformation}{110}{subsection.6.14.1}% 
+\contentsline {subsection}{\numberline {6.14.2}Implementing the Decompiler}{112}{subsection.6.14.2}% 
+\contentsline {section}{\numberline {6.15}Case Studies: \textsc {Pumpkin P}i Eight Ways}{112}{section.6.15}% 
+\contentsline {section}{\numberline {6.16}Related Work}{116}{section.6.16}% 
+\contentsline {section}{\numberline {6.17}Conclusions \& Future Work}{117}{section.6.17}% 
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Under the Hood}}{119}{chapter.7}% 
+\contentsline {part}{IV\hspace {1em}\spacedlowsmallcaps {Closing}}{121}{part.4}% 
+\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Conclusion}}{123}{chapter.8}% 
+\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {The Next Era}}{125}{chapter.9}% 

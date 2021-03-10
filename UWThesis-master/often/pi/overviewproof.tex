@@ -1,0 +1,8 @@
+Proof.(@\vspace{-0.04cm}@)
+  intros x. induction x as [a l IHl|]; intro y0.(@\vspace{-0.04cm}@)
+  - simpl. rewrite (IHl y0). simpl.(@\vspace{-0.04cm}@)
+    rewrite (app_assoc (rev y0) (rev l) (a::[])). auto.(@\vspace{-0.04cm}@)
+  - induction y0 as [a l IHl|].(@\vspace{-0.04cm}@)
+    + simpl. rewrite (app_nil_r (rev l) (a::[])). auto.(@\vspace{-0.04cm}@)
+    + auto.(@\vspace{-0.04cm}@)
+Qed.

@@ -1,0 +1,865 @@
+\section{Case Studies: \textsc{Pumpkin P}i Eight Ways}
+\label{sec:search}
+
+This section summarizes eight case studies using \toolnamec,
+corresponding to the eight rows in Table~\ref{fig:changes}.
+%For each case study, we explain the configuration used, walk through an example, and describe lessons learned.
+These case studies highlight \toolnamec's flexibility in handling diverse scenarios,
+%including in one case for an industrial user with unanticipated workflow.
+the success of automatic configuration for better workflow integration, % for supported changes,
+the preliminary success of the prototype decompiler,
+and clear paths to better serving proof engineers.
+Detailed walkthroughs are in the code.
+
+\mysubsubsec{Algebraic Ornaments: Lists to Packed Vectors}
+The transformation in \toolnamec is a generalization of the transformation from \textsc{Devoid}.
+\textsc{Devoid} supported proof reuse across \textit{algebraic ornaments}, which describe relations
+between two inductive types, where one type is the other indexed by a fold~\cite{mcbride}.
+A standard example is the relation between a list and a
+length-indexed vector (Figure~\ref{fig:listtovect}).
+
+\toolnamec implements a search procedure for automatic configuration of algebraic ornaments.
+%The search procedure moves the work specific to algebraic ornaments into the \toolnamec configuration.
+The result is all functionality from \textsc{Devoid}, plus tactic suggestions.
+%which allows it to implement the  functionality from \textsc{Devoid}.
+In file~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/examples/Example.v}{\circled{3}}, we used this to port
+functions and a proof from lists to vectors of \textit{some} length, since \lstinline{list T} $\simeq$ \lstinline{packed_vect T}.
+The decompiler helped us write proofs that we had found
+too hard to write by hand,
+though the suggested tactics did need massaging. % as the decompiler struggled with motive inference
+%for induction with dependent types.
+%Additional effort is needed to improve tactic suggestions for dependent types.
+
+\iffalse
+\begin{figure}
+\lstinputlisting[firstline=1, lastline=18]{often/pi/replica.tex}
+\vspace{-0.4cm}
+\caption{A language (top) and the same language with two swapped constructors and an added constructor (bottom).}
+\label{fig:replica}
+\end{figure}
+\fi
+
+\begin{figure*}
+\begin{minipage}{0.48\textwidth}
+   \lstinputlisting[firstline=1, lastline=9]{often/pi/replica.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+   \lstinputlisting[firstline=10, lastline=18]{often/pi/replica.tex}
+\end{minipage}
+\vspace{-0.4cm}
+\caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
+\label{fig:replica}
+\end{figure*}
+
+\mysubsubsec{Unpack Sigma Types: Vectors of Particular Lengths}
+%The previous case study showed how to get between lists and vectors of \textit{some} length.
+In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/examples/Example.v}{\circled{3}}, we then ported functions and proofs to vectors of a \textit{particular} length, 
+like \lstinline{vector T n}.
+\textsc{Devoid} had left this step to the proof engineer.
+We supported this in \toolnamec by chaining the previous change
+with an automatic configuration for unpacking sigma types.
+%To support this, we used one additional automatic configuration for unpacking sigma types.
+%This configuration corresponds to the equivalence between sigma types at a particular projection
+%and the same type escaping the sigma type. %, in our example $\Sigma$\lstinline{(s : packed_vect T).}$\pi_l$\lstinline{ s = n }$\simeq$\lstinline
+%{ vector T n}.
+By composition, this transported proofs across the equivalence from Section~\ref{sec:key1}.
+
+Two tricks helped with workflow integration for this change:
+1) have the search procedure view \lstinline{vector T n} as 
+$\Sigma$\lstinline{(v : vector T m).n = m} for some \lstinline{m},
+then let \toolnamec instantiate those equalities via unification heuristics, %before transforming,
+and 2) generate a custom eliminator for combining
+list terms with length invariants.
+%This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
+The resulting workflow works not just for lists and vectors, but for any algebraic ornament,
+automating manual effort from \textsc{Devoid}.
+The suggested tactics were again helpful for writing proofs
+that we had struggled with manually, but only after massaging.
+More effort is needed to improve tactic suggestions for dependent types.
+
+\mysubsubsec{Tuples \& Records: Industrial Use}
+An industrial proof engineer at the company \company has been using \toolnamec in proving
+correct an implementation of the TLS handshake protocol.
+%While this is ongoing work, thus far,
+%\toolnamec has helped \company integrate Coq with their existing verification workflow.
+\company had been using a custom solver-aided verification language to prove correct C programs,
+but had found that at times, the constraint solvers got stuck.
+%and they could not progress on proofs about those programs.
+They had built a compiler that translates their language into Coq's specification language Gallina,
+that way proof engineers could finish stuck proofs interactively using Coq.
+However, due to language differences, they had found the generated Gallina programs and specifications difficult to work with.
+
+The proof engineer used \toolnamec to port the automatically generated functions and specifications to more
+human-readable functions and specifications, wrote Coq proofs about those functions and specifications, then
+used \toolnamec to port those proofs back to
+proofs about the original functions and specifications.
+%This workflow has allowed for industrial integration with Coq and has helped the proof engineer write functions and proofs
+%that would have otherwise been difficult.
+So far, they have used at least three automatic configurations,
+but they most often used an automatic configuration for porting compiler-produced anonymous tuples
+to named records, as in file~\href{https://github.com/Ptival/saw-core-coq/tree/dump-wip}{\circled{18}}. % TODO aux material %\footnote{\url{https://github.com/Ptival/saw-core-coq/tree/dump-wip}} TODO note in guide it got a bit abandoned because proof engineer got stuck in france...
+%The proof engineer was able to use \toolnamec to integrate Coq into an existing proof engineering
+%workflow using solver-aided tools at \company.
+The workflow was a bit nonstandard,
+so there was little need for tactic suggestions.
+%In the initial days, we worked closely with the proof engineer;
+%later, the proof engineer worked independently and reached out occasionally.
+%The proof engineer was able to work independently, but found two challenges with workflow integration:
+%1) they sometimes could not distinguish between user errors and bugs,
+%and 2) they waited only about ten seconds at most for \toolnamec to return.
+%Both informed improvements to \toolnamec, like better error messages, caching,
+%and a way to tell \toolnamec not to $\delta$-reduce certain terms.
+
+\mysubsubsec{Permute Constructors: Modifying a Language}
+The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
+from the \textsc{Replica} user study of proof engineers~\cite{replica}.
+A change from one of the benchmarks is in Figure~\ref{fig:replica}.
+The proof engineer had a simple language represented by an inductive type \lstinline{Term},
+as well as some definitions and proofs about the language.
+The proof engineer swapped two constructors in the language,
+and added a new constructor \lstinline{Bool}.
+
+This case study and the next case study break this change into two parts.
+In the first part, we used \toolnamec with automatic configuration to repair functions and proofs about the language
+after swapping the constructors~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/Swap.v}{\circled{1}}.
+%We also succeeded at more difficult variants of this,
+%like swapping constructors with the same type, renaming all of the constructors,
+%permuting more than two constructors,
+%or permuting and renaming constructors at the same time.
+With a bit of human guidance to choose the permutation from a list of suggestions,
+\toolnamec repaired everything,
+though the original tactics would have also worked.
+%This is a property of the particular proofs that we had access to;
+%As Section~\ref{sec:overview}
+%and more advanced variants of this benchmark show~\circled{1}, even for simple changes, this is not always true.
+% TODO what happens with the tactic decompiler for these?
+%The entire \lstinline{Swap.v} file, which includes swapping constructors of every function in the \lstinline{list} module and
+%its dependencies, four variants of the \textsc{Replica} swapping change,
+%and testing a large and ambiguous permutation of a 30 constructor \lstinline{Enum},
+%took \toolnamec less than 90 seconds total. % TODO specs, reproduction
+%Each variant of the \textsc{Replica} swapping change took \toolnamec less than 5 seconds, % TODO specs, reproduction
+%and the change adding a constructor took \toolnamec less than 30 seconds. % TODO specs, reproduction
+
+\mysubsubsec{Add new Constructors: Extending a Language}
+We then used \toolnamec to repair functions 
+after adding the new constructor in Figure~\ref{fig:replica}, separating out the proof obligations for the new constructor from the old terms~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{\circled{19}}.
+%The resulting functions were guaranteed to preserve the behavior of the old terms. % TODO do the proofs too
+This change combined manual and automatic configuration.
+We defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across the equivalence \lstinline{Old.Term + Diff} $\simeq$ \lstinline{New.Term}.
+This resulted in case explosion, but was formulaic, and pointed to a clear path for automation of this class of changes.
+The repaired functions guaranteed preservation of the behavior of the original functions. %over \lstinline{Old.Term} before the change.
+
+Adding constructors was less simple than swapping.
+Most notably, the repaired terms were (unlike in the swap case) inefficient compared to human-written terms.
+For now, they make good regression tests for the human-written terms---in the future,
+we hope to automate the discovery of the more efficient terms,
+or use the refinement framework CoqEAL~\cite{cohen:hal-01113453}
+to get between proofs of the inefficient and efficient terms.
+
+\mysubsubsec{Factor out Constructors: External Example}
+The change from Figure~\ref{fig:equivalence2} came at the request of a non-author.
+We supported this using a manual configuration that described which constructor to map to \lstinline{true}
+and which constructor to map to \lstinline{false}~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
+The configuration was very simple for us to write, and the repaired tactics were immediately useful.
+
+\mysubsubsec{Permute Hypotheses: External Example}
+The change in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/flip.v}{\circled{20}} came at the request of a different non-author (a cubical type theory expert),
+and shows how to  use \toolnamec to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
+\lstinline{T2} $\rightarrow$ \lstinline{T1} $\rightarrow$ \lstinline{T3}.
+This configuration was manual.
+Since neither type was inductive, this change used the generic construction for any equivalence.
+%instantiated to this particular equivalence.
+This worked well, but necessitated some manual annotation due to the lack of custom unification heuristics for 
+manual configuration.
+
+\mysubsubsec{Change Inductive Structure: Unary to Binary}
+In \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{\circled{5}}, we used \toolnamec to support a classic example of changing inductive structure:
+updating unary to binary numbers~\cite{magaud2000changing}.
+% TODO fin and vect? mention somewhere?
+In Coq, a binary number \lstinline{N} (Figure~\ref{fig:nattobin}) is either zero or a positive binary number. A positive binary number
+is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI}) or
+0 (\lstinline{xO}).
+This allows for a fast addition function, found in the Coq standard library.
+In the style of the classic example~\cite{magaud2000changing}, we used \toolnamec to derive a slow binary
+addition function that does not refer to \lstinline{nat},
+and to port proofs from unary to slow binary addition.
+We then showed that the ported theorems hold over fast binary addition.
+
+%The implementation of this is in \lstinline{nonorn.v}.
+The configuration for \lstinline{N} used definitions from the Coq standard library
+for \lstinline{DepConstr} and \lstinline{DepElim} that had the desired behavior with no changes.
+\lstinline{Iota} over the successor case was a rewrite by a lemma
+from the standard library that reduced the successor case of the eliminator that we used for \lstinline{DepElim}:
+
+\begin{lstlisting}
+N.peano_rect_succ : $\forall$ P pO pS n,(@\vspace{-0.04cm}@)
+  N.peano_rect P pO pS (N.succ n) =(@\vspace{-0.04cm}@)
+  pS n (N.peano_rect P pO pS n).(@\vspace{-0.05cm}@)
+\end{lstlisting}
+%
+%\begin{lstlisting}
+%Lemma iota_1 :(@\vspace{-0.04cm}@)
+%  $\forall$ P pO pS n (Q : P (dep_constr_1 n) $\rightarrow$ Type),(@\vspace{-0.04cm}@)
+%     Q (pS n (dep_elim P pO pS n)) $\rightarrow$(@\vspace{-0.04cm}@)
+%     Q (dep_elim P pO pS (dep_constr_1 n)).(@\vspace{-0.04cm}@)
+%Proof.(@\vspace{-0.04cm}@)
+%  intros. unfold dep_elim, dep_constr_1. rewrite N.peano_rect_succ. auto.(@\vspace{-0.04cm}@)
+%Defined.
+%\end{lstlisting}
+The need for nontrivial \lstinline{Iota} comes from the fact that \lstinline{N} and \lstinline{nat}
+have different inductive structures.
+By writing a manual configuration with this \lstinline{Iota}, it was possible for us to implement this transformation 
+that had been its own tool.
+
+While porting addition from \lstinline{nat} to \lstinline{N} was automatic after configuring \toolnamec,
+porting proofs about addition took more work.
+Due to the lack of unification heuristics for manual configuration,
+we had to annotate the proof term to tell \toolnamec that implicit casts in the inductive cases of proofs were applications of \lstinline{Iota}
+over \lstinline{nat}.
+These annotations were formulaic, but tricky to write.
+Unification heuristics would go a long way toward improving the workflow. % for this use case.
+
+After annotating, we obtained automatically repaired proofs about slow binary addition,
+which we found simple to port to fast binary addition.
+We hope to automate this last step in the future using CoqEAL. %~\cite{cohen:hal-01113453}.
+Repaired tactics were partially useful, but failed to understand custom eliminators like \lstinline{N.peano_rect}, and to generate useful
+tactics for applications of \lstinline{Iota}; both of these are clear paths to more useful tactics.
+
+%\end{enumerate}
+%\item \toolnamec was flexible. Each search procedure for automatic configuration
+%was simple to write, and handled an entire class of equivalences corresponding to real use cases.
+%Manual configuration was possible for interesting use cases.
+%\item \toolnamec had good enough workflow integration to support real use cases.
+%The tactic decompiler showed promising early results with clear paths to improvements.
+%Some workflows were unanticipated and informed design changes in \toolnamec.
+%\end{enumerate}
+
+\iffalse
+\subsection{\textsc{Replica} Benchmark Variants}
+\label{sec:replica}
+
+\begin{figure}
+\begin{minipage}{0.49\columnwidth}
+   \lstinputlisting[firstline=1, lastline=9]{often/pi/replica.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\columnwidth}
+   \lstinputlisting[firstline=11, lastline=19]{often/pi/replica.tex}
+\end{minipage}
+\vspace{-0.4cm}
+\caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
+\vspace{-0.1cm}
+\label{fig:replica}
+\end{figure}
+
+The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
+from the \textsc{Replica} user study of proof engineers~\cite{replica}.
+A change corresponding to part of one of the benchmarks is shown in Figure~\ref{fig:replica}.
+The proof engineer had a simple language represented by an inductive type \lstinline{Term},
+as well as some definitions and proofs about the language.
+The proof engineer swapped two constructors in the term language,
+and added a new constructor \lstinline{Bool}.
+
+We used \toolnamec to automatically configure the proof term transformation to swap these constructors,
+then repair all of the functions and proofs.
+We also succeeded at more difficult variants of this,
+like swapping constructors with the same type, renaming all of the constructors,
+permuting more than two constructors,
+or permuting and renaming constructors at the same time.
+In all cases, with a bit of human guidance, \toolnamec repaired the functions and proofs.
+
+We then extended the inductive type to add the new constructor, and used \toolnamec to repair terms,
+separating out the proof obligations for the new constructor from the old terms.
+The resulting terms were guaranteed to preserve the behavior of the old terms.
+
+\subsubsection{Configuration}
+
+The swap change used an automatic configuration that handles permuting and renaming constructors of inductive types.
+This is one of the simplest configurations.
+The only nontrivial part is that \lstinline{DepConstr} over the updated type permutes back the constructors:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_constr_0 (H : Z) : Term := (@\codediff{Int}@) H.(@\vspace{-0.04cm}@)
+dep_constr_1 (H H0 : Term) : Term := (@\codediff{Eq}@) H H0.
+\end{lstlisting}
+so that they align with the original constructors.
+The eliminator similarly permutes cases:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_elim P f0 f1 f2 f3 f4 f5 f6 t : P t :=(@\vspace{-0.04cm}@)
+  Old.Term_rect P f0 (@\codediff{f2}@) (@\codediff{f1}@) f3 f4 f5 f6 t.
+\end{lstlisting}
+
+Adding the constructor combined a manual configuration with an automatic configuration.
+The details of this are in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v}.
+At a high level, we defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across this equivalence:
+
+\begin{lstlisting}
+Old.Term + (@\codediff{Diff}@) $\simeq$ New.Term
+\end{lstlisting}
+This made it simple to guarantee preservation of the behavior over \lstinline{Old.Term} before the change.
+
+\subsubsection{Example}
+
+We used \toolnamec to automatically update the functions and proofs in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/Swap.v}{\lstinline{Swap.v}} from the \textsc{Replica} benchmark.
+This included functions about \lstinline{Term}, as well as a large record \lstinline{EpsilonLogic} that encoded the semantics of the language,
+plus a proof about that record.
+%\begin{lstlisting}
+%Theorem eval_eq_true_or_false : $\forall$ (L : EpsilonLogic) env (t1 t2 : Term),(@\vspace{-0.04cm}@)
+%  L.eval env (Eq t1 t2) = L.vTrue $\vee$ L.eval env (Eq t1 t2) = L.vFalse.
+%\end{lstlisting}
+\toolnamec automatically updated all of these. For the inductive proof, it produced
+a new inductive proof that used the induction principle with the swapped constructors.
+It also discovered all other 23 type-correct permutations of constructors, all available for selection to 
+prove the appropriate equivalence and use to update functions and proofs.
+It presented the desired transformation as the first option in the list, so that all we had to do
+was pass the argument \lstinline{mapping 0} to \lstinline{Repair module} for it to handle this change.
+It was also able to handle the more advanced variants of this change.
+
+In \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v},
+we then updated the functions to add the new constructor.
+This resulted in some case explosion, but was very formulaic.
+Since the functions \toolnamec produced were guaranteed to preserve the behavior of the old functions,
+we used them as regression tests to check the behavior of the handwritten functions from the benchmark.
+
+\subsubsection{Lessons}
+
+Swapping constructors was simple---it used a search procedure that handles
+any permutation or renaming of constructors.
+Extending constructors was less simple.
+Most notably, the repaired terms were (unlike in the swap case) inefficient compared to human-written terms.
+For now, they make good regression tests for the human-written terms---in the future,
+we hope to automate the discovery of the more efficient term as well.
+
+The swap change alone was simple enough that \toolnamec would not have been necessary
+for updating the proofs for the initial change---keeping the tactics the same would have also worked.
+%This is a property of the particular proofs that we had access to;
+As we saw in Sections~\ref{sec:overview} and~\ref{sec:key1}, even for simple changes, this is not always true.
+More advanced variants of this benchmark that we tried did necessitate \toolnamec,
+and \toolnamec worked well for those. % TODO what happens with the tactic decompiler for these?
+The entire \lstinline{Swap.v} file, which includes swapping constructors of every function in the \lstinline{list} module and
+its dependencies, four variants of the \textsc{Replica} swapping change,
+and testing a large and ambiguous permutation of a 30 constructor \lstinline{Enum},
+took \toolnamec less than 90 seconds total. % TODO specs, reproduction
+Each variant of the \textsc{Replica} swapping change took \toolnamec less than 5 seconds, % TODO specs, reproduction
+and the change adding a constructor took \toolnamec less than 30 seconds. % TODO specs, reproduction
+
+\subsection{Vectors from Lists}
+\label{sec:dep}
+
+The proof term transformation in \toolnamec is based on the proof term transformation from
+\textsc{Devoid}, an earlier version of \toolnamec.
+\textsc{Devoid} supported proof reuse across \textit{algebraic ornaments}, which describe relations
+between two inductive types, where one type is exactly the other type indexed by a fold~\cite{mcbride}.
+The standard example of this is the relation between a list and a
+length-indexed vector, like we saw in Figure~\ref{fig:listtovect} in Section~\ref{sec:key1}.
+
+With \toolnamec, we were able to not only support algebraic ornaments as in \textsc{Devoid},
+but also automate effort that had previously been manual.
+Several proof engineers including the industrial proof engineer, a Reddit user,
+and someone on the \lstinline{coq-club} message board contacted us expressing interest in using this functionality.
+%, though we do not yet know if the latter two ended up using \toolnamec. % TODO honestly ask
+
+\subsubsection{Configuration}
+
+We used two automatic configurations to ease development with dependent types using algebraic ornaments.
+The first instantiates the proof term transformation to the transformation from \textsc{Devoid}:
+it ports functions and proofs from the input type to the ornamented type at \textit{some} index,
+like \lstinline{packed_vect T} from Section~\ref{sec:key1}.
+The second provides the missing link to get proofs at a \textit{particular} index, like \lstinline{vector T n};
+\textsc{Devoid} had left this to the proof engineer.
+
+For lists and vectors, the search procedure for the first configuration used the equivalence:
+
+\begin{lstlisting}
+list T $\simeq$ packed_vect T
+\end{lstlisting}
+The configuration it found for \lstinline{list} was simple: identity for \lstinline{Eta},
+the list constructors for \lstinline{DepConstr}, the list eliminator for \lstinline{DepElim},
+and definitional \lstinline{Iota}.
+For \lstinline{vector}, it set \lstinline{Eta} to $\eta$-expand $\Sigma$ types:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+eta (T : Type) (s : packed_vect T) : packed_vect T :=(@\vspace{-0.04cm}@)
+  $\exists$ ($\pi_l$ s) ($\pi_r$ s).
+\end{lstlisting}
+it set \lstinline{DepConstr} to pack constructors: % TODO shrink this now that some of it is in the other section
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_constr_0 T : $\exists$ 0 (Vector.nil A).(@\vspace{-0.04cm}@)
+dep_constr_1 T t s :=(@\vspace{-0.04cm}@)
+  $\exists$ (S ($\pi_l$ s)) (Vector.cons ($\pi_l$ s) t ($\pi_r$ s)).
+\end{lstlisting}
+it set \lstinline{DepElim} to eliminate its projections:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_elim T P pnil pcons : P (eta T s) :=(@\vspace{-0.04cm}@)
+vector_rect T(@\vspace{-0.04cm}@)
+  (fun n v => P ($\exists$ n v))(@\vspace{-0.04cm}@)
+  pnil(@\vspace{-0.04cm}@)
+  (fun t n v => pcons t ($\exists$ n v))(@\vspace{-0.04cm}@)
+  ($\pi_l$ s) ($\pi_r$ s).
+\end{lstlisting}
+and it used definitional \lstinline{Iota}.
+%This configuration was enough to capture all of the search and lifting functionality from \textsc{Devoid}.
+
+To get from lists to vectors \textit{at a particular length}, we used one additional automatic configuration.
+This configuration corresponds to the equivalence between sigma types at a particular projection
+and the same type escaping the sigma type, in our example:
+
+\begin{lstlisting}
+$\Sigma$(s : packed_vect T).$\pi_l$ s = n $\simeq$ vector T n
+\end{lstlisting}
+By composition with the initial equivalence, this transports proofs
+across the equivalence we want:
+
+\begin{lstlisting}
+$\Sigma$(l : list T).length l = n $\simeq$ vector T n
+\end{lstlisting}
+since these equivalences are equal up to transport along the first equivalence.
+
+The second configuration carries equality proofs over the indices,
+which are then instantiated for the transformation using unification heuristics.
+For example, it views \lstinline{vector T n} as implicitly representing $\Sigma$\lstinline{(v : vector T m).n = m} for some \lstinline{m}.
+This is seen in \lstinline{eta}, here: 
+% TODO both should take the same number of arguments, even if eta_A takes fewer. also does this belong in iota? this is weird honestly
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+eta T n m (H : n = m) (v : vector T m): vector T n :=(@\vspace{-0.04cm}@)
+  eq_rect m (vector T) v n H.
+\end{lstlisting}
+which is the identity function generalized over any equal index.
+Since there are no changes in inductive types, \lstinline{DepElim} and \lstinline{DepConstr} are trivial,
+and \lstinline{Iota} does not change.
+
+%\begin{lstlisting}
+%(@\codeauto{dep_elim}@) (T : Type) (P : $\forall$ (n : nat), vector T n $\rightarrow$ Type) (p : $\forall$ n v, P n (eta T n n v)) (v : vector T n) : %P (eta T n n v) :=
+%  p.
+%\end{lstlisting}
+
+\subsubsection{Example}
+
+The expanded example from the \textsc{Devoid} paper is in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/examples/Example.v}{\lstinline{Example.v}}.
+The \textsc{Devoid} example ported a list \lstinline{zip} function,
+a \lstinline{zip_with} function, and a proof \lstinline{zip_with_is_zip} relating the two
+functions from lists to vectors of some length.
+It then manually ported those proofs to proofs over vectors at a particular length.
+The updated \toolnamec example automates this last step.
+
+%The workflow for this was a bit different than it was with \textsc{Devoid}.
+To handle this, we used a custom eliminator \toolnamec generated to combine the list functions
+with length invariants, and to combine the list proofs with the proofs about those length invariants.
+This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
+
+\begin{lstlisting}
+Lemma zip_with_is_zip : $\forall$ A B n(@\vspace{-0.04cm}@)
+  (v1: $\Sigma$(l1: (@\codediff{list A}@)).(@\codediff{length}@) l1 = n)(@\vspace{-0.04cm}@)
+  (v2: $\Sigma$(l2: (@\codediff{list B}@)).(@\codediff{length}@) l2 = n),(@\vspace{-0.04cm}@)
+    zip_with pair n v1 v2 = zip n v1 v2.
+\end{lstlisting}
+We then ran \lstinline{Repair module} using the first
+configuration, which proved this lemma:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+Lemma zip_with_is_zip : $\forall$ A B n(@\vspace{-0.04cm}@)
+  (v1: $\Sigma$(l1: (@\codediff{packed_vect A}@)).(@\codediff{$\pi_l$}@) l1 = n)(@\vspace{-0.04cm}@)
+  (v2: $\Sigma$(l2: (@\codediff{packed_vect B}@)).(@\codediff{$\pi_l$}@) l2 = n),(@\vspace{-0.04cm}@)
+    zip_with pair v1 v2 = zip v1 v2.
+\end{lstlisting}
+with functions \lstinline{zip_with} and \lstinline{zip} updated as well.
+We composed this with \lstinline{Repair module} on the second configuration,
+which proved the final lemma:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+Lemma zip_with_is_zip : $\forall$ A B n(@\vspace{-0.04cm}@)
+  (v1: (@\codediff{vector A n}@)) (v2: (@\codediff{vector B n}@)),(@\vspace{-0.04cm}@)
+    zip_with pair v1 v2 = zip v1 v2.
+\end{lstlisting}
+with functions \lstinline{zip_with} and \lstinline{zip} repaired as well.
+
+\subsubsection{Lessons}
+
+%\paragraph{Configuration \& Flexibility}
+%Implementing the search procedure for the first configuration was straightforward.
+%Implementing the search procedure for the second configuration was less straightforward.
+%It is still an open challenge to define complete unification heuristics to port any arbitrary proof
+%along the second configuration in either direction,
+%though this does not impact the case study.
+
+%\paragraph{Workflow Integration}
+The result was a simplified workflow from \textsc{Devoid} that automated steps 
+that had previously been manual.
+%\toolnamec implemented some additional automation to generate eliminators that help separate out this additional information
+%for repair. 
+The tactic decompiler suggested tactics that helped us write tactic proofs ourselves that had been
+prohibitively difficult for us to write by hand.
+However, the suggested tactics did need massaging, as the decompiler struggled with motive inference
+for induction with dependent types.
+Additional effort is needed to further improve tactic integration with dependent types.
+% TODO how long did compiling the file take?
+
+\subsection{Unary and Binary Numbers}
+\label{sec:bin}
+
+All of the case studies so far have dealt with pairs of types with the same inductive structure,
+or with new information.
+Some of the oldest problems in the transport literature deal with \textit{changing} inductive
+structure without adding any new information.
+We have realized a classic example~\cite{magaud2000changing} of this with \toolnamec using a manual configuration:
+updating unary to binary natural numbers.
+% TODO fin and vect? mention somewhere?
+
+In Coq, a binary number \lstinline{N} (see Section~\ref{sec:key2}, Figure~\ref{fig:nattobin}) is either zero or a positive binary number. A positive binary number
+is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI})
+or nothing (\lstinline{xO}).
+This allows for a fast addition function, found in the Coq standard library.
+In the style of the classic example~\cite{magaud2000changing}, we use \toolnamec to derive a slow binary
+addition function that does not refer to \lstinline{nat}.
+From that, we port proofs over unary addition to binary addition,
+removing all references to \lstinline{nat}, and show that they hold over fast binary addition too.
+
+\subsubsection{Configuration}
+We configured this manually using the \lstinline{Configure} command,
+which takes the configuration as an argument.
+The result is in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{\lstinline{nonorn.v}}.
+The configuration for \lstinline{nat} was straightforward.
+For \lstinline{N}, we used functions from the Coq standard library that
+behaved like the \lstinline{nat} constructors:
+
+\begin{lstlisting}
+dep_constr_0 : N := 0%N.(@\vspace{-0.04cm}@)
+dep_constr_1 : N $\rightarrow$ N := N.succ.
+\end{lstlisting}
+and an eliminator from the Coq standard library that behaves like the \lstinline{nat} eliminator:
+
+\begin{lstlisting}
+dep_elim P (pO : P dep_constr_0) (pS : $\forall$n, P n $\rightarrow$ P (dep_constr_1 n)) (n : N) : P n :=(@\vspace{-0.04cm}@)
+  N.peano_rect P pO pS n.
+\end{lstlisting}
+\lstinline{Iota} was almost written for us.
+The standard library had a lemma that reduced the successor case:
+
+\begin{lstlisting}
+N.peano_rect_succ :(@\vspace{-0.04cm}@)
+  $\forall$ P pO pS n, N.peano_rect P pO pS (N.succ n) = pS n (N.peano_rect P pO pS n).
+\end{lstlisting}
+\lstinline{Iota} over the successor case was a simple rewrite by this lemma:
+
+\begin{lstlisting}
+Lemma iota_1 :(@\vspace{-0.04cm}@)
+  $\forall$ P pO pS n (Q : P (dep_constr_1 n) $\rightarrow$ Type),(@\vspace{-0.04cm}@)
+     Q (pS n (dep_elim P pO pS n)) $\rightarrow$(@\vspace{-0.04cm}@)
+     Q (dep_elim P pO pS (dep_constr_1 n)).(@\vspace{-0.04cm}@)
+Proof.(@\vspace{-0.04cm}@)
+  intros. unfold dep_elim, dep_constr_1. rewrite N.peano_rect_succ. auto.(@\vspace{-0.04cm}@)
+Defined.
+\end{lstlisting}
+
+The need for a nontrivial \lstinline{Iota} comes from the fact that \lstinline{N} has a different
+inductive structure from \lstinline{nat}, and is noted as far back as 2000~\cite{magaud2000changing}.
+This corresponds to a broader pattern---it captures the essence of the change in inductive structure.
+\toolnamec's configurable proof term transformation captures that intuition.
+
+\subsubsection{Example}
+
+We ported unary addition from \lstinline{nat} to \lstinline{N} fully automatically:
+
+\begin{lstlisting}
+Repair nat N in add as slow_add.
+\end{lstlisting}
+The result (tellingly named) has the same slow behavior as the \lstinline{add} function over \lstinline{nat}.
+However, it no longer refers to \lstinline{nat} in any way.
+Like the classic example~\cite{magaud2000changing}, we found it easy to manually prove that
+this has the same behavior as fast binary addition:
+
+\begin{lstlisting}
+Lemma add_fast_add: $\forall$ (n m : Bin.nat), slow_add n m = N.add n m.(@\vspace{-0.04cm}@)
+Proof.(@\vspace{-0.04cm}@)
+  induction n using N.peano_rect; intros m; auto. unfold slow_add.(@\vspace{-0.04cm}@)
+  rewrite N.peano_rect_succ. (* $\leftarrow$ iota_1 *)(@\vspace{-0.04cm}@)
+  unfold slow_add in IHn. rewrite IHn. rewrite N.add_succ_l. reflexivity.(@\vspace{-0.04cm}@)
+Qed.
+\end{lstlisting}
+
+We then used \toolnamec again to transform a proof:
+\begin{lstlisting}
+add_n_Sm : $\forall$ (n m : nat), S (add n m) = add n (S m).
+\end{lstlisting}
+from \lstinline{add} to \lstinline{slow_add}:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+slow_add_n_Sm : $\forall$ (n m : N), N.succ (slow_add n m) = slow_add n (N.succ m).
+\end{lstlisting}
+This was not quite as push-button.
+It involved a manual expansion step, turning implicit casts in the inductive case
+into explicit applications of \lstinline{Iota} over \Aa.
+These applications were formulaic, but tricky to write.
+Once we had that, though, we could run the same \lstinline{Repair} command
+to get \lstinline{slow_add_n_Sm}.
+Showing that the same theorem held over fast binary addition was then
+straightforward:
+
+\begin{lstlisting}
+Lemma add_n_Sm : $\forall$ n m, Bin.succ (N.add n m) = N.add n (Bin.succ m).
+Proof.
+  intros. repeat rewrite $\leftarrow$ add_fast_add. apply slow_plus_n_Sm.
+Qed.
+\end{lstlisting}
+
+\subsubsection{Lessons}
+
+\lstinline{Iota} was the key to supporting this case.
+It was enough to implement this transformation that had previously been its own tool
+just by writing a configuration with \lstinline{Iota}. 
+
+The file took under a second for us to compile using \toolnamec.
+We did not need tactic suggestions for this workflow,
+but we did note that supporting custom eliminators like \lstinline{N.peano_rect} would be a simple way
+to improve the decompiler.
+The most difficult part was manually expanding proofs about \lstinline{nat}
+to apply \lstinline{Iota},
+as there is not yet a way to supply custom unification heuristics for manual configuration.
+We discuss ideas for this in Sections~\ref{sec:related} and~\ref{sec:discussion}.
+
+\subsection{Industrial Use}
+\label{sec:industry}
+
+An industrial proof engineer at Galois has been using \toolnamec in proving
+correct an implementation of the TLS handshake protocol.
+While this is ongoing work, thus far,
+\toolnamec has helped \company integrate Coq with their existing verification workflow.
+
+\company had been using a custom solver-aided verification language to prove correct C programs.
+They had found that at times, those constraint solvers got stuck, and they could not
+progress on proofs about those programs.
+They had built a compiler that translates their solver-aided language into Coq's specification language Gallina,
+so proof engineers could finish stuck proofs interactively using Coq.
+However, the generated Gallina programs and specifications were sometimes too difficult to work with.
+
+A proof engineer at \company has used \toolnamec to work with those automatically generated programs and specifications
+with the following workflow:
+
+\begin{enumerate}
+\item use \toolnamec to update the automatically generated functions and specifications into more
+human-readable functions and specifications, then
+\item write Coq proofs about the more human-readable functions and specifications, then finally
+\item use \toolnamec again to update those proofs about human-readable functions and specifications back to
+proofs about the original automatically generated functions and specifications.
+\end{enumerate}
+This workflow has allowed for industrial integration with Coq and has helped the proof engineer write functions and proofs
+that would have otherwise been difficult.
+
+% TODO will add better proofs here once Val sends them
+
+\subsubsection{Configuration}
+
+\begin{figure*}
+\begin{minipage}{0.33\textwidth}
+   \lstinputlisting[firstline=1, lastline=10]{often/pi/records.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.66\textwidth}
+   \lstinputlisting[firstline=12, lastline=21]{often/pi/records.tex}
+\end{minipage}
+\vspace{-0.5cm}
+\caption{Two unnamed tuples (left) and corresponding named records (right).}
+\label{fig:records}
+\end{figure*}
+
+Some example proofs that the proof engineer used \toolnamec for
+can be found in a branch of the proof engineer's repository.\footnote{\url{https://github.com/Ptival/saw-core-coq/tree/dump-wip}}
+The proof engineer used \toolnamec to port anonymous tuples produced by \company' compiler
+to named records, as in the example in Figure~\ref{fig:records}.
+
+We implemented a search procedure for the proof engineer to automatically configure the proof term transformation to an equivalence
+between nested tuples and named records.
+The search procedure triggered automatically when the proof engineer called the \lstinline{Repair} command.
+%It set \Aa to be the record type and \B to be the tuple.
+The configuration it found for the record type was straightforward: identity for \lstinline{Eta},
+the record constructor for \lstinline{DepConstr}, the record eliminator for \lstinline{DepElim}, and definitional \lstinline{Iota}.
+For the tuple, it set \lstinline{Eta} to expand and project, for example for \lstinline{Handshake}:
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+eta (H : Handshake) : Handshake := (fst H, snd H).
+\end{lstlisting}
+it set \lstinline{DepConstr} to apply the pair constructor:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_constr_0 (handshakeType : seq 32 bool) (messageNumber : seq 32 bool) :=(@\vspace{-0.04cm}@)
+  (handshakeType, messageNumber).
+\end{lstlisting}
+and it set \lstinline{DepElim} to eliminate over the pair:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+dep_elim P (f: $\forall$ h m, P (dep_constr_0 h m)) (H : Handshake) : P (eta H) :=(@\vspace{-0.04cm}@)
+  prod_rect(@\vspace{-0.04cm}@)
+    (fun (p : seq 32 bool * seq 32 bool) => P (eta p))(@\vspace{-0.04cm}@)
+    (fun (h : seq 32 bool) (m : seq 32 bool) => f h m)(@\vspace{-0.04cm}@)
+    H.
+\end{lstlisting}
+For \lstinline{Connection}, it found similar \lstinline{Eta}, \lstinline{DepConstr}, and \lstinline{DepElim},
+except that \lstinline{Eta} included all nine projections, \lstinline{DepConstr} \textit{recursively} applied the
+pair constructor, and \lstinline{DepElim} \textit{recursively} eliminated the pair.
+This induced an equivalence between the nested tuple and record,
+which \toolnamec generated and proved automatically.
+
+\subsubsection{Example}
+Using this configuration, the proof engineer automatically ported this compiler-generated function:
+
+\begin{lstlisting}
+cork (c : Connection) : Connection :=(@\vspace{-0.04cm}@)
+  (fst c, (bvAdd _ (fst (snd c)) (bvNat _ 1), snd (snd c))).
+\end{lstlisting}
+to the corresponding function over records:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+cork (c : (@\texttt{Record}@).Connection) : (@\texttt{Record}@).Connection := {|(@\vspace{-0.04cm}@)
+  clientAuthFlag := clientAuthFlag c; (@\hspace{0.43cm}@) corked := bvAdd _ (corked c) (bvNat _ 1);(@\vspace{-0.04cm}@)
+  corkedIO := corkedIO c; (@\hspace{2.36cm}@) handshake := handshake c;(@\vspace{-0.04cm}@)
+  isCachingEnabled := isCachingEnabled c; keyExchangeEPH := keyExchangeEPH c;(@\vspace{-0.04cm}@)
+  mode := mode c; (@\hspace{3.64cm}@) resumeFromCache := resumeFromCache c;(@\vspace{-0.04cm}@)
+  serverCanSendOCSP := serverCanSendOCSP c(@\vspace{-0.04cm}@)
+|}.
+\end{lstlisting}
+The proof engineer then wrote proofs that record, for example:
+
+\begin{lstlisting}
+Lemma corkLemma :(@\vspace{-0.04cm}@)
+  $\forall$ (c : (@\texttt{Record}@).Connection), corked c = bvNat 2 0 $\rightarrow$ corked (cork c) = bvNat 2 1.(@\vspace{-0.04cm}@)
+Proof.(@\vspace{-0.04cm}@)
+  intros []. simpl. intros H. subst. reflexivity.(@\vspace{-0.04cm}@)
+Defined.
+\end{lstlisting} % TODO better proof
+and then used \toolnamec to automatically port these back to proofs about the original function:
+
+\begin{lstlisting}[backgroundcolor=\color{cyan!30}]
+Lemma corkLemma :(@\vspace{-0.04cm}@)
+  $\forall$ (c : Connection), fst (snd c) = bvNat 2 0 $\rightarrow$ fst (snd (cork c)) = bvNat 2 1.
+\end{lstlisting} % TODO decompiler
+
+\subsubsection{Lessons}
+
+%but also to help write dependently typed functions.
+So far, the proof engineer has used at least three automatic configurations.
+Two had existed already, while the one for tuples and records was
+added in response to the proof engineer's needs.
+This search procedure was easy for us to implement. %using techniques from
+%the repair and reuse tools \textsc{Pumpkin Patch} and \textsc{Devoid}.
+Flexibility could be further improved by exposing an interface to allow proof engineers to
+write search procedures themselves.
+
+The proof engineer was able to use \toolnamec to integrate Coq into an existing proof engineering
+workflow using solver-aided tools at \company.
+The workflow for using \toolnamec itself was a bit nonstandard,
+and there was little need for tactic proofs about the compiler-generated functions and specifications.
+In the initial days, we worked closely with the proof engineer;
+later, the proof engineer worked independently and reached out occasionally by email or phone.
+\toolnamec was usable enough for this to work, but we found two challenges with workflow integration:
+the proof engineer sometimes could not distinguish between user errors and bugs in our code,
+and the proof engineer typically waited only about ten seconds at most for \toolnamec to return.
+Both observations informed improvements to \toolnamec, like better error messages, caching of transformed subterms,
+and the ability to tell \toolnamec not to $\delta$-reduce certain terms.
+% TODO how long did compiling the file take?
+\fi
+
+% TODO what does the tactic decompiler do for this? It's broken. Why?
+
+%\subsubsection{Algebraic}
+
+%It is straightforward to fit the search algorithm from DEVOID into this framework, and in fact
+%we can loosen the restriction that the language has primitive projections.
+%Let $A$ be $A$ from DEVOID, let $B_{ind}$ be $B$ from DEVOID, let $I_B$ be $I_B$ from DEVOID,
+%and let \lstinline{index} be \lstinline{index} from DEVOID.
+%Let $B$ wrap $B_{ind}$ packed into a sigma type:
+
+%\begin{lstlisting}
+%B := $\lambda$ ($\vec{t}$ : $\vec{T}$) . ($\Sigma$ (i : I$_B$ $\vec{t}$) . B$_{ind}$ (index i $\vec{t}$))
+%\end{lstlisting}
+%Let $\vec{T_{B_j}}$ be the arguments of constructor type $C_{B_j}$ (type of constructor of $B_{\mathrm{ind}}$).
+%Define \lstinline{DepConstr(j, B)} recursively using the following derivation (based on and same fall-through convention as the DEVOID paper %for now,
+%and I'd prefer to move this away from a derivation but not sure how to do so and maintain formality): % TODO check
+
+%\begin{mathpar}
+%\mprset{flushleft}
+%\small
+%\hfill\fbox{$\Gamma$ $\vdash$ $(T_A, T_B)$ $\Downarrow_{C}$ $t$}\\%
+
+%\inferrule[Dep-Constr-Conclusion]
+%  { \Gamma \vdash \vec{t_{B_j}} : \vec{T_{B_j}} \\ \Gamma \vdash Constr(j, B)\ \vec{t_{B_j}} : B_{\mathrm{ind}} \vec{i_B}  }
+%  { \Gamma \vdash (A\ \vec{i_A},\ B_{\mathrm{ind}}\ \vec{i_B}) \Downarrow_{p_{c}} \exists\ (\vec{i_B}[\mathrm{off}\ A\ B]) (Constr(j, B)\ \vec{t_{B_j}}) }
+
+%\inferrule[Dep-Constr-Index] % new hypothesis for index
+%  { \mathrm{new}\ n_B\ b_B \\ \Gamma,\ n_B : t_B \vdash (\Pi (n_A : t_A) . b_A,\ b_B) \Downarrow_{i_{c}} t }
+%  {  \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_B : t_B) . b_B) \Downarrow_{C} t}
+
+%\inferrule[Dep-Constr-IH] % inductive hypothesis
+%  { \Gamma,\ n_B : B\ \vec{i_B} \vdash (b_A [n_B / n_A], b_B [\pi_l\ n_B / \vec{i_B}[\mathrm{off}\ A\ B]]) \Downarrow_{C} t }
+%  { \Gamma \vdash (\Pi (n_A : A\ \vec{i_A}) . b_A, \Pi (n_B : B\ \vec{i_B}) \Downarrow_{C} \lambda (n_B : B\ \vec{i_B}) . t }
+
+%\inferrule[Dep-Constr-Prod] % otherwise, unchanged (when we get rid of the gross fall-through thing, needs not new, and needs to check t_A and t_B not IHs)
+%  { \Gamma,\ n_B : t_B \vdash (b_A [n_B / n_A], b_B) \Downarrow_{C} t }
+%  { \Gamma \vdash (\Pi (n_A : t_A) . b_A, \Pi (n_B, t_B) . b_B) \Downarrow_{C} \lambda (n_B : t_B) . t }\\
+
+%\inferrule[Dep-Constr]
+%{ \Gamma \vdash Constr(j, A) : C_{A_j} \\ \Gamma \vdash (C_{A_j}, C_{B_j}) \Downarrow_{C} t }
+%{ \Gamma \vdash (Constr(j, A), Constr(j, B_{\mathrm{ind}}) \Downarrow_{C} t }
+%\end{mathpar}
+%and \lstinline{DepElim(b, p)} similarly:
+
+%\begin{mathpar}
+%TODO
+%\end{mathpar}
+
+%Then:
+
+%\begin{lstlisting}
+%DepConstr(j, A) : C$_{A_{j}}$ := Constr(j, A)
+%DepConstr(j, B) : C$_{A_{j}}$[B / A] := DepConstr(j, B)
+
+%DepElim(a, p){f$_{1}$, $\ldots$, f$_{n}$} : p a := Elim(a, p){f$_{1}$, $\ldots$, f$_{n}$}
+%DepElim(b, p){f$_{1}$, $\ldots$, f$_{n}$} : p b := DepElim(b, p)
+
+%Eta(A) := $\lambda$(a : A).a
+%Eta(B) := $\lambda$(b : B).$\exists$ ($\pi_l$ b) ($\pi_r$ b)
+%\end{lstlisting}
+
+% TODO investigate below projection thing, and write in when you finish
+%For now assume we have some \lstinline{pack} function to pack into an existential;
+%this is just for convenience.
+%The indexer is just the first projection of this lifted across the eliminator rule, AFAIK---note this isn't exactly $\Pi_{l}$ like we use
+%in the tool, but is really an eliminated $\Pi_{l}$? I will need to check on this, it's the only weird part.
+%Also assume some \lstinline{index_args} function to add the new index to the appropriate arguments---I'll
+%elaborate on this later but it's also something search needs to find and it's determined in terms of the \lstinline{indexer} that search finds.
+%Also now, we no longer assume primitive projections.
+
+%\subsubsection{Unpack sigma}
+
+%This one is kind of weird but it gets us user-friendly types. I'll explain later.
+
+%\begin{lstlisting}
+%DepConstr(j, A) := (* TODO pack into existential, deal with equality *)
+%DepConstr(j, B) : C$_{B_{j}}$ := Constr(j, B)
+
+%DepElim(a, p){f$_{1}$, $\ldots$, f$_{n}$} : p a := (* TODO *)
+%DepElim(b, p){f$_{1}$, $\ldots$, f$_{n}$} : p b := Elim(b, p){f$_{1}$, $\ldots$, f$_{n}$}
+
+%Eta(A) := $\lambda$(a : A).$\exists$ ($\exists$ ($\pi_l$ ($\pi_l$ a)) ($\pi_r$ ($\pi_l$ a))) ($\pi_r$ a)
+%Eta(B) := $\lambda$(b : B).b
+%\end{lstlisting}
+
+%\subsubsection{Records and tuples}
+
+%This one should be easier. We'll play a similar trick with $B$ and $B_{ind}$ like we do for algebraic,
+%and give things similar names.
+%Then:
+
+%\begin{lstlisting}
+%DepConstr(j, A) : C$_{A_{j}}$ := Constr(j, A)
+%DepConstr(j, B) : C$_{A_{j}}$[B / A] := $\lambda$ ($\vec{t_{A_j}}$ : $\vec{T_{A_j}}$) . (* TODO recursively pack into pair *)
+
+%DepElim(a, p){f$_{1}$, $\ldots$, f$_{n}$} : p a := Elim(a, p){f$_{1}$, $\ldots$, f$_{n}$}
+%DepElim(b, p){f$_{1}$, $\ldots$, f$_{n}$} : p b := (* TODO recursively eliminate product *)
+
+%Eta(A) := $\lambda$(a : A).a
+%Eta(B) := (* TODO recursive eta *)
+%\end{lstlisting}

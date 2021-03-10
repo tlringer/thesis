@@ -1,0 +1,45 @@
+\section{Conclusions \& Future Work}
+\label{sec:discussion}
+
+We combined search procedures for equivalences, a proof term transformation,
+and a proof term to tactic decompiler to build \toolnamec,
+a proof repair tool for changes in datatypes.
+The proof term transformation implements transport across equivalences in a way that is suitable for repair
+and that does not compromise definitional equality.
+The resulting tool is flexible and useful for real proof engineering scenarios.
+
+%\toolnamec has helped an industrial proof engineer integrate Coq with a company workflow,
+%and it has supported benchmarks common in the proof engineering community.
+
+% encountered in scaling up the \toolnamec proof term 
+%transformation (Section~\ref{sec:problems}), and how we believe ideas from the rewrite system and constraint
+%solver communities can address those challenges and improve the state of the art in proof engineering (Section~\ref{sec:egraph}).
+%Our hope is to inspire research communities to come together and open the door to better tools for proof reuse and repair.
+
+\mysubsubsec{Future Work}
+Moving forward, our goal is to make proofs easier to repair and reuse regardless of proof engineering expertise and style.
+We want to reach more proof engineers, and we want \toolnamec to integrate seamlessly with Coq.
+
+Three problems that we encountered scaling up the \toolnamec transformation were lack of type-directed search,
+ad hoc termination checks, and inability for proof engineers to add custom unification heuristics.
+We hope to solve these challenges using \textit{e-graphs}~\cite{egraph1},
+a data structure %that is used in the constraint solver and rewrite system communities 
+for managing equivalences
+built with these kinds of problems in mind.
+% to implement search procedures,
+%remove the burden of ad hoc reasoning about termination,
+%and make it simple for anyone to extend a system with new
+%rewrite rules---even ones that can call out to external procedures~\cite{egraph5} 
+%like our unification heuristics.
+E-graphs were recently adapted to express path equality in cubical~\cite{egraph6}; we hope to repurpose this insight.
+
+Beyond that, we believe that the biggest gains will come from continuing to improve the prototype decompiler.
+Two helpful features would be preserving indentation and comments, and automatically using information from the original proof script rather than asking for hints.
+Some improvements could come from better tactics,
+or from a more structured tactic language.
+Integration with version control systems or with integrated development environments could also help.
+With that, we believe that the future of seamless and powerful proof repair and reuse for all is within reach.
+%and we hope you will join us.
+%We hope you will join us in bringing it to life.
+
+

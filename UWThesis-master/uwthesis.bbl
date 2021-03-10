@@ -47,6 +47,10 @@ June Andronick, Ross Jeffery, Gerwin Klein, Rafal Kolanski, Mark Staples,
 \newblock In {\em International Conference on Software Engineering}, pages
   1002--1011, Zurich, Switzerland, June 2012. ACM.
 
+\bibitem{angiuli2020internalizing}
+Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
+\newblock Internalizing representation independence with univalence, 2020.
+
 \bibitem{Aspinall2000}
 David Aspinall.
 \newblock {Proof General}: A generic tool for proof development.
@@ -244,6 +248,12 @@ Adam Chlipala.
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
 
+\bibitem{Chlipala:2013:CPD:2584504}
+Adam Chlipala.
+\newblock {\em Certified Programming with Dependent Types: A Pragmatic
+  Introduction to the Coq Proof Assistant}.
+\newblock The MIT Press, 2013.
+
 \bibitem{FRAPBook}
 Adam Chlipala.
 \newblock Formal reasoning about programs, 2017.
@@ -270,6 +280,12 @@ Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
 \newblock Cubical type theory: a constructive interpretation of the univalence
   axiom.
 \newblock {\em arXiv preprint arXiv:1611.02108}, 2016.
+
+\bibitem{cohen:hal-01113453}
+Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
+\newblock {Refinements for Free!}
+\newblock In {\em {Certified Programs and Proofs}}, pages 147 -- 162,
+  Melbourne, Australia, December 2013.
 
 \bibitem{cohen:hal-01414881}
 Cyril Cohen and Damien Rouhling.
@@ -307,9 +323,29 @@ Cyril Cohen and Damien Rouhling.
 {Coq Development Team}.
 \newblock Coq integrated development environment, 1999-2018.
 
+\bibitem{coq-intro}
+{Coq Development Team}.
+\newblock A short introduction to coq, 1999-2019.
+
+\bibitem{coquand:inria-00076024}
+T.~Coquand and G{\'e}rard Huet.
+\newblock {The calculus of constructions}.
+\newblock Technical Report RR-0530, {INRIA}, May 1986.
+
+\bibitem{inductive}
+Thierry Coquand and Christine Paulin.
+\newblock Inductively defined types.
+\newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
+  pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
+
 \bibitem{coqhammer}
 {\L}ukasz Czajka and Cezary Kaliszyk.
 \newblock Hammer for coq: Automation for dependent type theory.
+\newblock {\em Journal of Automated Reasoning}, 61(1):423--453, Jun 2018.
+
+\bibitem{Czajka2018}
+{\L}ukasz Czajka and Cezary Kaliszyk.
+\newblock Hammer for {Coq}: Automation for dependent type theory.
 \newblock {\em Journal of Automated Reasoning}, 61(1):423--453, Jun 2018.
 
 \bibitem{Dagand17jfp}
@@ -348,6 +384,13 @@ Leonardo De~Moura and Nikolaj Bj{\o}rner.
   Analysis of Systems}, TACAS'08/ETAPS'08, pages 337--340, Berlin, Heidelberg,
   2008. Springer-Verlag.
 
+\bibitem{egraph4}
+Leonardo de~Moura and Nikolaj Bj{\o}rner.
+\newblock Z3: An efficient smt solver.
+\newblock In C.~R. Ramakrishnan and Jakob Rehof, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, pages 337--340,
+  Berlin, Heidelberg, 2008. Springer Berlin Heidelberg.
+
 \bibitem{ltac}
 David Delahaye.
 \newblock A tactic language for the system coq.
@@ -382,6 +425,13 @@ Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
 \newblock In {\em Proceedings of the 18th ACM SIGPLAN International Conference
   on Functional Programming}, ICFP '13, pages 319--330, New York, NY, USA,
   2013. ACM.
+
+\bibitem{DeMillo1977}
+Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
+\newblock Social processes and proofs of theorems and programs.
+\newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN Symposium on
+  Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
+  USA, 1977. ACM.
 
 \bibitem{coq87news}
 Maxime D\'{e}nes.
@@ -454,6 +504,18 @@ Thibault Gauthier, Cezary Kaliszyk, and Josef Urban.
   Programming, Artificial Intelligence and Reasoning}, volume~46 of {\em EPiC
   Series in Computing}, pages 125--143. EasyChair, 2017.
 
+\bibitem{Gazzola:2018:ASR:3180155.3182526}
+Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
+\newblock Automatic software repair: A survey.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
+
+\bibitem{egraph6}
+Emil~Holm Gj{\o}rup and Bas Spitters.
+\newblock Congruence closure in cubical type theory.
+\newblock In {\em Workshop on Homotopy Type Theory / Univalent Foundations},
+  2020.
+
 \bibitem{Gonthier2011}
 Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, and Derek Dreyer.
 \newblock How to make ad hoc proof automation less ad hoc.
@@ -511,10 +573,11 @@ Martin Hofmann.
 
 \bibitem{Huffman2013}
 Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
-\newblock Lifting and transfer: A modular design for quotients in isabelle/hol.
-\newblock In Georges Gonthier and Michael Norrish, editors, {\em Certified
-  Programs and Proofs: Third International Conference}, CPP 2013, pages
-  131--146, Cham, 2013. Springer International Publishing.
+\newblock Lifting and transfer: A modular design for quotients in
+  {Isabelle/HOL}.
+\newblock In {\em Certified Programs and Proofs: Third International
+  Conference}, CPP 2013, pages 131--146, Cham, 2013. Springer International
+  Publishing.
 
 \bibitem{huffman2013lifting}
 Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
@@ -546,10 +609,9 @@ Moa Johansson, Dan Ros{\'{e}}n, Nicholas Smallbone, and Koen Claessen.
 \bibitem{Johnsen2004}
 Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock Theorem reuse by proof term transformation.
-\newblock In Konrad Slind, Annette Bunker, and Ganesh Gopalakrishnan, editors,
-  {\em Theorem Proving in Higher Order Logics: 17th International Conference},
-  TPHOLs 2004, pages 152--167, Berlin, Heidelberg, 2004. Springer Berlin
-  Heidelberg.
+\newblock In {\em Theorem Proving in Higher Order Logics: 17th International
+  Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
+  Proceedings}, pages 152--167. Springer, Berlin, Heidelberg, 2004.
 
 \bibitem{johnsen2004theorem}
 Einar~Broch Johnsen and Christoph L{\"u}th.
@@ -557,12 +619,23 @@ Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock In {\em International Conference on Theorem Proving in Higher Order
   Logics}, pages 152--167. Springer, 2004.
 
+\bibitem{egraph2}
+Rajeev Joshi, Greg Nelson, and Yunhong Zhou.
+\newblock Denali: A practical algorithm for generating optimal code.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 28(6):967–989, November
+  2006.
+
 \bibitem{Kaivola2003}
 Roope Kaivola and Katherine Kohatsu.
 \newblock Proof engineering in the large: formal verification of pentium®4
   floating-point divider.
 \newblock {\em International Journal on Software Tools for Technology
   Transfer}, 4(3):323--334, 2003.
+
+\bibitem{Kaliszyk2014}
+Cezary Kaliszyk and Josef Urban.
+\newblock Learning-assisted automated reasoning with {Flyspeck}.
+\newblock {\em Journal of Automated Reasoning}, 53(2):173--213, Aug 2014.
 
 \bibitem{mylar}
 Mik Kersten and Gail~C. Murphy.
@@ -578,11 +651,25 @@ Gerwin Klein.
   Methods: 19th International Symposium}, FM 2014, pages 16--21, Cham, 2014.
   Springer International Publishing.
 
+\bibitem{Klein:2014:CFV:2584468.2560537}
+Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
+  Rafal Kolanski, and Gernot Heiser.
+\newblock Comprehensive formal verification of an os microkernel.
+\newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
+
 \bibitem{Klein2014micro}
 Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
   Rafal Kolanski, and Gernot Heiser.
 \newblock Comprehensive formal verification of an {OS} microkernel.
 \newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
+
+\bibitem{Klein2009}
+Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
+  Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael
+  Norrish, Thomas Sewell, Harvey Tuch, and Simon Winwood.
+\newblock {seL4}: Formal verification of an {OS} kernel.
+\newblock In {\em Proceedings of the ACM SIGOPS 22Nd Symposium on Operating
+  Systems Principles}, SOSP '09, pages 207--220, New York, NY, USA, 2009. ACM.
 
 \bibitem{ko-explore}
 A.~J. Ko, Brad~A. Myers, Michael~J. Coblenz, and Htet~Htet Aung.
@@ -726,6 +813,10 @@ Trevor~L. McDonell, Timothy A.~K. Zakian, Matteo Cimini, and Ryan~R. Newton.
   on Functional Programming}, ICFP 2016, pages 338--350, New York, NY, USA,
   2016. ACM.
 
+\bibitem{song}
+James McKinna and Conor McBride.
+\newblock One song to the tune of another.
+
 \bibitem{Mechtaev:2016:ASM:2884781.2884807}
 Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
 \newblock Angelix: Scalable multiline program patch synthesis via symbolic
@@ -773,6 +864,11 @@ Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
 Martin Monperrus.
 \newblock {Automatic Software Repair: a Bibliography}.
 \newblock {\em {ACM Computing Surveys}}, 2017.
+
+\bibitem{Monperrus:2018:ASR:3177787.3105906}
+Martin Monperrus.
+\newblock Automatic software repair: A bibliography.
+\newblock {\em ACM Comput. Surv.}, 51(1):17:1--17:24, January 2018.
 
 \bibitem{Mulhern06proofweaving}
 Anne Mulhern.
@@ -825,6 +921,34 @@ Yutaka Nagashima and Yilun He.
   Software Engineering}, ASE 2018, pages 362--372, New York, NY, USA, 2018.
   ACM.
 
+\bibitem{egraph5}
+Chandrakana Nandi, Max Willsey, Adam Anderson, James~R. Wilcox, Eva Darulova,
+  Dan Grossman, and Zachary Tatlock.
+\newblock Synthesizing structured cad models with equality saturation and
+  inverse transformations.
+\newblock In {\em Proceedings of the 41st ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI 2020, page 31–44, New York, NY,
+  USA, 2020. Association for Computing Machinery.
+
+\bibitem{egraph1}
+Charles~Gregory Nelson.
+\newblock {\em Techniques for Program Verification}.
+\newblock PhD thesis, Stanford, CA, USA, 1980.
+\newblock AAI8011683.
+
+\bibitem{nlab:beta-reduction}
+{nLab authors}.
+\newblock beta-reduction.
+\newblock \url{http://ncatlab.org/nlab/show/beta-reduction}, July 2020.
+\newblock \href{http://ncatlab.org/nlab/revision/beta-reduction/6}{Revision 6}.
+
+\bibitem{nlab:eta-conversion}
+{nLab authors}.
+\newblock eta-conversion.
+\newblock \url{http://ncatlab.org/nlab/show/eta-conversion}, July 2020.
+\newblock \href{http://ncatlab.org/nlab/revision/eta-conversion/12}{Revision
+  12}.
+
 \bibitem{scala-vobj}
 Martin Odersky, Vincent Cremet, Christine R\"{o}ckl, and Matthias Zenger.
 \newblock A nominal theory of objects with dependent types.
@@ -843,7 +967,7 @@ Zoe Paraskevopoulou, C{\u{a}}t{\u{a}}lin Hrit{\c{c}}u, Maxime D{\'e}n{\`e}s,
   Cham, 2015. Springer International Publishing.
 
 \bibitem{Blanchette2013}
-L.~C. Paulson and J.~C. Blanchette.
+Lawrence~C. Paulson and Jasmin~Christian Blanchette.
 \newblock Three years of experience with {Sledgehammer}, a practical link
   between automatic and interactive theorem provers.
 \newblock In G.~Sutcliffe, S.~Schulz, and E.~Ternovska, editors, {\em
@@ -892,6 +1016,22 @@ Olivier Pons.
 \newblock In {\em International Workshop on Types for Proofs and Programs},
   pages 217--232. Springer, 2000.
 
+\bibitem{Pugh1991}
+William Pugh.
+\newblock The {Omega} test: A fast and practical integer programming algorithm
+  for dependence analysis.
+\newblock In {\em Proceedings of the 1991 ACM/IEEE Conference on
+  Supercomputing}, Supercomputing '91, pages 4--13, New York, NY, USA, 1991.
+  ACM.
+
+\bibitem{Qi:2015:APP:2771783.2771791}
+Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
+\newblock An analysis of patch plausibility and correctness for
+  generate-and-validate patch generation systems.
+\newblock In {\em Proceedings of the 2015 International Symposium on Software
+  Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
+  ACM.
+
 \bibitem{Reynolds1983TypesAA}
 John~C. Reynolds.
 \newblock Types, abstraction and parametric polymorphism.
@@ -902,6 +1042,12 @@ Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock Qed at large: A survey of engineering of formally verified software.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
+
+\bibitem{replica}
+Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
+\newblock Replica: Repl instrumentation for coq analysis.
+\newblock In {\em Proceedings of the 9th ACM SIGPLAN International Conference
+  on Certified Programs and Proofs}, CPP 2020, pages 99--113, 01 2020.
 
 \bibitem{Ringer2018}
 Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
@@ -915,6 +1061,13 @@ Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
 \newblock Adapting proof automation to adapt proofs.
 \newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
   on Certified Programs and Proofs}, pages 115--129. ACM, 2018.
+
+\bibitem{pumpkinpatch}
+Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
+\newblock Adapting proof automation to adapt proofs.
+\newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
+  on Certified Programs and Proofs}, CPP 2018, page 115–129, New York, NY,
+  USA, 2018. Association for Computing Machinery.
 
 \bibitem{Ringer2019}
 Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
@@ -955,6 +1108,13 @@ Patrick~M. Rondon, Ming Kawaguci, and Ranjit Jhala.
   Language Design and Implementation}, PLDI '08, pages 159--169, New York, NY,
   USA, 2008. ACM.
 
+\bibitem{Saibi:PhD}
+Amokrane Sa\"{i}bi.
+\newblock {\em Outils G\'{e}n\'{e}riques de Mod\'{e}lisation et de
+  D\'{e}monstration pour la Formalisation des Math\'{e}matiques en Th\'{e}orie
+  des Types: application \`{a} la Th\'{e}orie des Cat\'{e}gories}.
+\newblock PhD thesis, Universit\'{e} Paris VI, Paris, France, 1999.
+
 \bibitem{proverbot9001}
 Alex Sanchez{-}Stern, Yousef Alhessi, Lawrence~K. Saul, and Sorin Lerner.
 \newblock Generating correctness proofs with neural networks.
@@ -972,6 +1132,11 @@ Daniel Selsam and Leonardo de~Moura.
 \newblock Congruence closure in intensional type theory.
 \newblock {\em CoRR}, abs/1701.04391, 2017.
 
+\bibitem{egraph7}
+Daniel Selsam and Leonardo de~Moura.
+\newblock Congruence closure in intensional type theory.
+\newblock {\em CoRR}, abs/1701.04391, 2017.
+
 \bibitem{sozeau:equations}
 Matthieu Sozeau.
 \newblock Equations: A dependent pattern-matching compiler.
@@ -983,6 +1148,14 @@ Matthieu Sozeau.
 Matthieu Sozeau.
 \newblock Towards a better-behaved unification algorithm for coq beta ziliani,
   2014.
+
+\bibitem{Sozeau2008}
+Matthieu Sozeau and Nicolas Oury.
+\newblock First-class type classes.
+\newblock In Otmane~Ait Mohamed, C{\'e}sar Mu{\~{n}}oz, and Sofi{\`e}ne Tahar,
+  editors, {\em Theorem Proving in Higher Order Logics: 21st International
+  Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
+  pages 278--293, Berlin, Heidelberg, 2008. Springer Berlin Heidelberg.
 
 \bibitem{hstocoqv}
 Antal Spector-Zabusky, Joachim Breitner, Christine Rizkallah, and Stephanie
@@ -1024,6 +1197,17 @@ Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
   transport.
 \newblock {\em Proc. ACM Program. Lang.}, 2(ICFP):92:1--92:29, July 2018.
 
+\bibitem{tabareau2019marriage}
+Nicolas Tabareau, Éric Tanter, and Matthieu Sozeau.
+\newblock The marriage of univalence and parametricity, 2019.
+
+\bibitem{egraph3}
+Ross Tate, Michael Stepp, Zachary Tatlock, and Sorin Lerner.
+\newblock Equality saturation: A new approach to optimization.
+\newblock In {\em Proceedings of the 36th Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL ’09, page 264–276, New
+  York, NY, USA, 2009. Association for Computing Machinery.
+
 \bibitem{idris-repl}
 {The Idris Community}.
 \newblock The idris repl, 2017.
@@ -1038,6 +1222,13 @@ The {Univalent Foundations Program}.
 \newblock {\em Homotopy Type Theory: Univalent Foundations of Mathematics}.
 \newblock \url{https://homotopytypetheory.org/book}, Institute for Advanced
   Study, 2013.
+
+\bibitem{Wenzel2007isar}
+Makarius Wenzel.
+\newblock {Isabelle/Isar}--a generic framework for human-readable proof
+  documents.
+\newblock {\em From Insight to Proof--Festschrift in Honour of Andrzej
+  Trybulec}, 10(23):277--298, 2007.
 
 \bibitem{Wenzel2012}
 Makarius Wenzel.
@@ -1089,6 +1280,11 @@ James~R. Wilcox, Doug Woos, Pavel Panchekha, Zachary Tatlock, Xi~Wang,
   on Programming Language Design and Implementation}, pages 357--368, Portland,
   OR, USA, June~15--17, 2015.
 
+\bibitem{williamsphd}
+Ambre Williams.
+\newblock {\em Refactoring functional programs with ornaments}.
+\newblock PhD thesis, 2020.
+
 \bibitem{Williams:2014:OP:2633628.2633631}
 Thomas Williams, Pierre-\'{E}variste Dagand, and Didier R{\'e}my.
 \newblock Ornaments in practice.
@@ -1109,6 +1305,14 @@ Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
   Programs and Proofs}, CPP 2016, pages 154--165, New York, NY, USA, 2016. ACM.
 
 \bibitem{proof-eng}
+Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
+  Thomas Anderson.
+\newblock Planning for change in a formal verification of the raft consensus
+  protocol.
+\newblock In {\em Proceedings of the 5th ACM SIGPLAN Conference on Certified
+  Programs and Proofs}, CPP 2016, pages 154--165, New York, NY, USA, 2016. ACM.
+
+\bibitem{Woos:2016:PCF:2854065.2854081}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
   Thomas Anderson.
 \newblock Planning for change in a formal verification of the raft consensus

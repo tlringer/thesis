@@ -1,0 +1,110 @@
+\section{Related Work}
+\label{sec:related}
+
+%We discuss related work in proof repair, proof refactoring, proof reuse, and proof design.
+%More can be found in a recent survey of proof engineering~\cite{PGL-045}.
+
+\mysubsubsec{Proof Repair}
+%\toolnamec is not the first proof repair tool.
+The search procedures in \textbf{Configure} are based partly on ideas from the original \textsc{Pumpkin Patch} prototype~\cite{pumpkinpatch}.
+%which includes similar search procedures for discovering patches to fix broken proofs.
+The \textsc{Pumpkin Patch} prototype did not apply the patches that it finds,
+handle changes in structure, or include support for tactics beyond the use of hints.
+%\toolnamec addresses these limitations.
+
+Proof repair can be viewed as a form of \textit{program repair}~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526}
+for proof assistants.
+Proof assistants like Coq are a good fit for program repair: A recent paper~\cite{Qi:2015:APP:2771783.2771791} 
+recommends that program repair tools draw on extra information
+such as specifications or example patches. In Coq, specifications and examples 
+are rich and widely available: specifications thanks to dependent types,
+and examples thanks to constructivism.
+
+\mysubsubsec{Proof Refactoring}
+%Proof repair is related to proof refactoring~\cite{WhitesidePhD}. 
+%and a number of the changes that \toolnamec supports can be viewed as refactorings.
+The proof refactoring tool Levity~\cite{Bourke12} for Isabelle/HOL has seen large-scale industrial use.
+Levity focuses on a different task: moving lemmas.
+Chick~\cite{robert2018} and RefactorAgda~\cite{wibergh2019} are proof refactoring tools
+in a Gallina-like language and in Agda, respectively.
+% that also support a few changes that can be viewed as repairs~\cite{PGL-045}.
+%Chick operates over a Gallina-like language, while RefactorAgda is implemented in Agda.
+These tools support primarily syntactic changes and do not have tactic support.
+% changes these tools support are still primarily syntactic,
+%and neither of these tools have tactic support.
+
+A few proof refactoring tools operate directly over tactics:
+POLAR~\cite{Dietrich2013} refactors proof scripts in languages based on Isabelle/Isar~\cite{Wenzel2007isar},
+CoqPIE~\cite{Roe2016} is an IDE with support for simple refactorings of Ltac scripts, and
+Tactician~\cite{adams2015} is a refactoring tool for switching between tactics and tacticals.
+This approach is not tractable for more complex changes~\cite{robert2018}.
+
+\mysubsubsec{Proof Reuse}
+%Proof repair is proof reuse with the additional constraint that one specification ceases to exist.
+A few proof reuse tools work by proof term transformation and so can be used for repair.
+A 2004 paper~\cite{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
+\toolnamec generalizes the transformation from \textsc{Devoid}~\cite{Ringer2019},
+which transformed proofs along algebraic ornaments~\cite{mcbride}.
+A 2000 paper~\cite{magaud2000changing} implements a proof term transformation between
+unary and binary numbers. 
+Both of these fit into \toolnamec configurations,
+and none implements tactic support in Coq like \toolnamec does.
+The expansion algorithm from the 200 paper~\cite{magaud2000changing} may help guide the design
+of unification heuristics for \lstinline{Iota} in \toolnamec.
+
+CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations,
+and these relations can be more general than \toolnamec's equivalences.
+However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
+due to the problem that \lstinline{Iota} addresses.
+CoqEAL may be most useful to chain with \toolnamec to get faster functions.
+Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
+better workflow support for changes that do not correspond to equivalences.
+
+The \toolnamec transformation implements transport.
+Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
+UP~\cite{tabareau2017equivalences} approximates it
+in Coq, only sometimes relying on functional extensionality.
+While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
+
+Recent work~\cite{tabareau2019marriage} extends UP with 
+a white-box transformation that may work for repair.
+This imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
+%that establish what is effectively the correctness criteria
+%for the configuration in \toolnamec, while \toolnamec needs only that it holds metatheoretically.
+and it includes neither search procedures for equivalences nor tactic script generation.
+It also does not support changes in inductive structure,
+instead relying on its original black-box functionality;
+\lstinline{Iota} solves this in \toolnamec. % and is based on lessons learned from reading that article.
+The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
+
+%Univalent parametricity implements type-directed search, a feature that \toolnamec does not yet support.
+%It achieves this using type classes~\cite{Sozeau2008}; this does not always scale well~\cite{tabareau2019marriage}.
+%Both \toolnamec and univalent parametricity could benefit from implementing type-directed search using e-graphs~\cite{egraph1}.
+%Of particular interest are those developed for congruence in Cubical Agda~\cite{egraph6},
+%which prove the theorem \lstinline{hcongr_ideal}~\cite{egraph7} necessary to use e-graphs not derivable in CIC$_{\omega}$,
+%and which should allow for efficient and elegant automatic transport.
+
+\mysubsubsec{Proof Design}
+Much work focuses on designing proofs
+to be robust to change, rather than fixing broken proofs.
+This can take the form of design principles, like using 
+information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
+or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
+%thereby localizing the burden of change to the interface.
+Design and repair are complementary: design requires foresight, while repair can occur retroactively.
+Repair can help with changes that occur outside of the proof engineer's control,
+or with changes that are difficult to protect against even with informed design.
+
+Another approach to this is to use heavy proof automation, for example through
+program-specific proof automation~\cite{Chlipala:2013:CPD:2584504}
+%implementations of decision procedures~\cite{Pugh1991},
+or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
+The degree to which proof engineers rely on automation varies, as seen in the data from a user study~\cite{replica}.
+Automation-heavy proof engineering styles localize the burden of change to the automation,
+but can result in terms that are large and slow to type check,
+and tactics that can be difficult to debug.
+While these approaches are complementary, more work is needed for \toolnamec to better support 
+developments in this style.
+
+
+

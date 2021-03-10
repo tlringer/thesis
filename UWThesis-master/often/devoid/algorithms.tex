@@ -1,0 +1,513 @@
+\section{Algorithms}
+\label{sec:alg}
+
+This section describes the algorithms that implement the specifications
+from Section~\ref{sec:spec}.
+
+\subparagraph*{Presentation.} We present both algorithms relationally, using a set of judgments;
+to turn these relations into algorithms, prioritize the rules by running the derivations in
+order, falling back to the original term when no rules match.
+The default rule for a list of terms is to run the derivation on each element of the list individually. 
+
+\subparagraph*{Notes on Syntax.} The language the algorithms operate over is CIC$_{\omega}$ with primitive eliminators;
+this is a simplified version of the type theory underlying Coq. Figure~\ref{fig:syntax}
+contains the syntax (which includes variables, sorts, product types,
+functions, inductive types, constructors, and eliminators),
+as well as the syntax for some judgments and operations,
+the rules for which are standard and thus omitted. 
+For simplicity of presentation, we assume variables are names; 
+we assume that all names are fresh.
+As in Coq, we assume the existence of
+an inductive type \sigT\ for sigma types with projections \Pil\ and \Pir;
+for simplicity, we assume projections are primitive.
+Throughout, we use \smallmath{$\vec{i}$} and \smallmath{$\{t_1, \ldots, t_n\}$} to denote
+lists of terms, and we use \smallmath{$\vec{i}[j]$} to denote accessing the element of the list \smallmath{$\vec{i}$} at offset \smallmath{$j$}.
+
+\subparagraph*{Common Definitions.}
+The algorithms assume list insertion and removal functions \lstinline{insert} and \lstinline{remove},
+plus two functions \toolnameb implements:
+\lstinline{off} computes the offset of the new index of type \IB\ in \B's indices,
+and \lstinline{new} determines whether a hypothesis in a case of the eliminator type of \B\ is new.
+Figure~\ref{fig:common} contains other common definitions, the names for which are reserved:
+The \lstinline{index} and \lstinline{deindex} functions insert an index into and remove an index from a list
+at the index computed by \lstinline{off}.
+Input type \Aa\ expands to an inductive type with indices % parameters and indices, really
+of types \smallmath{$\vec{\mathrm{X}_A}$}, sort \smallmath{$\mathrm{s}_A$}, and constructors
+\smallmath{$\{\mathrm{C}_{A_1}, \ldots, \mathrm{C}_{A_n}\}$}.
+\smallmath{$\mathrm{P}_A$} denotes the type of the motive of the eliminator of \Aa,
+and each \smallmath{$\mathrm{E}_{A_i}$} denotes the type of the eliminator for the $i$th constructor of \Aa.
+Analogous names are also reserved for input type \B.
+
+\begin{figure}
+\begin{minipage}{0.52\textwidth}
+\small
+\begin{grammar}
+<i> $\in \mathbbm{N}$, <v> $\in$ Vars, <s> $\in$ \{ Prop, Set, Type<i> \}
+
+<t> ::= <v> | <s> | $\Pi$ (<v> : <t>) . <t> | \\
+$\lambda$ (<v> : <t>) . <t> | <t> <t> | \\
+Ind (<v> : <t>)\{<t>,\ldots,<t>\} | Constr (<i>, <t>) | \\
+Elim(<t>, <t>)\{<t>,\ldots,<t>\}
+\end{grammar}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\footnotesize
+\begin{lstlisting}
+$\Gamma$ $\vdash$ $t$ $:$ $T$ // type checking
+$\Gamma$ $\vdash$ $t_1$ $\defeq$ $t_2$ // definitional equality
+$t_\beta$ // beta-reduction
+$t_{\beta\delta\iota}$ // normalization
+$t$ $[y$ $/$ $x]$ // substitution
+$\xi$ $(I,$ $Q,$ $c,$ $C)$ // type of eliminator
+\end{lstlisting}
+\end{minipage}
+\vspace{-0.3cm}
+\caption{CIC$_\omega$ syntax (left, from existing work~\cite{Timany2015FirstST}) and judgments and operations (right).}
+\label{fig:syntax}
+\end{figure}
+
+
+\begin{figure}
+\begin{minipage}{0.60\textwidth}
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+$A$ := $\mathrm{Ind} (\mathit{Ty}_A : \Pi (\vec{i_A} : \vec{\mathrm{X}_A}) . \mathrm{s}_A)\{\mathrm{C}_{A_1}, \ldots, \mathrm{C}_{A_n}\}$
+(@\vspace{-0.4cm}@)
+$B$ := $\mathrm{Ind} (\mathit{Ty}_B : \Pi (\vec{i_B} : \vec{\mathrm{X}_B}) . \mathrm{s}_B)\{\mathrm{C}_{B_1}, \ldots, \mathrm{C}_{B_n}\}$
+$\forall 1 \le i \le n,$
+  $\mathrm{E}_{A_i}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(i,\ A),\ C_{A_i})$
+  $\mathrm{E}_{B_i}\ (p_B : \mathrm{P}_B)$ := $\xi(B,\ p_B,\ \mathrm{Constr}(i,\ B),\ C_{B_i})$
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.40\textwidth}
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+$\mathrm{P}_A$ := $\Pi (\vec{i_A} : \vec{\mathrm{X}_A}) (a : A\ \vec{i_A}) . \mathrm{s}_A$
+(@\vspace{-0.4cm}@)
+$\mathrm{P}_B$ := $\Pi (\vec{i_B} : \vec{\mathrm{X}_B}) (b : B\ \vec{i_B}) . \mathrm{s}_B$
+$\phantom{skip}$
+$\mathrm{index}$ := $\mathrm{insert}\ (\mathrm{off}\ A\ B)$
+$\mathrm{deindex}$ := $\mathrm{remove}\ (\mathrm{off}\ A\ B)$
+\end{lstlisting}
+\end{minipage}
+\vspace{-0.3cm}
+\caption{Common definitions for both algorithms.}
+\label{fig:common}
+\end{figure}
+
+\subsection{\lstinline{Find ornament}}
+\label{sec:findalg}
+
+The \lstinline{Find ornament} algorithm implements the specification from Section~\ref{sec:findspec}.
+It builds on three intermediate steps: one to generate each of \lstinline{indexer},
+\lstinline{promote}, and \lstinline{forget}. 
+Figure~\ref{fig:searchindexer} shows the algorithm for generating \lstinline{indexer}.
+The algorithms for generating \lstinline{promote} and \lstinline{forget} are similar;
+Figure~\ref{fig:searchpromote} shows only the derivations for generating \lstinline{promote}
+that are different from those for generating \lstinline{indexer}, and 
+the derivations for generating \lstinline{forget} are omitted.
+
+\subsubsection{Searching for the Indexer}
+
+Search generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \B\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
+which consists of three judgments: one to generate the motive, one to generate each case,
+and one to compose the motive and cases.
+
+\begin{figure}
+\begin{mathpar}
+%\begin{minipage}{0.45\textwidth}
+\mprset{flushleft} 
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{i_{m}} t$ }\vspace{-0.55cm}\\
+
+\inferrule[Index-Motive] 
+  { \\ }
+  { \Gamma \vdash (A, B) \Downarrow_{i_{m}} 
+    \lambda (\vec{i_A} : \vec{\mathrm{X}_A}) (a : A\ \vec{i_A}) . (I_B\ \vec{i_A})_\beta }\\
+
+\hfill\phantom{sorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysor}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{i_{c}} t$ }\vspace{-0.4cm}\\
+
+\inferrule[Index-Conclusion]
+  { \\ }
+  { \Gamma \vdash (p_A\ \vec{i_{A}}\ a,\ p_B\ \vec{i_{B}}\ b) \Downarrow_{i_{c}} \vec{i_{B}}[\mathrm{off}\ A\ B] } 
+
+\inferrule[Index-Hypothesis] % new hypothesis for index
+  { \mathrm{new}\ n_B\ b_B \\ \Gamma,\ n_B : t_B \vdash (\Pi (n_A : t_A) . b_A,\ b_B) \Downarrow_{i_{c}} t }
+  {  \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_B : t_B) . b_B) \Downarrow_{i_{c}} t}
+
+\inferrule[Index-IH] % inductive hypothesis
+  { \Gamma \vdash (A, B) \Downarrow_{i_{m}} p \\\\ 
+    \Gamma,\ n_A : p\ \vec{i_A}\ a \vdash (b_A,\ b_B [n_A / \vec{i_B}[\mathrm{off}\ A\ B]]) \Downarrow_{i_{c}} t }
+  { \Gamma \vdash (\Pi (n_A : p_A\ \vec{i_A}\ a) . b_A,\ \Pi (n_B : p_B\ \vec{i_B}\ b) . b_B) \\\\ 
+    \phantom{\Gamma} \Downarrow_{i_{c}} \lambda (n_A : p\ \vec{i_A}\ a) . t }
+
+\inferrule[Index-Prod] % otherwise, unchanged (when we get rid of the gross fall-through thing, needs not new, and needs to check t_A and t_B not IHs)
+  { \Gamma,\ n_A : t_A \vdash (b_A,\ b_B [n_A / n_B]) \Downarrow_{i_{c}} t }
+  { \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_B : t_B) . b_B) \\\\
+    \phantom{\Gamma} \Downarrow_{i_{c}} \lambda (n_A : t_A) . t }\\
+
+\hfill\phantom{sorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysor}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{i} t$ }\vspace{-0.5cm}\\
+
+\inferrule[Index-Ind] 
+  { \Gamma \vdash (A,\ B) \Downarrow_{i_{m}} p \\
+    \Gamma,\ p_A : \mathrm{P}_A,\ p_B : \mathrm{P}_B \vdash \{ (\mathrm{E}_{A_1}\ p_A,\ \mathrm{E}_{B_1}\ p_B),\ldots,(\mathrm{E}_{A_n}\ p_A,\ \mathrm{E}_{B_n}\ p_B) \} \Downarrow_{i_{c}} \vec{f} } 
+  { \Gamma \vdash (A,\ B) \Downarrow_{i} \lambda (\vec{i_a} : \vec{\mathrm{X}_A}) (a : A\ \vec{i_a}) . \mathrm{Elim}(a, p) \vec{f}}
+\end{mathpar}	
+\vspace{-0.5cm}
+\caption{Identifying the indexer function.}
+\label{fig:searchindexer}
+\end{figure}
+
+\subparagraph*{Generating the Motive.} The \smallmath{$(T_A,\ T_B) \Downarrow_{i_{m}} t$} judgment consists of only the derivation \textsc{Index-Motive},
+which computes the indexer motive from the types \Aa\ and \B\ (expanded in Figure~\ref{fig:common}).
+It does this by constructing a function with \Aa\ and its indices as premises,
+and the type \IB\ in the conclusion with the appropriate indices.
+Consider \lstinline{list} and \lstinline{vector}:
+\begin{lstlisting}
+list T := Ind (Ty$_A$ : Type) {$\ldots$} $\phantom{sep}$ vector T := Ind (Ty$_B$ : $\Pi$(@\codediff{(n : nat)}@).Type) {$\ldots$}
+\end{lstlisting}
+For these types, \textsc{Index-Motive} computes the motive:
+\begin{lstlisting}
+(@\codeauto{$\lambda$ (l:list T) . nat}@)
+\end{lstlisting} 
+
+\subparagraph*{Generating Each Case.}
+The \smallmath{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{i_{c}} t$} judgment generates each case of the indexer
+by traversing in parallel the corresponding cases of the eliminator types for \Aa\ and \B.
+It consists of four derivations:
+\textsc{Index-Conclusion} handles base cases and conclusions of inductive cases,
+while \textsc{Index-Hypothesis}, \textsc{Index-IH}, and \textsc{Index-Prod} recurse into
+products.
+
+\textsc{Index-Hypothesis} handles each new hypothesis that corresponds to a new index in an inductive hypothesis
+of an inductive case of the eliminator type for \B. It adds the new index to the environment, then recurses into the body of only the
+type for which the index already exists. For example, in the inductive case of \lstinline{list} and \lstinline{vector},
+\lstinline{new} determines that \lstinline{n} is the new hypothesis.
+\textsc{Index-Hypothesis} then recurses into the body of only the \lstinline{vector} case:
+\begin{lstlisting}
+$\Pi$ (t$_l$:T) (l:list T) (IH$_l$:p$_A$ l), $\ldots$ $\phantom{sep}$ $\Pi$ (t$_v$:T) (v:vector T n) (IH$_v$:p$_B$ (@\codediff{n}@) v), $\ldots$
+\end{lstlisting}
+\textsc{Index-Prod} is next. It recurses into product types when the hypothesis is neither a new index nor an inductive hypothesis. Here, it runs twice, recursing into the body and substituting names %appropriately
+until it hits the inductive hypothesis for both types:
+\begin{lstlisting}
+$\Pi$ (IH$_l$:p$_A$ l), p$_A$ (cons t$_l$ l) $\phantom{separation}$ $\Pi$ (IH$_v$:p$_B$ (@\codediff{n}@) l),  p$_B$ (@\codediff{(S n)}@) (consV (@\codediff{n}@) t$_l$ l)
+\end{lstlisting}
+\textsc{Index-IH} then takes over. It substitutes the new motive in the inductive hypothesis, then recurses into both bodies, 
+substituting the new inductive hypothesis for the index in the eliminator type for \B.
+Here, it substitutes the new motive
+for \smallmath{$\mathrm{p}_A$} in the type of \lstinline{IH$_l$}, extends the environment with \lstinline{IH$_l$}, then 
+substitutes \lstinline{IH$_l$} for \lstinline{n}, so that it recurses on these types:
+\begin{lstlisting}
+p$_A$ (cons t$_l$ l) $\phantom{separationseparationsepara}$ p$_B$ (@\codediff{(S IH$_l$)}@) (consV (@\codediff{IH$_l$}@) t$_l$ l)
+\end{lstlisting}
+Finally, \textsc{Index-Conclusion} computes the conclusion by taking the index of motive \smallmath{$p_B$} at \smallmath{$\mathrm{off}\ \Aa\ \B$},
+here \lstinline{S IH$_l$}.
+In total, this produces a function 
+that computes the length of \lstinline{cons t l}:
+\begin{lstlisting}
+(@\codeauto{$\lambda$ (t$_l$:T) (l:list T) (IH$_l$:($\lambda$ (l:list T).nat) l).S IH$_l$}@)
+\end{lstlisting}
+
+\subparagraph*{Composing the Result.}
+The \smallmath{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{i} t$} judgment consists of only \textsc{Index-Ind}, which 
+identifies the motive and each case using the other two judgments, then composes the result. In the case of \lstinline{list} and \lstinline{vector},
+this produces a function that computes the length of a list:
+\begin{lstlisting}
+(@\codeauto{$\lambda$ (l:list T).}@)(@\codeauto{Elim(l, $\lambda$ (l:list T).nat)}@) 
+  (@\codeauto{\{0, $\lambda$ (t$_l$:T) (l:list T) (IH$_l$:($\lambda$ (l:list T).nat) l).S IH$_l$\}}@)
+\end{lstlisting}
+
+\subsubsection{Searching for Promote and Forget}
+Figure~\ref{fig:searchpromote} shows the interesting derivations for the judgment \smallmath{$(T_A,\ T_B) \Downarrow_p t$}
+that searches for \lstinline{promote}:
+\textsc{Promote-Motive} identifies the motive 
+as \B\ with a new index (which it computes using \lstinline{indexer}, denoted by metavariable \smallmath{$\pi$}).
+When \textsc{Promote-IH} recurses, it substitutes the inductive hypothesis for the term rather than
+for its index, and it substitutes the new index (which it also computes using \lstinline{indexer}) inside of that term.
+\textsc{Promote-Conclusion} returns the entire term, rather than its index.
+Finally, \textsc{Promote-Ind} not only recurses into each case, but also packs the result.
+
+\begin{figure}
+\begin{mathpar}
+\mprset{flushleft}  
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{p_{m}} t$ }\vspace{-0.55cm}\\
+
+\inferrule[Promote-Motive]
+  { \Gamma \vdash (A,\ B) \Downarrow_{i} \pi }
+  { \Gamma \vdash (A,\ B) \Downarrow_{p_{m}} \lambda (\vec{i_a} : \vec{\mathrm{X}_A}) (a : A\ \vec{i_a}) . B\ (\mathrm{index}\ (\pi\ \vec{i_a}\ a)\ \vec{i_a}) }\\
+
+\hfill\phantom{sorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysor}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{p_{c}} t$ }\vspace{-0.4cm}\\
+
+\inferrule[Promote-Conclusion]
+  { \\ }
+  { \Gamma \vdash (p_A\ \vec{i_A}\ a,\ p_B\ \vec{i_B}\ b) \Downarrow_{p_{c}} b }
+
+\inferrule[Promote-IH] % inductive hypothesis
+  { \Gamma \vdash (A,\ B) \Downarrow_{i} \pi \\
+    \Gamma \vdash (A,\ B) \Downarrow_{p_{m}} p \\\\
+    \Gamma,\ n_A : p\ \vec{i_A}\ a \vdash (b_A,\ b_B [n_A / b] [\pi\ \vec{i_A}\ a / \vec{i_B}[\mathrm{off}\ A\ B]]) \Downarrow_{p_{c}} t }
+  { \Gamma \vdash (\Pi (n_A : p_A\ \vec{i_A}\ a) . b_A,\ \Pi (n_B : p_B\ \vec{i_B}\ b) . b_B) \\\\
+    \phantom{\Gamma} \Downarrow_{p_{c}}  \lambda (n_A : p\ \vec{i_A}\ a) . t }
+
+\hfill\phantom{sorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysor}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{p} t$ }\vspace{-0.5cm}\\
+
+\inferrule[Promote-Ind] 
+  { \Gamma \vdash (A,\ B) \Downarrow_{i} \pi \\
+    \Gamma \vdash (A,\ B) \Downarrow_{p_{m}} p \\\\
+    \Gamma,\ p_A : \mathrm{P}_A,\ p_B : \mathrm{P}_B \vdash \{ (\mathrm{E}_{A_1}\ p_A,\ \mathrm{E}_{B_1}\ p_B),\ldots,(\mathrm{E}_{A_n}\ p_A,\ \mathrm{E}_{B_n}\ p_B) \} \Downarrow_{p_{c}} \vec{f} } 
+  { \Gamma \vdash (A,\ B) \Downarrow_{p} \lambda (\vec{i_A} : \vec{\mathrm{X}_A}) (a : A\ \vec{i_A}) . \exists\ (\pi\ \vec{i_A}\ a)\ (\mathrm{Elim}(a, p) \vec{f})}
+\end{mathpar}	
+\vspace{-0.5cm}
+\caption{Identifying the promotion function.}
+\label{fig:searchpromote}
+\end{figure}
+
+The omitted derivations to search for \lstinline{forget} are similar,
+except that the domain and range are switched. Consequentially, \lstinline{indexer} is never needed;
+\textsc{Forget-Motive} removes the index rather than inserting it, and \textsc{Forget-IH} no longer substitutes the index.
+Additionally, \textsc{Forget-Hypothesis} adds the hypothesis for the new index
+rather than skipping it, and \textsc{Forget-Ind} eliminates over the projection rather than packing the result. %of applying the eliminator.
+
+\subsubsection{Core Search Algorithm} The core search algorithm produces \lstinline{indexer},
+\lstinline{promote}, and \lstinline{forget}, then composes them into a tuple. This tuple is how \toolnameb represents ornaments internally.
+\toolnameb includes an option to generate a proof that these components form the ornamental promotion isomorphism;
+by default, this is disabled, since \lstinline{Lift} does not need this proof. The implementation of this option 
+gives intuition for correctness of the search algorithm, and is described in Section~\ref{sec:autouse}.
+
+\subsection{\lstinline{Lift}}
+\label{sec:liftalg}
+
+The \lstinline{Lift} algorithm implements the specification from Section~\ref{sec:liftspec}.
+We show only one direction of the algorithm, promoting 
+from \Aa\ to packed \B; the forgetful direction is similar.
+The core algorithm (Figure~\ref{fig:final}) builds on a set of common definitions (Figure~\ref{fig:convenience}) and 
+two intermediate judgments: one to lift eliminators (Figure~\ref{fig:ind}) and one to lift constructors (Figure~\ref{fig:construct}).
+
+\begin{figure}
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+$\uparrow$$\phantom{_{I_{B}}}$(@\hspace{0.06cm}@) {$\vec{i_a}$ : $\vec{\mathrm{X}_A}$} := promote $\vec{i_a}$. $\phantom{separations}$ $\downarrow$$\phantom{_{I_{B}}}$(@\hspace{0.01cm}@) {$\vec{i_b}$ : $\vec{\mathrm{X}_B}$} := forget $\vec{i_b}$.(@\vspace{-0.04cm}@)
+$\pi_{I_B}$ {$\vec{i_a}$ : $\vec{\mathrm{X}_A}$} := indexer $\vec{i_a}$. $\phantom{separations}$ $\exists_{I_B}$ {$\vec{i_b}$ : $\vec{\mathrm{X}_B}$} ($b$ : $B$ $\vec{i_b}$) := $\exists$ $\vec{i_b}$[off] b.(@\vspace{-0.02cm}@)
+$\uparrow_{B}$(@\hspace{0.11cm}@) := $\pi_{r}$ $\circ$ $\uparrow$. $\phantom{separationseparationsepara}$(@\hspace{0.02cm}@) $\downarrow_{A}$(@\hspace{0.11cm}@) := $\downarrow$(@\hspace{0.37cm}@) $\circ$ $\exists_{I_B}$.(@\vspace{-0.02cm}@)
+$\uparrow_{I_B}$ := $\pi_{l}$(@\hspace{0.04cm}@)  $\circ$ $\uparrow$. $\phantom{separationseparationsepar}$(@\hspace{0.18cm}@) $\downarrow_{I_B}$ := $\pi_{I_B}$ $\circ$ $\downarrow_{A}$.(@\vspace{-0.02cm}@)
+\end{lstlisting}
+\vspace{-0.3cm}
+\caption{Common definitions for the core lifting algorithm.}
+\label{fig:convenience}
+\end{figure}
+
+\subparagraph*{Common Definitions.} The common definitions (Figure~\ref{fig:convenience}) %instantiate the equivalence with the types
+%\lstinline{from} and \lstinline{to}, which represent the two equivalent types that we are lifting from and to, respectively. 
+define some useful syntax:
+\smallmath{$\uparrow$} applies \lstinline{promote}, \smallmath{$\downarrow$} applies
+\lstinline{forget}, and \smallmath{$\pi_{I_B}$} applies \lstinline{indexer}.
+\smallmath{$\exists_{I_B}$} packs a term of type \B\
+into an existential with the index at the appropriate offset. \smallmath{$\uparrow_{B}$} and \smallmath{$\uparrow_{I_B}$} promote and then project;
+\smallmath{$\downarrow_{A}$} packs and forgets, and \smallmath{$\downarrow_{I_B}$} packs, forgets, and then 
+applies \lstinline{indexer} to project the index.
+
+\subsubsection{Lifting Eliminators}
+
+The \smallmath{$\Gamma$ $\vdash$ $t$ $\Uparrow_E$ $t'$} judgment (Figure~\ref{fig:ind}) defines rules for lifting the motive and case of an
+eliminator, changing the \textit{domain of induction} from \Aa\ to \B.
+The intuition is that any term of type \Aa\ is the result of forgetting some term of type packed \B.
+Then, since \Aa\ and \B\ have the same inductive structure, we can lift the eliminator of \Aa\ to the eliminator of \B,
+and move that forgetfulness \textit{inside of each case}.
+For example,
+the following terms are propositionally equal:\vspace{-0.2cm}\\\\
+\begin{minipage}{0.39\textwidth}
+\begin{lstlisting}
+Elim((@\codediff{($\downarrow_{A}$ b)}@), p$_A$){
+  f$_{\mathrm{nil}}$,
+  ($\lambda$(t$_l$:T)(l:list T)(IH$_l$:p$_A$ l).
+    f$_{\mathrm{cons}}$ t$_l$ l IH$_l$)
+}
+\end{lstlisting}
+\end{minipage}
+\hspace{-0.2cm}
+\begin{minipage}{0.61\textwidth}
+\begin{lstlisting}
+Elim(b, $\lambda$(n:nat)(v:vector T n).p$_A$ (@\codediff{($\downarrow_{A}$ v)}@)){
+  f$_{\mathrm{nil}}$,
+  ($\lambda$(n:nat)(t$_v$:T)(v:vector T n)(IH$_v$:p$_A$ (@\codediff{($\downarrow_{A}$ v)}@)).
+     f$_{\mathrm{cons}}$ t$_v$ (@\codediff{($\downarrow_{A}$ v)}@) IH$_v$)
+}
+\end{lstlisting}
+\end{minipage}
+
+\begin{figure}
+\begin{mathpar}
+\mprset{flushleft}
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $(t,\ T)$ $\Uparrow_{E_x}$ $t'$}\vspace{-0.4cm}\\
+
+\inferrule[Drop-Index]
+{ \mathrm{new}\ n\ b \\ \Gamma,\ n : t \vdash (f,\ b) \Uparrow_{E_x} b' }
+{ \Gamma \vdash (f,\ \Pi (n : t) . b) \Uparrow_{E_x} \lambda (n : t) . b' }
+
+\inferrule[Forget-Arg]
+{ \Gamma \vdash \vec{i} : \vec{\mathrm{X}_B} \\ \Gamma,\ n : B\ \vec{i} \vdash ((f\ (\downarrow_A n))_\beta,\ b) \Uparrow_{E_x} b' }
+{ \Gamma \vdash (f,\ \Pi (n : B\ \vec{i}) . b) \Uparrow_{E_x} \lambda (n : B\ \vec{i}) . b' }
+
+\inferrule[Arg] % if we get rid of fall through, needs: \neg\ (\mathrm{new}\ n\ b) \\ \Gamma \vdash T \not\defeq B, and should be \Pi (n : T\ \vec{i}) 
+{ \Gamma,\ n : t \vdash((f\ n)_\beta,\ b) \Uparrow_{E_x} b' }
+{ \Gamma \vdash (f,\ \Pi (n : t) . b) \Uparrow_{E_x} \lambda (n : t) . b' }
+
+\inferrule[Concl]
+{ \\ }
+{ \Gamma \vdash (t,\ p_B\ \vec{y}) \Uparrow_{E_x} t}
+
+\hfill\phantom{sorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrysorrys}\fbox{$\Gamma$ $\vdash$ $t$ $\Uparrow_E$ $t'$}\vspace{-0.4cm}\\
+
+% Property
+\inferrule[Motive]
+  { \Gamma \vdash p_A : \mathrm{P}_A }
+  { \Gamma \vdash p_A \Uparrow_E \lambda(\vec{i}:\vec{\mathrm{X}_B})(b:B\ \vec{i}).(p_A\ (\mathrm{deindex}\ \vec{i})\ (\downarrow_A b))_\beta }\hspace{-0.1cm}
+
+\inferrule[Case]
+{ \Gamma \vdash p_A : \mathrm{P}_A \\
+  \Gamma \vdash f_i : \mathrm{E}_{A_i}\ p_A \\\\
+  \Gamma \vdash p_A \Uparrow_E p_B \\
+  \hspace{-0.3cm} \Gamma \vdash (f_i,\  \mathrm{E}_{B_i}\ p_B) \Uparrow_{\mathrm{E}_{\mathrm{x}}} f_i' }
+{ \Gamma \vdash f_i \Uparrow_E f_i' }
+
+\end{mathpar}	
+\vspace{-0.4cm}
+\caption{Lifting eliminators.}
+\label{fig:ind}
+\end{figure}
+
+The induction rules implement this transformation. 
+\textsc{Case} lifts a case of the eliminator by first recursively lifting the motive,
+then using the lifted motive to compute the type of the new case, and then using that type to
+compute the body of the new case. In the example above, when lifting the inductive case,
+it first recursively lifts the motive \smallmath{$p_A$} using \textsc{Motive}, which drops the index, packs and forgets the argument of type \B,
+and then \smallmath{$\beta$}-reduces the result, eliminating references to \B.
+This produces the new motive:
+\begin{lstlisting}
+$\lambda$(n:nat)(v:vector T n).p$_A$ ($\downarrow_{A}$ v)
+\end{lstlisting}
+which \textsc{Case} then uses to compute the type of the inductive case of the eliminator for \B:
+\begin{lstlisting}
+$\Pi$(t$_v$:T)(n:nat)(v:vector T n)(IH$_v$:p$_A$ ($\downarrow_{A}$ v)).p$_A$ ($\downarrow_{A}$ (consV t$_v$ (S n) v))
+\end{lstlisting}
+The \smallmath{$\Gamma$ $\vdash$ $(t,\ T)$ $\Uparrow_{E_{x}}$ $t'$} judgment then uses that type to compute
+the lifted function body. It computes this in a similar way to \textsc{Motive}, except that there are as many
+indices to drop and arguments to pack and forget as there are inductive hypotheses, and these do not occur in predictable
+places, so more rules are involved. This computes the new function:
+\begin{lstlisting}
+$\lambda$(n:nat)(t$_v$:T)(v:vector T n)(IH$_v$:p$_A$ ($\downarrow_{A}$ v)).f$_{\mathrm{cons}}$ t$_v$ ($\downarrow_{A}$ v) IH$_v$
+\end{lstlisting}
+
+\begin{figure}
+\begin{mathpar}
+\mprset{flushleft}  
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Uparrow_C$ $t'$}\vspace{-0.55cm}\\
+
+\inferrule[Normalize]
+{ \\ } 
+{ \Gamma \vdash \mathrm{Constr}(j,\ A)\ \vec{x} \Uparrow_C (\uparrow (\mathrm{Constr}(j,\ A)\ \vec{x}))_{\beta\delta\iota} }
+\end{mathpar}
+\vspace{-0.5cm}
+\caption{Lifting constructors.}
+\label{fig:construct}
+\end{figure}
+
+\subsubsection{Lifting Constructors}
+The \smallmath{$\Gamma$ $\vdash$ $t$ $\Uparrow_C$ $t'$} judgment (Figure~\ref{fig:construct}) lifts applications of constructors of \Aa\ to applications of constructors of \B. 
+This judgment computes one step of the promotion, leaving the recursive lifting of the arguments to the final algorithm. Using the same types, 
+in the base case:
+\begin{lstlisting}
+$\uparrow$ nil $\defeq$ $\exists$ O nilV
+\end{lstlisting}
+and in the inductive case:
+\begin{lstlisting}
+$\uparrow$ (cons t l) $\defeq$ $\exists$ (S ($\uparrow_{I_B}$ l)) (consV ($\uparrow_{I_B}$ l) t ($\uparrow_{B}$ l))
+\end{lstlisting}
+This derivation consists of only one rule: 
+\textsc{Normalize}, which normalizes the promotion of the constructor.
+This is guaranteed to succeed because the application of the constructor is fully \smallmath{$\eta$}-expanded.
+The core algorithm later internalizes the promotion functions in the result.
+
+\subsubsection{Core Lifting Algorithm}
+The core algorithm (Figure~\ref{fig:final}) builds on these intermediate judgments.
+The interesting derivations for correctness are the first six:
+\textsc{Lift-Elim} and \textsc{Lift-Constr} use the judgments for lifting eliminators and constructors of \Aa.
+\textsc{Internalize} internalizes the explicit \lstinline{promote} functions from the lifted constructors to recursive applications of the algorithm.
+\textsc{Retraction} and \textsc{Coherence} use the respective properties of the ornamental promotion isomorphism metatheoretically:
+the first to drop the explicit \lstinline{forget} functions from the lifted eliminators, and the second 
+to lift the \lstinline{indexer} to a projection (in the forgetful direction, \textsc{Section} replaces \textsc{Retraction}).
+Finally, \textsc{Equivalence} lifts \Aa\ along the equivalence to packed \B.
+The remaining derivations recurse predictably.
+
+\begin{figure}
+\begin{mathpar}
+\mprset{flushleft}
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Uparrow$ $t'$}\vspace{-0.3cm}\\
+
+%% Eliminating B_A
+\inferrule[Lift-Elim]
+  { \Gamma \vdash \vec{i} : \vec{\mathrm{X}_A} \\ \Gamma \vdash a : A\ \vec{i} \\\\ 
+    \Gamma \vdash p_{a} \Uparrow_E p' \\  \Gamma \vdash \vec{f_{a}}\phantom{l} \Uparrow_E \vec{f}'  \\\\
+    \Gamma \vdash p' \Uparrow p_b \\ \Gamma \vdash \vec{f}' \Uparrow \vec{f_b} \\ \Gamma \vdash a \Uparrow b_{\Sigma} }
+  { \Gamma \vdash \mathrm{Elim}(a,\ p_{a}) \vec{f_{a}} \Uparrow \mathrm{Elim}(\pi_r\ b_{\Sigma},\ p_b) \vec{f_{b}} }
+
+\inferrule[Lift-Constr]
+{ \Gamma \vdash \vec{i} : \vec{\mathrm{X}_A} \\ \Gamma \vdash \mathrm{Constr}(j,\ A)\ \vec{t}_{a} : A\ \vec{i} \\\\
+  \Gamma \vdash \mathrm{Constr}(j,\ A)\ \vec{t}_{a} \Uparrow_C t' \\\\ \Gamma \vdash t' \Uparrow t'' } % \\ \Gamma \vdash i_b \Uparrow i_b' \\\\ }
+{ \Gamma \vdash \mathrm{Constr}(j,\ A)\ \vec{t}_{a} \Uparrow t'' }
+
+\inferrule[Internalize] % can get around this by just moving constr rule inside, if desired; maybe do because it's kind of weird
+{ \Gamma \vdash a \Uparrow b_{\Sigma} }
+{ \Gamma \vdash\ \uparrow\ a \Uparrow b_{\Sigma} }
+
+\inferrule[Retraction]
+{ \Gamma \vdash\ b_{\Sigma} \Uparrow b_{\Sigma}' }
+{ \Gamma \vdash\ \downarrow\ b_{\Sigma} \Uparrow b_{\Sigma}' }
+
+\inferrule[Coherence]
+ { \Gamma \vdash \vec{i} : \vec{\mathrm{X}_A} \\ \Gamma \vdash a : A\ \vec{i} \\ \Gamma \vdash a \Uparrow b_{\Sigma} }
+ { \Gamma \vdash \pi_{I_B}\ a \phantom{,} \Uparrow (\pi_l\ b_{\Sigma})_\beta}
+
+%% From-Type
+\inferrule[Equivalence]
+  { \Gamma \vdash \vec{i} : \vec{\mathrm{X}_A} }
+  { \Gamma \vdash A\ \vec{i} \Uparrow \Sigma (n : (I_B\ \vec{i})_\beta) . B\ (\mathrm{index}\ n\ \vec{i}) }
+
+\inferrule[Constr]
+{ \Gamma \vdash T \Uparrow T' \\ \Gamma \vdash \vec{t} \Uparrow \vec{t'} }
+{ \Gamma \vdash \mathrm{Constr}(j,\ T)\ \vec{t} \Uparrow \mathrm{Constr}(j,\ T')\ \vec{t'} }
+
+\inferrule[Ind]
+  { \Gamma \vdash T \Uparrow T' \\ \Gamma \vdash \vec{C} \Uparrow \vec{C'}  }
+  { \Gamma \vdash \mathrm{Ind} (\mathit{Ty} : T) \vec{C} \Uparrow \mathrm{Ind} (\mathit{Ty} : T') \vec{C'} }
+
+\inferrule[Elim]
+  { \Gamma \vdash c \Uparrow c' \\ \Gamma \vdash Q \Uparrow Q' \\ \Gamma \vdash \vec{f} \Uparrow \vec{f'}}
+  { \Gamma \vdash \mathrm{Elim}(c, Q) \vec{f} \Uparrow \mathrm{Elim}(c', Q') \vec{f'}  }
+
+%% Application
+\inferrule[App]
+ { \Gamma \vdash f \Uparrow f' \\ \Gamma \vdash t \Uparrow t'}
+ { \Gamma \vdash f t \Uparrow f' t' }
+
+% Lamda
+\inferrule[Lam]
+  { \Gamma \vdash T \Uparrow T' \\ \Gamma,\ t : T \vdash b \Uparrow b' }
+  {\Gamma \vdash \lambda (t : T).b \Uparrow \lambda (t : T').b'}
+
+% Product
+\inferrule[Prod]
+  { \Gamma \vdash T \Uparrow T' \\ \Gamma,\ t : T \vdash b \Uparrow b' }
+  {\Gamma \vdash \Pi (t : T).b \Uparrow \Pi (t : T').b'}
+\end{mathpar}
+\vspace{-0.5cm}
+\caption{Core lifting algorithm.}
+\label{fig:final}
+\end{figure}
+

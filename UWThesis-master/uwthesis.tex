@@ -173,6 +173,25 @@ Parameter, Axiom},
 \newcommand{\na}[1]{\cellcolor{black!50}{#1}} % N/A
 \newcommand{\todo}[1]{}
 
+
+% https://tex.stackexchange.com/questions/4216/how-to-typeset-correctly
+\newcommand\defeq{\equiv_{\scaleto{\beta\delta\iota}{4pt}}} % definitional equality
+\newcommand{\smallmath}[1]{$\text{\small #1}$} % inline math looks terrible at normal size
+\newcommand\Aa{\smallmath{$A$}} % recurring type A
+\newcommand\B{\smallmath{$B$}} % recurring type B
+\newcommand\IB{\smallmath{$I_B$}} % recurring type I_B
+\newcommand\sigT{\smallmath{$\Sigma$}} % sigma types
+\newcommand\exT{\smallmath{$\exists$}} % existentials
+\newcommand\Pil{\smallmath{$\pi_l$}} % left projection
+\newcommand\Pir{\smallmath{$\pi_r$}} % right projection
+\newcommand\toolnameb{\textsc{Devoid}\xspace} % DEVOID tool name
+\newcommand{\codeauto}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{cyan!30}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight automatically-generated terms
+
 \definecolor{thecolor}{RGB}{38,90,18}
  
 %
@@ -302,7 +321,7 @@ But there's never enough room to thank everyone I want to thank.
 Now that I have the chance---where do I begin?
 
 Dan, Jeff Foster, Zach, Derek, Alexandra, the Coq community (Emilio J. Gallego Arias, Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
-Matthieu, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas), coauthors, Valentin, my family, PLSE lab (especially Chandra oh my gosh), 
+Matthieu Sozeau, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas Tabareau, Cyril Cohen, Pierre-Marie P\'{e}drot, Yves Bertot, Tej Chajed), coauthors, Valentin, Carlo, my family, PLSE lab (especially Chandra oh my gosh), James Wilcox, Jasper Hugunin, Marisa Kirisame,
 UCSD Programming Systems group, Misha,
 PL Twitter, students, Qi.
 

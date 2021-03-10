@@ -1,0 +1,154 @@
+\section{Specification}
+\label{sec:spec}
+
+This section specifies the two commands that \toolnameb implements:
+
+\begin{enumerate}
+\item \lstinline{Find ornament} searches for ornaments (specified in Section~\ref{sec:findspec}, described in Section~\ref{sec:findalg}).
+\item \lstinline{Lift} lifts along those ornaments (specified in Section~\ref{sec:liftspec}, described in Section~\ref{sec:liftalg}). 
+\end{enumerate}
+
+\subparagraph*{Algebraic Ornaments.}
+\toolnameb searches for and lifts along \textit{algebraic ornaments} in particular.
+An algebraic ornament relates an inductive type \Aa\ to an indexed version of that type \B\ with a new index of type \IB,
+where the new index is fully determined by a unique fold over \Aa. 
+For example, \lstinline{vector} is exactly \lstinline{list} with a new index of type \lstinline{nat},
+where the new index is fully determined by the \lstinline{length} function. Consequentially, there are two functions:
+\begin{lstlisting}
+ltv : list T $\phantom{blahblahblahblah}$ $\rightarrow$ $\Sigma$(n : nat).vector T n.
+vtl : $\Sigma$(n : nat).vector T n $\rightarrow$ list T.
+\end{lstlisting}
+that are mutual inverses:
+\begin{lstlisting}
+$\forall$ (l : list T),$\phantom{blahblahblahblahb}$ vtl (ltv l) = l.
+$\forall$ (v : $\Sigma$(n : nat).vector T n), ltv (vtl v) = v.
+\end{lstlisting}
+and therefore form the type equivalence from Section~\ref{sec:example}.
+Moreover, since the new index is fully determined by \lstinline{length}, we can relate \lstinline{length} to \lstinline{ltv}:
+\begin{lstlisting}
+$\forall$ (l : list T), length l = $\pi_{l}$ (ltv l).
+\end{lstlisting}
+
+In general,
+we can view an algebraic ornament as a type equivalence: % negative \vspace here is needed to deal with \vec{i}
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+$A\ \vec{i}\ \simeq\ \Sigma (n : I_B\ \vec{i}\phantom{_{,}}).B\ (\mathtt{index}\ n\ \vec{i}\phantom{_{,}})$
+\end{lstlisting}
+where \smallmath{$\vec{i}$} are the indices of \Aa, \IB\ is a function over those indices, 
+and the \lstinline{index} operation inserts the new index \smallmath{$n$} at the right offset.
+Such a type equivalence consists of two functions~\cite{univalent2013homotopy}:
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+promote : $A\ \vec{i}\ \phantom{blahblahblahblahblahbla_{,}} \rightarrow\ \Sigma (n : I_B\ \vec{i}\phantom{_{,}}).B\ (\mathtt{index}\ n\ \vec{i}\phantom{_{,}})$.
+(@\vspace{-0.4cm}@)
+forget$\phantom{e}$ : $\Sigma (n : I_B\ \vec{i}\phantom{_{,}}).B\ (\mathtt{index}\ n\ \vec{i}\phantom{_{,}})\ \rightarrow\ A\ \vec{i}$.
+\end{lstlisting}
+that are mutual inverses:\footnote{The adjunction condition follows from section and retraction.}
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+section$\phantom{ion}$ : $\forall\ (a : A\ \vec{i}\phantom{_{,}}),\ \phantom{blahblahblahblahblahbla_{,}} $forget$\ ($promote$\ a) \phantom{x} = a$.
+(@\vspace{-0.4cm}@)
+retraction : $\forall\ (b_{\Sigma} : \Sigma (n : I_B\ \vec{i}\phantom{_{,}}).B\ (\mathtt{index}\ n\ \vec{i}\phantom{_{,}})),\ $promote$\ ($forget$\ b_{\Sigma}) = b_{\Sigma}$.
+\end{lstlisting}
+An algebraic ornament is additionally equipped with an indexer, which is a unique fold:
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+indexer : $A\ \vec{i}\ \rightarrow\ I_B\ \vec{i}$.
+\end{lstlisting}
+which projects the promoted index:
+\begin{lstlisting}
+(@\vspace{-0.4cm}@)
+coherence : $\forall (a : A\ \vec{i}\phantom{_{,}}),\ $indexer$\ a = \pi_{l}\ ($promote$\ a)$.
+\end{lstlisting}
+Following existing work~\cite{ko2016programming}, we call this equivalence the \textit{ornamental promotion isomorphism}; 
+when it holds and the indexer exists, we say that \B\ is an algebraic ornament of \Aa.
+
+\lstinline{Find ornament} searches for algebraic ornaments between types and is, to the best of our knowledge, the first search algorithm
+for ornaments. \lstinline{Lift} then lifts functions and proofs along those ornaments, removing all references to the old type.
+Both commands make some additional assumptions for simplicity; detailed explanations for these are
+in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Assumptions.v}{\lstinline{Assumptions.v}}.
+
+\subsection{\lstinline{Find ornament}}
+\label{sec:findspec}
+
+In their original form, ornaments are a programming mechanism: Given a type \Aa, an ornament determines
+some new type \B. We invert this process for algebraic ornaments: Given types \Aa\ and \B, 
+\toolnameb searches for an ornament between them. This is possible for algebraic ornaments precisely because the indexer is extensionally unique.
+For example, all possible indexers for \lstinline{list} and \lstinline{vector} must compute
+the length of a list; if we were to try doubling the length instead, we would not be able to satisfy the equivalence.
+
+\lstinline{Find ornament} takes two inductive types and searches for the components of the 
+ornamental promotion isomorphism between them:
+
+\begin{itemize}
+\item \textbf{Inputs}: Inductive types \Aa\ and \B, assuming:
+\begin{itemize}
+\item \B\ is an algebraic ornament of \Aa,
+\item \B\ has the same number of constructors in the same order as \Aa,
+\item \Aa\ and \B\ do not contain recursive references to themselves under products, and
+\item for every recursive reference to \Aa\ in \Aa, there is exactly one new hypothesis in \B, which is exactly the new index of the corresponding recursive reference in \B.
+\end{itemize}
+\item \textbf{Outputs}: Functions \lstinline{promote}, \lstinline{forget}, and \lstinline{indexer}, guaranteeing:
+\begin{itemize}
+\item the outputs form the ornamental promotion isomorphism between the inputs.
+\end{itemize}
+\end{itemize}
+
+\lstinline{Find ornament} includes an option to generate a proof that the outputs form the ornamental promotion isomorphism;
+by default, this option is false, since \lstinline{Lift} does not need this proof.
+
+\subsection{\lstinline{Lift}}
+\label{sec:liftspec}
+
+\lstinline{Lift} lifts a term along the ornamental promotion isomorphism between 
+\Aa\ and \B. That is, it lifts types to corresponding types and terms of those types to corresponding terms:
+\begin{lstlisting}
+Lift list vector in list as $\codeauto{vector\_p}$. (* $\codeauto{vector\_p}$ T := $\Sigma$ (n : nat).vector T n *)
+Lift list vector in (cons 5 nil) as $\codeauto{v\_p}$. (* $\codeauto{v\_p}$ := $\exists$ 1 (consV O 5 nilV) *)
+\end{lstlisting}
+Furthermore, it recursively preserves this equivalence, lifting non-dependent functions like \lstinline{zip}
+so that they map equivalent inputs to equivalent outputs:
+\begin{lstlisting}
+$\forall$ {T$_1$ T$_2$} l$_1$ l$_2$, $\codeauto{promote}$ (zip l$_1$ l$_2$) = $\codeauto{zipV\_p}$ ($\codeauto{promote}$ l$_1$) ($\codeauto{promote}$ l$_2$).
+\end{lstlisting}
+This intuition breaks down with dependent types.
+With equivalence alone, we can't state the relationship between \lstinline{zip_with_is_zip} 
+and \codeauto{\lstinline{zip_with_is_zipV_p}}, since the unlifted conclusion:
+\begin{lstlisting}
+zip_with pair l$_1$ l$_2$ = zip l$_1$ l$_2$.
+\end{lstlisting}
+does not have the same type as the conclusion of the lifted version 
+applied to promoted arguments; any relation between these terms must be heterogenous.
+
+In particular, \lstinline{Lift} preserves the \textit{univalent parametric relation}~\cite{tabareau2017equivalences},
+a heterogenous parametric relation that strengthens an existing parametric relation for dependent types~\cite{bernardy2012proofs}
+to make it possible to state preservation of an equivalence:
+Two terms \smallmath{$t$} and \smallmath{$t'$} are related by the univalent parametric relation 
+\smallmath{$[[\Gamma]]_{u} \vdash [t]_{u} : [[T]]_{u}\ t\ t'$} at type \smallmath{$T$} in environment \smallmath{$\Gamma$}
+if they are equivalent up to transport. The details of this relation can be found in the cited work.
+
+\lstinline{Lift} preserves this relation using the components that \lstinline{Find ornament} discovers,
+and additionally guarantees that the lifted term does not refer to the old type in any way:
+
+\begin{itemize}
+\item \textbf{Inputs}: The inputs to and outputs from \lstinline{Find ornament}, along with a term \smallmath{$t$}, assuming: %:
+\begin{itemize}
+\item the assumptions and guarantees from \lstinline{Find ornament} hold,
+\item \IB\ is not \Aa,
+\item \smallmath{$t$} is well-typed and fully \smallmath{$\eta$}-expanded,
+\item \smallmath{$t$} does not apply \lstinline{promote} or \lstinline{forget}, and
+\item \smallmath{$t$} does not reference \B.
+\end{itemize}
+\item \textbf{Outputs}: A term \smallmath{$t'$}, guaranteeing:
+\begin{itemize}
+\item if \smallmath{$t$} is \smallmath{$A\ \vec{i}$}, then \smallmath{$t'$} is \smallmath{$\Sigma (n : I_B\ \vec{i}\phantom{_{,}}).B\ (\mathtt{index}\ n\ \vec{i}\phantom{_{,}})$},
+\item \smallmath{$t'$} does not reference \Aa, and
+\item if in the current environment \smallmath{$\Gamma \vdash t : T$}, then \smallmath{$[[\Gamma]]_{u} \vdash [t]_{u} : [[T]]_{u}\ t\ t'$}.
+\end{itemize}
+\end{itemize}
+
+\lstinline{Lift} does not require a proof
+that the input components form the ornamental promotion isomorphism, but they must for the guarantees to hold. It can operate in either direction, promoting from \Aa\ to packed \B\ or forgetting in the opposite direction; the specification for the forgetful direction is similar, with extra
+restrictions on how \B\ is used within \smallmath{$t$}.
+

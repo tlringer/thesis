@@ -1,0 +1,26 @@
+list (T : Type) : Type :=
+| nil : list T
+| cons : 
+    T $\rightarrow$ list T $\rightarrow$ list T.
+
+vector (T : Type) : (@\codediff{nat}@) $\rightarrow$ Type :=
+| nilV : vector T (@\codediff{0}@)
+| consV : 
+    (@\codediff{$\forall$ (n : nat)}@), T $\rightarrow$ vector T (@\codediff{n}@) $\rightarrow$ vector T ((@\codediff{S n}@)).
+
+
+(@\codeauto{ltv}@) {T} l$_1$ :=
+  $\exists$ ((@\codeauto{len}@) l$_1$) (list_rect T
+    (fun l => vector T ((@\codeauto{len}@) l))
+    nilV
+    (fun t l IH => consV ((@\codeauto{len}@) l) t IH) 
+    l$_1$)
+: list T $\rightarrow$ $\Sigma$ (n : nat).vector T n. 
+
+(@\codeauto{vtl}@) {T} v$_1$ :=
+  vector_rect T
+    (fun _ _ => list T) 
+    nil
+    (fun _ t _ IH => cons t IH) 
+    ($\Pi_l$ v$_1$) ($\Pi_r$ v$_1$)
+: $\Sigma$ (n : nat).vector T n $\rightarrow$ list T.

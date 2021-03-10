@@ -1,0 +1,27 @@
+\section{Conclusions \& Future Work}
+\label{sec:concl}
+
+We presented \toolnameb: a tool for searching for and lifting across algebraic ornaments in Coq.
+\toolnameb is the first tool to lift across ornaments in a non-embedded dependently typed language,
+and to automatically infer certain kinds of ornaments from types alone.
+Our algorithms give efficient transport across equivalences arising
+from algebraic ornaments; our case study demonstrates that such automation can make lifted
+terms smaller and faster as part of an incremental workflow.
+
+\subparagraph*{Future Work.} 
+A future version may support other ornaments beyond algebraic ornaments,
+with additional user interaction as needed; this may help support, for example,
+the ornament between \lstinline{nat} and \lstinline{list}, where \lstinline{list}
+has a new element in the \lstinline{cons} case.
+A future version may loosen restrictions on input types to support
+adding constructors while preserving inductive structure, recursive references under products,
+and coinductive types. Integrating with \textsc{Pumpkin Patch}~\cite{ringer2018adapting} 
+may help remove restrictions \toolnameb makes about the hypotheses of \B.
+\lstinline{Preprocess} currently supports only certain fixpoints;
+a more general translation may help \toolnameb support more terms, and discussions
+with Coq developers suggest that the implementation of such a translation
+building on work from the equations~\cite{sozeau:equations} plugin is in progress.
+Extending \toolnameb to generate proofs of coherence conditions for lifted terms may increase user confidence.
+Proofs that the commands that \toolnameb implements satisfy their specifications may also increase user confidence.
+Better automating the recovery of user-friendly types may improve user experience.
+

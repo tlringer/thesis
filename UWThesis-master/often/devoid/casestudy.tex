@@ -1,0 +1,149 @@
+\section{Case Study}
+\label{sec:case}
+
+We used \toolnameb to automatically discover and lift along ornaments for two scenarios:
+
+\begin{enumerate}
+\item Single Iteration: from binary trees to sized binary trees
+\item Multiple Iterations: from binary trees to binary search trees to AVL trees
+\end{enumerate}
+
+For comparison, we also used the ornaments that \toolnameb discovered to lift functions
+and proofs using \textit{Equivalences for Free!}~\cite{tabareau2017equivalences} (EFF),
+a more general framework for lifting across equivalences.
+\toolnameb produced faster functions and smaller terms, especially when composing multiple iterations of lifting.
+In addition, \toolnameb imposed little burden on the user, and the ornaments \toolnameb discovered proved useful to EFF.
+
+We chose EFF for comparison because \toolnameb is the only tool for ornaments in Coq,
+and because doing so demonstrates the benefits of specialized automation
+for ornaments. \toolnameb can handle only a small class of equivalences
+compared to EFF, and it can currently handle only incremental changes to types (one new index at a time).
+Our experiences suggest that it is possible to use both tools in concert.
+Section~\ref{sec:related} discusses EFF in more detail.
+
+\subparagraph*{Setup.}
+The case study code is in the \href{http://github.com/uwplse/ornamental-search/tree/itp+equiv/plugin/eval}{\lstinline{eval}} folder of the repository.
+For each scenario,
+we ran \toolnameb to search for an ornament,
+and then lifted functions and proofs along that ornament using both \toolnameb and EFF.
+We noted the amount of user interaction (Section~\ref{sec:caseuser}),
+as well as the performance of lifted terms (Section~\ref{sec:caseperf}).
+To test the performance of lifted terms, we tested runtime by 
+taking the median of ten runs using \lstinline{Time Eval vm_compute} with test values in Coq 8.8.0,
+and we tested size by normalizing and running \lstinline{coqwc} on the result.\footnote{i5-5300U, at 2.30GHz, 16 GB RAM}
+
+In the first scenario, we lifted traversal functions along with proofs that their outputs are permutations of each other
+from binary trees (\lstinline{tree}) to sized binary trees (\lstinline{Sized.tree}).
+In the second scenario, we lifted the traversal functions to AVL trees (\lstinline{avl}) through four intermediate
+types (one for each new index),
+and we lifted a search function from BSTs (\lstinline{bst}) to AVL trees through
+one intermediate type. 
+Both scenarios considered only full binary trees.
+
+To fit \lstinline{bst} and \lstinline{avl} into algebraic ornaments for \toolnameb,
+we used boolean indices to track invariants.
+While the resulting types are not the most natural definitions,
+this scenario demonstrates that it is possible to express interesting changes to structured types as algebraic ornaments,
+and that lifting across these types in \toolnameb produces efficient functions.
+
+\subsection{User Experience}
+\label{sec:caseuser}
+
+For each intermediate type in each scenario, we used \toolnameb to 
+discover the components of the equivalence.
+These components
+were enough for \toolnameb to lift functions and proofs 
+with no additional proof burden and no additional axioms.
+To use EFF, we also had to prove that these components form an equivalence;
+we set the appropriate option to generate these proofs using \toolnameb.
+In addition, to use EFF, we had to prove univalent parametricity of each inductive type;
+these proofs were small, but required specialized knowledge.
+To lift the proof of the theorem \lstinline{pre_permutes} using EFF, 
+we had to prove the univalent parametric relation between the unlifted and lifted versions of the
+functions that the theorem referenced; this pulled in the functional extensionality axiom, which was not necessary 
+using \toolnameb.
+
+In the second scenario, to simulate the incremental workflow \toolnameb requires, we lifted to each intermediate type, then unpacked the result.
+For example, the ornament from \lstinline{bst} to \lstinline{avl} passed through an intermediate type;
+we lifted \lstinline{search} to this type first, unpacked the result, and then repeated this process.
+In this scenario, using EFF differently could have saved some work relative to \toolnameb, since with EFF, it is possible to skip 
+the intermediate type;\footnote{The performances of the terms that EFF produces are sensitive to the equivalence used;
+for a 100 node tree, this alternate workflow produced a search function
+which is hundreds of times slower and traversal functions which are thousands of times slower
+than the functions that \toolnameb produced. In addition, the lifted proof of \lstinline{pre_permutes} using EFF failed to normalize
+with a timeout of one hour.}
+\toolnameb is best fit where an incremental workflow is desirable.
+
+\subsection{Performance}
+\label{sec:caseperf}
+
+
+\begin{figure}
+\small
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ |l|l|c|c|c|c|c| }
+ \hline
+  & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
+\hline
+ \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{523}(1.00\mathrm{x})$ \\
+\cline{2-7}
+ & \textbf{\toolnameb} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
+\cline{2-7}
+ & \textbf{EFF} & $\phantom{2}0.0$ & $\phantom{6}1.0$ & $\phantom{3}27.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{2}486.5\ (162.17\mathrm{x})$ & $\phantom{5}8078.5\ \phantom{5}(218.33\mathrm{x})$ \\
+\hline
+\end{tabular}
+}%
+%\end{minipage}
+\vspace{-0.25cm}
+\caption{Median runtime (ms) of unlifted (\lstinline{tree}) and lifted (\lstinline{Sized.tree}) \lstinline{preorder} over ten runs with test inputs ranging from about 10 to about 10000 nodes.}
+\label{tab:size1}
+\end{figure}
+
+\begin{figure}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ |l|l|c|c|c|c|c| }
+ \hline
+   & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
+\hline
+ \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{512}(1.00\mathrm{x})$  \\ \cline{2-7}
+ & \textbf{\toolnameb} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{EFF} & $\phantom{1}1.0$ & $11.0$ & $152.0\ \phantom{(33.50\mathrm{x})}$ & $2976.5\ (992.17\mathrm{x})$ & $56636.5\ (1530.72\mathrm{x})$ \\ \hline
+ \multirow{3}{*}{\smallmath{$\texttt{search}$}} & \textbf{Unlifted} & $\phantom{1}0.0$ & $\phantom{6}0.0$  & $\phantom{22}2.0\ \phantom{1}(1.00\mathrm{x})$  & $\phantom{123}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{312}29.0\ \phantom{513}(1.00\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{\toolnameb} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{EFF} & $\phantom{1}1.0$ & $\phantom{6}5.0$ & $\phantom{1}67.0\ (33.50\mathrm{x})$ & $1062.0\ (354.00\mathrm{x})$ & $15370.5\ \phantom{5}(530.02\mathrm{x})$  \\
+\hline
+\end{tabular}
+}
+%\end{minipage}
+\vspace{-0.25cm}
+\caption{Median runtime (ms) of unlifted (\lstinline{tree}) and lifted (\lstinline{avl}) \lstinline{preorder},
+plus unlifted (\lstinline{bst}) and lifted (\lstinline{avl}) \lstinline{search}, over ten runs with inputs ranging from about 10 to about 100000 nodes.}
+\label{tab:size2}
+\end{figure}
+
+Relative to EFF, \toolnameb produced faster functions.
+Figure~\ref{tab:size1} summarizes
+runtime in the first scenario for \lstinline{preorder},
+and Figure~\ref{tab:size2} summarizes
+runtime in the second scenario for \lstinline{preorder} and \lstinline{search}.
+The \lstinline{inorder} and \lstinline{postorder} functions performed similarly to \lstinline{preorder}.
+The functions \toolnameb produced imposed modest overhead for smaller inputs, but were
+tens to hundreds of times faster than the functions that EFF produced for larger inputs.
+This performance gap was more pronounced over multiple iterations of lifting.
+
+\toolnameb also produced smaller terms:
+in the first scenario, 13 vs. 25 LOC for \lstinline{preorder},
+12 vs. 24 LOC for \lstinline{inorder}, and 17 vs. 29 LOC for \lstinline{postorder};
+and in the second scenario, 21 vs. 120 LOC for \lstinline{preorder}, 20 vs. 119 LOC for \lstinline{inorder}, 
+24 vs. 125 LOC for \lstinline{postorder}, and 31 vs. 52 LOC for \lstinline{search}.
+In the first scenario, the lifted proof of \lstinline{pre_permutes} using \toolnameb was 85 LOC;
+the lifted proof of \lstinline{pre_permutes} using EFF was 1463184 LOC.
+
+We suspect \toolnameb provided these performance benefits because it directly
+lifted induction principles, whereas EFF produced lifted functions in terms of unlifted functions. 
+The multiple iteration case in particular highlights this,
+since EFF's approach makes lifted terms much slower and larger as the number of iterations increases,
+while \toolnameb's approach does not.
+

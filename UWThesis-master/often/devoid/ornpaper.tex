@@ -1,0 +1,147 @@
+\documentclass[a4paper,USenglish,cleveref, autoref]{lipics-v2019}
+%This is a template for producing LIPIcs articles.
+%See lipics-manual.pdf for further information.
+%for A4 paper format use option "a4paper", for US-letter use option "letterpaper"
+%for british hyphenation rules use option "UKenglish", for american hyphenation rules use option "USenglish"
+%for section-numbered lemmas etc., use "numberwithinsect"
+%for enabling cleveref support, use "cleveref"
+%for enabling cleveref support, use "autoref"
+
+\bibliographystyle{plainurl}% the mandatory bibstyle
+
+\usepackage{enumerate} % for lists
+\usepackage{listings} % for code
+\usepackage{xspace} % so we don't need to figure out spacing after \toolname every time
+\usepackage{mathpartir} % for inference rules
+\usepackage{scalerel} % to render definitional equality
+\usepackage{bbm} % to render N for the natural numbers
+\usepackage{syntax} % for code highlighting
+\usepackage{xcolor} % for code highlighting
+\usepackage{multirow} % for tables
+
+\nolinenumbers % it's impossible to get this to look reasonable with inline code
+
+% Nice rendering of Coq code
+\lstdefinelanguage{coq}{
+    keywords={Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, Type, Prop, Set, fun, fix, forall, Require, Import, Fixpoint, match, end, with, in, as, return, struct, Qed, Defined, let},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstset{language=coq} % default
+
+\title{Ornaments for Proof Reuse in Coq}
+%\subtitle{Subtitle Text, if any}
+
+\titlerunning{}%optional, please use if title is longer than one line
+
+\author{Talia Ringer}{University of Washington, USA}{tringer@cs.washington.edu}{}{}
+
+\author{Nathaniel Yazdani}{University of Washington, USA}{nyazdani@cs.washington.edu}{}{}
+
+\author{John Leo}{Halfaya Research}{leo@halfaya.org}{}{}
+
+\author{Dan Grossman}{University of Washington, USA}{djg@cs.washington.edu}{}{}
+
+\authorrunning{T. Ringer, N. Yazdani, J. Leo, and D. Grossman}%mandatory. First: Use abbreviated first/middle names. Second (only in severe cases): Use first author plus 'et al.'
+
+\Copyright{Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman}%mandatory, please use full first names. LIPIcs license is "CC-BY";  http://creativecommons.org/licenses/by/3.0/
+
+\ccsdesc[500]{Software and its engineering~Formal software verification}
+
+\keywords{ornaments, proof reuse, proof automation}
+
+\category{}%optional, e.g. invited paper
+
+\relatedversion{}%optional, e.g. full version hosted on arXiv, HAL, or other respository/website
+%\relatedversion{A full version of the paper is available at \url{...}.}
+
+\supplement{The Coq plugin, examples, and case study code for this paper can be found at \url{http://github.com/uwplse/ornamental-search/tree/itp+equiv}}
+\label{supplement}
+%optional, e.g. related research data, source code, ... hosted on a repository like zenodo, figshare, GitHub, ...
+
+\EventEditors{John Harrison, John O'Leary, and Andrew Tolmach}
+\EventNoEds{3}
+\EventLongTitle{10th International Conference on Interactive Theorem Proving (ITP 2019)}
+\EventShortTitle{ITP 2019}
+\EventAcronym{ITP}
+\EventYear{2019}
+\EventDate{September 9--12, 2019}
+\EventLocation{Portland, OR, USA}
+\EventLogo{}
+\SeriesVolume{141}
+\ArticleNo{4}
+
+\begin{document}
+
+% https://tex.stackexchange.com/questions/4216/how-to-typeset-correctly
+\newcommand\defeq{\equiv_{\scaleto{\beta\delta\iota}{4pt}}} % definitional equality
+\newcommand{\smallmath}[1]{$\text{\small #1}$} % inline math looks terrible at normal size
+\newcommand\A{\smallmath{$A$}} % recurring type A
+\newcommand\B{\smallmath{$B$}} % recurring type B
+\newcommand\IB{\smallmath{$I_B$}} % recurring type I_B
+\newcommand\sigT{\smallmath{$\Sigma$}} % sigma types
+\newcommand\exT{\smallmath{$\exists$}} % existentials
+\newcommand\Pil{\smallmath{$\pi_l$}} % left projection
+\newcommand\Pir{\smallmath{$\pi_r$}} % right projection
+\newcommand\toolname{\textsc{Devoid}\xspace} % DEVOID tool name
+\newcommand{\reducedstrut}{\vrule width 0pt height .9\ht\strutbox depth .9\dp\strutbox\relax} % for \codediff and \codeauto
+\newcommand{\codediff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the difference between two code blocks
+\newcommand{\codeauto}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{cyan!30}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight automatically-generated terms
+
+\maketitle
+
+\begin{abstract}
+Ornaments express relations between inductive types with the same inductive structure.
+We implement fully automatic proof reuse for a particular class of ornaments in a Coq plugin,
+and show how such a tool can give programmers the rewards of using indexed inductive types
+while automating away many of the costs.
+The plugin works directly on Coq code; it is the first ornamentation tool for a
+non-embedded dependently typed language.
+It is also the first tool to automatically identify ornaments:
+To lift a function or proof,
+the user must provide only the source type, the destination type, and the source function or proof.
+In taking advantage of the mathematical properties of ornaments, our approach produces faster functions and smaller terms 
+than a more general approach to proof reuse in Coq.
+\end{abstract}
+
+\input{introduction}
+
+\input{example}
+
+\input{spec}
+
+\input{algorithms}
+
+\input{implementation}
+
+\input{casestudy}
+
+\input{related}
+
+\input{conclusions}
+
+\input{acknowledgements}
+
+\bibliography{ornbib}
+
+\end{document}

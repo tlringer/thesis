@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 MAR 2021 19:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 MAR 2021 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1649,13 +1649,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 226
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 245
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 226.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 245.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 226.
+(Font)              using `OMS/cmsy/m/n' instead on input line 245.
 
 [3] [4
 
@@ -1671,20 +1671,20 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 28
-4.
+Package tocbasic Info: character protrusion at toc deactivated on input line 30
+3.
  (./uwthesis.toc)
 \tf@toc=\write5
 \openout5 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 291.
+(Font)              scaled to size 10.42007pt on input line 310.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 291.
+(Font)              scaled to size 7.91925pt on input line 310.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 291.
+(Font)              scaled to size 10.42007pt on input line 310.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 291.
+(Font)              scaled to size 7.91925pt on input line 310.
  [9
 
 
@@ -1730,7 +1730,58 @@ chapter 2.
 
 ]
 chapter 3.
-(./maintenance/introduction.tex [7]
+(./maintenance/introduction.tex
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 8.
+
+
+LaTeX Warning: Citation `PGL-045' on page 7 undefined on input line 8.
+
+
+LaTeX Warning: Citation `Andronick2012' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Zhang2012' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Staples2014' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Blanchette2015' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Staples2013' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Matichuk2015' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Wiedijk2009' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Aspinall2016' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Bourke12' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Woos2016' on page 7 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Ringer2018' on page 7 undefined on input line 29.
+
+
+LaTeX Warning: Citation `coq' on page 7 undefined on input line 34.
+
+
+LaTeX Warning: Citation `hol-interact' on page 7 undefined on input line 44.
+
+
+LaTeX Warning: Citation `hol4-interact' on page 7 undefined on input line 44.
+
+
+LaTeX Warning: Citation `idris-repl' on page 7 undefined on input line 44.
+
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 51.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1743,12 +1794,68 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 51.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 51.
+[7]
+
+LaTeX Warning: Citation `proverbot9001' on page 8 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Komendantskaya2012' on page 8 undefined on input line 
+66.
+
+
+LaTeX Warning: Citation `Heras2013' on page 8 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Nagashima2018' on page 8 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Gauthier2017b' on page 8 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Yang2019' on page 8 undefined on input line 66.
+
+
+LaTeX Warning: Citation `wibergh2019' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `WhitesidePhD' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `Dietrich2013' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `adams2015' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `Bourke12' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `Roe2016' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `robert2018' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `Ringer2018' on page 8 undefined on input line 69.
+
+
+LaTeX Warning: Citation `robert2018' on page 8 undefined on input line 69.
+
 ) (./maintenance/plugin.tex
+
+LaTeX Warning: Citation `coq-commands' on page 8 undefined on input line 15.
+
+
+LaTeX Warning: Citation `coqide' on page 8 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Aspinall2000' on page 8 undefined on input line 16.
+
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- [8]
-<maintenance/fig/architecture.png, id=225, 963.6pt x 542.025pt>
+[8]
+<maintenance/fig/architecture.png, id=129, 963.6pt x 542.025pt>
 File: maintenance/fig/architecture.png Graphic file (type png)
 <use maintenance/fig/architecture.png>
 Package pdftex.def Info: maintenance/fig/architecture.png  used on input line 6
@@ -1761,7 +1868,15 @@ x -t e n d -i n g a n i n -d u c -t i v e t y p e[] \OT1/pplj/m/n/10.95 (-20) T
 o
  []
 
-[10 <./maintenance/fig/architecture.png (PNG copy)>] [11]
+
+LaTeX Warning: Citation `GallegoArias2016SerAPI' on page 10 undefined on input 
+line 113.
+
+[10 <./maintenance/fig/architecture.png (PNG copy)>]
+
+LaTeX Warning: Citation `coqrc' on page 11 undefined on input line 167.
+
+[11]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 229.
 
@@ -1815,68 +1930,258 @@ Overfull \hbox (0.99925pt too wide) in paragraph at lines 278--287
  s[] \OT1/pplj/m/n/10.95 (-20) The meta-data be-yond the state
  []
 
-[12]) (./maintenance/study.tex
-LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 7.
- [13] [14] [15]
-<maintenance/fig/example-graph.png, id=335, 729.47531pt x 405.76593pt>
+[12]) (./maintenance/study.tex [13] [14] [15]
+
+LaTeX Warning: Citation `proverbot9001' on page 16 undefined on input line 159.
+
+
+
+LaTeX Warning: Citation `Komendantskaya2012' on page 16 undefined on input line
+ 159.
+
+
+LaTeX Warning: Citation `Nagashima2018' on page 16 undefined on input line 159.
+
+
+
+LaTeX Warning: Citation `Gauthier2017b' on page 16 undefined on input line 159.
+
+
+
+LaTeX Warning: Citation `Yang2019' on page 16 undefined on input line 159.
+
+
+LaTeX Warning: Citation `Ringer2018' on page 16 undefined on input line 160.
+
+
+LaTeX Warning: Citation `robert2018' on page 16 undefined on input line 160.
+
+<maintenance/fig/example-graph.png, id=223, 729.47531pt x 405.76593pt>
 File: maintenance/fig/example-graph.png Graphic file (type png)
 <use maintenance/fig/example-graph.png>
 Package pdftex.def Info: maintenance/fig/example-graph.png  used on input line 
 211.
 (pdftex.def)             Requested size: 235.19897pt x 130.826pt.
- [16] [17 <./maintenance/fig/example-graph.png>]
+[16]
+
+LaTeX Warning: Citation `Komendantskaya2012' on page 17 undefined on input line
+ 244.
+
+
+LaTeX Warning: Citation `coqhammer' on page 17 undefined on input line 247.
+
+[17 <./maintenance/fig/example-graph.png>]
 Overfull \hbox (2.8685pt too wide) in paragraph at lines 309--314
 \OT1/pplj/m/n/10.95 (-20) and spec-i-fi-ca-tions, and whether those changes re-
 veal pat-terns amenable
  []
 
-[18] [19] [20]
+[18] [19]
 Overfull \hbox (172.67001pt too wide) in paragraph at lines 454--544
 [][] 
  []
 
-<maintenance/fig/diffs1.png, id=417, 360.34625pt x 324.21124pt>
+[20]
+<maintenance/fig/diffs1.png, id=302, 360.34625pt x 324.21124pt>
 File: maintenance/fig/diffs1.png Graphic file (type png)
 <use maintenance/fig/diffs1.png>
 Package pdftex.def Info: maintenance/fig/diffs1.png  used on input line 554.
 (pdftex.def)             Requested size: 96.43243pt x 86.7615pt.
-<maintenance/fig/diffs2.png, id=418, 500.87125pt x 371.3875pt>
+<maintenance/fig/diffs2.png, id=303, 500.87125pt x 371.3875pt>
 File: maintenance/fig/diffs2.png Graphic file (type png)
 <use maintenance/fig/diffs2.png>
 Package pdftex.def Info: maintenance/fig/diffs2.png  used on input line 559.
 (pdftex.def)             Requested size: 134.06512pt x 99.40892pt.
-[21 <./maintenance/fig/diffs1.png> <./maintenance/fig/diffs2.png>] [22]
-<maintenance/fig/refactor.png, id=437, 254.9525pt x 233.87375pt>
+ [21 <./maintenance/fig/diffs1.png> <./maintenance/fig/diffs2.png>]
+
+LaTeX Warning: Citation `Boite2004' on page 22 undefined on input line 637.
+
+
+LaTeX Warning: Citation `Mulhern06proofweaving' on page 22 undefined on input l
+ine 639.
+
+[22]
+<maintenance/fig/refactor.png, id=320, 254.9525pt x 233.87375pt>
 File: maintenance/fig/refactor.png Graphic file (type png)
 <use maintenance/fig/refactor.png>
 Package pdftex.def Info: maintenance/fig/refactor.png  used on input line 668.
 (pdftex.def)             Requested size: 63.84082pt x 58.56107pt.
 
+
+LaTeX Warning: Citation `wibergh2019' on page 23 undefined on input line 707.
+
+
+LaTeX Warning: Citation `robert2018' on page 23 undefined on input line 707.
+
+
+LaTeX Warning: Citation `PGL-045' on page 23 undefined on input line 709.
+
 [23 <./maintenance/fig/refactor.png>]
-<maintenance/fig/patch.png, id=450, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=328, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 749.
 (pdftex.def)             Requested size: 157.92041pt x 95.0405pt.
- [24 <./maintenance/fig/patch.png>]
+
+
+LaTeX Warning: Citation `Ringer2018' on page 24 undefined on input line 793.
+
+
+LaTeX Warning: Citation `Ringer2019' on page 24 undefined on input line 793.
+
+
 Overfull \hbox (0.67659pt too wide) in paragraph at lines 790--798
 [] []\OT1/pplj/m/sc/10.95 (-20) l e s s o n s f o r a u -t o m a -t i o n[] \OT
 1/pplj/m/n/10.95 (-20) Au-toma-tion may help with these sorts
  []
 
-<maintenance/fig/bad.png, id=462, 455.7025pt x 162.6075pt>
+[24 <./maintenance/fig/patch.png>]
+<maintenance/fig/bad.png, id=338, 455.7025pt x 162.6075pt>
 File: maintenance/fig/bad.png Graphic file (type png)
 <use maintenance/fig/bad.png>
 Package pdftex.def Info: maintenance/fig/bad.png  used on input line 824.
 (pdftex.def)             Requested size: 117.60205pt x 41.96184pt.
-[25 <./maintenance/fig/bad.png>] [26]) (./maintenance/discussion.tex [27]
-[28] [29] [30] [31]) (./maintenance/related.tex [32]
+ [25 <./maintenance/fig/bad.png>]
+
+LaTeX Warning: Citation `murraybp' on page 26 undefined on input line 885.
+
+
+LaTeX Warning: Citation `Paraskevopoulou2015' on page 26 undefined on input lin
+e 889.
+
+
+LaTeX Warning: Citation `FRAPBook' on page 26 undefined on input line 890.
+
+
+LaTeX Warning: Citation `Roe2016' on page 26 undefined on input line 891.
+
+
+LaTeX Warning: Citation `Aspinall2016b' on page 26 undefined on input line 893.
+
+
+) (./maintenance/discussion.tex [26] [27]
+
+LaTeX Warning: Citation `Wenzel2012' on page 28 undefined on input line 107.
+
+
+LaTeX Warning: Citation `Wenzel2014' on page 28 undefined on input line 110.
+
+
+LaTeX Warning: Citation `Wenzel2012' on page 28 undefined on input line 111.
+
+[28] [29] [30]) (./maintenance/related.tex [31]
+
+LaTeX Warning: Citation `mylar' on page 32 undefined on input line 13.
+
+
+LaTeX Warning: Citation `MusluBEN2015' on page 32 undefined on input line 16.
+
+
+LaTeX Warning: Citation `Robillard2004' on page 32 undefined on input line 19.
+
+
+LaTeX Warning: Citation `ko-explore' on page 32 undefined on input line 19.
+
+
+LaTeX Warning: Citation `comprehension' on page 32 undefined on input line 20.
+
+
+LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 29.
+
+
+LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 29.
+
+
+LaTeX Warning: Citation `Staples2014' on page 32 undefined on input line 29.
+
+
+LaTeX Warning: Citation `Blanchette2015' on page 32 undefined on input line 31.
+
+
+
+LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 31.
+
+
+LaTeX Warning: Citation `Wiedijk2009' on page 32 undefined on input line 31.
+
+
+LaTeX Warning: Citation `Aspinall2016' on page 32 undefined on input line 31.
+
+
+LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 32.
+
+
+LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 32.
+
+
+LaTeX Warning: Citation `Staples2013' on page 32 undefined on input line 33.
+
+
+LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 33.
+
+
+LaTeX Warning: Citation `Aspinall2016' on page 32 undefined on input line 33.
+
+
+LaTeX Warning: Citation `Andronick2012' on page 32 undefined on input line 34.
+
+
+LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 34.
+
+
+LaTeX Warning: Citation `Bourke12' on page 32 undefined on input line 35.
+
+
+LaTeX Warning: Citation `Woos2016' on page 32 undefined on input line 35.
+
+
+LaTeX Warning: Citation `PGL-045' on page 32 undefined on input line 39.
+
+
+LaTeX Warning: Citation `Zhang2012' on page 32 undefined on input line 41.
+
+
+LaTeX Warning: Citation `Matichuk2015' on page 32 undefined on input line 44.
+
+
+LaTeX Warning: Citation `Miraldo2017' on page 32 undefined on input line 59.
+
+
+LaTeX Warning: Citation `code-decay' on page 32 undefined on input line 62.
+
+
+LaTeX Warning: Citation `tree-comparison' on page 32 undefined on input line 64
+.
+
+
+LaTeX Warning: Citation `causes-of-error' on page 32 undefined on input line 68
+.
+
+
 Overfull \hbox (24.99403pt too wide) in paragraph at lines 56--72
 [] []\OT1/pplj/m/sc/10.95 (-20) i d e n -t i -f y -i n g , c l a s -s i -f y -i
  n g , & v i -s u -a l -i z -i n g c h a n g e s[] \OT1/pplj/m/n/10.95 (-20) Th
 e \OT1/pplj/m/sc/10.95 (-20) REPLica
  []
+
+[32]
+
+LaTeX Warning: Citation `Ringer2018' on page 33 undefined on input line 74.
+
+
+LaTeX Warning: Citation `robert2018' on page 33 undefined on input line 77.
+
+
+LaTeX Warning: Citation `proof-diff' on page 33 undefined on input line 82.
+
+
+LaTeX Warning: Citation `Roe2016' on page 33 undefined on input line 82.
+
+
+LaTeX Warning: Citation `peacoq' on page 33 undefined on input line 83.
+
+
+LaTeX Warning: Citation `proverbot9001' on page 33 undefined on input line 85.
 
 )) (./repair.tex [33] [34
 
@@ -1884,141 +2189,494 @@ e \OT1/pplj/m/sc/10.95 (-20) REPLica
 ]
 chapter 4.
 (./repair/introduction.tex
+
+LaTeX Warning: Citation `proof-eng' on page 35 undefined on input line 20.
+
+
+LaTeX Warning: Citation `Aydemir2008' on page 35 undefined on input line 20.
+
+
+LaTeX Warning: Citation `Delaware2013ICFP' on page 35 undefined on input line 2
+0.
+
+
+LaTeX Warning: Citation `hints' on page 35 undefined on input line 24.
+
+
+LaTeX Warning: Citation `rippling' on page 35 undefined on input line 24.
+
+
+LaTeX Warning: Citation `proof-eng' on page 35 undefined on input line 40.
+
+
+LaTeX Warning: Citation `Aydemir2008' on page 35 undefined on input line 40.
+
+
+LaTeX Warning: Citation `Delaware2013ICFP' on page 35 undefined on input line 4
+0.
+
+
+LaTeX Warning: Citation `chlipala:cpdt' on page 35 undefined on input line 40.
+
+
+LaTeX Warning: Citation `verdicommit' on page 35 undefined on input line 46.
+
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 52.
- (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
+(./repair/izr.tex) (./repair/izr.tex)
+
+LaTeX Warning: Citation `leroy:compcert' on page 35 undefined on input line 78.
+
+
 [35]) (./repair/reimagined.tex [36]
+
+LaTeX Warning: Citation `coq87commit' on page 37 undefined on input line 20.
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 38.
-) (./repair/sysintro.tex [37]
-(./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
+) (./repair/sysintro.tex
+
+LaTeX Warning: Citation `coq' on page 37 undefined on input line 8.
+
+[37] (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [38] [39] [40]
+
+LaTeX Warning: Citation `hints' on page 41 undefined on input line 277.
+
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 338.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 338.
- (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) [41]) (./repair/casestudies.tex
-[42] (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
+(./repair/compcert.tex) [41]) (./repair/casestudies.tex [42]
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+
+LaTeX Warning: Citation `compcertcommit' on page 43 undefined on input line 96.
+
+
 [43]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
  [44]
+
+LaTeX Warning: Citation `usera' on page 45 undefined on input line 220.
+
+
+LaTeX Warning: Citation `userb' on page 45 undefined on input line 220.
+
+
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 316--318
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[45] (./repair/divide.tex) (./repair/divide.tex) [46] [47]) (./repair/core.tex
+[45] (./repair/divide.tex) (./repair/divide.tex)
+
+LaTeX Warning: Citation `coq84commit' on page 46 undefined on input line 503.
+
+[46] [47]) (./repair/core.tex
+
+LaTeX Warning: Citation `Hofmann97' on page 48 undefined on input line 87.
+
 [48]
-<repair/nat_ind.pdf, id=1028, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=820, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 154.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
- [49] [50 <./repair/nat_ind.pdf>] [51]) (./repair/evaluation.tex [52]
+
+
+LaTeX Warning: Citation `equality' on page 49 undefined on input line 163.
+
+[49] [50 <./repair/nat_ind.pdf>] [51]
+
+LaTeX Warning: Citation `coq87news' on page 52 undefined on input line 337.
+
+
+LaTeX Warning: Citation `coqPR' on page 52 undefined on input line 340.
+
+) (./repair/evaluation.tex [52]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 46.
 
-[53] [54] [55] [56]) (./repair/future.tex
+[53]
+
+LaTeX Warning: Citation `equality' on page 54 undefined on input line 125.
+
+[54] [55] [56]) (./repair/future.tex
+
+LaTeX Warning: Citation `Boite2004' on page 57 undefined on input line 54.
+
+
+LaTeX Warning: Citation `Mulhern06proofweaving' on page 57 undefined on input l
+ine 54.
+
+
+LaTeX Warning: Citation `Miraldo:2017:TDS:3122975.3122976' on page 57 undefined
+ on input line 55.
+
+
+LaTeX Warning: Citation `proofgeneral' on page 57 undefined on input line 73.
+
+
+LaTeX Warning: Citation `travis' on page 57 undefined on input line 74.
+
+
 Overfull \hbox (10.59421pt too wide) in paragraph at lines 69--76
 [] []\OT1/pplj/m/sc/10.95 (-20) i m -p r o v -i n g u s e r e x -p e -r i -e n 
 c e .[] \OT1/pplj/m/n/10.95 (-20) The ideal proof patch-ing tool should
  []
 
-[57]) (./repair/related.tex [58] [59] [60])) (./often.tex [61] [62
+[57]
+
+LaTeX Warning: Citation `873647' on page 58 undefined on input line 96.
+
+
+LaTeX Warning: Citation `Autexier:2010:CMH:1986659.1986663' on page 58 undefine
+d on input line 96.
+
+
+LaTeX Warning: Citation `Celik:2017:IRP:3155562.3155588' on page 58 undefined o
+n input line 96.
+
+
+LaTeX Warning: Citation `lean' on page 58 undefined on input line 102.
+
+
+LaTeX Warning: Citation `agda' on page 58 undefined on input line 102.
+
+
+LaTeX Warning: Citation `isabellehol' on page 58 undefined on input line 103.
+
+
+LaTeX Warning: Citation `decidable' on page 58 undefined on input line 105.
+
+
+LaTeX Warning: Citation `hints' on page 58 undefined on input line 110.
+
+
+LaTeX Warning: Citation `Huffman2013' on page 58 undefined on input line 112.
+
+
+LaTeX Warning: Citation `ZimmermannH15' on page 58 undefined on input line 112.
+
+
+) (./repair/related.tex [58]
+
+LaTeX Warning: Citation `Barthe:2001:TIP:646793.704711' on page 59 undefined on
+ input line 10.
+
+
+LaTeX Warning: Citation `Magaud2002' on page 59 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Huffman2013' on page 59 undefined on input line 11.
+
+
+LaTeX Warning: Citation `ZimmermannH15' on page 59 undefined on input line 11.
+
+
+LaTeX Warning: Citation `tabareau:hal-01559073' on page 59 undefined on input l
+ine 11.
+
+
+LaTeX Warning: Citation `Boite2004' on page 59 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Mulhern06proofweaving' on page 59 undefined on input l
+ine 19.
+
+
+LaTeX Warning: Citation `Felty1994' on page 59 undefined on input line 21.
+
+
+LaTeX Warning: Citation `pons00' on page 59 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Johnsen2004' on page 59 undefined on input line 21.
+
+
+LaTeX Warning: Citation `chlipala:cpdt' on page 59 undefined on input line 30.
+
+
+LaTeX Warning: Citation `Blanchette2013' on page 59 undefined on input line 32.
+
+
+
+LaTeX Warning: Citation `CzajkaHammer' on page 59 undefined on input line 33.
+
+
+LaTeX Warning: Citation `chlipala:cpdt' on page 59 undefined on input line 39.
+
+
+LaTeX Warning: Citation `Chlipala2013' on page 59 undefined on input line 39.
+
+
+LaTeX Warning: Citation `Gonthier2011' on page 59 undefined on input line 40.
+
+
+LaTeX Warning: Citation `rippling' on page 59 undefined on input line 46.
+
+
+LaTeX Warning: Citation `Miller:2012:PHL:2331097' on page 59 undefined on input
+ line 50.
+
+
+LaTeX Warning: Citation `selsam:lean' on page 59 undefined on input line 52.
+
+[59]
+
+LaTeX Warning: Citation `bundyreasoning' on page 60 undefined on input line 56.
+
+
+
+LaTeX Warning: Citation `tgck-cicm14' on page 60 undefined on input line 59.
+
+
+LaTeX Warning: Citation `proof-eng' on page 60 undefined on input line 63.
+
+
+LaTeX Warning: Citation `Aydemir2008' on page 60 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Delaware2013POPL' on page 60 undefined on input line 6
+4.
+
+
+LaTeX Warning: Citation `Delaware2013ICFP' on page 60 undefined on input line 6
+4.
+
+
+LaTeX Warning: Citation `certikos' on page 60 undefined on input line 65.
+
+
+LaTeX Warning: Citation `Dagand17jfp' on page 60 undefined on input line 67.
+
+
+LaTeX Warning: Citation `Williams:2014:OP:2633628.2633631' on page 60 undefined
+ on input line 67.
+
+
+LaTeX Warning: Citation `873647' on page 60 undefined on input line 76.
+
+
+LaTeX Warning: Citation `Autexier:2010:CMH:1986659.1986663' on page 60 undefine
+d on input line 76.
+
+
+LaTeX Warning: Citation `Celik:2017:IRP:3155562.3155588' on page 60 undefined o
+n input line 77.
+
+
+LaTeX Warning: Citation `Mens:2004:SSR:972215.972286' on page 60 undefined on i
+nput line 81.
+
+
+LaTeX Warning: Citation `HaRe' on page 60 undefined on input line 82.
+
+
+LaTeX Warning: Citation `Whiteside2011' on page 60 undefined on input line 84.
+
+
+LaTeX Warning: Citation `Bourke_DKK_12' on page 60 undefined on input line 84.
+
+
+LaTeX Warning: Citation `Roe2016' on page 60 undefined on input line 85.
+
+
+LaTeX Warning: Citation `Bobot2013' on page 60 undefined on input line 85.
+
+
+LaTeX Warning: Citation `Miraldo:2017:TDS:3122975.3122976' on page 60 undefined
+ on input line 93.
+
+
+LaTeX Warning: Citation `Autexier:2010:SCI:1860559.1860580' on page 60 undefine
+d on input line 95.
+
+
+LaTeX Warning: Citation `differential-assertion-checking-2' on page 60 undefine
+d on input line 97.
+
+
+LaTeX Warning: Citation `Cai:2014:TCH:2594291.2594304' on page 60 undefined on 
+input line 99.
+
+[60]
+
+LaTeX Warning: Citation `DBLP:journals/ftpl/GulwaniPS17' on page 61 undefined o
+n input line 104.
+
+
+LaTeX Warning: Citation `Pei:2014:APR:2731750.2731779' on page 61 undefined on 
+input line 112.
+
+
+LaTeX Warning: Citation `Long:2016:APG:2837614.2837617' on page 61 undefined on
+ input line 112.
+
+
+LaTeX Warning: Citation `Le:2017:SSS:3106237.3106309' on page 61 undefined on i
+nput line 112.
+
+
+LaTeX Warning: Citation `Mechtaev:2016:ASM:2884781.2884807' on page 61 undefine
+d on input line 112.
+
+
+LaTeX Warning: Citation `Monperrus2015' on page 61 undefined on input line 112.
+
+
+)) (./often.tex [61] [62
 
 
 ]
 chapter 5.
-) (./theory.tex [63] [64
+(./often/devoid/introduction.tex
+
+LaTeX Warning: Citation `stdlib' on page 63 undefined on input line 4.
 
 
-]
-chapter 6.
-) (./next.tex [65] [66
+LaTeX Warning: Citation `emiliodom' on page 63 undefined on input line 21.
 
 
-]
-chapter 7.
-) (./uwthesis.bbl [67] [68
+LaTeX Warning: Citation `adamchlipala' on page 63 undefined on input line 21.
 
-
-] [69] [70] [71] [72] [73] [74] [75] [76]
-Underfull \hbox (badness 1454) in paragraph at lines 613--618
-[]\OT1/pplj/m/n/10.95 (+20) Tamara Mun-zner, Fran-cois Guim-bretiere, Ser-dar T
-asiran,
+(./often/devoid/listvect.tex) (./often/devoid/listvect.tex)
+Overfull \hbox (2.41995pt too wide) in paragraph at lines 24--32
+[]$[]$  $[]$
  []
 
-[77] [78]
-Underfull \hbox (badness 1163) in paragraph at lines 699--705
-[]\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
+[63]
+
+LaTeX Warning: Citation `mcbride' on page 64 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Williams2017' on page 64 undefined on input line 51.
+
+
+LaTeX Warning: Citation `ko2016programming' on page 64 undefined on input line 
+54.
+
+
+LaTeX Warning: Citation `mcbride' on page 64 undefined on input line 54.
+
+
+LaTeX Warning: Citation `dagand2014transporting' on page 64 undefined on input 
+line 54.
+
+
+LaTeX Warning: Citation `mcbride' on page 64 undefined on input line 61.
+
+
+LaTeX Warning: Reference `sec:alg' on page 64 undefined on input line 66.
+
+
+LaTeX Warning: Reference `sec:impl' on page 64 undefined on input line 67.
+
+) (./often/devoid/example.tex
+
+LaTeX Warning: Citation `hstocoqv' on page 64 undefined on input line 7.
+
+[64]
+
+LaTeX Warning: Reference `sec:impl' on page 65 undefined on input line 13.
+
+[65]) (./often/devoid/spec.tex
+
+LaTeX Warning: Reference `sec:findalg' on page 66 undefined on input line 7.
+
+
+LaTeX Warning: Reference `sec:liftspec' on page 66 undefined on input line 8.
+
+
+LaTeX Warning: Reference `sec:liftalg' on page 66 undefined on input line 8.
+
+[66]
+
+LaTeX Warning: Citation `univalent2013homotopy' on page 67 undefined on input l
+ine 40.
+
+
+LaTeX Warning: Citation `ko2016programming' on page 67 undefined on input line 
+64.
+
+[67]
+
+LaTeX Warning: Citation `tabareau2017equivalences' on page 68 undefined on inpu
+t line 124.
+
+
+LaTeX Warning: Citation `bernardy2012proofs' on page 68 undefined on input line
+ 125.
+
+
+Overfull \hbox (0.6391pt too wide) in paragraph at lines 131--133
+[][][][][] \OT1/pplj/m/n/10.95 (-20) pre-serves this re-la-tion us-ing the com-
+po-nents that [][][][][]
+ []
+
+[68]
+Overfull \hbox (19.00084pt too wide) in paragraph at lines 147--148
+[]\OT1/pplj/m/n/10.95 (-20) if in the cur-rent en-vi-ron-ment $[]$, then $[]$. 
 
  []
 
+) (./often/devoid/algorithms.tex
 
-Underfull \hbox (badness 3396) in paragraph at lines 699--705
-\OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
-pplj/m/it/10.95 (+20) Soft-ware
- []
+LaTeX Warning: Reference `fig:syntax' on page 69 undefined on input line 13.
 
+[69]
 
-Underfull \hbox (badness 3657) in paragraph at lines 699--705
-\OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
-c text-book, 2016.  Ver-sion 4.0.
- []
+LaTeX Warning: Reference `fig:common' on page 70 undefined on input line 31.
 
 
-LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 721.
+! LaTeX Error: Environment grammar undefined.
 
-[79] [80] [81]) [82]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
- (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
-Package rerunfilecheck Info: File `uwthesis.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
- ) 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \begin{grammar}
+                    
+? X
+ 
 Here is how much of TeX's memory you used:
- 42808 strings out of 492609
- 805398 string characters out of 6129033
+ 42541 strings out of 492609
+ 801763 string characters out of 6129033
  1131695 words of memory out of 5000000
- 44501 multiletter control sequences out of 15000+600000
- 615648 words of font info for 680 fonts, out of 8000000 for 9000
+ 44405 multiletter control sequences out of 15000+600000
+ 615138 words of font info for 601 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,14n,71p,9083b,2337s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
-/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (92 pages, 612047 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb>
+Output written on uwthesis.pdf (79 pages, 588558 bytes).
 PDF statistics:
- 1795 PDF objects out of 2073 (max. 8388607)
- 1648 compressed objects within 17 object streams
- 808 named destinations out of 1000 (max. 500000)
- 80133 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1405 PDF objects out of 1440 (max. 8388607)
+ 1269 compressed objects within 13 object streams
+ 733 named destinations out of 1000 (max. 500000)
+ 83497 words of extra memory for PDF output out of 89155 (max. 10000000)
 

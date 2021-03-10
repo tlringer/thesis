@@ -1,0 +1,98 @@
+\section{Motivating Example: Porting a Library}
+\label{sec:example}
+
+\toolnameb is a plugin for Coq 8.8; it can be found in the repository linked to as \textbf{Supplement Material} under the abstract of this paper.
+To see how it works, consider an example using the types from Figure~\ref{fig:listvect},
+the code for which is in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}}.
+In this example, we lift two list zip functions and a proof of a theorem relating them from the Haskell CoreSpec library~\cite{hstocoqv}:
+\begin{lstlisting}
+zip {T$_1$ T$_2$}: list T$_1$ $\rightarrow$ list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$).
+zip_with {T$_1$ T$_2$ T$_3$} (f : T$_1$ $\rightarrow$ T$_2$ $\rightarrow$ T$_3$): list T$_1$ $\rightarrow$ list T$_2$ $\rightarrow$ list T$_3$.
+zip_with_is_zip {T$_1$ T$_2$}: $\forall$(l$_1$:list T$_1$)(l$_2$:list T$_2$), zip_with pair l$_1$ l$_2$ = zip l$_1$ l$_2$.
+\end{lstlisting}
+\toolnameb runs a preprocessing step before lifting, which we describe in Section~\ref{sec:impl}; we assume this step has already run.
+We use the \codeauto{cyan} background color to denote tool-produced terms and the names that refer to them.
+We run \toolnameb to lift functions and proofs from lists to vectors, but it can also lift in the opposite direction.
+
+\subparagraph*{Step 1: Search.}
+We first use \toolnameb's \lstinline{Find ornament} command to search for the relation between lists and vectors:
+\begin{lstlisting}
+Find ornament list vector.
+\end{lstlisting}
+This produces functions which together form an equivalence (denoted \smallmath{$\simeq$}):
+\begin{lstlisting}
+list T $\simeq$ $\Sigma$ (n : nat).vector T n
+\end{lstlisting}
+
+\subparagraph*{Step 2: Lift.}
+We then lift our functions and proofs
+along that equivalence using \toolnameb's \lstinline{Lift} command.
+For example, to lift \lstinline{zip}, we run the command:
+\begin{lstlisting}
+Lift list vector in zip as (@\codeauto{zipV\_p}@).
+\end{lstlisting}
+This produces a function with this type:
+\begin{lstlisting}
+(@\codeauto{zipV\_p}@) {T$_1$ T$_2$} : $\Sigma$ n.vector T$_1$ n $\rightarrow$ $\Sigma$ n.vector T$_2$ n $\rightarrow$ $\Sigma$ n.vector (T$_1$ * T$_2$) n.
+\end{lstlisting}
+that behaves like \lstinline{zip}, but whose body no longer refers to lists.
+We lift our proof similarly:
+\begin{lstlisting}
+Lift list vector in zip_with_is_zip as (@\codeauto{zip\_with\_is\_zipV\_p}@).
+\end{lstlisting}
+This produces a proof of the analogous result (denoting projections by \smallmath{$\pi_{l}$} and \smallmath{$\pi_{r}$}):
+\begin{lstlisting}
+(@\codeauto{zip\_with\_is\_zipV\_p}@) {T$_1$ T$_2$} : $\forall$ (v$_1$ : $\Sigma$ n.vector T$_1$ n) (v$_2$ : $\Sigma$ n.vector T$_2$ n),
+  (@\codeauto{zip\_withV\_p}@) pair ($\exists$ ($\pi_l$ v$_1$) ($\pi_r$ v$_1$)) ($\exists$ ($\pi_l$ v$_2$) ($\pi_r$ v$_2$)) =
+  (@\codeauto{zipV\_p} ($\exists$ ($\pi_l$ v$_1$) ($\pi_r$ v$_1$)) ($\exists$ ($\pi_l$ v$_2$) ($\pi_r$ v$_2$)).
+\end{lstlisting}
+that no longer refers to lists, \lstinline{zip}, or \lstinline{zip_with} in any way.
+
+\subparagraph*{Step 3: Unpack.}
+The lifted terms operate over vectors whose lengths are \textit{packed} inside of a sigma type.
+While this lets \lstinline{Lift} provide strong theoretical guarantees, it can make it difficult to interface with the lifted code.
+We can recover \textit{unpacked} terms using \toolnameb's \lstinline{Unpack} command.
+For example, to unpack \codeauto{\lstinline{zipV_p}}, we run the command:
+\begin{lstlisting}
+Unpack $\codeauto{zipV\_p}$ as $\codeauto{zipV}$.
+\end{lstlisting}
+This produces functions and proofs that operate directly over vectors, like \codeauto{\lstinline{zipV}}:
+\begin{lstlisting}
+(@\codeauto{zipV}@) {T$_1$ T$_2$} {n$_1$} (v$_1$ : vector T$_1$ n$_1$) {n$_2$} (v$_2$ : vector T$_2$ n$_2$) : 
+  vector (T$_1$ * T$_2$) ($\pi_l$ ((@\codeauto{zipV\_p}@) ($\exists$ n$_1$ v$_1$) ($\exists$ n$_2$ v$_2$))).
+\end{lstlisting}
+and \codeauto{\lstinline{zip\_with\_is\_zipV}}:
+\begin{lstlisting}
+(@\codeauto{zip\_with\_is\_zipV}@) : $\forall$ {T$_1$ T$_2$} {n$_1$} (v$_1$ : vector T$_1$ n$_1$) {n$_2$} (v$_2$ : vector T$_2$ n$_2$),
+  eq_dep _ _ _ ((@\codeauto{zip\_withV}@) pair v$_1$ v$_2$) _ ((@\codeauto{zipV}@) v$_1$ v$_2$).
+\end{lstlisting}
+
+\subparagraph*{Step 4: Interface.}
+For any two inputs of the same length, \codeauto{\lstinline{zipV}} and \codeauto{\lstinline{zipV_with}} contain proofs
+that the output has the same length as the inputs.
+However, the types obscure this information.
+\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}} explains how to recover more user-friendly types, like that of \lstinline{zipV_uf}:
+\begin{lstlisting}
+zipV_uf {T$_1$ T$_2$} {n} : vector T$_1$ n $\rightarrow$ vector T$_2$ n $\rightarrow$ vector (T$_1$ * T$_2$) n.
+\end{lstlisting}
+and that of \lstinline{zip_withV_uf}:
+\begin{lstlisting}
+zip_withV_uf {T$_1$ T$_2$ T$_3$} (f : T$_1$ $\rightarrow$ T$_2$ $\rightarrow$ T$_3$) {n} : 
+  vector T$_1$ n $\rightarrow$ vector T$_2$ n $\rightarrow$ vector T$_3$ n.
+\end{lstlisting}
+which both restrict input lengths.
+We can then use our lifted functions and proofs in client code.
+For example, we can write a different version of Coq's
+\lstinline{BVand} function for bitvectors:
+\begin{lstlisting}
+BVand {n} (v$_1$ : vector bool n) (v$_2$ : vector bool n) : vector bool n := 
+  zip_withV_uf andb v$_1$ v$_2$.
+\end{lstlisting}
+By working over lists, we are able to reason about only the interesting pieces, thinking about indices only
+when relevant; in contrast, when writing proofs over vectors, even simple theorems
+can generate tricky proof obligations.
+With \toolnameb, the programmer can use the lifted functions and proofs
+to interface with code that uses vectors, then switch back to lists when vectors are unmanageable. 
+In essence, ornaments form the glue between these types.
+
+

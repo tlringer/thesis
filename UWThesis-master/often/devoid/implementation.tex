@@ -1,0 +1,115 @@
+\section{Implementation}
+\label{sec:impl}
+
+The \toolnameb Coq plugin implements the algorithms from Section~\ref{sec:alg};
+the link to the code is in \textbf{Supplement Material}. 
+\toolnameb cannot produce an ill-typed term, since Coq type checks all terms that plugins produce
+and rejects ill-typed terms.
+The implementations of 
+\lstinline{Find ornament} (\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/src/automation/search.ml}{\lstinline{search.ml}}) 
+and 
+\lstinline{Lift} (\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/src/automation/search.ml}{\lstinline{lift.ml}}) 
+are mostly the same as the algorithms,
+but with changes to address implementation challenges that scale the algorithms to a Coq tool for proof engineers.
+This section describes a sample of these changes from each of three categories: 
+addressing differences between Coq and the type theory that the algorithms assume (Section~\ref{sec:langdiff}), 
+optimizing for efficiency (Section~\ref{sec:opteff}),
+and improving usability (Section~\ref{sec:autouse}).
+
+\subsection{Addressing Language Differences}
+\label{sec:langdiff}
+
+\subparagraph*{Fixpoints.}
+Coq implements eliminators in terms of pattern matching and fixpoints. 
+To handle terms that use these features, \toolnameb includes a \lstinline{Preprocess} command that translates these terms into equivalent eliminator applications.
+This command can preprocess a definition (like \lstinline{zip} from Section~\ref{sec:example}) or an entire module
+(like \lstinline{List}, as shown in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/ListToVect.v}{\lstinline{ListToVect.v}}) for lifting.
+It currently supports fixpoints that are structurally recursive on only immediate substructures.
+To translate such a fixpoint, it first extracts a motive, then generates each case
+by partially reducing the function's body under a hypothetical context for the constructor arguments.
+This is enough to preprocess \lstinline{List}; Section~\ref{sec:concl} discusses possible extensions.
+
+\subparagraph*{Non-Primitive Projections.} By default, projections in Coq are non-primitive. That is, this:
+\begin{lstlisting}
+$\forall$ (T : Type) (v : $\Sigma$ (n : nat).vector T n), v = $\exists$ ($\pi_l$ v) ($\pi_r$ v).
+\end{lstlisting}
+cannot be proven by reflexivity alone (see \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Projections.v}{\lstinline{Projections.v}}).
+Therefore, \toolnameb must pack terms like \lstinline{v} into existentials; otherwise, lifting
+will sometimes fail. This is why the type of \codeauto{\lstinline{zip_with_is_zipV_p}} 
+in the example from Section~\ref{sec:example} packs \lstinline{v}$_1$ and \lstinline{v}$_2$.
+For the sake of performance and readability of lifted code, \toolnameb is strategic about when it packs.
+
+\subparagraph*{Constants.}
+Because Coq has constants, the implementation of \textsc{Normalize} 
+refolds~\cite{boutillier:tel-01054723} after normalizing.
+That is, it acts like the \lstinline{simpl}
+tactic in Coq, but with special support for sigma types.
+For example, to lift the \lstinline{cons} constructor of a list, after normalizing the promotion of \lstinline{cons t l},
+\toolnameb substitutes the projections of the promotion of \lstinline{l} for their normal forms,
+which determines and saves the following fact:
+\begin{lstlisting}
+$\forall$ {T} (l : list T), $\uparrow$ (cons t l) = $\exists$ (S ($\uparrow_{I_B}$ l)) (consV ($\uparrow_{I_B}$ l) t ($\uparrow_{B}$ l)).
+\end{lstlisting}
+Refolding helps produce more readable lifted code.
+It also improves lifting performance,
+since it occurs just once for each constructor.
+
+\subsection{Optimizing for Efficiency}
+\label{sec:opteff}
+
+\subparagraph*{Delayed Reduction.}
+When lifting eliminators, \toolnameb computes a list of arguments and delays reduction.
+It computes this list backwards, storing the new indices that inductive hypotheses
+refer to as it recurses. This removes the call to \lstinline{new} in the premise of \textsc{Drop-Index}.
+
+\subparagraph*{Lazy $\eta$-Expansion.}
+The lifting algorithm assumes that all terms are fully \smallmath{$\eta$}-expanded. Sometimes,
+however, \smallmath{$\eta$}-expansion is not necessary.
+For efficiency, rather than fully \smallmath{$\eta$}-expand ahead of time, \toolnameb \smallmath{$\eta$}-expands lazily, 
+only when it is necessary for correctness.
+
+\subparagraph*{Caching.} 
+To prevent extra recursion, \toolnameb caches the outputs of search,
+as well as lifted constants, inductive types, and constructors.
+Since these are constants, lookup is low-cost.
+
+\subsection{Improving Usability}
+\label{sec:autouse}
+
+\subparagraph*{Correctness Proofs.}
+\toolnameb has options (used in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}}) that tell search to generate proofs that its outputs are correct, thereby increasing confidence in and
+usefulness of those outputs.
+The proof of \lstinline{coherence} is reflexivity.
+The intuition behind 
+the automation to prove \lstinline{section} and \lstinline{retraction} (\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/src/automation/equivalence.ml}{\lstinline{equivalence.ml}}) 
+is that
+\lstinline{promote} and \lstinline{forget} map along corresponding constructors, so inductive cases preserve equalities.
+Thus, each inductive case of these proofs is generated by a fold that rewrites each recursive reference,
+with reflexivity as identity.
+
+
+\subparagraph*{Unpacking.}
+\toolnameb includes an \lstinline{Unpack} command (used in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}})
+that unpacks packed types in functions and proofs. 
+This way, users may access unpacked terms without writing boilerplate code.
+For simple functions, this command packs arguments and projects
+results. It splits higher-order functions into two functions. For proofs that use equality, it applies 
+one lemma convert to dependent equality, and one
+lemma to deal with non-primitive projections.
+
+\subparagraph*{User-Friendly Types.}
+\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}} describes how the user can recover user-friendly types
+after unpacking. For example, to recover a function with an output of type \lstinline{vector T n},
+the user lifts a proof that the length of the output of the unlifted \lstinline{list} version of that function is \lstinline{n}, then rewrites by that 
+lifted proof. The intuition behind this is that this equivalence holds:
+\begin{lstlisting}
+{ l : list T & length l = n } $\simeq$ vector T n
+\end{lstlisting}
+Recovering a user-friendly type for a proof relating these functions is more complex, since
+it necessitates reasoning at some point about equalities between equalities. For some index types like \lstinline{nat}, this follows simply
+from the fact that the type forms an h-set~\cite{univalent2013homotopy}:
+all proofs of equality between the same two terms of that type are equal.
+There is preliminary work on determining a general methodology for deriving user-friendly types for proofs
+that does not rely on any properties of the index type. The idea is to use the adjunction condition
+along with the proof of \lstinline{coherence} by reflexivity; see \href{http://github.com/uwplse/ornamental-search/issues/39}{GitHub issue \#39} for the status of this work.
+

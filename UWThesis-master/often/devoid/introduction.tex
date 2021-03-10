@@ -1,0 +1,70 @@
+\section{Introduction}
+
+Indexed inductive types make it possible to internalize data into the type level, eliminating the need for certain functions and proofs.
+Consider, for example, a theorem from the Coq standard library~\cite{stdlib}
+which states that mapping a function over lists preserves length:
+\begin{lstlisting}
+map_length T$_1$ T$_2$ (f : T$_1$ $\rightarrow$ T$_2$) : $\forall$ (l : list T), length (List.map f l) = length l.
+\end{lstlisting}
+One way to eliminate the need for this theorem is to internalize the length of a list into its type,
+creating a dependently typed vector (Figure~\ref{fig:listvect}).
+The map function for vectors in Coq's standard library, for example, carries a proof that it preserves length:
+\begin{lstlisting}
+Vector.map {T$_1$} {T$_2$} (f : T$_1$ $\rightarrow$ T$_2$) : $\forall$ (n : nat) (v : vector T$_1$ n), vector T$_2$ n.
+\end{lstlisting}
+so that a theorem like \lstinline{map_length} is no longer necessary.
+
+Unfortunately, for all of the benefits they bring, indexed inductive types are notoriously difficult to use.
+Dependently typed vectors, for example, impose proof obligations about their lengths on the user;
+these can quickly spiral out of control.
+In recent coq-club threads asking for advice on how to use dependently typed vectors, experts called them
+``not suitable for extended use''~\cite{emiliodom} and noted that ``almost no one should be using [them] for anything''~\cite{adamchlipala}.
+
+\begin{figure}
+\begin{minipage}{0.35\textwidth}
+   \lstinputlisting[firstline=1, lastline=4]{often/devoid/listvect.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.65\textwidth}
+   \lstinputlisting[firstline=6, lastline=9]{often/devoid/listvect.tex}
+\end{minipage}
+\vspace{-0.3cm}
+\caption{A \lstinline{vector} (right) is a \lstinline{list} (left) indexed by its length (highlighted in \codediff{orange}).}
+\label{fig:listvect}
+\end{figure}
+
+We show how \textit{proof reuse}---reusing existing proofs to derive new proofs---can tackle many of the challenges posed
+by indexed inductive types, allowing the user to move between unindexed and indexed versions of a type 
+(for example, lists and vectors)
+and reap the benefits of indexed types without many of the costs.
+We focus in particular on the benefits of this approach in deriving functions and proofs for
+fully-determined indexed types, when the index
+is a fold over the unindexed version (such as the length of a list).
+In our approach, the user writes functions and proofs over the unindexed version,
+and a tool then automatically \textit{lifts} those functions and proofs to the indexed version.
+The user can then switch back to working with the unindexed version by running the tool in the opposite direction.
+In that way, the user can use lists when lists are convenient, and vectors when vectors are convenient.
+
+Our approach uses \textit{ornaments}~\cite{mcbride}, which express relations between types that preserve
+inductive structure, and which enable lifting of functions and proofs along those relations. 
+Recent work introduced ornaments to a subset of ML and was heavily focused on automatically
+lifting functions~\cite{Williams2017};
+until now, such an approach was not available in a dependently typed language.
+Existing implementations of ornaments in dependently typed languages work only in embedded languages,
+and have little to no automation~\cite{ko2016programming, mcbride, dagand2014transporting}.
+
+Our main contribution is a Coq plugin for automatic function and proof reuse
+using ornaments. 
+Our plugin \toolnameb (Dependent Equivalences Via Ornamenting Inductive Definitions) 
+works directly on Coq code, rather than on an embedded language.
+\toolnameb automates lifting functions and proofs along
+\textit{algebraic ornaments}~\cite{mcbride}, a particular class of ornaments that represent fully-determined indexed types
+like lists and vectors.
+\toolnameb implements an algorithm to search for ornaments between these types---to the best of our knowledge, the first
+search algorithm for ornaments---and an algorithm to lift functions and proofs along the ornaments it discovers.
+
+We motivate (Section~\ref{sec:example}), specify (Section~\ref{sec:spec}), and formalize (Section~\ref{sec:alg}) 
+the search and lifting algorithms that \toolnameb implements (Section~\ref{sec:impl}).
+A comparison to a more general proof reuse approach (Section~\ref{sec:case}) demonstrates the benefits of using ornaments: \toolnameb
+imposes less of a proof burden on the user, and produces smaller terms and faster functions.
+

@@ -1,154 +1,157 @@
 \vspace {-\cftbeforepartskip }
-\contentsline {part}{I\hspace {1em}\spacedlowsmallcaps {Proof Engineering}}{3}{part.1}% 
+\contentsline {part}{I\hspace {1em}\spacedlowsmallcaps {Opening}}{3}{part.1}% 
 \contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Introduction}}{5}{chapter.1}% 
-\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Proof Development}}{7}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Maintenance}}{9}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Introduction}{9}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Building \textsc {REPLica}\xspace }{11}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}User-Coq Interaction}{11}{subsection.3.2.1}% 
-\contentsline {paragraph}{From User Behavior to the State Machine}{12}{figure.caption.4}% 
-\contentsline {paragraph}{An Example: Defining and Extending an Inductive Type}{12}{figure.caption.4}% 
-\contentsline {subsection}{\numberline {3.2.2}User-Client Interaction}{13}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}Client-Server Interaction}{14}{subsection.3.2.3}% 
-\contentsline {paragraph}{Metadata for Two Challenges}{14}{figure.caption.5}% 
-\contentsline {section}{\numberline {3.3}Deploying \textsc {REPLica}\xspace }{15}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Recruiting}{15}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Collection}{16}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Analysis}{17}{subsection.3.3.3}% 
-\contentsline {section}{\numberline {3.4}Q1: Mistakes In and Fixes to Proofs}{17}{section.3.4}% 
-\contentsline {paragraph}{A1}{17}{section.3.4}% 
-\contentsline {paragraph}{Methodology}{17}{Item.11}% 
-\contentsline {subsection}{\numberline {3.4.1}Fixing Proofs by Fixing Definitions}{18}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Tactics Used and Cancelled}{19}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Fixing Proofs by Fixing Tactics}{19}{subsection.3.4.3}% 
-\contentsline {section}{\numberline {3.5}Q2: Changes to Terms}{20}{section.3.5}% 
-\contentsline {paragraph}{A2}{21}{section.3.5}% 
-\contentsline {paragraph}{Methodology}{21}{Item.15}% 
-\contentsline {subsection}{\numberline {3.5.1}Building a Classification}{21}{subsection.3.5.1}% 
-\contentsline {paragraph}{Classification}{21}{subsection.3.5.1}% 
-\contentsline {paragraph}{Design Considerations}{23}{Item.38}% 
-\contentsline {subsection}{\numberline {3.5.2}Classifying Changes}{23}{subsection.3.5.2}% 
-\contentsline {subsubsection}{\numberline {3.5.2.1}Incremental Development of Inductive Types}{24}{subsubsection.3.5.2.1}% 
-\contentsline {paragraph}{Benchmark 1}{24}{subsubsection.3.5.2.1}% 
-\contentsline {paragraph}{Benchmark 2}{24}{subsubsection.3.5.2.1}% 
-\contentsline {paragraph}{Lessons for Automation}{24}{subsubsection.3.5.2.1}% 
-\contentsline {subsubsection}{\numberline {3.5.2.2}Repetitive Refactoring of Identifiers}{25}{subsubsection.3.5.2.2}% 
-\contentsline {paragraph}{Benchmark 3}{25}{figure.caption.10}% 
-\contentsline {paragraph}{Benchmark 4}{25}{figure.caption.10}% 
-\contentsline {paragraph}{Benchmark 5}{25}{figure.caption.10}% 
-\contentsline {paragraph}{Lessons for Automation}{26}{figure.caption.10}% 
-\contentsline {subsubsection}{\numberline {3.5.2.3}Repetitive Repair of Specifications}{26}{subsubsection.3.5.2.3}% 
-\contentsline {paragraph}{Benchmark 6}{26}{figure.caption.11}% 
-\contentsline {paragraph}{Benchmark 7}{27}{figure.caption.11}% 
-\contentsline {paragraph}{Lessons for Automation}{27}{figure.caption.11}% 
-\contentsline {subsubsection}{\numberline {3.5.2.4}Interactive Discovery of Programs and Specifications}{27}{subsubsection.3.5.2.4}% 
-\contentsline {paragraph}{Benchmark 8}{28}{lstnumber.-10.3}% 
-\contentsline {paragraph}{Benchmark 9}{28}{lstnumber.-10.3}% 
-\contentsline {paragraph}{Benchmark 10}{28}{lstnumber.-10.3}% 
-\contentsline {paragraph}{Benchmark 11}{28}{lstnumber.-10.3}% 
-\contentsline {paragraph}{Lessons for Automation}{28}{lstnumber.-10.3}% 
-\contentsline {section}{\numberline {3.6}Conclusions \& Future Work}{29}{section.3.6}% 
-\contentsline {paragraph}{Three Wishes}{29}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Wish: Better Abstraction of User Environments}{29}{subsection.3.6.1}% 
-\contentsline {paragraph}{The Study Designer}{30}{subsection.3.6.1}% 
-\contentsline {paragraph}{The ITP Designer}{30}{subsection.3.6.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Wish: More Information about User Interaction}{31}{subsection.3.6.2}% 
-\contentsline {paragraph}{The Study Designer}{32}{subsection.3.6.2}% 
-\contentsline {paragraph}{The ITP Designer}{32}{subsection.3.6.2}% 
-\contentsline {subsection}{\numberline {3.6.3}Wish: More Users}{33}{subsection.3.6.3}% 
-\contentsline {paragraph}{The Study Designer}{33}{subsection.3.6.3}% 
-\contentsline {paragraph}{The ITP Designer}{34}{subsection.3.6.3}% 
-\contentsline {section}{\numberline {3.7}Related Work}{34}{section.3.7}% 
-\contentsline {paragraph}{Analysis of Development Processes}{34}{section.3.7}% 
-\contentsline {paragraph}{Identifying, Classifying, \& Visualizing Changes}{35}{section.3.7}% 
-\contentsline {part}{II\hspace {1em}\spacedlowsmallcaps {Tools for a New Era}}{37}{part.2}% 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair}}{39}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Automation, Reimagined}{40}{section.4.2}% 
-\contentsline {paragraph}{Status Quo}{40}{section.4.2}% 
-\contentsline {paragraph}{Our Vision}{41}{lstnumber.-19.1}% 
-\contentsline {section}{\numberline {4.3}Generating Reusable Patches}{41}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Motivating the Core}{42}{subsection.4.3.1}% 
-\contentsline {paragraph}{Semantic Differencing}{43}{lstnumber.-38.2}% 
-\contentsline {paragraph}{Patch Specialization}{44}{lstnumber.-42.2}% 
-\contentsline {paragraph}{Patch Abstraction}{44}{lstnumber.-42.2}% 
-\contentsline {paragraph}{Patch Inversion}{44}{lstnumber.-44.2}% 
-\contentsline {paragraph}{Lemma Factoring}{45}{lstnumber.-49.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Composing Components}{45}{subsection.4.3.2}% 
-\contentsline {section}{\numberline {4.4}Case Studies: Changes in the Wild}{46}{section.4.4}% 
-\contentsline {paragraph}{Identifying Changes}{47}{Item.52}% 
-\contentsline {subsection}{\numberline {4.4.1}Updating Definitions}{48}{subsection.4.4.1}% 
-\contentsline {paragraph}{Replay}{48}{subsection.4.4.1}% 
-\contentsline {paragraph}{Search}{48}{lstnumber.-66.1}% 
-\contentsline {paragraph}{Apply}{48}{lstnumber.-67.1}% 
-\contentsline {subsubsection}{\numberline {4.4.1.1}Core Components}{48}{subsubsection.4.4.1.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Porting Definitions}{49}{subsection.4.4.2}% 
-\contentsline {paragraph}{Replay}{49}{subsection.4.4.2}% 
-\contentsline {paragraph}{Search}{49}{lstnumber.-74.2}% 
-\contentsline {paragraph}{Apply}{49}{lstnumber.-75.2}% 
-\contentsline {subsubsection}{\numberline {4.4.2.1}Core Components}{50}{subsubsection.4.4.2.1}% 
-\contentsline {subsection}{\numberline {4.4.3}Updating Proof Assistant Versions}{51}{subsection.4.4.3}% 
-\contentsline {paragraph}{Replay}{51}{subsection.4.4.3}% 
-\contentsline {paragraph}{Search}{51}{lstnumber.-84.2}% 
-\contentsline {paragraph}{Apply}{51}{lstnumber.-85.2}% 
-\contentsline {subsubsection}{\numberline {4.4.3.1}Core Components}{51}{subsubsection.4.4.3.1}% 
-\contentsline {section}{\numberline {4.5}Inside the Core}{52}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Inside the Components}{52}{subsection.4.5.1}% 
-\contentsline {subsubsection}{\numberline {4.5.1.1}Semantic Differencing}{53}{subsubsection.4.5.1.1}% 
-\contentsline {subsubsection}{\numberline {4.5.1.2}Patch Specialization}{54}{subsubsection.4.5.1.2}% 
-\contentsline {subsubsection}{\numberline {4.5.1.3}Patch Abstraction}{54}{subsubsection.4.5.1.3}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Patch Inversion}{55}{subsubsection.4.5.1.4}% 
-\contentsline {subsubsection}{\numberline {4.5.1.5}Lemma Factoring}{55}{subsubsection.4.5.1.5}% 
-\contentsline {subsection}{\numberline {4.5.2}Inside the Procedure}{56}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Trusted Computing Base}{56}{subsection.4.5.3}% 
-\contentsline {section}{\numberline {4.6}Testing Boundaries}{57}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Patch Generation Suite}{57}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}Three Challenges}{58}{subsection.4.6.2}% 
-\contentsline {paragraph}{A Challenge for Differencing}{58}{subsection.4.6.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{59}{lstnumber.-106.9}% 
-\contentsline {paragraph}{A Challenge for Abstraction}{59}{lstnumber.-109.4}% 
-\contentsline {subsection}{\numberline {4.6.3}Performance}{60}{subsection.4.6.3}% 
-\contentsline {section}{\numberline {4.7}Conclusions \& Future Work}{61}{section.4.7}% 
-\contentsline {paragraph}{Supporting structural changes.}{61}{section.4.7}% 
-\contentsline {paragraph}{Exploring new components.}{61}{section.4.7}% 
-\contentsline {paragraph}{Modeling diverse proof styles.}{61}{section.4.7}% 
-\contentsline {paragraph}{Improving user experience.}{61}{section.4.7}% 
-\contentsline {paragraph}{Handling version updates.}{62}{section.4.7}% 
-\contentsline {paragraph}{Isolating changes.}{62}{section.4.7}% 
-\contentsline {paragraph}{Supporting other proof assistants.}{62}{section.4.7}% 
-\contentsline {paragraph}{Applying patches.}{62}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Related Work}{63}{section.4.8}% 
-\contentsline {paragraph}{Proof Reuse}{63}{section.4.8}% 
-\contentsline {paragraph}{Proof Automation}{63}{section.4.8}% 
-\contentsline {paragraph}{Proof Engineering}{64}{section.4.8}% 
-\contentsline {paragraph}{Refactoring}{64}{section.4.8}% 
-\contentsline {paragraph}{Differencing \& Incremental Computation}{65}{section.4.8}% 
-\contentsline {paragraph}{Programming by Example}{65}{section.4.8}% 
-\contentsline {paragraph}{Program Repair}{65}{section.4.8}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Often, Practically}}{67}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Introduction}{67}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Motivating Example: Porting a Library}{68}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}Specification}{70}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}\lstinline {Find ornament}}{71}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}\lstinline {Lift}}{72}{subsection.5.3.2}% 
-\contentsline {section}{\numberline {5.4}Algorithms}{73}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}\lstinline {Find ornament}}{75}{subsection.5.4.1}% 
-\contentsline {subsubsection}{\numberline {5.4.1.1}Searching for the Indexer}{75}{subsubsection.5.4.1.1}% 
-\contentsline {subsubsection}{\numberline {5.4.1.2}Searching for Promote and Forget}{77}{subsubsection.5.4.1.2}% 
-\contentsline {subsubsection}{\numberline {5.4.1.3}Core Search Algorithm}{77}{subsubsection.5.4.1.3}% 
-\contentsline {subsection}{\numberline {5.4.2}\lstinline {Lift}}{78}{subsection.5.4.2}% 
-\contentsline {subsubsection}{\numberline {5.4.2.1}Lifting Eliminators}{79}{subsubsection.5.4.2.1}% 
-\contentsline {subsubsection}{\numberline {5.4.2.2}Lifting Constructors}{80}{subsubsection.5.4.2.2}% 
-\contentsline {subsubsection}{\numberline {5.4.2.3}Core Lifting Algorithm}{80}{subsubsection.5.4.2.3}% 
-\contentsline {section}{\numberline {5.5}Implementation}{82}{section.5.5}% 
-\contentsline {subsection}{\numberline {5.5.1}Addressing Language Differences}{82}{subsection.5.5.1}% 
-\contentsline {subsection}{\numberline {5.5.2}Optimizing for Efficiency}{83}{subsection.5.5.2}% 
-\contentsline {subsection}{\numberline {5.5.3}Improving Usability}{83}{subsection.5.5.3}% 
-\contentsline {section}{\numberline {5.6}Case Study}{84}{section.5.6}% 
-\contentsline {subsection}{\numberline {5.6.1}User Experience}{85}{subsection.5.6.1}% 
-\contentsline {subsection}{\numberline {5.6.2}Performance}{85}{subsection.5.6.2}% 
-\contentsline {section}{\numberline {5.7}Related Work}{86}{section.5.7}% 
-\contentsline {section}{\numberline {5.8}Conclusions \& Future Work}{88}{section.5.8}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Under the Hood}}{91}{chapter.6}% 
-\contentsline {part}{III\hspace {1em}\spacedlowsmallcaps {The Next Era}}{93}{part.3}% 
-\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {The Next Era}}{95}{chapter.7}% 
+\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Reading Guide}}{7}{chapter.2}% 
+\contentsline {part}{II\hspace {1em}\spacedlowsmallcaps {Proof Engineering}}{9}{part.2}% 
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Development}}{11}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Maintenance}}{13}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction}{13}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Building \textsc {REPLica}\xspace }{15}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}User-Coq Interaction}{15}{subsection.4.2.1}% 
+\contentsline {paragraph}{From User Behavior to the State Machine}{16}{figure.caption.4}% 
+\contentsline {paragraph}{An Example: Defining and Extending an Inductive Type}{16}{figure.caption.4}% 
+\contentsline {subsection}{\numberline {4.2.2}User-Client Interaction}{17}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Client-Server Interaction}{18}{subsection.4.2.3}% 
+\contentsline {paragraph}{Metadata for Two Challenges}{18}{figure.caption.5}% 
+\contentsline {section}{\numberline {4.3}Deploying \textsc {REPLica}\xspace }{19}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Recruiting}{19}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Collection}{20}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Analysis}{21}{subsection.4.3.3}% 
+\contentsline {section}{\numberline {4.4}Q1: Mistakes In and Fixes to Proofs}{21}{section.4.4}% 
+\contentsline {paragraph}{A1}{21}{section.4.4}% 
+\contentsline {paragraph}{Methodology}{21}{Item.11}% 
+\contentsline {subsection}{\numberline {4.4.1}Fixing Proofs by Fixing Definitions}{22}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Tactics Used and Cancelled}{23}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Fixing Proofs by Fixing Tactics}{23}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Q2: Changes to Terms}{24}{section.4.5}% 
+\contentsline {paragraph}{A2}{25}{section.4.5}% 
+\contentsline {paragraph}{Methodology}{25}{Item.15}% 
+\contentsline {subsection}{\numberline {4.5.1}Building a Classification}{25}{subsection.4.5.1}% 
+\contentsline {paragraph}{Classification}{25}{subsection.4.5.1}% 
+\contentsline {paragraph}{Design Considerations}{27}{Item.38}% 
+\contentsline {subsection}{\numberline {4.5.2}Classifying Changes}{27}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Incremental Development of Inductive Types}{28}{subsubsection.4.5.2.1}% 
+\contentsline {paragraph}{Benchmark 1}{28}{subsubsection.4.5.2.1}% 
+\contentsline {paragraph}{Benchmark 2}{28}{subsubsection.4.5.2.1}% 
+\contentsline {paragraph}{Lessons for Automation}{28}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Repetitive Refactoring of Identifiers}{29}{subsubsection.4.5.2.2}% 
+\contentsline {paragraph}{Benchmark 3}{29}{figure.caption.10}% 
+\contentsline {paragraph}{Benchmark 4}{29}{figure.caption.10}% 
+\contentsline {paragraph}{Benchmark 5}{29}{figure.caption.10}% 
+\contentsline {paragraph}{Lessons for Automation}{30}{figure.caption.10}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Repetitive Repair of Specifications}{30}{subsubsection.4.5.2.3}% 
+\contentsline {paragraph}{Benchmark 6}{30}{figure.caption.11}% 
+\contentsline {paragraph}{Benchmark 7}{31}{figure.caption.11}% 
+\contentsline {paragraph}{Lessons for Automation}{31}{figure.caption.11}% 
+\contentsline {subsubsection}{\numberline {4.5.2.4}Interactive Discovery of Programs and Specifications}{31}{subsubsection.4.5.2.4}% 
+\contentsline {paragraph}{Benchmark 8}{32}{lstnumber.-10.3}% 
+\contentsline {paragraph}{Benchmark 9}{32}{lstnumber.-10.3}% 
+\contentsline {paragraph}{Benchmark 10}{32}{lstnumber.-10.3}% 
+\contentsline {paragraph}{Benchmark 11}{32}{lstnumber.-10.3}% 
+\contentsline {paragraph}{Lessons for Automation}{32}{lstnumber.-10.3}% 
+\contentsline {section}{\numberline {4.6}Conclusions \& Future Work}{33}{section.4.6}% 
+\contentsline {paragraph}{Three Wishes}{33}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Wish: Better Abstraction of User Environments}{33}{subsection.4.6.1}% 
+\contentsline {paragraph}{The Study Designer}{34}{subsection.4.6.1}% 
+\contentsline {paragraph}{The ITP Designer}{34}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Wish: More Information about User Interaction}{35}{subsection.4.6.2}% 
+\contentsline {paragraph}{The Study Designer}{36}{subsection.4.6.2}% 
+\contentsline {paragraph}{The ITP Designer}{36}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.3}Wish: More Users}{37}{subsection.4.6.3}% 
+\contentsline {paragraph}{The Study Designer}{37}{subsection.4.6.3}% 
+\contentsline {paragraph}{The ITP Designer}{38}{subsection.4.6.3}% 
+\contentsline {section}{\numberline {4.7}Related Work}{38}{section.4.7}% 
+\contentsline {paragraph}{Analysis of Development Processes}{38}{section.4.7}% 
+\contentsline {paragraph}{Identifying, Classifying, \& Visualizing Changes}{39}{section.4.7}% 
+\contentsline {part}{III\hspace {1em}\spacedlowsmallcaps {Tools for a New Era}}{41}{part.3}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Proof Repair}}{43}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduction}{43}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Automation, Reimagined}{44}{section.5.2}% 
+\contentsline {paragraph}{Status Quo}{44}{section.5.2}% 
+\contentsline {paragraph}{Our Vision}{45}{lstnumber.-19.1}% 
+\contentsline {section}{\numberline {5.3}Generating Reusable Patches}{45}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Motivating the Core}{46}{subsection.5.3.1}% 
+\contentsline {paragraph}{Semantic Differencing}{47}{lstnumber.-38.2}% 
+\contentsline {paragraph}{Patch Specialization}{48}{lstnumber.-42.2}% 
+\contentsline {paragraph}{Patch Abstraction}{48}{lstnumber.-42.2}% 
+\contentsline {paragraph}{Patch Inversion}{48}{lstnumber.-44.2}% 
+\contentsline {paragraph}{Lemma Factoring}{49}{lstnumber.-49.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Composing Components}{49}{subsection.5.3.2}% 
+\contentsline {section}{\numberline {5.4}Case Studies: Changes in the Wild}{50}{section.5.4}% 
+\contentsline {paragraph}{Identifying Changes}{51}{Item.52}% 
+\contentsline {subsection}{\numberline {5.4.1}Updating Definitions}{52}{subsection.5.4.1}% 
+\contentsline {paragraph}{Replay}{52}{subsection.5.4.1}% 
+\contentsline {paragraph}{Search}{52}{lstnumber.-66.1}% 
+\contentsline {paragraph}{Apply}{52}{lstnumber.-67.1}% 
+\contentsline {subsubsection}{\numberline {5.4.1.1}Core Components}{52}{subsubsection.5.4.1.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Porting Definitions}{53}{subsection.5.4.2}% 
+\contentsline {paragraph}{Replay}{53}{subsection.5.4.2}% 
+\contentsline {paragraph}{Search}{53}{lstnumber.-74.2}% 
+\contentsline {paragraph}{Apply}{53}{lstnumber.-75.2}% 
+\contentsline {subsubsection}{\numberline {5.4.2.1}Core Components}{54}{subsubsection.5.4.2.1}% 
+\contentsline {subsection}{\numberline {5.4.3}Updating Proof Assistant Versions}{55}{subsection.5.4.3}% 
+\contentsline {paragraph}{Replay}{55}{subsection.5.4.3}% 
+\contentsline {paragraph}{Search}{55}{lstnumber.-84.2}% 
+\contentsline {paragraph}{Apply}{55}{lstnumber.-85.2}% 
+\contentsline {subsubsection}{\numberline {5.4.3.1}Core Components}{55}{subsubsection.5.4.3.1}% 
+\contentsline {section}{\numberline {5.5}Inside the Core}{56}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Inside the Components}{56}{subsection.5.5.1}% 
+\contentsline {subsubsection}{\numberline {5.5.1.1}Semantic Differencing}{57}{subsubsection.5.5.1.1}% 
+\contentsline {subsubsection}{\numberline {5.5.1.2}Patch Specialization}{58}{subsubsection.5.5.1.2}% 
+\contentsline {subsubsection}{\numberline {5.5.1.3}Patch Abstraction}{58}{subsubsection.5.5.1.3}% 
+\contentsline {subsubsection}{\numberline {5.5.1.4}Patch Inversion}{59}{subsubsection.5.5.1.4}% 
+\contentsline {subsubsection}{\numberline {5.5.1.5}Lemma Factoring}{59}{subsubsection.5.5.1.5}% 
+\contentsline {subsection}{\numberline {5.5.2}Inside the Procedure}{60}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}Trusted Computing Base}{60}{subsection.5.5.3}% 
+\contentsline {section}{\numberline {5.6}Testing Boundaries}{61}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}Patch Generation Suite}{61}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Three Challenges}{62}{subsection.5.6.2}% 
+\contentsline {paragraph}{A Challenge for Differencing}{62}{subsection.5.6.2}% 
+\contentsline {paragraph}{A Challenge for Inversion}{63}{lstnumber.-106.9}% 
+\contentsline {paragraph}{A Challenge for Abstraction}{63}{lstnumber.-109.4}% 
+\contentsline {subsection}{\numberline {5.6.3}Performance}{64}{subsection.5.6.3}% 
+\contentsline {section}{\numberline {5.7}Conclusions \& Future Work}{65}{section.5.7}% 
+\contentsline {paragraph}{Supporting structural changes.}{65}{section.5.7}% 
+\contentsline {paragraph}{Exploring new components.}{65}{section.5.7}% 
+\contentsline {paragraph}{Modeling diverse proof styles.}{65}{section.5.7}% 
+\contentsline {paragraph}{Improving user experience.}{65}{section.5.7}% 
+\contentsline {paragraph}{Handling version updates.}{66}{section.5.7}% 
+\contentsline {paragraph}{Isolating changes.}{66}{section.5.7}% 
+\contentsline {paragraph}{Supporting other proof assistants.}{66}{section.5.7}% 
+\contentsline {paragraph}{Applying patches.}{66}{section.5.7}% 
+\contentsline {section}{\numberline {5.8}Related Work}{67}{section.5.8}% 
+\contentsline {paragraph}{Proof Reuse}{67}{section.5.8}% 
+\contentsline {paragraph}{Proof Automation}{67}{section.5.8}% 
+\contentsline {paragraph}{Proof Engineering}{68}{section.5.8}% 
+\contentsline {paragraph}{Refactoring}{68}{section.5.8}% 
+\contentsline {paragraph}{Differencing \& Incremental Computation}{69}{section.5.8}% 
+\contentsline {paragraph}{Programming by Example}{69}{section.5.8}% 
+\contentsline {paragraph}{Program Repair}{69}{section.5.8}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Often, Practically}}{71}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Introduction}{71}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Motivating Example: Porting a Library}{72}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Specification}{74}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}\lstinline {Find ornament}}{75}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}\lstinline {Lift}}{76}{subsection.6.3.2}% 
+\contentsline {section}{\numberline {6.4}Algorithms}{77}{section.6.4}% 
+\contentsline {subsection}{\numberline {6.4.1}\lstinline {Find ornament}}{79}{subsection.6.4.1}% 
+\contentsline {subsubsection}{\numberline {6.4.1.1}Searching for the Indexer}{79}{subsubsection.6.4.1.1}% 
+\contentsline {subsubsection}{\numberline {6.4.1.2}Searching for Promote and Forget}{81}{subsubsection.6.4.1.2}% 
+\contentsline {subsubsection}{\numberline {6.4.1.3}Core Search Algorithm}{81}{subsubsection.6.4.1.3}% 
+\contentsline {subsection}{\numberline {6.4.2}\lstinline {Lift}}{82}{subsection.6.4.2}% 
+\contentsline {subsubsection}{\numberline {6.4.2.1}Lifting Eliminators}{83}{subsubsection.6.4.2.1}% 
+\contentsline {subsubsection}{\numberline {6.4.2.2}Lifting Constructors}{84}{subsubsection.6.4.2.2}% 
+\contentsline {subsubsection}{\numberline {6.4.2.3}Core Lifting Algorithm}{84}{subsubsection.6.4.2.3}% 
+\contentsline {section}{\numberline {6.5}Implementation}{86}{section.6.5}% 
+\contentsline {subsection}{\numberline {6.5.1}Addressing Language Differences}{86}{subsection.6.5.1}% 
+\contentsline {subsection}{\numberline {6.5.2}Optimizing for Efficiency}{87}{subsection.6.5.2}% 
+\contentsline {subsection}{\numberline {6.5.3}Improving Usability}{87}{subsection.6.5.3}% 
+\contentsline {section}{\numberline {6.6}Case Study}{88}{section.6.6}% 
+\contentsline {subsection}{\numberline {6.6.1}User Experience}{89}{subsection.6.6.1}% 
+\contentsline {subsection}{\numberline {6.6.2}Performance}{89}{subsection.6.6.2}% 
+\contentsline {section}{\numberline {6.7}Related Work}{90}{section.6.7}% 
+\contentsline {section}{\numberline {6.8}Conclusions \& Future Work}{92}{section.6.8}% 
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Under the Hood}}{95}{chapter.7}% 
+\contentsline {part}{IV\hspace {1em}\spacedlowsmallcaps {Closing}}{97}{part.4}% 
+\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Conclusion}}{99}{chapter.8}% 
+\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {The Next Era}}{101}{chapter.9}% 

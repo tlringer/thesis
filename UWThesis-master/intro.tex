@@ -1,2 +1,26 @@
 \chapter{Introduction}
 
+Motivation for verifying systems
+
+Era of scale---enter proof engineering~\cite{PGL-045}
+
+Looking back (Social Processes~\cite{DeMillo1977}), development has come a long way, but maintenance is still hard! And this is a problem in practice!
+
+But missed opportunity: automation doesn't understand that proofs evolve
+
+So we build automation that does, and we call this proof repair. Proof repair shows that there is reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around.
+
+Or, in other words (thesis statement): Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+
+Key technical bit: differencing and program transformations, taking advantage of the rich and structured language proofs are written in.
+
+We implement this in a tool suite for Coq, get some sweet results.
+
+Pave path to the next era of verification
+
+% Dan: It might be good either in 1 or in both 3 and 4 to lay out the key /results/ -- you have _design_ of the transformation, 
+% the highly non-trivial _implementation_ in Coq in a way that doesn't extend the TCB, and you have substantial case studies to _evaluate_.
+% You have a bit of formalism and metatheory, but that is more for exposition than for specific results (am I right?) -- you are 
+% guided by the theory to build tools that actually work in this unforgiving domain -- "hacks won't work".
+
+\input{guide}

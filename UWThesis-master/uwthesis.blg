@@ -3,62 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-Reallocated field_info (elt_size=4) to 10014 items from 5000.
-Warning--I didn't find a database entry for "Chrzaszcz2003"
-Warning--to sort, need author or key in hints
-Warning--to sort, need author or key in proofgeneral
-Warning--to sort, need author or key in travis
-Warning--to sort, need author or key in lean
-Warning--to sort, need author or key in agda
-Warning--to sort, need author or key in isabellehol
-Warning--to sort, need author or key in decidable
-Warning--to sort, need author or key in HaRe
-Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
-Warning--can't use both volume and number fields in caplan1995logical
-Warning--empty journal in degree-of-interest
-Warning--empty school in egraph1
-Warning--empty booktitle in pons00
-Warning--there's a number but no volume in Wiedijk2009
-Warning--empty school in williamsphd
-You've used 222 entries,
+You've used 2 entries,
             2118 wiz_defined-function locations,
-            1701 strings with 42461 characters,
-and the built_in function-call counts, 84012 in all, are:
-= -- 8607
-> -- 3647
-< -- 118
-+ -- 1453
-- -- 1204
-* -- 5370
-:= -- 13046
-add.period$ -- 731
-call.type$ -- 222
-change.case$ -- 1235
+            515 strings with 4485 characters,
+and the built_in function-call counts, 935 in all, are:
+= -- 94
+> -- 46
+< -- 1
++ -- 18
+- -- 16
+* -- 72
+:= -- 153
+add.period$ -- 7
+call.type$ -- 2
+change.case$ -- 14
 chr.to.int$ -- 0
-cite$ -- 237
-duplicate$ -- 3526
-empty$ -- 6736
-format.name$ -- 1204
-if$ -- 18591
+cite$ -- 2
+duplicate$ -- 34
+empty$ -- 67
+format.name$ -- 16
+if$ -- 200
 int.to.chr$ -- 0
-int.to.str$ -- 222
-missing$ -- 178
-newline$ -- 1079
-num.names$ -- 464
-pop$ -- 1543
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 12
 preamble$ -- 1
-purify$ -- 1023
+purify$ -- 12
 quote$ -- 0
-skip$ -- 2819
+skip$ -- 26
 stack$ -- 0
-substring$ -- 4968
-swap$ -- 1186
-text.length$ -- 118
+substring$ -- 63
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 874
-warning$ -- 15
-while$ -- 811
-width$ -- 225
-write$ -- 2559
-(There were 16 warnings)
+type$ -- 8
+warning$ -- 0
+while$ -- 8
+width$ -- 3
+write$ -- 27

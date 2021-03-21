@@ -1,5 +1,66 @@
 \chapter{Proof Repair Across Type Equivalences}
 
+This extension to the suite adds support for a broad class of changes in datatypes, handling a large class of practical repair scenarios.
+What this tool (PUMPKIN Pi) does is, when datatypes change and this breaks a lot of proofs, it generalizes the change in datatype itself (possibly with some user input) so that it can automatically fix proofs broken by the change in datatype. 
+
+So in other words, the information from those changes is carried in the difference between the old and new version of the changed datatype, possibly with some user input.
+
+PUMPKIN Pi generalizes that information and applies it automatically.
+
+The work saved is shown on a lot of case studies (see Table from PUMPKIN Pi).
+
+\section{Motivating Example}
+
+PUMPKIN Pi motivating example
+
+\section{Approach}
+
+Parts of PUMPKIN Pi intro, problem definition, plus more
+
+Like I mentioned earlier, this also works using differencing and program transformations. And of course all of this happens over proof terms.
+
+Here's the system diagram.
+
+Here, differencing thus looks at the difference between versions of the changed datatype, and finds something called a type equivalence. I'll explain that with examples. Sometimes differencing is automatic, and sometimes it's manual.
+
+Then, program transformation ports proofs across the equivalence directly. So they take care of application.
+
+\section{Differencing}
+
+DEVOID 3.1 and 4.1, with some more general things from PUMPKIN Pi and more.
+
+How differencing works in detail
+
+Limitations and whether they're addressed in other tools yet or not
+
+\section{Transformation}
+
+Parts of PUMPKIN Pi Transformation, with DEVOID 3.2 and 4.2 as examples, plus some of the beautiful Carlo theory to explain why we go from equivalences to configurations and what that really means
+
+How the transformation works in detail
+
+Limitations and whether they're addressed in other tools yet or not
+
+\section{Implementation}
+
+Parts of PUMPKIN Pi and DEVOID implementation, plus more
+
+\subsection{Tool Details}
+
+\subsection{Workflow Integration}
+
+PUMPKIN Pi Decompiler and Implementation
+
+\section{Results}
+
+PUMPKIN Pi Case Studies, key technical results
+
+\section{Conclusion}
+
+Rehashing thesis and how we do it
+
+What we got here beyond what we had in PUMPKIN PATCH, segue into next chapter
+
 % TODO for now, just a copy-paste of DEVOID original paper, including the bib, and same for PLDI paper (need camera-ready)---will change soon and combine
 
 %\lstset{language=coq} % default

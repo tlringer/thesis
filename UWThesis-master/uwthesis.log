@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  19 MAR 2021 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAR 2021 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1758,28 +1758,40 @@ t can-di-date to a reusable
 
 ]) (./often.tex [8]
 chapter 4.
-) (./related.tex [9
+[9
 
 
-] [10
-
-
-]
+]) (./related.tex [10]
 chapter 5.
-) (./conclusion.tex [11] [12
+) (./conclusion.tex [11
+
+
+] [12
 
 
 ]
 chapter 6.
-(./next.tex)) (./uwthesis.bbl [13] [14
+(./next.tex [13]
+Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
+[] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
+20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
+ []
 
 
-]
+Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
+[] []\OT1/pplj/m/sc/10.95 (-20) t o o l [] a s -s i s t e d p r o o f d e -v e 
+l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
+ []
+
+)) (./uwthesis.bbl [14]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 13.
 
-) [15]
+) [15
+
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
  (./uwthesis.aux)
@@ -1794,13 +1806,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 40563 strings out of 492609
- 776459 string characters out of 6129033
- 991786 words of memory out of 5000000
- 43596 multiletter control sequences out of 15000+600000
- 571154 words of font info for 264 fonts, out of 8000000 for 9000
+ 40629 strings out of 492609
+ 777075 string characters out of 6129033
+ 992786 words of memory out of 5000000
+ 43606 multiletter control sequences out of 15000+600000
+ 573265 words of font info for 302 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,13n,71p,9083b,847s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,13n,71p,9083b,835s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/
@@ -1808,10 +1820,10 @@ texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (25 pages, 92356 bytes).
+Output written on uwthesis.pdf (25 pages, 101513 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 51893 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 275 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 51957 words of extra memory for PDF output out of 61914 (max. 10000000)
 

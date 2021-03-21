@@ -12,9 +12,31 @@
 \contentsline {section}{\numberline {3.5}Implementation}{8}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{8}{subsection.3.5.1}% 
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{8}{subsection.3.5.2}% 
-\contentsline {section}{\numberline {3.6}Saving Work}{8}{section.3.6}% 
+\contentsline {section}{\numberline {3.6}Results}{8}{section.3.6}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{8}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{9}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Motivating Example}{9}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Approach}{9}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Differencing}{10}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Transformation}{10}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Implementation}{10}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{10}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{10}{subsection.4.5.2}% 
+\contentsline {section}{\numberline {4.6}Results}{10}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{10}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{11}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusion}}{13}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}The Next Era: Proof Engineering for All}{13}{section.6.1}% 
+\contentsline {section}{\numberline {5.1}Programs}{11}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{11}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{13}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{13}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{13}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{13}{chapter.6}% 
+\contentsline {paragraph}{Automation}{14}{chapter.6}% 
+\contentsline {paragraph}{Integration}{14}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{14}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{14}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{14}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{14}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{14}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{14}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{14}{chapter.6}% 

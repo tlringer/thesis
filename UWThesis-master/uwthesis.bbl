@@ -1,11 +1,19 @@
 \begin{thebibliography}{1}
 
+\bibitem{hints}
+Coq reference manual, section 8.9: Controlling automation, 2017.
+
 \bibitem{DeMillo1977}
 Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock Social processes and proofs of theorems and programs.
 \newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN Symposium on
   Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
   USA, 1977. ACM.
+
+\bibitem{coq87commit}
+Guillaume Melquiond.
+\newblock Commit to coq: Make izr use a compact representation of integers,
+  2017.
 
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.

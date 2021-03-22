@@ -1,0 +1,51 @@
+\section{Differencing}
+
+% From Motivating the Core. Some of this might move into the Approach.
+
+The tool should be able to identify the semantic difference between terms.
+The semantic difference is the difference between two terms that corresponds to
+the difference between their types. Consider the base case terms in Figure~\ref{fig:example} (line 13):
+
+\begin{lstlisting}[language=coq]
+  (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@)(@\vspace{-0.1cm}@)
+  (@\phantom{le\_plus\_trans n m 1}@) H : (@\diff{n <= m}@)
+\end{lstlisting}
+The semantic differencing component first identifies the difference in their types, or the \textit{goal type}:
+
+\begin{lstlisting}
+  (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
+\end{lstlisting}
+It then finds a difference in terms that has that type:
+
+\begin{lstlisting}[language=coq]
+  fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
+\end{lstlisting}
+This is the \emph{candidate} for a reusable patch that the other components modify to find a patch.
+
+Differencing operates over terms and types. Differencing tactics
+is insufficient, since tactics and hints may mask patches
+(line 5).\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
+are additional examples in the repository (\lstinline{Cex.v}).}
+Furthermore, differencing is aware of the semantics of terms and types.
+Simply exploring the syntactic difference %between terms 
+makes it hard to identify
+which changes are meaningful.
+For example, in the inductive case (line 14), the inductive hypothesis
+changes:
+
+\begin{lstlisting}[language=coq]
+  ... (IHle : (@\diff{n <= m0 + 1}@)) ...(@\vspace{-0.08cm}@)
+  ... (IHle : (@\diff{n <= m0}@)) ...
+\end{lstlisting}
+
+However, the type of \lstinline{IHle} changes for \emph{any} two inductive proofs over \lstinline{le}
+with different conclusions. A syntactic differencing component 
+may identify this change as a candidate.
+Our semantic differencing component knows that it can ignore this change.
+
+Plus parts of Inside the Core, Testing Boundaries, Future Work
+
+How differencing works in detail
+
+Limitations and whether they're addressed in later tools yet or not
+

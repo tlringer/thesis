@@ -11,72 +11,17 @@ Application can be automated in some cases at the end, or it can be manual.
 
 The work saved is shown retroactively on case studies replaying changes from large proof devleopments in Git. Results for this tool are preliminary compared to what we'll see later, since this was the first prototype.
 
-\section{Motivating Example}
+\input{repair/motivating}
 
-PUMPKIN PATCH intro \& automation, reimagined
+\input{repair/approach}
 
-\section{Approach}
+\input{repair/differencing}
 
-Parts of PUMPKIN PATCH Motivating the Core, plus more
+\input{repair/transformation}
 
-Like I mentioned earlier, this works using differencing and program transformations. And of course all of this happens over proof terms.
-Here's the system diagram.
+\input{repair/implementation}
 
-Here, differencing thus looks at the difference between versions of the example patched proof for this information, and finds something called a patch candidate---which is localized to the context of the example, but not enough to fix other proofs broken by the change.
+\input{repair/results}
 
-Then, program transformations generalize that candidate to a reusable proof patch, something that can fix other proofs broken by the same change.
-Application works with hint databases or is manual.
-
-\section{Differencing}
-
-parts of PUMPKIN PATCH Inside the Core, Testing Boundaries, Future Work
-
-How differencing works in detail
-
-Limitations and whether they're addressed in later tools yet or not
-
-\section{Transformation}
-
-parts of PUMPKIN PATCH Inside the Core, Testing Boundaries, Future Work
-
-How the four transformations work in detail
-
-Limitations and whether they're addressed in later tools yet or not
-
-\section{Implementation}
-
-parts of PUMPKIN PATCH Inside the Core, plus more
-
-\subsection{Tool Details}
-
-\subsection{Workflow Integration}
-
-\section{Results}
-
-PUMPKIN PATCH Case Studies, key technical results
-
-\section{Conclusion}
-
-Rehashing thesis and how we do it
-
-What we haven't accomplished yet at this point (parts of PUMPKIN PATCH future work), segue into next chapter
-
-% TODO for now, just a copy-paste of PUMPKIN PATCH original paper, including the bib---will change soon
-% TODO program repair
-
-%\input{repair/introduction}
-
-%\input{repair/reimagined}
-
-%\input{repair/sysintro}
-
-%\input{repair/casestudies}
-
-%\input{repair/core}
-
-%\input{repair/evaluation}
-
-%\input{repair/future}
-
-%\input{repair/related}
+\input{repair/conclusion}
 

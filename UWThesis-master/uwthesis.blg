@@ -3,44 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-You've used 2 entries,
+Warning--to sort, need author or key in hints
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            515 strings with 4485 characters,
-and the built_in function-call counts, 935 in all, are:
-= -- 94
-> -- 46
+            521 strings with 4645 characters,
+and the built_in function-call counts, 1284 in all, are:
+= -- 124
+> -- 54
 < -- 1
-+ -- 18
-- -- 16
-* -- 72
-:= -- 153
-add.period$ -- 7
-call.type$ -- 2
-change.case$ -- 14
++ -- 22
+- -- 18
+* -- 84
+:= -- 200
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 34
-empty$ -- 67
-format.name$ -- 16
-if$ -- 200
+cite$ -- 5
+duplicate$ -- 48
+empty$ -- 112
+format.name$ -- 18
+if$ -- 281
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 4
 missing$ -- 2
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 12
+newline$ -- 20
+num.names$ -- 6
+pop$ -- 30
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 17
 quote$ -- 0
-skip$ -- 26
+skip$ -- 42
 stack$ -- 0
-substring$ -- 63
-swap$ -- 11
+substring$ -- 73
+swap$ -- 13
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 8
-width$ -- 3
-write$ -- 27
+type$ -- 16
+warning$ -- 1
+while$ -- 10
+width$ -- 5
+write$ -- 41
+(There was 1 warning)

@@ -1,0 +1,112 @@
+\section{Transformation}
+
+% From Motivating the Core. Honestly, maybe inversion example should go earlier in Approach.
+
+\paragraph{Patch Specialization} The tool should be able to specialize a patch candidate to specific arguments as determined by
+the differences in terms. To find a patch for Figure~\ref{fig:example}, for example, \sysname
+must specialize the patch candidate to \lstinline{p} to produce the final patch.
+
+\paragraph{Patch Abstraction} A tool should be able to abstract patch candidates of this form by the common argument:
+
+\begin{lstlisting}[language=coq]
+  candidate : P' t -> P t(@\vspace{-0.08cm}@)
+  candidate_abs : (@\ltacforall@) (@\diff{t0}@), P' (@\diff{t0}@) -> P (@\diff{t0}@)
+\end{lstlisting}
+and it should be able to abstract patch candidates of this form by the common function:
+
+\begin{lstlisting}[language=coq]
+  candidate : P t' -> P t(@\vspace{-0.08cm}@)
+  candidate_abs : (@\ltacforall@) (@\diff{P0}@), (@\diff{P0}@) t' -> (@\diff{P0}@) t
+\end{lstlisting} 
+
+This is necessary because the tool may find candidates in an applied form.
+For example, when searching for a patch between the proofs in Figure~\ref{fig:example},
+\sysname finds a candidate in the difference of base cases. To produce a patch, 
+\sysname must abstract the candidate by the argument \lstinline{m}.
+Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
+
+\paragraph{Patch Inversion} The tool should be able to invert a patch candidate.
+This is necessary to search for isomorphisms.
+It is also necessary to search for implications between propositionally
+equal types, since candidates may appear in the wrong direction.
+For example, consider two list lemmas (we write \lstinline{length} as \lstinline{len}):
+
+\begin{lstlisting}[language=coq]
+  old : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len l(@\vspace{-0.08cm}@)
+  new : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len (rev l)
+\end{lstlisting} 
+
+If \sysname searches the difference in proofs of these lemmas for a patch from the 
+conclusion of \lstinline{new} to the conclusion of \lstinline{old},
+it may find a candidate \emph{backwards}:
+
+\begin{lstlisting}
+  candidate l' l (H : (@\diff{old}@) l' l) :=(@\vspace{-0.04cm}@)
+    eq_ind_r ... (@\diff{(rev\_length l)}@)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) l' l, (@\diff{old}@) l' l -> (@\diff{new}@) l' l
+\end{lstlisting}
+The component can invert this to get the patch: %from \lstinline{new} to \lstinline{old}:
+
+\begin{lstlisting}
+  patch l' l (H : (@\diff{new}@) l' l) :=(@\vspace{-0.04cm}@)
+    eq_ind_r ... (@\diff{(eq\_sym (rev\_length l))}@)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) l' l, (@\diff{new}@) l' l -> (@\diff{old}@) l' l
+\end{lstlisting}
+We can then use this patch to port proofs.
+For example, if we add this patch to a hint database~\cite{hints},
+we can port this proof:
+
+\begin{lstlisting}
+  Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
+    len (rev (l' ++ l)) = len (rev l) + len (rev l').(@\vspace{-0.04cm}@)
+  Proof.(@\vspace{-0.04cm}@)
+    intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)(@\vspace{-0.04cm}@)
+  Qed.
+\end{lstlisting}
+to this proof:
+
+\begin{lstlisting}
+  Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
+    len (rev (l' ++ l)) = len (rev l) + len (rev l').(@\vspace{-0.04cm}@)
+  Proof.(@\vspace{-0.04cm}@)
+    intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)(@\vspace{-0.04cm}@)
+  Qed.
+\end{lstlisting}
+
+Rewrites like \lstinline{candidate} are \textit{invertible}:
+We can invert any rewrite in one direction by rewriting in the opposite direction.
+In contrast, it is not possible to invert the patch \sysname
+found for Figure~\ref{fig:example}.
+Inversion will necessarily sometimes fail, since not all terms are invertible.
+%Not all terms are invertible. It is not possible, for example, to invert the patch 
+%Inversion will necessarily sometimes fail.
+
+\paragraph{Lemma Factoring} The tool should be able to factor a term into a sequence of lemmas.
+This can help break other problems, like abstraction, into smaller subproblems.
+It is also necessary to invert certain terms.
+Consider inverting an arbitrary sequence of two rewrites:
+
+\begin{lstlisting}
+  t := (@\diff{eq\_ind\_r G ...}@) ((@\diff{eq\_ind\_r F ...}@))
+\end{lstlisting}
+We can view \lstinline{t} as a term that composes two functions:
+
+\begin{lstlisting}
+  g := (@\diff{eq\_ind\_r G ...}@)(@\vspace{-0.04cm}@)
+  f := (@\diff{eq\_ind\_r F ...}@)(@\vspace{-0.04cm}@)
+  t := g $\circ$ f
+\end{lstlisting}
+The inverse of \lstinline{t} is the following:
+
+\begin{lstlisting}
+  t$\inv$ := f$\inv$ $\circ$ g$\inv$
+\end{lstlisting}
+To invert \lstinline{t}, \sysname identifies the factors \lstinline{[f; g]}, 
+inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
+then folds and applies the inverse factors in the opposite direction.
+
+plus parts of PUMPKIN PATCH Inside the Core, Testing Boundaries, Future Work
+
+How the four transformations work in detail
+
+Limitations and whether they're addressed in later tools yet or not

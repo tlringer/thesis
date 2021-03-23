@@ -3,12 +3,30 @@
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
 
+\bibitem{equality}
+Adam Chlipala.
+\newblock Library equality, 2017.
+
 \bibitem{DeMillo1977}
 Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock Social processes and proofs of theorems and programs.
 \newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN Symposium on
   Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
   USA, 1977. ACM.
+
+\bibitem{coq87news}
+Maxime D\'{e}nes.
+\newblock Coq 8.7 beta 1 is out, 2017.
+
+\bibitem{Hofmann97}
+Martin Hofmann.
+\newblock Syntax and semantics of dependent types.
+\newblock In {\em Semantics and Logics of Computation}, pages 79--130.
+  Cambridge University Press, 1997.
+
+\bibitem{coqPR}
+Matej Kosik.
+\newblock Coq pull request \# 652: Put all plugins behind an ``api'', 2017.
 
 \bibitem{coq87commit}
 Guillaume Melquiond.

@@ -4,45 +4,45 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--to sort, need author or key in hints
-You've used 4 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            521 strings with 4645 characters,
-and the built_in function-call counts, 1284 in all, are:
-= -- 124
-> -- 54
-< -- 1
-+ -- 22
-- -- 18
-* -- 84
-:= -- 200
-add.period$ -- 10
-call.type$ -- 4
-change.case$ -- 21
+            539 strings with 4950 characters,
+and the built_in function-call counts, 2275 in all, are:
+= -- 220
+> -- 82
+< -- 2
++ -- 34
+- -- 26
+* -- 122
+:= -- 352
+add.period$ -- 20
+call.type$ -- 8
+change.case$ -- 37
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 48
-empty$ -- 112
-format.name$ -- 18
-if$ -- 281
+cite$ -- 9
+duplicate$ -- 90
+empty$ -- 217
+format.name$ -- 26
+if$ -- 506
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 2
-newline$ -- 20
-num.names$ -- 6
-pop$ -- 30
+int.to.str$ -- 8
+missing$ -- 3
+newline$ -- 37
+num.names$ -- 14
+pop$ -- 63
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 29
 quote$ -- 0
-skip$ -- 42
+skip$ -- 82
 stack$ -- 0
-substring$ -- 73
-swap$ -- 13
-text.length$ -- 1
+substring$ -- 120
+swap$ -- 25
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 32
 warning$ -- 1
-while$ -- 10
-width$ -- 5
-write$ -- 41
+while$ -- 21
+width$ -- 9
+write$ -- 77
 (There was 1 warning)

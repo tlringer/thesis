@@ -28,30 +28,46 @@
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{18}{subsection.3.5.2}% 
 \contentsline {subsubsection}{\numberline {3.5.2.1}Trusted Computing Base}{18}{subsubsection.3.5.2.1}% 
 \contentsline {section}{\numberline {3.6}Results}{18}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Conclusion}{18}{section.3.7}% 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{21}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Motivating Example}{21}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Approach}{21}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Differencing}{22}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Transformation}{22}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Implementation}{22}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{22}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{22}{subsection.4.5.2}% 
-\contentsline {section}{\numberline {4.6}Results}{22}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{22}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{23}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{23}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{23}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{25}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{25}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{25}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{25}{chapter.6}% 
-\contentsline {paragraph}{Automation}{26}{chapter.6}% 
-\contentsline {paragraph}{Integration}{26}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{26}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{26}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{26}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{26}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{26}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{26}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{26}{chapter.6}% 
+\contentsline {paragraph}{Identifying Changes}{19}{Item.7}% 
+\contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{19}{subsection.3.6.1}% 
+\contentsline {paragraph}{Replay}{20}{subsection.3.6.1}% 
+\contentsline {paragraph}{Search}{20}{lstnumber.-66.1}% 
+\contentsline {paragraph}{Apply}{20}{lstnumber.-67.1}% 
+\contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{20}{subsubsection.3.6.1.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{21}{subsection.3.6.2}% 
+\contentsline {paragraph}{Replay}{21}{subsection.3.6.2}% 
+\contentsline {paragraph}{Search}{21}{lstnumber.-74.2}% 
+\contentsline {paragraph}{Apply}{21}{lstnumber.-75.2}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{22}{subsubsection.3.6.2.1}% 
+\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{23}{subsection.3.6.3}% 
+\contentsline {paragraph}{Replay}{23}{subsection.3.6.3}% 
+\contentsline {paragraph}{Search}{23}{lstnumber.-84.2}% 
+\contentsline {paragraph}{Apply}{23}{lstnumber.-85.2}% 
+\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{24}{subsubsection.3.6.3.1}% 
+\contentsline {section}{\numberline {3.7}Conclusion}{24}{section.3.7}% 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{25}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Motivating Example}{25}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Approach}{25}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Differencing}{26}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Transformation}{26}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Implementation}{26}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{26}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{26}{subsection.4.5.2}% 
+\contentsline {section}{\numberline {4.6}Results}{26}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{26}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{27}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{27}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{27}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{29}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{29}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{29}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{29}{chapter.6}% 
+\contentsline {paragraph}{Automation}{30}{chapter.6}% 
+\contentsline {paragraph}{Integration}{30}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{30}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{30}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{30}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{30}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{30}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{30}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{30}{chapter.6}% 

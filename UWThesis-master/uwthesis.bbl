@@ -1,7 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
+
+\bibitem{usera}
+User A.
+\newblock Software foundations solution, 2017.
+
+\bibitem{userb}
+User B.
+\newblock Software foundations solution, 2017.
 
 \bibitem{equality}
 Adam Chlipala.
@@ -27,6 +35,15 @@ Martin Hofmann.
 \bibitem{coqPR}
 Matej Kosik.
 \newblock Coq pull request \# 652: Put all plugins behind an ``api'', 2017.
+
+\bibitem{compcertcommit}
+Xavier Leroy.
+\newblock Commit to compcert: lib/integers.v, 2013.
+
+\bibitem{coq84commit}
+letouzey.
+\newblock Commit to coq: change definition of divide (compat with znumtheory),
+  2011.
 
 \bibitem{coq87commit}
 Guillaume Melquiond.

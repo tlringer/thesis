@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAR 2021 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAR 2021 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1803,31 +1803,36 @@ LaTeX Warning: Reference `sec:fail' on page 17 undefined on input line 115.
 LaTeX Warning: Reference `sec:composeintro' on page 17 undefined on input line 
 165.
 
-[17]
+[17]) (./repair/results.tex [18] (./repair/compcert.tex) (./repair/compcert.tex
+) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
+(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+(./repair/bintonat.tex) (./repair/bintonat.tex) [19]
+Package microtype Info: Character `013' is missing
+(microtype)             in font `OT1/pplj/m/sc/9'.
+(microtype)             Ignoring protrusion settings for this character.
+ [20]
+Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
+[]\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
+e in tactics---rewriting
+ []
 
-LaTeX Warning: Reference `sec:compcert' on page 18 undefined on input line 172.
-
-
-
-LaTeX Warning: Reference `fig:int' on page 18 undefined on input line 179.
-
-) (./repair/results.tex) (./repair/conclusion.tex)) (./often.tex [18] [19]
-[20
-
-
-]
+[21] (./repair/divide.tex) (./repair/divide.tex) [22] [23])
+(./repair/conclusion.tex)) (./often.tex [24]
 chapter 4.
-[21]) (./related.tex [22]
+[25
+
+
+]) (./related.tex [26]
 chapter 5.
-) (./conclusion.tex [23
+) (./conclusion.tex [27
 
 
-] [24
+] [28
 
 
 ]
 chapter 6.
-(./next.tex [25]
+(./next.tex [29]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -1839,12 +1844,12 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.bbl [26]
+)) (./uwthesis.bbl [30]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 39.
+(Font)              using `OMS/pplj/m/n' instead on input line 56.
 
-) [27
+) [31
 
 
 ]
@@ -1865,11 +1870,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 41626 strings out of 492609
- 788584 string characters out of 6129033
+ 41914 strings out of 492609
+ 792516 string characters out of 6129033
  1141786 words of memory out of 5000000
- 44160 multiletter control sequences out of 15000+600000
- 598702 words of font info for 457 fonts, out of 8000000 for 9000
+ 44226 multiletter control sequences out of 15000+600000
+ 601447 words of font info for 500 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,14n,71p,9083b,1408s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1885,10 +1890,10 @@ st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (37 pages, 230220 bytes).
+Output written on uwthesis.pdf (41 pages, 255013 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 629 compressed objects within 7 object streams
- 281 named destinations out of 1000 (max. 500000)
- 77562 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 900 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
+ 426 named destinations out of 1000 (max. 500000)
+ 79610 words of extra memory for PDF output out of 89155 (max. 10000000)
 

@@ -1,3 +1,413 @@
 \section{Results}
+\label{sec:case}
 
-PUMPKIN PATCH Case Studies, key technical results
+Needed: key technical results
+
+% below: case studies
+
+We used the \sysname prototype to emulate three motivating scenarios from real-world code:
+
+\begin{enumerate}
+\item \textbf{Updating definitions} within a project \\
+(CompCert, Section~\ref{sec:compcert})
+\item \textbf{Porting definitions} between libraries \\
+(Software Foundations, Section~\ref{sec:foundations})
+\item \textbf{Updating proof assistant versions} \\
+(Coq Standard Library, Section~\ref{sec:coq})
+\end{enumerate}
+
+The code we chose for these scenarios demonstrated different classes of changes.
+For each case, we describe how \sysname configures the procedure to use the core components for that class of changes.
+Our experiences with these scenarios suggest that patches are useful and that the components 
+are effective and flexible.
+
+\paragraph{Identifying Changes} We identified Git commits from popular Coq projects that
+demonstrated each scenario.
+These commits updated proofs in response to breaking changes.
+We emulated each scenario as follows:
+
+\begin{enumerate}
+\item \textit{Replay} an example proof update for \sysname
+\item \textit{Search} the example for a patch using \sysname
+\item \textit{Apply} the patch to fix a different broken proof
+\end{enumerate}
+
+Our goal was to simulate incremental use of a patch finding tool,
+at the level of a small change or a commit that follows best practices.
+We favored commits with changes that we could
+isolate. When isolating examples for \sysname, we replayed changes from the bottom up,
+as if we were making the changes ourselves.
+This means that we did not always make the same change as the user. For example,
+the real change from Section~\ref{sec:compcert} updated multiple definitions;
+we updated only one.
+
+\sysname is a proof-of-concept and does not yet handle some kinds of proofs.
+In each scenario, we made minor modifications to proofs so that we could use \sysname (for example,
+using induction instead of destruction).
+\sysname does not yet handle structural changes like adding constructors or parameters, 
+so we focused on changes that preserve structure, like modifying constructors.
+Chapter~\ref{chapt:pi} describes an extension to \sysname that supports changes in structure.
+
+\begin{figure*}
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=1]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=2,lastline=2]{repair/compcert.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=4, lastline=4]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/compcert.tex}
+\end{minipage}
+\caption[Caption for LOF]{Old (left) and new (right) definitions of \lstinline{int} in CompCert.}
+\label{fig:int}
+\end{figure*}
+
+\begin{figure*}
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt} % blindFS / User A
+\lstinputlisting[firstline=2, lastline=4]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=6]{repair/bintonat.tex}
+\lstinputlisting[firstline=7, lastline=7]{repair/bintonat.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}  % marshall / user B
+\lstinputlisting[firstline=10, lastline=12]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=13,lastline=14]{repair/bintonat.tex}
+\lstinputlisting[firstline=15, lastline=15]{repair/bintonat.tex}
+\end{minipage}
+\caption[Caption for LOF]{Definitions of \lstinline{bin_to_nat} for Users A (left) and B (right).}
+\label{fig:bintonat}
+\end{figure*}
+
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
+
+\subsection{Updating Definitions}
+\label{sec:compcert}
+
+Coq programmers sometimes make changes to definitions that break proofs
+within the same project. To emulate this use case, 
+we identified a CompCert commit~\cite{compcertcommit}
+with a breaking change to \lstinline{int} (Figure~\ref{fig:int}). %The commit message notes that the new representation is more efficient.
+We used \sysname to find a patch that corresponds to the change in \lstinline{int}.
+The patch \sysname found fixed broken inductive proofs.
+
+\paragraph{Replay} We used the proof of \lstinline{unsigned_range} as the example for \sysname.
+The proof failed with the new \lstinline{int}:
+
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
+\begin{lstlisting}[language=coq]
+  Theorem unsigned_range:(@\vspace{-0.04cm}@)
+    (@\ltacforall@)(i : int), 0 <= unsigned i < modulus.(@\vspace{-0.04cm}@)
+  Proof.(@\vspace{-0.04cm}@)
+    intros i. induction i using int_ind; auto(@\fails{.}@)
+\end{lstlisting}
+
+We replayed the change to \lstinline{unsigned_range}:
+
+\begin{lstlisting}[language=coq]
+    intros i. induction i using int_ind. (@\diff{simpl. omega}@)(@\succeeds{.}@)
+\end{lstlisting}
+
+\paragraph{Search} We used \sysname to search the example for a patch that corresponds to the change in \lstinline{int}. It found
+a patch with this type:
+
+\begin{lstlisting}[language=coq]
+   (@\ltacforall@) z : Z,(@\vspace{-0.04cm}@) (@\diff{-1 < z < modulus}@) -> (@\diff{0 <= z < modulus}@)
+\end{lstlisting}
+
+\paragraph{Apply} After changing the definition of \lstinline{int}, the proof of the
+theorem \lstinline{repr_unsigned} failed on the last tactic:
+
+\begin{lstlisting}[language=coq]
+  Theorem repr_unsigned:(@\vspace{-0.04cm}@)
+    (@\ltacforall@)(i : int), repr (unsigned i) = i.(@\vspace{-0.04cm}@)
+  Proof.(@\vspace{-0.04cm}@)
+    ... apply Zmod_small; auto(@\fails{.}@)
+\end{lstlisting}
+
+Manually trying \lstinline{omega}---the tactic which helped us in the proof of \lstinline{unsigned_range}---did not
+succeed.
+We added the patch that \sysname found to a hint database.
+The proof of the theorem \lstinline{repr_unsigned} then went through:
+
+\begin{lstlisting}[language=coq]
+  ... apply Zmod_small; auto(@\succeeds{.}@)
+\end{lstlisting}
+
+\subsubsection{Configuration}
+
+This scenario used the configuration for changes in constructors of an inductive type.
+Given such a change:
+
+\begin{lstlisting}[language=coq]
+  Inductive (@\diff{T}@) := ... | C : ... -> (@\diff{H}@) -> T(@\vspace{-0.08cm}@)
+  Inductive (@\diff{T'}@) := ... | C : ... -> (@\diff{H'}@) -> T'
+\end{lstlisting}
+\sysname searches two inductive proofs of theorems:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@) (t : (@\diff{T}@)), P t(@\vspace{-0.08cm}@)
+  (@\ltacforall@) (t : (@\diff{T'}@)), P t
+\end{lstlisting}
+for an isomorphism\footnote{If \sysname finds just one implication, it returns that.} between the constructors:
+
+\begin{lstlisting}[language=coq]
+  ... -> (@\diff{H}@) -> (@\diff{H'}@)(@\vspace{-0.1cm}@)
+  ... -> (@\diff{H'}@) -> (@\diff{H}@)
+\end{lstlisting}
+
+The user can apply these patches within the inductive case that corresponds to the constructor \lstinline{C}
+to fix other broken proofs that induct over the changed type. 
+\sysname uses this configuration for changes in constructors:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+    \STATE \textit{diff} inductive constructors for goals
+    \STATE use \textit{all components} to recursively search for changes in conclusions of the corresponding case of the proof
+    \STATE \textbf{if} there are candidates \textbf{then}
+    \STATE \hspace*{1em} try to \textit{invert} the patch to find an isomorphism 
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Porting Definitions}
+\label{sec:foundations}
+
+Coq programmers sometimes port theorems and proofs to use definitions
+from different libraries.
+To simulate this, we used \sysname to port two solutions~\cite{usera, userb}
+to an exercise in Software Foundations to each use the other solution's definition of the fixpoint \lstinline{bin_to_nat} (Figure~\ref{fig:bintonat}).
+We demonstrate one direction; the opposite was similar.
+
+\paragraph{Replay} We used the proof of \lstinline{bin_to_nat_pres_incr} from User A as the example for \sysname.
+User A cut an inline lemma in an inductive case and proved it using a rewrite:
+
+\begin{lstlisting}[language=coq]
+  assert ((@\ltacforall@)a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).(@\vspace{-0.04cm}@)
+  (@\ltacba@) ... (@\diff{rewrite <- plus\_n\_O.}@) rewrite -> plus_comm.
+\end{lstlisting} % blindFS / user A
+
+When we ported User A's solution to use User B's definition of \lstinline{bin_to_nat}, 
+the application of this inline lemma failed. We changed the conclusion of the inline lemma 
+and removed the corresponding rewrite:
+
+\begin{lstlisting}[language=coq]
+  assert ((@\ltacforall@)a, S (a + S a) = S (S (a + a))).(@\vspace{-0.04cm}@)
+  (@\ltacba@) ... rewrite -> plus_comm.
+\end{lstlisting} % blindFS / user A, adapted
+
+\paragraph{Search} We used \sysname to search the example
+for a patch that corresponds to the change in \lstinline{bin_to_nat}.
+It found an isomorphism:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@)P b, P (@\diff{(bin\_to\_nat b)}@) -> P (@\diff{(bin\_to\_nat b + 0)}@)(@\vspace{-0.08cm}@)
+  (@\ltacforall@)P b, P (@\diff{(bin\_to\_nat b + 0)}@) -> P (@\diff{(bin\_to\_nat b)}@)
+\end{lstlisting}
+
+\paragraph{Apply} After porting to User B's definition, a rewrite in the proof of the theorem
+\lstinline{normalize_correctness} failed:
+
+\begin{lstlisting}[language=coq]
+  Theorem normalize_correctness:
+    (@\ltacforall@)b, nat_to_bin (bin_to_nat b) = normalize b.
+  Proof.
+    ... (@\fails{rewrite -> plus\_0\_r.}@)
+\end{lstlisting}
+
+Attempting the obvious patch from the difference in tactics---rewriting by \lstinline{plus_n_O}---failed.
+Applying the patch that \sysname found fixed the broken proof:
+
+\begin{lstlisting}[language=coq]
+   ... (@\diff{apply patch\_inv.}@) (@\succeeds{rewrite -> plus\_0\_r.}@)
+\end{lstlisting}
+
+In this case, since we ported User A's definition to a simpler 
+definition,\footnote{User A uses \lstinline{*}; User B uses \lstinline{+}. 
+For arbitrary \lstinline{n}, the term \lstinline{2 * n} reduces to \lstinline{n + (n + 0)}, which does not reduce any further.}
+\sysname found a patch that was not the most natural patch.
+The natural patch would be to remove the rewrite, just as we removed a different rewrite from the example proof.
+This did not occur when we ported User B's definition,
+which suggests that in the future, a patch finding tool may help inform novice users which definition is simpler:
+It can factor the proof,  
+then inform the user if two factors are inverses.
+Tactic-level changes do not provide enough information to determine this; the tool must have a semantic
+understanding of the terms.
+
+\subsubsection{Configuration}
+
+This scenario used the configuration for changes in cases of a fixpoint.
+Given such a change:
+
+\begin{lstlisting}[language=coq]
+  Fixpoint (@\diff{f}@) ... := ... | g (@\diff{x}@)(@\vspace{-0.1cm}@)
+  Fixpoint (@\diff{f'}@) ... := ... | g (@\diff{x'}@)
+\end{lstlisting}
+\sysname searches two proofs of theorems:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@) ..., P ((@\diff{f}@) ...)(@\vspace{-0.1cm}@)
+  (@\ltacforall@) ..., P ((@\diff{f'}@) ...)
+\end{lstlisting}
+for an isomorphism that corresponds to the change:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@)P, P (@\diff{x}@) -> P (@\diff{x'}@)(@\vspace{-0.1cm}@)
+  (@\ltacforall@)P, P (@\diff{x'}@) -> P (@\diff{x}@)
+\end{lstlisting}
+The user can apply these patches to fix other broken proofs about the fixpoint.
+
+The key feature that differentiates these from the patches we have encountered so far is that
+these patches hold for \emph{all} \lstinline{P}; for changes in fixpoint cases, the procedure abstracts
+candidates by \lstinline{P}, not by its arguments.
+\sysname uses this configuration for changes in fixpoint cases:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+    \STATE \textit{diff} fixpoint cases for goals
+    \STATE use \textit{all components} to recursively search an intermediate lemma for a change in conclusions
+    \STATE \textbf{if} there are candidates \textbf{then}
+    \STATE \hspace*{1em} \textit{specialize} and \textit{factor} the candidate \\
+           \hspace*{1em} \textit{abstract} the factors by functions \\
+           \hspace*{1em} try to \textit{invert} the patch to find an isomorphism 
+\end{algorithmic}
+\end{algorithm}
+
+For the prototype, we require the user to cut the intermediate lemma explicitly and to 
+pass its type and arguments.
+In the future, an improved semantic differencing component
+can infer both the intermediate lemma and the arguments: It can search
+within the proof for some proof of a function that is applied
+to the fixpoint.
+
+\begin{figure*}
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=1]{repair/divide.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\lstset{language=coq, aboveskip=0pt,belowskip=0pt}
+\lstinputlisting[firstline=3, lastline=3]{repair/divide.tex}
+\end{minipage}
+\caption[Caption for LOF]{Old (left) and new (right) definitions of \lstinline{divide} in Coq.}
+\label{fig:divide}
+\end{figure*}
+
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
+
+\subsection{Updating Proof Assistant Versions}
+\label{sec:coq}
+
+Coq sometimes makes changes to its standard library that break
+backwards-compatibility.
+To test the plausibility of using a patch finding tool for proof assistant version updates,
+we identified a breaking change in the Coq standard library~\cite{coq84commit}.
+The commit changed the definition of \lstinline{divide} prior to the Coq 8.4 release (Figure~\ref{fig:divide}).
+The change broke 46 proofs in the standard library.
+We used \sysname to find an isomorphism that corresponds to the change in \lstinline{divide}.
+The isomorphism \sysname found fixed broken proofs.
+
+\paragraph{Replay} We used the proof of \lstinline{mod_divide} as the example for \sysname.
+The proof broke with the new \lstinline{divide}:
+
+\begin{lstlisting}[language=coq]
+  Theorem mod_divide:(@\vspace{-0.04cm}@)
+    (@\ltacforall@) a b, b~=0 -> (a mod b == 0 <-> (divide b a)).(@\vspace{-0.04cm}@)
+  Proof.(@\vspace{-0.04cm}@)
+    ... (@\fails{rewrite (div\_mod a b Hb) at 2.}@)
+\end{lstlisting}
+
+We replayed changes to \lstinline{mod_divide}:
+
+\begin{lstlisting}[language=coq]
+    ... (@\diff{rewrite mul\_comm. symmetry.}@)(@\vspace{-0.04cm}@)
+    (@\succeeds{rewrite (div\_mod a b Hb) at 2.}@)
+\end{lstlisting}
+
+\paragraph{Search} We used \sysname to search the example for a patch
+that corresponds to the change in \lstinline{divide}.
+It found an isomorphism:
+
+\begin{lstlisting}[language=coq]
+   (@\ltacforall@)r p q, (@\diff{p * r = q}@) -> (@\diff{q = r * p}@)(@\vspace{-0.08cm}@)
+   (@\ltacforall@)r p q, (@\diff{q = r * p}@) -> (@\diff{p * r = q}@)
+\end{lstlisting}
+
+\paragraph{Apply} The proof of the theorem \lstinline{Zmod_divides} broke after rewriting by the changed theorem \lstinline{mod_divide}:
+
+\begin{lstlisting}[language=coq]
+   Theorem Zmod_divides:(@\vspace{-0.04cm}@)
+     (@\ltacforall@)a b, b<>0 -> (a mod b = 0 <-> (@\ltacexists@)c, a = b * c).(@\vspace{-0.04cm}@)
+   Proof.(@\vspace{-0.04cm}@)
+     ... split; intros (c,Hc); exists c; (@\fails{auto.}@)
+\end{lstlisting}
+ 
+Adding the patches \sysname found to a hint database made the proof go through:
+
+\begin{lstlisting}[language=coq]
+     ... split; intros (c,Hc); exists c; (@\succeeds{auto.}@)
+\end{lstlisting}
+
+\subsubsection{Configuration}
+
+This scenario used the configuration for changes in dependent arguments to constructors.
+\sysname searches two proofs that apply the same constructor
+to different dependent arguments:
+
+\begin{lstlisting}[language=coq]
+   ... (C ((@\diff{P}@) x)) ...(@\vspace{-0.1cm}@)
+   ... (C ((@\diff{P'}@) x)) ...
+\end{lstlisting}
+for an isomorphism between the arguments:
+
+\begin{lstlisting}[language=coq]
+   (@\ltacforall@) x, (@\diff{P}@) x -> (@\diff{P'}@) x(@\vspace{-0.1cm}@)
+   (@\ltacforall@) x, (@\diff{P'}@) x -> (@\diff{P}@) x
+\end{lstlisting}
+
+The user can apply these patches to patch proofs that apply the constructor (in this case study,
+to fix broken proofs that instantiate \lstinline{divide} with some specific \lstinline{r}).
+
+So far, we have encountered changes of this form as arguments to an 
+induction principle; in this case, the change is an argument to a constructor.
+A patch between arguments to an induction principle maps
+directly between conclusions of the new and old theorem without
+induction; a patch between constructors does not.
+For example, for \lstinline{divide}, we can find a patch with this form:
+
+\begin{lstlisting}[language=coq]
+   (@\ltacforall@)x, (@\diff{P}@) x -> (@\diff{P'}@) x
+\end{lstlisting}
+
+However, without using the induction principle for \lstinline{exists}, we can't use that patch to prove this:
+
+\begin{lstlisting}[language=coq]
+   ((@\ltacexists@)x, (@\diff{P}@) x) -> ((@\ltacexists@) x, (@\diff{P'}@) x)
+\end{lstlisting}
+
+This changes the goal type that semantic differencing determines.
+\sysname uses this configuration for changes in constructor arguments:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+    \STATE \textit{diff} constructor arguments for goals
+    \STATE use \textit{all components} to recursively search those arguments for changes in conclusions
+    \STATE \textbf{if} there are candidates \textbf{then}
+    \STATE \hspace*{1em} \textit{abstract} the candidate \\
+           \hspace*{1em} \textit{factor} and try to \textit{invert} the patch to find an isomorphism
+\end{algorithmic}
+\end{algorithm}
+
+For the prototype, the model of constructors for the semantic differencing component is limited,
+so we ask the user to provide the type of the change in argument (to guide line 2).
+We can extend semantic differencing to remove this restriction.
+
+
+
+

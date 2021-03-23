@@ -1,0 +1,15 @@
+(* User A *)
+Fixpoint bin_to_nat (b : bin) : nat := (@\vspace{-0.06cm}@)
+  match b with (@\vspace{-0.06cm}@)
+  | B0 => O(@\vspace{-0.06cm}@)
+  | B2 b' => 2 * (bin_to_nat b')(@\vspace{-0.06cm}@)
+  | B21 b' => 1 + 2 * (bin_to_nat b')(@\vspace{-0.06cm}@)
+  end.
+
+(* User B *)
+Fixpoint bin_to_nat (b : bin) : nat := (@\vspace{-0.06cm}@)
+  match b with (@\vspace{-0.06cm}@)
+  | B0 => O(@\vspace{-0.06cm}@)
+  | B2 b' => (bin_to_nat b') + (bin_to_nat b')(@\vspace{-0.06cm}@)
+  | B21 b' => S ((bin_to_nat b') + (bin_to_nat b'))(@\vspace{-0.06cm}@)
+  end.

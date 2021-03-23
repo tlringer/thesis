@@ -1,22 +1,94 @@
 \chapter{Related Work}
 
-% TODO whatever else isn't here yet, and some of this might be factored out or partially factored out
+% TODO whatever else isn't here yet, and some of this might be factored out or partially factored out---all papers, including survey, plus generals
 
 \section{Programs}
 
 \subsection*{Program Refactoring} 
 
+Refactoring~\cite{Mens:2004:SSR:972215.972286}.
+
 \subsection*{Program Repair} 
+
+% From PUMPKIN PATCH, unchanged
+
+Adapting proofs to changes is essentially program repair
+for dependently typed languages. 
+Program repair tools for 
+languages with non-dependent type 
+systems~\cite{Pei:2014:APR:2731750.2731779, Long:2016:APG:2837614.2837617, Le:2017:SSS:3106237.3106309, Mechtaev:2016:ASM:2884781.2884807, Monperrus2015} 
+may have applications in the context of a dependently typed language.
+Similarly, our work may have applications within program repair in these languages:
+Future applications of our approach may repurpose it to repair programs for functional languages.
 
 \subsection*{Ornaments}
 
+% From PUMPKIN PATCH, unchanged
+
+Ornaments~\cite{Dagand17jfp, Williams:2014:OP:2633628.2633631}
+separate the computational and logical components of a datatype, and may
+make proofs more resilient to datatype changes.
+
 \subsection*{Programming by Example}
 
+% From PUMPKIN PATCH, unchanged
+
+Our approach generalizes an example that the programmer provides.
+This is similar to programming by example, a subfield of 
+program synthesis~\cite{DBLP:journals/ftpl/GulwaniPS17}. 
+This field addresses different challenges in different logics,
+but may drive solutions to similar problems in a dependently typed language.
+
 \subsection*{Differencing \& Incremental Computation}
+
+% From PUMPKIN PATCH, unchanged
+
+Existing work in differencing and incremental computation may help 
+improve our semantic differencing component.
+Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
+finds differences in algebraic data types.
+Semantics-based change impact analysis~\cite{Autexier:2010:SCI:1860559.1860580} models semantic differences
+between documents.
+Differential assertion checking~\cite{differential-assertion-checking-2} analyzes different
+versions of a program for relative correctness with respect to a specification.
+Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
+All of these may be useful for improving semantic differencing.
 
 \section{Proofs}
 
 \subsection*{Proof Reuse}
+
+% From PUMPKIN PATCH, unchanged
+
+Our approach reimagines the problem of proof reuse in the context of proof automation.
+While we focus on changes that occur over time, traditional proof reuse techniques can help
+improve our approach.
+Existing work in proof reuse focuses on transferring proofs between isomorphisms,
+either through extending the type system~\cite{Barthe:2001:TIP:646793.704711} or through an automatic method~\cite{Magaud2002}.
+This is later generalized and implemented in Isabelle~\cite{Huffman2013} and Coq~\cite{ZimmermannH15, tabareau:hal-01559073};
+later methods can also handle implications. 
+%Transfer tactics apply these functions but do not infer them, while our approach
+%infers these functions but does not apply them.
+Integrating a transfer tactic with a proof patch finding tool will create an end-to-end
+tool that can both find patches and apply them automatically.
+
+Proof reuse for extended inductive types~\cite{Boite2004} adapts proof obligations
+to structural changes in inductive types. Later work~\cite{Mulhern06proofweaving} proposes a method
+to generate proofs for new constructors. These approaches may be useful when extending the differencing
+component to handle structural changes. Existing work in theorem reuse and proof generalization~\cite{Felty1994, pons00, Johnsen2004} abstracts existing proofs for reusability, and may be useful
+for improving the abstraction component.
+Our work focuses on the components critical to searching for patches; these complementary approaches
+can drive improvements to the components.
+
+\subsection*{Proof Evolution}
+
+% From PUMPKIN PATCH, unchanged
+
+There is a small body of work on change and dependency management for verification,
+both to evaluate impact of potential changes and maximize reuse~\cite{873647, Autexier:2010:CMH:1986659.1986663}
+and to optimize build performance~\cite{Celik:2017:IRP:3155562.3155588}.
+These approaches may help isolate changes, which is necessary to identify future benchmarks, integrate
+with CI systems, and fully support version updates.
 
 \subsection*{Proof Refactoring}
 
@@ -24,7 +96,54 @@
 
 \subsection*{Proof Design}
 
+% From PUMPKIN PATCH, unchanged:
+
+Existing proof engineering work addresses brittleness
+by planning for changes~\cite{proof-eng} and designing theorems and proofs that make maintenance less of an issue.
+Design principles for specific domains (such as formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
+can make verification more tractable. CertiKOS~\cite{certikos} introduces the idea of a deep specification to
+ease verification of large systems.
+These design principles and frameworks are complementary to our approach.
+Even when programmers use informed design principles,
+changes outside of the programmer's control can break proofs;
+our approach addresses these changes.
+
 \subsection*{Proof Automation}
+
+% From PUMPKIN PATCH, unchanged:
+
+We address a missed opportunity in proof automation for ITP: searching
+for patches that can fix broken proofs.
+This is complementary to existing automation techniques. Nonetheless, there is a wealth
+of work in proof automation that makes proofs more resilient to change.
+Powerful tactics like \lstinline{crush}~\cite{chlipala:cpdt} can make
+proofs more resilient to changes. 
+Hammers like Isabelle's sledgehammer~\cite{Blanchette2013} can make proofs agnostic to some low-level changes.
+Recent work~\cite{coqhammer} paves the way for a hammer in Coq.
+Even the most powerful tactics cannot address all changes;
+our hope is to open more possibilities for automation.
+
+Powerful project-specific tactics~\cite{chlipala:cpdt, Chlipala2013} can help prevent low-level maintenance tasks.
+Writing these tactics requires good engineering~\cite{Gonthier2011} and domain-specific knowledge,
+and these tactics still sometimes break in the face of change.
+A future patching tool may be able to repair tactics; the debugging process
+for adapting a tactic is not too dissimilar to providing an example to a tool.
+
+Rippling~\cite{rippling} is a technique for automating inductive proofs that uses restricted rewrite rules to
+guide the inductive hypothesis toward the conclusion; this may guide improvements to the
+differencing, abstraction, and specialization components.
+The abstraction and factoring components address specific classes of unification problems;
+recent developments to higher-order unification~\cite{Miller:2012:PHL:2331097} may help
+improve these components.
+Lean~\cite{selsam:lean} introduces the first congruence closure algorithm for dependent type theory that
+relies only on the Uniqueness of Identity Proofs (UIP) axiom. While UIP is not fundamental to Coq,
+it is frequently assumed as an axiom; when it is, it may be tractable to use a similar algorithm to improve the tool.
+
+GALILEO~\cite{bundyreasoning} repairs faulty physics theories
+in the context of a classical higher-order logic (HOL); there is preliminary work extending this
+style of repair to mathematical proofs. 
+Knowledge-sharing methods~\cite{tgck-cicm14} can adapt some proofs across different representations of HOL.
+These complementary approaches may guide extensions to support decidable domains and classical logics.
 
 \subsection*{Transport}
 

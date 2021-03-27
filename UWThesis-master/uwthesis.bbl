@@ -39,6 +39,12 @@ Gilles Barthe and Olivier Pons.
   Foundations of Software Science and Computation Structures}, FoSSaCS '01,
   pages 57--71, London, UK, UK, 2001. Springer-Verlag.
 
+\bibitem{barthe2001type}
+Gilles Barthe and Olivier Pons.
+\newblock Type isomorphisms and proof reuse in dependent type theory.
+\newblock In {\em International Conference on Foundations of Software Science
+  and Computation Structures}, pages 57--71. Springer, 2001.
+
 \bibitem{Boite2004}
 Olivier Boite.
 \newblock Proof reuse with extended inductive types.
@@ -66,6 +72,12 @@ Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
   Language Design and Implementation}, PLDI '14, pages 145--155, New York, NY,
   USA, 2014. ACM.
 
+\bibitem{caplan1995logical}
+Joshua~E. Caplan and Mehdi~T. Harandi.
+\newblock A logical framework for software proof reuse.
+\newblock In {\em ACM SIGSOFT Software Engineering Notes}, volume~20, pages
+  106--113. ACM, 1995.
+
 \bibitem{Celik:2017:IRP:3155562.3155588}
 Ahmet Celik, Karl Palmskog, and Milos Gligoric.
 \newblock icoq: Regression proof selection for large-scale verification
@@ -92,15 +104,53 @@ Adam Chlipala.
 Adam Chlipala.
 \newblock Library equality, 2017.
 
+\bibitem{cohen2016cubical}
+Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
+\newblock Cubical type theory: a constructive interpretation of the univalence
+  axiom.
+\newblock {\em arXiv preprint arXiv:1611.02108}, 2016.
+
+\bibitem{cohen:hal-01414881}
+Cyril Cohen and Damien Rouhling.
+\newblock {A refinement-based approach to large scale reflection for algebra}.
+\newblock In {\em {JFLA 2017 - Vingt-huiti{\`e}me Journ{\'e}es Francophones des
+  Langages Applicatifs}}, Gourette, France, January 2017.
+
 \bibitem{coqhammer}
 {\L}ukasz Czajka and Cezary Kaliszyk.
 \newblock Hammer for coq: Automation for dependent type theory.
 \newblock {\em Journal of Automated Reasoning}, 61(1):423--453, Jun 2018.
 
-\bibitem{Dagand17jfp}
-Pierre{-}{\'{E}}variste Dagand.
+\bibitem{dagand2017essence}
+Pierre-{\'E}variste Dagand.
 \newblock The essence of ornaments.
-\newblock {\em J. Funct. Program.}, 27:e9, 2017.
+\newblock {\em Journal of Functional Programming}, 27, 2017.
+
+\bibitem{Dagand:2013:CTO:2591370.2591396}
+Pierre-Evariste Dagand and Conor McBride.
+\newblock A categorical treatment of ornaments.
+\newblock In {\em Proceedings of the 2013 28th Annual ACM/IEEE Symposium on
+  Logic in Computer Science}, LICS '13, pages 530--539, Washington, DC, USA,
+  2013. IEEE Computer Society.
+
+\bibitem{dagand2014transporting}
+Pierre-Evariste Dagand and Conor McBride.
+\newblock Transporting functions across ornaments.
+\newblock {\em Journal of functional programming}, 24(2-3):316--383, 2014.
+
+\bibitem{Delaware:2011:PLT:2048066.2048113}
+Benjamin Delaware, William Cook, and Don Batory.
+\newblock Product lines of theorems.
+\newblock In {\em Proceedings of the 2011 ACM International Conference on
+  Object Oriented Programming Systems Languages and Applications}, OOPSLA '11,
+  pages 595--608, New York, NY, USA, 2011. ACM.
+
+\bibitem{Delaware:2013:MLC:2429069.2429094}
+Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
+\newblock Meta-theory \`{a} la carte.
+\newblock In {\em Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL '13, pages 207--218, New York,
+  NY, USA, 2013. ACM.
 
 \bibitem{Delaware2013POPL}
 Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
@@ -127,12 +177,23 @@ Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 Maxime D\'{e}nes.
 \newblock Coq 8.7 beta 1 is out, 2017.
 
+\bibitem{DBLP:journals/corr/abs-1803-08150}
+Larry Diehl, Denis Firsov, and Aaron Stump.
+\newblock Generic zero-cost reuse for dependent types.
+\newblock {\em CoRR}, abs/1803.08150, 2018.
+
 \bibitem{Felty1994}
 Amy Felty and Douglas Howe.
 \newblock Generalization and reuse of tactic proofs.
 \newblock In Frank Pfenning, editor, {\em Logic Programming and Automated
   Reasoning: 5th International Conference}, LPAR '94, pages 1--15, Berlin,
   Heidelberg, 1994. Springer Berlin Heidelberg.
+
+\bibitem{felty1994generalization}
+Amy Felty and Douglas Howe.
+\newblock Generalization and reuse of tactic proofs.
+\newblock In {\em International Conference on Logic for Programming Artificial
+  Intelligence and Reasoning}, pages 1--15. Springer, 1994.
 
 \bibitem{tgck-cicm14}
 Thibault Gauthier and Cezary Kaliszyk.
@@ -176,6 +237,13 @@ Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
   Conference}, CPP 2013, pages 131--146, Cham, 2013. Springer International
   Publishing.
 
+\bibitem{huffman2013lifting}
+Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
+\newblock Lifting and {Transfer}: A modular design for quotients in
+  {Isabelle/HOL}.
+\newblock In {\em International Conference on Certified Programs and Proofs},
+  pages 131--146. Springer, 2013.
+
 \bibitem{873647}
 D.~Hutter.
 \newblock Management of change in structured verification.
@@ -187,6 +255,23 @@ Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock In {\em Theorem Proving in Higher Order Logics: 17th International
   Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
   Proceedings}, pages 152--167. Springer, Berlin, Heidelberg, 2004.
+
+\bibitem{johnsen2004theorem}
+Einar~Broch Johnsen and Christoph L{\"u}th.
+\newblock Theorem reuse by proof term transformation.
+\newblock In {\em International Conference on Theorem Proving in Higher Order
+  Logics}, pages 152--167. Springer, 2004.
+
+\bibitem{ko2013relational}
+Hsiang-Shang Ko and Jeremy Gibbons.
+\newblock Relational algebraic ornaments.
+\newblock In {\em Proceedings of the 2013 ACM SIGPLAN workshop on
+  Dependently-typed programming}, pages 37--48. ACM, 2013.
+
+\bibitem{ko2016programming}
+Hsiang-Shang Ko and Jeremy Gibbons.
+\newblock Programming with ornaments.
+\newblock {\em Journal of Functional Programming}, 27, 2016.
 
 \bibitem{coqPR}
 Matej Kosik.
@@ -222,12 +307,35 @@ Fan Long and Martin Rinard.
   on Principles of Programming Languages}, POPL '16, pages 298--312, New York,
   NY, USA, 2016. ACM.
 
+\bibitem{magaud2003changing}
+Nicolas Magaud.
+\newblock Changing data representation within the {Coq} system.
+\newblock In {\em International Conference on Theorem Proving in Higher Order
+  Logics}, pages 87--102. Springer, 2003.
+
+\bibitem{magaud2000changing}
+Nicolas Magaud and Yves Bertot.
+\newblock Changing data structures in type theory: A study of natural numbers.
+\newblock In {\em International Workshop on Types for Proofs and Programs},
+  pages 181--196. Springer, 2000.
+
 \bibitem{Magaud2002}
 Nicolas Magaud and Yves Bertot.
 \newblock Changing data structures in type theory: A study of natural numbers.
 \newblock In Paul Callaghan, Zhaohui Luo, James McKinna, and Robert Pollack,
   editors, {\em Types for Proofs and Programs: International Workshop}, TYPES
   2000, pages 181--196, Berlin, Heidelberg, 2002. Springer Berlin Heidelberg.
+
+\bibitem{mcbride}
+Conor McBride.
+\newblock Ornamental algebras, algebraic ornaments, 2011.
+
+\bibitem{McDonell:2016:GTS:2951913.2951914}
+Trevor~L. McDonell, Timothy A.~K. Zakian, Matteo Cimini, and Ryan~R. Newton.
+\newblock Ghostbuster: A tool for simplifying and converting {GADTs}.
+\newblock In {\em Proceedings of the 21st ACM SIGPLAN International Conference
+  on Functional Programming}, ICFP 2016, pages 338--350, New York, NY, USA,
+  2016. ACM.
 
 \bibitem{Mechtaev:2016:ASM:2884781.2884807}
 Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
@@ -250,6 +358,13 @@ Tom Mens and Tom Tourw{\'e}.
 Dale Miller and Gopalan Nadathur.
 \newblock {\em Programming with Higher-Order Logic}.
 \newblock Cambridge University Press, New York, NY, USA, 1st edition, 2012.
+
+\bibitem{miltner2017synthesizing}
+Anders Miltner, Kathleen Fisher, Benjamin~C Pierce, David Walker, and Steve
+  Zdancewic.
+\newblock Synthesizing bijective lenses.
+\newblock {\em Proceedings of the ACM on Programming Languages}, 2(POPL):1,
+  2017.
 
 \bibitem{Miraldo:2017:TDS:3122975.3122976}
 Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
@@ -289,11 +404,23 @@ Olivier Pons.
 \newblock Generalization in type theory based proof assistants.
 \newblock TYPES '00, pages 217--232, 12 2000.
 
+\bibitem{pons2000generalization}
+Olivier Pons.
+\newblock Generalization in type theory based proof assistants.
+\newblock In {\em International Workshop on Types for Proofs and Programs},
+  pages 217--232. Springer, 2000.
+
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock Qed at large: A survey of engineering of formally verified software.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
+
+\bibitem{ringer2018adapting}
+Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
+\newblock Adapting proof automation to adapt proofs.
+\newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
+  on Certified Programs and Proofs}, pages 115--129. ACM, 2018.
 
 \bibitem{selsam:lean}
 Daniel Selsam and Leonardo de~Moura.
@@ -307,11 +434,21 @@ Nicolas Tabareau, {\'E}ric Tanter, and Matthieu Sozeau.
 \newblock {Equivalences for Free!}
 \newblock working paper or preprint, July 2017.
 
-\bibitem{Williams:2014:OP:2633628.2633631}
-Thomas Williams, Pierre-\'{E}variste Dagand, and Didier R{\'e}my.
-\newblock Ornaments in practice.
-\newblock In {\em Proceedings of the 10th ACM SIGPLAN Workshop on Generic
-  Programming}, WGP '14, pages 15--24, New York, NY, USA, 2014. ACM.
+\bibitem{Timany2015FirstST}
+Amin Timany and Bart Jacobs.
+\newblock First steps towards cumulative inductive types in {CIC}.
+\newblock In {\em ICTAC}, 2015.
+
+\bibitem{univalent2013homotopy}
+The {Univalent Foundations Program}.
+\newblock {\em Homotopy Type Theory: Univalent Foundations of Mathematics}.
+\newblock \url{https://homotopytypetheory.org/book}, Institute for Advanced
+  Study, 2013.
+
+\bibitem{Williams2017}
+Thomas Williams and Didier R{\'e}my.
+\newblock A principled approach to ornamentation in {ML}.
+\newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
 
 \bibitem{proof-eng}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
@@ -326,5 +463,11 @@ Th{\'{e}}o Zimmermann and Hugo Herbelin.
 \newblock Automatic and transparent transfer of theorems along isomorphisms in
   the coq proof assistant.
 \newblock {\em CoRR}, abs/1505.05028, 2015.
+
+\bibitem{zimmermann2015automatic}
+Theo Zimmermann and Hugo Herbelin.
+\newblock Automatic and transparent transfer of theorems along isomorphisms in
+  the {Coq} proof assistant.
+\newblock {\em arXiv preprint arXiv:1505.05028}, 2015.
 
 \end{thebibliography}

@@ -23,11 +23,17 @@ Future applications of our approach may repurpose it to repair programs for func
 
 \subsection*{Ornaments}
 
-% From PUMPKIN PATCH, unchanged
+% From DEVOID, unchanged
 
-Ornaments~\cite{Dagand17jfp, Williams:2014:OP:2633628.2633631}
-separate the computational and logical components of a datatype, and may
-make proofs more resilient to datatype changes.
+\toolnameb automates discovery of and lifting across algebraic ornaments in a higher-order dependently typed language.
+In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
+of formalizations and embedded implementations of ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}.
+\toolnameb is the first tool for ornamentation to operate over a non-embedded dependently typed language.
+It essentially moves the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
+which operates on non-embedded ML code, into the type theory that forms the basis of theorem provers like Coq. 
+In doing so, it takes advantage of the properties of algebraic ornaments~\cite{mcbride}.
+It also introduces the first search algorithm to identify ornaments, which in the past 
+was identified as a ``gap'' in the literature~\cite{ko2016programming}.
 
 \subsection*{Programming by Example}
 
@@ -79,6 +85,51 @@ component to handle structural changes. Existing work in theorem reuse and proof
 for improving the abstraction component.
 Our work focuses on the components critical to searching for patches; these complementary approaches
 can drive improvements to the components.
+
+% From DEVOID, unchanged
+
+\toolnameb identifies and lifts proofs along a specific equivalence 
+similar to that from existing ornaments work~\cite{ko2016programming}.
+The need to automatically lift functions and proofs
+across equivalences and other relations is a long-standing challenge for proof 
+engineers~\cite{magaud2000changing, barthe2001type, magaud2003changing, huffman2013lifting, zimmermann2015automatic, cohen:hal-01414881}.
+The univalence axiom from Homotopy Type Theory~\cite{univalent2013homotopy} enables transparent transport of proofs;
+cubical type theory~\cite{cohen2016cubical} gives univalence a constructive interpretation. 
+
+% TODO EFF was here, but better EFF rel work comes from PUMPKIN Pi
+
+Similarly, our work is related to CoqEAL~\cite{cohen:hal-01414881}, which transfers functions along arbitrary relations
+between types. As these relations do not necessarily need to be equivalences, this framework is more general
+than our work. Similar tradeoffs between automation and generality apply: CoqEAL produces functions that refer to the old type,
+and does not yet support automatic inference of relations. In addition, CoqEAL currently only supports automatic transfer of functions,
+and does not yet handle proofs.
+
+These tools may provide an alternative backend for \toolnameb. Furthermore,
+our search algorithm may help discover relations that make these tools easier to use,
+and our lifting algorithm may help improve automation and efficiency for 
+certain relations in these tools.
+
+The problem that we solve is fundamentally about proof reuse,
+which applies software reuse principles to ITPs. 
+There is a wealth of work in proof reuse, from tactic languages~\cite{felty1994generalization} and logical frameworks~\cite{caplan1995logical},
+to tools for proof abstraction and generalization~\cite{pons2000generalization, johnsen2004theorem},
+to domain-specific methodologies~\cite{Delaware:2011:PLT:2048066.2048113} and frameworks~\cite{Delaware:2013:MLC:2429069.2429094}.
+
+\toolnameb focuses on the specific problem of reuse
+when adding fully-determined indices to types.
+Other approaches to this problem include combinators which definitionally reduce to desirable terms~\cite{DBLP:journals/corr/abs-1803-08150} in the language Cedille,
+and automatic generation of conversion functions in Ghostbuster~\cite{McDonell:2016:GTS:2951913.2951914} for GADTs in Haskell.
+Our work focuses on a type theory different from both of these, in which the properties that allow for such combinators in Cedille are not present, and in which dependent types introduce challenges not present in Haskell.
+
+\toolnameb is not the first tool to combine search with reuse. 
+Optician~\cite{miltner2017synthesizing} synthesizes bidirectional string transformations;
+a similar approach may help extend tooling to handle transformations for low-level data.
+\textsc{Pumpkin Patch}~\cite{ringer2018adapting} 
+searches the difference in proofs for patches that can be used to repair proofs broken by changes;
+\toolnameb uses a similar approach to identify functions
+that form an equivalence. The resulting tools are complementary: \toolnameb supports the addition
+of indices and hypotheses, which \textsc{Pumpkin Patch} does not support; \textsc{Pumpkin Patch} supports changes
+in values, which \toolnameb does not support. 
 
 \subsection*{Proof Evolution}
 
@@ -145,9 +196,4 @@ style of repair to mathematical proofs.
 Knowledge-sharing methods~\cite{tgck-cicm14} can adapt some proofs across different representations of HOL.
 These complementary approaches may guide extensions to support decidable domains and classical logics.
 
-\subsection*{Transport}
-
-\subsection*{Parametricity}
-
-\subsection*{Refinement}
 

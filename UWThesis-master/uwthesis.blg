@@ -5,46 +5,47 @@ The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty booktitle in pons00
-You've used 53 entries,
+You've used 77 entries,
             2118 wiz_defined-function locations,
-            841 strings with 14140 characters,
-and the built_in function-call counts, 20241 in all, are:
-= -- 2091
-> -- 829
-< -- 33
-+ -- 326
-- -- 268
-* -- 1268
-:= -- 3126
-add.period$ -- 178
-call.type$ -- 53
-change.case$ -- 282
+            946 strings with 17869 characters,
+and the built_in function-call counts, 29320 in all, are:
+= -- 3048
+> -- 1172
+< -- 47
++ -- 463
+- -- 378
+* -- 1807
+:= -- 4512
+add.period$ -- 262
+call.type$ -- 77
+change.case$ -- 408
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 879
-empty$ -- 1661
-format.name$ -- 268
-if$ -- 4533
+cite$ -- 81
+duplicate$ -- 1289
+empty$ -- 2418
+format.name$ -- 378
+if$ -- 6576
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 46
-newline$ -- 258
-num.names$ -- 116
-pop$ -- 349
+int.to.str$ -- 77
+missing$ -- 70
+newline$ -- 377
+num.names$ -- 164
+pop$ -- 510
 preamble$ -- 1
-purify$ -- 231
+purify$ -- 334
 quote$ -- 0
-skip$ -- 700
+skip$ -- 1018
 stack$ -- 0
-substring$ -- 1207
-swap$ -- 300
-text.length$ -- 33
+substring$ -- 1776
+swap$ -- 446
+text.length$ -- 47
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 206
-warning$ -- 3
-while$ -- 205
-width$ -- 55
-write$ -- 627
-(There were 3 warnings)
+type$ -- 300
+warning$ -- 4
+while$ -- 296
+width$ -- 79
+write$ -- 905
+(There were 4 warnings)

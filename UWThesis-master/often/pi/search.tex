@@ -1,10 +1,10 @@
 \section{Case Studies: \textsc{Pumpkin P}i Eight Ways}
 \label{sec:search}
 
-This section summarizes eight case studies using \toolnamec,
+This section summarizes eight case studies using \toolname,
 corresponding to the eight rows in Table~\ref{fig:changes}.
 %For each case study, we explain the configuration used, walk through an example, and describe lessons learned.
-These case studies highlight \toolnamec's flexibility in handling diverse scenarios,
+These case studies highlight \toolname's flexibility in handling diverse scenarios,
 %including in one case for an industrial user with unanticipated workflow.
 the success of automatic configuration for better workflow integration, % for supported changes,
 the preliminary success of the prototype decompiler,
@@ -12,52 +12,45 @@ and clear paths to better serving proof engineers.
 Detailed walkthroughs are in the code.
 
 \mysubsubsec{Algebraic Ornaments: Lists to Packed Vectors}
-The transformation in \toolnamec is a generalization of the transformation from \textsc{Devoid}.
+The transformation in \toolname is a generalization of the transformation from \textsc{Devoid}.
 \textsc{Devoid} supported proof reuse across \textit{algebraic ornaments}, which describe relations
 between two inductive types, where one type is the other indexed by a fold~\cite{mcbride}.
 A standard example is the relation between a list and a
 length-indexed vector (Figure~\ref{fig:listtovect}).
 
-\toolnamec implements a search procedure for automatic configuration of algebraic ornaments.
-%The search procedure moves the work specific to algebraic ornaments into the \toolnamec configuration.
+\toolname implements a search procedure for automatic configuration of algebraic ornaments.
+%The search procedure moves the work specific to algebraic ornaments into the \toolname configuration.
 The result is all functionality from \textsc{Devoid}, plus tactic suggestions.
 %which allows it to implement the  functionality from \textsc{Devoid}.
-In file~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/examples/Example.v}{\circled{3}}, we used this to port
+In file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, we used this to port
 functions and a proof from lists to vectors of \textit{some} length, since \lstinline{list T} $\simeq$ \lstinline{packed_vect T}.
-The decompiler helped us write proofs that we had found
+The decompiler helped us write proofs in the order of hours that we had found
 too hard to write by hand,
-though the suggested tactics did need massaging. % as the decompiler struggled with motive inference
+though the suggested tactics did need massaging.
+% as the decompiler struggled with motive inference
 %for induction with dependent types.
 %Additional effort is needed to improve tactic suggestions for dependent types.
 
-\iffalse
-\begin{figure}
-\lstinputlisting[firstline=1, lastline=18]{often/pi/replica.tex}
-\vspace{-0.4cm}
-\caption{A language (top) and the same language with two swapped constructors and an added constructor (bottom).}
-\label{fig:replica}
-\end{figure}
-\fi
-
 \begin{figure*}
 \begin{minipage}{0.48\textwidth}
-   \lstinputlisting[firstline=1, lastline=9]{often/pi/replica.tex}
+   \lstinputlisting[firstline=1, lastline=9]{replica.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
-   \lstinputlisting[firstline=10, lastline=18]{often/pi/replica.tex}
+   \lstinputlisting[firstline=10, lastline=18]{replica.tex}
 \end{minipage}
-\vspace{-0.4cm}
+\vspace{-0.3cm}
 \caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
+\vspace{0.1cm}
 \label{fig:replica}
 \end{figure*}
 
 \mysubsubsec{Unpack Sigma Types: Vectors of Particular Lengths}
 %The previous case study showed how to get between lists and vectors of \textit{some} length.
-In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/examples/Example.v}{\circled{3}}, we then ported functions and proofs to vectors of a \textit{particular} length, 
+In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, we then ported functions and proofs to vectors of a \textit{particular} length, 
 like \lstinline{vector T n}.
 \textsc{Devoid} had left this step to the proof engineer.
-We supported this in \toolnamec by chaining the previous change
+We supported this in \toolname by chaining the previous change
 with an automatic configuration for unpacking sigma types.
 %To support this, we used one additional automatic configuration for unpacking sigma types.
 %This configuration corresponds to the equivalence between sigma types at a particular projection
@@ -68,21 +61,21 @@ By composition, this transported proofs across the equivalence from Section~\ref
 Two tricks helped with workflow integration for this change:
 1) have the search procedure view \lstinline{vector T n} as 
 $\Sigma$\lstinline{(v : vector T m).n = m} for some \lstinline{m},
-then let \toolnamec instantiate those equalities via unification heuristics, %before transforming,
+then let \toolname instantiate those equalities via unification heuristics, %before transforming,
 and 2) generate a custom eliminator for combining
 list terms with length invariants.
 %This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
 The resulting workflow works not just for lists and vectors, but for any algebraic ornament,
 automating manual effort from \textsc{Devoid}.
-The suggested tactics were again helpful for writing proofs
-that we had struggled with manually, but only after massaging.
+The suggested tactics were helpful for writing proofs in the order of hours
+that we had struggled with manually over the course of days, but only after massaging.
 More effort is needed to improve tactic suggestions for dependent types.
 
 \mysubsubsec{Tuples \& Records: Industrial Use}
-An industrial proof engineer at the company \company has been using \toolnamec in proving
+An industrial proof engineer at the company \company has been using \toolname in proving
 correct an implementation of the TLS handshake protocol.
 %While this is ongoing work, thus far,
-%\toolnamec has helped \company integrate Coq with their existing verification workflow.
+%\toolname has helped \company integrate Coq with their existing verification workflow.
 \company had been using a custom solver-aided verification language to prove correct C programs,
 but had found that at times, the constraint solvers got stuck.
 %and they could not progress on proofs about those programs.
@@ -90,26 +83,28 @@ They had built a compiler that translates their language into Coq's specificatio
 that way proof engineers could finish stuck proofs interactively using Coq.
 However, due to language differences, they had found the generated Gallina programs and specifications difficult to work with.
 
-The proof engineer used \toolnamec to port the automatically generated functions and specifications to more
+The proof engineer used \toolname to port the automatically generated functions and specifications to more
 human-readable functions and specifications, wrote Coq proofs about those functions and specifications, then
-used \toolnamec to port those proofs back to
+used \toolname to port those proofs back to
 proofs about the original functions and specifications.
 %This workflow has allowed for industrial integration with Coq and has helped the proof engineer write functions and proofs
 %that would have otherwise been difficult.
 So far, they have used at least three automatic configurations,
 but they most often used an automatic configuration for porting compiler-produced anonymous tuples
 to named records, as in file~\href{https://github.com/Ptival/saw-core-coq/tree/dump-wip}{\circled{18}}. % TODO aux material %\footnote{\url{https://github.com/Ptival/saw-core-coq/tree/dump-wip}} TODO note in guide it got a bit abandoned because proof engineer got stuck in france...
-%The proof engineer was able to use \toolnamec to integrate Coq into an existing proof engineering
+%The proof engineer was able to use \toolname to integrate Coq into an existing proof engineering
 %workflow using solver-aided tools at \company.
 The workflow was a bit nonstandard,
 so there was little need for tactic suggestions.
+The proof engineer reported an initial time investment learning how to use \toolname,
+followed by later returns.
 %In the initial days, we worked closely with the proof engineer;
 %later, the proof engineer worked independently and reached out occasionally.
 %The proof engineer was able to work independently, but found two challenges with workflow integration:
 %1) they sometimes could not distinguish between user errors and bugs,
-%and 2) they waited only about ten seconds at most for \toolnamec to return.
-%Both informed improvements to \toolnamec, like better error messages, caching,
-%and a way to tell \toolnamec not to $\delta$-reduce certain terms.
+%and 2) they waited only about ten seconds at most for \toolname to return.
+%Both informed improvements to \toolname, like better error messages, caching,
+%and a way to tell \toolname not to $\delta$-reduce certain terms.
 
 \mysubsubsec{Permute Constructors: Modifying a Language}
 The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
@@ -121,15 +116,16 @@ The proof engineer swapped two constructors in the language,
 and added a new constructor \lstinline{Bool}.
 
 This case study and the next case study break this change into two parts.
-In the first part, we used \toolnamec with automatic configuration to repair functions and proofs about the language
-after swapping the constructors~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/Swap.v}{\circled{1}}.
+In the first part, we used \toolname with automatic configuration to repair functions and proofs about the language
+after swapping the constructors~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
 %We also succeeded at more difficult variants of this,
 %like swapping constructors with the same type, renaming all of the constructors,
 %permuting more than two constructors,
 %or permuting and renaming constructors at the same time.
 With a bit of human guidance to choose the permutation from a list of suggestions,
-\toolnamec repaired everything,
-though the original tactics would have also worked.
+\toolname repaired everything,
+though the original tactics would have also worked,
+so there was not a difference in development time.
 %This is a property of the particular proofs that we had access to;
 %As Section~\ref{sec:overview}
 %and more advanced variants of this benchmark show~\circled{1}, even for simple changes, this is not always true.
@@ -137,13 +133,13 @@ though the original tactics would have also worked.
 %The entire \lstinline{Swap.v} file, which includes swapping constructors of every function in the \lstinline{list} module and
 %its dependencies, four variants of the \textsc{Replica} swapping change,
 %and testing a large and ambiguous permutation of a 30 constructor \lstinline{Enum},
-%took \toolnamec less than 90 seconds total. % TODO specs, reproduction
-%Each variant of the \textsc{Replica} swapping change took \toolnamec less than 5 seconds, % TODO specs, reproduction
-%and the change adding a constructor took \toolnamec less than 30 seconds. % TODO specs, reproduction
+%took \toolname less than 90 seconds total. % TODO specs, reproduction
+%Each variant of the \textsc{Replica} swapping change took \toolname less than 5 seconds, % TODO specs, reproduction
+%and the change adding a constructor took \toolname less than 30 seconds. % TODO specs, reproduction
 
 \mysubsubsec{Add new Constructors: Extending a Language}
-We then used \toolnamec to repair functions 
-after adding the new constructor in Figure~\ref{fig:replica}, separating out the proof obligations for the new constructor from the old terms~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{\circled{19}}.
+We then used \toolname to repair functions 
+after adding the new constructor in Figure~\ref{fig:replica}, separating out the proof obligations for the new constructor from the old terms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}}.
 %The resulting functions were guaranteed to preserve the behavior of the old terms. % TODO do the proofs too
 This change combined manual and automatic configuration.
 We defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across the equivalence \lstinline{Old.Term + Diff} $\simeq$ \lstinline{New.Term}.
@@ -151,37 +147,44 @@ This resulted in case explosion, but was formulaic, and pointed to a clear path 
 The repaired functions guaranteed preservation of the behavior of the original functions. %over \lstinline{Old.Term} before the change.
 
 Adding constructors was less simple than swapping.
-Most notably, the repaired terms were (unlike in the swap case) inefficient compared to human-written terms.
+For example, \toolname did not yet save us time over the proof engineer from the user study;
+fully automating the configuration would have helped significantly.
+In addition, the repaired terms were (unlike in the swap case) inefficient compared to human-written terms.
 For now, they make good regression tests for the human-written terms---in the future,
 we hope to automate the discovery of the more efficient terms,
 or use the refinement framework CoqEAL~\cite{cohen:hal-01113453}
 to get between proofs of the inefficient and efficient terms.
 
+\vspace{0.105cm}
 \mysubsubsec{Factor out Constructors: External Example}
 The change from Figure~\ref{fig:equivalence2} came at the request of a non-author.
 We supported this using a manual configuration that described which constructor to map to \lstinline{true}
-and which constructor to map to \lstinline{false}~\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
+and which constructor to map to \lstinline{false}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
 The configuration was very simple for us to write, and the repaired tactics were immediately useful.
+The development time savings were on the order of minutes for a small proof development.
+Since most of the modest development time went into writing the configuration,
+we expect time savings would increase for a larger development.
 
+\vspace{0.105cm}
 \mysubsubsec{Permute Hypotheses: External Example}
-The change in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/flip.v}{\circled{20}} came at the request of a different non-author (a cubical type theory expert),
-and shows how to  use \toolnamec to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
+The change in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} came at the request of a different non-author (a cubical type theory expert),
+and shows how to  use \toolname to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
 \lstinline{T2} $\rightarrow$ \lstinline{T1} $\rightarrow$ \lstinline{T3}.
 This configuration was manual.
 Since neither type was inductive, this change used the generic construction for any equivalence.
 %instantiated to this particular equivalence.
 This worked well, but necessitated some manual annotation due to the lack of custom unification heuristics for 
-manual configuration.
+manual configuration, and so did not yet save development time, and likely still would not have had the proof development been larger.
+Supporting custom unification heuristics would improve this workflow.
 
+\vspace{0.105cm}
 \mysubsubsec{Change Inductive Structure: Unary to Binary}
-In \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{\circled{5}}, we used \toolnamec to support a classic example of changing inductive structure:
-updating unary to binary numbers~\cite{magaud2000changing}.
+In \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, we used \toolname to support a classic example of changing inductive structure:
+updating unary to binary numbers,
+as in Figure~\ref{fig:nattobin}.
 % TODO fin and vect? mention somewhere?
-In Coq, a binary number \lstinline{N} (Figure~\ref{fig:nattobin}) is either zero or a positive binary number. A positive binary number
-is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI}) or
-0 (\lstinline{xO}).
-This allows for a fast addition function, found in the Coq standard library.
-In the style of the classic example~\cite{magaud2000changing}, we used \toolnamec to derive a slow binary
+Binary numbers allow for a fast addition function, found in the Coq standard library.
+In the style of \citet{magaud2000changing}, we used \toolname to derive a slow binary
 addition function that does not refer to \lstinline{nat},
 and to port proofs from unary to slow binary addition.
 We then showed that the ported theorems hold over fast binary addition.
@@ -212,10 +215,10 @@ have different inductive structures.
 By writing a manual configuration with this \lstinline{Iota}, it was possible for us to implement this transformation 
 that had been its own tool.
 
-While porting addition from \lstinline{nat} to \lstinline{N} was automatic after configuring \toolnamec,
+While porting addition from \lstinline{nat} to \lstinline{N} was automatic after configuring \toolname,
 porting proofs about addition took more work.
 Due to the lack of unification heuristics for manual configuration,
-we had to annotate the proof term to tell \toolnamec that implicit casts in the inductive cases of proofs were applications of \lstinline{Iota}
+we had to annotate the proof term to tell \toolname that implicit casts in the inductive cases of proofs were applications of \lstinline{Iota}
 over \lstinline{nat}.
 These annotations were formulaic, but tricky to write.
 Unification heuristics would go a long way toward improving the workflow. % for this use case.
@@ -225,14 +228,16 @@ which we found simple to port to fast binary addition.
 We hope to automate this last step in the future using CoqEAL. %~\cite{cohen:hal-01113453}.
 Repaired tactics were partially useful, but failed to understand custom eliminators like \lstinline{N.peano_rect}, and to generate useful
 tactics for applications of \lstinline{Iota}; both of these are clear paths to more useful tactics.
+The development time for this proof with \toolname was comparable to reference manual repairs by external proof engineers.
+Custom unification heuristics would help bring returns on investment for experts in this use case.
 
 %\end{enumerate}
-%\item \toolnamec was flexible. Each search procedure for automatic configuration
+%\item \toolname was flexible. Each search procedure for automatic configuration
 %was simple to write, and handled an entire class of equivalences corresponding to real use cases.
 %Manual configuration was possible for interesting use cases.
-%\item \toolnamec had good enough workflow integration to support real use cases.
+%\item \toolname had good enough workflow integration to support real use cases.
 %The tactic decompiler showed promising early results with clear paths to improvements.
-%Some workflows were unanticipated and informed design changes in \toolnamec.
+%Some workflows were unanticipated and informed design changes in \toolname.
 %\end{enumerate}
 
 \iffalse
@@ -241,13 +246,13 @@ tactics for applications of \lstinline{Iota}; both of these are clear paths to m
 
 \begin{figure}
 \begin{minipage}{0.49\columnwidth}
-   \lstinputlisting[firstline=1, lastline=9]{often/pi/replica.tex}
+   \lstinputlisting[firstline=1, lastline=9]{replica.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.49\columnwidth}
-   \lstinputlisting[firstline=11, lastline=19]{often/pi/replica.tex}
+   \lstinputlisting[firstline=11, lastline=19]{replica.tex}
 \end{minipage}
-\vspace{-0.4cm}
+\vspace{-0.3cm}
 \caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
 \vspace{-0.1cm}
 \label{fig:replica}
@@ -261,15 +266,15 @@ as well as some definitions and proofs about the language.
 The proof engineer swapped two constructors in the term language,
 and added a new constructor \lstinline{Bool}.
 
-We used \toolnamec to automatically configure the proof term transformation to swap these constructors,
+We used \toolname to automatically configure the proof term transformation to swap these constructors,
 then repair all of the functions and proofs.
 We also succeeded at more difficult variants of this,
 like swapping constructors with the same type, renaming all of the constructors,
 permuting more than two constructors,
 or permuting and renaming constructors at the same time.
-In all cases, with a bit of human guidance, \toolnamec repaired the functions and proofs.
+In all cases, with a bit of human guidance, \toolname repaired the functions and proofs.
 
-We then extended the inductive type to add the new constructor, and used \toolnamec to repair terms,
+We then extended the inductive type to add the new constructor, and used \toolname to repair terms,
 separating out the proof obligations for the new constructor from the old terms.
 The resulting terms were guaranteed to preserve the behavior of the old terms.
 
@@ -292,7 +297,7 @@ dep_elim P f0 f1 f2 f3 f4 f5 f6 t : P t :=(@\vspace{-0.04cm}@)
 \end{lstlisting}
 
 Adding the constructor combined a manual configuration with an automatic configuration.
-The details of this are in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v}.
+The details of this are in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{add_constr.v}.
 At a high level, we defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across this equivalence:
 
 \begin{lstlisting}
@@ -302,14 +307,14 @@ This made it simple to guarantee preservation of the behavior over \lstinline{Ol
 
 \subsubsection{Example}
 
-We used \toolnamec to automatically update the functions and proofs in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/Swap.v}{\lstinline{Swap.v}} from the \textsc{Replica} benchmark.
+We used \toolname to automatically update the functions and proofs in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\lstinline{Swap.v}} from the \textsc{Replica} benchmark.
 This included functions about \lstinline{Term}, as well as a large record \lstinline{EpsilonLogic} that encoded the semantics of the language,
 plus a proof about that record.
 %\begin{lstlisting}
 %Theorem eval_eq_true_or_false : $\forall$ (L : EpsilonLogic) env (t1 t2 : Term),(@\vspace{-0.04cm}@)
 %  L.eval env (Eq t1 t2) = L.vTrue $\vee$ L.eval env (Eq t1 t2) = L.vFalse.
 %\end{lstlisting}
-\toolnamec automatically updated all of these. For the inductive proof, it produced
+\toolname automatically updated all of these. For the inductive proof, it produced
 a new inductive proof that used the induction principle with the swapped constructors.
 It also discovered all other 23 type-correct permutations of constructors, all available for selection to 
 prove the appropriate equivalence and use to update functions and proofs.
@@ -317,10 +322,10 @@ It presented the desired transformation as the first option in the list, so that
 was pass the argument \lstinline{mapping 0} to \lstinline{Repair module} for it to handle this change.
 It was also able to handle the more advanced variants of this change.
 
-In \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v},
+In \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{add_constr.v},
 we then updated the functions to add the new constructor.
 This resulted in some case explosion, but was very formulaic.
-Since the functions \toolnamec produced were guaranteed to preserve the behavior of the old functions,
+Since the functions \toolname produced were guaranteed to preserve the behavior of the old functions,
 we used them as regression tests to check the behavior of the handwritten functions from the benchmark.
 
 \subsubsection{Lessons}
@@ -332,34 +337,34 @@ Most notably, the repaired terms were (unlike in the swap case) inefficient comp
 For now, they make good regression tests for the human-written terms---in the future,
 we hope to automate the discovery of the more efficient term as well.
 
-The swap change alone was simple enough that \toolnamec would not have been necessary
+The swap change alone was simple enough that \toolname would not have been necessary
 for updating the proofs for the initial change---keeping the tactics the same would have also worked.
 %This is a property of the particular proofs that we had access to;
 As we saw in Sections~\ref{sec:overview} and~\ref{sec:key1}, even for simple changes, this is not always true.
-More advanced variants of this benchmark that we tried did necessitate \toolnamec,
-and \toolnamec worked well for those. % TODO what happens with the tactic decompiler for these?
+More advanced variants of this benchmark that we tried did necessitate \toolname,
+and \toolname worked well for those. % TODO what happens with the tactic decompiler for these?
 The entire \lstinline{Swap.v} file, which includes swapping constructors of every function in the \lstinline{list} module and
 its dependencies, four variants of the \textsc{Replica} swapping change,
 and testing a large and ambiguous permutation of a 30 constructor \lstinline{Enum},
-took \toolnamec less than 90 seconds total. % TODO specs, reproduction
-Each variant of the \textsc{Replica} swapping change took \toolnamec less than 5 seconds, % TODO specs, reproduction
-and the change adding a constructor took \toolnamec less than 30 seconds. % TODO specs, reproduction
+took \toolname less than 90 seconds total. % TODO specs, reproduction
+Each variant of the \textsc{Replica} swapping change took \toolname less than 5 seconds, % TODO specs, reproduction
+and the change adding a constructor took \toolname less than 30 seconds. % TODO specs, reproduction
 
 \subsection{Vectors from Lists}
 \label{sec:dep}
 
-The proof term transformation in \toolnamec is based on the proof term transformation from
-\textsc{Devoid}, an earlier version of \toolnamec.
+The proof term transformation in \toolname is based on the proof term transformation from
+\textsc{Devoid}, an earlier version of \toolname.
 \textsc{Devoid} supported proof reuse across \textit{algebraic ornaments}, which describe relations
 between two inductive types, where one type is exactly the other type indexed by a fold~\cite{mcbride}.
 The standard example of this is the relation between a list and a
 length-indexed vector, like we saw in Figure~\ref{fig:listtovect} in Section~\ref{sec:key1}.
 
-With \toolnamec, we were able to not only support algebraic ornaments as in \textsc{Devoid},
+With \toolname, we were able to not only support algebraic ornaments as in \textsc{Devoid},
 but also automate effort that had previously been manual.
 Several proof engineers including the industrial proof engineer, a Reddit user,
 and someone on the \lstinline{coq-club} message board contacted us expressing interest in using this functionality.
-%, though we do not yet know if the latter two ended up using \toolnamec. % TODO honestly ask
+%, though we do not yet know if the latter two ended up using \toolname. % TODO honestly ask
 
 \subsubsection{Configuration}
 
@@ -440,15 +445,15 @@ and \lstinline{Iota} does not change.
 
 \subsubsection{Example}
 
-The expanded example from the \textsc{Devoid} paper is in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/examples/Example.v}{\lstinline{Example.v}}.
+The expanded example from the \textsc{Devoid} paper is in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\lstinline{Example.v}}.
 The \textsc{Devoid} example ported a list \lstinline{zip} function,
 a \lstinline{zip_with} function, and a proof \lstinline{zip_with_is_zip} relating the two
 functions from lists to vectors of some length.
 It then manually ported those proofs to proofs over vectors at a particular length.
-The updated \toolnamec example automates this last step.
+The updated \toolname example automates this last step.
 
 %The workflow for this was a bit different than it was with \textsc{Devoid}.
-To handle this, we used a custom eliminator \toolnamec generated to combine the list functions
+To handle this, we used a custom eliminator \toolname generated to combine the list functions
 with length invariants, and to combine the list proofs with the proofs about those length invariants.
 This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
 
@@ -490,7 +495,7 @@ with functions \lstinline{zip_with} and \lstinline{zip} repaired as well.
 %\paragraph{Workflow Integration}
 The result was a simplified workflow from \textsc{Devoid} that automated steps 
 that had previously been manual.
-%\toolnamec implemented some additional automation to generate eliminators that help separate out this additional information
+%\toolname implemented some additional automation to generate eliminators that help separate out this additional information
 %for repair. 
 The tactic decompiler suggested tactics that helped us write tactic proofs ourselves that had been
 prohibitively difficult for us to write by hand.
@@ -506,7 +511,7 @@ All of the case studies so far have dealt with pairs of types with the same indu
 or with new information.
 Some of the oldest problems in the transport literature deal with \textit{changing} inductive
 structure without adding any new information.
-We have realized a classic example~\cite{magaud2000changing} of this with \toolnamec using a manual configuration:
+We have realized a classic example~\cite{magaud2000changing} of this with \toolname using a manual configuration:
 updating unary to binary natural numbers.
 % TODO fin and vect? mention somewhere?
 
@@ -514,7 +519,7 @@ In Coq, a binary number \lstinline{N} (see Section~\ref{sec:key2}, Figure~\ref{f
 is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI})
 or nothing (\lstinline{xO}).
 This allows for a fast addition function, found in the Coq standard library.
-In the style of the classic example~\cite{magaud2000changing}, we use \toolnamec to derive a slow binary
+In the style of \citet{magaud2000changing}, we use \toolname to derive a slow binary
 addition function that does not refer to \lstinline{nat}.
 From that, we port proofs over unary addition to binary addition,
 removing all references to \lstinline{nat}, and show that they hold over fast binary addition too.
@@ -522,7 +527,7 @@ removing all references to \lstinline{nat}, and show that they hold over fast bi
 \subsubsection{Configuration}
 We configured this manually using the \lstinline{Configure} command,
 which takes the configuration as an argument.
-The result is in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{\lstinline{nonorn.v}}.
+The result is in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\lstinline{nonorn.v}}.
 The configuration for \lstinline{nat} was straightforward.
 For \lstinline{N}, we used functions from the Coq standard library that
 behaved like the \lstinline{nat} constructors:
@@ -557,9 +562,9 @@ Defined.
 \end{lstlisting}
 
 The need for a nontrivial \lstinline{Iota} comes from the fact that \lstinline{N} has a different
-inductive structure from \lstinline{nat}, and is noted as far back as 2000~\cite{magaud2000changing}.
+inductive structure from \lstinline{nat}, and is noted as far back as \citet{magaud2000changing}.
 This corresponds to a broader pattern---it captures the essence of the change in inductive structure.
-\toolnamec's configurable proof term transformation captures that intuition.
+\toolname's configurable proof term transformation captures that intuition.
 
 \subsubsection{Example}
 
@@ -570,7 +575,7 @@ Repair nat N in add as slow_add.
 \end{lstlisting}
 The result (tellingly named) has the same slow behavior as the \lstinline{add} function over \lstinline{nat}.
 However, it no longer refers to \lstinline{nat} in any way.
-Like the classic example~\cite{magaud2000changing}, we found it easy to manually prove that
+Like \citet{magaud2000changing}, we found it easy to manually prove that
 this has the same behavior as fast binary addition:
 
 \begin{lstlisting}
@@ -582,7 +587,7 @@ Proof.(@\vspace{-0.04cm}@)
 Qed.
 \end{lstlisting}
 
-We then used \toolnamec again to transform a proof:
+We then used \toolname again to transform a proof:
 \begin{lstlisting}
 add_n_Sm : $\forall$ (n m : nat), S (add n m) = add n (S m).
 \end{lstlisting}
@@ -593,7 +598,7 @@ slow_add_n_Sm : $\forall$ (n m : N), N.succ (slow_add n m) = slow_add n (N.succ 
 \end{lstlisting}
 This was not quite as push-button.
 It involved a manual expansion step, turning implicit casts in the inductive case
-into explicit applications of \lstinline{Iota} over \Aa.
+into explicit applications of \lstinline{Iota} over \A.
 These applications were formulaic, but tricky to write.
 Once we had that, though, we could run the same \lstinline{Repair} command
 to get \lstinline{slow_add_n_Sm}.
@@ -613,7 +618,7 @@ Qed.
 It was enough to implement this transformation that had previously been its own tool
 just by writing a configuration with \lstinline{Iota}. 
 
-The file took under a second for us to compile using \toolnamec.
+The file took under a second for us to compile using \toolname.
 We did not need tactic suggestions for this workflow,
 but we did note that supporting custom eliminators like \lstinline{N.peano_rect} would be a simple way
 to improve the decompiler.
@@ -625,10 +630,10 @@ We discuss ideas for this in Sections~\ref{sec:related} and~\ref{sec:discussion}
 \subsection{Industrial Use}
 \label{sec:industry}
 
-An industrial proof engineer at Galois has been using \toolnamec in proving
+An industrial proof engineer at Galois has been using \toolname in proving
 correct an implementation of the TLS handshake protocol.
 While this is ongoing work, thus far,
-\toolnamec has helped \company integrate Coq with their existing verification workflow.
+\toolname has helped \company integrate Coq with their existing verification workflow.
 
 \company had been using a custom solver-aided verification language to prove correct C programs.
 They had found that at times, those constraint solvers got stuck, and they could not
@@ -637,14 +642,14 @@ They had built a compiler that translates their solver-aided language into Coq's
 so proof engineers could finish stuck proofs interactively using Coq.
 However, the generated Gallina programs and specifications were sometimes too difficult to work with.
 
-A proof engineer at \company has used \toolnamec to work with those automatically generated programs and specifications
+A proof engineer at \company has used \toolname to work with those automatically generated programs and specifications
 with the following workflow:
 
 \begin{enumerate}
-\item use \toolnamec to update the automatically generated functions and specifications into more
+\item use \toolname to update the automatically generated functions and specifications into more
 human-readable functions and specifications, then
 \item write Coq proofs about the more human-readable functions and specifications, then finally
-\item use \toolnamec again to update those proofs about human-readable functions and specifications back to
+\item use \toolname again to update those proofs about human-readable functions and specifications back to
 proofs about the original automatically generated functions and specifications.
 \end{enumerate}
 This workflow has allowed for industrial integration with Coq and has helped the proof engineer write functions and proofs
@@ -656,26 +661,26 @@ that would have otherwise been difficult.
 
 \begin{figure*}
 \begin{minipage}{0.33\textwidth}
-   \lstinputlisting[firstline=1, lastline=10]{often/pi/records.tex}
+   \lstinputlisting[firstline=1, lastline=10]{records.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.66\textwidth}
-   \lstinputlisting[firstline=12, lastline=21]{often/pi/records.tex}
+   \lstinputlisting[firstline=12, lastline=21]{records.tex}
 \end{minipage}
 \vspace{-0.5cm}
 \caption{Two unnamed tuples (left) and corresponding named records (right).}
 \label{fig:records}
 \end{figure*}
 
-Some example proofs that the proof engineer used \toolnamec for
+Some example proofs that the proof engineer used \toolname for
 can be found in a branch of the proof engineer's repository.\footnote{\url{https://github.com/Ptival/saw-core-coq/tree/dump-wip}}
-The proof engineer used \toolnamec to port anonymous tuples produced by \company' compiler
+The proof engineer used \toolname to port anonymous tuples produced by \company' compiler
 to named records, as in the example in Figure~\ref{fig:records}.
 
 We implemented a search procedure for the proof engineer to automatically configure the proof term transformation to an equivalence
 between nested tuples and named records.
 The search procedure triggered automatically when the proof engineer called the \lstinline{Repair} command.
-%It set \Aa to be the record type and \B to be the tuple.
+%It set \A to be the record type and \B to be the tuple.
 The configuration it found for the record type was straightforward: identity for \lstinline{Eta},
 the record constructor for \lstinline{DepConstr}, the record eliminator for \lstinline{DepElim}, and definitional \lstinline{Iota}.
 For the tuple, it set \lstinline{Eta} to expand and project, for example for \lstinline{Handshake}:
@@ -701,7 +706,7 @@ For \lstinline{Connection}, it found similar \lstinline{Eta}, \lstinline{DepCons
 except that \lstinline{Eta} included all nine projections, \lstinline{DepConstr} \textit{recursively} applied the
 pair constructor, and \lstinline{DepElim} \textit{recursively} eliminated the pair.
 This induced an equivalence between the nested tuple and record,
-which \toolnamec generated and proved automatically.
+which \toolname generated and proved automatically.
 
 \subsubsection{Example}
 Using this configuration, the proof engineer automatically ported this compiler-generated function:
@@ -730,7 +735,7 @@ Proof.(@\vspace{-0.04cm}@)
   intros []. simpl. intros H. subst. reflexivity.(@\vspace{-0.04cm}@)
 Defined.
 \end{lstlisting} % TODO better proof
-and then used \toolnamec to automatically port these back to proofs about the original function:
+and then used \toolname to automatically port these back to proofs about the original function:
 
 \begin{lstlisting}[backgroundcolor=\color{cyan!30}]
 Lemma corkLemma :(@\vspace{-0.04cm}@)
@@ -748,17 +753,17 @@ This search procedure was easy for us to implement. %using techniques from
 Flexibility could be further improved by exposing an interface to allow proof engineers to
 write search procedures themselves.
 
-The proof engineer was able to use \toolnamec to integrate Coq into an existing proof engineering
+The proof engineer was able to use \toolname to integrate Coq into an existing proof engineering
 workflow using solver-aided tools at \company.
-The workflow for using \toolnamec itself was a bit nonstandard,
+The workflow for using \toolname itself was a bit nonstandard,
 and there was little need for tactic proofs about the compiler-generated functions and specifications.
 In the initial days, we worked closely with the proof engineer;
 later, the proof engineer worked independently and reached out occasionally by email or phone.
-\toolnamec was usable enough for this to work, but we found two challenges with workflow integration:
+\toolname was usable enough for this to work, but we found two challenges with workflow integration:
 the proof engineer sometimes could not distinguish between user errors and bugs in our code,
-and the proof engineer typically waited only about ten seconds at most for \toolnamec to return.
-Both observations informed improvements to \toolnamec, like better error messages, caching of transformed subterms,
-and the ability to tell \toolnamec not to $\delta$-reduce certain terms.
+and the proof engineer typically waited only about ten seconds at most for \toolname to return.
+Both observations informed improvements to \toolname, like better error messages, caching of transformed subterms,
+and the ability to tell \toolname not to $\delta$-reduce certain terms.
 % TODO how long did compiling the file take?
 \fi
 

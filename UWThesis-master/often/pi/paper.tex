@@ -1,0 +1,332 @@
+%% For double-blind review submission, w/o CCS and ACM Reference (max submission space)
+\documentclass[sigplan,screen]{acmart}
+%% For double-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review,anonymous]{acmart}\settopmatter{printfolios=true}
+%% For single-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For single-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true}
+%% For final camera-ready submission, w/ required CCS and ACM Reference
+%\documentclass[acmsmall]{acmart}\settopmatter{}
+
+%%% The following is specific to PLDI '21 and the paper
+%%% 'Proof Repair across Type Equivalences'
+%%% by Talia Ringer, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman.
+%%%
+\setcopyright{acmlicensed}
+\acmPrice{15.00}
+\acmDOI{10.1145/3453483.3454033}
+\acmYear{2021}
+\copyrightyear{2021}
+\acmSubmissionID{pldi21main-p43-p}
+\acmISBN{978-1-4503-8391-2/21/06}
+\acmConference[PLDI '21]{Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation}{June 20--25, 2021}{Virtual, UK}
+\acmBooktitle{Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation (PLDI '21), June 20--25, 2021, Virtual, UK}
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%% Note: author/year citations are required for papers published as an
+%% issue of PACMPL.
+%\citestyle{acmauthoryear}   %% For author/year citations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Note: Authors migrating a paper from PACMPL format to traditional
+%% SIGPLAN proceedings format must update the '\documentclass' and
+%% topmatter commands above; see 'acmart-sigplanproc-template.tex'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Some recommended packages.
+\usepackage{booktabs}   %% For formal tables:
+                        %% http://ctan.org/pkg/booktabs
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+                        %% http://ctan.org/pkg/subcaption
+
+\usepackage{enumerate} % for lists
+\usepackage{listings} % for code
+\usepackage{xspace} % so we don't need to figure out spacing after \toolname every time
+\usepackage{mathpartir} % for inference rules
+\usepackage{bbm} % to render N for the natural numbers
+\usepackage{syntax} % for code highlighting
+\usepackage{xcolor} % for code highlighting
+\usepackage{colortbl} % to black out table cells
+\usepackage{multirow} % for tables
+\usepackage{tikz} % for fancy circles and smileys
+
+% Nice rendering of Coq code
+\lstdefinelanguage{coq}{
+    keywords={Repair, module, Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, Type, Prop, Set, fun, fix, forall, Require, Import, Fixpoint, match, end, with, as, return, struct, Qed, Defined, let},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstset{language=coq} % default
+
+\newcommand\toolname{\textsc{Pumpkin P}i\xspace} % tool name
+\newcommand\company{Galois\xspace} % company name
+\newcommand\A{$A$\xspace} % recurring type A
+\newcommand\B{$B$\xspace} % recurring type B
+\newcommand{\reducedstrut}{\vrule width 0pt height .9\ht\strutbox depth .9\dp\strutbox\relax} % for \codediff and \codeauto
+\newcommand{\codediff}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight the difference between two code blocks
+\newcommand{\codesima}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{2}}\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\renewcommand{\textsuperscript}[1]{}
+\newcommand{\codesimb}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{red!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{1}}\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesimc}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{yellow!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{3}}\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesimd}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{green!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{4}}\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codesime}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{blue!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{5}}\/}%
+  \endgroup
+} % to highlight the similarities between two code blocks
+\newcommand{\codeauto}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{cyan!30}{\reducedstrut#1\/}%
+  \endgroup
+} % to highlight automatically-generated terms
+\newcommand{\mysubsubsec}[1]{\vspace{0.40em} \noindent {{\textbf{#1.}}}}
+
+% https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+% https://tex.stackexchange.com/questions/58901/something-between-frownie-and-smiley/
+\DeclareRobustCommand\good{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-145:0.8mm) arc (-145:-35:0.8mm);
+}}
+
+\DeclareRobustCommand\ok{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-135:0.9mm) -- (-45:0.9mm);
+}}
+
+\DeclareRobustCommand\bad{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-135:0.9mm) arc (145:35:0.8mm);
+}}
+
+\begin{document}
+
+%% Title information
+\title[]{Proof Repair Across Type Equivalences}         %% [Short Title] is optional;
+                                        %% when present, will be used in
+                                        %% header instead of Full Title.
+%\titlenote{}             %% \titlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+%\subtitle{Subtitle}                     %% \subtitle is optional
+%\subtitlenote{with subtitle note}       %% \subtitlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+
+
+%% Author information
+%% Contents and number of authors suppressed with 'anonymous'.
+%% Each author should be introduced by \author, followed by
+%% \authornote (optional), \orcid (optional), \affiliation, and
+%% \email.
+%% An author may have multiple affiliations and/or emails; repeat the
+%% appropriate command.
+%% Many elements are not rendered, but should be provided for metadata
+%% extraction tools.
+
+%% Author with single affiliation.
+\author{Talia Ringer}
+
+\affiliation{
+  \institution{University of Washington}  
+  \country{USA}                    %% \country is recommended
+}
+\email{tringer@cs.washington.edu}          %% \email is recommended
+
+%% Author with two affiliations and emails.
+\author{RanDair Porter}
+
+\affiliation{
+  \institution{University of Washington}  
+  \country{USA}                    %% \country is recommended
+}
+\email{randair@uw.edu}         %% \email is recommended
+
+\author{Nathaniel Yazdani}
+
+\affiliation{
+  \institution{Northeastern University}  
+  \country{USA}                    %% \country is recommended
+}
+\email{yazdani.n@husky.neu.edu}         %% \email is recommended
+
+\author{John Leo}
+
+\affiliation{
+  \institution{Halfaya Research}  
+  \country{USA}                    %% \country is recommended
+}
+\email{leo@halfaya.org}         %% \email is recommended
+
+\author{Dan Grossman}
+
+\affiliation{
+  \institution{University of Washington}  
+  \country{USA}                    %% \country is recommended
+}
+\email{djg@cs.washington.edu}         %% \email is recommended
+
+%% Abstract
+%% Note: \begin{abstract}...\end{abstract} environment must come
+%% before \maketitle command
+\begin{abstract}
+We describe a new approach to automatically repairing broken proofs in the Coq proof assistant in response to changes in types.
+Our approach combines a configurable proof term transformation with a decompiler from proof terms to suggested tactic scripts.
+The proof term transformation implements transport across equivalences in a way that removes references to the old version of the changed type and does not rely on axioms beyond those Coq assumes.
+
+We have implemented this approach in \toolname, an extension to the \textsc{Pumpkin Patch} Coq plugin suite for proof repair.
+We demonstrate \toolname's flexibility on eight case studies,
+including supporting a benchmark from a user study,
+easing development with dependent types,
+porting functions and proofs between unary and binary numbers,
+and supporting an industrial proof engineer to interoperate between Coq and other verification tools more easily.
+\end{abstract}
+
+%% 2012 ACM Computing Classification System (CSS) concepts
+%% Generate at 'http://dl.acm.org/ccs/ccs.cfm'.
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10011006.10011008</concept_id>
+<concept_desc>Software and its engineering~General programming languages</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003456.10003457.10003521.10003525</concept_id>
+<concept_desc>Social and professional topics~History of programming languages</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~General programming languages}
+\ccsdesc[300]{Social and professional topics~History of programming languages}
+%% End of generated code
+
+
+%% Keywords
+%% comma separated list
+\keywords{proof engineering, proof repair, proof reuse}  %% \keywords are mandatory in final camera-ready submission
+
+
+%% \maketitle
+%% Note: \maketitle command must come after title commands, author
+%% commands, abstract environment, Computing Classification System
+%% environment and commands, and keywords command.
+\maketitle
+
+%% Body
+\input{intro}
+\input{overview}
+\input{reuse}
+\input{meat}
+\input{decompiler}
+\input{tool}
+\input{search}
+\input{related}
+\input{conclusion}
+
+%% Acknowledgments
+\begin{acks}                            %% acks environment is optional
+                                        %% contents suppressed with 'anonymous'
+  %% Commands \grantsponsor{<sponsorID>}{<name>}{<url>} and
+  %% \grantnum[<url>]{<sponsorID>}{<number>} should be used to
+  %% acknowledge financial support and will be used by metadata
+  %% extraction tools.
+% TODO Gaetan for sure
+% TODO call out Anders and Conor specially, given depth of feedback
+% TODO Jasper
+This paper has really been a community effort.
+Anders M\"ortberg and Conor McBride gave us \textit{hours} worth of detailed feedback that was instrumental to writing this paper.
+Nicolas Tabareau helped us understand the need to port definitional to propositional equalities.
+Valentin Robert gave us feedback on usability that informed tool design.
+Ga\"{e}tan Gilbert, James Wilcox, and Jasper Hugunin all at some point helped us write Coq proofs;
+let this be a record that we owe Ga\"{e}tan a beer, and we owe James boba.
+
+And of course, we thank our shepherd Gerwin Klein, and we thank all of our reviewers.
+We got other wonderful feedback on the paper from 
+Cyril Cohen, Tej Chajed, Ben Delaware, Jacob Van Geffen, Janno, James Wilcox, Chandrakana Nandi, 
+Martin Kellogg, Audrey Seo, James Decker,
+Ben Kushigian, John Regehr, and Justus Adam.
+The Coq developers have for \textit{years} given us frequent and efficient feedback on plugin APIs for tool implementation.
+The programming languages community on Twitter (yes, seriously) has also been essential to this effort.
+Especially during a pandemic. 
+And we'd like to extend a special thank you to Talia's mentor, Derek Dreyer.
+
+We have also gotten a lot of feedback on future ideas that we are excited to pursue.
+Carlo Angiuli has helped us understand some beautiful theory beneath our implementation 
+(spoiler: we believe the analogy connecting \lstinline{DepConstr} and \lstinline{DepElim} to constructors and eliminators
+has formal meaning in terms of initial algebras), and we are excited to integrate these insights into future papers
+and use them to generalize our insights.
+Alex Polozov helped us sketch out ideas for future work with the decompiler.
+And we got wonderful feedback on e-graph integration for future work from 
+Max Willsey, Chandrakana Nandi, Remy Wang, Zach Tatlock, Bas Spitters, Steven Lyubomirsky, Andrew Liu, Mike He, Ben Kushigian, 
+Gus Smith, and Bill Zorn.
+
+
+This material is based upon work supported by the \grantsponsor{GS100000001}{National Science Foundation}{http://dx.doi.org/10.13039/100000001} Graduate Research Fellowship under Grant No.~\grantnum{GS100000001}{DGE-1256082}. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation. % TODO PEO?
+\end{acks}
+
+
+%% Bibliography
+\balance
+\bibliography{paper.bib}
+
+
+%% Appendix
+%\appendix
+%\section{Appendix}
+
+%Text of appendix \ldots
+
+\end{document}

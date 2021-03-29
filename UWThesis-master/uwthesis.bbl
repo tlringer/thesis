@@ -422,6 +422,12 @@ Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
 \newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
   on Certified Programs and Proofs}, pages 115--129. ACM, 2018.
 
+\bibitem{robert2018}
+Valentin Robert.
+\newblock {\em Front-end tooling for building and maintaining dependently-typed
+  functional programs}.
+\newblock PhD thesis, UC San Diego, 2018.
+
 \bibitem{selsam:lean}
 Daniel Selsam and Leonardo de~Moura.
 \newblock Congruence closure in intensional type theory.

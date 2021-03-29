@@ -5,12 +5,12 @@
 %More can be found in a recent survey of proof engineering~\cite{PGL-045}.
 
 \mysubsubsec{Proof Repair}
-%\toolnamec is not the first proof repair tool.
+%\toolname is not the first proof repair tool.
 The search procedures in \textbf{Configure} are based partly on ideas from the original \textsc{Pumpkin Patch} prototype~\cite{pumpkinpatch}.
 %which includes similar search procedures for discovering patches to fix broken proofs.
 The \textsc{Pumpkin Patch} prototype did not apply the patches that it finds,
 handle changes in structure, or include support for tactics beyond the use of hints.
-%\toolnamec addresses these limitations.
+%\toolname addresses these limitations.
 
 Proof repair can be viewed as a form of \textit{program repair}~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526}
 for proof assistants.
@@ -22,7 +22,7 @@ and examples thanks to constructivism.
 
 \mysubsubsec{Proof Refactoring}
 %Proof repair is related to proof refactoring~\cite{WhitesidePhD}. 
-%and a number of the changes that \toolnamec supports can be viewed as refactorings.
+%and a number of the changes that \toolname supports can be viewed as refactorings.
 The proof refactoring tool Levity~\cite{Bourke12} for Isabelle/HOL has seen large-scale industrial use.
 Levity focuses on a different task: moving lemmas.
 Chick~\cite{robert2018} and RefactorAgda~\cite{wibergh2019} are proof refactoring tools
@@ -39,28 +39,36 @@ CoqPIE~\cite{Roe2016} is an IDE with support for simple refactorings of Ltac scr
 Tactician~\cite{adams2015} is a refactoring tool for switching between tactics and tacticals.
 This approach is not tractable for more complex changes~\cite{robert2018}.
 
+\vspace{0.281cm}
 \mysubsubsec{Proof Reuse}
 %Proof repair is proof reuse with the additional constraint that one specification ceases to exist.
 A few proof reuse tools work by proof term transformation and so can be used for repair.
-A 2004 paper~\cite{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
-\toolnamec generalizes the transformation from \textsc{Devoid}~\cite{Ringer2019},
+\citet{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
+\toolname generalizes the transformation from \textsc{Devoid}~\cite{Ringer2019},
 which transformed proofs along algebraic ornaments~\cite{mcbride}.
-A 2000 paper~\cite{magaud2000changing} implements a proof term transformation between
+\citet{magaud2000changing} implement a proof term transformation between
 unary and binary numbers. 
-Both of these fit into \toolnamec configurations,
-and none implements tactic support in Coq like \toolnamec does.
-The expansion algorithm from the 200 paper~\cite{magaud2000changing} may help guide the design
-of unification heuristics for \lstinline{Iota} in \toolnamec.
+Both of these fit into \toolname configurations,
+and none suggests tactics in Coq like \toolname does.
+The expansion algorithm from \citet{magaud2000changing} may help guide the design
+of unification heuristics in \toolname.
 
-CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations,
-and these relations can be more general than \toolnamec's equivalences.
-However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
+The widely used Transfer~\cite{Huffman2013} package supports proof reuse in Isabelle/HOL.
+Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
+Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
+%In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
+One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
+Isabelle/HOL-Proofs, apply a transformation based on Transfer, and then (as in \toolname) decompile those terms to automation that does not apply Transfer or refer to the old datatype in any way.
+
+CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
+and these relations can be more general than \toolname's equivalences.
+However, while \toolname supports both functions and proofs, CoqEAL supports only simple functions
 due to the problem that \lstinline{Iota} addresses.
-CoqEAL may be most useful to chain with \toolnamec to get faster functions.
+CoqEAL may be most useful to chain with \toolname to get faster functions.
 Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
 better workflow support for changes that do not correspond to equivalences.
 
-The \toolnamec transformation implements transport.
+The \toolname transformation implements transport.
 Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
 UP~\cite{tabareau2017equivalences} approximates it
 in Coq, only sometimes relying on functional extensionality.
@@ -68,18 +76,18 @@ While powerful, neither approach removes references to the old type. %making the
 
 Recent work~\cite{tabareau2019marriage} extends UP with 
 a white-box transformation that may work for repair.
-This imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
+This imposes proof obligations on the proof engineer beyond those imposed by \toolname,
 %that establish what is effectively the correctness criteria
-%for the configuration in \toolnamec, while \toolnamec needs only that it holds metatheoretically.
+%for the configuration in \toolname, while \toolname needs only that it holds metatheoretically.
 and it includes neither search procedures for equivalences nor tactic script generation.
 It also does not support changes in inductive structure,
 instead relying on its original black-box functionality;
-\lstinline{Iota} solves this in \toolnamec. % and is based on lessons learned from reading that article.
+\lstinline{Iota} solves this in \toolname. % and is based on lessons learned from reading that article.
 The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
 
-%Univalent parametricity implements type-directed search, a feature that \toolnamec does not yet support.
+%Univalent parametricity implements type-directed search, a feature that \toolname does not yet support.
 %It achieves this using type classes~\cite{Sozeau2008}; this does not always scale well~\cite{tabareau2019marriage}.
-%Both \toolnamec and univalent parametricity could benefit from implementing type-directed search using e-graphs~\cite{egraph1}.
+%Both \toolname and univalent parametricity could benefit from implementing type-directed search using e-graphs~\cite{egraph1}.
 %Of particular interest are those developed for congruence in Cubical Agda~\cite{egraph6},
 %which prove the theorem \lstinline{hcongr_ideal}~\cite{egraph7} necessary to use e-graphs not derivable in CIC$_{\omega}$,
 %and which should allow for efficient and elegant automatic transport.
@@ -103,7 +111,7 @@ The degree to which proof engineers rely on automation varies, as seen in the da
 Automation-heavy proof engineering styles localize the burden of change to the automation,
 but can result in terms that are large and slow to type check,
 and tactics that can be difficult to debug.
-While these approaches are complementary, more work is needed for \toolnamec to better support 
+While these approaches are complementary, more work is needed for \toolname to better support 
 developments in this style.
 
 

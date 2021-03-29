@@ -1,13 +1,15 @@
-\section{A Simple Motivating Example}
+\section{Motivating Example}
 \label{sec:overview}
+
+% Unchanged from PUMPKIN Pi, for now
 
 \begin{figure*}
 \begin{minipage}{0.46\textwidth}
-   \lstinputlisting[firstline=1, lastline=3]{listswap.tex}
+   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.46\textwidth}
-   \lstinputlisting[firstline=5, lastline=7]{listswap.tex}
+   \lstinputlisting[firstline=5, lastline=7]{often/listswap.tex}
 \end{minipage}
 \vspace{-0.4cm}
 \caption{A change from the old version of \lstinline{list} (left) to the new version of \lstinline{list} (right).
@@ -20,18 +22,18 @@ two constructors (\codediff{orange}).}
 \begin{figure*}
 \codeauto{%
 \begin{minipage}{0.48\textwidth}
-\lstinputlisting[firstline=1, lastline=13]{equivproof.tex}
+\lstinputlisting[firstline=1, lastline=13]{often/equivproof.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
-\lstinputlisting[firstline=15, lastline=28]{equivproof.tex}
+\lstinputlisting[firstline=15, lastline=28]{often/equivproof.tex}
 \end{minipage}}
 \vspace{-0.3cm}
 \caption{Two functions between \lstinline{Old.list} and \lstinline{New.list} (top) that form an equivalence (bottom).}
 \label{fig:equivalence}
 \end{figure*}
 
-Consider a simple example of using \toolname: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
+Consider a simple example of using \toolnamec: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
 This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:search}).
 Even such a simple change can cause trouble, as in this proof from the Coq standard library (comments ours for clarity):\footnote{We use induction instead of pattern matching.}
 
@@ -59,7 +61,7 @@ When we change the \lstinline{list} type, this proof no longer works.
 %This theorem statement \lstinline{rev_app_distr} defined over the old version of \lstinline{list} is our \textit{old specification}.
 %When we change the \lstinline{list} type, we get the \textit{new specification}.
 %But the \textit{old proof} or tactic script no longer works with this new specification.
-To repair this proof with \toolname, we run this command:
+To repair this proof with \toolnamec, we run this command:
 
 \iffalse
 \begin{figure}
@@ -80,7 +82,7 @@ To repair this proof with \toolname, we run this command:
 Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
 \end{lstlisting}
 assuming the old and new list types from Figure~\ref{fig:listswap} are in modules \lstinline{Old} and \lstinline{New}.
-This suggests a proof script that succeeds (in $\codeauto{light blue}$ to denote \toolname produces it automatically):
+This suggests a proof script that succeeds (in $\codeauto{light blue}$ to denote \toolnamec produces it automatically):
 
 \begin{lstlisting}[backgroundcolor=\color{cyan!30}]
 Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
@@ -112,11 +114,11 @@ When we are done, we can get rid of \lstinline{Old.list}. % entirely.
 
 The key to success is taking advantage of Coq's structured proof term language:
 Coq compiles every proof script to a proof term in a rich functional programming language called 
-%Gallina that is based on the calculus of inductive  constructions---\toolname repairs that term.
-Gallina---\toolname repairs that term.
-\toolname then decompiles the repaired proof term (with optional hints from the original proof script) back 
+%Gallina that is based on the calculus of inductive  constructions---\toolnamec repairs that term.
+Gallina---\toolnamec repairs that term.
+\toolnamec then decompiles the repaired proof term (with optional hints from the original proof script) back 
 to a suggested proof script that the proof engineer can maintain.
-%Here, \toolname transforms the proof term Coq compiles \lstinline{rev_app_distr} to,
+%Here, \toolnamec transforms the proof term Coq compiles \lstinline{rev_app_distr} to,
 %and then decompiles that transformed proof term to the proof script in light blue.
 
 In contrast, updating the poorly structured proof script directly would not be straightforward.
@@ -125,12 +127,11 @@ It is not clear which lines to swap since these tactics do not have a semantics 
 Furthermore, just swapping lines is not enough: even for such a simple change, we must also swap
 arguments, so \lstinline{induction x as [| a l IHl]} becomes \lstinline{induction x as [a l IHl|]}.
 %Handling even swapping constructors this way would require a search procedure that would not generalize to other changes.
-\citet{robert2018} describes the challenges of repairing tactics in detail.
-\toolname's approach circumvents this challenge.
+A recent thesis~\cite{robert2018} describes the challenges of repairing tactics in detail.
+\toolnamec's approach circumvents this challenge.
 
-%\toolname's approach circumvents this challenge. % by transforming proof terms, then decompiling the transformed proof term to a tactic script.
-%By decompiling the transformed proof term, \toolname is able to suggest a tactic script in the end.
+%\toolnamec's approach circumvents this challenge. % by transforming proof terms, then decompiling the transformed proof term to a tactic script.
+%By decompiling the transformed proof term, \toolnamec is able to suggest a tactic script in the end.
 %As later sections show, this approach is much more general than just permuting constructors.
-
 
 

@@ -29,11 +29,11 @@ DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ } : P l :=(@\vspace{-0.0
 \label{fig:listconfig}
 \end{figure*}
 
-At the heart of \toolnamec is a configurable proof term transformation for transporting
-proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/src/automation/lift/lift.ml}{\circled{4}}. % lift.ml
-It is a generalization of the transformation from an earlier version of \toolnamec called
+At the heart of \toolname is a configurable proof term transformation for transporting
+proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}. % lift.ml
+It is a generalization of the transformation from an earlier version of \toolname called
 \textsc{Devoid}~\cite{Ringer2019}, which solved this problem a particular class of equivalences.
-%\toolnamec moves the reasoning specific to that class of equivalences into the configuration. 
+%\toolname moves the reasoning specific to that class of equivalences into the configuration. 
 
 %\begin{quote}
 %\textbf{Insight 2}:
@@ -48,24 +48,29 @@ then specifies correctness criteria for the configuration (Section~\ref{sec:art}
 Section~\ref{sec:implementation} describes the additional work needed to implement this transformation.
 
 \mysubsubsec{Conventions}
-All terms that we introduce in this section are in CIC$_{\omega}$~\cite{coquand:inria-00076024, inductive} (the core calculus of Coq) with primitive eliminators,
-the syntax for which is in Figure~\ref{fig:syntax}.
+All terms that we introduce in this section are in the Calculus of Inductive Constructions (CIC$_{\omega}$), the type theory
+that Coq's proof term language Gallina implements.
+CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}. CIC$_{\omega}$ extends CoC with
+inductive types~\cite{inductive}.
+Inductive types are defined solely by their constructors (like \lstinline{nil} and \lstinline{cons} for \lstinline{list}) and eliminators (like the induction principle for \lstinline{list}); this section assumes that these eliminators are primitive.
+
+The syntax for CIC$_{\omega}$ with primitive eliminators is in Figure~\ref{fig:syntax}.
 The typing rules are standard.
 We assume inductive types $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
-and \lstinline{=} with constructor \lstinline{eq_refl}.
+and an equality type \lstinline{=} with constructor \lstinline{eq_refl}.
 We use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
 
 \subsection{The Configuration}
 \label{sec:configurable}
 
 The configuration is the key to building a proof term transformation that implements transport in a way that is suitable for repair.
-Each configuration corresponds to an equivalence \Aa $\simeq$ \B.
-It deconstructs the equivalence into things that talk about \Aa, and things that talk about \B.
+Each configuration corresponds to an equivalence \A $\simeq$ \B.
+It deconstructs the equivalence into things that talk about \A, and things that talk about \B.
 It does so in a way that hides details
 specific to the equivalence, like the order or number of arguments to an induction principle or type.
 
 At a high level, the configuration helps the transformation achieve two goals: preserve equality up to transport across the equivalence 
-between \Aa and \B, and produce well-typed terms.
+between \A and \B, and produce well-typed terms.
 This configuration is a pair of pairs:
 
 \begin{lstlisting}
@@ -81,22 +86,22 @@ Each of these is defined in CIC$_{\omega}$ for each equivalence.
 %term transformation to work correctly, and proves that every equivalence induces a configuration.
 
 \mysubsubsec{Preserving the Equivalence}
-To preserve the equivalence, the configuration ports terms over \Aa to terms over \B by viewing each
-term of type \B as if it is an \Aa.
-This way, the rest of the transformation can replace values of \Aa with values of \B, and
-inductive proofs about \Aa with inductive proofs about \B, %, then recursively transform
+To preserve the equivalence, the configuration ports terms over \A to terms over \B by viewing each
+term of type \B as if it were an \A.
+This way, the rest of the transformation can replace values of \A with values of \B, and
+inductive proofs about \A with inductive proofs about \B, %, then recursively transform
 %subterms 
 all without changing the order or number of arguments.
 
 The two configuration parts responsible for this are \lstinline{DepConstr}
 and \lstinline{DepElim} (\textit{dependent constructors} and \textit{eliminators}).
-These describe how to construct and eliminate \Aa and \B, wrapping the types with a common inductive structure.
-The transformation requires the same number of dependent constructors and cases in dependent eliminators for \Aa and \B,
-even if \Aa and \B are types with different numbers of constructors
-(\Aa and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:search}).
+These describe how to construct and eliminate \A and \B, wrapping the types with a common inductive structure.
+The transformation requires the same number of dependent constructors and cases in dependent eliminators for \A and \B,
+even if \A and \B are types with different numbers of constructors
+(\A and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:search}).
 
 For the \lstinline{list} change from Section~\ref{sec:overview},
-the configuration that \toolnamec discovers uses the dependent constructors
+the configuration that \toolname discovers uses the dependent constructors
 and eliminators in Figure~\ref{fig:listconfig}. The dependent constructors for \lstinline{Old.list}
 are the normal constructors with the order unchanged,
 while the dependent constructors for \lstinline{New.list} swap constructors
@@ -110,8 +115,8 @@ Consider the type of vectors of some length:
 \begin{lstlisting}
 packed_vect T := $\Sigma$(n : nat).vector T n.(@\vspace{-0.05cm}@)
 \end{lstlisting}
-\toolnamec can port proofs across the equivalence between this type and \lstinline{list T}~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
-The dependent constructors \toolnamec discovers pack the index into an existential, like:
+\toolname can port proofs across the equivalence between this type and \lstinline{list T}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
+The dependent constructors \toolname discovers pack the index into an existential, like:
 
 \begin{lstlisting}
 DepConstr(0, packed_vect) : packed_vect T :=(@\vspace{-0.04cm}@)
@@ -132,20 +137,27 @@ the configuration for the first swaps constructors and cases,
 and the configuration for the second maps constructors and cases over \lstinline{list} to constructors and cases over \lstinline{packed_vect}. %packs constructors and eliminates projections.
 That way, the transformation need not add, drop, or reorder arguments.
 %In essence, all of the difficult work moves into the configuration.
-Furthermore, both examples use automatic configuration, so \toolnamec's \textbf{Configure} component 
-discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \Aa and \B, taking care of even the difficult work.
+Furthermore, both examples use automatic configuration, so \toolname's \textbf{Configure} component 
+discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \A and \B, taking care of even the difficult work.
 
 \mysubsubsec{Producing Well-Typed Terms}
 The other configuration parts \lstinline{Eta} and \lstinline{Iota} deal with producing well-typed terms,
 in particular by transporting equalities.
-A naive proof term transformation
-may fail to generate well-typed terms if it does not consider the problem of transporting equalities.
+CIC$_{\omega}$ distinguishes between two important kinds of equality: those that hold by reduction (\textit{definitional} equality), and those that hold by proof (\textit{propositional} equality).
+That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they reduce to the same normal form,
+and propositionally equal if there is a proof that \lstinline{t = t'} using the inductive
+equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
+the converse is not in general true.
+
+When a datatype changes, sometimes, definitional equalities defined over the old version of that type must become propositional.
+A naive proof term transformation may fail to generate well-typed terms if it does not account for this.
 Otherwise, if the transformation transforms a term \lstinline{t : T} to some \lstinline{t' : T'}, it does not necessarily
 transform \lstinline{T} to \lstinline{T'}~\cite{tabareau2019marriage}.
 
 \lstinline{Eta} and \lstinline{Iota} describe how to transport equalities.
-More formally, they define $\eta$-expansion and $\iota$-reduction of \Aa and \B,
-which may be propositional rather than definitional, and so must be explicit in the transformation.
+More formally, they define $\eta$-expansion and $\iota$-reduction of \A and \B,
+which may be propositional rather than definitional,
+and so must be explicit in the transformation.
 $\eta$-expansion describes how to expand a term to apply a constructor to an eliminator in a way that preserves propositional equality,
 and is important for defining dependent eliminators~\cite{nlab:eta-conversion}.
 $\iota$-reduction ($\beta$-reduction for inductive types) describes how to reduce an elimination of a constructor~\cite{nlab:beta-reduction}.
@@ -161,23 +173,95 @@ Thanks to this, we can forego the assumption that our language has primitive pro
 
 \begin{figure}
 \begin{minipage}{0.44\columnwidth}
-   \lstinputlisting[firstline=1, lastline=8]{often/pi/nattobin.tex}
+   \lstinputlisting[firstline=1, lastline=8]{nattobin.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.54\columnwidth}
-   \lstinputlisting[firstline=10, lastline=17]{often/pi/nattobin.tex}
+   \lstinputlisting[firstline=10, lastline=17]{nattobin.tex}
 \end{minipage}
-\vspace{-0.4cm}
-\caption{Unary (left) and binary (right) natural numbers.}
+\vspace{-0.2cm}
+\caption{A unary natural number \lstinline{nat} (left) is either zero (\lstinline{0}) or the successor of some other natural number (\lstinline{S}).
+A binary natural number \lstinline{N} (right) is either zero (\lstinline{N0}) or a positive binary number (\lstinline{Npos}), where a positive binary number is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI}) or
+0 (\lstinline{xO}). Unary and binary natural numbers are equivalent, but have different inductive structures.
+Consequentially, definitional equalities over \lstinline{nat} may become propositional over \lstinline{N}.}
 \vspace{-0.2cm}
 \label{fig:nattobin}
 \end{figure}
+
+Each \lstinline{Iota}---one per constructor---describes and proves the $\iota$-reduction behavior
+of \lstinline{DepElim} on the corresponding case.
+This is needed, for example, to port proofs about unary numbers \lstinline{nat} to
+proofs about binary numbers \lstinline{N} (Figure~\ref{fig:nattobin}).
+While we can define \lstinline{DepConstr} and \lstinline{DepElim} to induce an equivalence
+between them~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, % nonorn.v
+we run into trouble reasoning about applications of \lstinline{DepElim},
+since proofs about \lstinline{nat} that hold by reflexivity do not necessarily hold by reflexivity over \lstinline{N}. 
+For example, in Coq, while \lstinline{S (n + m)  = S n + m} holds by reflexivity over \lstinline{nat},
+when we define \lstinline{+} with \lstinline{DepElim} over \lstinline{N},
+the corresponding theorem over \lstinline{N} does not hold by reflexivity.
+
+To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \textit{definitional} $\iota$-reduction over \lstinline{nat} to \textit{propositional} $\iota$-reduction over \lstinline{N}.
+For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
+$\iota$-reduction is definitional over \lstinline{nat}, since a proof of:
+
+\begin{lstlisting}
+$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
+  DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
+  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+\end{lstlisting}
+holds by reflexivity.
+\lstinline{Iota} for \lstinline{nat} in the \lstinline{S} case is a rewrite by that proof by reflexivity~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
+with type:
+
+\begin{lstlisting}
+$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
+  Iota(1, nat, Q) :(@\vspace{-0.04cm}@)
+    Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
+    Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+\end{lstlisting}
+In contrast, $\iota$ for \lstinline{N} is propositional, since the 
+theorem: %over \lstinline{N}:
+
+\begin{lstlisting}
+$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
+  DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
+  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+\end{lstlisting}
+no longer holds by reflexivity.
+\lstinline{Iota} for \lstinline{N} is a rewrite by the propositional equality that proves this theorem~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
+with type:
+
+\begin{lstlisting}
+$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, N) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
+  Iota(1, N, Q) :(@\vspace{-0.04cm}@)
+    Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
+    Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+\end{lstlisting}
+By replacing \lstinline{Iota} over \lstinline{nat} with \lstinline{Iota} over \lstinline{N},
+the transformation replaces rewrites by reflexivity over \lstinline{nat} to rewrites by propositional equalities over \lstinline{N}.
+That way, \lstinline{DepElim} behaves the same over \lstinline{nat} and \lstinline{N}.
+
+Taken together over both \A and \B, \lstinline{Iota} describes how the inductive structures of \A and \B differ.
+The transformation requires that \lstinline{DepElim} over \A and over \B have the same structure
+as each other, so if \A and \B \textit{themselves} have the same 
+inductive structure (if they are \textit{ornaments}~\cite{mcbride}),
+then if $\iota$ is definitional for \A, it will be possible to choose
+\lstinline{DepElim} with definitional $\iota$ for \B.
+Otherwise, if \A and \B (like \lstinline{nat} and \lstinline{N}) have different inductive structures,
+then definitional $\iota$ over one would become propositional $\iota$ over the other.
+%For the case of \lstinline{nat} and \lstinline{N},
+%the need for propositional $\iota$ was noted as far back as \citet{magaud2000changing}.
+%\lstinline{Iota} in the configuration encodes this more generally.
+
+
+\subsection{The Proof Term Transformation}
+\label{sec:generic}
 
 \begin{figure*}
 \begin{mathpar}
 \mprset{flushleft}
 \small
-\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Uparrow$ $t'$}\vspace{-0.4cm}\\
+\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Uparrow$ $t'$}\vspace{-0.3cm}\\
 
 \inferrule[Dep-Elim]
   { \Gamma \vdash a \Uparrow b \\ \Gamma \vdash p_{a} \Uparrow p_b \\ \Gamma \vdash \vec{f_{a}}\phantom{l} \Uparrow \vec{f_{b}} }
@@ -234,9 +318,8 @@ Thanks to this, we can forego the assumption that our language has primitive pro
 %  { \\ }
 %  {\Gamma \vdash s \Uparrow s}
 \end{mathpar}
-\vspace{-0.5cm}
+\vspace{-0.3cm}
 \caption{Transformation for transporting terms across $A \simeq B$ with configuration \lstinline{((DepConstr, DepElim), (Eta, Iota))}.}
-\vspace{-0.2cm}
 \label{fig:final}
 \end{figure*}
 
@@ -244,15 +327,15 @@ Thanks to this, we can forego the assumption that our language has primitive pro
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
 (* 1: original term *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : list T) .(@\vspace{-0.04cm}@)
- Elim (l, $\lambda$(l: Old.list T).list T $\rightarrow$ list T)) {(@\vspace{-0.04cm}@)
+$\lambda$ (T : Type) (l m : Old.list T) .(@\vspace{-0.04cm}@)
+ Elim(l, $\lambda$(l: Old.list T).Old.list T $\rightarrow$ Old.list T)) {(@\vspace{-0.04cm}@)
    ($\lambda$ m . m),(@\vspace{-0.04cm}@)
    ($\lambda$ t _ IHl m . Constr(1, Old.list T) t (IHl m))(@\vspace{-0.04cm}@)
  } m.(@\vspace{-0.04cm}@)
-(@\vspace{-0.18cm}@)
+(@\vspace{-0.10cm}@)
 (* 2: after unifying (@\texttt{with}@) configuration *)(@\vspace{-0.04cm}@)
 $\lambda$ (T : Type) (l m : (@\codediff{A}@)) .(@\vspace{-0.04cm}@)
- (@\codediff{DepElim}@) (l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {(@\vspace{-0.04cm}@)
+ (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {(@\vspace{-0.04cm}@)
    ($\lambda$ m . m)(@\vspace{-0.04cm}@)
    ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))(@\vspace{-0.04cm}@)
  } m.(@\vspace{-0.04cm}@)
@@ -262,86 +345,28 @@ $\lambda$ (T : Type) (l m : (@\codediff{A}@)) .(@\vspace{-0.04cm}@)
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
 (* 4: reduced to final term *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : list T) .(@\vspace{-0.04cm}@)
- Elim (l, $\lambda$(l: New.list T).list T $\rightarrow$ list T)) {(@\vspace{-0.04cm}@)
+$\lambda$ (T : Type) (l m : New.list T) .(@\vspace{-0.04cm}@)
+ Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {(@\vspace{-0.04cm}@)
    ($\lambda$ t _ IHl m . Constr(0, New.list T) t (IHl m)),(@\vspace{-0.04cm}@)
    ($\lambda$ m . m)(@\vspace{-0.04cm}@)
  } m.(@\vspace{-0.04cm}@)
-(@\vspace{-0.18cm}@)
+(@\vspace{-0.10cm}@)
 (* 3: after transforming *)(@\vspace{-0.04cm}@)
 $\lambda$ (T : Type) (l m : (@\codediff{B}@)) .(@\vspace{-0.04cm}@)
- (@\codediff{DepElim}@) (l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {(@\vspace{-0.04cm}@)
+ (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {(@\vspace{-0.04cm}@)
    ($\lambda$ m . m)(@\vspace{-0.04cm}@)
    ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))(@\vspace{-0.04cm}@)
  } m.(@\vspace{-0.04cm}@)
 \end{lstlisting}
 \end{minipage}
-\vspace{-0.4cm}
-\caption{Swapping cases of the append function, with names fully qualified only when needed for clarity, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the updated type, and 4) reduced to the output.}
+\vspace{-0.3cm}
+\caption{Swapping cases of the append function, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the updated type, and 4) reduced to the output.}
 \label{fig:appswap1}
 \end{figure*}
 
-Each \lstinline{Iota}---one per constructor---describes and proves the $\iota$-reduction behavior
-of \lstinline{DepElim} on the corresponding case.
-This is needed, for example, to port proofs about unary numbers \lstinline{nat} to
-proofs about binary numbers \lstinline{N} (Figure~\ref{fig:nattobin}).
-While we can define \lstinline{DepConstr} and \lstinline{DepElim} to induce an equivalence
-between them~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/nonorn.v}{\circled{5}}, % nonorn.v
-we run into trouble reasoning about applications of \lstinline{DepElim},
-since proofs about \lstinline{nat} that hold by reflexivity do not necessarily hold by reflexivity over \lstinline{N}. 
-For example, in Coq, while \lstinline{S (n + m)  = S n + m} holds by reflexivity over \lstinline{nat},
-when we define \lstinline{+} with \lstinline{DepElim} over \lstinline{N},
-the corresponding theorem over \lstinline{N} does not hold by reflexivity.
-
-To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \textit{definitional} $\iota$-reduction over \lstinline{nat} to \textit{propositional} $\iota$-reduction over \lstinline{N}.
-For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
-$\iota$-reduction is definitional over \lstinline{nat}, since a proof of:\vspace{-0.01cm}
-
-\begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-  DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
-\end{lstlisting}
-holds by reflexivity.
-But $\iota$ for \lstinline{N} is propositional, since the corresponding 
-theorem over \lstinline{N} does not.
-%\begin{lstlisting}
-%$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-%  DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-%  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
-%\end{lstlisting}
-%no longer holds by reflexivity.
-\lstinline{Iota} for \lstinline{nat} in the \lstinline{S} case is a rewrite by the proof of the above,
-with type:
-
-\begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-  Iota(1, nat, Q) :(@\vspace{-0.04cm}@)
-    Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
-    Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
-\end{lstlisting}
-and similarly for \lstinline{N}~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/nonorn.v}{\circled{5}}.
-The transformation replaces rewrites by reflexivity over \lstinline{nat} to rewrites by propositional equalities over \lstinline{N},
-so that \lstinline{DepElim} behaves the same over \lstinline{nat} and \lstinline{N}.
-
-Taken together over both \Aa and \B, \lstinline{Iota} describes how the inductive structures of \Aa and \B differ.
-The transformation requires that \lstinline{DepElim} over \Aa and over \B have the same structure
-as each other, so if \Aa and \B \textit{themselves} have the same 
-inductive structure (if they are \textit{ornaments}~\cite{mcbride}),
-then if $\iota$ is definitional for \Aa, it will be possible to choose
-\lstinline{DepElim} with definitional $\iota$ for \B.
-Otherwise, if \Aa and \B (like \lstinline{nat} and \lstinline{N}) have different inductive structures,
-then definitional $\iota$ over one would become propositional $\iota$ over the other.
-%For the case of \lstinline{nat} and \lstinline{N},
-%the need for propositional $\iota$ was noted as far back as \citet{magaud2000changing}.
-%\lstinline{Iota} in the configuration encodes this more generally.
-
-\subsection{The Proof Term Transformation}
-\label{sec:generic}
-
-Figure~\ref{fig:final} shows the proof term transformation $\Gamma \vdash t \Uparrow t'$ that forms the core of \toolnamec.
+Figure~\ref{fig:final} shows the proof term transformation $\Gamma \vdash t \Uparrow t'$ that forms the core of \toolname.
 %Like the transformation from \textsc{Devoid},
-The transformation is parameterized over equivalent types \Aa and \B (\textsc{Equivalence})
+The transformation is parameterized over equivalent types \A and \B (\textsc{Equivalence})
 as well as the configuration. %terms, which appear in the transformation explicitly.
 It assumes $\eta$-expanded functions.
 It implicitly constructs an updated context $\Gamma'$ in which to interpret $t'$, but this is not needed for computation.
@@ -351,43 +376,148 @@ it moves the bulk of the work into the configuration,
 and represents the configuration explicitly.
 Of course, typical proof terms in Coq do not apply these configuration
 terms explicitly.
-\toolnamec does some additional work using \textit{unification heuristics} to get real proof terms into this format before running the transformation.
+\toolname does some additional work using \textit{unification heuristics} to get real proof terms into this format before running the transformation.
 It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration.
+
+\mysubsubsec{Unification Heuristics}
+The transformation does not fully describe the search procedure for transforming terms that \toolname implements.
+Before running the transformation, \toolname \textit{unifies} subterms with particular \A (fixing parameters and indices),
+and with applications of configuration terms over \A. 
+The transformation then transforms configuration terms over \A
+to configuration terms over \B.
+Reducing the result produces the output term defined over \B.
+
+Figure~\ref{fig:appswap1} shows this with the list append function \lstinline{++} from Section~\ref{sec:overview}.
+To update \lstinline{++} (top left), \toolname unifies \lstinline{Old.list T} with \A, and \lstinline{Constr} and \lstinline{Elim}
+with \lstinline{DepConstr} and \lstinline{DepElim} (bottom left).
+After unification, the transformation recursively substitutes \B
+for \A, which moves \lstinline{DepConstr} and \lstinline{DepElim}
+to construct and eliminate over the updated type (bottom right).
+This reduces to a term with swapped constructors and cases over \lstinline{New.list T} (top right).
+
+In this case, unification is straightforward. % since \lstinline{DepConstr} and \lstinline{DepElim} correspond to
+%\lstinline{Constr} and \lstinline{Elim} directly.
+This can be more challenging when configuration terms are dependent.
+This is especially pronounced with definitional \lstinline{Eta} and \lstinline{Iota},
+which typically are implicit (reduced) in real code.
+%This problem is exactly why \citet{tabareau2019marriage} speculated that converting definitional to propositional equalities
+%like we do with \lstinline{Iota} may, in general, be intractable.
+To handle this, \toolname implements custom \textit{unification heuristics} for each search procedure
+that unify subterms with applications of configuration terms, and that instantiate parameters and dependent indices in those subterms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}. % liftconfig.ml
+The transformation in turn assumes that all existing parameters and indices are determined and instantiated
+by the time it runs.
+
+\toolname falls back to Coq's unification for manual configuration and when these custom heuristics fail.
+When even Coq's unification is not enough, \toolname relies on proof engineers to provide hints
+in the form of annotations~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}.
 
 \begin{figure*}
 \begin{minipage}{0.43\textwidth}
 \begin{lstlisting}
-section: $\forall$ (a : A), g (f a) = a.
-retraction: $\forall$ (b : B), f (g b) = b.
-
-constr_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$, $\vec{x_A}$ $\equiv_{A \simeq B}$ $\vec{x_B}$ $\rightarrow$
-  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.
-
-elim_ok: $\forall$ a b P$_A$ P$_B$ $\vec{f_A}$ $\vec{f_B}$,
-  a $\equiv_{A \simeq B}$ b $\rightarrow$
-  P$_A$ $\equiv_{(A \rightarrow s) \simeq (B \rightarrow s)}$ P$_B$ $\rightarrow$
-  $\forall$ $j$, $\vec{f_A}$[j] $\equiv_{\xi (A, P_A, j) \simeq \xi (B, P_B, j)}$ $\vec{f_B}$[j]$\rightarrow$
-  DepElim(a, P$_A$) $\vec{f_A}$ $\equiv_{(P a) \simeq (P b)}$ DepElim(b, P$_B$) $\vec{f_A}$.
+section: $\forall$ (a : A), g (f a) = a.(@\vspace{-0.04cm}@)
+retraction: $\forall$ (b : B), f (g b) = b.(@\vspace{-0.04cm}@)
+(@\vspace{-0.14cm}@)
+constr_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$, $\vec{x_A}$ $\equiv_{A \simeq B}$ $\vec{x_B}$ $\rightarrow$(@\vspace{-0.04cm}@)
+  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.(@\vspace{-0.04cm}@)
+(@\vspace{-0.14cm}@)
+elim_ok: $\forall$ a b P$_A$ P$_B$ $\vec{f_A}$ $\vec{f_B}$,(@\vspace{-0.04cm}@)
+  a $\equiv_{A \simeq B}$ b $\rightarrow$(@\vspace{-0.04cm}@)
+  P$_A$ $\equiv_{(A \rightarrow s) \simeq (B \rightarrow s)}$ P$_B$ $\rightarrow$(@\vspace{-0.04cm}@)
+  $\forall$ $j$, $\vec{f_A}$[j] $\equiv_{\xi (A, P_A, j) \simeq \xi (B, P_B, j)}$ $\vec{f_B}$[j]$\rightarrow$(@\vspace{-0.04cm}@)
+  DepElim(a, P$_A$) $\vec{f_A}$ $\equiv_{(P a) \simeq (P b)}$ DepElim(b, P$_B$) $\vec{f_A}$.(@\vspace{-0.04cm}@)
 \end{lstlisting}
 \end{minipage}
 \hfill
 \begin{minipage}{0.56\textwidth}
 \begin{lstlisting}
-elim_eta(A): $\forall$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).
-eta_ok(A): $\forall$ (a : A), Eta(A) a = a.
-
-(@\phantom{constr\_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$,}@)
-(@\phantom{  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.}@)
-
-iota_ok(A): $\forall$ $j$ P $\vec{f}$ $\vec{x}$ (Q: P(Eta(A) (DepConstr($j$, A) $\vec{x}$)) $\rightarrow$ s),
-  Iota(A, j, Q) :
-    Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$
-    Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) in
-      ($\vec{f}$[j]$\ldots$(DepElim(IH$_0$, P) $\vec{f}$)$\ldots$(DepElim(IH$_n$, P) $\vec{f}$)$\ldots$)).
+elim_eta(A): $\forall$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).(@\vspace{-0.04cm}@)
+eta_ok(A): $\forall$ (a : A), Eta(A) a = a.(@\vspace{-0.04cm}@)
+(@\vspace{-0.14cm}@)
+(@\phantom{constr_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$,}@)(@\vspace{-0.04cm}@)
+(@\phantom{  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.}@)(@\vspace{-0.04cm}@)
+(@\vspace{-0.14cm}@)
+iota_ok(A): $\forall$ $j$ P $\vec{f}$ $\vec{x}$ (Q: P(Eta(A) (DepConstr($j$, A) $\vec{x}$)) $\rightarrow$ s),(@\vspace{-0.04cm}@)
+  Iota(A, j, Q) : (@\vspace{-0.04cm}@)
+    Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$ (@\vspace{-0.04cm}@)
+    Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) in(@\vspace{-0.04cm}@)
+      ($\vec{f}$[j]$\ldots$(DepElim(IH$_0$, P) $\vec{f}$)$\ldots$(DepElim(IH$_n$, P) $\vec{f}$)$\ldots$)).(@\vspace{-0.04cm}@)
 \end{lstlisting}
 \end{minipage}
+% Q (eq_rect (dep_constr_A_0 b) (fun H : A => P H) (f0 b) (eta_A (dep_constr_A_0 b)) (eq_sym (eta_OK_A (dep_constr_A_0 b)))).
+\iffalse
+\begin{minipage}{0.44\textwidth}
+\smallmath{$f := \lambda(a : A).\mathrm{DepElim}(a, \lambda(a : A).B) { \lambda \ldots \mathrm{DepConstr}(0, B) \ldots, \ldots }.$}
+%[\
+%g := \lambda(b : B).\mathrm{DepElim}(b, \lambda(b : B).A)\\
+%  { \lambda \ldots \mathrm{DepConstr}(0, A) \ldots, \ldots }.\\
+%section : \forall (a : A), g (f a) = a.\\
+%retraction : \forall (b : B), f (g b) = b.\\
+%\\
+%constr_ok :\\
+%  \forall j, DepConstr(j, A) \equiv_{A \simeq B} DepConstr(j, B).\\
+%\\
+%elim_ok : \forall a b (P : A \rightarrow s) (Q : B \rightarrow s),\\
+%  a \equiv_{A \simeq B} b \rightarrow\\
+%  P \equiv_{A \simeq B} Q \rightarrow\\
+%  DepElim(a, P) \equiv_{A \simeq B} DepElim(b, Q).\\
+%\]
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\textwidth}
+\begin{lstlisting}
+elim_eta(A) : $\forall$ (a : A) (P : A $\rightarrow$ Type) $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).(@\vspace{-0.04cm}@)
+eta_ok(A) : $\forall$ (a : A), Eta(A) a = a.(@\vspace{-0.04cm}@)
+(@\vspace{-0.14cm}@)
+iota_ok(A) : $\forall$ j (P : A $\rightarrow$ Type) $\vec{f}$ $\vec{x}$(@\vspace{-0.04cm}@)
+    (Q : P (Eta(A) (DepConstr(j, A) $\vec{x}$)) $\rightarrow$ Type),(@\vspace{-0.04cm}@)
+  Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$ (@\vspace{-0.04cm}@)
+  Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) (@\vspace{-0.04cm}@)
+     in ($\vec{f}$[j] $\ldots$ (DepElim(IH$_0$, P) $\vec{f}$) $\ldots$ (DepElim(IH$_n$, P) $\vec{f}$) $\ldots$))(@\vspace{-0.04cm}@)
+:= Iota(A, j, Q).(@\vspace{-0.04cm}@)
+\end{lstlisting}
+% Q (eq_rect (dep_constr_A_0 b) (fun H : A => P H) (f0 b) (eta_A (dep_constr_A_0 b)) (eq_sym (eta_OK_A (dep_constr_A_0 b)))).
+\end{minipage}
+\fi
+\iffalse
+\begin{mathpar}
+\mprset{flushleft}
+\small
+
+%f := $\lambda$(a : A).DepElim(a, $\lambda$(a : A).B)(@\vspace{-0.04cm}@)
+%  { $\lambda$ $\ldots$ DepConstr(0, B) $\ldots$, $\ldots$ }.(@\vspace{-0.04cm}@)
+%g := $\lambda$(b : B).DepElim(b, $\lambda$(b : B).A)(@\vspace{-0.04cm}@)
+%  { $\lambda$ $\ldots$ DepConstr(0, A) $\ldots$, $\ldots$ }.(@\vspace{-0.04cm}@)
+
+\inferrule[Is-Equivalence]
+ {  \Gamma \vdash \mathrm{section} : \Pi (a : A) . \mathrm{g}\ (\mathrm{f}\ a)\ =\ a \\\\ \Gamma \vdash \mathrm{retraction} : \Pi (b : B) . \mathrm{f}\ (\mathrm{g}\ b)\ =\ b }
+ { \Gamma \vdash \mathrm{is\_equivalence}(\mathrm{f}, \mathrm{g}, \mathrm{section}, \mathrm{retraction}) }
+
+\inferrule[Constr-OK]
+  { \Gamma \vdash \mathrm{DepConstr}(j, A)\ \vec{x_A} \equiv_{A \simeq B} \mathrm{DepConstr}(j, B)\ \vec{x_B} }
+  { \Gamma \vdash \mathrm{constr\_ok}(j) }
+
+\inferrule[Elim-OK]
+  { \Gamma \vdash a \equiv_{A \simeq B} b \\\\ \Gamma \vdash P_A \equiv_{A \simeq B} P_B \\\\ \Gamma \vdash \vec{f_A} \equiv_{A \simeq B} \vec{f_B} \\\ \Gamma \vdash \mathrm{DepElim}(a,\ P_A)\ \vec{f_A} \equiv_{A \simeq B} \mathrm{DepElim}(b,\ P_B)\ \vec{f_B}  }
+  { \Gamma \vdash \mathrm{elim\_ok}(j) }
+
+\inferrule[Elim-Eta]
+  { \Gamma \vdash a : A \\ \Gamma \vdash P : \Pi (a : A) . s }
+  { \Gamma \vdash \mathrm{DepElim}(a, P)\ \vec{f} : P\ (\mathrm{Eta}(A)\ a) }
+
+\inferrule[Eta-OK]
+  { \Gamma \vdash T \in \{A, B\} }
+  { \Gamma \vdash \mathrm{eta\_ok}(T) : \Pi (t : T) . \mathrm{Eta}(T)\ t\ =\ t }
+
+%iota_ok(A) : $\forall$ j (P : A $\rightarrow$ Type) $\vec{f}$ $\vec{x}$(@\vspace{-0.04cm}@)
+%    (Q : P (Eta(A) (DepConstr(j, A) $\vec{x}$)) $\rightarrow$ Type),(@\vspace{-0.04cm}@)
+%  Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$ (@\vspace{-0.04cm}@)
+%  Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) in ($\vec{f}$[j] $\ldots$ (DepElim(IH$_0$, P) $\vec{f}$) $\ldots$ (DepElim(IH$_n$, P) $\vec{f}$) $\ldots$))(@\vspace{-0.04cm}@)
+%:= Iota(A, j, Q).(@\vspace{-0.04cm}@)
+\end{mathpar}
+\fi
+\vspace{-0.2cm}
 \caption{Correctness criteria for a configuration to ensure that the transformation
-preserves equivalence (left) coherently with equality (right, shown for \Aa; \B is similar). \lstinline{f} and \lstinline{g} are defined in text. $s$, $\vec{f}$, $\vec{x}$, and $\vec{\mathtt{IH}}$ represent
+preserves equivalence (left) coherently with equality (right, shown for \A; \B is similar). \lstinline{f} and \lstinline{g} are defined in text. $s$, $\vec{f}$, $\vec{x}$, and $\vec{\mathtt{IH}}$ represent
 sorts, eliminator cases, constructor arguments, and inductive hypotheses. $\xi$ $(A,$ $P,$ $j)$ is the type 
 of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).} %, respectively.}
 \label{fig:spec}
@@ -399,46 +529,15 @@ of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).}
 
 % $\mathrm{E}_{A_i}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(i,\ A),\ C_{A_i})$
 
-\mysubsubsec{Unification Heuristics}
-The transformation does not fully describe the search procedure for transforming terms that \toolnamec implements.
-Before running the transformation, \toolnamec \textit{unifies} subterms with particular \Aa (fixing parameters and indices),
-and with applications of configuration terms over \Aa. 
-The transformation then transforms configuration terms over \Aa
-to configuration terms over \B.
-Reducing the result produces the output term defined over \B.
-
-Figure~\ref{fig:appswap1} shows this with the list append function \lstinline{++} from Section~\ref{sec:overview}.
-To update \lstinline{++} (top left), \toolnamec unifies \lstinline{Old.list T} with \Aa, and \lstinline{Constr} and \lstinline{Elim}
-with \lstinline{DepConstr} and \lstinline{DepElim} (bottom left).
-After unification, the transformation recursively substitutes \B
-for \Aa, which moves \lstinline{DepConstr} and \lstinline{DepElim}
-to construct and eliminate over the updated type (bottom right).
-This reduces to a term with swapped constructors and cases over \lstinline{New.list T} (top right).
-
-In this case, unification is straightforward. % since \lstinline{DepConstr} and \lstinline{DepElim} correspond to
-%\lstinline{Constr} and \lstinline{Elim} directly.
-This can be more challenging when configuration terms are dependent.
-This is especially pronounced with definitional \lstinline{Eta} and \lstinline{Iota},
-which typically are implicit (reduced) in real code.
-%This problem is exactly why \citet{tabareau2019marriage} speculated that converting definitional to propositional equalities
-%like we do with \lstinline{Iota} may, in general, be intractable.
-To handle this, \toolnamec implements custom \textit{unification heuristics} for each search procedure
-that unify subterms with applications of configuration terms, and that instantiate parameters and dependent indices in those subterms~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}. % liftconfig.ml
-The transformation in turn assumes that all parameters and indices are fixed.
-
-\toolnamec falls back to Coq's unification for manual configuration and when these custom heuristics fail.
-When even Coq's unification is not enough, \toolnamec relies on proof engineers to provide hints
-in the form of annotations~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/nonorn.v}{\circled{5}}.
-
 \mysubsubsec{Specifying a Correct Transformation}
-The implementation of this transformation in \toolnamec produces a term that Coq type checks, and so does not
+The implementation of this transformation in \toolname produces a term that Coq type checks, and so does not
 add to the trusted computing base.
-As \toolnamec is an engineering tool, there is no need to formally prove the transformation correct, though doing so would be satisfying.
+As \toolname is an engineering tool, there is no need to formally prove the transformation correct, though doing so would be satisfying.
 The goal of such a proof would be to show that % the transformation preserves equality up to transport along the equivalence $A \simeq B$,
 %while no longer referring to the old specification.
 %That is, we need that 
 if $\Gamma \vdash t \Uparrow t'$,
-then $t$ and $t'$ are equal up to transport, and $t'$ refers to \B in place of \Aa.
+then $t$ and $t'$ are equal up to transport, and $t'$ refers to \B in place of \A.
 %This is the same as the correctness criterion for the program transformation from \textsc{Devoid} that this is based on,
 %with the transformation generalized to handle other equivalences beyond the class that \textsc{Devoid} supports.
 The key steps in this transformation that make this possible are porting terms along the configuration % corresponding
@@ -452,56 +551,57 @@ It would be possible to generate per-transformation proofs of correctness, but t
 \label{sec:art}
 
 %Both when designing a search procedure for an automatic configuration and when
-%configuring \toolnamec manually, choosing a configuration is important,
+%configuring \toolname manually, choosing a configuration is important,
 %and it is not always straightforward.
 %This section specifies what it means for a configuration to be correct. % and gives some intuition as to why.
 %Section~\ref{sec:search} shows some useful example configurations.
-%The configuration instantiates the proof term transformation to a particular equivalence between \Aa and \B.
+%The configuration instantiates the proof term transformation to a particular equivalence between \A and \B.
 
 Choosing a configuration necessarily depends in some way on the proof engineer's intentions:
 there can be infinitely many equivalences that correspond to a 
-change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \Aa is equivalent to \lstinline{unit} refined by \Aa). % refine_unit.v
+change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \A is equivalent to \lstinline{unit} refined by \A). % refine_unit.v
 And there can be many configurations that correspond
 to an equivalence, some of which will produce terms that are more useful or efficient than others
 (consider \lstinline{DepElim} converting through several intermediate types).
 
 While we cannot control for intentions, we \textit{can} specify what it means for a chosen configuration to be correct:
-Fix a configuration. Let \lstinline{f} be the function that uses \lstinline{DepElim} to eliminate \Aa and \lstinline{DepConstr} to construct \B (\lstinline{g} similar). %Assume a univalent metatheory in which equality up to transport is defined.
+Fix a configuration. Let \lstinline{f} be the function that uses \lstinline{DepElim} to eliminate \A and \lstinline{DepConstr} to construct \B,
+and let \lstinline{g} be similar. %Assume a univalent metatheory in which equality up to transport is defined.
 Figure~\ref{fig:spec} specifies the correctness criteria for the configuration.
 These criteria relate \lstinline{DepConstr}, \lstinline{DepElim}, \lstinline{Eta}, and \lstinline{Iota}
 in a way that preserves equivalence coherently with equality.
 
 \mysubsubsec{Equivalence}
 To preserve the equivalence (Figure~\ref{fig:spec}, left), \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
-% between \Aa and \B.
+%between \A and \B.
 (\lstinline{section} and \lstinline{retraction} must hold for \lstinline{f} and \lstinline{g}).
-%uses  \lstinline{DepElim} to eliminate \B and \lstinline{DepConstr} to construct \Aa.
-\lstinline{DepConstr} over \Aa and \B must be equal up to transport across that equivalence (\lstinline{constr_ok}), 
+%uses  \lstinline{DepElim} to eliminate \B and \lstinline{DepConstr} to construct \A.
+\lstinline{DepConstr} over \A and \B must be equal up to transport across that equivalence (\lstinline{constr_ok}), 
 and similarly for \lstinline{DepElim} (\lstinline{elim_ok}).
 %An example proves this on the change from \lstinline{list T} to \lstinline{packed_vect T} in the 
 %univalent parametricity framework.\footnote{\url{https://github.com/CoqHott/univalent_parametricity/commit/7dc14e69942e6b3302fadaf5356f9a7e724b0f3c}}
 Intuitively, \lstinline{constr_ok} and \lstinline{elim_ok} guarantee that the transformation
 correctly transports dependent constructors and dependent eliminators,
 as doing so will preserve equality up to transport for those subterms.
-This makes it possible %for the transformation
-to avoid applying \lstinline{f} and \lstinline{g}, instead porting terms from \Aa directly to \B.
+This makes it possible for the transformation
+to avoid applying \lstinline{f} and \lstinline{g}, instead porting terms from \A directly to \B.
 
-%Furthermore, since CIC$_{\omega}$ is constructive, the \textit{only} way to construct an \Aa (respectively \B) is to use its constructors,
-%and the \textit{only} way to eliminate an \Aa (respectively \B) is to apply its eliminator.
-%Finally, since these form an equivalence, all ways of constructing or eliminating \Aa and \B are covered by these dependent constructors and %eliminators.
+%Furthermore, since CIC$_{\omega}$ is constructive, the \textit{only} way to construct an \A (respectively \B) is to use its constructors,
+%and the \textit{only} way to eliminate an \A (respectively \B) is to apply its eliminator.
+%Finally, since these form an equivalence, all ways of constructing or eliminating \A and \B are covered by these dependent constructors and %eliminators.
 %So, as long as we are able to unify subterms with applications of \lstinline{DepConstr} and \lstinline{DepElim},
-%\textsc{Dep-Constr} and \textsc{Dep-Elim} should preserve correctness of the transformation and cover all values and eliminations of \Aa and \B.
+%\textsc{Dep-Constr} and \textsc{Dep-Elim} should preserve correctness of the transformation and cover all values and eliminations of \A and \B.
 
 \begin{figure*}
 \small
 \begin{grammar}
 <v> $\in$ Vars, <t> $\in$ CIC$_{\omega}$
 
-<p> ::= intro <v> |  rewrite <t> <t> | symmetry | apply <t> |  induction <t> <t> \{ <p>, \ldots, <p> \} |  split \{ <p>, <p> \} | left | right | <p> . <p>
+<p> ::= intro <v> \hspace{0.05cm} | \hspace{0.05cm} rewrite <t> <t> \hspace{0.05cm} | \hspace{0.05cm} symmetry \hspace{0.05cm} | \hspace{0.05cm} apply <t> \hspace{0.05cm} | \hspace{0.05cm} induction <t> <t> \{ <p>, \ldots, <p> \} \hspace{0.05cm} | \hspace{0.05cm} split \{ <p>, <p> \} \hspace{0.05cm} | \hspace{0.05cm} left \hspace{0.05cm} | \hspace{0.05cm} right \hspace{0.05cm} | \hspace{0.05cm} <p> . <p>
 \end{grammar}
-\vspace{-0.3cm}
+\vspace{-0.4cm}
 \caption{Qtac syntax.}
-\vspace{-0.3cm}
+\vspace{-0.4cm}
 \label{fig:ltacsyntax1}
 \end{figure*}
 
@@ -509,7 +609,7 @@ to avoid applying \lstinline{f} and \lstinline{g}, instead porting terms from \A
 \begin{mathpar}
 \mprset{flushleft}
 \small
-\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Rightarrow$ $p$}\vspace{-0.45cm}\\
+\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Rightarrow$ $p$}\vspace{-0.5cm}\\
 
 \inferrule[Intro]
   { \Gamma,\ n : T \vdash b \Rightarrow p }
@@ -562,11 +662,12 @@ This makes it possible for the transformation to
 avoid applying \lstinline{section} and \lstinline{retraction}.
 
 \mysubsubsec{Correctness}
-With this correctness criteria for a configuration, we get the completeness result (proven in Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/playground/arbitrary.v}{\circled{8}}) that every equivalence induces a configuration. % arbitrary.v
+With these correctness criteria for a configuration, we get the completeness result (proven in Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/arbitrary.v}{\circled{8}}) that every equivalence induces a configuration. % arbitrary.v
 We also obtain an algorithm for the soundness result that every configuration induces an equivalence.
+
 The algorithm to prove \lstinline{section} is as follows (\lstinline{retraction} is similar):
 replace \lstinline{a} with \lstinline{Eta(A) a} by \lstinline{eta_ok(A)}.
-Then, induct using \lstinline{DepElim} over \Aa.
+Then, induct using \lstinline{DepElim} over \A.
 For each case $i$, the proof obligation is to show that \lstinline{g (f a)} is equal to \lstinline{a},
 where \lstinline{a} is \lstinline{DepConstr(A, i)} applied to the non-inductive arguments (by \lstinline{elim_eta(A)}).
 Expand the right-hand side using \lstinline{Iota(A, i)}, then expand it again using \lstinline{Iota(B, i)}
@@ -574,16 +675,21 @@ Expand the right-hand side using \lstinline{Iota(A, i)}, then expand it again us
 The result follows by definition of \lstinline{g} and \lstinline{f}, and by reflexivity.
 
 \mysubsubsec{Automatic Configuration}
-\toolnamec implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/src/automation/lift/liftconfig.ml}{\circled{6}};
+\toolname implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}.
+Three of the four procedures are based on the search procedure from 
+\textsc{Devoid}~\cite{Ringer2019},
+while the remaining procedure instantiates the types \A and \B of a generic configuration that can be defined inside of Coq directly.
+%Two use similar algorithms,
 %due to space constraints, 
-we do not discuss these in detail.
-The algorithm above is essentially what \textbf{Configure} uses to generate functions \lstinline{f} and \lstinline{g} for these configurations~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/src/automation/search/search.ml}{\circled{9}}, % search.ml
-and also generate proofs \lstinline{section} and \lstinline{retraction} that these functions form an equivalence~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/src/automation/search/equivalence.ml}{\circled{10}}. % equivalence.ml
-To minimize dependencies, \toolnamec does not produce proofs of \lstinline{constr_ok} and \lstinline{elim_ok} directly,
+%we do not discuss these in detail.
+
+The algorithm above is essentially what \textbf{Configure} uses to generate functions \lstinline{f} and \lstinline{g} for these configurations~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/search.ml}{\circled{9}}, % search.ml
+and also generate proofs \lstinline{section} and \lstinline{retraction} that these functions form an equivalence~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}. % equivalence.ml
+To minimize dependencies, \toolname does not produce proofs of \lstinline{constr_ok} and \lstinline{elim_ok} directly,
 as stating these theorems cleanly would require either a special framework~\cite{tabareau2017equivalences}
 or a univalent type theory~\cite{univalent2013homotopy}.
-If the proof engineer wishes, it is possible to prove these in individual cases~\href{https://github.com/uwplse/pumpkin-pi/blob/silent/plugin/coq/playground/arbitrary.v}{\circled{8}}, % arbitray.v
-but this is not necessary in order to use \toolnamec. %---they simply need to hold.
+If the proof engineer wishes, it is possible to prove these in individual cases~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/arbitrary.v}{\circled{8}}, % arbitray.v
+but this is not necessary in order to use \toolname. %---they simply need to hold.
 
 %First we need that \lstinline{DepElim} over $A$ into \lstinline{DepConstr} over $B$ and \lstinline{DepElim} over $B$ into
 %\lstinline{DepConstr} over $A$ form an equivalence between $A$ and $B$. When that's true, I think it should hold that \lstinline{DepElim} over $A$

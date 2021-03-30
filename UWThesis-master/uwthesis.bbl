@@ -7,6 +7,10 @@ Coq reference manual, section 8.9: Controlling automation, 2017.
 User A.
 \newblock Software foundations solution, 2017.
 
+\bibitem{angiuli2020internalizing}
+Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
+\newblock Internalizing representation independence with univalence, 2020.
+
 \bibitem{Autexier:2010:CMH:1986659.1986663}
 Serge Autexier, Dieter Hutter, and Till Mossakowski.
 \newblock Verification, induction termination analysis.
@@ -439,6 +443,12 @@ Daniel Selsam and Leonardo de~Moura.
 Nicolas Tabareau, {\'E}ric Tanter, and Matthieu Sozeau.
 \newblock {Equivalences for Free!}
 \newblock working paper or preprint, July 2017.
+
+\bibitem{tabareau2017equivalences}
+Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
+\newblock Equivalences for free: Univalent parametricity for effective
+  transport.
+\newblock {\em Proc. ACM Program. Lang.}, 2(ICFP):92:1--92:29, July 2018.
 
 \bibitem{Timany2015FirstST}
 Amin Timany and Bart Jacobs.

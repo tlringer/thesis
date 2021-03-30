@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
@@ -6,6 +6,13 @@ Coq reference manual, section 8.9: Controlling automation, 2017.
 \bibitem{usera}
 User A.
 \newblock Software foundations solution, 2017.
+
+\bibitem{adams2015}
+Mark Adams.
+\newblock Refactoring proofs with tactician.
+\newblock In Domenico Bianculli, Radu Calinescu, and Bernhard Rumpe, editors,
+  {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
+  Heidelberg, 2015. Springer Berlin Heidelberg.
 
 \bibitem{angiuli2020internalizing}
 Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
@@ -49,6 +56,12 @@ Gilles Barthe and Olivier Pons.
 \newblock In {\em International Conference on Foundations of Software Science
   and Computation Structures}, pages 57--71. Springer, 2001.
 
+\bibitem{Blanchette2016b}
+Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
+  K{\"u}hlwein, and Josef Urban.
+\newblock A learning-based fact selector for {Isabelle/HOL}.
+\newblock {\em Journal of Automated Reasoning}, 57(3):219--244, Oct 2016.
+
 \bibitem{Boite2004}
 Olivier Boite.
 \newblock Proof reuse with extended inductive types.
@@ -56,6 +69,12 @@ Olivier Boite.
   {\em Theorem Proving in Higher Order Logics: 17th International Conference,
   TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004. Proceedings}, pages
   50--65, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.
+
+\bibitem{Bourke12}
+Timothy Bourke, Matthias Daum, Gerwin Klein, and Rafal Kolanski.
+\newblock Challenges and experiences in managing large-scale proofs.
+\newblock In {\em Intelligent Computer Mathematics}, pages 32--48, Berlin,
+  Heidelberg, 2012. Springer.
 
 \bibitem{boutillier:tel-01054723}
 Pierre Boutillier.
@@ -109,6 +128,12 @@ Adam Chlipala.
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
 
+\bibitem{Chlipala:2013:CPD:2584504}
+Adam Chlipala.
+\newblock {\em Certified Programming with Dependent Types: A Pragmatic
+  Introduction to the Coq Proof Assistant}.
+\newblock The MIT Press, 2013.
+
 \bibitem{equality}
 Adam Chlipala.
 \newblock Library equality, 2017.
@@ -141,6 +166,11 @@ Thierry Coquand and Christine Paulin.
 \newblock Inductively defined types.
 \newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
   pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
+
+\bibitem{Czajka2018}
+{\L}ukasz Czajka and Cezary Kaliszyk.
+\newblock Hammer for {Coq}: Automation for dependent type theory.
+\newblock {\em Journal of Automated Reasoning}, 61(1):423--453, Jun 2018.
 
 \bibitem{coqhammer}
 {\L}ukasz Czajka and Cezary Kaliszyk.
@@ -208,6 +238,12 @@ Larry Diehl, Denis Firsov, and Aaron Stump.
 \newblock Generic zero-cost reuse for dependent types.
 \newblock {\em CoRR}, abs/1803.08150, 2018.
 
+\bibitem{Dietrich2013}
+Dominik Dietrich, Iain Whiteside, and David Aspinall.
+\newblock Polar: A framework for proof refactoring.
+\newblock In {\em Logic for Programming, Artificial Intelligence, and
+  Reasoning}, pages 776--791, Berlin, Heidelberg, 2013. Springer.
+
 \bibitem{Felty1994}
 Amy Felty and Douglas Howe.
 \newblock Generalization and reuse of tactic proofs.
@@ -227,6 +263,12 @@ Thibault Gauthier and Cezary Kaliszyk.
 \newblock In Stephen Watt, James Davenport, Alan Sexton, Petr Sojka, and Josef
   Urban, editors, {\em CICM '14}, volume 8543 of {\em LNCS}, pages 267--281.
   Springer Verlag, 2014.
+
+\bibitem{Gazzola:2018:ASR:3180155.3182526}
+Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
+\newblock Automatic software repair: A survey.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
 
 \bibitem{Gonthier2011}
 Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, and Derek Dreyer.
@@ -287,6 +329,17 @@ Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock Theorem reuse by proof term transformation.
 \newblock In {\em International Conference on Theorem Proving in Higher Order
   Logics}, pages 152--167. Springer, 2004.
+
+\bibitem{Kaliszyk2014}
+Cezary Kaliszyk and Josef Urban.
+\newblock Learning-assisted automated reasoning with {Flyspeck}.
+\newblock {\em Journal of Automated Reasoning}, 53(2):173--213, Aug 2014.
+
+\bibitem{Klein:2014:CFV:2584468.2560537}
+Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
+  Rafal Kolanski, and Gernot Heiser.
+\newblock Comprehensive formal verification of an os microkernel.
+\newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
 
 \bibitem{ko2013relational}
 Hsiang-Shang Ko and Jeremy Gibbons.
@@ -404,6 +457,11 @@ Martin Monperrus.
 \newblock {Automatic Software Repair: a Bibliography}.
 \newblock {\em {ACM Computing Surveys}}, 2017.
 
+\bibitem{Monperrus:2018:ASR:3177787.3105906}
+Martin Monperrus.
+\newblock Automatic software repair: A bibliography.
+\newblock {\em ACM Comput. Surv.}, 51(1):17:1--17:24, January 2018.
+
 \bibitem{Mulhern06proofweaving}
 Anne Mulhern.
 \newblock Proof weaving.
@@ -449,6 +507,14 @@ Olivier Pons.
 \newblock In {\em International Workshop on Types for Proofs and Programs},
   pages 217--232. Springer, 2000.
 
+\bibitem{Qi:2015:APP:2771783.2771791}
+Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
+\newblock An analysis of patch plausibility and correctness for
+  generate-and-validate patch generation systems.
+\newblock In {\em Proceedings of the 2015 International Symposium on Software
+  Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
+  ACM.
+
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock Qed at large: A survey of engineering of formally verified software.
@@ -482,12 +548,34 @@ Valentin Robert.
   functional programs}.
 \newblock PhD thesis, UC San Diego, 2018.
 
+\bibitem{Roe2016}
+Kenneth Roe and Scott Smith.
+\newblock {CoqPIE}: An {IDE} aimed at improving proof development productivity.
+\newblock In {\em Interactive Theorem Proving: 7th International Conference,
+  ITP 2016, Nancy, France, August 22-25, 2016, Proceedings}, pages 491--499,
+  Cham, 2016. Springer International Publishing.
+
+\bibitem{Saibi:PhD}
+Amokrane Sa\"{i}bi.
+\newblock {\em Outils G\'{e}n\'{e}riques de Mod\'{e}lisation et de
+  D\'{e}monstration pour la Formalisation des Math\'{e}matiques en Th\'{e}orie
+  des Types: application \`{a} la Th\'{e}orie des Cat\'{e}gories}.
+\newblock PhD thesis, Universit\'{e} Paris VI, Paris, France, 1999.
+
 \bibitem{selsam:lean}
 Daniel Selsam and Leonardo de~Moura.
 \newblock Congruence closure in intensional type theory.
 \newblock In Nicola Olivetti and Ashish Tiwari, editors, {\em Automated
   Reasoning: 8th International Joint Conference}, IJCAR 2016, pages 99--115,
   Cham, 2016. Springer International Publishing.
+
+\bibitem{Sozeau2008}
+Matthieu Sozeau and Nicolas Oury.
+\newblock First-class type classes.
+\newblock In Otmane~Ait Mohamed, C{\'e}sar Mu{\~{n}}oz, and Sofi{\`e}ne Tahar,
+  editors, {\em Theorem Proving in Higher Order Logics: 21st International
+  Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
+  pages 278--293, Berlin, Heidelberg, 2008. Springer Berlin Heidelberg.
 
 \bibitem{tabareau:hal-01559073}
 Nicolas Tabareau, {\'E}ric Tanter, and Matthieu Sozeau.
@@ -515,12 +603,35 @@ The {Univalent Foundations Program}.
 \newblock \url{https://homotopytypetheory.org/book}, Institute for Advanced
   Study, 2013.
 
+\bibitem{Wenzel2007isar}
+Makarius Wenzel.
+\newblock {Isabelle/Isar}--a generic framework for human-readable proof
+  documents.
+\newblock {\em From Insight to Proof--Festschrift in Honour of Andrzej
+  Trybulec}, 10(23):277--298, 2007.
+
+\bibitem{WhitesidePhD}
+Iain~Johnston Whiteside.
+\newblock {\em Refactoring proofs}.
+\newblock PhD thesis, University of Edinburgh, November 2013.
+
+\bibitem{wibergh2019}
+Karin Wibergh.
+\newblock Automatic refactoring for agda.
+\newblock Master's thesis, Chalmers University of Technology and University of
+  Gothenburg, 2019.
+
+\bibitem{williamsphd}
+Ambre Williams.
+\newblock {\em Refactoring functional programs with ornaments}.
+\newblock PhD thesis, 2020.
+
 \bibitem{Williams2017}
 Thomas Williams and Didier R{\'e}my.
 \newblock A principled approach to ornamentation in {ML}.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
 
-\bibitem{proof-eng}
+\bibitem{Woos:2016:PCF:2854065.2854081}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
   Thomas Anderson.
 \newblock Planning for change in a formal verification of the raft consensus

@@ -3,49 +3,51 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
+Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty booktitle in pons00
-You've used 89 entries,
+Warning--empty school in williamsphd
+You've used 107 entries,
             2118 wiz_defined-function locations,
-            1013 strings with 19879 characters,
-and the built_in function-call counts, 33458 in all, are:
-= -- 3457
-> -- 1368
-< -- 53
-+ -- 539
-- -- 441
-* -- 2077
-:= -- 5179
-add.period$ -- 300
-call.type$ -- 89
-change.case$ -- 472
+            1123 strings with 23278 characters,
+and the built_in function-call counts, 40131 in all, are:
+= -- 4158
+> -- 1646
+< -- 60
++ -- 649
+- -- 531
+* -- 2540
+:= -- 6256
+add.period$ -- 361
+call.type$ -- 107
+change.case$ -- 564
 chr.to.int$ -- 0
-cite$ -- 93
-duplicate$ -- 1448
-empty$ -- 2742
-format.name$ -- 441
-if$ -- 7471
+cite$ -- 112
+duplicate$ -- 1718
+empty$ -- 3255
+format.name$ -- 531
+if$ -- 8904
 int.to.chr$ -- 0
-int.to.str$ -- 89
-missing$ -- 75
-newline$ -- 437
-num.names$ -- 192
-pop$ -- 596
+int.to.str$ -- 107
+missing$ -- 90
+newline$ -- 527
+num.names$ -- 232
+pop$ -- 690
 preamble$ -- 1
-purify$ -- 387
+purify$ -- 465
 quote$ -- 0
-skip$ -- 1147
+skip$ -- 1344
 stack$ -- 0
-substring$ -- 1997
-swap$ -- 497
-text.length$ -- 53
+substring$ -- 2459
+swap$ -- 573
+text.length$ -- 60
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 348
-warning$ -- 4
-while$ -- 334
-width$ -- 91
-write$ -- 1040
-(There were 4 warnings)
+type$ -- 418
+warning$ -- 5
+while$ -- 405
+width$ -- 110
+write$ -- 1253
+(There were 6 warnings)

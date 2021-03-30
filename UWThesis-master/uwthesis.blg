@@ -7,45 +7,45 @@ Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty booktitle in pons00
-You've used 80 entries,
+You've used 84 entries,
             2118 wiz_defined-function locations,
-            959 strings with 18310 characters,
-and the built_in function-call counts, 30205 in all, are:
-= -- 3133
-> -- 1220
-< -- 47
-+ -- 482
-- -- 394
-* -- 1871
-:= -- 4666
-add.period$ -- 270
-call.type$ -- 80
-change.case$ -- 424
+            986 strings with 19200 characters,
+and the built_in function-call counts, 32112 in all, are:
+= -- 3319
+> -- 1313
+< -- 51
++ -- 518
+- -- 425
+* -- 2006
+:= -- 4947
+add.period$ -- 282
+call.type$ -- 84
+change.case$ -- 450
 chr.to.int$ -- 0
-cite$ -- 84
-duplicate$ -- 1316
-empty$ -- 2484
-format.name$ -- 394
-if$ -- 6753
+cite$ -- 88
+duplicate$ -- 1395
+empty$ -- 2632
+format.name$ -- 425
+if$ -- 7183
 int.to.chr$ -- 0
-int.to.str$ -- 80
-missing$ -- 71
-newline$ -- 391
-num.names$ -- 170
-pop$ -- 529
+int.to.str$ -- 84
+missing$ -- 74
+newline$ -- 410
+num.names$ -- 180
+pop$ -- 565
 preamble$ -- 1
-purify$ -- 348
+purify$ -- 370
 quote$ -- 0
-skip$ -- 1039
+skip$ -- 1107
 stack$ -- 0
-substring$ -- 1825
-swap$ -- 449
-text.length$ -- 47
+substring$ -- 1948
+swap$ -- 485
+text.length$ -- 51
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 312
+type$ -- 328
 warning$ -- 4
-while$ -- 304
-width$ -- 82
-write$ -- 935
+while$ -- 320
+width$ -- 86
+write$ -- 981
 (There were 4 warnings)

@@ -231,6 +231,28 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
 
+% https://tex.stackexchange.com/questions/58901/something-between-frownie-and-smiley/
+\DeclareRobustCommand\good{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-145:0.8mm) arc (-145:-35:0.8mm);
+}}
+
+\DeclareRobustCommand\ok{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-135:0.9mm) -- (-45:0.9mm);
+}}
+
+\DeclareRobustCommand\bad{\tikz[baseline=(char.base)]{
+    \draw circle (1.6mm);
+\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+\draw (-135:0.9mm) arc (145:35:0.8mm);
+}}
+
 \definecolor{thecolor}{RGB}{38,90,18}
  
 %

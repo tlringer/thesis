@@ -62,20 +62,20 @@
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{37}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{37}{subsection.4.5.2}% 
 \contentsline {section}{\numberline {4.6}Results}{37}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{37}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{39}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{39}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{40}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{45}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{45}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{45}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{45}{chapter.6}% 
-\contentsline {paragraph}{Automation}{46}{chapter.6}% 
-\contentsline {paragraph}{Integration}{46}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{46}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{46}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{46}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{46}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{46}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{46}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{46}{chapter.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{42}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{43}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{43}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{44}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{49}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{49}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{49}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{49}{chapter.6}% 
+\contentsline {paragraph}{Automation}{50}{chapter.6}% 
+\contentsline {paragraph}{Integration}{50}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{50}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{50}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{50}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{50}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{50}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{50}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{50}{chapter.6}% 

@@ -61,21 +61,24 @@
 \contentsline {section}{\numberline {4.5}Implementation}{37}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{37}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{37}{subsection.4.5.2}% 
-\contentsline {section}{\numberline {4.6}Results}{37}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{42}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{43}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{43}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{44}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{49}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{49}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{49}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{49}{chapter.6}% 
-\contentsline {paragraph}{Automation}{50}{chapter.6}% 
-\contentsline {paragraph}{Integration}{50}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{50}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{50}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{50}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{50}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{50}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{50}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{50}{chapter.6}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{37}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{37}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{38}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{42}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{47}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{49}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{49}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{50}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{55}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{55}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{55}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{55}{chapter.6}% 
+\contentsline {paragraph}{Automation}{56}{chapter.6}% 
+\contentsline {paragraph}{Integration}{56}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{56}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{56}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{56}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{56}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{56}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{56}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{56}{chapter.6}% 

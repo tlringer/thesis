@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  29 MAR 2021 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  29 MAR 2021 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1932,7 +1932,21 @@ Overfull \hbox (56.84816pt too wide) in paragraph at lines 318--346
  [][] 
  []
 
-[36]) (./often/results.tex
+[36]) (./often/implementation.tex [37]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 83.
+
+[38] [39]
+
+LaTeX Warning: Reference `sec:second' on page 40 undefined on input line 155.
+
+
+Overfull \hbox (18.95294pt too wide) in paragraph at lines 212--225
+\OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
+ term of []
+ []
+
+[40] [41]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -1941,31 +1955,31 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Reference `sec:related' on page 37 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 42 undefined on input line 53.
 
 
-LaTeX Warning: Reference `sec:related' on page 37 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 42 undefined on input line 53.
 
-[37] [38] (./often/replica.tex) (./often/replica.tex)
+[42] [43] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 39 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 44 undefined on input line 113.
 
-[39] [40]
+[44] [45]
 
-LaTeX Warning: Reference `fig:nattobin' on page 41 undefined on input line 238.
+LaTeX Warning: Reference `fig:nattobin' on page 46 undefined on input line 238.
 
 
-[41])) (./related.tex [42]
+[46])) (./related.tex [47] [48
+
+
+]
 chapter 5.
-[43
-
-
-] [44] [45] [46]) (./conclusion.tex [47] [48
+[49] [50] [51] [52]) (./conclusion.tex [53] [54
 
 
 ]
 chapter 6.
-(./next.tex [49]
+(./next.tex [55]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -1977,26 +1991,26 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.bbl [50] [51
+)) (./uwthesis.bbl [56] [57
 
 
-] [52]
+] [58]
 Underfull \hbox (badness 1242) in paragraph at lines 173--178
 []\OT1/pplj/m/n/10.95 (+20) Benjamin Delaware, Steven Keuchel, Tom Schri-jvers,
  and
  []
 
-[53] [54] [55] [56]
+[59] [60] [61] [62]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 426.
 
-[57]) [58]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
+[63]) [64]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 435.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 435.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2006,16 +2020,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 434.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 435.
  ) 
 Here is how much of TeX's memory you used:
- 42972 strings out of 492609
- 809659 string characters out of 6129033
+ 43026 strings out of 492609
+ 810471 string characters out of 6129033
  1141786 words of memory out of 5000000
- 44702 multiletter control sequences out of 15000+600000
- 627368 words of font info for 700 fonts, out of 8000000 for 9000
+ 44732 multiletter control sequences out of 15000+600000
+ 627915 words of font info for 701 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,77p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,77p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2033,10 +2047,10 @@ type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (68 pages, 1255818 bytes).
+Output written on uwthesis.pdf (74 pages, 1275522 bytes).
 PDF statistics:
- 1541 PDF objects out of 1728 (max. 8388607)
- 1417 compressed objects within 15 object streams
- 726 named destinations out of 1000 (max. 500000)
- 92957 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1608 PDF objects out of 1728 (max. 8388607)
+ 1477 compressed objects within 15 object streams
+ 748 named destinations out of 1000 (max. 500000)
+ 93469 words of extra memory for PDF output out of 106986 (max. 10000000)
 

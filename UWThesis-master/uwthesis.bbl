@@ -57,6 +57,11 @@ Olivier Boite.
   TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004. Proceedings}, pages
   50--65, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.
 
+\bibitem{boutillier:tel-01054723}
+Pierre Boutillier.
+\newblock {\em {New tool to compute with inductive in Coq}}.
+\newblock Theses, {Universit{\'e} Paris-Diderot - Paris VII}, February 2014.
+
 \bibitem{bundyreasoning}
 Alan Bundy.
 \newblock The interaction of representation and reasoning.
@@ -125,6 +130,17 @@ Cyril Cohen and Damien Rouhling.
 \newblock {A refinement-based approach to large scale reflection for algebra}.
 \newblock In {\em {JFLA 2017 - Vingt-huiti{\`e}me Journ{\'e}es Francophones des
   Langages Applicatifs}}, Gourette, France, January 2017.
+
+\bibitem{coquand:inria-00076024}
+T.~Coquand and G{\'e}rard Huet.
+\newblock {The calculus of constructions}.
+\newblock Technical Report RR-0530, {INRIA}, May 1986.
+
+\bibitem{inductive}
+Thierry Coquand and Christine Paulin.
+\newblock Inductively defined types.
+\newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
+  pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
 
 \bibitem{coqhammer}
 {\L}ukasz Czajka and Cezary Kaliszyk.
@@ -393,6 +409,19 @@ Anne Mulhern.
 \newblock Proof weaving.
 \newblock In {\em In Proceedings of the First Informal ACM SIGPLAN Workshop on
   Mechanizing Metatheory}, 2006.
+
+\bibitem{nlab:beta-reduction}
+{nLab authors}.
+\newblock beta-reduction.
+\newblock \url{http://ncatlab.org/nlab/show/beta-reduction}, July 2020.
+\newblock \href{http://ncatlab.org/nlab/revision/beta-reduction/6}{Revision 6}.
+
+\bibitem{nlab:eta-conversion}
+{nLab authors}.
+\newblock eta-conversion.
+\newblock \url{http://ncatlab.org/nlab/show/eta-conversion}, July 2020.
+\newblock \href{http://ncatlab.org/nlab/revision/eta-conversion/12}{Revision
+  12}.
 
 \bibitem{Blanchette2013}
 Lawrence~C. Paulson and Jasmin~Christian Blanchette.

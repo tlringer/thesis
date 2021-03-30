@@ -58,27 +58,30 @@
 \contentsline {subsection}{\numberline {4.3.2}Other Search Procedures}{37}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Designing New Search Procedures}{37}{subsection.4.3.3}% 
 \contentsline {section}{\numberline {4.4}Transformation}{37}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Implementation}{37}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{37}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{37}{subsection.4.5.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{37}{subsubsection.4.5.2.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{37}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{38}{subsubsection.4.5.2.3}% 
-\contentsline {section}{\numberline {4.6}Results}{42}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{47}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{49}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{49}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{50}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{55}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{55}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{55}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{55}{chapter.6}% 
-\contentsline {paragraph}{Automation}{56}{chapter.6}% 
-\contentsline {paragraph}{Integration}{56}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{56}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{56}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{56}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{56}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{56}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{56}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{56}{chapter.6}% 
+\contentsline {subsection}{\numberline {4.4.1}The Configuration}{38}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}The Proof Term Transformation}{41}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Specifying Correct Configurations}{44}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Implementation}{46}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{46}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{46}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{46}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{46}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{47}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{50}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{55}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{57}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{57}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{58}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{63}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{63}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{63}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{63}{chapter.6}% 
+\contentsline {paragraph}{Automation}{64}{chapter.6}% 
+\contentsline {paragraph}{Integration}{64}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{64}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{64}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{64}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{64}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{64}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{64}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{64}{chapter.6}% 

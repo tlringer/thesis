@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 MAR 2021 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 MAR 2021 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1417,7 +1417,20 @@ Package hyperref Info: Option `hypertexnames' set `true' on input line 57.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./uwthesis.aux)
+(./uwthesis.aux
+
+LaTeX Warning: Label `fig:syntax' multiply defined.
+
+
+LaTeX Warning: Label `fig:syntax@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:final' multiply defined.
+
+
+LaTeX Warning: Label `fig:final@cref' multiply defined.
+
+)
 \openout1 = `uwthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
@@ -1436,8 +1449,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
 LaTeX Font Info:    ... okay on input line 105.
 LaTeX Font Info:    Try loading font information for OT1+pplj on input line 105
 .
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
 \AtBeginShipoutBox=\box86
@@ -1861,112 +1873,136 @@ chapter 4.
 <often/workflowa.pdf, id=732, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
-Package pdftex.def Info: often/workflowa.pdf  used on input line 16.
+Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
  [27] [28 <./often/workflowa.pdf>] [29]
 (./often/equiv2.tex) (./often/equiv2.tex) (./often/listtovect.tex)
 (./often/listtovect.tex)
-Overfull \hbox (22.57913pt too wide) in paragraph at lines 174--182
+Overfull \hbox (22.57913pt too wide) in paragraph at lines 176--184
 []$[]$  $[]$
  []
 
 ) (./often/differencing.tex
+LaTeX Font Info:    Try loading font information for U+bbm on input line 8.
 
-LaTeX Warning: Reference `sec:example' on page 30 undefined on input line 22.
-
-[30] [31]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 132.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+(/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-Overfull \hbox (2.41995pt too wide) in paragraph at lines 129--153
-[]$[]$  $[]$
- []
+
+LaTeX Warning: Reference `sec:generic' on page 30 undefined on input line 52.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--183
-[]$[]$
- []
+LaTeX Warning: Reference `sec:implementation' on page 30 undefined on input lin
+e 54.
 
-[32] [33]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 206.
-
-
-Overfull \hbox (57.78168pt too wide) in paragraph at lines 205--241
- [][] 
- []
-
-
-Overfull \hbox (54.74294pt too wide) in paragraph at lines 205--241
- [][] 
- []
-
-[34]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 303
-.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 303.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 303.
-
-
-Overfull \hbox (10.49026pt too wide) in paragraph at lines 307--315
-\OT1/pplj/m/n/10.95 (-20) Figure []15[] shows the in-ter-est-ing deriva-tions f
-or the judg-ment $[]$
- []
-
-[35]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 319.
-
-
-Overfull \hbox (59.9401pt too wide) in paragraph at lines 318--346
- [][] 
- []
-
-
-Overfull \hbox (56.84816pt too wide) in paragraph at lines 318--346
- [][] 
- []
-
-[36]) (./often/transformation.tex
-
-LaTeX Warning: Reference `sec:implementation' on page 37 undefined on input lin
-e 42.
-
-[37] [38] [39] (./often/nattobin.tex) (./often/nattobin.tex)
-Overfull \hbox (5.2102pt too wide) in paragraph at lines 185--196
+[30] [31] [32] (./often/nattobin.tex) (./often/nattobin.tex)
+Overfull \hbox (5.2102pt too wide) in paragraph at lines 197--208
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[40]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 253.
-
-[41] [42]
-Overfull \hbox (48.09023pt too wide) in paragraph at lines 423--424
+[33]
+Overfull \hbox (48.09023pt too wide) in paragraph at lines 286--287
 [][][][]  
  []
 
-[43] [44]) (./often/implementation.tex [45] [46]
+[34] [35] [36]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 83.
+LaTeX Warning: Reference `sec:example' on page 37 undefined on input line 383.
+
+[37]
+Overfull \hbox (2.41995pt too wide) in paragraph at lines 490--514
+[]$[]$  $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--544
+[]$[]$
+ []
+
+[38] [39]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 567.
+
+
+Overfull \hbox (57.78168pt too wide) in paragraph at lines 566--602
+ [][] 
+ []
+
+
+Overfull \hbox (54.74294pt too wide) in paragraph at lines 566--602
+ [][] 
+ []
+
+[40] [41]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 664
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 664.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 664.
+
+
+Overfull \hbox (10.49026pt too wide) in paragraph at lines 668--676
+\OT1/pplj/m/n/10.95 (-20) Figure []19[] shows the in-ter-est-ing deriva-tions f
+or the judg-ment $[]$
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 680.
+
+
+Overfull \hbox (59.9401pt too wide) in paragraph at lines 679--707
+ [][] 
+ []
+
+
+Overfull \hbox (56.84816pt too wide) in paragraph at lines 679--707
+ [][] 
+ []
+
+[42]) (./often/transformation.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 8.
+
+[43] [44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 187--213
+
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 217.
+
+
+Overfull \hbox (58.00378pt too wide) in paragraph at lines 216--250
+ [][] 
+ []
+
+[46]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 281.
 
 [47]
 
-LaTeX Warning: Reference `sec:second' on page 48 undefined on input line 155.
+LaTeX Font Warning: Command \small invalid in math mode on input line 323.
 
+) (./often/implementation.tex [48] [49]
 
+LaTeX Font Warning: Command \small invalid in math mode on input line 83.
+
+[50] [51]
+
+LaTeX Warning: Reference `sec:second' on page 52 undefined on input line 155.
+
+[52]
 Overfull \hbox (18.95294pt too wide) in paragraph at lines 212--225
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
-[48] [49]) (./often/results.tex
+[53]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -1975,26 +2011,26 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Reference `sec:related' on page 50 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 54 undefined on input line 53.
 
 
-LaTeX Warning: Reference `sec:related' on page 50 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 54 undefined on input line 53.
 
-[50] [51] (./often/replica.tex) (./often/replica.tex)
+[54] [55] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 52 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 56 undefined on input line 113.
 
-[52] [53] [54]) (./often/conclusion.tex)) (./related.tex [55] [56
+[56] [57] [58]) (./often/conclusion.tex)) (./related.tex [59] [60
 
 
 ]
 chapter 5.
-[57] [58] [59] [60]) (./conclusion.tex [61] [62
+[61] [62] [63] [64]) (./conclusion.tex [65] [66
 
 
 ]
 chapter 6.
-(./next.tex [63]
+(./next.tex [67]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -2006,21 +2042,21 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.bbl [64] [65
+)) (./uwthesis.bbl [68] [69
 
 
-] [66]
+] [70]
 Underfull \hbox (badness 1242) in paragraph at lines 189--194
 []\OT1/pplj/m/n/10.95 (+20) Benjamin Delaware, Steven Keuchel, Tom Schri-jvers,
  and
  []
 
-[67] [68] [69] [70]
+[71] [72] [73] [74]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 455.
 
-[71]) [72]
+[75]) [76]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
  (./uwthesis.aux)
@@ -2035,14 +2071,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 435.
  ) 
 Here is how much of TeX's memory you used:
- 43247 strings out of 492609
- 813811 string characters out of 6129033
- 1189786 words of memory out of 5000000
- 44791 multiletter control sequences out of 15000+600000
- 628658 words of font info for 713 fonts, out of 8000000 for 9000
+ 43298 strings out of 492609
+ 814555 string characters out of 6129033
+ 1169786 words of memory out of 5000000
+ 44801 multiletter control sequences out of 15000+600000
+ 628863 words of font info for 717 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,77p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2063,10 +2102,10 @@ pe1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/font
 s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/pa
 latino/uplri8a.pfb>
-Output written on uwthesis.pdf (82 pages, 1319840 bytes).
+Output written on uwthesis.pdf (86 pages, 1334634 bytes).
 PDF statistics:
- 1853 PDF objects out of 2073 (max. 8388607)
- 1710 compressed objects within 18 object streams
- 886 named destinations out of 1000 (max. 500000)
+ 1919 PDF objects out of 2073 (max. 8388607)
+ 1771 compressed objects within 18 object streams
+ 922 named destinations out of 1000 (max. 500000)
  93469 words of extra memory for PDF output out of 106986 (max. 10000000)
 

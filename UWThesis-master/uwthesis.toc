@@ -51,37 +51,42 @@
 \contentsline {subsection}{\numberline {4.2.1}Scope: Type Equivalences}{28}{subsection.4.2.1}% 
 \contentsline {subsection}{\numberline {4.2.2}Goal: Transport with a Twist}{29}{subsection.4.2.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{30}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Algebraic Ornaments}{30}{subsection.4.3.1}% 
-\contentsline {subsubsection}{\numberline {4.3.1.1}Searching for the Indexer}{34}{subsubsection.4.3.1.1}% 
-\contentsline {subsubsection}{\numberline {4.3.1.2}Searching for Promote and Forget}{36}{subsubsection.4.3.1.2}% 
-\contentsline {subsubsection}{\numberline {4.3.1.3}Core Search Algorithm}{36}{subsubsection.4.3.1.3}% 
-\contentsline {subsection}{\numberline {4.3.2}Other Search Procedures}{37}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Designing New Search Procedures}{37}{subsection.4.3.3}% 
-\contentsline {section}{\numberline {4.4}Transformation}{37}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}The Configuration}{38}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}The Proof Term Transformation}{41}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Specifying Correct Configurations}{44}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Implementation}{46}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{46}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{46}{subsection.4.5.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{46}{subsubsection.4.5.2.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{46}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{47}{subsubsection.4.5.2.3}% 
-\contentsline {section}{\numberline {4.6}Results}{50}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{55}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{57}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{57}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{58}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{63}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{63}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{63}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{63}{chapter.6}% 
-\contentsline {paragraph}{Automation}{64}{chapter.6}% 
-\contentsline {paragraph}{Integration}{64}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{64}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{64}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{64}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{64}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{64}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{64}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{64}{chapter.6}% 
+\contentsline {subsection}{\numberline {4.3.1}The Configuration}{31}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{34}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Search Procedures}{36}{subsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{36}{subsubsection.4.3.3.1}% 
+\contentsline {paragraph}{Searching for the Indexer}{40}{figure.caption.20}% 
+\contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{42}{subsubsection.4.3.3.2}% 
+\contentsline {paragraph}{Core Search Algorithm}{43}{figure.caption.22}% 
+\contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{43}{subsubsection.4.3.3.3}% 
+\contentsline {paragraph}{Designing new Search Procedures}{43}{subsubsection.4.3.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Limitations}{43}{subsection.4.3.4}% 
+\contentsline {section}{\numberline {4.4}Transformation}{43}{section.4.4}% 
+\contentsline {paragraph}{Lifting Eliminators}{46}{figure.caption.25}% 
+\contentsline {paragraph}{Lifting Constructors}{47}{figure.caption.27}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{48}{lstnumber.-147.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{48}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{48}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{48}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{50}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{50}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{50}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{50}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{54}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{59}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{61}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{61}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{62}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{67}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{67}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{67}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{67}{chapter.6}% 
+\contentsline {paragraph}{Automation}{68}{chapter.6}% 
+\contentsline {paragraph}{Integration}{68}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{68}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{68}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{68}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{68}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{68}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{68}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{68}{chapter.6}% 

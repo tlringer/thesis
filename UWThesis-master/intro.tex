@@ -2,13 +2,38 @@
 
 Motivation for verifying systems
 
-Era of scale---enter proof engineering~\cite{PGL-045}
+Era of scale---enter proof engineering~\cite{PGL-045}.
+The seL4~\cite{Klein2009} verified operating system kernel, for example,
+is the effort of a team of proof engineers spanning more than
+a million lines of proof, costing over 20 person-years.
+Given a famous 1977 critique of verification~\cite{DeMillo1977} (emphasis ours):
 
-Looking back (Social Processes~\cite{DeMillo1977}), development has come a long way, but maintenance is still hard! And this is a problem in practice!
+\begin{quote}
+\textit{A sufficiently fanatical researcher}
+might be willing to devote \textit{two or 
+three years} to verifying a significant 
+piece of software if he could be 
+assured that the software would remain stable.
+\end{quote}
+we could argue that, over 40 years, either verification has become easier,
+or researchers have become more fanatical. Unfortunately, not all has changed (emphasis still ours):
+
+\begin{quote}
+But real-life programs need to 
+be maintained and modified. 
+There is \textit{no reason to believe} that verifying a modified program is any 
+easier than verifying the original the 
+first time around.
+\end{quote}
+To this day, maintaining verified programs can be challenging: it means keeping not just the programs, but also specifications and proofs about those programs up-to-date.
+This remains so difficult that sometimes, even experts give up in the face of change~\cite{replica}. % TODO rather than cite self, refer to section?
 
 But missed opportunity: automation doesn't understand that proofs evolve
 
-So we build automation that does, and we call this proof repair. Proof repair shows that there is reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around.
+So we build automation that does, and we call this proof repair.
+Proof repair shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+even when proof engineers do not follow good development processes,
+or when change occurs outside of proof engineers' control~\cite{PGL-045}.
 
 Or, in other words (thesis statement): Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 

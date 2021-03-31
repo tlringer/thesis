@@ -341,6 +341,14 @@ Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
 \newblock Comprehensive formal verification of an os microkernel.
 \newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
 
+\bibitem{Klein2009}
+Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
+  Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael
+  Norrish, Thomas Sewell, Harvey Tuch, and Simon Winwood.
+\newblock {seL4}: Formal verification of an {OS} kernel.
+\newblock In {\em Proceedings of the ACM SIGOPS 22Nd Symposium on Operating
+  Systems Principles}, SOSP '09, pages 207--220, New York, NY, USA, 2009. ACM.
+
 \bibitem{ko2013relational}
 Hsiang-Shang Ko and Jeremy Gibbons.
 \newblock Relational algebraic ornaments.

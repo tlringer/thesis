@@ -335,6 +335,12 @@ Cezary Kaliszyk and Josef Urban.
 \newblock Learning-assisted automated reasoning with {Flyspeck}.
 \newblock {\em Journal of Automated Reasoning}, 53(2):173--213, Aug 2014.
 
+\bibitem{Klein2014micro}
+Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
+  Rafal Kolanski, and Gernot Heiser.
+\newblock Comprehensive formal verification of an {OS} microkernel.
+\newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
+
 \bibitem{Klein:2014:CFV:2584468.2560537}
 Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
   Rafal Kolanski, and Gernot Heiser.
@@ -522,12 +528,6 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
 \newblock In {\em Proceedings of the 2015 International Symposium on Software
   Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
   ACM.
-
-\bibitem{PGL-045}
-Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
-\newblock Qed at large: A survey of engineering of formally verified software.
-\newblock {\em Foundations and Trends® in Programming Languages},
-  5(2-3):102--281, 2019.
 
 \bibitem{replica}
 Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.

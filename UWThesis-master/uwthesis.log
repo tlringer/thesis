@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 MAR 2021 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 APR 2021 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1778,44 +1778,76 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 52.
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `Leroy:POPL06' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `Leroy2009' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+
 [3
 
 
-] (./guide.tex)) (./motivating.tex
+]
+Overfull \hbox (0.69795pt too wide) in paragraph at lines 68--72
+[]\OT1/pplj/m/n/10.95 (-20) Proof re-pair au-to-mat-i-cally fixes bro-ken proof
+s in re-sponse to changes
+ []
+
+
+LaTeX Warning: Reference `sec:TODO' on page 4 undefined on input line 87.
+
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- [4]
+[4] (./guide.tex [5])) (./motivating.tex [6]
 chapter 2.
-(./development.tex) (./maintenance.tex) (./repair.tex [5
+(./development.tex) (./maintenance.tex) (./repair.tex [7
 
 
-])) (./pumpkinpatch.tex [6]
+])) (./pumpkinpatch.tex [8]
 chapter 3.
 (./repair/motivating.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 30.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-[7
+[9
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 66.
-) (./repair/approach.tex [8] (./repair/introex.tex) (./repair/introex.tex)
+) (./repair/approach.tex [10] (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introex.tex) (./repair/introexterm.tex) (./repair/introexterm.tex)
 (./repair/introexterm.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introex.tex) (./repair/introexterm.tex) (./repair/introexterm.tex)
-(./repair/introexterm.tex) [9] [10]
+(./repair/introexterm.tex) [11] [12]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 139.
-LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
- [11]) (./repair/differencing.tex [12])
-(./repair/transformation.tex [13]) (./repair/implementation.tex
+ [13]) (./repair/differencing.tex [14])
+(./repair/transformation.tex [15]) (./repair/implementation.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 10.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1828,54 +1860,54 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 10.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 10.
- [14]
-<repair/nat_ind.pdf, id=374, 391.4625pt x 200.75pt>
+ [16]
+<repair/nat_ind.pdf, id=396, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
- [15]
+ [17]
 Overfull \hbox (9.2838pt too wide) in paragraph at lines 76--81
 [] []\OT1/pplj/m/sc/10.95 (-20) p a t c h s p e -c i a l -i z a -t i o n[] \OT1
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[16 <./repair/nat_ind.pdf>]
+[18 <./repair/nat_ind.pdf>]
 
-LaTeX Warning: Reference `sec:fail' on page 17 undefined on input line 115.
+LaTeX Warning: Reference `sec:fail' on page 19 undefined on input line 115.
 
 
-LaTeX Warning: Reference `sec:composeintro' on page 17 undefined on input line 
+LaTeX Warning: Reference `sec:composeintro' on page 19 undefined on input line 
 165.
 
-[17]) (./repair/results.tex [18] (./repair/compcert.tex) (./repair/compcert.tex
+[19]) (./repair/results.tex [20] (./repair/compcert.tex) (./repair/compcert.tex
 ) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) [19]
+(./repair/bintonat.tex) (./repair/bintonat.tex) [21]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
- [20]
+ [22]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[21] (./repair/divide.tex) (./repair/divide.tex) [22] [23])
-(./repair/conclusion.tex)) (./often.tex [24]
+[23] (./repair/divide.tex) (./repair/divide.tex) [24] [25])
+(./repair/conclusion.tex)) (./often.tex [26]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
-(./often/equivproof.tex) (./often/equivproof.tex) [25
+(./often/equivproof.tex) (./often/equivproof.tex) [27
 
 
-] [26])
+] [28])
 (./often/approach.tex
-<often/workflowa.pdf, id=737, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=758, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- [27] [28 <./often/workflowa.pdf>] [29]
+ [29] [30 <./often/workflowa.pdf>] [31]
 (./often/equiv2.tex) (./often/equiv2.tex) (./often/listtovect.tex)
 (./often/listtovect.tex)
 Overfull \hbox (22.57913pt too wide) in paragraph at lines 176--184
@@ -1889,28 +1921,28 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 8.
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
-LaTeX Warning: Reference `sec:generic' on page 30 undefined on input line 52.
+LaTeX Warning: Reference `sec:generic' on page 32 undefined on input line 52.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 30 undefined on input lin
+LaTeX Warning: Reference `sec:implementation' on page 32 undefined on input lin
 e 54.
 
-[30] [31] [32] (./often/nattobin.tex) (./often/nattobin.tex)
+[32] [33] [34] (./often/nattobin.tex) (./often/nattobin.tex)
 Overfull \hbox (5.2102pt too wide) in paragraph at lines 197--208
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[33]
+[35]
 Overfull \hbox (48.09023pt too wide) in paragraph at lines 286--287
 [][][][]  
  []
 
-[34] [35] [36]
+[36] [37] [38]
 
-LaTeX Warning: Reference `sec:example' on page 37 undefined on input line 383.
+LaTeX Warning: Reference `sec:example' on page 39 undefined on input line 383.
 
-[37]
+[39]
 Overfull \hbox (2.41995pt too wide) in paragraph at lines 490--514
 []$[]$  $[]$
  []
@@ -1920,7 +1952,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 520--544
 []$[]$
  []
 
-[38] [39]
+[40] [41]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 567.
 
@@ -1934,7 +1966,7 @@ Overfull \hbox (54.74294pt too wide) in paragraph at lines 566--602
  [][] 
  []
 
-[40] [41]
+[42] [43]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 664
 .
 LaTeX Font Info:    No file OMScmtt.fd. on input line 664.
@@ -1963,11 +1995,11 @@ Overfull \hbox (56.84816pt too wide) in paragraph at lines 679--707
  [][] 
  []
 
-[42]) (./often/transformation.tex
+[44]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 8.
 
-[43] [44] [45]
+[45] [46] [47]
 Underfull \hbox (badness 10000) in paragraph at lines 187--213
 
  []
@@ -1980,29 +2012,29 @@ Overfull \hbox (58.00378pt too wide) in paragraph at lines 216--250
  [][] 
  []
 
-[46]
+[48]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 281.
 
-[47]
+[49]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 323.
 
-) (./often/implementation.tex [48] [49]
+) (./often/implementation.tex [50] [51]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 83.
 
-[50] [51]
+[52] [53]
 
-LaTeX Warning: Reference `sec:second' on page 52 undefined on input line 155.
+LaTeX Warning: Reference `sec:second' on page 54 undefined on input line 155.
 
-[52]
+[54]
 Overfull \hbox (18.95294pt too wide) in paragraph at lines 212--225
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
-[53]) (./often/results.tex
+[55]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -2011,33 +2043,33 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Reference `sec:related' on page 54 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 56 undefined on input line 53.
 
 
-LaTeX Warning: Reference `sec:related' on page 54 undefined on input line 53.
+LaTeX Warning: Reference `sec:related' on page 56 undefined on input line 53.
 
-[54] [55] (./often/replica.tex) (./often/replica.tex)
+[56] [57] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 56 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 58 undefined on input line 113.
 
-[56] [57] [58]) (./often/conclusion.tex)) (./related.tex [59] [60
+[58] [59] [60]) (./often/conclusion.tex)) (./related.tex [61] [62
 
 
 ]
 chapter 5.
-[61] [62] [63]
+[63] [64] [65]
 Overfull \hbox (8.96135pt too wide) in paragraph at lines 200--205
 \OT1/pplj/m/n/10.95 (-20) LAR [[]] refac-tors proof scripts in lan-guages based
  on Is-abelle/Isar [[]],
  []
 
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 64 undefined on input line 214.
+LaTeX Warning: Citation `Chrzaszcz2003' on page 66 undefined on input line 214.
 
 
-[64] [65]) (./conclusion.tex [66]
+[66] [67]) (./conclusion.tex [68]
 chapter 6.
-(./next.tex [67
+(./next.tex [69
 
 
 ]
@@ -2052,21 +2084,16 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.bbl [68] [69
+)) (./uwthesis.bbl [70] [71
 
 
-] [70] [71] [72] [73] [74] [75]
-
-LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 529.
-
-[76]
+] [72] [73] [74] [75] [76] [77] [78]
 Underfull \hbox (badness 1189) in paragraph at lines 567--572
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Sa[]^^Pbi.  \OT1/pplj/m/it/10.95 (+20) Out
 -ils G[]en[]eriques de Mod[]elisation et de
  []
 
-
+[79]
 Underfull \hbox (badness 4229) in paragraph at lines 609--613
 []\OT1/pplj/m/n/10.95 (+20) The Uni-va-lent Foun-da-tions Pro-gram.  \OT1/pplj/
 m/it/10.95 (+20) Ho-mo-topy Type
@@ -2078,7 +2105,7 @@ Underfull \hbox (badness 1895) in paragraph at lines 609--613
 \OT1/pplj/m/n/10.95 (+20) .  []$\OT1/cmtt/m/n/10.95 https : / /
  []
 
-[77]) [78]
+) [80]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 436.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 436.
  (./uwthesis.aux)
@@ -2099,10 +2126,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 436.
  ) 
 Here is how much of TeX's memory you used:
- 43376 strings out of 492609
- 815703 string characters out of 6129033
+ 43392 strings out of 492609
+ 815829 string characters out of 6129033
  1169786 words of memory out of 5000000
- 44823 multiletter control sequences out of 15000+600000
+ 44827 multiletter control sequences out of 15000+600000
  630735 words of font info for 745 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,77p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2124,10 +2151,10 @@ pe1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/font
 s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/pa
 latino/uplri8a.pfb>
-Output written on uwthesis.pdf (88 pages, 1349335 bytes).
+Output written on uwthesis.pdf (90 pages, 1354742 bytes).
 PDF statistics:
- 1986 PDF objects out of 2073 (max. 8388607)
- 1835 compressed objects within 19 object streams
- 943 named destinations out of 1000 (max. 500000)
- 93469 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2021 PDF objects out of 2073 (max. 8388607)
+ 1868 compressed objects within 19 object streams
+ 955 named destinations out of 1000 (max. 500000)
+ 93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

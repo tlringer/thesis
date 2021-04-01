@@ -3,6 +3,9 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
+Warning--I didn't find a database entry for "TODO"
+Warning--I didn't find a database entry for "Leroy:POPL06"
+Warning--I didn't find a database entry for "Leroy2009"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
@@ -11,43 +14,43 @@ Warning--empty booktitle in pons00
 Warning--empty school in williamsphd
 You've used 108 entries,
             2118 wiz_defined-function locations,
-            1131 strings with 23686 characters,
-and the built_in function-call counts, 40940 in all, are:
-= -- 4234
-> -- 1714
+            1133 strings with 23597 characters,
+and the built_in function-call counts, 41023 in all, are:
+= -- 4242
+> -- 1724
 < -- 61
-+ -- 676
-- -- 557
-* -- 2612
-:= -- 6388
++ -- 680
+- -- 561
+* -- 2624
+:= -- 6402
 add.period$ -- 365
 call.type$ -- 108
-change.case$ -- 580
+change.case$ -- 582
 chr.to.int$ -- 0
 cite$ -- 113
 duplicate$ -- 1741
-empty$ -- 3294
-format.name$ -- 557
-if$ -- 9070
+empty$ -- 3295
+format.name$ -- 561
+if$ -- 9082
 int.to.chr$ -- 0
 int.to.str$ -- 108
 missing$ -- 91
 newline$ -- 532
 num.names$ -- 234
-pop$ -- 706
+pop$ -- 708
 preamble$ -- 1
-purify$ -- 480
+purify$ -- 482
 quote$ -- 0
 skip$ -- 1363
 stack$ -- 0
-substring$ -- 2496
+substring$ -- 2503
 swap$ -- 583
 text.length$ -- 61
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 422
 warning$ -- 5
-while$ -- 410
+while$ -- 411
 width$ -- 111
 write$ -- 1267
-(There were 6 warnings)
+(There were 9 warnings)

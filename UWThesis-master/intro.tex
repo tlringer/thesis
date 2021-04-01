@@ -1,12 +1,21 @@
 \chapter{Introduction}
 
-Motivation for verifying systems
+% Current intro sources, mixed together:
+% - some new content
+% - research statement
+% - QED at Large (intro and why proof engineering matters)
+% - PUMPKIN Pi
+% TODO somewhere, clarify scope of verification here
 
-Era of scale---enter proof engineering~\cite{PGL-045}.
+What would it take to empower programmers of all skill levels across all domains to formally prove
+the absence of costly or dangerous bugs in software systems---that is, to formally \textit{verify} them?
+
+Verification has already come a long way since its inception,
+especially when it comes to the scale of programs that can be verified.
 The seL4~\cite{Klein2009} verified operating system kernel, for example,
 is the effort of a team of proof engineers spanning more than
 a million lines of proof, costing over 20 person-years.
-Given a famous 1977 critique of verification~\cite{DeMillo1977} (emphasis ours):
+Given a famous 1977 critique of verification~\cite{DeMillo1977} (emphasis mine):
 
 \begin{quote}
 \textit{A sufficiently fanatical researcher}
@@ -15,8 +24,8 @@ three years} to verifying a significant
 piece of software if he could be 
 assured that the software would remain stable.
 \end{quote}
-we could argue that, over 40 years, either verification has become easier,
-or researchers have become more fanatical. Unfortunately, not all has changed (emphasis still ours):
+I could argue that, over 40 years, either verification has become easier,
+or researchers have become more fanatical. Unfortunately, not all has changed (emphasis still mine):
 
 \begin{quote}
 But real-life programs need to 
@@ -25,23 +34,92 @@ There is \textit{no reason to believe} that verifying a modified program is any
 easier than verifying the original the 
 first time around.
 \end{quote}
-To this day, maintaining verified programs can be challenging: it means keeping not just the programs, but also specifications and proofs about those programs up-to-date.
-This remains so difficult that sometimes, even experts give up in the face of change~\cite{replica}. % TODO rather than cite self, refer to section?
+As we will soon see, this remains so difficult that sometimes, even experts give up in the face of change. % TODO cite section
 
-But missed opportunity: automation doesn't understand that proofs evolve
+This thesis aims to change that by taking advantage of a missed opportunity: tools for developing verified systems
+have no understanding of how these systems evolve over time, so they miss out on crucial information.
+This thesis introduces a new class of verification tools called \textit{proof repair} tools.
+Proof repair tools understand how software systems evolve, and use the crucial information that evolution carries
+to automatically evolve proofs about those systems.
+This gives us reason to believe.
 
-So we build automation that does, and we call this proof repair.
-Proof repair shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+\section{Thesis}
+
+% TODO segue sentence
+Proof repair falls under the umbrella of \textit{proof engineering}: the technologies that make it easier
+to develop and maintain verified systems.
+Much like software engineering scales programming to large systems, so proof engineering scales verification to large systems. 
+In recent years, proof engineers have verified operating system (OS) micro kernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{TODO}, distributed systems~\cite{TODO}, constraint solvers~\cite{TODO}, web browser kernels~\cite{TODO}, compilers~\cite{Leroy:POPL06, Leroy2009}, file systems~\cite{TODO}, and even a quantum optimizer~\cite{TODO}.
+As we will soon see, practitioners have found these verified systems to be more robust and secure in deployment. % TODO cite section
+% TODO maybe include the Why Proof Engineering Matters from QED at Large in Chapter 2 somewhere. Maybe move this too.
+
+Proof engineering focuses in particular on verified systems that have been
+developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
+To develop a verified system using a proof assistant, the proof engineer does three things:
+
+\begin{enumerate}
+\item implements a program using a functional programming language,
+\item specifies what it means for the program to be correct, and
+\item proves that the program satisfies the specification.
+\end{enumerate}
+This proof assistant then automatically checks this proof with a small trusted part of its system.
+If the proof is correct, then the program behaves as specified---it is \textit{verified}.
+
+Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
+For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
+Changing a verified library, for example, can break proofs about programs that depend on that library---and those breaking changes
+can be outside of the proof engineers' control.
+
+Proof repair views these broken proofs as bugs that a tool can patch.
+In doing so, it shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
 even when proof engineers do not follow good development processes,
-or when change occurs outside of proof engineers' control~\cite{PGL-045}.
+or when change occurs outside of proof engineers' control.
+More formally:
 
-Or, in other words (thesis statement): Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+\begin{quote}
+\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+\end{quote}
 
-Key technical bit: differencing and program transformations, taking advantage of the rich and structured language proofs are written in.
+\section{Approach}
 
-We implement this in a tool suite for Coq, get some sweet results.
+The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
+In particular, proof engineers often write proofs in a high-level language, but in the end the proof assistant checks proofs
+in a low-level language (Section~\ref{sec:TODO}).
+The high-level language can abstract away important details that a proof repair tool needs,
+but the low-level language can be brittle and challenging to work with.
 
-Pave path to the next era of verification
+Crucially, though, the low-level language comes with lots of structure and strong guarantees.
+My approach to proof repair works in the low-level language to take advantage of that.
+It then builds back up to the high-level language in the end.
+
+By working at the low-level language, it is able to systematically and with strong guarantees extract and generalize the 
+information that breaking changes carry,
+then apply those changes to fix other proofs broken by the same change.
+But by later building up to the high-level language,
+it can in the end produce proofs that integrate more naturally with proof engineering workflows.
+
+This works using a combination of semantic differencing and program transformations in this low-level language.
+In particular, it uses a semantic differencing algorithm to extract information from a breaking change in a program, specification, or proof.
+It then combines that with program transformations to generalize and, in some cases, apply that information to fix other 
+proofs broken by the same change.
+In the end, it uses a prototype decompiler to get from the low-level language back up to the high-level language,
+so that proof engineers can continue to work in that language going forward. % TODO lol this sucks but whatever it's a first draft
+
+\section{Results}
+
+Three kinds of results:
+
+\begin{enumerate}
+\item design of differencing \& transformation
+\item implementation in Coq that doesn't extend the TCB
+\item case studies to evaluate
+\end{enumerate}
+
+\paragraph{Design}
+
+\paragraph{Implementation}
+
+\paragraph{Case Studies}
 
 % Dan: It might be good either in 1 or in both 3 and 4 to lay out the key /results/ -- you have _design_ of the transformation, 
 % the highly non-trivial _implementation_ in Coq in a way that doesn't extend the TCB, and you have substantial case studies to _evaluate_.

@@ -1,5 +1,8 @@
 \begin{thebibliography}{100}
 
+\bibitem{agda}
+Agda, 2017.
+
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
 
@@ -156,6 +159,10 @@ Cyril Cohen and Damien Rouhling.
 \newblock In {\em {JFLA 2017 - Vingt-huiti{\`e}me Journ{\'e}es Francophones des
   Langages Applicatifs}}, Gourette, France, January 2017.
 
+\bibitem{coq}
+{Coq Development Team}.
+\newblock The {Coq} proof assistant, 1989-2021.
+
 \bibitem{coquand:inria-00076024}
 T.~Coquand and G{\'e}rard Huet.
 \newblock {The calculus of constructions}.
@@ -193,6 +200,14 @@ Pierre-Evariste Dagand and Conor McBride.
 Pierre-Evariste Dagand and Conor McBride.
 \newblock Transporting functions across ornaments.
 \newblock {\em Journal of functional programming}, 24(2-3):316--383, 2014.
+
+\bibitem{z3}
+Leonardo De~Moura and Nikolaj Bj{\o}rner.
+\newblock Z3: An efficient smt solver.
+\newblock In {\em Proceedings of the Theory and Practice of Software, 14th
+  International Conference on Tools and Algorithms for the Construction and
+  Analysis of Systems}, TACAS'08/ETAPS'08, pages 337--340, Berlin, Heidelberg,
+  2008. Springer-Verlag.
 
 \bibitem{Delaware:2011:PLT:2048066.2048113}
 Benjamin Delaware, William Cook, and Don Batory.
@@ -481,6 +496,12 @@ Anne Mulhern.
 \newblock Proof weaving.
 \newblock In {\em In Proceedings of the First Informal ACM SIGPLAN Workshop on
   Mechanizing Metatheory}, 2006.
+
+\bibitem{murraybp}
+Toby Murray and P.~C. van Oorschot.
+\newblock {BP}: Formal proofs, the fine print and side effects.
+\newblock In {\em IEEE Cybersecurity Development (SecDev)}, pages 1--10, Sep.
+  2018.
 
 \bibitem{nlab:beta-reduction}
 {nLab authors}.

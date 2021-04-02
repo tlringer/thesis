@@ -37,6 +37,7 @@
 \usepackage{scalerel} % to render definitional equality
 \usepackage{bbm} % to render N for the natural numbers
 \usepackage[nounderscore]{syntax} % grammar
+\usetikzlibrary{shapes,shapes.geometric,arrows,automata,snakes}
 
 \DeclareGraphicsExtensions{.pdf}
 
@@ -254,6 +255,9 @@
 }}
 
 \definecolor{thecolor}{RGB}{38,90,18}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\cross{$\mathbin{\tikz [x=1.4ex,y=1.4ex,line width=.2ex] \draw (0,0) -- (1,1) (0,1) -- (1,0);}$}
  
 %
 % ----- copyright and title pages

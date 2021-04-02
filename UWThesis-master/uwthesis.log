@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1909,12 +1909,6 @@ LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 
 
-LaTeX Warning: Citation `Leroy:POPL06' on page 3 undefined on input line 52.
-
-
-LaTeX Warning: Citation `Leroy2009' on page 3 undefined on input line 52.
-
-
 LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 
 
@@ -1924,19 +1918,6 @@ LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 
 
 ]
-
-LaTeX Warning: Citation `isabelle' on page 4 undefined on input line 58.
-
-
-LaTeX Warning: Citation `hollight' on page 4 undefined on input line 59.
-
-
-LaTeX Warning: Citation `Barendregt2002' on page 4 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Barendregt2351' on page 4 undefined on input line 67.
-
-
 Overfull \hbox (0.69795pt too wide) in paragraph at lines 70--74
 []\OT1/pplj/m/n/10.95 (-20) Proof re-pair au-to-mat-i-cally fixes bro-ken proof
 s in re-sponse to changes
@@ -1954,39 +1935,16 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 105.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 105.
-
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
-nput line 118.
-
-
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
-nput line 118.
-
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 [4] [5] (./guide.tex)) (./motivating.tex [6]
 chapter 2.
-(./development.tex
-
-LaTeX Warning: Citation `Leroy:POPL06' on page 7 undefined on input line 17.
+(./development.tex [7
 
 
-LaTeX Warning: Citation `Leroy2009' on page 7 undefined on input line 17.
-
-
-LaTeX Warning: Citation `Kaestner2017' on page 7 undefined on input line 19.
-
-
-LaTeX Warning: Citation `Frana2011' on page 7 undefined on input line 20.
-
-
-LaTeX Warning: Citation `Yang2011' on page 7 undefined on input line 21.
-
-[7
-
-
-]) (./maintenance.tex) (./repair.tex [8])) (./pumpkinpatch.tex [9] [10
+]) (./maintenance.tex) (./repair.tex [8]))
+(./pumpkinpatch.tex [9] [10
 
 
 ]
@@ -2010,7 +1968,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
  [15]) (./repair/differencing.tex [16])
 (./repair/transformation.tex [17]) (./repair/implementation.tex [18]
-<repair/nat_ind.pdf, id=416, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=438, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2051,7 +2009,7 @@ chapter 4.
 
 ] [30])
 (./often/approach.tex
-<often/workflowa.pdf, id=778, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=800, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2231,25 +2189,13 @@ l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
 )) (./uwthesis.bbl [72] [73
 
 
-] [74] [75] [76] [77] [78] [79] [80]
-Underfull \hbox (badness 1189) in paragraph at lines 580--585
-[]\OT1/pplj/m/n/10.95 (+20) Amokrane Sa[]^^Pbi.  \OT1/pplj/m/it/10.95 (+20) Out
--ils G[]en[]eriques de Mod[]elisation et de
+] [74] [75] [76] [77] [78] [79] [80] [81]
+Underfull \hbox (badness 1184) in paragraph at lines 635--640
+[]\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
+ G[]en[]eriques de Mod[]elisation et de
  []
 
-[81]
-Underfull \hbox (badness 4229) in paragraph at lines 622--626
-[]\OT1/pplj/m/n/10.95 (+20) The Uni-va-lent Foun-da-tions Pro-gram.  \OT1/pplj/
-m/it/10.95 (+20) Ho-mo-topy Type
- []
-
-
-Underfull \hbox (badness 1895) in paragraph at lines 622--626
-\OT1/pplj/m/it/10.95 (+20) The-ory: Uni-va-lent Foun-da-tions of Math-e-mat-ics
-\OT1/pplj/m/n/10.95 (+20) .  []$\OT1/cmtt/m/n/10.95 https : / /
- []
-
-) [82]
+[82]) [83]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
  (./uwthesis.aux)
@@ -2270,11 +2216,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 46621 strings out of 492609
- 913745 string characters out of 6129033
- 1262625 words of memory out of 5000000
- 47976 multiletter control sequences out of 15000+600000
- 630477 words of font info for 741 fonts, out of 8000000 for 9000
+ 46634 strings out of 492609
+ 913998 string characters out of 6129033
+ 1262990 words of memory out of 5000000
+ 47988 multiletter control sequences out of 15000+600000
+ 630067 words of font info for 733 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,80p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2294,10 +2240,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (92 pages, 1354629 bytes).
+Output written on uwthesis.pdf (93 pages, 1358403 bytes).
 PDF statistics:
- 2042 PDF objects out of 2073 (max. 8388607)
- 1887 compressed objects within 19 object streams
- 963 named destinations out of 1000 (max. 500000)
+ 2070 PDF objects out of 2073 (max. 8388607)
+ 1912 compressed objects within 20 object streams
+ 974 named destinations out of 1000 (max. 500000)
  93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

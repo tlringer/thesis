@@ -4,62 +4,52 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
-Warning--I didn't find a database entry for "Leroy:POPL06"
-Warning--I didn't find a database entry for "Leroy2009"
-Warning--I didn't find a database entry for "isabelle"
-Warning--I didn't find a database entry for "hollight"
-Warning--I didn't find a database entry for "Barendregt2002"
-Warning--I didn't find a database entry for "Barendregt2351"
-Warning--I didn't find a database entry for "pa-history-geuvers-sadhana09"
-Warning--I didn't find a database entry for "Kaestner2017"
-Warning--I didn't find a database entry for "Frana2011"
-Warning--I didn't find a database entry for "Yang2011"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
-Warning--empty booktitle in pons00
+Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 111 entries,
+You've used 121 entries,
             2118 wiz_defined-function locations,
-            1158 strings with 23981 characters,
-and the built_in function-call counts, 41760 in all, are:
-= -- 4310
-> -- 1745
-< -- 62
-+ -- 690
-- -- 567
-* -- 2659
-:= -- 6505
-add.period$ -- 371
-call.type$ -- 111
-change.case$ -- 594
+            1201 strings with 25296 characters,
+and the built_in function-call counts, 45275 in all, are:
+= -- 4697
+> -- 1847
+< -- 67
++ -- 737
+- -- 603
+* -- 2886
+:= -- 7035
+add.period$ -- 404
+call.type$ -- 121
+change.case$ -- 648
 chr.to.int$ -- 0
-cite$ -- 117
-duplicate$ -- 1774
-empty$ -- 3376
-format.name$ -- 567
-if$ -- 9251
+cite$ -- 127
+duplicate$ -- 1924
+empty$ -- 3683
+format.name$ -- 603
+if$ -- 10028
 int.to.chr$ -- 0
-int.to.str$ -- 111
-missing$ -- 92
-newline$ -- 544
-num.names$ -- 238
-pop$ -- 734
+int.to.str$ -- 121
+missing$ -- 100
+newline$ -- 592
+num.names$ -- 252
+pop$ -- 796
 preamble$ -- 1
-purify$ -- 491
+purify$ -- 535
 quote$ -- 0
-skip$ -- 1394
+skip$ -- 1503
 stack$ -- 0
-substring$ -- 2538
-swap$ -- 592
-text.length$ -- 62
+substring$ -- 2794
+swap$ -- 635
+text.length$ -- 67
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 434
+type$ -- 474
 warning$ -- 6
-while$ -- 418
-width$ -- 114
-write$ -- 1292
-(There were 18 warnings)
+while$ -- 456
+width$ -- 124
+write$ -- 1409
+(There were 8 warnings)

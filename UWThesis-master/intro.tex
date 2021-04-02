@@ -53,6 +53,37 @@ In recent years, proof engineers have verified operating system (OS) micro kerne
 As we will soon see, practitioners have found these verified systems to be more robust and secure in deployment. % TODO cite section
 % TODO maybe include the Why Proof Engineering Matters from QED at Large in Chapter 2 somewhere. Maybe move this too.
 
+Proof engineering focuses in particular on verified systems that have been
+developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
+Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
+HOL Light~\cite{hollight}, and Lean~\cite{lean}.
+To develop a verified system using a proof assistant, the proof engineer does three things:
+
+\begin{enumerate}
+\item implements a program using a functional programming language,
+\item specifies what it means for the program to be correct, and
+\item proves that the program satisfies the specification.
+\end{enumerate}
+This proof assistant then automatically checks this proof with a small trusted part of its system~\cite{Barendregt2002,Barendregt2351}.
+If the proof is correct, then the program satisfies its specification---it is \textit{verified}.
+
+Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
+For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
+Changing a verified library, for example, can break proofs about programs that depend on that library---and those breaking changes
+can be outside of the proof engineers' control.
+
+Proof repair views these broken proofs as bugs that a tool can patch.
+In doing so, it shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+even when proof engineers do not follow good development processes,
+or when change occurs outside of proof engineers' control.
+More formally:
+
+\begin{quote}
+\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+\end{quote}
+
+\section{Approach}
+
 \begin{figure}[ht]
   \centering
 {\footnotesize
@@ -88,47 +119,17 @@ As we will soon see, practitioners have found these verified systems to be more 
 \label{fig:workflow}
 \end{figure}
 
-Proof engineering focuses in particular on verified systems that have been
-developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
-Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
-HOL Light~\cite{hollight}, and Lean~\cite{lean}.
-To develop a verified system using a proof assistant, the proof engineer does three things:
-
-\begin{enumerate}
-\item implements a program using a functional programming language,
-\item specifies what it means for the program to be correct, and
-\item proves that the program satisfies the specification.
-\end{enumerate}
+The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
 One common process for writing this proof is interactive: The proof engineer passes the proof assistant high-level
 search procedures called \textit{tactics} (like \lstinline{induction}), and the proof assistant responds to each tactic
 by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
-continues until no goals remain, at which point the proof engineer has constructed a sequence of tactics called a \textit{proof script}.
-This proof assistant then automatically checks this proof with a small trusted part of its system~\cite{Barendregt2002,Barendregt2351}.
-To do this, it checks not the proof script itself, but instead a low-level representation called a \textit{proof object} 
+continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
+To check the proof, the proof assistant checks not the proof script itself, but instead a low-level representation called a \textit{proof object} 
 that the proof script constructs.
 Figure~\ref{fig:workflow} illustrates this workflow.
 
-Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
-For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
-Changing a verified library, for example, can break proofs about programs that depend on that library---and those breaking changes
-can be outside of the proof engineers' control.
-
-Proof repair views these broken proofs as bugs that a tool can patch.
-In doing so, it shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
-even when proof engineers do not follow good development processes,
-or when change occurs outside of proof engineers' control.
-More formally:
-
-\begin{quote}
-\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
-\end{quote}
-
-\section{Approach}
-
-The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
 The high-level language of tactics can abstract away important details that a proof repair tool needs,
 but the low-level language of proof objects can be brittle and challenging to work with.
-
 Crucially, though, the low-level language comes with lots of structure and strong guarantees.
 My approach to proof repair works in the low-level language to take advantage of that.
 It then builds back up to the high-level language in the end.

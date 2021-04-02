@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1924,46 +1924,43 @@ LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 
 
 ]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 74.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 74.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 74.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 74.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 74.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 74.
+
+LaTeX Warning: Citation `isabelle' on page 4 undefined on input line 58.
 
 
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
-nput line 87.
+LaTeX Warning: Citation `hollight' on page 4 undefined on input line 59.
 
 
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
-nput line 87.
+LaTeX Warning: Citation `Barendregt2002' on page 4 undefined on input line 67.
 
 
-LaTeX Warning: Citation `isabelle' on page 4 undefined on input line 93.
+LaTeX Warning: Citation `Barendregt2351' on page 4 undefined on input line 67.
 
 
-LaTeX Warning: Citation `hollight' on page 4 undefined on input line 94.
-
-
-LaTeX Warning: Citation `Barendregt2002' on page 4 undefined on input line 106.
-
-
-
-LaTeX Warning: Citation `Barendregt2351' on page 4 undefined on input line 106.
-
-
-
-Overfull \hbox (0.69795pt too wide) in paragraph at lines 111--115
+Overfull \hbox (0.69795pt too wide) in paragraph at lines 70--74
 []\OT1/pplj/m/n/10.95 (-20) Proof re-pair au-to-mat-i-cally fixes bro-ken proof
 s in re-sponse to changes
  []
+
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 105.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 105.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 105.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 105.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 105.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 105.
+
+LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
+nput line 118.
+
+
+LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
+nput line 118.
 
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
@@ -2297,7 +2294,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (92 pages, 1354509 bytes).
+Output written on uwthesis.pdf (92 pages, 1354629 bytes).
 PDF statistics:
  2042 PDF objects out of 2073 (max. 8388607)
  1887 compressed objects within 19 object streams

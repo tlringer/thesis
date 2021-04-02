@@ -4,6 +4,12 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
+Warning--I didn't find a database entry for "Ringer2019"
+Warning--I didn't find a database entry for "replica"
+Warning--I didn't find a database entry for "ZimmermannH15"
+Warning--I didn't find a database entry for "tabareau:hal-01559073"
+Warning--I didn't find a database entry for "pons2000generalization"
+Warning--I didn't find a database entry for "ringer2018adapting"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
@@ -11,45 +17,45 @@ Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 121 entries,
+You've used 115 entries,
             2118 wiz_defined-function locations,
-            1201 strings with 25296 characters,
-and the built_in function-call counts, 45275 in all, are:
-= -- 4697
-> -- 1847
-< -- 67
-+ -- 737
-- -- 603
-* -- 2886
-:= -- 7035
-add.period$ -- 404
-call.type$ -- 121
-change.case$ -- 648
+            1182 strings with 24494 characters,
+and the built_in function-call counts, 43018 in all, are:
+= -- 4472
+> -- 1740
+< -- 64
++ -- 695
+- -- 567
+* -- 2745
+:= -- 6678
+add.period$ -- 384
+call.type$ -- 115
+change.case$ -- 612
 chr.to.int$ -- 0
-cite$ -- 127
-duplicate$ -- 1924
-empty$ -- 3683
-format.name$ -- 603
-if$ -- 10028
+cite$ -- 121
+duplicate$ -- 1827
+empty$ -- 3506
+format.name$ -- 567
+if$ -- 9531
 int.to.chr$ -- 0
-int.to.str$ -- 121
-missing$ -- 100
-newline$ -- 592
-num.names$ -- 252
-pop$ -- 796
+int.to.str$ -- 115
+missing$ -- 95
+newline$ -- 562
+num.names$ -- 240
+pop$ -- 754
 preamble$ -- 1
-purify$ -- 535
+purify$ -- 505
 quote$ -- 0
-skip$ -- 1503
+skip$ -- 1428
 stack$ -- 0
-substring$ -- 2794
-swap$ -- 635
-text.length$ -- 67
+substring$ -- 2677
+swap$ -- 601
+text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 474
+type$ -- 450
 warning$ -- 6
-while$ -- 456
-width$ -- 124
-write$ -- 1409
-(There were 8 warnings)
+while$ -- 436
+width$ -- 118
+write$ -- 1342
+(There were 14 warnings)

@@ -581,12 +581,6 @@ Yu~Pei, Carlo~A. Furia, Martin Nordio, and Bertrand Meyer.
   Fundamental Approaches to Software Engineering - Volume 8411}, pages
   246--260, New York, NY, USA, 2014. Springer-Verlag New York, Inc.
 
-\bibitem{pons2000generalization}
-Olivier Pons.
-\newblock Generalization in type theory based proof assistants.
-\newblock In {\em International Workshop on Types for Proofs and Programs},
-  pages 217--232. Springer, 2000.
-
 \bibitem{pons00}
 Olivier Pons.
 \newblock Generalization in type theory based proof assistants.
@@ -600,23 +594,6 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
 \newblock In {\em Proceedings of the 2015 International Symposium on Software
   Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
   ACM.
-
-\bibitem{replica}
-Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
-\newblock Replica: Repl instrumentation for coq analysis.
-\newblock In {\em Proceedings of the 9th ACM SIGPLAN International Conference
-  on Certified Programs and Proofs}, CPP 2020, pages 99--113, 01 2020.
-
-\bibitem{ringer2018adapting}
-Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
-\newblock Adapting proof automation to adapt proofs.
-\newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
-  on Certified Programs and Proofs}, pages 115--129. ACM, 2018.
-
-\bibitem{Ringer2019}
-Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
-\newblock Ornaments for proof reuse in coq.
-\newblock In {\em Interactive Theorem Proving}, 2019.
 
 \bibitem{robert2018}
 Valentin Robert.
@@ -651,11 +628,6 @@ Matthieu Sozeau and Nicolas Oury.
 \newblock In {\em Theorem Proving in Higher Order Logics: 21st International
   Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
   pages 278--293, Berlin, Heidelberg, 2008. Springer.
-
-\bibitem{tabareau:hal-01559073}
-Nicolas Tabareau, {\'E}ric Tanter, and Matthieu Sozeau.
-\newblock {Equivalences for Free!}
-\newblock working paper or preprint, July 2017.
 
 \bibitem{tabareau2017equivalences}
 Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
@@ -719,12 +691,6 @@ Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.
 \newblock In {\em Proceedings of the 32nd ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '11, pages 283--294, New York, NY,
   USA, 2011. ACM.
-
-\bibitem{ZimmermannH15}
-Th{\'{e}}o Zimmermann and Hugo Herbelin.
-\newblock Automatic and transparent transfer of theorems along isomorphisms in
-  the {Coq} proof assistant.
-\newblock {\em CoRR}, abs/1505.05028, 2015.
 
 \bibitem{zimmermann2015automatic}
 Theo Zimmermann and Hugo Herbelin.

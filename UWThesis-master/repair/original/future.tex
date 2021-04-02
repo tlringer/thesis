@@ -109,7 +109,7 @@ patches it finds automatically to fix broken proofs.
 In some cases, this may be as simple as adding the patches as hints to a hint database, so that proofs go through with no changes.
 However, hint databases in Coq cannot support certain terms~\cite{hints}, and adding too many
 hints may impede performance.
-More generally, we can integrate \sysname with a transfer tactic~\cite{Huffman2013, ZimmermannH15},
+More generally, we can integrate \sysname with a transfer tactic~\cite{Huffman2013, zimmermann2015automatic},
 which is a perfect fit: 
 Transfer tactics automatically adapt proofs between isomorphic types and implications, but they do
 not find these functions; \sysname finds these functions, but it does not apply them.

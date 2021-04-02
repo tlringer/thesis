@@ -7,6 +7,8 @@
 % - PUMPKIN Pi
 % TODO somewhere, clarify scope of verification here
 
+% TODO can say ``see survey paper''
+
 What would it take to empower programmers of all skill levels across all domains to formally prove
 the absence of costly or dangerous bugs in software systems---that is, to formally \textit{verify} them?
 
@@ -118,6 +120,12 @@ More formally:
 \caption{Typical proof assistant workflow, adapted from \cite{pa-history-geuvers-sadhana09}.}
 \label{fig:workflow}
 \end{figure}
+
+% TODO here, say: we assume Coq in here, see survey paper for more, tactics versus no tactics, de bruijn, where Coq is,
+% many ideas generalize but eh, doesn't adapt exactly as-is.
+% then expand on that in related work or conclusion
+
+% TODO the amount of background: in reading guide, give resources for learning Coq in more detail, but don't go into too much Coq detail here
 
 The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
 One common process for writing this proof is interactive: The proof engineer passes the proof assistant high-level

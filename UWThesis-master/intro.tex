@@ -53,8 +53,45 @@ In recent years, proof engineers have verified operating system (OS) micro kerne
 As we will soon see, practitioners have found these verified systems to be more robust and secure in deployment. % TODO cite section
 % TODO maybe include the Why Proof Engineering Matters from QED at Large in Chapter 2 somewhere. Maybe move this too.
 
+\begin{figure}[ht]
+  \centering
+{\footnotesize
+\begin{tikzpicture}[>=stealth',semithick]
+
+\begin{scope}
+\node[ellipse, draw=black, inner ysep=8pt, inner xsep=5pt] (user) { user };
+\end{scope}
+
+\begin{scope}[xshift=5.5cm]
+\node[rectangle, draw=black, minimum width=6.5cm, minimum height=2cm] (coq) { };
+\node[rectangle, draw=black, minimum height=1.5cm, fill=lightgray, xshift=-2cm] (engine) { logic engine };
+\node[rectangle, draw=black, xshift=1.8cm] (checker) { proof checker };
+\node[xshift=1.7cm, yshift=0.7cm] (sys) { proof assistant };
+\end{scope}
+
+\begin{scope}[xshift=9.5cm]
+\node[yshift=0.6cm] (ack) {\checkmark};
+\node[yshift=-0.6cm,xshift=-0.1cm] (nack) {\cross};
+\end{scope}
+
+\draw[->, thick] (user.north east) to node[xshift=-0.2cm, yshift=0.2cm] {tactics} ([yshift=0.33cm]engine.west);
+\draw[->, thick] ([yshift=0.38cm]engine.south west) to node[xshift=-0.2cm, yshift=-0.2cm] {subgoals} (user.south east);
+
+\draw[->, thick] (engine.east) to node[yshift=0.2cm] {proof} (checker.west);
+
+\draw[->, thick] (checker.east) to (ack.south west);
+\draw[->, thick] (checker.east) to (nack.north west);
+
+\end{tikzpicture}
+}
+\caption{Typical proof assistant workflow, adapted from \cite{pa-history-geuvers-sadhana09}.}
+\label{fig:workflow}
+\end{figure}
+
 Proof engineering focuses in particular on verified systems that have been
 developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
+Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
+HOL Light~\cite{hollight}, and Lean~\cite{lean}.
 To develop a verified system using a proof assistant, the proof engineer does three things:
 
 \begin{enumerate}
@@ -62,8 +99,14 @@ To develop a verified system using a proof assistant, the proof engineer does th
 \item specifies what it means for the program to be correct, and
 \item proves that the program satisfies the specification.
 \end{enumerate}
-This proof assistant then automatically checks this proof with a small trusted part of its system.
-If the proof is correct, then the program behaves as specified---it is \textit{verified}.
+One common process for writing this proof is interactive: The proof engineer passes the proof assistant high-level
+search procedures called \textit{tactics} (like \lstinline{induction}), and the proof assistant responds to each tactic
+by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
+continues until no goals remain, at which point the proof engineer has constructed a sequence of tactics called a \textit{proof script}.
+This proof assistant then automatically checks this proof with a small trusted part of its system~\cite{Barendregt2002,Barendregt2351}.
+To do this, it checks not the proof script itself, but instead a low-level representation called a \textit{proof object} 
+that the proof script constructs.
+Figure~\ref{fig:workflow} illustrates this workflow.
 
 Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
 For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
@@ -83,10 +126,8 @@ More formally:
 \section{Approach}
 
 The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
-In particular, proof engineers often write proofs in a high-level language, but in the end the proof assistant checks proofs
-in a low-level language (Section~\ref{sec:TODO}).
-The high-level language can abstract away important details that a proof repair tool needs,
-but the low-level language can be brittle and challenging to work with.
+The high-level language of tactics can abstract away important details that a proof repair tool needs,
+but the low-level language of proof objects can be brittle and challenging to work with.
 
 Crucially, though, the low-level language comes with lots of structure and strong guarantees.
 My approach to proof repair works in the low-level language to take advantage of that.

@@ -6,62 +6,60 @@ Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Leroy:POPL06"
 Warning--I didn't find a database entry for "Leroy2009"
+Warning--I didn't find a database entry for "pa-history-geuvers-sadhana09"
+Warning--I didn't find a database entry for "isabelle"
+Warning--I didn't find a database entry for "hollight"
+Warning--I didn't find a database entry for "Barendregt2002"
+Warning--I didn't find a database entry for "Barendregt2351"
 Warning--I didn't find a database entry for "Kaestner2017"
 Warning--I didn't find a database entry for "Frana2011"
 Warning--I didn't find a database entry for "Yang2011"
-Warning--I didn't find a database entry for "pa-history-geuvers-sadhana09"
-Warning--I didn't find a database entry for "Barendregt2002"
-Warning--I didn't find a database entry for "Barendregt2351"
-Warning--I didn't find a database entry for "isabelle"
-Warning--I didn't find a database entry for "hollight"
-Warning--I didn't find a database entry for "Leino2010"
-Warning--I didn't find a database entry for "acl2"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
-Warning--to sort, need author or key in agda
+Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty booktitle in pons00
 Warning--empty school in williamsphd
-You've used 112 entries,
+You've used 111 entries,
             2118 wiz_defined-function locations,
-            1167 strings with 24234 characters,
-and the built_in function-call counts, 42228 in all, are:
-= -- 4364
-> -- 1758
-< -- 63
-+ -- 695
-- -- 571
-* -- 2686
-:= -- 6571
-add.period$ -- 375
-call.type$ -- 112
-change.case$ -- 599
+            1158 strings with 23981 characters,
+and the built_in function-call counts, 41760 in all, are:
+= -- 4310
+> -- 1745
+< -- 62
++ -- 690
+- -- 567
+* -- 2659
+:= -- 6505
+add.period$ -- 371
+call.type$ -- 111
+change.case$ -- 594
 chr.to.int$ -- 0
-cite$ -- 118
-duplicate$ -- 1797
-empty$ -- 3415
-format.name$ -- 571
-if$ -- 9362
+cite$ -- 117
+duplicate$ -- 1774
+empty$ -- 3376
+format.name$ -- 567
+if$ -- 9251
 int.to.chr$ -- 0
-int.to.str$ -- 112
-missing$ -- 93
-newline$ -- 549
-num.names$ -- 240
-pop$ -- 739
+int.to.str$ -- 111
+missing$ -- 92
+newline$ -- 544
+num.names$ -- 238
+pop$ -- 734
 preamble$ -- 1
-purify$ -- 495
+purify$ -- 491
 quote$ -- 0
-skip$ -- 1414
+skip$ -- 1394
 stack$ -- 0
-substring$ -- 2575
-swap$ -- 602
-text.length$ -- 63
+substring$ -- 2538
+swap$ -- 592
+text.length$ -- 62
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 438
+type$ -- 434
 warning$ -- 6
-while$ -- 423
-width$ -- 115
-write$ -- 1306
-(There were 20 warnings)
+while$ -- 418
+width$ -- 114
+write$ -- 1292
+(There were 18 warnings)

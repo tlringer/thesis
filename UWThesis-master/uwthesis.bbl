@@ -1,10 +1,10 @@
 \begin{thebibliography}{100}
 
-\bibitem{agda}
-Agda, 2017.
-
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
+
+\bibitem{lean}
+Lean theorem prover, 2017.
 
 \bibitem{usera}
 User A.
@@ -200,14 +200,6 @@ Pierre-Evariste Dagand and Conor McBride.
 Pierre-Evariste Dagand and Conor McBride.
 \newblock Transporting functions across ornaments.
 \newblock {\em Journal of functional programming}, 24(2-3):316--383, 2014.
-
-\bibitem{z3}
-Leonardo De~Moura and Nikolaj Bj{\o}rner.
-\newblock Z3: An efficient smt solver.
-\newblock In {\em Proceedings of the Theory and Practice of Software, 14th
-  International Conference on Tools and Algorithms for the Construction and
-  Analysis of Systems}, TACAS'08/ETAPS'08, pages 337--340, Berlin, Heidelberg,
-  2008. Springer-Verlag.
 
 \bibitem{Delaware:2011:PLT:2048066.2048113}
 Benjamin Delaware, William Cook, and Don Batory.

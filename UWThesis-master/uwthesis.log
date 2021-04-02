@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1924,18 +1924,51 @@ LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
 
 
 ]
-Overfull \hbox (0.69795pt too wide) in paragraph at lines 68--72
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 74.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 74.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 74.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 74.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 74.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 74.
+
+
+LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
+nput line 87.
+
+
+LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 4 undefined on i
+nput line 87.
+
+
+LaTeX Warning: Citation `isabelle' on page 4 undefined on input line 93.
+
+
+LaTeX Warning: Citation `hollight' on page 4 undefined on input line 94.
+
+
+LaTeX Warning: Citation `Barendregt2002' on page 4 undefined on input line 106.
+
+
+
+LaTeX Warning: Citation `Barendregt2351' on page 4 undefined on input line 106.
+
+
+
+Overfull \hbox (0.69795pt too wide) in paragraph at lines 111--115
 []\OT1/pplj/m/n/10.95 (-20) Proof re-pair au-to-mat-i-cally fixes bro-ken proof
 s in re-sponse to changes
  []
 
-
-LaTeX Warning: Reference `sec:TODO' on page 4 undefined on input line 87.
-
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[4] (./guide.tex [5])) (./motivating.tex [6]
+[4] [5] (./guide.tex)) (./motivating.tex [6]
 chapter 2.
 (./development.tex
 
@@ -1953,49 +1986,10 @@ LaTeX Warning: Citation `Frana2011' on page 7 undefined on input line 20.
 
 LaTeX Warning: Citation `Yang2011' on page 7 undefined on input line 21.
 
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 52.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 52.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 52.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 52.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 52.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 52.
-
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 7 undefined on i
-nput line 65.
-
-
-LaTeX Warning: Citation `pa-history-geuvers-sadhana09' on page 7 undefined on i
-nput line 65.
-
 [7
 
 
-]
-
-LaTeX Warning: Citation `Barendregt2002' on page 8 undefined on input line 70.
-
-
-LaTeX Warning: Citation `Barendregt2351' on page 8 undefined on input line 70.
-
-
-LaTeX Warning: Citation `isabelle' on page 8 undefined on input line 72.
-
-
-LaTeX Warning: Citation `hollight' on page 8 undefined on input line 73.
-
-
-LaTeX Warning: Citation `Leino2010' on page 8 undefined on input line 73.
-
-
-LaTeX Warning: Citation `acl2' on page 8 undefined on input line 73.
-
-) (./maintenance.tex [8]) (./repair.tex)) (./pumpkinpatch.tex [9] [10
+]) (./maintenance.tex) (./repair.tex [8])) (./pumpkinpatch.tex [9] [10
 
 
 ]
@@ -2200,12 +2194,6 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
 [][]
  []
 
-
-LaTeX Warning: Reference `sec:related' on page 58 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:related' on page 58 undefined on input line 53.
-
 [58] [59] (./often/replica.tex) (./often/replica.tex)
 
 LaTeX Warning: Reference `sec:key1' on page 60 undefined on input line 113.
@@ -2216,16 +2204,17 @@ LaTeX Warning: Reference `sec:key1' on page 60 undefined on input line 113.
 ]
 chapter 5.
 [65] [66] [67]
-Overfull \hbox (8.96135pt too wide) in paragraph at lines 200--205
+Overfull \hbox (8.96135pt too wide) in paragraph at lines 204--209
 \OT1/pplj/m/n/10.95 (-20) LAR [[]] refac-tors proof scripts in lan-guages based
  on Is-abelle/Isar [[]],
  []
 
+[68]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 68 undefined on input line 214.
+LaTeX Warning: Citation `Chrzaszcz2003' on page 69 undefined on input line 218.
 
 
-[68] [69]) (./conclusion.tex [70]
+[69]) (./conclusion.tex [70]
 chapter 6.
 (./next.tex [71
 
@@ -2246,19 +2235,19 @@ l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
 
 
 ] [74] [75] [76] [77] [78] [79] [80]
-Underfull \hbox (badness 1189) in paragraph at lines 588--593
+Underfull \hbox (badness 1189) in paragraph at lines 580--585
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Sa[]^^Pbi.  \OT1/pplj/m/it/10.95 (+20) Out
 -ils G[]en[]eriques de Mod[]elisation et de
  []
 
 [81]
-Underfull \hbox (badness 4229) in paragraph at lines 630--634
+Underfull \hbox (badness 4229) in paragraph at lines 622--626
 []\OT1/pplj/m/n/10.95 (+20) The Uni-va-lent Foun-da-tions Pro-gram.  \OT1/pplj/
 m/it/10.95 (+20) Ho-mo-topy Type
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 630--634
+Underfull \hbox (badness 1895) in paragraph at lines 622--626
 \OT1/pplj/m/it/10.95 (+20) The-ory: Uni-va-lent Foun-da-tions of Math-e-mat-ics
 \OT1/pplj/m/n/10.95 (+20) .  []$\OT1/cmtt/m/n/10.95 https : / /
  []
@@ -2284,11 +2273,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 46628 strings out of 492609
- 913798 string characters out of 6129033
- 1262577 words of memory out of 5000000
- 47977 multiletter control sequences out of 15000+600000
- 630746 words of font info for 745 fonts, out of 8000000 for 9000
+ 46621 strings out of 492609
+ 913745 string characters out of 6129033
+ 1262625 words of memory out of 5000000
+ 47976 multiletter control sequences out of 15000+600000
+ 630477 words of font info for 741 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,80p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2308,10 +2297,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (92 pages, 1355205 bytes).
+Output written on uwthesis.pdf (92 pages, 1354509 bytes).
 PDF statistics:
- 2040 PDF objects out of 2073 (max. 8388607)
- 1886 compressed objects within 19 object streams
- 964 named destinations out of 1000 (max. 500000)
+ 2042 PDF objects out of 2073 (max. 8388607)
+ 1887 compressed objects within 19 object streams
+ 963 named destinations out of 1000 (max. 500000)
  93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

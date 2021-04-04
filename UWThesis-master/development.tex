@@ -1,43 +1,35 @@
-
 \section{Proof Development}
+\label{sec:mot-dev}
 
-% TODO this is all shitty first draft text
+\begin{figure}
+   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
+\caption{The \lstinline{list} datatype in Coq, from the Coq standard library.}
+\label{fig:list}
+\end{figure}
 
-something
+The first thing that we need is our \lstinline{list} datatype.
+A \lstinline{list} in Coq (Figure~\ref{fig:list}) is an inductive datatype that is either empty (the \lstinline{nil} constructor), or the result
+of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
 
-\subsection{Why Develop Proofs}
+\begin{figure}
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+\caption{The \lstinline{length} function for \lstinline{list} in Coq, from the Coq standard library.}
+\label{fig:length}
+\end{figure}
 
-% TODO somewhere: focused on programs, etc here's why (bubble this up outside of this subsection, used to explain that)
+Also inside of the standard library is the \lstinline{length} function (Figure~\ref{fig:length}).
+The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
+is just the successor of (one plus) the result of recursively calling \lstinline{length} on everything but the first element of the list.	
 
-%Cartoon version of development: program, spec, proof
-Formal verification of a program can improve actual and perceived reliability.
-It can help the programmer think about the desired and actual behavior of the program,
-perhaps finding and fixing bugs in the process~\cite{murraybp}.
-It can make explicit which parts of the system are trusted, and further decrease the burden
-of trust as more of the system is verified.
+\paragraph{Program}
+then zip.
 
-One noteworthy program verification success story is the CompCert~\cite{Leroy:POPL06, Leroy2009} verified optimizing C compiler.
-Both the back-end and front-end compilation passes
-of CompCert have been verified, ensuring the correctness of their composition~\cite{Kaestner2017}.
-CompCert has stood up to the trials of human trust: it has been used, for example, to compile code for safety-critical flight control software~\cite{Frana2011}.
-It has also stood up to rigorous testing: while the test generation tool Csmith~\cite{Yang2011} found 
-79 bugs in GCC and 202 bugs in LLVM, it was unable to find any bugs in the verified parts of CompCert.
-%This demonstrated the empirical reliability of CompCert, which in turn further increased confidence in its reliability.
+\paragraph{Specification}
+then the spec, choice of specs, note here.
 
-CompCert, however, was not a simple endeavor: the original development comprised of approximately 35,000 lines of Coq code;
-functionality accounted for only 13\% of this, while specifications and proofs accounted for the other 87\%.
-This is not unusual for large proof developments. The initial correctness proofs for an OS microkernel,
-for example, consisted of 480,000 lines of specifications and proofs~\cite{Klein2014micro}.
-Proof engineering makes it possible to develop proofs at this scale,
-bringing all of the benefits of verification to large systems.
-
-\subsection{How to Develop Proofs}
-
-For the sake of this thesis, I will not demonstrate proof development on a C compiler or on an OS microkernel.
-Instead, I will start by demonstrating a simple proof development: 
-that the list zip function preserves its length.
-This is a toy example, but it is worth noting that large proof developments like compilers and microkernels
-are often made up of many of these smaller examples built on top of each other.
-
-Slightly less brief overview of Coq and its foundations and automation and so on (including proof terms), going through a running example of proof development in Coq
+\paragraph{Proof}
+finally this, interactive process, automation, underlying proof term with highlighting to corresponding tactics,
+how Coq checks this for the expected type.
 

@@ -59,7 +59,10 @@ Proof engineering focuses in particular on verified systems that have been
 developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
 Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
 HOL Light~\cite{hollight}, and Lean~\cite{lean}.
-To develop a verified system using a proof assistant, the proof engineer does three things:
+The proof assistant that I focus on in this thesis will be the Coq proof assistant.
+A discussion of how this work carries over to other proof assistants is in Section~\ref{sec:related}.
+
+To develop a verified system using a proof assistant like Coq, the proof engineer does three things:
 
 \begin{enumerate}
 \item implements a program using a functional programming language,
@@ -86,38 +89,8 @@ More formally:
 
 \section{Approach}
 
-\begin{figure}[ht]
-  \centering
-{\footnotesize
-\begin{tikzpicture}[>=stealth',semithick]
-
-\begin{scope}
-\node[ellipse, draw=black, inner ysep=8pt, inner xsep=5pt] (user) { user };
-\end{scope}
-
-\begin{scope}[xshift=5.5cm]
-\node[rectangle, draw=black, minimum width=6.5cm, minimum height=2cm] (coq) { };
-\node[rectangle, draw=black, minimum height=1.5cm, fill=lightgray, xshift=-2cm] (engine) { logic engine };
-\node[rectangle, draw=black, xshift=1.8cm] (checker) { proof checker };
-\node[xshift=1.7cm, yshift=0.7cm] (sys) { proof assistant };
-\end{scope}
-
-\begin{scope}[xshift=9.5cm]
-\node[yshift=0.6cm] (ack) {\checkmark};
-\node[yshift=-0.6cm,xshift=-0.1cm] (nack) {\cross};
-\end{scope}
-
-\draw[->, thick] (user.north east) to node[xshift=-0.2cm, yshift=0.2cm] {tactics} ([yshift=0.33cm]engine.west);
-\draw[->, thick] ([yshift=0.38cm]engine.south west) to node[xshift=-0.2cm, yshift=-0.2cm] {subgoals} (user.south east);
-
-\draw[->, thick] (engine.east) to node[yshift=0.2cm] {proof} (checker.west);
-
-\draw[->, thick] (checker.east) to (ack.south west);
-\draw[->, thick] (checker.east) to (nack.north west);
-
-\end{tikzpicture}
-}
-\caption{Typical proof assistant workflow, adapted from \cite{pa-history-geuvers-sadhana09}.}
+\begin{figure}
+\caption{TODO}
 \label{fig:workflow}
 \end{figure}
 
@@ -128,16 +101,16 @@ More formally:
 % TODO the amount of background: in reading guide, give resources for learning Coq in more detail, but don't go into too much Coq detail here
 
 The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
-One common process for writing this proof is interactive: The proof engineer passes the proof assistant high-level
-search procedures called \textit{tactics} (like \lstinline{induction}), and the proof assistant responds to each tactic
+The typical proof engineering workflow in Coq is interactive: The proof engineer passes Coq high-level
+search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
 by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
 continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
-To check the proof, the proof assistant checks not the proof script itself, but instead a low-level representation called a \textit{proof object} 
-that the proof script constructs.
+To check the proof, the proof assistant compiles it down to a low-level representation called a \textit{proof term},
+then checks that the proof term has the expected type.
 Figure~\ref{fig:workflow} illustrates this workflow.
 
 The high-level language of tactics can abstract away important details that a proof repair tool needs,
-but the low-level language of proof objects can be brittle and challenging to work with.
+but the low-level language of proof terms can be brittle and challenging to work with.
 Crucially, though, the low-level language comes with lots of structure and strong guarantees.
 My approach to proof repair works in the low-level language to take advantage of that.
 It then builds back up to the high-level language in the end.

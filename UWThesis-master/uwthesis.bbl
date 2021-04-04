@@ -300,11 +300,6 @@ Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
 \newblock In {\em Proceedings of the 40th International Conference on Software
   Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
 
-\bibitem{pa-history-geuvers-sadhana09}
-H.~Geuvers.
-\newblock Proof assistants: History, ideas and future.
-\newblock {\em Sadhana}, 34(1):3--25, 2009.
-
 \bibitem{Gonthier2011}
 Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, and Derek Dreyer.
 \newblock How to make ad hoc proof automation less ad hoc.

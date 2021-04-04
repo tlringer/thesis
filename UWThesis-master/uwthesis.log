@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  2 APR 2021 13:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  4 APR 2021 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1895,64 +1895,52 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              deprecated \float@addtolist interface .
 
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 54.
 
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
-
-
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
 
 
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
 
 
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
 
 
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
 
 
-LaTeX Warning: Citation `TODO' on page 3 undefined on input line 52.
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
+
+
+LaTeX Warning: Citation `TODO' on page 3 undefined on input line 54.
 
 [3
 
 
 ]
-Overfull \hbox (0.69795pt too wide) in paragraph at lines 70--74
+Overfull \hbox (0.69795pt too wide) in paragraph at lines 75--79
 []\OT1/pplj/m/n/10.95 (-20) Proof re-pair au-to-mat-i-cally fixes bro-ken proof
 s in re-sponse to changes
  []
 
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 105.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 105.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 105.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 105.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 105.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 105.
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 [4] [5] (./guide.tex)) (./motivating.tex [6]
 chapter 2.
-(./development.tex [7
+[7
 
 
-]) (./maintenance.tex) (./repair.tex [8]))
-(./pumpkinpatch.tex [9] [10
+] (./development.tex
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 5.
+ (./often/listswap.tex)) (./maintenance.tex [8])
+(./repair.tex)) (./pumpkinpatch.tex [9] [10
 
 
 ]
 chapter 3.
-(./repair/motivating.tex
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 30.
- (./repair/izr.tex) (./repair/izr.tex)
+(./repair/motivating.tex (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
 [11]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
@@ -1967,8 +1955,21 @@ put line 139.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
  [15]) (./repair/differencing.tex [16])
-(./repair/transformation.tex [17]) (./repair/implementation.tex [18]
-<repair/nat_ind.pdf, id=438, 391.4625pt x 200.75pt>
+(./repair/transformation.tex [17]) (./repair/implementation.tex
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 10.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 10.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 10.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 10.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 10.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 10.
+ [18]
+<repair/nat_ind.pdf, id=446, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2009,7 +2010,7 @@ chapter 4.
 
 ] [30])
 (./often/approach.tex
-<often/workflowa.pdf, id=800, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=808, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2092,7 +2093,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 Overfull \hbox (10.49026pt too wide) in paragraph at lines 668--676
-\OT1/pplj/m/n/10.95 (-20) Figure []20[] shows the in-ter-est-ing deriva-tions f
+\OT1/pplj/m/n/10.95 (-20) Figure []22[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
@@ -2235,7 +2236,7 @@ l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
 
 
 ] [74] [75] [76] [77] [78] [79] [80]
-Underfull \hbox (badness 1184) in paragraph at lines 612--617
+Underfull \hbox (badness 1184) in paragraph at lines 607--612
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2261,10 +2262,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 46622 strings out of 492609
- 913771 string characters out of 6129033
- 1262755 words of memory out of 5000000
- 47982 multiletter control sequences out of 15000+600000
+ 46541 strings out of 492609
+ 912212 string characters out of 6129033
+ 1261890 words of memory out of 5000000
+ 47894 multiletter control sequences out of 15000+600000
  630003 words of font info for 733 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,80p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2285,10 +2286,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (93 pages, 1356490 bytes).
+Output written on uwthesis.pdf (93 pages, 1356884 bytes).
 PDF statistics:
- 2049 PDF objects out of 2073 (max. 8388607)
- 1893 compressed objects within 19 object streams
- 968 named destinations out of 1000 (max. 500000)
+ 2060 PDF objects out of 2073 (max. 8388607)
+ 1904 compressed objects within 20 object streams
+ 973 named destinations out of 1000 (max. 500000)
  93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

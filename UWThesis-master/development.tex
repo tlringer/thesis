@@ -5,33 +5,7 @@ For the sake of this chapter, I will not demonstrate proof development, maintena
 Instead, I will start by demonstrating a simple proof development: 
 that the list zip function preserves its length.
 This is a toy example, but it is worth noting that large proof developments like compilers and microkernels
-are often made up of many of these smaller examples built on top of each other.
-
-\begin{figure}
-   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
-\caption{The \lstinline{list} datatype in Coq, from the Coq standard library.}
-\label{fig:list}
-\end{figure}
-
-The first thing that we need is our \lstinline{list} datatype.
-A \lstinline{list} in Coq (Figure~\ref{fig:list}) is an inductive datatype that is either empty (the \lstinline{nil} constructor), or the result
-of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
-
-\begin{figure}
-\begin{lstlisting}
-Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
-  match l with
-   | nil => O
-   | _ :: l' => S (length l')
-  end.
-\end{lstlisting}
-\caption{The \lstinline{length} function for \lstinline{list} in Coq, from the Coq standard library.}
-\label{fig:length}
-\end{figure}
-
-Also inside of the standard library is the \lstinline{length} function (Figure~\ref{fig:length}).
-The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
-is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.	
+are often made up of many of these smaller examples built on top of each other.	
 
 \begin{figure}
 \begin{lstlisting}
@@ -44,11 +18,11 @@ Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
   end.
 \end{lstlisting}
 \caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
-\label{fig:length}
+\label{fig:zip}
 \end{figure}
 
 \paragraph{Program}
-Once we have these, we can then write the \lstinline{zip} function that we will soon prove preserves the lengths of the input lists.
+We can write the \lstinline{zip} function that we will soon prove preserves the lengths of the input lists.
 
 \paragraph{Specification}
 then the spec, choice of specs, note here.

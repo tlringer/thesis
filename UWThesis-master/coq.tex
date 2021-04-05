@@ -16,10 +16,35 @@ Gallina and its foundations
 
 CoC
 
-Inductive types (introduce \lstinline{list}), theory (CIC) and practice (Gallina); constructors and eliminators
+\begin{figure}
+   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
+\caption{The \lstinline{list} datatype in Coq, from the Coq standard library.}
+\label{fig:list}
+\end{figure}
 
-show \lstinline{length} as pattern matching and as eliminator application; note in Coq eliminators compile down to fixpoints
-but when we reason about the theory we think about eliminators
+Inductive types, theory (CIC) and practice (Gallina); constructors and eliminators.
+For example, a \lstinline{list} in Coq (Figure~\ref{fig:list}) is an inductive datatype that is 
+either empty (the \lstinline{nil} constructor), or the result
+of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
+Mention the induction principle for \lstinline{list}.
 
-Conventions in this thesis, including using induction principles/eliminators instead of pattern matching
-Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation
+\begin{figure}
+\begin{lstlisting}
+Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
+  match l with
+   | nil => O
+   | _ :: l' => S (length l')
+  end.
+\end{lstlisting}
+\caption{The \lstinline{length} function for \lstinline{list} in Coq, from the Coq standard library.}
+\label{fig:length}
+\end{figure}
+
+Once we have inductive types, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length}).
+The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
+is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+Note we can also write this using eliminators (show), and in fact that reduces to pattern matching.
+When we reason about theory we think about eliminators.
+
+Conventions in this thesis, including using induction principles/eliminators instead of pattern matching, and assuming primitive.
+Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation.

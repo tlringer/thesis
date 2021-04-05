@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 APR 2021 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 APR 2021 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1535,12 +1535,6 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `fig:length' multiply defined.
-
-
-LaTeX Warning: Label `fig:length@cref' multiply defined.
-
-
 LaTeX Warning: Label `fig:syntax' multiply defined.
 
 
@@ -1937,16 +1931,16 @@ chapter 2.
 (./engineering.tex) (./coq.tex [7
 
 
-]) (./development.tex
+]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 11.
- (./often/listswap.tex)
+nput line 20.
+ (./often/listswap.tex)) (./development.tex
 [8]
 
-LaTeX Warning: Citation `TODO' on page 9 undefined on input line 46.
+LaTeX Warning: Citation `TODO' on page 9 undefined on input line 20.
 
 
-LaTeX Warning: Citation `TODO' on page 9 undefined on input line 46.
+LaTeX Warning: Citation `TODO' on page 9 undefined on input line 20.
 
 ) (./maintenance.tex [9]) (./repair.tex)) (./pumpkinpatch.tex [10]
 chapter 3.
@@ -2293,10 +2287,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 46580 strings out of 492609
- 912708 string characters out of 6129033
- 1262295 words of memory out of 5000000
- 47911 multiletter control sequences out of 15000+600000
+ 46582 strings out of 492609
+ 912731 string characters out of 6129033
+ 1262428 words of memory out of 5000000
+ 47913 multiletter control sequences out of 15000+600000
  630003 words of font info for 733 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,80p,9083b,2295s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2317,7 +2311,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (93 pages, 1360416 bytes).
+Output written on uwthesis.pdf (93 pages, 1360423 bytes).
 PDF statistics:
  2090 PDF objects out of 2487 (max. 8388607)
  1934 compressed objects within 20 object streams

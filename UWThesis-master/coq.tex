@@ -1,0 +1,25 @@
+\section{The Coq Proof Assistant}
+\label{sec:mot-coq}
+
+This thesis focuses on proof developments done in Coq.
+I already briefly introduced the Coq workflow in the introduction.
+Here I am going to go into a bit more detail and talk about foundations as relevant to this thesis.
+I am not going to teach you all of Coq in this thesis;
+good sources for learning Coq from scratch include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
+and Software Foundations~\cite{software-foundations}.
+
+Workflow from intro, but with specific languages named (Ltac, Gallina); refer to a diagram
+
+What tactics really are, and what compiling them means
+
+Gallina and its foundations
+
+CoC
+
+Inductive types (introduce \lstinline{list}), theory (CIC) and practice (Gallina); constructors and eliminators
+
+show \lstinline{length} as pattern matching and as eliminator application; note in Coq eliminators compile down to fixpoints
+but when we reason about the theory we think about eliminators
+
+Conventions in this thesis, including using induction principles/eliminators instead of pattern matching
+Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation

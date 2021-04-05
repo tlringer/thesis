@@ -576,6 +576,14 @@ Yu~Pei, Carlo~A. Furia, Martin Nordio, and Bertrand Meyer.
   Fundamental Approaches to Software Engineering - Volume 8411}, pages
   246--260, New York, NY, USA, 2014. Springer-Verlag New York, Inc.
 
+\bibitem{software-foundations}
+Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
+  Michael Greenberg, Cat\v{a}lin Hri\c{t}cu, Vilhelm Sj\"{o}berg, and Brent
+  Yorgey.
+\newblock {\em Software Foundations}.
+\newblock Electronic textbook, 2016.
+\newblock Version 4.0. \texttt{http://www.cis.upenn.edu/~bcpierce/sf}.
+
 \bibitem{pons00}
 Olivier Pons.
 \newblock Generalization in type theory based proof assistants.

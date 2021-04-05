@@ -1,41 +1,14 @@
 \chapter{Motivating Proof Repair}
 
-This thesis describes techniques and tools for automatically repairing broken proofs in a proof assistant.
-Before I explain these techniques and tools, it helps to understand what it is like to develop and maintain proofs in a proof assistant to begin with.
+This thesis describes techniques and tools for automatically repairing broken proofs in a proof assistant (Section~\ref{sec:mot-rep}).
+Before I explain these techniques and tools, it helps to understand what it is like to develop (Section~\ref{sec:mot-dev}) and maintain (Section~\ref{sec:mot-mai}) proofs in a proof assistant to begin with.
 While proof assistants can be used to write mathematical proofs and more,
-this thesis focuses in particular on formally verified programs, though many of the techniques carry over to mathematical proofs as well.
+this thesis focuses in particular on formally verified programs (Section~\ref{sec:mot-prog}), though many of the techniques carry over to mathematical proofs as well.
+The proof assistant that I demonstrate this on is Coq (Section~\ref{sec:mot-coq}), since this is the proof assistant that this work focuses on.
 
-% From QED at large:
-Formal verification of a program can improve actual and perceived reliability.
-It can help the programmer think about the desired and actual behavior of the program,
-perhaps finding and fixing bugs in the process~\cite{murraybp}.
-It can make explicit which parts of the system are trusted, and further decrease the burden
-of trust as more of the system is verified.
+\input{engineering}
 
-One noteworthy program verification success story is the CompCert~\cite{Leroy:POPL06, Leroy2009} verified optimizing C compiler.
-Both the back-end and front-end compilation passes
-of CompCert have been verified, ensuring the correctness of their composition~\cite{Kaestner2017}.
-CompCert has stood up to the trials of human trust: it has been used, for example, to compile code for safety-critical flight control software~\cite{Frana2011}.
-It has also stood up to rigorous testing: while the test generation tool Csmith~\cite{Yang2011} found 
-79 bugs in GCC and 202 bugs in LLVM, it was unable to find any bugs in the verified parts of CompCert.
-%This demonstrated the empirical reliability of CompCert, which in turn further increased confidence in its reliability.
-
-CompCert, however, was not a simple endeavor: the original development comprised of approximately 35,000 lines of Coq code;
-functionality accounted for only 13\% of this, while specifications and proofs accounted for the other 87\%.
-This is not unusual for large proof developments. The initial correctness proofs for an OS microkernel,
-for example, consisted of 480,000 lines of specifications and proofs~\cite{Klein2014micro}.
-Proof engineering makes it possible to develop proofs at this scale,
-bringing all of the benefits of verification to large systems.
-
-For the sake of this chapter, I will not demonstrate proof development (Section~\ref{sec:mot-dev}), maintenance (Section~\ref{sec:mot-mai}), and repair (Section~\ref{sec:mot-rep}) on a C compiler or on an OS microkernel.
-Instead, I will start by demonstrating a simple proof development: 
-that the list zip function preserves its length.
-This is a toy example, but it is worth noting that large proof developments like compilers and microkernels
-are often made up of many of these smaller examples built on top of each other.
-
-TODO somewhere but unsure where: Coq foundations, CIC, and so on
-
-% TODO be explicit: not going to teach you all of Coq, but will show workflow etc
+\input{coq}
 
 \input{development}
 

@@ -1,0 +1,148 @@
+
+\KAuxCommand \KAuxEOF {m}{Does nothing, useless empty argument, and is searched for knowing if the kaux file was written till the end.}
+\KAuxCommand \KAuxUndeclaredScopeTag {m}{Package scope: States that a labelname is used in a knowledge definition.}
+\KAuxCommand \KAuxDeclaredScopeTag {m}{Package scope: States that a labelname has been declared.}
+\KAuxCommand \KAuxNewLinkScopetagInstance {mm}{Package scope: Declares that a label is declared in an instance of a scope.}
+\KAuxCommand \KAuxScopeNewInstance {mmm}{Package scope: Declares a new instance of a scope.}
+\KAuxCommand \KAuxScopeTag {mm}{Package scope: Links a scopetag to an instance of a scope.}
+\KAuxCommand \KAuxKnowledge {mmmm}{Package knowledge: Declares a knowledge. Takes the {namespace}{instance}{knowledge}{directives}.}
+\KAuxCommand \KAuxErrorKnowledgeRecursive {mmmm}{Package 'knowledge: A knowledge has recursive definition. {namespace}{scope}{undefined knowledge}{base knowledge}}
+\KAuxCommand \KAuxErrorKnowledgeUnknown {mmmmm}{Package 'knowledge: A knowledge is not defined. {namespace}{scope/empty}{undefined knowledge}{base knowledge}{command}}
+\KAuxCommand \KAuxErrorLabelUnknown {m}{Package 'knowledge: A label is not defined. {label}}
+\KAuxCommand \KAuxAutoref {mmm}{Package knowledge: Declares an autoref knowledge. Arguments {namespace}{instance}{knowledge}.}
+\KAuxCommand \KAuxAutorefTarget {mmm}{Package knowledge: Declares the use of a target to an autoref knowledge. Arguments {namespace}{instance}{knowledge}.}
+\KAuxCommand \KAuxUseKnowledge {mmm}{Package knowledge: Identifies the use of some knowledge. Arguments {namespace}{instance}{knowledge}.}
+
+
+\KAuxFileAt {uwthesis.tex}{44}
+
+\KAuxFileAt {uwthesis.tex}{45}
+\KAuxAutoref {default}{base}{primitive eliminators}
+
+\KAuxFileAt {uwthesis.tex}{113}
+\KAuxScopeNewInstance {base}{base}{}
+\KAuxScopeNewInstance {document}{document}{base}
+\KAuxDeclaredScopeTag {fig:workflow}
+\KAuxNewLinkScopetagInstance {fig:workflow}{document}
+\KAuxDeclaredScopeTag {sec:mot-prog}
+\KAuxNewLinkScopetagInstance {sec:mot-prog}{document}
+\KAuxDeclaredScopeTag {sec:mot-dev}
+\KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
+\KAuxDeclaredScopeTag {sec:mot-coq}
+\KAuxNewLinkScopetagInstance {sec:mot-coq}{document}
+\KAuxDeclaredScopeTag {fig:coc-syntax}
+\KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
+\KAuxDeclaredScopeTag {fig:syntax}
+\KAuxNewLinkScopetagInstance {fig:syntax}{document}
+
+\KAuxFileAt {coq.tex}{35}
+\KAuxAutorefTarget {default}{base}{primitive eliminators}
+\KAuxDeclaredScopeTag {fig:list-theory}
+\KAuxNewLinkScopetagInstance {fig:list-theory}{document}
+\KAuxDeclaredScopeTag {fig:length-theory}
+\KAuxNewLinkScopetagInstance {fig:length-theory}{document}
+\KAuxDeclaredScopeTag {fig:zip-theory}
+\KAuxNewLinkScopetagInstance {fig:zip-theory}{document}
+\KAuxDeclaredScopeTag {fig:list}
+\KAuxNewLinkScopetagInstance {fig:list}{document}
+\KAuxDeclaredScopeTag {fig:length}
+\KAuxNewLinkScopetagInstance {fig:length}{document}
+\KAuxDeclaredScopeTag {fig:zip}
+\KAuxNewLinkScopetagInstance {fig:zip}{document}
+\KAuxDeclaredScopeTag {sec:tactics}
+\KAuxNewLinkScopetagInstance {sec:tactics}{document}
+\KAuxDeclaredScopeTag {sec:mot-mai}
+\KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
+\KAuxDeclaredScopeTag {sec:mot-rep}
+\KAuxNewLinkScopetagInstance {sec:mot-rep}{document}
+\KAuxDeclaredScopeTag {sec:patch-motivating}
+\KAuxNewLinkScopetagInstance {sec:patch-motivating}{document}
+\KAuxDeclaredScopeTag {fig:izr}
+\KAuxNewLinkScopetagInstance {fig:izr}{document}
+\KAuxDeclaredScopeTag {fig:example}
+\KAuxNewLinkScopetagInstance {fig:example}{document}
+\KAuxDeclaredScopeTag {alg:patching}
+\KAuxNewLinkScopetagInstance {alg:patching}{document}
+\KAuxDeclaredScopeTag {fig:cattree}
+\KAuxNewLinkScopetagInstance {fig:cattree}{document}
+\KAuxDeclaredScopeTag {sec:algimpl}
+\KAuxNewLinkScopetagInstance {sec:algimpl}{document}
+\KAuxDeclaredScopeTag {sec:tcb}
+\KAuxNewLinkScopetagInstance {sec:tcb}{document}
+\KAuxDeclaredScopeTag {sec:case}
+\KAuxNewLinkScopetagInstance {sec:case}{document}
+\KAuxDeclaredScopeTag {fig:int}
+\KAuxNewLinkScopetagInstance {fig:int}{document}
+\KAuxDeclaredScopeTag {fig:bintonat}
+\KAuxNewLinkScopetagInstance {fig:bintonat}{document}
+\KAuxDeclaredScopeTag {sec:compcert}
+\KAuxNewLinkScopetagInstance {sec:compcert}{document}
+\KAuxDeclaredScopeTag {sec:foundations}
+\KAuxNewLinkScopetagInstance {sec:foundations}{document}
+\KAuxDeclaredScopeTag {fig:divide}
+\KAuxNewLinkScopetagInstance {fig:divide}{document}
+\KAuxDeclaredScopeTag {sec:coq}
+\KAuxNewLinkScopetagInstance {sec:coq}{document}
+\KAuxDeclaredScopeTag {chapt:pi}
+\KAuxNewLinkScopetagInstance {chapt:pi}{document}
+\KAuxDeclaredScopeTag {sec:overview}
+\KAuxNewLinkScopetagInstance {sec:overview}{document}
+\KAuxDeclaredScopeTag {fig:listswap}
+\KAuxNewLinkScopetagInstance {fig:listswap}{document}
+\KAuxDeclaredScopeTag {fig:equivalence}
+\KAuxNewLinkScopetagInstance {fig:equivalence}{document}
+\KAuxDeclaredScopeTag {fig:system}
+\KAuxNewLinkScopetagInstance {fig:system}{document}
+\KAuxDeclaredScopeTag {sec:scope}
+\KAuxNewLinkScopetagInstance {sec:scope}{document}
+\KAuxDeclaredScopeTag {sec:repair}
+\KAuxNewLinkScopetagInstance {sec:repair}{document}
+\KAuxDeclaredScopeTag {fig:equivalence2}
+\KAuxNewLinkScopetagInstance {fig:equivalence2}{document}
+\KAuxDeclaredScopeTag {fig:listtovect}
+\KAuxNewLinkScopetagInstance {fig:listtovect}{document}
+\KAuxDeclaredScopeTag {fig:listconfig}
+\KAuxNewLinkScopetagInstance {fig:listconfig}{document}
+\KAuxDeclaredScopeTag {sec:configurable}
+\KAuxNewLinkScopetagInstance {sec:configurable}{document}
+\KAuxDeclaredScopeTag {fig:nattobin}
+\KAuxNewLinkScopetagInstance {fig:nattobin}{document}
+\KAuxDeclaredScopeTag {sec:art}
+\KAuxNewLinkScopetagInstance {sec:art}{document}
+\KAuxDeclaredScopeTag {fig:spec}
+\KAuxNewLinkScopetagInstance {fig:spec}{document}
+\KAuxDeclaredScopeTag {fig:syntax}
+\KAuxNewLinkScopetagInstance {fig:syntax}{document}
+\KAuxDeclaredScopeTag {fig:common}
+\KAuxNewLinkScopetagInstance {fig:common}{document}
+\KAuxDeclaredScopeTag {fig:searchindexer}
+\KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
+\KAuxDeclaredScopeTag {fig:searchpromote}
+\KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
+\KAuxDeclaredScopeTag {fig:final}
+\KAuxNewLinkScopetagInstance {fig:final}{document}
+\KAuxDeclaredScopeTag {fig:appswap1}
+\KAuxNewLinkScopetagInstance {fig:appswap1}{document}
+\KAuxDeclaredScopeTag {fig:convenience}
+\KAuxNewLinkScopetagInstance {fig:convenience}{document}
+\KAuxDeclaredScopeTag {fig:ind}
+\KAuxNewLinkScopetagInstance {fig:ind}{document}
+\KAuxDeclaredScopeTag {fig:construct}
+\KAuxNewLinkScopetagInstance {fig:construct}{document}
+\KAuxDeclaredScopeTag {fig:final}
+\KAuxNewLinkScopetagInstance {fig:final}{document}
+\KAuxDeclaredScopeTag {fig:ltacsyntax1}
+\KAuxNewLinkScopetagInstance {fig:ltacsyntax1}{document}
+\KAuxDeclaredScopeTag {fig:someantics}
+\KAuxNewLinkScopetagInstance {fig:someantics}{document}
+\KAuxDeclaredScopeTag {fig:rainbow}
+\KAuxNewLinkScopetagInstance {fig:rainbow}{document}
+\KAuxDeclaredScopeTag {sec:search}
+\KAuxNewLinkScopetagInstance {sec:search}{document}
+\KAuxDeclaredScopeTag {fig:changes}
+\KAuxNewLinkScopetagInstance {fig:changes}{document}
+\KAuxDeclaredScopeTag {fig:replica}
+\KAuxNewLinkScopetagInstance {fig:replica}{document}
+\KAuxDeclaredScopeTag {sec:related}
+\KAuxNewLinkScopetagInstance {sec:related}{document}
+\KAuxEOF {}

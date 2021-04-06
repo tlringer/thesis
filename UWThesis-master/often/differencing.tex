@@ -3,18 +3,6 @@
 % TODO explain how this fits into differencing, that differencing can be done by the human or by the tool, and so on
 
 \begin{figure*}
-\small
-\begin{grammar}
-<i> $\in \mathbbm{N}$, <v> $\in$ Vars, <s> $\in$ \{ Prop, Set, Type<i> \}
-
-<t> ::= <v> \hspace{0.06cm} | \hspace{0.06cm} <s> \hspace{0.06cm} | \hspace{0.06cm} $\Pi$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} $\lambda$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} <t> <t> \hspace{0.06cm} | \hspace{0.06cm} Ind (<v> : <t>)\{<t>,\ldots,<t>\} \hspace{0.06cm} | \hspace{0.06cm} Constr (<i>, <t>) \hspace{0.06cm} | \hspace{0.06cm} Elim(<t>, <t>)\{<t>,\ldots,<t>\}
-\end{grammar}
-\vspace{-0.3cm}
-\caption{Syntax for CIC$_\omega$ from an existing paper~\cite{Timany2015FirstST} with (from left to right) variables, sorts, dependent types, functions, application, inductive types, inductive constructors, and primitive eliminators.}
-\label{fig:syntax}
-\end{figure*}
-
-\begin{figure*}
 \begin{minipage}{0.48\textwidth}
 \begin{lstlisting}
 DepConstr(0, list T) : list T := Constr((@\codediff{0}@), list T).(@\vspace{-0.04cm}@)

@@ -1,33 +1,50 @@
 \section{Proof Development}
 \label{sec:mot-dev}
 
+% TODO table with simplified theory languages and the implementation languages, plus a summary of some differences covered in implementation sections
+
 For the sake of this chapter, I will not demonstrate proof development, maintenance, and repair on a C compiler or on an OS microkernel.
 Instead, I will start by demonstrating a simple proof development: 
 that the list zip function preserves its length.
 This is a toy example, but it is worth noting that large proof developments like compilers and microkernels
 are often made up of many of these smaller examples built on top of each other.	
+The proof assistant that I demonstrate this on is Coq (Section~\ref{sec:mot-coq}), since this is the proof assistant that this work focuses on.
 
-\begin{figure}
-\begin{lstlisting}
-Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
-  fix zip arg_0__ arg_1__
-        := match arg_0__, arg_1__ with
-           | nil, _bs => nil
-           | _as, nil => nil
-           | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
-  end.
-\end{lstlisting}
-\caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
-\label{fig:zip}
-\end{figure}
+I already briefly introduced the Coq workflow in the introduction.
+Here I am going to go into a bit more detail on the example and talk about foundations as relevant to this thesis.
+I am not going to teach you all of Coq in this thesis;
+good sources for learning Coq from scratch include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
+and Software Foundations~\cite{software-foundations}.
+More about this can also be found in the survey paper.
 
-\paragraph{Program}
-We can write the \lstinline{zip} function that we will soon prove preserves the lengths of the input lists.
+The introduction mentioned that proofs are written as proof scripts in a high-level language of tactics,
+and that those proof scripts compile down to proof terms in a low-level language.
+Technically, proofs can be written entirely as proof terms; tactics just make it easier to write proofs and offer abstraction.
+We'll get to tactics soon (Section~\ref{sec:tactics}), but let's start with terms (Section~\ref{sec:mot-coq}).
 
-\paragraph{Specification}
-then the spec, choice of specs, note here.
+\input{coq}
 
-\paragraph{Proof}
+\subsection{Tactics}
+\label{sec:tactics}
+
+In Coq, those tactics are in a language called Ltac.
+Each tactic is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
+Again we'll show on a simplified language so easier to grasp, then move to more complex one.
+Though here this simplified language is our own making, and is much more simplified relative to Ltac than CIC$_{\omega}$
+is to Gallina. Just helpful for demonstration.
+
+\subsubsection{Theory: Qtac}
+
+Could in principle write our programs and specifications using Ltac. Sometimes this is actually done.
+But most commonly this is used for proofs.
+So let's skip to proofs.
+
 finally this, interactive process, automation, underlying proof term with highlighting to corresponding tactics,
-how Coq checks this for the expected type.
+again type checks, just note the advantage of automation here!
+
+\subsubsection{Practice: Ltac}
+
+
+
+% TODO maybe Qtac as example simplified language?
 

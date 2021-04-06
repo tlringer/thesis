@@ -1,0 +1,3504 @@
+%%
+%% This is file `knowledge.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% knowledge-code.dtx  (with options: `head')
+%% knowledge-utils.dtx  (with options: `package')
+%% knowledge-code.dtx  (with options: `package')
+%% knowledge-configuration.dtx  (with options: `package')
+%% knowledge-code.dtx  (with options: `tail')
+%% 
+%% This is a generated file. Copyright (C) 2017 by Thomas Colcombet
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.2 of this license or (at your option) any later
+%% version.  The latest version of this license is in:
+%% 
+%%        http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.2 or later is part of all distributions of
+%% LaTeX version 1999/12/01 or later.
+%% 
+\usepackage{expl3}
+\ProvidesExplPackage{knowledge}{2021/03/31}{1.25}{}
+%%%%%%%%%%
+\RequirePackage{l3keys2e}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\bool_if_exist:NTF\knowledge_package_loaded_bool
+ {\endinput}
+ {\bool_new:N\knowledge_package_loaded_bool
+  \bool_set_true:N\knowledge_package_loaded_bool}
+
+\usepackage{xparse}
+\usepackage{currfile}
+\tl_if_exist:NTF
+  \c_sys_jobname_str
+  {}
+  {\tl_set_eq:Nc\c_sys_jobname_str{c_job_name_tl}}
+\cs_new:Nn\tl_new:Nn
+  {\tl_new:N#1
+   \tl_set:Nn#1{#2}}
+\cs_new:Nn\tl_gnew:Nn
+  {\tl_new:N#1
+   \tl_gset:Nn#1{#2}}
+\cs_new:Nn\tl_new_eq:NN
+  {\tl_new:N#1
+   \tl_set_eq:NN#1#2}
+\cs_new:Nn\bool_new_true:N
+  {\bool_new:N#1
+   \bool_set_true:N#1}
+\cs_new:Nn\bool_new_false:N
+  {\bool_new:N#1
+   \bool_set_false:N#1}
+\cs_new:Nn\bool_set_text:Nn
+  {\use:c{bool_set_#2:N}#1}
+\cs_generate_variant:Nn\tl_new:Nn{Nx,cn,cx}
+\cs_generate_variant:Nn\tl_new_eq:NN{Nc,cN,cc}
+\cs_generate_variant:Nn\bool_new_true:N{c}
+\cs_generate_variant:Nn\bool_new_false:N{c}
+\cs_generate_variant:Nn\bool_set_text:Nn{cn}
+\cs_new_protected:Nn\cs_new_protected_with_variants:Nnn
+  {\cs_new_protected:Nn#1{#3}
+   \cs_generate_variant:Nn#1{#2}}
+\cs_generate_variant:Nn\cs_new_protected_with_variants:Nnn{cnn}
+
+\cs_new_protected:Nn\cs_new_with_variants:Nnn
+  {\cs_new:Nn#1{#3}
+   \cs_generate_variant:Nn#1{#2}}
+\cs_generate_variant:Nn\cs_new_with_variants:Nnn{cnn}
+
+\cs_generate_variant:Nn\tl_show:n{x}
+\cs_new:Npn\tl_if_exist_ne:NTF#1
+   {\tl_if_exist:NTF#1{\tl_if_empty:NTF#1\use_ii:nn\use_i:nn}\use_ii:nn}
+\cs_new:Npn\tl_if_exist_ne:NT#1
+   {\tl_if_exist:NTF#1{\tl_if_empty:NTF#1\use_none:n\use:n}\use_none:n}
+\cs_generate_variant:Nn\tl_if_empty:nTF{xTF}
+\cs_new_protected:Npn\kl_apply_inline:nnw#1#2
+  {\group_begin:
+   \cs_set:cn{g_tmpa_cs:#1}
+     {\group_end:#2}
+   \use:c{g_tmpa_cs:#1}}
+
+\cs_new_protected:Npn\kl_apply_inline_variant:nnnw#1#2#3
+  {\group_begin:
+   \cs_set:cn{g_tmpa_cs:#1}
+     {\group_end:#3}
+   \exp_args:Nc
+   \cs_generate_variant:Nn{g_tmpa_cs:#1}{#2}
+   \use:c{g_tmpa_cs:#2}}
+\cs_new:Nn\mode_if_preamble:TF{#1}
+\AtBeginDocument
+  {\cs_gset:Nn\mode_if_preamble:TF{#2}}
+\makeatletter
+\int_new:N\kl_sphack_int
+\cs_set_eq:NN\kl_stored_@bsphack\@bsphack
+\cs_set_eq:NN\kl_stored_@esphack\@esphack
+\cs_set:Nn\kl_hide_begin:
+  {\@bsphack
+   \cs_set_eq:NN\@bsphack\relax
+   \cs_set_eq:NN\@esphack\relax
+   \int_incr:N\kl_sphack_int}
+\cs_set:Nn\kl_hide_end:
+  {\int_decr:N\kl_sphack_int
+   \int_compare:nNnTF{\kl_sphack_int}=0
+     {\cs_set_eq:NN\@bsphack\kl_stored_@bsphack
+      \cs_set_eq:NN\@esphack\kl_stored_@esphack}{}
+  \@esphack}
+\makeatother
+\cs_new:Nn\if_true:TF{#1}
+\cs_new:Nn\if_false:TF{#2}
+\cs_generate_variant:Nn\use:nn{nx}
+\cs_new:Npn\cs_apply_inline:nn#1
+   {\cs_set:Npn\g_tmpa_cs:##1{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4##5{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4##5##6{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4##5##6##7{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnnnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4##5##6##7##8{#1}
+    \g_tmpa_cs:}
+\cs_new:Npn\cs_apply_inline:nnnnnnnnnn#1
+   {\cs_set:Npn\g_tmpa_cs:##1##2##3##4##5##6##7##8##9{#1}
+    \g_tmpa_cs:}
+\AtBeginDocument{\KAuxActivate}
+
+\NewDocumentCommand\KAuxActivate{}{
+    \cs_gset_eq:NN\KAuxActivate\relax
+    \KAuxOpen{}}
+\AtEndDocument{\KAuxClose}
+\iow_new:N\knowledge_kaux_iow
+
+\NewDocumentCommand\KAuxOpen{}
+ {\kaux_pretreatment_tl
+  \tl_gclear:N\kaux_pretreatment_tl
+  \iow_open:Nn
+     \knowledge_kaux_iow
+     {\c_sys_jobname_str.kaux}
+  \KAuxWrite*{}
+  \kaux_inittreatment_tl
+  \tl_gclear:N\kaux_inittreatment_tl
+  \KAuxWrite*{}}
+
+\NewDocumentCommand\KAuxClose{}
+ {\KAuxWrite*{\KAuxEOF {}}
+  \iow_close:N\knowledge_kaux_iow
+  \bool_gset_true:N\kaux_can_be_used_bool
+  \kaux_posttreatment_tl
+  }
+\cs_new:Npn\kaux_if_exist_containline:nnTF#1#2{
+   \file_if_exist:nTF{#1}{
+     \ior_open:Nn\klg_tmpa_ior{#1}
+     \bool_gset_false:N\g_tmpa_bool
+     \bool_gset_false:N\g_tmpb_bool
+     \str_gset:Nn\g_tmpb_str{#2}
+     \bool_do_until:Nn\g_tmpa_bool{
+         \ior_if_eof:NTF\klg_tmpa_ior
+         {\bool_set_true:N\g_tmpa_bool}
+         {
+           \ior_str_get:NN\klg_tmpa_ior\g_tmpa_str
+           %\iow_term:x{(\exp_not:V\g_tmpa_str)=?(\exp_not:V\g_tmpb_str)}
+           \str_if_eq:NNTF\g_tmpa_str\g_tmpb_str
+               {\bool_gset_true:N\g_tmpa_bool
+                \bool_gset_true:N\g_tmpb_bool}
+               {}
+         }}
+     \ior_close:N\klg_tmpa_ior
+     %\bool_show:N\g_tmpb_bool
+     \bool_if:NTF\g_tmpb_bool
+   }
+   {\use_ii:nn}
+}
+
+\NewDocumentCommand\IfKAuxReadyTF{}
+   {\exp_args:Nx\kaux_if_exist_containline:nnTF{\c_sys_jobname_str.kaux}{\KAuxEOF {}}}
+\NewDocumentCommand\KAuxBefore{m}
+  {\tl_gput_right:Nn\kaux_pretreatment_tl{#1}}
+\NewDocumentCommand\KAuxAfter{m}
+  {\tl_gput_right:Nn\kaux_posttreatment_tl{#1}}
+\NewDocumentCommand\KAuxInit{m}
+  {\tl_gput_right:Nn\kaux_inittreatment_tl{#1}}
+\tl_new:N\kaux_pretreatment_tl
+\tl_gset:Nn\kaux_pretreatment_tl{}
+\tl_new:N\kaux_posttreatment_tl
+\tl_gset:Nn\kaux_posttreatment_tl{}
+\tl_new:N\kaux_inittreatment_tl
+\tl_gset:Nn\kaux_inittreatment_tl{}
+\tl_new:N\kaux_command_list_tl
+\NewDocumentCommand\NewKAuxCommand{ m m m }
+{ \ProvideDocumentCommand#1{#2}{}
+  \KAuxInit
+     {\KAuxWrite*{\KAuxCommand#1{#2}{#3}}}
+  \tl_new:c{kaux_\cs_to_str:N#1-args_tl}
+  \tl_gset:cn{kaux_\cs_to_str:N#1-args_tl}{#2}
+  \tl_gput_right:Nn\kaux_command_list_tl{#1}
+}
+\NewKAuxCommand\KAuxEOF{m}
+   {Does~nothing,~useless~empty~argument
+   ,~and~is~searched~for~knowing~if~the~kaux~file~was~written~till~the~end.}
+\NewDocumentCommand\KAuxCommand{mmm}
+  {  \cs_if_exist:NTF #1
+       {}
+       {\ProvideDocumentCommand#1{#2}}
+  }
+\NewDocumentCommand\ActivateKAuxPhase{m}{
+  \tl_map_inline:Nn\kaux_command_list_tl
+     {\kaux_activate_command_phase:Nn##1{#1}}
+  }
+\cs_new:Nn\kaux_activate_command_phase:Nn
+{ \tl_clear_new:c{kaux_\cs_to_str:N#1-active_tl}
+  %
+  \kaux_code_set:Nn\tmpa_code{}
+  \clist_map_inline:nn{#2}
+    {\cs_if_exist:cTF{kaux_\cs_to_str:N#1-##1:nnnnnnnnn}
+      {\exp_args:NNc
+        \kaux_code_put_right:NN
+             \tmpa_code{kaux_\cs_to_str:N#1-##1:nnnnnnnnn}}
+      {}}
+    \kaux_code_wrap:N\tmpa_code
+    \exp_args:NNx\kaux_code_put_left:Nn\tmpa_code
+       {\DeclareDocumentCommand\exp_not:N#1
+          {\exp_not:v{kaux_\cs_to_str:N#1-args_tl}}}
+    \kaux_code_exec:N\tmpa_code
+}
+\cs_new:Nn\kaux_code_set_eq:NN
+  {\cs_set_eq:NN#1#2}
+\cs_new:Nn\kaux_code_set:Nn
+  {\cs_set:Npn#1##1##2##3##4##5##6##7##8##9{#2}}
+\cs_new:Nn\kaux_code_put_right:NN
+  {\exp_args:NNo\kaux_code_put_right:Nn#1
+      {#2{##1}{##2}{##3}{##4}{##5}{##6}{##7}{##8}{##9}}}
+\cs_new:Nn\kaux_code_put_right:Nn
+  {\exp_args:NNo\cs_set:Nn
+      \tmp:nnnnnnnnn
+      {#1{##1}{##2}{##3}{##4}{##5}{##6}{##7}{##8}{##9}#2}
+   \cs_set_eq:NN#1\tmp:nnnnnnnnn}
+\cs_new:Nn\kaux_code_put_left:Nn
+   {\kaux_code_set:Nn\g_tmpc_code{#2}
+     \kaux_code_put_right:NN\g_tmpc_code#1
+     \kaux_code_set_eq:NN#1\g_tmpc_code}
+\cs_new:Nn\kaux_code_wrap:N
+   {\expandafter\cs_set:Nn
+     \expandafter\tmp:nnnnnnnnn
+     \expandafter{
+     \expandafter{#1{##1}{##2}{##3}{##4}{##5}{##6}{##7}{##8}{##9}}}
+     \cs_set_eq:NN#1\tmp:nnnnnnnnn}
+\cs_new:Nn\kaux_code_exec:N
+   {#1{##1}{##2}{##3}{##4}{##5}{##6}{##7}{##8}{##9}}
+\NewDocumentCommand\DeclareKAuxPhaseCommand{mmm}
+{ \tl_if_exist:cTF{kaux_\cs_to_str:N#1-args_tl}{}
+     {\ERROR_KAuxCommand_UNDEFINED}
+  \cs_gset:cn{kaux_\cs_to_str:N#1-#2:nnnnnnnnn}{#3}}
+\NewDocumentCommand\KAuxWriteLocation{}
+  {\KAuxActivate
+   \group_begin:
+     \tl_set:Nx\l_tmpa_tl{{\currfilename}{\the\inputlineno}}
+     \tl_if_eq:NNTF\l_tmpa_tl\kaux_location_tl
+        {}
+        {\tl_gset_eq:NN\kaux_location_tl\l_tmpa_tl
+         \iow_now:Nx\knowledge_kaux_iow{}
+         \iow_now:Nx\knowledge_kaux_iow
+            {\KAuxFileAt\kaux_location_tl}}
+     \group_end:}
+
+\tl_new:N\kaux_location_tl
+
+\NewDocumentCommand\KAuxWriteX{sm}
+   {\KAuxActivate
+    \IfBooleanTF{#1}{}{\KAuxWriteLocation}
+    \exp_args:NNx\iow_now:Nn\knowledge_kaux_iow{#2}}
+
+\NewDocumentCommand\KAuxWrite{sm}
+  {\KAuxActivate
+   \IfBooleanTF{#1}{}{\KAuxWriteLocation}
+   \iow_now:Nn\knowledge_kaux_iow{#2}}
+
+\NewDocumentCommand\KAuxFileAt{mm}
+   {\tl_set:Nn\kauxCurrentFile{#1}
+    \tl_set:Nn\kauxCurrentLine{#2}}
+
+\cs_new:Nn\kaux_current_location:{\kauxCurrentFile :\kauxCurrentLine :}
+\tl_new:N\kauxCurrentFile
+\tl_new:N\kauxCurrentLine
+\bool_new:N\kaux_can_be_used_bool
+\bool_gset_false:N\kaux_can_be_used_bool
+
+\file_if_exist:nT{\c_sys_jobname_str.aux}
+{\file_if_exist:nT{\c_sys_jobname_str.kaux}
+  {\bool_gset_true:N\kaux_can_be_used_bool}}
+
+\NewDocumentCommand\KAuxProcess{m}
+{ \bool_if:NT\kaux_can_be_used_bool
+   {\ActivateKAuxPhase{#1}
+    \input{\c_sys_jobname_str.kaux}}}
+\cs_new:Nn\cell_new_type:nnn
+  {
+   \cs_new:cn{#1_id:#2}{#3}
+   \cs_new:cn{#1_id_b:#2}{{#3}}
+   \cs_new:cpx{#1_at:N#2}##1
+      {\exp_not:n{\exp_after:wN\exp_args:Nc\exp_after:wN}
+       ##1 \exp_not:c{#1_id_b:#2}}
+  }
+\cs_new:Nn\cell_specialize:nnn
+  {\cs_new:cpx{#1_#2_id:#3}
+      {\exp_not:c{#1_id:n#3}{#2}}
+   \cs_new:cpx{#1_#2_at:N#3}##1
+      {\exp_not:c{#1_at:Nn#3}##1{#2}}
+  }
+
+\cs_new:Nn\cell_make_tl:nn
+  {\cs_set:Nn\l_tmpa_cs:nn
+     {\cs_new:cpx{#1_##1:#2##2}
+        {\exp_not:c{#1_at:N#2}\exp_not:c{tl_##1:N##2}}}
+   \l_tmpa_cs:nn{set}{n}
+   \l_tmpa_cs:nn{gset}{n}
+   \l_tmpa_cs:nn{set}{x}
+   \l_tmpa_cs:nn{gset}{x}
+   \l_tmpa_cs:nn{gput_right}{n}
+   \l_tmpa_cs:nn{gput_left}{n}
+   \l_tmpa_cs:nn{put_right}{n}
+   \l_tmpa_cs:nn{put_left}{n}
+   \l_tmpa_cs:nn{show}{}
+   \l_tmpa_cs:nn{use}{}
+   \l_tmpa_cs:nn{if_exist}{TF}
+   \l_tmpa_cs:nn{if_empty}{TF}
+  }
+
+\cs_new:Nn\cell_make_int:nn
+  {
+   \cs_set:Nn\l_tmpa_cs:nn
+     {\cs_new:cpx{#1_##1:#2##2}
+        {\exp_not:c{#1_at:N#2}\exp_not:c{int_##1:N##2}}}
+   \l_tmpa_cs:nn{new}{}
+   \l_tmpa_cs:nn{show}{}
+   \l_tmpa_cs:nn{set}{n}
+   \l_tmpa_cs:nn{gset}{n}
+   \l_tmpa_cs:nn{incr}{}
+   \l_tmpa_cs:nn{gincr}{}
+   \l_tmpa_cs:nn{decr}{}
+   \l_tmpa_cs:nn{gdecr}{}
+   \l_tmpa_cs:nn{use}{}
+   \l_tmpa_cs:nn{to_arabic}{}
+  }
+
+\cs_new:Nn\cell_make_bool:nn
+  {
+   \cs_set:Nn\l_tmpa_cs:nn
+     {\cs_new:cpx{#1_##1:#2##2}
+        {\exp_not:c{#1_at:N#2}\exp_not:c{bool_##1:N##2}}}
+   \l_tmpa_cs:nn{set_true}{}
+   \l_tmpa_cs:nn{set_false}{}
+   \l_tmpa_cs:nn{gset_true}{}
+   \l_tmpa_cs:nn{gset_false}{}
+   \l_tmpa_cs:nn{set}{n}
+   \l_tmpa_cs:nn{gset}{n}
+   \l_tmpa_cs:nn{if}{TF}
+  }
+
+\cs_new:Nn\seq_use:N
+  {\seq_use:Nn#1,}
+
+\cs_new:Nn\cell_make_seq:nn
+  {
+   \cs_set:Nn\l_tmpa_cs:nn
+     {\cs_new:cpx{#1_##1:#2##2}
+        {\exp_not:c{#1_at:N#2}\exp_not:c{seq_##1:N##2}}}
+   \l_tmpa_cs:nn{new}{}
+   \l_tmpa_cs:nn{set_from_clist}{n}
+   \l_tmpa_cs:nn{gset_from_clist}{n}
+   \l_tmpa_cs:nn{gpush}{n}
+   \l_tmpa_cs:nn{if_exist}{TF}
+   \l_tmpa_cs:nn{if_empty}{TF}
+   \l_tmpa_cs:nn{if_in}{nTF}
+   \l_tmpa_cs:nn{show}{}
+   \l_tmpa_cs:nn{use}{n}
+   \l_tmpa_cs:nn{use}{}
+   \l_tmpa_cs:nn{map_inline}{n}
+  }
+
+\cs_new:Nn\cell_make_tuple:nn
+  {
+   \cs_set:Nn\l_tmpa_cs:nn
+     {\cs_new:cpx{#1_##1:#2##2}
+        {\exp_not:c{#1_at:N#2}\exp_not:c{tuple_##1:N##2}}}
+  }
+
+\cs_new:Nn\cell_specialize_int:nnn
+  {
+  \cell_specialize:nnn{#1}{#2}{#3}
+  \cell_make_int:nn{#1_#2}{#3}
+  }
+
+\cs_new:Nn\cell_specialize_tl:nnn
+  {
+  \cell_specialize:nnn{#1}{#2}{#3}
+  \cell_make_tl:nn{#1_#2}{#3}
+  }
+
+\cs_new:Nn\cell_specialize_bool:nnn
+  {
+  \cell_specialize:nnn{#1}{#2}{#3}
+  \cell_make_bool:nn{#1_#2}{#3}
+  }
+
+\cs_new:Nn\cell_specialize_seq:nnn
+  {
+  \cell_specialize:nnn{#1}{#2}{#3}
+  \cell_make_seq:nn{#1_#2}{#3}
+  }
+\cs_new:Nn\tuple_new:n
+  {
+   \cs_new:cx{#1_new:N}
+     {\exp_not:N\tl_new:N##1
+      \exp_not:N\tl_gset:Nn##1{\exp_not:c{#1:}}}
+   \cs_new:cx{#1_gclear:N}
+     {\exp_not:N\tl_gset:Nn##1{\exp_not:c{#1:}}}
+   \cs_new:cx{#1_ensure:N}
+     {\exp_not:N\tl_if_exist:NTF##1{}
+        {\exp_not:N\tl_new:N##1
+         \exp_not:N\tl_gset:Nn##1{\exp_not:c{#1:}}}}
+    \cs_new:cn{#1:}{}
+    %
+    \cs_set:Nn\l_tmpa_cs:nn
+      { \cs_new:cpx{#1_##1:##2}
+           {\exp_not:c{tuple_##1:n##2}{\exp_not:n{#1}}}}
+    \l_tmpa_cs:nn{new_tl_index}{Nnn}
+    \l_tmpa_cs:nn{new_tl_index}{nn}
+    \l_tmpa_cs:nn{new_tl_index}{n}
+    \l_tmpa_cs:nn{new_int_index}{Nnn}
+    \l_tmpa_cs:nn{new_int_index}{nn}
+    \l_tmpa_cs:nn{new_int_index}{n}
+    \l_tmpa_cs:nn{new_bool_index}{Nn}
+    \l_tmpa_cs:nn{new_bool_index}{n}
+    \l_tmpa_cs:nn{show}{N}
+    \l_tmpa_cs:nn{if_exist}{NTF}
+  }
+\cs_new:Npn\tuple_if_exist:nNTF#1{\tl_if_exist:NTF}
+\cs_new:Nn\tuple_new_bool_index:nNNn
+  {
+  \cs_new:cn{#1_#4_expands_to:TF}{
+     \cs_set:Nn#2{##1}
+     \cs_set:Nn#3{##2}}
+  \cs_gset:Nn#2{}
+  \cs_gset:Nn#3{}
+  %
+  \cs_new:cx{#1_#4_if:NTF}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#4_if~i:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}{##3}{##2}}
+  \cs_new:cpn{#1_#4_if~i:w}
+       ##1 #2 ##2 #2 ##3 \tuple_end:
+       {\tl_if_single:nTF{##3}}
+  %
+  \cs_new:cx{#1_#4_gset_false:N}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#4_gset_false~i:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1}
+  \cs_new:cpn{#1_#4_gset_false~i:w}
+       ##1 #2 ##2 #2 ##3 \tuple_end:##4
+       {\tl_if_single:nTF{##3}
+          {\tl_gset:Nn##4{##1}}
+          {\tl_gset:Nn##4{##1##2}}}
+  %
+  \cs_new:cx{#1_#4_gset_true:N}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#4_gset_true~:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1}
+  \cs_new:cpn{#1_#4_gset_true~:w}
+       ##1 #2 ##2 #2 ##3 \tuple_end: ##4
+       {\tl_if_single:nTF{##4}
+          {\tl_gset:Nn##4{##1 #2}}{}}
+}
+\cs_new:Nn\tuple_new_bool_index:nn
+  {\use:x{\exp_not:n{\tuple_new_bool_index:nNNn{#1}}
+      \exp_not:c{BOOL_#1_#2_true:}
+      \exp_not:c{BOOL_#1_#2_false:}
+      {#2}}}
+\cs_new:Nn\tuple_new_index:nNnn{
+  \cs_new:cn{#1_#3_expands_to:n}{\cs_set:Nn#2{##1}}
+  \cs_gset:Nn#2{}
+  %
+  \cs_new:cx{#1_#3_use:N}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_use~i:w}
+       ##1 \exp_not:n{#2 {#4}\tuple_end:}}
+  \cs_new:cpx{#1_#3_use~i:w}
+       ##1 #2 ##2 ##3 \tuple_end:{##2}
+  %
+  \cs_new:cx{#1_#3_if_exist:NTF}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_if_exist~i:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}{##3}{##2}}
+  \cs_new:cpn{#1_#3_if_exist~i:w}
+       ##1 #2 ##2 ##3 #2 ##4 \tuple_end:
+       {\tl_if_single:nTF{##4}}
+  %
+  \cs_new:cx{#1_#3_gdel:N}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_gdel~i:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1}
+  \cs_new:cpn{#1_#3_gdel~i:w}
+       ##1 #2 ##2 ##3 #2 ##4 \tuple_end:##5
+       {\tl_if_single:nTF{##4}
+          {\tl_gset:Nn##5{##1}}
+          {\tl_gset:Nn##5{##1##3}}}
+  %
+   \cs_new:cx{#1_#3_gapply:NN}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_gapply~i:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1##2}
+   \cs_new:cpn{#1_#3_gapply~i:w}
+       ##1 #2 ##2 ##3 #2 ##4 \tuple_end: ##5 ##6
+       {\tl_if_single:nTF{##4}
+          {\tl_gset:Nx##5{\exp_not:n{##1 #2}{##6{#4}}}}
+          {\tl_gset:Nx##5{\exp_not:n{##1 #2}{##6{##2}} \exp_not:n{##3}}}}
+}
+
+\cs_new:Nn\tuple_new_tl_index:nNnn
+  {\tuple_new_index:nNnn{#1}#2{#3}{#4}
+  %
+  \cs_new:cx{#1_#3_gset:Nn}
+    {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_gset~:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1{##2}}
+  \cs_new:cpn{#1_#3_gset~:w}
+       ##1 #2 ##2 ##3 #2 ##4 \tuple_end: ##5 ##6
+       {\tl_if_single:nTF{##4}
+          {\tl_gset:Nn##5{##1 #2{##6}}}
+          {\tl_gset:Nn##5{##1 #2{##6} ##3}}}
+}
+\cs_new:Nn\tuple_new_tl_index:nnn
+  {\exp_args:Nnc\tuple_new_tl_index:nNnn{#1}{TL_#1_#2_:n}{#2}{#3}}
+\cs_new:Nn\tuple_new_tl_index:nn
+  {\tuple_new_tl_index:nnn{#1}{#2}{}}
+
+\cs_new:Nn\int_incr:n{\int_eval:n{#1+1}}
+\cs_new:Nn\int_decr:n{\int_eval:n{#1-1}}
+
+\cs_new:Nn\tuple_new_int_index:nNnn{
+   \tuple_new_index:nNnn{#1}#2{#3}{#4}
+   %
+   \cs_new:cx{#1_#3_get_int:NN}
+     {\exp_not:n{\int_set:Nn} ##2 {\exp_not:c{#1_#3_use:N} \exp_not:N##1}}
+   %
+   \cs_new:cx{#1_#3_gincr:N}
+     {\exp_not:c{#1_#3_gapply:NN}##1\exp_not:N\int_incr:n}
+   %
+   \cs_new:cx{#1_#3_gdecr:N}
+     {\exp_not:c{#1_#3_gapply:NN}##1\exp_not:N\int_decr:n}
+   %
+   \cs_new:cx{#1_#3_gset:Nn}
+     {\exp_not:N\expandafter
+       \exp_not:c{#1_#3_gset~:w}
+       ##1 \exp_not:n{#2 ab #2 c \tuple_end:}##1{##2}}
+   \cs_new:cpn{#1_#3_gset~:w}
+       ##1 #2 ##2 ##3 #2 ##4 \tuple_end: ##5 ##6
+       {\tl_if_single:nTF{##4}
+          {\tl_gset:Nx##5{##1 \exp_not:N#2 {\int_eval:n{##6}}}}
+          {\tl_gset:Nx##5{##1 \exp_not:N#2 {\int_eval:n{##6}} ##3}}}
+    %
+    \cs_new:cpx{#1_#3_case:NnTF}##1
+      {\exp_not:N\int_case:nnTF{\exp_not:c{#1_#3_eval:n}##1}}
+}
+\cs_new:Nn\tuple_new_int_index:nnn
+  {\exp_args:Nnc\tuple_new_int_index:nNnn{#1}{INT_#1_#2_:n}{#2}{#3}}
+\cs_new:Nn\tuple_new_int_index:nn
+  {\tuple_new_int_index:nnn{#1}{#2}{0}}
+\cs_new:Nn\int_get_default:N
+   {\int_if_exist:NTF#1{\int_use:N#1}{0}}
+\cs_generate_variant:Nn\int_get_default:N{c}
+\cs_new:Nn\int_force:N
+  {\int_if_exist:NTF#1{}{\int_new:N#1}}
+\cs_new:Npn\int_force_gset:Nn#1
+   {\int_force:N#1\int_gset:Nn#1}
+\NewDocumentCommand\NewGBool{ m m o  }{
+   \IfNoValueTF{#3}{
+      \tl_gset:Nn\g_tmpa_tl{#2}
+      \tl_remove_all:Nn\g_tmpa_tl{~}
+      \int_case:nnTF{\tl_count:N\g_tmpa_tl}{
+        0 {\NewGBoolComplete {#1}{#2}{#1:_bool}}
+        1 {\NewGBoolComplete {#1}{#2}{#1:##1_bool}}
+        2 {\NewGBoolComplete {#1}{#2}{#1:##1...##2_bool}}
+        3 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3_bool}}
+        4 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4_bool}}
+        5 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4...##5_bool}}
+        6 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4...##5...##6_bool}}
+        7 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4...##5...##6...##7_bool}}
+        8 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4...##5...##6...##7...##8_bool}}
+        9 {\NewGBoolComplete {#1}{#2}{#1:##1...##2...##3...##4...##5...##6...##7...##8...##9_bool}}
+      }{}{\ERROR}}{\NewGBoolComplete{#1}{#2}{#3}}}
+\NewDocumentCommand\NewGBoolComplete{ m m m  }{
+   \exp_args:Nc\NewDocumentCommand{#1SetTrue}{#2}
+      {\bool_gset_true:c{#3}}
+   \exp_args:Nc\NewDocumentCommand{#1SetFalse}{#2}
+      {\bool_gset_false:c{#3}}
+   \exp_args:Nc\NewDocumentCommand{#1Set}{#2}
+      {\exp_args:Nc\bool_gset_tl:Nn{#3}}
+   \exp_args:Nc\DeclareExpandableDocumentCommand{#1IfTF}{#2}
+      {\bool_if:cTF{#3}}
+}
+\cs_new:Nn\bool_gset_tl:Nn
+   {\use:c{bool_gset_#2:N}#1}
+\NewDocumentCommand\NewGCs{ m m o  }{
+   \IfNoValueTF{#3}{
+      \tl_gset:Nn\g_tmpa_tl{#2}
+      \tl_remove_all:Nn\g_tmpa_tl{~}
+      \int_case:nnTF{\tl_count:N\g_tmpa_tl}{
+        0 {\NewGCsComplete {#1}{#2}{#1_:}}
+        1 {\NewGCsComplete {#1}{#2}{#1_##1_cs:w}}
+        2 {\NewGCsComplete {#1}{#2}{#1_##1...##2_cs:w}}
+        3 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3_cs:w}}
+        4 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4_cs:w}}
+        5 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4...##5_cs:w}}
+        6 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4...##5...##6_cs:w}}
+        7 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4...##5...##6...##7_cs:w}}
+        8 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4...##5...##6...##7...##8_cs:w}}
+        9 {\NewGCsComplete {#1}{#2}{#1_##1...##2...##3...##4...##5...##6...##7...##8...##9_cs:w}}
+      }{}{\ERROR}}{\NewGCsComplete{#1}{#2}{#3}}}
+\NewDocumentCommand\NewGCsComplete{ m m m  }{}
+\cs_new_protected_with_variants:Nnn\kl_copy_file:nn{nV,Vn,VV}
+  {\file_if_exist:nT{#1}
+  {\group_begin:
+    \bool_set_false:N\l_tmpa_bool
+    \ior_open:Nn\klg_tmpa_ior{#1}
+    \iow_open:Nn\klg_tmpa_iow{#2}
+    \bool_do_until:Nn\l_tmpa_bool{
+        \ior_if_eof:NTF\klg_tmpa_ior
+          {\bool_set_true:N\l_tmpa_bool}
+          {\ior_str_get:NN
+              \klg_tmpa_ior
+              \l_tmpa_tl
+            \exp_args:NNV
+            \iow_now:Nn
+                 \klg_tmpa_iow
+                 \l_tmpa_tl}
+        }
+     \ior_close:N\klg_tmpa_ior
+     \iow_close:N\klg_tmpa_iow
+  \group_end:}}
+\cs_new_protected_with_variants:Nnn\kl_compare_files:Nnn{NnV,NVn,NVV}
+  {\group_begin:
+    \bool_set_false:N\l_tmpa_bool% set when finished
+    \bool_set_true:N\l_tmpb_bool% result
+    \file_if_exist:nTF{#2}
+        {\file_if_exist:nF{#3}
+           {\bool_set_true:N\l_tmpa_bool
+            \bool_set_false:N\l_tmpb_bool}}
+        {\bool_set_true:N\l_tmpa_bool
+         \file_if_exist:nT{#3}
+           {\bool_set_false:N\l_tmpb_bool}}
+    \bool_if:NF\l_tmpa_bool{
+      \ior_open:Nn\klg_tmpa_ior{#2}
+      \ior_open:Nn\klg_tmpb_ior{#3}
+      %
+      \bool_do_until:Nn\l_tmpa_bool{
+        \ior_if_eof:NTF\klg_tmpa_ior
+          {\bool_set_true:N\l_tmpa_bool
+            \ior_if_eof:NF\klg_tmpb_ior
+                {\bool_set_false:N\l_tmp_bool}}
+          {\ior_if_eof:NTF\klg_tmpb_ior
+            {\bool_set_true:N\l_tmpa_bool
+             \bool_set_false:N\l_tmp_bool}
+            {\ior_str_get:NN
+                 \klg_tmpa_ior
+                 \l_tmpa_tl
+              \ior_str_get:NN
+                 \klg_tmpb_ior
+                 \l_tmpb_tl
+              \tl_if_eq:NNF
+                  \l_tmpa_tl\l_tmpb_tl
+                  {\bool_set_true:N\l_tmpa_bool
+                   \bool_set_false:N\l_tmpb_bool}
+               }}
+       }
+       \ior_close:N\klg_tmpa_ior
+       \ior_close:N\klg_tmpb_ior}
+     \bool_if:NTF\l_tmpb_bool
+        {\group_end:\bool_set_true:N#1}
+        {\group_end:\bool_set_false:N#1}
+  }
+\cs_new_protected:Nn\kl_tl_to_file:nn
+   {\iow_open:Nn\klg_tmpa_iow{#1}
+    \iow_now:Nn\klg_tmpa_iow{#2}
+    \iow_close:N\klg_tmpa_iow}
+\ior_new:N\klg_tmpa_ior
+\ior_new:N\klg_tmpb_ior
+\iow_new:N\klg_tmpa_iow
+\cs_new:Npn\commandVariant#1#2{#2\cs_to_str:N#1}
+
+\cs_generate_variant:Nn\cs_gset_eq:NN{cN,cc}
+\NewDocumentCommand\OverloadCommand{mmO{NEW}m}
+  {\cs_if_exist:cTF
+   {\commandVariant#1{switch~}}
+{}
+    {\exp_args:Nc\cs_gset_eq:NN
+{\commandVariant#1{SUPER}}
+#1
+ \exp_args:NNx\cs_gset:Npn
+     #1{\exp_not:c{\commandVariant#1{switch~}}}
+ }
+   \exp_args:Nc\NewDocumentCommand
+    {\commandVariant#1{#3}}{#2}{#4}
+   \ChooseCommand#1{#3}
+}
+\NewDocumentCommand\ChooseCommand{mm}{
+  \tl_map_inline:nn{#1}
+    {\cs_if_exist:cTF
+      {\commandVariant##1{#2}}
+        {\cs_gset_eq:cc
+          {\commandVariant##1{switch~}}
+          {\commandVariant##1{#2}}}
+        {\tl_show:n
+          {knowledge_utils~ERROR:~##1~has~no~variant~{#2}}}
+      }
+}
+\NewDocumentCommand\XparseArgs{mm}
+    {\kutils_reverting_args:Nn#1{#2}}
+\DeclareExpandableDocumentCommand\ExpXparseArgs{mm}
+    {\kutils_exec_xreverting_args:Nn#1{#2}}
+\cs_new:Nn\kutils_xrevert_arg_s:n
+ { \IfBooleanTF{#1}{*}{}}
+\cs_new:Nn\kutils_xrevert_arg_o:n
+ { \IfValueTF{#1}{[\exp_not:n{#1}]}{}}
+\cs_new:Nn\kutils_xrevert_arg_m:n
+ { {\exp_not:n{#1}} }
+\cs_new:Nn\kutils_xrevert_arg_i:n
+ { }
+\cs_new:Nn\kutils_reverting_args:Nn{
+  \use:c{kutils_process_\tl_count:n{#2}:w}
+   #1{\kutils_exec_xreverting_args:n{#2}}}
+\cs_new:Nn\kutils_exec_xreverting_args:n{
+  \tl_if_empty:nTF{#1}{}
+      {\kutils_exec_xreverting_args_internal:w#1\kutils_end:}}
+\cs_new:Nn\kutils_exec_xreverting_args:Nn{
+  \exp_not:N#1
+  \tl_if_empty:nTF{#2}{}
+      {\kutils_exec_xreverting_args_internal:w#2\kutils_end:}}
+\cs_new:Npn\kutils_exec_xreverting_args_internal:w#1#2\kutils_end:#3
+  { \use:c{kutils_xrevert_arg_#1:n}{#3}
+     \tl_if_empty:nTF{#2}{}
+     {\kutils_exec_xreverting_args_internal:w#2\kutils_end:}}
+\cs_new:Nn\kutils_process_args:nn
+  {#1}
+\cs_new:Nn\kutils_process_args:nnn
+  {\use:nx{#1}{#2{#3}}}
+\cs_new:Nn\kutils_process_args:nnnn
+  {\use:nx{#1}{#2{#3}{#4}}}
+\cs_new:Nn\kutils_process_args:nnnnn
+  {\use:nx{#1}{#2{#3}{#4}{#5}}}
+\cs_new:Nn\kutils_process_args:nnnnnn
+  {\use:nx{#1}{#2{#3}{#4}{#5}{#6}}}
+\cs_new:Nn\kutils_process_args:nnnnnnn
+  {\use:nx{#1}{#2{#3}{#4}{#5}{#6}{#7}}}
+\cs_new:Nn\kutils_process_args:nnnnnnnn
+  {\use:nx{#1}{#2{#3}{#4}{#5}{#6}{#7}{#8}}}
+\cs_new:Nn\kutils_process_args:nnnnnnnnn
+  {\use:nx{#1}{#2{#3}{#4}{#5}{#6}{#7}{#8}{#9}}}
+\exp_args:Nc\let{kutils_process_0:w}\kutils_process_args:nn
+\exp_args:Nc\let{kutils_process_1:w}\kutils_process_args:nnn
+\exp_args:Nc\let{kutils_process_2:w}\kutils_process_args:nnnn
+\exp_args:Nc\let{kutils_process_3:w}\kutils_process_args:nnnnn
+\exp_args:Nc\let{kutils_process_4:w}\kutils_process_args:nnnnnn
+\exp_args:Nc\let{kutils_process_5:w}\kutils_process_args:nnnnnnn
+\exp_args:Nc\let{kutils_process_6:w}\kutils_process_args:nnnnnnnn
+\exp_args:Nc\let{kutils_process_7:w}\kutils_process_args:nnnnnnnnn
+\msg_new:nnn{scope}{LaTeX~obsolete}
+    {The~command~'#1'~is~deprecated.~
+     See~documentation~for~a~replacement.}
+
+\cs_new:Nn\kutils_secure_latex_command:N
+  {\cs_new_eq:cN{LaTeX\cs_to_str:N#1}#1}
+
+\cs_new:Nn\kutils_latex_to_vault:N
+  {\kutils_secure_latex_command:N#1
+   \cs_undefine:N#1}
+
+\cs_new:Nn\kutils_latex_to_obsolete:N
+  {\kutils_latex_to_vault:N#1
+   \cs_new:Npx#1{\exp_not:N\msg_error:nnn{scope}{LaTeX~obsolete}{\string #1}}}
+
+\cs_new:Nn\kutils_secure_latex_command:n
+  {\tl_map_function:nN{#1}\kutils_secure_latex_command:N}
+\cs_new:Nn\kutils_latex_to_vault:n
+  {\tl_map_function:nN{#1}\kutils_latex_to_vault:N}
+\cs_new:Nn\kutils_latex_to_obsolete:n
+  {\tl_map_function:nN{#1}\kutils_latex_to_obsolete:N}
+%%%%%%%%%%
+\cs_new:Nn\knowledge_begin_module_if:n
+  {\bool_if:NF#1\knowledge_skip_module:}
+\cs_new:Npn\knowledge_skip_module:#1\knowledge_end_module:
+  {}
+\cs_new:Nn\knowledge_end_module:
+  {}
+\cs_set_eq:Nc\klparse_ifnextchar:NTF{@ifnextchar}
+\tl_new:N\klparse_novalue_tl
+\NewDocumentCommand\klparse_setnovalue{o}
+  {\tl_set:Nn\klparse_novalue_tl{#1}}
+\klparse_setnovalue\relax
+\cs_new:Npn\klparse_if_novalue:NTF
+  {\tl_if_eq:NNTF\klparse_novalue_tl}
+\cs_generate_variant:Nn\tl_to_str:n{V}
+\tl_new:N\char_escape_tl
+\tl_set:Nx\char_escape_tl
+   {\expandafter\tl_head:n\expandafter{\string\escape}}
+\cs_new:Nn\debug_vars:nn{
+   \iow_term:n{---~{#1}}
+   \tl_map_inline:nn{#2}
+      {\iow_term:x{\space\space\exp_not:N##1=\space\tl_if_exist:NTF##1
+           {{\exp_not:V##1}}
+           {undefined}}}
+}
+\cs_new:Nn\knowledge_info:n
+  {\msg_info:nnn{knowledge}{knowledge~info}{#1}}
+\cs_new:Nn\knowledge_warning:n{
+   \msg_warning:nnn{knowledge}{knowledge~warning}{#1}
+  }
+\cs_new:Nn\knowledge_error:n
+  {\msg_error:nnn{knowledge}{knowledge~error}{#1}}
+\cs_new:Npn\knowledge_werror:Nn#1
+  {\bool_if:NTF#1\knowledge_error:n\knowledge_warning:n}
+\msg_new:nnnn{knowledge}{knowledge~info}{#1}{#2}
+\msg_new:nnnn{knowledge}{knowledge~warning}{#1}{#2}
+\msg_new:nnnn{knowledge}{knowledge~error}{#1}{#2}
+\cs_generate_variant:Nn\knowledge_info:n{x}
+\cs_generate_variant:Nn\knowledge_warning:n{x}
+\cs_generate_variant:Nn\knowledge_error:n{x}
+\cs_new:Npn\knowledge_warning:nn{
+\bool_if:NTF\knowledge_warningsilent_bool
+\use_none:nn
+\msg_warning:nn
+}
+\cs_new:Npn\knowledge_warning:nnn{
+\bool_if:NTF\knowledge_warningsilent_bool
+\use_none:nnn
+\msg_warning:nnn
+}
+\cs_new:Npn\knowledge_warning:nnnn{
+\bool_if:NTF\knowledge_warningsilent_bool
+\use_none:nnnn
+\msg_warning:nnnn
+}
+\cs_generate_variant:Nn\knowledge_warning:nnnn{nnxx}
+\cs_new:Npn\knowledge_warning:nnnnn{
+\bool_if:NTF\knowledge_warningsilent_bool
+\use_none:nnnnn
+\msg_warning:nnnnn
+}
+\cs_generate_variant:Nn\knowledge_warning:nnnnn{nnxxx}
+\msg_new:nnn{ knowledge }{ knowledge~recursion }
+   { The~knowledges~are~probably~cyclic,~starting~from\\<#1>~(namespace~'#2'),~
+   currently~at~'#3'.}
+\msg_new:nnn{ knowledge }{ knowledge~unknown }
+   {The~knowledge~'#1'~could~not~be~found~in~scopes\\<#3>~(namespace~'#2').}
+\msg_new:nnn{ knowledge }{ knowledge~unknown~in~scope }
+   {The~knowledge~'#1'~could~not~be~found~in~scope\\<#3>~(namespace~'#2').}
+\msg_new:nnn{ knowledge }{ knowledge~unknown~label }
+   {The~label~'#2'~could~not~be~found~while~searching~for:\\<#1>\\Possibly~rerun~latex.}
+\msg_new:nnn{ knowledge }{ package~required }
+  {In~order~to~use~directive~'#1',~please~load~package~or~use~option~'#2'.}
+\msg_new:nnn{ knowledge }{ knowledge~exists }
+  { The~knowledge~'#1'~in~scope~'#2'~(namespace~'#3')~already~exists. }
+\msg_new:nnn{ knowledge }{ knowledgedirective~redifinition }
+  { Directive~'#1'~already~exists~(\knowledgedirective~macro). }
+\msg_new:nnn{scope}{area~exists}{Area~'#1'~already~exists.}
+\msg_new:nnn{scope}{area~not~exist}{Area~'#1'~does~not~exist.}
+\msg_new:nnn{scope}{empty~pop}{Attempt~to~pop~an~empty~area~stack.}
+\msg_new:nnn{scope}{no~pushing~here}
+  {Not~allowed~to~open~'\scope_pushed_area_tl'~here.~
+   Current~stack~is~<\seq_use:Nn\scope_instances_stack_seq{::}>.}
+\msg_new:nnn{scope}{no~popping}{Not~allowed~to~close~'\scope_popped_area_tl'.}
+\msg_new:nnn{scope}{no~popping~here}
+  {Not~allowed~to~close~'\scope_popped_area_tl'~here~(at~'\scope_top_area_tl').}
+\msg_new:nnn{scope}{unknown~label}
+  {\tl_if_empty:nTF{#2}{}{\exp_not:n{#2}}:
+   ~Unknown~label~`#1'.~Possibly~rerun~latex.}
+\msg_new:nnn{scope}{area~not~in~context}
+  {\tl_if_empty:nTF{#2}{}{\exp_not:n{#2}}:
+   ~The~area~`#1'~can't~be~found~in~context.~Possibly~rerun~latex.}
+\exp_args:Nnnx\msg_new:nnn{knowledge}{recap~unknown~knowledge}
+  {Some~knowledge~are~not~defined.~See~the~'\c_sys_jobname_str.diagnose'~file~for~more~information.}
+\exp_args:Nnnx\msg_new:nnn{knowledge}{recap~autoref~introduced~twice}
+  {Some~knowledge~is~introduced~twice.~See~the~'\c_sys_jobname_str.diagnose'~file~for~more~information.}
+\exp_args:Nnnx\msg_new:nnn{knowledge}{recap~autoref~not~introduced}
+  {Some~knowledge~is~used~but~not~introduced.~See~the~'\c_sys_jobname_str.diagnose'~file~for~more~information.}
+\tl_clear_new:N\knowledge_configuration_pending_tl
+\newrobustcmd\knowledgeconfigure[1]{
+  \keys_set:nn{ knowledge~configuration~options }{#1}
+}
+\NewDocumentCommand\KnowledgeConfigureBooleanOption{om}
+  {\KnowledgeConfigureBooleanOptionTF[#1]{#2}{}{}}
+\NewDocumentCommand\KnowledgeConfigureBooleanOptionTF{ommm}{
+ \tl_set:Nn\l_tmpa_tl{#2}
+ \tl_remove_all:Nn\l_tmpa_tl{~}
+ \IfNoValueTF{#1}
+   {\bool_new:c{knowledge_configuration_#2_bool}
+    \exp_args:NcnV\__knowledge_KnowledgeConfigureBooleanOption:Nnnnn
+        {knowledge_configuration_#2_bool}{#2}\l_tmpa_tl{#3}{#4}}
+   {\exp_args:NNnV\__knowledge_KnowledgeConfigureBooleanOption:Nnnnn
+        #1{#2}\l_tmpa_tl{#3}{#4}}
+ }
+\cs_new:Nn\__knowledge_KnowledgeConfigureBooleanOption:Nnnnn{
+ \keys_define:nn{ knowledge~package~options }{
+    #3 .choice:,
+    #3 / true .code:n = {\tl_put_right:Nn\knowledge_configuration_pending_tl{,#2=true}},
+    #3 / false .code:n = {\tl_put_right:Nn\knowledge_configuration_pending_tl{,#2=false}},
+    #3 .default:n = {true}
+ }
+  \keys_define:nn{ knowledge~configuration~options }{
+    #2 .choice:,
+    #2 / true .code:n = {\bool_if:NF#1{\bool_set_true:N#1#4}},
+    #2 / false .code:n = {\bool_if:NT#1{\bool_set_false:N#1#5}},
+    #2 .default:n = {true}
+}}
+\NewDocumentCommand\KnowledgeConfigureTrigger{omm}{
+  \IfNoValueTF{#1}
+    {\tl_set:Nn\l_tmpa_tl{#2}
+      \tl_remove_all:Nn\l_tmpa_tl{~}
+    \exp_args:NNV\KnowledgeConfigureTrigger[\l_tmpa_tl]{#2}{#3}}
+  {\keys_define:nn { knowledge~configuration~options }
+     { #2 .code:n = {#3}, #2 .default:V = \klparse_novalue_tl }
+  \keys_define:nn { knowledge~package~options }
+     { #1 .code:n = {\tl_put_right:Nn\knowledge_configuration_pending_tl{,#2={##1}} }}
+  }
+}
+\newrobustcmd\KnowledgePackageTrigger[2]
+  { \keys_define:nn{ knowledge~package~options }{ #1 .code:n = {#2} }
+  \keys_define:nn{ knowledge~configuration~options }{
+    #1 .code:n = {\knowledge_error:n
+       {The~configuration~directive~`#1'~can~only~be~used~at~package~loading.}}
+  }}
+\NewDocumentCommand\KnowledgePackageBooleanOption{om}{
+ \tl_set:Nn\l_tmpa_tl{#2}
+ \tl_remove_all:Nn\l_tmpa_tl{~}
+ \IfNoValueTF{#1}
+  {\bool_new:c{knowledge_configuration_#2_bool}
+    \exp_args:NcnV\knowledge_KnowledgePackageBooleanOption:Nnn
+        {knowledge_configuration_#2_bool}{#2}\l_tmpa_tl}
+   {\exp_args:NNnV\knowledge_KnowledgePackageBooleanOption:Nnn
+        #1{#2}\l_tmpa_tl}
+ }
+\cs_new:Nn\knowledge_KnowledgePackageBooleanOption:Nnn{
+ \keys_define:nn{ knowledge~package~options }{
+    #3 .choice:,
+    #3 / true .code:n = {\bool_set_true:N#1},
+    #3 / false .code:n = {\bool_set_false:N#1},
+    #3 .default:n = {true}
+ }
+  \keys_define:nn{ knowledge~configuration~options }{
+    #2 .code:n = {\knowledge_error:n
+       {The~configuration~directive~`#2'~can~only~be~used~at~package~loading.}}
+ }}
+\cs_new:Nn\knowledge_option_bool_new:nN{
+  \keys_define:nn{ knowledge~package~options } {
+  #1 .choice: ,
+  #1 / true .code:n = { \bool_gset_true:N#2 },
+  #1 / false .code:n = { \bool_gset_false:N#2 },
+  #1 .default:n = {true}
+  }
+}
+\cs_new:Nn\knowledge_option_bool_new:n
+  {\bool_new:c{knowledge_option_#1_bool}
+  \exp_args:Nnc\knowledge_option_bool_new:nN{#1}{knowledge_option_#1_bool}}
+\bool_new:N\knowledge_warningstrict_bool
+\bool_set_false:N\knowledge_warningstrict_bool
+\KnowledgeConfigureBooleanOption[\knowledge_warningstrict_bool]{strict}
+\bool_new:N\knowledge_warningsilent_bool
+\bool_set_false:N\knowledge_warningsilent_bool
+\KnowledgeConfigureBooleanOption[\knowledge_warningsilent_bool]{silent}
+\bool_new:N\knowledge_configuration_quotation_bool
+\KnowledgeConfigureBooleanOptionTF[\knowledge_configuration_quotation_bool]{quotation}{\klactivatequotation}{\kldeactivatequotation}
+\KnowledgeConfigureTrigger{protect~quotation}{\kl_protect_environment_quotation:n{#1}}
+\bool_new:N\knowledge_configuration_diagnoseline_bool
+\bool_set_false:N\knowledge_configuration_diagnoseline_bool
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_diagnoseline_bool]{diagnose~line}
+\bool_new:N\knowledge_configuration_diagnosehelp_bool
+\bool_set_true:N\knowledge_configuration_diagnosehelp_bool
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_diagnosehelp_bool]{diagnose~help}
+\bool_new:N\knowledge_configuration_diagnosebar_bool
+\bool_gset_true:N\knowledge_configuration_diagnosebar_bool
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_diagnosebar_bool]{bar~suggestion}%backward compatibility
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_diagnosebar_bool]{diagnose~bar}
+\bool_new:N\knowledge_configuration_visibleAP_bool
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_visibleAP_bool]{visible~anchor~points}\KnowledgeConfigureBooleanOption[\knowledge_configuration_visibleAP_bool]{visible~AP}
+\bool_new:N\knowledge_hyperlinks_active_bool
+\bool_set_true:N\knowledge_hyperlinks_active_bool
+\tl_clear_new:N\knowledge_option_mode_tl
+\KnowledgePackageTrigger{ paper }{\tl_set:Nn\knowledge_option_mode_tl{paper}}
+\KnowledgePackageTrigger{ electronic }{\tl_set:Nn\knowledge_option_mode_tl{electronic}}
+\KnowledgePackageTrigger{ composition }{\tl_set:Nn\knowledge_option_mode_tl{composition}}
+\KnowledgePackageTrigger{ final }{\tl_set:Nn\knowledge_option_mode_tl{final}}
+\bool_new:N\knowledge_option_texpatch_bool
+\bool_set_true:N\knowledge_option_texpatch_bool
+\KnowledgePackageTrigger{ no patch }{\bool_set_false:N\knowledge_option_texpatch_bool}
+\tl_new:N\knowledge_option_knowledgeAP_command_tl
+\tl_set:Nn\knowledge_option_knowledgeAP_command_tl{}
+\tl_new:N\knowledge_option_complexityAP_command_tl
+\tl_set:Nn\knowledge_option_complexityAP_command_tl{}
+\KnowledgePackageTrigger{ knowledge AP }{
+   \tl_if_single_token:nTF{#1}
+     {\tl_set:Nn\knowledge_option_knowledgeAP_command_tl{#1}}
+     {\knowledge_error:n{Package~option~'knowledge~AP'~must~be~followed~by~a~single~control~sequence.}}
+}
+\KnowledgePackageTrigger{ complexity AP }{
+   \tl_if_single_token:nTF{#1}
+     {\tl_set:Nn\knowledge_option_complexityAP_command_tl{#1}}
+     {\knowledge_error:n{Package~option~'complexity~AP'~must~be~followed~by~a~single~control~sequence.}}
+}
+\KnowledgeConfigureTrigger{ fix~hyperref~twocolumn }
+  {\knowledgeFixHyperrefTwocolumn}
+\KnowledgeConfigureTrigger{ notion }
+  {\KnowledgeConfigureNotion{notion}
+   \knowledgesetvariant\kl{suggestion=notion}
+   \knowledgesetvariant\intro{suggestion=notion}
+   \knowledgesetvariant\phantomintro{suggestion=notion}
+   \knowledgesetvariant\reintro{suggestion=notion}
+   }
+\KnowledgeConfigureTrigger{ protect~links }
+  {\kl_kl_nesting_incr:}
+\KnowledgeConfigureTrigger{ unprotect~links }
+  {\kl_kl_nesting_decr:}
+\cs_new_eq:Nc\package_if_loaded:nTF{@ifpackageloaded}
+\cs_new:Nn\knowledge_option_aci_test_loaded:n{
+  \bool_new:c{knowledge_#1_active_bool}
+  \bool_new:c{knowledge_#1_syntax_bool}
+  \package_if_loaded:nTF{#1}
+   {\bool_set_true:c{knowledge_#1_active_bool}
+    \bool_set_true:c{knowledge_#1_syntax_bool}}
+   {\bool_set_false:c{knowledge_#1_active_bool}
+    \bool_set_false:c{knowledge_#1_syntax_bool}}
+}
+\knowledge_option_aci_test_loaded:n{hyperref}
+\knowledge_option_aci_test_loaded:n{xcolor}
+\knowledge_option_aci_test_loaded:n{makeidx}
+\cs_new:Nn\knowledge_option_aci_define:n{
+  \keys_define:nn{ knowledge~package~options } {
+  #1 .choice: ,
+  #1 / active .code:n = {
+     \bool_set_true:c{knowledge_#1_active_bool}
+     \bool_set_true:c{knowledge_#1_syntax_bool}},
+  #1 / compatibility .code:n = {
+     \bool_set_false:c{knowledge_#1_active_bool}
+     \bool_set_true:c{knowledge_#1_syntax_bool}},
+  #1 / inactive .code:n = {
+     \bool_set_false:c{knowledge_#1_active_bool}
+     \bool_set_false:c{knowledge_#1_syntax_bool}},
+  #1 .default:n = {active}
+  }}
+\cs_new:Nn\knowledge_option_aci_autoload:nnn{
+   \bool_if:cTF{knowledge_#1_active_bool}
+     {\package_if_loaded:nTF{#1}{}
+        {\RequirePackage[#2]{#1}{#3}}}
+     {}
+}
+\cs_new:Nn\knowledge_option_aci_autoload:nn
+  {\knowledge_option_aci_autoload:nnn{#1}{#2}{}}
+\knowledge_option_bool_new:n{scope}
+\knowledge_option_aci_define:n{hyperref}
+\knowledge_option_aci_define:n{xcolor}
+\knowledge_option_aci_define:n{makeidx}
+\ProcessKeysOptions{knowledge~package~options}
+
+\bool_new:N\knowledge_option_composition_bool
+\bool_set_false:N\knowledge_option_composition_bool
+\bool_new:N\knowledge_option_electronic_bool
+\bool_set_false:N\knowledge_option_electronic_bool
+\bool_new:N\knowledge_option_paper_bool
+\bool_set_false:N\knowledge_option_paper_bool
+\tl_if_exist:NTF\knowledgepackagemode
+  {}
+  {\tl_new:N\knowledgepackagemode
+  \tl_set:Nn\knowledgepackagemode{}}
+\tl_if_empty:NTF\knowledgepackagemode
+  {\tl_if_empty:NTF\knowledge_option_mode_tl
+    {\tl_set:Nn\knowledge_option_mode_tl{composition}}
+    {}}
+  {\tl_if_empty:NTF\knowledge_option_mode_tl
+    {\tl_set_eq:NN\knowledge_option_mode_tl\knowledgepackagemode}
+    {\knowledge_info:n{Knowledge~mode~overriden~by~user.}
+     \tl_set_eq:NN\knowledge_option_mode_tl\knowledgepackagemode
+    }}
+\keys_define:nn{ knowledge~package~modes }{
+  paper .code:n = {
+     \bool_set_true:N\knowledge_option_paper_bool
+     \bool_set_false:N\knowledge_configuration_visibleAP_bool
+     },
+  electronic .code:n = {
+     \bool_set_true:N\knowledge_option_electronic_bool
+     \bool_set_false:N\knowledge_configuration_visibleAP_bool
+     },
+  composition .code:n = {
+     \bool_set_true:N\knowledge_option_composition_bool
+     \bool_set_true:N\knowledge_configuration_visibleAP_bool
+     },
+  final .code:n = { \knowledge_warning:x{Mode~`final`~is~deprecated,~
+       and~should~be~replaced~by~mode~`paper`.}
+       \tl_set:Nn\knowledge_option_mode_tl{paper}
+       \keys_set:nn{knowledge~package~modes}{paper}},
+  unknown .code:n =
+      {\knowledge_warning:x{Unknown~mode~`\l_keys_key_tl`.}
+       \tl_set:Nn\knowledge_option_mode_tl{ composition }
+       \keys_set:nV{ knowledge~package~modes }{ composition }}
+}
+\keys_set:nV{ knowledge~package~modes }\knowledge_option_mode_tl
+\knowledge_option_aci_autoload:nnn{ hyperref }{}{}
+\knowledge_option_aci_autoload:nn{ xcolor }{}
+\knowledge_option_aci_autoload:nn{ makeidx }{}
+\tl_const:Nn\scope_tl{SC@PE}
+\tl_const:Nn\scopept_tl{SC@PE2}
+\seq_new:N\scope_instances_stack_seq
+\tl_new:N\scope_top_instance_tl
+\tl_new:N\scope_top_area_tl
+\tl_new:N\l_self_tl
+\cs_new:Nn\scope_area_show:n{
+  \group_begin:
+    \scope_area_if_exist:nTF{#1}
+      { \tl_set:Nx\l_self_tl{\scope_tl.area[#1]}
+        \tl_show:x
+          {Area~name:~\use:c{\l_self_tl.name_tl},~
+           autoclose=\bool_if:cTF{\l_self_tl.autoclose_bool}TF,~
+           recursive=\bool_if:cTF{\l_self_tl.recursive_bool}TF,~
+           multiple=\bool_if:cTF{\l_self_tl.multiple_bool}TF,~
+           scope=\bool_if:cTF{\l_self_tl.scope_bool}TF,~
+           environment=\bool_if:cTF{\l_self_tl.environment_bool}TF,~
+           forces={\use:c{\l_self_tl.forces_tl}},~
+           accepts~knowledge=\bool_if:cTF{\l_self_tl.accepts_knowledge_bool}TF,~
+           attracts~knowledge=\bool_if:cTF{\l_self_tl.attracts_knowledge_bool}TF,~
+           accepts~labels=\bool_if:cTF{\l_self_tl.labelizable_bool}TF.
+         }
+     }
+      {\knowledge_error:n{Unknown~area~`#1'~in~`\noexpand\scope_area_show:n'.}}
+  \group_end:
+}
+\cs_new:Nn\scope_area_create:n
+ {\group_begin:
+  \tl_set:Nx\l_self_tl{\scope_tl.area[#1]}
+  %
+  \scope_category_add_area:nn{all}{#1}
+  %
+  \tl_new:c{\l_self_tl.name_tl}
+  \tl_gset:cn{\l_self_tl.name_tl}{#1}
+  \seq_new:c{\l_self_tl.category_seq}
+  \seq_gpush:cn{\l_self_tl.category_seq}{all}
+  \seq_gpush:cn{\l_self_tl.category_seq}{#1}
+  \bool_new:c{\l_self_tl.autoclose_bool}
+  \bool_gset_false:c{\l_self_tl.autoclose_bool}
+  \bool_new:c{\l_self_tl.environment_bool}
+  \bool_gset_true:c{\l_self_tl.environment_bool}
+  \bool_new:c{\l_self_tl.multiple_bool}
+  \bool_gset_true:c{\l_self_tl.multiple_bool}
+  \bool_new:c{\l_self_tl.attractsknowledge_bool}
+  \bool_gset_true:c{\l_self_tl.attractsknowledge_bool}
+  \bool_new:c{\l_self_tl.labelizable_bool}
+  \bool_gset_true:c{\l_self_tl.labelizable_bool}
+  \bool_new:c{\l_self_tl.scope_bool}
+  \bool_gset_false:c{\l_self_tl.scope_bool}
+  \bool_new:c{\l_self_tl.acceptsknowledge_bool}
+  \bool_gset_true:c{\l_self_tl.acceptsknowledge_bool}
+  \bool_new:c{\l_self_tl.recursive_bool}
+  \tl_gclear_new:c{\l_self_tl.pushcode_tl}
+  \tl_gclear_new:c{\l_self_tl.popcode_tl}
+  \tl_gclear_new:c{\l_self_tl.forces_tl}
+  \seq_new:c{\l_self_tl.mandatorybase_seq}
+  \int_new:c{\l_self_tl.count_int}
+  \int_gset:cn{\l_self_tl.count_int}{0}
+  \int_new:c{\l_self_tl.nesting_int}
+  \int_gset:cn{\l_self_tl.nesting_int}{0}
+  %
+  \scope_category_if_exist:nTF{#1}
+    {}{\scope_category_create:n{#1}
+        \seq_gpush:cn{\scope_tl.category[#1].areas_seq}{#1}}
+  \group_end:
+}
+\cs_new:Npn\scope_area_if_exist:nTF#1
+  {\tl_if_exist:cTF{\scope_tl.area[#1].name_tl}}
+\cs_new:Npn\scope_if_triggers_area:nTF#1{
+   \scope_area_if_exist:nTF{#1}
+     {\bool_if:cTF{\scope_tl.area[#1].environment_bool}
+         \use_i:nn
+         \use_ii:nn}
+     \use_ii:nn
+}
+\cs_new:Npn\scope_area_if_in_scope:nTF#1
+  {\int_compare:nNnTF
+    {\use:c{\scope_tl.area[#1].nesting_int}}>0}
+\newrobustcmd\ScopeConfigure[2]
+  {\scope_area_set:nn{#1}{#2}}
+\cs_new:Nn\scope_area_set:nn
+   {\clist_map_inline:nn{#1}
+      {\scope_area_set_i:nn{##1}{#2}}}
+\tl_new:N\scope_area_tl
+\cs_new:Nn\scope_area_set_i:nn {
+  \scope_area_if_exist:nTF{#1}
+    {}{
+    \scope_area_create:n{#1}}
+  \group_begin:
+     \tl_set:Nx\scope_area_tl{#1}
+     \tl_set:Nx\l_self_tl{\scope_tl.area[\scope_area_tl]}
+     \keys_set:nn{ scope~area~set }{#2}
+  \group_end:}
+\keys_define:nn{ scope~area~set } {
+  category .code:n =
+    {\clist_map_inline:nn{#1}
+      {\scope_category_ensure:n{##1}
+       \seq_gpush:cV
+          {\scope_tl.category[##1].areas_seq}\scope_area_tl
+     }},
+  autoclose .choice:,
+  autoclose / false .code:n =
+    {\bool_gset_false:c{\l_self_tl.autoclose_bool}},
+  autoclose / true .code:n =
+    {\bool_gset_true:c{\l_self_tl.autoclose_bool}},
+  parents .code:n =
+    {\seq_gset_from_clist:cn{\l_self_tl.mandatorybase_seq}{#1}},
+  push~code .code:n =
+    {\tl_gput_right:cn{\l_self_tl.pushcode_tl}{#1}},
+  pop~code .code:n =
+    {\tl_gput_right:cn{\l_self_tl.popcode_tl}{#1}},
+  occurrences .choice:,
+  occurrences / once .code:n =
+   {\bool_gset_false:c{\l_self_tl.multiple_bool}
+    \bool_gset_false:c{\l_self_tl.recursive_bool}},
+  occurrences / multiple .code:n = {
+    \bool_gset_true:c{\l_self_tl.multiple_bool}
+    \bool_gset_false:c{\l_self_tl.recursive_bool}},
+  occurrences / recursive .code:n = {
+    \bool_gset_true:c{\l_self_tl.multiple_bool}
+    \bool_gset_true:c{\l_self_tl.recursive_bool}},
+  scope .choice:,
+  scope / true .code:n = {
+    \bool_gset_true:c{\l_self_tl.scope_bool}},
+  scope / false .code:n = {
+    \bool_gset_false:c{\l_self_tl.scope_bool}},
+  environment .choice:,
+  environment / true .code:n = {
+    \bool_gset_true:c{\l_self_tl.environment_bool}},
+  environment / false .code:n = {
+    \bool_gset_false:c{\l_self_tl.environment_bool}},
+  environment .default:n = {true},
+  label .choice:,
+  label / none .code:n = {
+    \bool_gset_false:c{\l_self_tl.labelizable_bool}},
+  label / accepts .code:n = {
+    \bool_gset_true:c{\l_self_tl.labelizable_bool}},
+  knowledge .choice:,
+  knowledge / none .code:n = {
+    \bool_gset_false:c{\l_self_tl.acceptsknowledge_bool}
+    \bool_gset_false:c{\l_self_tl.attractsknowledge_bool}},
+  knowledge / accepts .code:n = {
+    \bool_gset_true:c{\l_self_tl.acceptsknowledge_bool}
+    \bool_gset_false:c{\l_self_tl.attractsknowledge_bool}},
+  knowledge / attracts .code:n = {
+    \bool_gset_true:c{\l_self_tl.acceptsknowledge_bool}
+    \bool_gset_true:c{\l_self_tl.attractsknowledge_bool}},
+  forces .code:n =
+    {\tl_gset:cn{\l_self_tl.forces_tl}{#1}}
+}
+\cs_new:Npn\scope_category_if_exist:nTF#1
+  {\tl_if_exist:cTF{\scope_tl.category[#1].name_tl}}
+\cs_new:Nn\scope_category_ensure:n
+  {\scope_category_if_exist:nTF
+    {#1}{}{\scope_category_create:n{#1}}}
+\cs_new:Nn\scope_category_create:n
+  {\tl_new:c{\scope_tl.category[#1].name_tl}
+   \tl_gset:cn{\scope_tl.category[#1].name_tl}{#1}
+   \seq_new:c{\scope_tl.category[#1].areas_seq}}
+\cs_new:Nn\scope_category_add_area:nn
+  {\scope_category_ensure:n{#1}
+   \seq_gpush:cn{\scope_tl.category[#1].areas_seq}{#2}}
+\cs_new:Nn\scope_category_use:n
+  {\seq_use:cn{\scope_tl.category[#1].areas_seq},}
+\cs_new:Nn\scope_category_show:n
+  {\seq_show:c{\scope_tl.category[#1].areas_seq}}
+\cs_new:Npn\scope_instance_if_exist:nTF#1
+   {\tl_if_exist:cTF{\scope_tl.instance[#1].area_tl}}
+\cs_new:Npn\scopept_instance_if_exist:nTF#1
+   {\tl_if_exist:cTF{\scopept_tl.instance[#1].area_tl}}
+\cs_new:Npn\scopept_label_if_exist:nTF#1
+   {\tl_if_exist:cTF{\scopept_tl.label[#1].instance_tl}}
+\tl_new:N\scope_pushed_area_tl
+\tl_new:N\scope_popped_area_tl
+\cs_new:Nn\scope_area_pop:n {
+  \tl_gset:Nn\scope_popped_area_tl{#1}
+  \bool_if:cTF{\scope_tl.area[\scope_popped_area_tl].autoclose_bool}
+    {\msg_error:nn{scope}{no~popping}}
+    {\scope_area_pop_i:}}
+\cs_new:Nn\scope_area_pop_i: {
+  \tl_if_eq:NNTF\scope_top_area_tl\scope_popped_area_tl
+    {\scope_internal_pop:}
+    {\bool_if:cTF{\scope_tl.area[\scope_top_area_tl].autoclose_bool}
+        {\scope_internal_pop:
+         \scope_area_pop_i:}
+        {\msg_error:nn{scope}{no~popping~here}}}}
+\cs_new:Nn\scope_internal_pop: {
+  \use:c{\scope_tl.area[\scope_top_area_tl].popcode_tl}
+  \seq_gpop:NNTF\scope_instances_stack_seq\l_tmpa_tl
+     {\tl_gset_eq:NN\scope_top_instance_tl\l_tmpa_tl
+     \int_gdecr:c{\scope_tl.area[\scope_top_area_tl].nesting_int}
+     \knowledge_pop_visible_instances_to_mark:
+     \seq_get:NN\scope_instances_stack_seq\l_tmpa_tl
+     \tl_gset_eq:NN\scope_top_instance_tl\l_tmpa_tl
+     \tl_gset:Nx\scope_top_area_tl
+        {\tl_use:c{\scope_tl.instance[\scope_top_instance_tl].area_tl}}}
+    {\msg_error:nnn{scope}{empty~pop}{}}
+ }
+\cs_new:Nn\scope_area_push:n {
+  \tl_gset:Nn\scope_pushed_area_tl{#1}
+  \scope_area_push_i:n{#1}}
+\cs_new:Nn\scope_area_push_i:n {
+  \tl_if_empty:cTF{\scope_tl.area[#1].forces_tl}
+    {}
+    {\exp_args:Nx\scope_area_if_in_scope:nTF
+      {\tl_use:c{\scope_tl.area[#1].forces_tl}}
+      {}
+      {\exp_args:Nx\scope_area_push_i:n
+         {\tl_use:c{\scope_tl.area[#1].forces_tl}}}}
+  \scope_area_push_ii:n{#1}
+}
+\cs_new:Npn\scope_if_area_in_areaclist:nnTF#1
+  {\exp_args:NnV\clist_if_in:nnTF{#1}\scope_top_area_tl}
+
+\cs_new:Nn\scope_category_expand:n
+  {\clist_use:x{
+     \clist_map:nN{#1}{
+        \seq_use:c{\scope_tl.category[#1].areas_seq},}}}
+
+\cs_new:Nn\scope_categories_expand:n
+  {\clist_map_function:nN{#1}\scope_category_expand:n}
+
+\cs_new:Nn\scope_if_area_in_categoryclist:nnTF
+  {\group_begin:
+     \tl_set:Nx\l_tmpa_tl
+       {\clist_map_function:nN{#2}\scope_category_areas_use:n}
+    \bool_set_false:N\l_tmpa_bool
+    \clist_map_inline:nn{#2}
+      {\scope_category_areas_if_in:nnTF{##1}{#1}
+        {\bool_set_true:N\l_tmpa_bool\seq_map_break:}{}}
+     \bool_if:NTF\l_tmpa_bool
+        {\group_end:#3}
+        {\group_end:#4}
+  }
+
+\cs_new:Npn\scope_category_if_area_in:nnTF#1#2
+  {\exp_args:Nnx\seq_if_in:cnTF
+     {\scope_tl.category[#1].areas_seq}{#2}}
+
+\cs_new:Nn\scope_categoryseq_if_area_in:NnTF
+  { \seq_if_empty:NTF#1
+    {#3}
+    {\group_begin:
+      \bool_set_false:N\l_tmpa_bool
+      \seq_map_inline:Nn#1
+        {\seq_if_in:cnTF{\scope_tl.category[##1].areas_seq}{#2}
+            {\bool_set_true:N\l_tmpa_bool\seq_map_break:}{}}
+       \bool_if:NTF\l_tmpa_bool
+          {\group_end:#3}
+          {\group_end:#4}
+  }}
+
+\cs_new:Npn\scope_area_mandatorybase_if_area_in:nnTF#1
+  {\exp_args:Nc\scope_categoryseq_if_area_in:NnTF
+     {\scope_tl.area[#1].mandatorybase_seq}}
+
+\cs_new:Nn\scope_categoryseq_pop_to:N
+  {\exp_args:NNx\scope_categoryseq_if_area_in:NnTF#1{\scope_top_area_tl}
+   {}{\scope_auto_pop:\scope_categoryseq_pop_to:N#1}}
+
+\cs_new:Nn\scope_categoryseq_pop_to:n
+  {\group_begin:
+      \seq_set_from_clist:Nn\l_tmpa_seq{#1}
+      \scope_categoryseq_pop_to:N\l_tmpa_seq
+   \group_end:}
+
+\cs_new:Nn\scope_area_push_ii:n {
+  \seq_if_empty:cTF{\scope_tl.area[#1].mandatorybase_seq}
+     {\scope_internal_push:n{#1}}
+     {\exp_args:Nnx\use:n
+          {\scope_area_mandatorybase_if_area_in:nnTF{#1}}
+          {\scope_top_area_tl}
+          {\scope_internal_push:n{#1}}
+          {\scope_auto_pop:
+           \scope_area_push_ii:n{#1}}}
+  }
+\cs_new:Nn\scope_internal_push:n {
+  \ScopeActivate
+  \tl_gset:Nn\scope_top_area_tl{#1}
+  \int_gincr:c{\scope_tl.area[\scope_top_area_tl].nesting_int}
+  \int_gincr:c{\scope_tl.area[\scope_top_area_tl].count_int}
+  % storing the previous top instance
+  \tl_set_eq:NN\l_tmpa_tl\scope_top_instance_tl
+  %naming the new instance
+  \bool_if:cTF{\scope_tl.area[\scope_top_area_tl].multiple_bool}
+    {\tl_gset:Nx\scope_top_instance_tl
+         {\scope_top_area_tl-\int_to_arabic:n{\int_use:c{\scope_tl.area[\scope_top_area_tl].count_int}}}}
+    {\tl_gset_eq:NN\scope_top_instance_tl\scope_top_area_tl}
+  %
+  \knowledge_push_visible_instance_mark:
+  \exp_args:Nx\knowledge_push_visible_instance:n{\scope_top_instance_tl}
+  \seq_gpush:Nx\scope_instances_stack_seq{\scope_top_instance_tl}
+  %
+  \tl_new:c
+     {\scope_tl.instance[\scope_top_instance_tl].area_tl}
+  \tl_gset:cx
+     {\scope_tl.instance[\scope_top_instance_tl].area_tl}
+     {\scope_top_area_tl}
+  \tl_new:c
+     {\scope_tl.instance[\scope_top_instance_tl].parent_tl}
+  \tl_gset:cx
+     {\scope_tl.instance[\scope_top_instance_tl].parent_tl}
+     {\l_tmpa_tl}
+  %
+  \seq_if_exist:cTF{\scopept_tl.instance[\l_tmpa_tl].context_seq}
+    {\seq_set_eq:Nc\l_tmpa_seq{\scopept_tl.instance[\l_tmpa_tl].context_seq}}
+    {\seq_clear_new:N\l_tmpa_seq}
+  \exp_args:NNx\seq_push:Nn
+    \l_tmpa_seq{\scope_top_instance_tl}
+  \seq_new:c
+    {\scopept_tl.instance[\scope_top_instance_tl].context_seq}
+  \seq_gset_eq:cN
+    {\scopept_tl.instance[\scope_top_instance_tl].context_seq}
+    \l_tmpa_seq
+  %
+  \KAuxWriteX
+    {\KAuxScopeNewInstance{\scope_top_area_tl}{\scope_top_instance_tl}{\l_tmpa_tl}}
+  %
+  \tl_use:c{\scope_tl.area[\scope_top_area_tl].pushcode_tl}
+}
+\cs_new:Nn\scope_auto_pop: {
+ \bool_if:cTF{\scope_tl.area[\scope_top_area_tl].autoclose_bool}
+    {\scope_internal_pop:}
+    {\msg_error:nn{scope}{no~pushing~here}}
+  }
+\cs_new:Nn\scope_get_attractive_instance:N
+{\tl_set:Nn#1{base}
+  \seq_map_inline:Nn\scope_instances_stack_seq
+    {\bool_if:cTF
+      {\scope_tl.area[\tl_use:c{\scope_tl.instance[##1].area_tl}].attractsknowledge_bool}
+      {\tl_set:Nn#1{##1}\seq_map_break:}{}}
+}
+\cs_new:Nn\scope_get_labelizable_instance:N
+{\tl_set:Nn#1{base}
+  \seq_map_inline:Nn\scope_instances_stack_seq
+    {\bool_if:cTF
+      {\scope_tl.area[\tl_use:c{\scope_tl.instance[##1].area_tl}].labelizable_bool}
+      {\tl_set:Nn#1{##1}\seq_map_break:}{}}
+}
+\cs_new:Nn\knowledge_scope_track_instance_from_area:Nn{
+  \tl_set:Nn#1{}
+  \seq_map_inline:Nn\scope_instances_stack_seq
+    {\exp_args:Nxx\tl_if_eq:nnTF
+         {\csname \scope_tl.instance[##1].area_tl\endcsname}
+         {#2}
+         {\tl_set:Nn#1{##1}\seq_map_break:}
+         {}}
+  \tl_if_empty:NTF#1
+    {\msg_error:nnxx{scope}{area~not~in~context}{#2}{scope=}}
+    {}
+}
+\cs_new:Nn\knowledge_scope_track_scope:n{
+    \scope_area_if_exist:nTF{#1}
+       {\knowledge_scope_track_instance_from_area:Nn\knowledge_knowledge_instance_tl{#1}}
+       {\tl_set:Nn\knowledge_knowledge_instance_tl{explicit-scope:#1}
+        \knowledge_scopetag_warn_if_unknown:n{#1}}
+}
+\bool_new:N\scopept_map_break_bool
+\cs_new:Nn\scopept_map_break:
+  {\bool_set_true:N\scopept_map_break_bool}
+
+\cs_new:Nn\scopept_map_instance_ancestors:nN
+  {\bool_set_false:N\scopept_map_break_bool
+   \scope_map_instance_ancestors_i:nN{#1}#2
+  }
+\cs_new:Nn\scopept_map_instance_ancestors_i:nN
+{ \tl_if_empty:nTF{#1}
+  {}
+  {\scopept_instance_if_exist:nTF{#1}{
+     #2{#1}
+     \bool_if:NTF\scopept_map_break_bool
+       {}
+       {\exp_args:Nx\scopept_map_instance_ancestors_i:nN
+         {\scopept_instance_parent_at:Nn\tl_use:N{#1}}#2}}
+  {}}}
+\cs_new:Nn\scopept_map_instances_seq_ancestors:NN
+  {\seq_map_inline:Nn#1
+    {\scopept_map_instance_ancestors_i:nN{##1}#2
+     \bool_if:NTF\scopept_map_break_bool:{\seq_map_break:}{}}
+}
+\tl_const:Nn\knowledge_scopetag_tl{ScpT@g}
+\cs_new:Npn\knowledge_scopetag_if_exist:nTF#1
+   {\tl_if_exist:cTF{\knowledge_scopetag_tl[#1]_bool}}
+\cs_new:Nn\knowledge_scopetag_ensure:n{
+   \knowledge_scopetag_if_exist:nTF{#1}{}
+      {\bool_new:c{\knowledge_scopetag_tl[#1]_bool}
+       \bool_gset_false:c{\knowledge_scopetag_tl[#1]_bool}
+       \seq_new:c{\knowledge_scopetag_tl[#1]_seq}
+       \seq_gput_right:cn{\knowledge_scopetag_tl[#1]_seq}{explicit-scope:#1}}}
+\cs_new:Nn\knowledge_scopetag_warn_if_unknown:n{
+    \knowledge_scopetag_if_exist:nTF{#1}{}
+      {\KAuxWriteX*{\exp_not:N\KAuxUndeclaredScopeTag{#1}}
+       \knowledge_scopetag_ensure:n{#1}}
+}
+\cs_new:Nn\knowledge_scopetag_declares:n{
+    \knowledge_scopetag_ensure:n{#1}
+    \bool_if:cTF{\knowledge_scopetag_tl[#1]_bool}
+      {}
+      {\bool_gset_true:c{\knowledge_scopetag_tl[#1]_bool}}
+    \KAuxWriteX*{\exp_not:N\KAuxDeclaredScopeTag{#1}}
+}
+\NewDocumentCommand\knowledgescope{ >{\SplitList{,}}m }{
+    \kl_hide_begin:\group_begin:
+      \ProcessList{#1}\knowledge_knowledgescope_one:n
+    \group_end:\kl_hide_end:
+}
+\cs_new:Nn\knowledge_knowledgescope_one:n{
+    \knowledge_scopetag_declares:n{#1}
+    \scope_get_labelizable_instance:N\l_tmpb_tl
+    \KAuxWriteX*{\exp_not:N\KAuxNewLinkScopetagInstance{#1}{\l_tmpb_tl}}
+}
+\bool_new:N\knowledge_configuration_label_autoscope_bool
+\bool_gset_true:N\knowledge_configuration_label_autoscope_bool
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_label_autoscope_bool]{patch~label}
+\KnowledgeConfigureBooleanOption[\knowledge_configuration_label_autoscope_bool]{label~scope}
+\global\let\knowledge_label_before_loading_package:n\label
+\cs_gset:Npn\label{
+   \mode_if_preamble:TF
+       \knowledge_label_in_preamble:n
+       \knowledge_label_before_loading_package:n
+}
+\cs_new:Npn\knowledge_label_in_preamble:n{
+     \bool_if:NTF
+         \knowledge_configuration_label_autoscope_bool
+         \knowledge_knowledgescope_one:n
+         \use_none:n
+}
+\cs_new:Npn\knowledge_latex_label:n{
+  \cs_if_exist:NTF\LaTeXlabel\LaTeXlabel\label
+}
+\NewKAuxCommand\KAuxUndeclaredScopeTag{m}
+   {Package~scope:~States~that~a~labelname~is~used~in~a~knowledge~definition.}
+\DeclareKAuxPhaseCommand\KAuxUndeclaredScopeTag{init}{}
+\NewKAuxCommand\KAuxDeclaredScopeTag{m}
+   {Package~scope:~States~that~a~labelname~has~been~declared.}
+\DeclareKAuxPhaseCommand\KAuxDeclaredScopeTag{init}{
+     \knowledge_scopetag_if_exist:nTF{#1}{}
+       {\bool_new:c{\knowledge_scopetag_tl[#1]_bool}}
+        \bool_gset_true:c{\knowledge_scopetag_tl[#1]_bool}
+   }
+\NewKAuxCommand\KAuxNewLinkScopetagInstance{mm}
+   {Package~scope:~Declares~that~a~label~is~declared~in~an~instance~of~a~scope.}
+\DeclareKAuxPhaseCommand\KAuxNewLinkScopetagInstance{init}{
+    \knowledge_scopetag_ensure:n{#1}
+    \seq_gput_right:cn{\knowledge_scopetag_tl[#1]_seq}{#2}
+}
+\NewKAuxCommand\KAuxScopeNewInstance{mmm}
+  {Package~scope:~Declares~a~new~instance~of~a~scope.}
+\DeclareKAuxPhaseCommand\KAuxScopeNewInstance{init}
+  {\tl_new:cn{\scopept_tl.instance[#2].area_tl}{#1}
+   \tl_new:cn{\scopept_tl.instance[#2].parent_tl}{#3}}
+\NewKAuxCommand\KAuxScopeTag{mm}
+  {Package~scope:~Links~a~scopetag~to~an~instance~of~a~scope.}
+\DeclareKAuxPhaseCommand\KAuxScopeTag{init}
+  {\tl_if_exist:cTF{\scopept_tl.label[\tl_to_str:n{#1}].instance_tl}{}
+     {\tl_new:cn{\scopept_tl.label[\tl_to_str:n{#1}].instance_tl}{#2}}}
+\cs_new:Npn\scopept_label_instance_if_exist:nTF#1
+  {\tl_if_exist:cTF{\scopept_tl.label[#1].instance_tl}}
+\cs_new:Nn\scopept_label_instance_use:n
+  {\tl_use:c{\scopept_tl.label[#1].instance_tl}}
+\newcommand\knowledgeconfigureenvironment\KnowledgeConfigureEnvironment
+\NewDocumentCommand\KnowledgeConfigureEnvironment{t?t!mm}
+  {\clist_map_inline:nn{#3}{
+    \IfBooleanTF{#2}
+       {\scope_area_environment_new:nn{##1}{#4}}
+       {\cs_if_exist:cT{##1}
+         {\cs_if_exist:cT{end##1}
+            {\scope_area_environment_new:nn{##1}{#4}
+             \use_none:n}}
+       {\IfBooleanF{#1}
+          {\knowledge_error:n{Unknown~environment~`##1'~in~\KnowledgeConfigureEnvironment.}}}
+  }}}
+\newcommand\scope_activate_environment[2][environment]{
+   \scope_area_environment_new:nn
+        {#2}{category=#1}}
+\cs_new:Nn\scope_area_environment_new:nn
+  {\scope_area_set:nn{#1}{
+     parents = all,
+     autoclose = false,
+     environment = true,
+     occurrences = recursive,
+     knowledge = attracts,
+     category = environment,
+     #2
+  }}
+\NewDocumentCommand\ScopeHackEnvironments{}
+ { \scope_area_push:n{document}
+   \kutils_secure_latex_command:N\begin
+   \global\let\SUPERbegin\begin
+   \global\def\begin##1
+     {\scope_if_triggers_area:nTF{##1}
+        {\scope_area_push:n{##1}}{}
+     \SUPERbegin{##1}}
+   \kutils_secure_latex_command:N\end
+   \global\let\SUPERend\end
+   \global\def\end##1
+    {\SUPERend{##1}
+     \scope_if_triggers_area:nTF{##1}
+       {\scope_area_pop:n{##1}}
+       {}}
+}
+\AtBeginDocument{
+  \kutils_secure_latex_command:N\label
+  \def\label#1{\bool_if:NT
+         \knowledge_configuration_label_autoscope_bool
+        {\knowledge_knowledgescope_one:n{#1}}
+     \LaTeXlabel{#1}}
+}
+\NewDocumentCommand\ScopeActivate{}{
+  \cs_gset_eq:NN\ScopeActivate\relax
+  \scope_internal_push:n{base}
+}
+\AtBeginDocument{\ScopeActivate}
+\AtBeginDocument{\ScopeHackEnvironments}
+\AtEndDocument{\scope_area_pop:n{document}}
+  \scope_area_set:nn{document,base,body} {
+    environment=false
+  }
+  \scope_area_set:nn{base}
+    {occurrences = once,
+     autoclose = false}
+  \scope_area_set:nn{document}
+    {autoclose = false,
+     occurrences = once,
+     parents = base}
+  \scope_area_set:nn{body}
+    {autoclose = true,
+     occurrences = once,
+     parents = document}
+  \scope_area_set:nn
+    {base,document}{knowledge=accepts}
+  \scope_area_set:nn
+    {base,document}{knowledge=attracts}
+  \scope_area_set:nn
+    {body}{knowledge=none}
+  %
+  \newenvironment{scope}
+     {\mode_if_preamble:TF{\ScopeActivate\scope_area_push:n{scope}}{}}
+     {\mode_if_preamble:TF{\scope_area_pop:n{scope}}{}}
+  \knowledgeconfigureenvironment{scope}{}
+\scope_area_set:nn{knowledge~context~internal}
+{
+    occurrences = recursive,
+    autoclose = false,
+    parents= {base,all},
+    knowledge=attracts
+}
+\scope_area_set:nn{knowledge~import~internal}
+{
+    occurrences = recursive,
+    autoclose = false,
+    parents= {base,all},
+    knowledge = accepts
+}
+\NewDocumentEnvironment{knowledge~import}{m}
+  {\ScopeActivate\scope_area_push:n{knowledge~import~internal}
+   \clist_map_inline:nn{#1}{\knowledgeimport{##1}}}
+  {\scope_area_pop:n{knowledge~import~internal}}
+\NewDocumentEnvironment{knowledge~context}{m}
+  {\ScopeActivate\scope_area_push:n{knowledge~context~internal}
+    \knowledgescope{#1}}
+  {\scope_area_pop:n{knowledge~context~internal}}
+\KAuxBefore{\IfKAuxReadyTF{\KAuxProcess{init}}{}}
+\KAuxInit{}
+\KAuxAfter{\KnowledgeDiagnoseOutput}
+\iow_new:N\knowledge_diagnosefile_iow
+\cs_new:Nn\knowledge_diagnose:n
+   {\iow_now:Nn\knowledge_diagnosefile_iow{#1}}
+\cs_generate_variant:Nn\knowledge_diagnose:n{x,V}
+
+\tl_new:N\knowledge_diagnose_lastline_tl
+\cs_new:Nn\knowledge_diagnose_reset_line:
+   {\tl_gset:Nn\knowledge_diagnose_lastline_tl{...}}
+\knowledge_diagnose_reset_line:
+
+\cs_new:Nn\knowledge_diagnose_line:
+   {\bool_if:NT\knowledge_configuration_diagnoseline_bool
+    {\tl_set:Nx\l_tmpa_tl
+       {\c_percent_str\space\kauxCurrentFile : \kauxCurrentLine}
+     \tl_if_eq:NNTF\l_tmpa_tl\knowledge_diagnose_lastline_tl
+       {}
+       {\tl_gset_eq:NN\knowledge_diagnose_lastline_tl\l_tmpa_tl
+        \knowledge_diagnose:V\knowledge_diagnose_lastline_tl}}}
+
+\NewDocumentCommand\KnowledgeDiagnoseOutput{}{
+   \iow_open:Nn\knowledge_diagnosefile_iow{\c_sys_jobname_str.diagnose}
+   % compute first the list of warnings and important information
+   %
+   \knowledge_diagnose_reset_line:
+   \KAuxProcess{diagnose-digest}
+   %
+   \knowledge_diagnose:n{***********}
+   \knowledge_diagnose:n{*~Summary~*}
+   \knowledge_diagnose:n{***********}
+   \knowledge_diagnose:n{}
+   \knowledge_diagnose:x{\int_use:N\kl_digest_unknownknowledge_int\space undefined~knowledge(s).}
+   %\knowledge_diagnose:x{\int_use:N\kl_digest_unknownlabel_int\space label(s)~are~used~as~scopes~but~not~introduced.}
+   \knowledge_diagnose:x{\int_use:N\kl_digest_autoreftwiceintro_int\space autoreference(s)~are~introduced~twice.}
+   \knowledge_diagnose:x{\int_use:N\kl_digest_autorefnointro_int\space autoreference(s)~are~used~but~not~introduced.}
+   \knowledge_diagnose:n{}
+   \knowledge_diagnose:x{\int_use:N\kl_digest_autorefused_int\space autoreference(s)~are~properly~used.}
+   \knowledge_diagnose:x{\int_use:N\kl_digest_autorefunused_int\space autoreference(s)~are~defined~but~not~used.}
+   \knowledge_diagnose:n{}
+   \knowledge_diagnose:n{}
+   %
+   \bool_if:NTF\knowledge_configuration_diagnosehelp_bool
+      {
+        \knowledge_diagnose:n{********}
+        \knowledge_diagnose:n{*~Help~*}
+        \knowledge_diagnose:n{********}
+        \knowledge_diagnose:n{}
+        \knowledge_diagnose:x{\use:c{@backslashchar}\cs_to_str:N\knowledgeconfigure{diagnose~bar=false}~deactivate~`|'-notation~in~diagnose~file.}
+        \knowledge_diagnose:x{\use:c{@backslashchar}\cs_to_str:N\knowledgeconfigure{diagnose~help=false}~deactivate~long~help~in~the~diagnose~file.}
+        \knowledge_diagnose:x{\use:c{@backslashchar}\cs_to_str:N\knowledgeconfigure{diagnose~line=true}~add~line~numbers~to~diagnose~file.}
+        \knowledge_diagnose:n{}
+      }{
+        \knowledge_diagnose:x{\use:c{@backslashchar}\cs_to_str:N\knowledgeconfigure{diagnose~help=true}~to~activate~help~in~the~diagnose~file.}
+        \knowledge_diagnose:n{}
+      }
+   %
+   \int_compare:nNnT\kl_digest_unknownknowledge_int>0{
+     \knowledge_diagnose:n{************************}
+     \knowledge_diagnose:n{*~Undefined~knowledges~*}
+     \knowledge_diagnose:n{************************}
+     \knowledge_diagnose:n{}
+     %
+     \knowledge_diagnose_reset_line:
+     \bool_if:NT\knowledge_configuration_diagnosebar_bool
+         {\knowledge_diagnose:x{\use:c{@backslashchar}knowledge{ignore}}}
+     \KAuxProcess{diagnose-unknown-suggest}
+     %
+     \knowledge_diagnose:n{}
+     \knowledge_diagnose:n{}
+     %
+     \msg_warning:nn{knowledge}{recap~unknown~knowledge}
+     }
+   %
+   \int_compare:nNnT\kl_digest_autoreftwiceintro_int>0{
+     \knowledge_diagnose:n{****************************}
+     \knowledge_diagnose:n{*~autoref-introduced-twice~*}
+     \knowledge_diagnose:n{****************************}
+     \knowledge_diagnose:n{}
+     %
+     \knowledge_diagnose_reset_line:
+     \KAuxProcess{autoref-introduced-twice}
+     %
+     \knowledge_diagnose:n{}
+     \knowledge_diagnose:n{}
+     %
+     \msg_warning:nn{knowledge}{recap~autoref~introduced~twice}
+     }
+   %
+   \int_compare:nNnT\kl_digest_autorefnointro_int>0{
+     \knowledge_diagnose:n{******************************}
+     \knowledge_diagnose:n{*~Autoref~used~without~intro~*}
+     \knowledge_diagnose:n{******************************}
+     \knowledge_diagnose:n{}
+     %
+     \knowledge_diagnose_reset_line:
+     \KAuxProcess{autoref-not-introduced}
+     %
+     \knowledge_diagnose:n{}
+     \knowledge_diagnose:n{}
+     %
+     \msg_warning:nn{knowledge}{recap~autoref~not~introduced}
+     }
+   \int_compare:nNnT\kl_digest_autorefunused_int>0{
+     \knowledge_diagnose:n{***********************************}
+     \knowledge_diagnose:n{*~Autoref~introduced~but~not~used~*}
+     \knowledge_diagnose:n{***********************************}
+     \knowledge_diagnose:n{}
+     %
+     \knowledge_diagnose_reset_line:
+     \KAuxProcess{autoref-introduced-not-used}
+     %
+     \knowledge_diagnose:n{}
+     \knowledge_diagnose:n{}
+     %
+     }
+    %
+   \iffalse
+   \knowledge_diagnose:n{***********************}
+   \knowledge_diagnose:n{*~Exported~knowledges~*}
+   \knowledge_diagnose:n{***********************}
+   \knowledge_diagnose:n{}
+   \KAuxProcess{diagnose-export}
+   \knowledge_diagnose:n{}
+   \fi%
+   \iow_close:N\knowledge_diagnosefile_iow
+}
+\tl_new:Nn\knowledge_default_namespace_tl {default}
+\makeatother
+\cell_new_type:nnn{knowledge}{nnnn}{KL@#2@#3@\tl_to_str:n{#4}_#1}
+\cell_new_type:nnn{knowledge}{nnn}{\knowledge_id:nnnn{}{#1}{#2}{#3}}
+\cs_generate_variant:Nn\knowledge_id:nnn{nnV,nVV,nVn,VVV}
+\cs_generate_variant:Nn\knowledge_at:Nnnn{NnnV}
+\cs_new:Npn\knowledge_at:c{\exp_args:Nc\knowledge_at:N}
+\cs_new:Nn\knowledge_sets_to:nnn
+  {\cs_set:Nx\knowledge_at:N
+     {##1\exp_not:c{\knowledge_id:nnn{#1}{#2}{#3}}}}
+\tuple_new:n{ktuple}
+\cs_new:Npn\knowledge_knowledge_if_exist:nnnTF#1#2#3{
+  \exp_args:Nc\ktuple_if_exist:NTF{\knowledge_id:nnn{#1}{#2}{#3}}
+}
+\cs_generate_variant:Nn
+  \knowledge_knowledge_if_exist:nnnTF{VVVTF,VnVTF}
+\NewDocumentCommand\NewKnowledgeParamBool{smm}{
+    \ktuple_new_bool_index:n{#2}
+    \bool_new:N#3
+    \use:c{ktuple_#2_expands_to:TF}
+      {\bool_set_true:N#3}{\bool_set_false:N#3}
+     %
+     \keys_define:nn { knowledgenow~directives }{
+     #2 .choice:,
+     #2 / false .code:n =
+          { \knowledge_at:c{ktuple_#2_gset_false:N}},
+     #2 / true .code:n =
+          { \knowledge_at:c{ktuple_#2_gset_true:N} },
+     #2 / default .code:n =
+          { \knowledge_at:c{ktuple_#2_gdel:N}},
+     #2 .default:n = {true}
+     }
+     \IfBooleanTF{#1}{\KnowledgeTransferBool{#2}}{}
+}
+\NewDocumentCommand\KnowledgeTransferBool{m}{
+  \clist_map_inline:nn{ #1 }{
+     \keys_define:nn { knowledge~directives }{
+      ##1 .choice:,
+      ##1 / false .code:n = { \knowledge_delay_directive:n{##1= false}},
+      ##1 / true .code:n = { \knowledge_delay_directive:n{##1= true}},
+      ##1 / default .code:n = { \knowledge_delay_directive:n{##1= default}},
+      ##1 .default:n = true
+    }}
+}
+\NewDocumentCommand\NewKnowledgeParamTl{som}{
+  \IfNoValueTF{#2}
+  {  \tl_set:Nn\l_tmpa_tl{#3}
+     \tl_remove_all:Nn\l_tmpa_tl{~}
+     \use:x{
+       \exp_not:N\NewKnowledgeParamTl
+       \IfBooleanT{#1}{*}
+       [\exp_not:c{knowledge_kl_\l_tmpa_tl _tl}]
+       {#3}
+    }}
+  {\cs_if_exist:cTF{ktuple_#3_expands_to:n}
+      {}
+      {\ktuple_new_tl_index:n{#3}}
+   \tl_if_exist:NTF#2{}
+      {\tl_new:N#2}
+   \use:c{ktuple_#3_expands_to:n}
+       {\tl_set:Nn#2{##1}}
+   %
+   \keys_define:nn { knowledgenow~directives }{
+   #3 .code:n =
+     { \knowledge_at:c{ktuple_#3_gset:Nn}{##1} },
+   #3~X .code:n =
+     { \knowledge_at:c{ktuple_#3_gset:Nx}{##1} },
+   no~#3 .code:n =
+     { \knowledge_at:c{ktuple_#3_gdel:N} }}
+   \IfBooleanTF{#1}{\KnowledgeTransferTl{#3}}{}
+}}
+\NewDocumentCommand\KnowledgeTransferTl{m}
+  {\keys_define:nn { knowledge~directives }
+     {#1 .code:n =  {\knowledge_delay_directive:n{#1={##1}}}}}
+\NewDocumentCommand\NewKnowledgeParamCode{mm}{
+    \ktuple_new_tl_index:n{#1}
+    \tl_new:N#2
+    \use:c{ktuple_#1_expands_to:n}
+       {\tl_set:Nn#2{##1}}
+     %
+    \keys_define:nn { knowledgenow~directives }{
+     #1 .code:n =
+          { \knowledge_at:c
+              {ktuple_#1_gset:Nn}{##1} },
+     #1+ .code:n =
+          { \knowledge_at:c
+              {ktuple_#1_gput_right:Nn}{##1} },
+    +#1 .code:n =
+          { \knowledge_at:c
+              {ktuple_#1_gput_left:Nn}{##1} }
+}}
+\NewDocumentCommand\NewKnowledgeParamPackageError{mm}
+{ \clist_map_inline:nn{#1}{
+      \keys_define:nn { knowledge~directives }{
+      ##1 .code:n = {
+         \msg_error:nnnn{ knowledge }{ package~required }{##1}{#2}}
+ }}}
+\tl_new:N\knowledge_current_instance_tl
+\tl_gset:Nn\knowledge_current_instance_tl{base}
+\seq_new:N\knowledge_visible_instances_seq
+\cs_new:Nn\knowledge_push_visible_instance:n
+  {\seq_gpush:Nn\knowledge_visible_instances_seq{#1}}
+\cs_new:Nn\knowledge_push_visible_instance_mark:
+  {\seq_gpush:Nn\knowledge_visible_instances_seq{|}}
+\cs_new:Nn\knowledge_pop_visible_instances_to_mark:
+  {\seq_gpop:NNTF\knowledge_visible_instances_seq\l_tmpa_tl
+       {\exp_args:NV\tl_if_eq:nnTF\l_tmpa_tl{|}
+            {}
+            {\knowledge_pop_visible_instances_to_mark:}}
+       {\KNOWLEDGE_INTERNAL_ERROR:_stack_of_visible_instances_is_empty_while_popping}}
+\cs_new:Nn\knowledge_show_visible_instances:
+  {\tl_show:x
+    {Visible~instances~<\seq_use:Nn\knowledge_visible_instances_seq{,}>}}
+\NewDocumentCommand\knowledgeimport{ >{\SplitList{,}}m }{
+    \kl_hide_begin:
+    \ProcessList{#1}\knowledge_knowledgeimport:n
+    \kl_hide_end:
+}
+\cs_set:Nn\knowledge_knowledgeimport:n{
+   \knowledge_scopetag_warn_if_unknown:n{#1}
+   \knowledge_scopetag_ensure:n{#1}
+   \exp_args:Nc\seq_map_function:NN
+       {\knowledge_scopetag_tl[#1]_seq}
+       \knowledge_push_visible_instance:n
+ }
+\keys_define:nn { knowledge~directives } {
+  namespace .code:n = { \tl_set:Nn\knowledge_knowledge_namespace_tl{#1} },
+  append .choice:,
+  append / false .code:n = {\bool_set_false:N\knowledge_knowledge_append_bool},
+  append / true .code:n = {\bool_set_true:N\knowledge_knowledge_append_bool},
+  append .default:n = false,
+  clear .choice:,
+  clear / false .code:n = {\bool_set_false:N\knowledge_knowledge_clear_bool},
+  clear / true .code:n = {\bool_set_true:N\knowledge_knowledge_clear_bool},
+  clear .default:n = false,
+  export .choice:,
+  export / false .code:n = {\bool_set_false:N\knowledge_knowledge_export_bool},
+  export / true .code:n = {\bool_set_true:N\knowledge_knowledge_export_bool},
+  export .default:n = false,
+  scope .code:n =
+      { \knowledge_scope_track_scope:n{#1}
+       \tl_gput_right:Nn\knowledge_knowledge_immediate_synonym_directives_tl{,scope = {#1}}},
+  synonym .code:n =
+     { \bool_set_true:N\knowledge_knowledge_is_synonym_bool
+       \exp_args:Nnx\keys_set:nn { knowledge~directives }
+          {link={\exp_not:V\knowledge_knowledge_synonymlink_tl},
+           link~instance={\exp_not:V\knowledge_knowledge_synonyminstance_tl}}},
+}
+\NewKAuxCommand\KAuxKnowledge{mmmm}
+  {Package~knowledge:~Declares~a~knowledge.~
+   Takes~the~{namespace}{instance}{knowledge}{directives}.}
+\DeclareKAuxPhaseCommand\KAuxKnowledge{init}
+  {\knowledge_set_now:nnnn{#1}{#2}{#3}{#4}}
+\newrobustcmd\KAuxExport[4]
+  {Package~knowledge:~undefined~so~far.}
+\cs_new:Nn\knowledge_new_now:nnnn
+ {\knowledge_sets_to:nnn{#1}{#2}{#3}
+  \knowledge_at:N\ktuple_if_exist:NTF
+    {\bool_if:NTF\knowledge_knowledgestyle_bool
+      {\knowledge_at:N\ktuple_gclear:N}
+      {\bool_if:NF\knowledge_knowledge_append_bool
+         {\bool_if:NF\knowledge_knowledge_clear_bool
+            \knowledge_werror:Nn\knowledge_warningstrict_bool
+                {knowledge~'#3'~(namespace=#1,~scope=#2)~is~redefined.}}}
+         }
+    {\knowledge_at:N\ktuple_new:N}
+  \keys_set:nn { knowledgenow~directives } { #4 }
+}
+\cs_new:Nn\knowledge_set_now:nnnn
+ {\knowledge_sets_to:nnn{#1}{#2}{#3}
+  \knowledge_at:N\ktuple_if_exist:NTF
+    {\bool_if:NTF\knowledge_knowledgestyle_bool
+      {\knowledge_at:N\ktuple_gclear:N}
+      {}}
+    {\knowledge_at:N\ktuple_new:N}
+  \keys_set:nn { knowledgenow~directives } { #4 }
+}
+\cs_generate_variant:Nn\knowledge_new_now:nnnn{nnVn}
+\cs_generate_variant:Nn\knowledge_set_now:nnnn{nnVn}
+\NewDocumentCommand\knowledge{}
+  {\KAuxWriteLocation\__knowledge_knowledge_init:w}
+\NewDocumentCommand\__knowledge_knowledge_init:w{t! t+ m m}{
+  \kl_hide_begin:
+  \group_begin:
+  %
+   \IfBooleanTF{#1}{%
+     \bool_set_false:N\knowledge_knowledge_append_bool
+     \bool_set_true:N\knowledge_knowledge_clear_bool
+   }%
+   \IfBooleanTF{#2}{%
+     \bool_set_true:N\knowledge_knowledge_append_bool
+     \bool_set_false:N\knowledge_knowledge_clear_bool
+   }%
+   %
+   \tl_set_eq:NN\knowledge_namespace_tl
+      \knowledge_default_namespace_tl
+  %
+  \tl_gset:Nn\knowledge_knowledge_immediate_synonym_directives_tl{synonym}
+  %
+  \bool_gset_false:N\knowledge_knowledge_is_synonym_bool
+  %
+  \tl_if_eq:nnTF{#4}{|}
+     {\__knowledge_knowledge_cont_barnotation:nw{#3}|}
+     {\tl_if_eq:nnTF{#4}{[}
+          {\__knowledge_knowledge_cont_classical:nw{#3}[}
+          {\__knowledge_knowledge_cont_classical:nw{#3}{#4}}}
+}
+\cs_new:Nn\__knowledge_knowledge_recallsynonym:n{
+    \bool_if:NF\knowledge_knowledge_is_synonym_bool
+      {\tl_gset:Nn\knowledge_knowledge_synonymlink_tl{#1}
+       \tl_gset_eq:NN\knowledge_knowledge_synonyminstance_tl
+           \knowledge_knowledge_instance_tl}
+}
+\cs_new:Nn\__knowledge_knowledge_end:{
+  \group_end:
+  \kl_hide_end:
+}
+\NewDocumentCommand\__knowledge_knowledge_cont_classical:nw{m >{\SplitList{|}}o m }{
+  %\iow_term:n{\__knowledge_knowledge_cont_classical~{#1}{#3}}
+  \knowledge_knowledge_setparseat:NNn\l_tmpa_tl\l_tmpb_tl{#1}
+  %
+  \use:x{
+    \exp_not:N\knowledge_knowledge_process:nn
+      {\exp_not:V\l_tmpa_tl}
+      {\exp_not:V\knowledge_knowledgedefault_tl,
+      \exp_not:n{#3},
+      \tl_if_empty:NTF\l_tmpb_tl{}{,scope={\exp_not:V\l_tmpb_tl}}}}
+  %
+  \exp_args:NV\__knowledge_knowledge_recallsynonym:n\l_tmpa_tl
+  %\tl_show:N\l_tmpa_tl
+  %\tl_show:N\knowledge_knowledge_instance_tl
+  %\tl_show:N\knowledge_knowledge_immediate_synonym_directives_tl
+  %
+  \IfNoValueTF{#2}{}{
+    \cs_set:Nn\l_tmpa_cs:n
+      {\exp_args:Nnx\knowledge_knowledge_process:nn{##1}
+          {\exp_not:V\knowledge_knowledge_immediate_synonym_directives_tl}}
+    \ProcessList{#2}\l_tmpa_cs:n
+    }
+  %
+  \__knowledge_knowledge_end:
+}
+\cs_new:Npn\knowledge_knowledge_barnotation_firstline:n{}
+\cs_new:Npn\knowledge_knowledge_barnotation_nextlines:n{}
+\cs_new:Npn\__knowledge_knowledge_cont_barnotation:nw#1{
+  \cs_set:Nn\knowledge_knowledge_barnotation_firstline:n{
+      %\knowledge_knowledge_setparseat\g_tmpa_tl\g_tmpb_tl{#1}
+      %\iow_term:n{\knowledge{##1}{#1}~(first)}
+      \knowledge{##1}{#1}
+      \cs_set_eq:NN
+           \knowledge_knowledge_barnotation_exec_line:n
+           \knowledge_knowledge_barnotation_nextlines:n}
+    \cs_set:Nn\knowledge_knowledge_barnotation_nextlines:n
+       {%\iow_term:n{\exp_not:n{\knowledge{##1}}{synonym}}
+         \knowledge{##1}{synonym}}
+    \cs_set_eq:NN
+       \knowledge_knowledge_barnotation_exec_line:n
+       \knowledge_knowledge_barnotation_firstline:n
+    \kl_newknowledge_parse:w
+}
+\cs_new:Npn\kl_newknowledge_parse:w{
+    \peek_charcode_remove_ignore_spaces:NTF|
+        {\kl_insert_klendline:w\knowledge_knowledge_barnotation_exec_line:w}
+        {\__knowledge_knowledge_end:}
+}
+\cs_new:Npn\knowledge_knowledge_barnotation_exec_line:w#1\kl_end_line:{
+    \knowledge_knowledge_barnotation_exec_line:n{#1}
+    \kl_newknowledge_parse:w
+}
+\char_set_catcode_active:N\^^M
+\cs_gset:Npn\kl_insert_klendline:w{\group_begin:\catcode`\^^M=\active\kl_insert_klendline_:w}
+\cs_gset:Npn\kl_insert_klendline_:w#1^^M{\group_end:#1\kl_end_line:}
+\char_set_catcode_end_line:N\^^M
+\cs_new:Nn\knowledge_knowledge_setparseat:NNn
+    {\knowledge_knowledge_setparseat_:NNw#1#2#3@@\kl_end:}
+\cs_new:Npn\knowledge_knowledge_setparseat_:NNw#1#2#3@#4@#5\kl_end:
+    {\tl_set:Nx#1{\tl_trim_spaces:n{#3}}
+    \tl_set:Nx#2{\tl_trim_spaces:n{#4}}}
+\NewDocumentCommand\knowledgestyle{ s m m  }
+{ \kl_hide_begin:
+  \group_begin:
+  \tl_set:Nn\knowledge_namespace_tl{style}
+  %
+  \bool_set_true:N\knowledge_knowledgestyle_bool
+  \IfBooleanTF{#1}
+    {\bool_set_true:N\knowledge_knowledgestyle_override_bool}
+    {\bool_set_false:N\knowledge_knowledgestyle_override_bool}
+  %
+  \knowledge_knowledge_process:nn{#2}{#3}
+  \group_end:
+  \kl_hide_end:
+}
+\bool_new:N\knowledge_knowledgestyle_bool
+\bool_new:N\knowledge_knowledgestyle_override_bool
+\bool_new:N\knowledge_knowledge_now_bool
+\bool_new:N\knowledge_knowledge_alsonow_bool
+\bool_new:N\knowledge_knowledge_is_synonym_bool
+\bool_new:N\knowledge_knowledge_autoref_bool
+\bool_new:N\knowledge_knowledge_clear_bool
+\bool_new:N\knowledge_knowledge_append_bool
+\tl_clear_new:N\knowledge_knowledge_synonymlink_tl
+\tl_clear_new:N\knowledge_knowledge_synonyminstance_tl
+\tl_clear_new:N\knowledge_knowledge_immediate_synonym_directives_tl
+\tl_clear_new:N\knowledge_knowledge_export_bool
+\tl_clear_new:N\knowledge_knowledge_key_tl
+\tl_clear_new:N\knowledge_knowledge_namespace_tl
+\tl_clear_new:N\knowledge_knowledge_instance_tl
+\tl_clear_new:N\knowledge_knowledge_directives_tl
+\cs_new:Nn\knowledge_knowledge_process:nn
+{  \bool_set_false:N\knowledge_knowledge_export_bool
+   \bool_set_false:N\knowledge_knowledge_autoref_bool
+   \bool_set_false:N\knowledge_knowledge_now_bool
+   \bool_set_false:N\knowledge_knowledge_alsonow_bool
+   %
+   \tl_set:Nn\knowledge_knowledge_key_tl{#1}
+   %
+   \tl_set_eq:NN\knowledge_knowledge_namespace_tl\knowledge_namespace_tl
+   \scope_get_attractive_instance:N\knowledge_knowledge_instance_tl
+   %
+   \tl_set:Nn\knowledge_knowledge_directives_tl{}
+   %
+   \keys_set:nn { knowledge~directives } { #2 }
+   %
+   \mode_if_preamble:TF
+     {\bool_set_true:N\knowledge_knowledge_now_bool}
+     {}
+   %
+   \bool_if:NT\knowledge_knowledge_clear_bool
+        {\tl_put_left:Nn\knowledge_knowledge_directives_tl{clear,}}
+   \bool_if:NT\knowledge_knowledge_append_bool
+        {\tl_put_left:Nn\knowledge_knowledge_directives_tl{force,}}
+   %
+   \bool_if:nTF{\knowledge_knowledge_now_bool}
+     {\use:x{
+       \exp_not:N\knowledge_new_now:nnnn
+         {\knowledge_knowledge_namespace_tl}
+         {\knowledge_knowledge_instance_tl}
+         {\exp_not:V\knowledge_knowledge_key_tl}
+         {\exp_not:V\knowledge_knowledge_directives_tl}}
+     }{}
+   \bool_if:nTF{\knowledge_knowledge_alsonow_bool}
+     {\use:x{
+       \exp_not:N\knowledge_set_now:nnnn
+         {\knowledge_knowledge_namespace_tl}
+         {\knowledge_knowledge_instance_tl}
+         {\exp_not:V\knowledge_knowledge_key_tl}
+         {\exp_not:V\knowledge_knowledge_directives_tl}}
+     }{}
+    \bool_if:NTF\knowledge_knowledge_now_bool
+      {}
+      {  \KAuxWriteX*{
+          \exp_not:N\KAuxKnowledge
+          {\knowledge_knowledge_namespace_tl}
+          {\knowledge_knowledge_instance_tl}
+          {\exp_not:V\knowledge_knowledge_key_tl}
+          {\exp_not:V\knowledge_knowledge_directives_tl}}
+      }
+   \bool_if:NT\knowledge_knowledge_autoref_bool
+       {\KAuxWriteX*
+          {\exp_not:N\KAuxAutoref
+             {\knowledge_knowledge_namespace_tl}
+             {\knowledge_knowledge_instance_tl}
+             {\exp_not:V\knowledge_knowledge_key_tl}}
+      }
+  %
+  \bool_if:NT\knowledge_knowledge_export_bool
+    {\KAuxWriteX*{
+      \exp_not:N\KAuxExport
+      {\knowledge_knowledge_namespace_tl}
+      {\knowledge_knowledge_instance_tl}
+      {\exp_not:V\knowledge_knowledge_key_tl}
+      {\exp_not:V\knowledge_knowledge_directives_tl}}
+    }
+}
+\cs_new:Nn\knowledge_delay_directive:n
+  {\tl_if_empty:NTF\knowledge_knowledge_directives_tl
+    {\tl_set:Nn\knowledge_knowledge_directives_tl{#1}}
+    {\tl_put_right:Nn\knowledge_knowledge_directives_tl{,#1}}}
+\cs_generate_variant:Nn\knowledge_delay_directive:n{x}
+\NewDocumentCommand\knowledgedirective{smom}{
+  \kl_hide_begin:
+  \keys_if_exist:nnTF{ knowledge~directives }{ #2 }
+    {\IfBooleanTF{#1}
+       {\knowledgedirective:nnn{#2}{#3}{#4}}
+       {\msg_error:nnn{ knowledge }{  knowledgedirective~redifinition }{#2}}}
+    {\knowledgedirective:nnn{#2}{#3}{#4}}
+  \kl_hide_end:
+}
+\cs_new:Nn\knowledgedirective:nnn{
+   \cs_set:cn
+       {knowledgedirective_#1:n}
+       {\keys_set:nn{ knowledge~directives }{#3}}
+     \keys_define:nn{ knowledge~directives }
+       {#1 .code:n = {\use:c{knowledgedirective_#1:n}{##1}}}
+     \IfNoValueF{#2}
+       {\keys_define:nn{ knowledge~directives }{#2 .default:n = {#2}}}
+}
+\tl_new:N\knowledge_knowledgedefault_tl
+\NewDocumentCommand\knowledgedefault{sm}{
+  \kl_hide_begin:
+  \IfBooleanTF{#1}
+    {\tl_put_right:Nn\knowledge_knowledgedefault_tl{,#2}}
+    {\tl_set:Nn\knowledge_knowledgedefault_tl{#2}}
+  \kl_hide_end:
+}
+\NewDocumentCommand\knowledge_kl:w{d() o d() m}{
+  \IfNoValueTF{#1}
+     {\IfNoValueTF{#3}
+         {\IfNoValueTF{#2}
+            {\knowledge_klTKS:nnn{#4}{#4}{}}
+            {\knowledge_klTKS:nnn{#4}{#2}{}}}
+         {\IfNoValueTF{#2}
+            {\knowledge_klTKS:nnn{#4}{#4}{#3}}
+            {\knowledge_klTKS:nnn{#4}{#2}{#3}}}}
+     {\IfNoValueTF{#2}
+        {\knowledge_klTKS:nnn{#4}{#4}{#1}}
+        {\knowledge_klTKS:nnn{#4}{#2}{#1}}}
+}
+\tl_clear_new:N\knowledge_kl_text_tl
+\tl_clear_new:N\knowledge_kl_base_key_tl
+\tl_clear_new:N\knowledge_kl_key_tl
+\tl_clear_new:N\knowledge_kl_autoref_tl
+\tl_clear_new:N\knowledge_kl_resourcetoken_tl
+\tl_clear_new:N\knowledge_kl_resourcearguments_tl
+\tl_clear_new:N\knowledge_kl_display_process_tl
+\tl_clear_new:N\knowledge_kl_display_sequence_tl
+\tl_new:N\knowledge_namespace_tl
+\tl_gnew:Nn\knowledge_display_code_tl{INTERNAL~ERROR~DISPLAY~CODE}
+\NewDocumentCommand\klTKS{}{\knowledge_klTKS:nnn}
+\cs_new:Nn\knowledge_klTKS:nnn{
+  %\iow_term:n{\knowledge_klTKS:nnn{#1}{#2}{#3}}
+  \group_begin:
+    %
+    \tl_set:Nx\knowledge_kl_linkscope_tl{\tl_to_str:n{#3}}
+    \tl_set:Nn\knowledge_kl_linkinstance_tl{}
+    \tl_set:Nn\knowledge_kl_text_tl{#1}
+    \tl_set:Nx\knowledge_kl_base_key_tl{\tl_to_str:n{#2}}
+    \tl_set_eq:NN\knowledge_kl_key_tl\knowledge_kl_base_key_tl
+    \int_set_eq:NN\knowledge_kl_recursion_int\knowledge_kl_max_recursion_int
+    %\debug_vars:nn{klTKS:nnn}
+    %    {\knowledge_kl_linkscope_tl\knowledge_kl_linkinstance_tl
+    %     \knowledge_kl_text_tl\knowledge_kl_base_key_tl}
+    %
+    \tl_if_exist:cTF
+       {knowledge_kl_\tl_to_str:V\knowledge_kl_modifiers_tl _init_tl}
+       {\use:c{knowledge_kl_\tl_to_str:V\knowledge_kl_modifiers_tl _init_tl}}
+       {\knowledge_error:x
+           {Unknown~variant~modifier~sequence~`\exp_not:V\knowledge_kl_modifiers_tl'.}}
+   %
+    \knowledge_kl_modifiers_reset:
+    %
+    \knowledge_kl_use_styles:x{\knowledge_kl_default_style_tl}
+    %
+    \knowledge_kl_find:
+  \group_end:
+  \knowledge_display_code_tl
+}
+\int_const:Nn\knowledge_kl_max_recursion_int{40}
+\int_new:N\knowledge_kl_recursion_int
+\cs_new:Nn\knowledge_kl_find:{
+  \knowledge_kl_find_recursion_exceeded:TF
+     \knowledge_kl_error_recursion:
+     {\tl_if_empty:NTF\knowledge_kl_linkscope_tl
+        {\tl_if_empty:NTF\knowledge_kl_linkinstance_tl
+            {\knowledge_kl_find_withoutscope:}
+            {\knowledge_kl_find_withinstance:}}
+        \knowledge_kl_find_withscopetag:}
+}
+\cs_set:Npn\knowledge_kl_find_recursion_exceeded:TF{
+  \int_decr:N\knowledge_kl_recursion_int
+  \int_compare:nNnTF\knowledge_kl_recursion_int=0
+}
+\cs_new:Nn\knowledge_kl_find_withinstance:{
+  \knowledge_knowledge_if_exist:VVVTF
+      \knowledge_kl_namespace_tl
+      \knowledge_kl_linkinstance_tl
+      \knowledge_kl_key_tl
+      {\knowledge_kl_exec:nnV
+         \knowledge_kl_namespace_tl
+         \knowledge_kl_linkinstance_tl
+         \knowledge_kl_key_tl}
+      { \knowledge_kl_error_unknown_in_scope_firsttime: }
+}
+\cs_new:Nn\knowledge_kl_find_withscopetag:{
+  %\debug_vars:nn{\knowledge_kl_find_withscopetag:}{\knowledge_kl_linkscope_tl}
+  \exp_args:NV\knowledge_scopetag_warn_if_unknown:n\knowledge_kl_linkscope_tl
+  \tl_clear:N\l_tmpa_tl
+  \exp_args:Nc\seq_map_function:NN
+        {\knowledge_scopetag_tl[\knowledge_kl_linkscope_tl]_seq}
+        \knowledge_kl_find_scopetag_tmpa:n
+   % tests whether the search was successful
+   \tl_if_empty:NTF\l_tmpa_tl
+      {\knowledge_kl_error_unknown_in_scope_firsttime:}
+      {\knowledge_kl_exec:VVV
+         \knowledge_kl_namespace_tl
+         \l_tmpa_tl
+         \knowledge_kl_key_tl}
+}
+\cs_new:Npn\knowledge_kl_find_scopetag_tmpa:n{
+   \knowledge_kl_find_scopetag:Nn\l_tmpa_tl
+}
+\cs_new:Nn\knowledge_kl_find_scopetag:Nn{
+  \tl_if_empty:NTF#1
+    {\knowledge_knowledge_if_exist:VnVTF
+        \knowledge_kl_namespace_tl
+        {#2}%instance
+        \knowledge_kl_key_tl
+        {\tl_set:Nn#1{#2}}
+        {}}
+    {}
+}
+\cs_new:Nn\knowledge_kl_find_withoutscope:{
+  %\debug_vars:nn{\knowledge_kl_find_withoutscope:}
+  %  {\knowledge_kl_key_tl\knowledge_kl_linkinstance_tl}
+  %\exp_args:NVVV\knowledge_knowledge_if_exist:nnnTF
+  %  \knowledge_kl_namespace_tl\knowledge_kl_linkinstance_tl\knowledge_kl_key_tl
+  %   {\tl_show:n{found}}{\tl_show:n{not~found}}
+  \knowledge_kl_find_in_scope:VNTF
+      \knowledge_kl_key_tl
+      \knowledge_kl_linkinstance_tl
+      {\knowledge_kl_exec:VVV
+          \knowledge_kl_namespace_tl
+          \knowledge_kl_linkinstance_tl
+          \knowledge_kl_key_tl}
+      {\knowledge_kl_error_unknown_firsttime:}
+}
+\cs_new:Npn\knowledge_kl_find_in_scope:nNTF{
+   \exp_args:NV\knowledge_kl_find_in_scope:nnNTF
+     \knowledge_kl_namespace_tl
+}
+\cs_new:Nn\knowledge_kl_find_in_scope:nnNTF{
+   \group_begin:
+       %\tl_show:n{\knowledge_kl_find_in_scope:~#1/#2/#3}
+       \tl_set:Nn\l_tmpa_tl{#1}
+       \tl_set:Nn\l_tmpb_tl{#2}
+       \bool_gset_false:N\g_tmpa_bool
+       \seq_map_function:NN
+          \knowledge_visible_instances_seq
+          \knowledge_kl_find_in_scope_test:n
+   \group_end:
+   \bool_if:NTF\g_tmpa_bool
+      {\tl_set_eq:NN#3\g_tmpa_tl #4}
+      {#5}
+}
+\cs_new:Nn\knowledge_kl_find_in_scope_test:n{
+    \tl_if_eq:nnTF{#1}{|}{}{
+    \knowledge_kl_find_in_scope_test_:n{#1}
+    \seq_if_exist:cTF{\knowledge_scopetag_tl[#1]_seq}
+       {\exp_args:Nc\seq_map_function:NN
+          {\knowledge_scopetag_tl[#1]_seq}
+          \knowledge_kl_find_in_scope_test_:n
+       }{}}
+}
+\cs_new:Nn\knowledge_kl_find_in_scope_test_:n{
+   \exp_args:Nc\ktuple_if_exist:NTF
+     {\knowledge_id:nnV{\l_tmpa_tl}{#1}\l_tmpb_tl}
+     {\bool_gset_true:N\g_tmpa_bool
+      \tl_gset:Nn\g_tmpa_tl{#1}
+      \seq_map_break:}{}
+}
+\cs_generate_variant:Nn\knowledge_kl_find_in_scope:nnNTF{nVNTF}
+\cs_generate_variant:Nn\knowledge_kl_find_in_scope:nNTF{VNTF}
+\cs_new:Nn\knowledge_kl_exec:nnn{
+  \tl_set:Nx\knowledge_kl_resourcearguments_tl
+    {{#1}{#2}{\exp_not:n{#3}}}
+  %\debug_vars:nn{\knowledge_kl_exec:nnn}{\knowledge_kl_resourcearguments_tl}
+  \exp_args:NNc\tl_set:Nn\knowledge_kl_resourcetoken_tl
+     {\knowledge_id:nnn{#1}{#2}{#3}}
+  \expandafter\ktuple_countuse_gincr:N\knowledge_kl_resourcetoken_tl
+  %
+  \tl_clear:N\knowledge_kl_link_tl
+  \tl_clear:N\knowledge_kl_linkscope_tl
+  \tl_clear:N\knowledge_kl_linkinstance_tl
+  \tl_map_function:NN
+     \knowledge_kl_styledirectives_tl
+     \tl_clear:N
+  %
+  \knowledge_kl_resourcetoken_tl
+  %
+  \bool_if:NTF\kl_unknown_knowledge_bool
+    {\knowledge_kl_error_unknown:}
+    {\tl_map_function:NN
+       \knowledge_kl_styledirectives_tl
+       \knowledge_kl_use_styles:x
+     %
+     \tl_if_exist_ne:NTF\knowledge_kl_linkscope_tl{
+        \tl_if_exist_ne:NTF\knowledge_kl_link_tl{}{
+          \tl_set_eq:NN\knowledge_kl_link_tl
+             \knowledge_kl_key_tl
+        }}{}
+      %
+      \tl_if_exist_ne:NTF\knowledge_kl_link_tl
+        { \tl_set_eq:NN
+            \knowledge_kl_key_tl
+            \knowledge_kl_link_tl
+          \knowledge_kl_find:}
+        \knowledge_kl_compute_code:
+     }
+}
+\cs_generate_variant:Nn\knowledge_kl_exec:nnn{nnV,VVV}
+\cs_new:Nn\knowledge_kl_use_styles:n
+  {\clist_map_function:nN{#1}\knowledge_kl_use_style:n}
+\cs_generate_variant:Nn\knowledge_kl_use_styles:n {x}
+\cs_new:Nn\knowledge_kl_use_style:n{
+   \tl_if_empty:nTF{#1}{}
+   {\knowledge_kl_find_in_scope:nnNTF
+     {style}
+     {#1}
+     \l_tmpa_tl
+     {\use:c{\knowledge_id:nVn{style}\l_tmpa_tl{#1}}}
+     {\knowledge_error:n{Unknown~style~`#1'}}}
+}
+\cs_new:Nn\knowledge_usestyle:nn{
+  \group_begin:
+     \tl_set:Nn\knowledge_kl_forcedtext_tl{#2}
+     \knowledge_kl_use_styles:x{#1}
+     \knowledge_kl_compute_code:
+  \group_end:
+  \knowledge_display_code_tl
+}
+\NewDocumentCommand\knowledgeusestyle{mm}{\knowledge_usestyle:nn{#1}{#2}}
+\NewKAuxCommand\KAuxErrorKnowledgeRecursive{mmmm}
+  {Package~'knowledge:~A~knowledge~has~recursive~definition.~
+    {namespace}{scope}{undefined~knowledge}{base~knowledge}}
+  {}
+\cs_new:Nn\knowledge_kl_error_recursion: {
+  \msg_error:nnxxx{ knowledge }{ knowledge~recursion }
+    {\exp_not:V\knowledge_kl_base_key_tl}
+    {\exp_not:V\knowledge_kl_namespace_tl}
+    {\exp_not:V\knowledge_kl_key_tl}
+  \knowledge_kl_error_display:n{ recursive~knowledge }
+}
+\NewKAuxCommand\KAuxErrorKnowledgeUnknown{mmmmm}
+  {Package~'knowledge:~A~knowledge~is~not~defined.~
+    {namespace}{scope/empty}{undefined~knowledge}{base~knowledge}{command}}
+  {}
+\NewKAuxCommand\KAuxErrorLabelUnknown{m}
+  {Package~'knowledge:~A~label~is~not~defined.~
+    {label}}
+  {}
+\DeclareKAuxPhaseCommand\KAuxErrorKnowledgeUnknown{diagnose-unknown-suggest}
+{  \knowledge_diagnose_line:
+    \tl_set_eq:Nc\l_tmpa_tl{knowledge_kl_\cs_to_str:N#5_suggestion_tl}
+    \tl_if_eq:nnTF{#1}{default}
+     {}
+     {\tl_if_empty:NTF\l_tmpa_tl{}{\tl_put_right:Nn\l_tmpa_tl{,}
+      \tl_put_right:Nn\l_tmpa_tl{namespace={#1}}}}
+
+   \bool_if:NTF\knowledge_configuration_diagnosebar_bool{
+        %\knowledge_diagnose:x{\char_escape_tl knowledge{\exp_not:V\l_tmpa_tl}}
+        \tl_set:Nn\l_tmpa_tl{~~~|~~#3}
+        \tl_if_empty:nTF{#2}{}
+          {\tl_put_right:Nn\l_tmpa_tl{@#2}}
+        \knowledge_diagnose:x{\exp_not:V\l_tmpa_tl}
+   }{
+        \tl_if_empty:nTF{#2}{}
+          {\tl_if_empty:NTF\l_tmpa_tl{}{\tl_put_right:Nn\l_tmpa_tl{,}}
+           \tl_put_right:Nn\l_tmpa_tl{scope={#2}}}
+        \knowledge_diagnose:x
+          {\char_escape_tl knowledge\exp_not:n{{#3}}{\exp_not:V\l_tmpa_tl}}
+   }
+}
+\cs_new:Nn\knowledge_kl_error_unknown_firsttime:
+  {\bool_if:cTF{\knowledge_variant_var:n{unknownwarning_bool}}
+   {\IfKnowledgePaperModeF{
+     \knowledge_warning:nnxxx{ knowledge }{ knowledge~unknown }
+      {\exp_not:V\knowledge_kl_key_tl}
+      {\exp_not:V\knowledge_kl_namespace_tl}
+      {\seq_use:Nn\knowledge_visible_instances_seq{|}}}
+    }{}
+   \bool_if:cTF{\knowledge_variant_var:n{unknowndiagnose_bool}}
+    {\KAuxWriteX{
+     \KAuxErrorKnowledgeUnknown
+        {\knowledge_kl_namespace_tl}
+        {}
+        {\tl_to_str:V\knowledge_kl_key_tl}
+        {\tl_to_str:V\knowledge_kl_base_key_tl}
+        {\exp_not:V\knowledge_kl_command_tl}
+     }}{}
+   \use:x{\exp_not:N\knowledge_set_now:nnnn
+        {\knowledge_kl_namespace_tl}{base}
+        {\exp_not:V\knowledge_kl_key_tl}
+        {UnKnoWn~KNowLedGE}}
+    \tl_gset:Nx\knowledge_display_code_tl
+       {\exp_not:N\knowledge_usestyle:nn
+          {\use:c{\knowledge_variant_var:n{unknown_style_tl}}}
+          {\exp_not:V\knowledge_kl_text_tl}}
+}
+\cs_new:Nn\knowledge_kl_error_unknown:{
+    \tl_gset:Nx\knowledge_display_code_tl
+       {\exp_not:N\knowledge_usestyle:nn
+          {\use:c{\knowledge_variant_var:n{unknown_style_cont_tl}}}
+          {\exp_not:V\knowledge_kl_text_tl}}
+}
+\cs_new:Nn\knowledge_kl_error_unknown_in_scope_firsttime:
+  {\bool_if:cTF{\knowledge_variant_var:n{unknownwarning_bool}}
+   {\IfKnowledgePaperModeF{
+     \knowledge_warning:nnxxx{ knowledge }{ knowledge~unknown~in~scope }
+      {\exp_not:V\knowledge_kl_key_tl}
+      {\exp_not:V\knowledge_kl_namespace_tl}
+      {\knowledge_kl_linkscope_tl}}}{}
+   \bool_if:cTF{\knowledge_variant_var:n{unknowndiagnose_bool}}
+    {\KAuxWriteX{
+     \KAuxErrorKnowledgeUnknown
+        {\knowledge_kl_namespace_tl}
+        {\knowledge_kl_linkscope_tl}
+        {\tl_to_str:V\knowledge_kl_key_tl}
+        {\tl_to_str:V\knowledge_kl_base_key_tl}
+        {\exp_not:V\knowledge_kl_command_tl}
+     }}{}
+   \use:x{\exp_not:N\knowledge_set_now:nnnn
+        {\knowledge_kl_namespace_tl}
+        {\knowledge_kl_linkscope_tl}
+        {\exp_not:V\knowledge_kl_key_tl}
+        {UnKnoWn~KNowLedGE}}
+   \tl_gset:Nx\knowledge_display_code_tl
+      {\exp_not:N\knowledge_usestyle:nn
+          {\use:c{\knowledge_variant_var:n{unknown_style_tl}}}
+          {\exp_not:V\knowledge_kl_text_tl}}
+}
+\cs_new:Nn\knowledge_kl_error_label_unknown:{
+  \KAuxWriteX{
+     \KAuxErrorKnowledgeUnknown
+        {\knowledge_kl_namespace_tl}
+        {\knowledge_kl_linkscope_tl}
+        {\tl_to_str:V\knowledge_kl_key_tl}
+        {\tl_to_str:V\knowledge_kl_base_key_tl}
+        {\exp_not:V\knowledge_kl_command_tl}
+     }
+  %
+  \IfKnowledgePaperModeF{
+     \knowledge_warning:nnxx{ knowledge }{ knowledge~unknown~label }
+       {\exp_not:V\knowledge_kl_key_tl}
+       {\knowledge_kl_linkscope_tl}}
+   %
+   \tl_gset:Nx\knowledge_display_code_tl
+      {\exp_not:N\knowledge_usestyle:nn
+          {\use:c{\knowledge_variant_var:n{unknown_style_tl}}}
+          {\exp_not:V\knowledge_kl_text_tl}}
+}
+\cs_new:Nn\knowledge_kl_error_display:n
+  {\textcolor{orange}{\tl_to_str:V\knowledge_kl_text_tl}}
+\tl_clear_new:N\knowledge_kl_modifiers_tl
+\cs_new:Nn\knowledge_kl_modifiers_reset:
+   {\tl_gclear:N\knowledge_kl_modifiers_tl}
+\cs_new:Nn\knowledge_kl_modifiers_add:N
+   {\tl_gput_right:Nn\knowledge_kl_modifiers_tl{#1*}
+    \knowledge_kl_modifiers_reduce:}
+\NewDocumentCommand\knowledgevariantmodifier{mm}
+  {\tl_new:cn
+     {KLSV_\tl_to_str:n{#1*} _tl}
+     {#2*}}
+\cs_new:Nn\knowledge_kl_modifiers_reduce:
+ {\tl_if_exist:cTF
+   {KLSV_\tl_to_str:V\knowledge_kl_modifiers_tl _tl}
+     {\tl_gset_eq:Nc\knowledge_kl_modifiers_tl
+       {KLSV_\tl_to_str:V\knowledge_kl_modifiers_tl _tl}}
+     {}}
+\cs_new:Nn\knowledge_variant_var:n
+  {knowledge_kl_\expandafter\cs_to_str:N\knowledge_kl_command_tl _#1}
+\NewDocumentCommand\knowledgenewvariant{mm}{
+  \tl_if_exist:cTF{knowledge_kl_\cs_to_str:N#1_command_tl}
+    {\knowledge_error:n{Variant~#1~already~exists~(in~\knowledgenewvariant).}}
+    {\exp_args:Nc\tl_new:Nn
+      {knowledge_kl_\cs_to_str:N#1_command_tl}
+      {#1}
+    %
+    %
+    \NewDocumentCommand#1{s}
+       {\knowledge_kl_modifiers_add:N#1
+        \IfBooleanF{##1}{\knowledge_kl:w}}
+    %
+    \tl_new_eq:cN
+        {knowledge_kl_\cs_to_str:N#1_namespace_tl}
+        \knowledge_default_namespace_tl
+    \tl_new:cx{knowledge_kl_\cs_to_str:N#1_suggestion_tl}{}
+    \bool_new_true:c{knowledge_kl_\cs_to_str:N#1_unknownwarning_bool}
+    \bool_new_true:c{knowledge_kl_\cs_to_str:N#1_unknowndiagnose_bool}
+    \tl_new:cn{knowledge_kl_\cs_to_str:N#1_default_style_tl}{}
+    \tl_new:cn{knowledge_kl_\cs_to_str:N#1_unknown_style_tl}{}
+    \tl_new:cn{knowledge_kl_\cs_to_str:N#1_unknown_style_cont_tl}{}
+    \tl_new:cx{knowledge_kl_\cs_to_str:N#1_autoknowledge_tl}{}
+    \tl_new:cx{knowledge_kl_\cs_to_str:N#1_styledirectives_tl}{}
+    %
+    \bool_if:NT\knowledge_hyperref_active_bool
+       {\exp_args:Nx\pdfstringdefDisableCommands
+              {\exp_not:N\def\exp_not:N#1
+                   {\exp_not:N\knowledge_variant_arg_absorber:Nw
+                    \exp_not:c{\cs_to_str:N#1_PDFstring}}}}
+    \exp_args:Nc\newcommand{\cs_to_str:N#1_PDFstring}[3]{##1}
+    %
+    \tl_new:cx{knowledge_kl_\tl_to_str:n{#1*} _init_tl}
+        {
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_command_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1_command_tl}
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_namespace_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1_namespace_tl}
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_default_style_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1_default_style_tl}
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_unknown_style_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1_unknown_style_tl}
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_unknown_style_cont_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1_unknown_style_cont_tl}
+        \exp_not:n{\tl_set_eq:NN\knowledge_kl_styledirectives_tl}
+            \exp_not:c{knowledge_kl_\cs_to_str:N#1 _styledirectives_tl}
+        \exp_not:c{knowledge_kl_\cs_to_str:N#1 _autoknowledge_tl}
+        }
+   %
+   %\bool_if:NT\knowledge_hyperref_active_bool
+   %  {\pdfstringdefDisableCommands{\let#1\knowledge_fake_kl:n}}
+   %
+   }
+  \knowledgesetvariant#1{#2}
+}
+\DeclareExpandableDocumentCommand\knowledge_variant_arg_absorber:Nw
+    {m d() o d() m}
+     {\IfNoValueTF{#2}
+         {#1{#5}{#2}{#3}}
+         {#1{#5}{#2}{#1}}}
+
+\tl_new:N\knowledge_variant_command_tl
+\tl_new:N\knowledge_variant_key_tl
+\NewDocumentCommand\knowledgesetvariant{mm}{
+  \tl_if_exist:cTF{knowledge_kl_\cs_to_str:N#1_command_tl}
+    {
+      \tl_set:Nn\knowledge_variant_command_tl{#1}
+      \tl_set:Nx\knowledge_variant_key_tl{\cs_to_str:N#1}
+      %
+      \keys_set:nn{ knowledge~configure~variant }{#2}
+    }
+    {\knowledge_error:n{Variant~#1~does~not~exist~(in~\knowledgesetvariant).}}
+}
+\keys_define:nn{ knowledge~configure~variant }{
+   namespace .code:n =
+      {\tl_set:cn{knowledge_kl_\knowledge_variant_key_tl _namespace_tl}{#1}},
+   %
+   unknown~warning .choices:nn = {true,false}
+      {\bool_set_text:cn{knowledge_kl_\knowledge_variant_key_tl _unknownwarning_bool}{#1}},
+   %
+   unknown~diagnose .choices:nn = {true,false}
+      {\bool_set_text:cn{knowledge_kl_\knowledge_variant_key_tl _unknowndiagnose_bool}{#1}},
+   %
+   default~style .code:n =
+       {\tl_set:cn{knowledge_kl_\knowledge_variant_key_tl _default_style_tl}{#1}},
+   unknown~style  .code:n =
+       {\tl_set:cn{knowledge_kl_\knowledge_variant_key_tl _unknown_style_tl}{#1}},
+   unknown~style~cont .code:n =
+       {\tl_set:cn{knowledge_kl_\knowledge_variant_key_tl _unknown_style_cont_tl}{#1}},
+   %
+   auto~knowledge .code:n =
+     {  \tl_set:cx{knowledge_kl_\knowledge_variant_key_tl _autoknowledge_tl}
+             {\exp_not:N\exp_args:NV
+              \exp_not:N\knowledge
+                {\exp_not:N\knowledge_kl_key_tl}
+                {namespace=\exp_not:N\knowledge_kl_namespace_tl,\exp_not:n{#1}}}},
+   %
+   style~directive .code:n = {
+       \tl_clear:c{knowledge_kl_\knowledge_variant_key_tl _styledirectives_tl}
+       \clist_map_inline:nn{#1}
+           {\use:x{\NewKnowledgeParamTl*
+               [\exp_not:c{knowledge_kl_##1_tl}]}
+               {##1}
+            \tl_put_right:cx{knowledge_kl_\knowledge_variant_key_tl _styledirectives_tl}
+               {\exp_not:c{knowledge_kl_##1_tl}}}
+   },
+   %
+   suggestion .code:n =
+      {\tl_set:cn{knowledge_kl_\knowledge_variant_key_tl _suggestion_tl}{#1}},
+   %
+   PDF~string .code:n =
+    {\exp_args:Nc\renewcommand{\knowledge_variant_key_tl _PDFstring}[3]{#1}}
+}
+\let\nointro\phantomintro
+\tl_new:Nn\knowledge_kl_target_preprocess_tl
+  {\tl_if_exist_ne:NTF\knowledge_kl_resourcetoken_tl
+     {\expandafter\ktuple_countintro_get_int:NN
+         \knowledge_kl_resourcetoken_tl\l_tmpa_int
+      \tl_set:Nx\l_tmpa_tl
+         {\int_compare:nNnTF\l_tmpa_int=1{}{\int_to_alph:n\l_tmpa_int}}}
+     {\tl_set:Nn\l_tmpa_tl{}}
+   \tl_if_exist_ne:NTF\knowledge_kl_autoref_tl
+     {\exp_args:Nx\knowledge_latex_label:n
+         {\expandafter\noexpand\knowledge_kl_autoref_tl\l_tmpa_tl}}
+     {}}
+\tl_new:N\knowledge_kl_style_tl
+\tl_new:N\knowledge_kl_namespace_tl
+\tl_new:N\knowledge_kl_command_tl
+
+\cs_new:Nn\knowledge_kl_target_update:N
+   {\ktuple_countintro_gincr:N#1}
+\cs_gset:Nn\knowledge_kl_default_update:N
+    {\ktuple_countuse_gincr:N#1}
+\NewKnowledgeParamBool*{fbox}\kl_fbox_bool
+\NewKnowledgeParamBool*{ensuremath}\kl_ensuremath_bool
+\NewKnowledgeParamBool*{ensuretext}\kl_ensuretext_bool
+\NewKnowledgeParamBool*{mathord}\kl_mathord_bool
+\NewKnowledgeParamBool*{mathop}\kl_mathop_bool
+\NewKnowledgeParamBool*{mathbin}\kl_mathbin_bool
+\NewKnowledgeParamBool*{mathrel}\kl_mathrel_bool
+\NewKnowledgeParamBool*{mathopen}\kl_mathopen_bool
+\NewKnowledgeParamBool*{mathclose}\kl_mathclose_bool
+\NewKnowledgeParamBool*{mathpunct}\kl_mathpunct_bool
+\NewKnowledgeParamBool*{emphasize}\kl_emphasize_bool
+\NewKnowledgeParamBool*{underline}\kl_underline_bool
+\NewKnowledgeParamBool*{typewriter}\kl_typewriter_bool
+\NewKnowledgeParamBool*{autoref~target}\kl_autoreftarget_bool
+\NewKnowledgeParamBool*{autoref~link}\kl_autoreflink_bool
+\NewKnowledgeParamBool*{invisible}\kl_invisible_bool
+\NewKnowledgeParamBool*{italic}\kl_italic_bool
+\NewKnowledgeParamBool*{smallcaps}\kl_smallcaps_bool
+\NewKnowledgeParamBool*{md}\kl_md_bool
+\NewKnowledgeParamBool*{up}\kl_up_bool
+\NewKnowledgeParamBool*{boldface}\kl_boldface_bool
+\NewKnowledgeParamBool*{detokenize}\kl_detokenize_bool
+\NewKnowledgeParamBool*{remove~space}\kl_removespace_bool
+\NewKnowledgeParamBool*{protect~link}\kl_protect_link_bool
+\NewKnowledgeParamBool*{lowercase}\kl_lowercase_bool
+\NewKnowledgeParamBool*{uppercase}\kl_uppercase_bool
+\NewKnowledgeParamTl*{link}
+\NewKnowledgeParamTl*[\knowledge_kl_linkscope_tl]{link~scope}
+\NewKnowledgeParamTl*[\knowledge_kl_linkinstance_tl]{link~instance}
+\NewKnowledgeParamTl*[\knowledge_kl_forcedtext_tl]{text}
+\NewKnowledgeParamTl*{wrap}
+
+\NewKnowledgeParamBool*{UnKnoWn~KNowLedGE}\kl_unknown_knowledge_bool
+\bool_set_false:N\kl_unknown_knowledge_bool
+\ktuple_new_int_index:n{countuse}
+\ktuple_countuse_expands_to:n{}
+\ktuple_new_int_index:n{countintro}
+\ktuple_countintro_expands_to:n{}
+\keys_define:nn{ knowledge~directives }{
+  now .code:n = { \bool_set_true:N\knowledge_knowledge_now_bool },
+  also~now .code:n = { \bool_set_true:N\knowledge_knowledge_alsonow_bool }
+}
+\int_new:N\knowledge_autoref_count
+
+\keys_define:nn{ knowledge~directives }{
+  autoref .code:n = {
+       \int_gincr:N\knowledge_autoref_count
+       \knowledge_delay_directive:x
+            {autoref = {autoref-\int_use:N\knowledge_autoref_count}}
+       \bool_set_true:N\knowledge_knowledge_autoref_bool},
+  autorefhere .code:n = {
+       \int_gincr:N\knowledge_autoref_count
+       \exp_args:Nx\label{autoref-\int_use:N\knowledge_autoref_count}
+       \knowledge_delay_directive:x
+            {autoref = {autoref-\int_use:N\knowledge_autoref_count}}}}
+
+\ktuple_new_tl_index:n{autoref}
+\use:c{ktuple_autoref_expands_to:n}
+    {\tl_set:Nn\knowledge_kl_autoref_tl{#1} }
+
+\keys_define:nn { knowledgenow~directives } {
+  autoref .code:n =
+      { \knowledge_at:c{ktuple_autoref_gset:Nn}{#1} }
+}
+\int_new:N\kl_countuse_int
+\int_new:N\kl_countintro_int
+\NewKAuxCommand\KAuxAutoref{mmm}
+  {Package~knowledge:~Declares~an~autoref~knowledge.~
+   Arguments~{namespace}{instance}{knowledge}.}
+\NewKAuxCommand\KAuxAutorefTarget{mmm}
+  {Package~knowledge:~Declares~the~use~of~a~target~to~an~autoref~knowledge.~
+   Arguments~{namespace}{instance}{knowledge}.}
+\DeclareKAuxPhaseCommand\KAuxAutoref{init}{}
+
+\int_new:N\kl_digest_autorefused_int
+\int_new:N\kl_digest_autorefnointro_int
+\int_new:N\kl_digest_autoreftwiceintro_int
+\int_new:N\kl_digest_autorefunused_int
+\int_new:N\kl_digest_unknownknowledge_int
+\int_new:N\kl_digest_unknownlabel_int
+
+\DeclareKAuxPhaseCommand\KAuxErrorKnowledgeUnknown{diagnose-digest}
+  {\int_gincr:N\kl_digest_unknownknowledge_int}
+
+\DeclareKAuxPhaseCommand\KAuxAutoref{diagnose-digest}
+  {\group_begin:
+   \knowledge_sets_to:nnn{#1}{#2}{#3}
+   \knowledge_at:N\ktuple_countuse_get_int:NN\kl_countuse_int
+   \knowledge_at:N\ktuple_countintro_get_int:NN\kl_countintro_int
+   \int_compare:nNnT\kl_countintro_int=1
+     {
+      \int_compare:nNnTF\kl_countuse_int=1
+        {\int_gincr:N\kl_digest_autorefunused_int}
+        {\int_gincr:N\kl_digest_autorefused_int}
+     }
+   \int_compare:nNnT\kl_countintro_int=0
+     {\int_compare:nNnF\kl_countuse_int=0
+        %{\int_gincr:N\kl_digest_autorefunused_int}
+        {\int_gincr:N\kl_digest_autorefnointro_int}}
+   \int_compare:nNnT\kl_countintro_int>1
+        {\int_gincr:N\kl_digest_autoreftwiceintro_int}
+   \group_end:}
+
+\DeclareKAuxPhaseCommand\KAuxAutoref{autoref-not-introduced}
+  {\group_begin:
+   \knowledge_sets_to:nnn{#1}{#2}{#3}
+   \knowledge_at:N\ktuple_countuse_get_int:NN\kl_countuse_int
+   \knowledge_at:N\ktuple_countintro_get_int:NN\kl_countintro_int
+   \int_compare:nNnT\kl_countuse_int>0
+     {\int_compare:nNnT\kl_countintro_int=0
+        {\knowledge_diagnose_line:
+         \knowledge_diagnose:x{\char_escape_tl nointro{\exp_not:n{#1}}{\exp_not:n{#2}}{\exp_not:n{#3}}}}}
+   \group_end:}
+\DeclareKAuxPhaseCommand\KAuxAutoref{autoref-introduced-not-used}
+  {\group_begin:
+   \knowledge_sets_to:nnn{#1}{#2}{#3}
+   \knowledge_at:N\ktuple_countuse_get_int:NN\kl_countuse_int
+   \knowledge_at:N\ktuple_countintro_get_int:NN\kl_countintro_int
+   \int_compare:nNnT\kl_countuse_int=1
+     {\int_compare:nNnT\kl_countintro_int=1
+     {\knowledge_diagnose_line:
+      \knowledge_diagnose:x{\kaux_current_location:\space
+            \exp_not:n{{#3}{#1}{#2}}}}}
+   \group_end:}
+\DeclareKAuxPhaseCommand\KAuxAutorefTarget{autoref-introduced-twice}
+  {\group_begin:
+   \knowledge_sets_to:nnn{#1}{#2}{#3}
+   \knowledge_at:N\ktuple_countuse_get_int:NN\kl_countuse_int
+   \knowledge_at:N\ktuple_countintro_get_int:NN\kl_countintro_int
+   \int_compare:nNnT\kl_countintro_int>1
+     {\knowledge_diagnose_line:
+      \knowledge_diagnose:x{\kaux_current_location:\space
+           \exp_not:n{{#3}{#1}{#2}}}}
+   \group_end:}
+\NewKAuxCommand\KAuxUseKnowledge{mmm}
+  {Package~knowledge:~Identifies~the~use~of~some~knowledge.~
+   Arguments~{namespace}{instance}{knowledge}.}
+\cs_new:Nn\knowledge_kl_display_generic:n
+  {\tl_gset:Nx\knowledge_display_code_tl
+         {\exp_not:n{#1}{\exp_not:V\knowledge_display_code_tl}}}
+\cs_new:Nn\knowledge_kl_display_generic_cond:Nn
+  {\bool_if:NTF#1
+     {\tl_gset:Nx\knowledge_display_code_tl
+         {\exp_not:n{#2}{\exp_not:V\knowledge_display_code_tl
+         }}}{}}
+\cs_generate_variant:Nn\knowledge_kl_display_generic:n{x}
+\cs_generate_variant:Nn\knowledge_kl_display_generic_cond:Nn{Nx}
+\cs_new:Nn\knowledge_kl_compute_code:{
+     \tl_if_exist_ne:NTF\knowledge_kl_forcedtext_tl
+        {\tl_gset_eq:NN\knowledge_display_code_tl\knowledge_kl_forcedtext_tl}
+        {\tl_gset_eq:NN\knowledge_display_code_tl\knowledge_kl_text_tl}
+     \bool_if:NT\kl_detokenize_bool
+        {\tl_gset:Nx\knowledge_display_code_tl
+          {\tl_to_str:V\knowledge_display_code_tl}}
+     \bool_if:NT\kl_removespace_bool
+        {\tl_remove_all:Nn\knowledge_display_code_tl{~}}
+     \bool_if:NT\kl_lowercase_bool
+        {\tl_gset:Nx\knowledge_display_code_tl
+          {\exp_args:NV\tl_lower_case:n\knowledge_display_code_tl}}
+     \bool_if:NT\kl_uppercase_bool
+        {\tl_gset:Nx\knowledge_display_code_tl
+          {\exp_args:NV\tl_upper_case:n\knowledge_display_code_tl}}
+     %
+     \tl_if_empty:NTF\knowledge_kl_wrap_tl
+         {}
+         {\exp_args:NV\knowledge_kl_display_generic:n\knowledge_kl_wrap_tl}
+     %
+     \bool_if:NT\knowledge_xcolor_active_bool
+        \knowledge_kl_compute_code_xcolor:
+     \bool_if:NT\knowledge_hyperref_active_bool
+        \knowledge_kl_compute_code_hyperref:
+     %
+     \knowledge_kl_display_generic_cond:Nn\kl_underline_bool\kl_underline:n
+     \knowledge_kl_display_generic_cond:Nn\kl_md_bool\kl_md:n
+     \knowledge_kl_display_generic_cond:Nn\kl_boldface_bool\kl_bf:n
+     \knowledge_kl_display_generic_cond:Nn\kl_up_bool\kl_up:n
+     \knowledge_kl_display_generic_cond:Nn\kl_italic_bool\kl_it:n
+     \knowledge_kl_display_generic_cond:Nn\kl_smallcaps_bool\kl_smallcaps:n
+     \knowledge_kl_display_generic_cond:Nn\kl_typewriter_bool\kl_tt:n
+     % if math
+     \knowledge_kl_display_generic_cond:Nn\kl_mathop_bool\mathop
+     \knowledge_kl_display_generic_cond:Nn\kl_mathord_bool\mathord
+     \knowledge_kl_display_generic_cond:Nn\kl_mathbin_bool\mathbin
+     \knowledge_kl_display_generic_cond:Nn\kl_mathrel_bool\mathrel
+     \knowledge_kl_display_generic_cond:Nn\kl_mathclose_bool\mathclose
+     \knowledge_kl_display_generic_cond:Nn\kl_mathopen_bool\mathopen
+     \knowledge_kl_display_generic_cond:Nn\kl_mathpunct_bool\mathpunct
+     % if text
+     \knowledge_kl_display_generic_cond:Nn\kl_emphasize_bool\kl_em:n
+     \knowledge_kl_display_generic_cond:Nn\kl_fbox_bool\fbox
+     %
+     \knowledge_kl_display_generic_cond:Nn\kl_ensuremath_bool\ensuremath
+     \knowledge_kl_display_generic_cond:Nn\kl_ensuretext_bool\ensuretext
+     %
+     \bool_if:NT\knowledge_makeidx_active_bool
+         \knowledge_kl_compute_code_makeidx:
+     %
+     \bool_if:NT\kl_invisible_bool
+         {\tl_gclear:N\knowledge_display_code_tl}
+}
+\cs_new:Nn\knowledge_kl_compute_code_xcolor:{
+  \tl_if_empty:NF\knowledge_kl_color_tl
+     {\knowledge_kl_display_generic:x{\exp_not:N\textcolor{\knowledge_kl_color_tl}}}
+  \tl_if_empty:NF\knowledge_kl_colorbox_tl
+     {\knowledge_kl_display_generic:x{\exp_not:N\colorbox{\knowledge_kl_colorbox_tl}}}
+}
+\cs_new:Nn\knowledge_kl_compute_code_hyperref:{
+  \tl_if_exist_ne:NT\knowledge_kl_ref_tl
+    {\knowledge_kl_display_generic:x
+       {\exp_not:N\kl_hyperlink_silentref:nn
+         {\exp_not:V\knowledge_kl_ref_tl}}}
+  %
+  \knowledge_kl_compute_code_hyperreftarget:
+  %
+  \bool_if:NT\kl_autoreflink_bool
+    {\tl_if_exist_ne:NT\knowledge_kl_autoref_tl
+      {\knowledge_kl_display_generic:x
+         {\exp_not:N\kl_hyperlink_silentref:nn
+             {\exp_not:V\knowledge_kl_autoref_tl}}
+         }}
+  %
+  \tl_if_exist_ne:NT\knowledge_kl_url_tl
+    {\knowledge_kl_display_generic:x
+      {\exp_not:N\kl_hyperlink_url:nn
+        {\exp_not:V\knowledge_kl_url_tl}}}
+}
+\cs_new:Nn\knowledge_kl_compute_code_hyperreftarget:{
+  \bool_if:NT\kl_autoreftarget_bool
+   {\tl_if_exist_ne:NT\knowledge_kl_autoref_tl
+      {\expandafter\ktuple_countintro_get_int:NN
+             \knowledge_kl_resourcetoken_tl\l_tmpa_int
+       \tl_set:Nx\l_tmpa_tl
+             {\int_compare:nNnTF\l_tmpa_int=1
+             {} {\int_to_alph:n\l_tmpa_int}}
+       \exp_args:Nx\LaTeXlabel{\exp_not:V\knowledge_kl_autoref_tl\l_tmpa_tl}}
+    \expandafter\ktuple_countintro_gincr:N
+        \knowledge_kl_resourcetoken_tl
+    \KAuxWriteX
+       {\exp_not:N\KAuxAutorefTarget
+            \exp_not:o\knowledge_kl_resourcearguments_tl}}
+}
+\cs_new:Nn\knowledge_kl_compute_code_makeidx:{
+  \tl_if_exist_ne:NTF\knowledge_kl_index_tl
+      {\exp_args:Nx\index
+         {\tl_if_exist_ne:NTF\knowledge_kl_index_parent_key_tl
+                 {\exp_not:V\knowledge_kl_index_parent_key_tl!}{}
+           \tl_if_exist_ne:NTF\knowledge_kl_index_key_tl
+                 {\exp_not:V\knowledge_kl_index_key_tl@}{}
+           \expandafter\tl_to_str:n\expandafter{\knowledge_kl_index_tl}
+           \tl_if_exist_ne:NTF\knowledge_kl_index_number_style_tl
+                 {|\exp_not:V\knowledge_kl_index_number_style_tl}{}
+         }}{}
+}
+
+\cs_new:Npn\kl_up:n{\mode_if_math:TF\use:n\textup}
+\cs_new:Npn\kl_md:n{\mode_if_math:TF\mathmd\textmd}
+\cs_new:Npn\kl_sc:n{\mode_if_math:TF\mathsc\textsc}
+\cs_new:Npn\kl_it:n{\mode_if_math:TF\mathit\textit}
+\cs_new:Npn\mathscerror#1{\knowledge_error:n{`smallcaps'~only~allowed~in~math~mode.}}
+\cs_new:Npn\kl_smallcaps:n{\mode_if_math:TF\mathscerror\textsc}
+\cs_new:Npn\kl_tt:n{\mode_if_math:TF\mathtt\texttt}
+\cs_new:Npn\kl_bf:n{\mode_if_math:TF\mathbf\textbf}
+\cs_new:Npn\kl_underline:n{\mode_if_math:TF\use:n\underline}
+\cs_new:Npn\kl_em:n{\mode_if_math:TF\use:n\emph}
+\cs_new:Nn\knowledge_kl_default_display_code_color:n{
+  \bool_if:NTF\knowledge_xcolor_active_bool
+    {\tl_if_exist_ne:NTF\knowledge_kl_color_tl
+      {\exp_not:N\textcolor{\knowledge_kl_color_tl}{#1}}{#1}}
+    {#1}}
+\cs_new:Nn\knowledge_kl_default_display_code_colorbox:n{
+  \bool_if:NTF\knowledge_xcolor_active_bool
+    {\tl_if_exist_ne:NTF\knowledge_kl_colorbox_tl
+       {\exp_not:N\colorbox{\knowledge_kl_colorbox_tl}{#1}}{#1}}
+    {#1}}
+\cs_new:Nn\knowledge_kl_default_code_nestingprotect:n{
+  \bool_if:NTF\kl_protect_link_bool
+     {\exp_not:N\kl_kl_nesting_incr:#1\exp_not:N\kl_kl_nesting_decr:}{#1}
+ }
+\cs_new:Nn\knowledge_kl_default_code_wrap:n{
+  \tl_if_exist_ne:NTF\knowledge_kl_wrap_tl
+    {\exp_not:V\knowledge_kl_wrap_tl{#1}}{#1}}
+\cs_new:Nn\knowledge_kl_default_display_code_text:{
+    \knowledge_kl_default_code_wrap:n{
+         \tl_if_exist_ne:NTF\knowledge_kl_forcedtext_tl
+           {\exp_not:V\knowledge_kl_forcedtext_tl}
+           {\exp_not:V\knowledge_kl_text_tl}
+      }
+}
+\NewDocumentCommand\knowledge_anchor_point_cs:{}
+    {\bool_if:NT\knowledge_hyperref_active_bool
+       {\strut\vadjust{\knowledge_AP_internal:}}}
+\NewDocumentCommand\itemAP{o}{
+  \IfNoValueTF{#1}
+    {\item\knowledge_anchor_point_cs:}
+    {\item[\knowledge_itemAP: #1]}}
+\let\AP\knowledge_anchor_point_cs:
+\int_new:N\kl_hyperref_kl_nesting_count_int
+\bool_new:N\kl_hyperref_active_here_bool
+\bool_set_true:N\kl_hyperref_active_here_bool
+\cs_new:Npn\kl_if_hyperlinks_active_here:TF
+  {\bool_if:NTF\knowledge_hyperlinks_active_bool
+     {\bool_if:NTF\kl_hyperref_active_here_bool}
+     \use_ii:nn}
+\cs_new:Nn\kl_kl_nesting_incr:
+  {\int_gincr:N\kl_hyperref_kl_nesting_count_int
+   \bool_gset:Nn\kl_hyperref_active_here_bool
+      {\int_compare_p:nNn\kl_hyperref_kl_nesting_count_int=0}}
+\cs_new:Nn\kl_kl_nesting_decr:
+  {\int_gdecr:N\kl_hyperref_kl_nesting_count_int
+   \bool_gset:Nn\kl_hyperref_active_here_bool
+      {\int_compare_p:nNn\kl_hyperref_kl_nesting_count_int=0}}
+\cs_new:Npn\kl_hyperlink_ref:nn#1
+  {\kl_if_hyperlinks_active_here:TF{\hyperref[{#1}]}{\use:n}}
+\cs_new:Npn\kl_hyperlink_url:nn
+  {\kl_if_hyperlinks_active_here:TF\href\use_ii:nn}
+\cs_new:Npn\kl_hyperlink_silentref:nn#1
+  {\kl_if_hyperref_exist:nTF{#1}
+     {\kl_hyperlink_ref:nn{#1}}
+     \use:n}
+\cs_new:Npn\kl_if_hyperref_exist:nTF#1
+  {\expandafter\ifx\csname r@#1\endcsname\relax
+   \expandafter\use_ii:nn\else
+   \expandafter\use_i:nn\fi}
+\cs_new:Nn\knowledge_AP_internal:{%
+    \vbox to 0pt{
+      \noindent
+      \kern-\dp\strutbox
+      \smash{\llap{\knowledge_AP_mark:\kern0.3em}}
+      \vss}}
+\cs_new:Nn\knowledge_AP_mark:{%
+       \setlength\unitlength{1em}
+         \begin{picture}(0,0)
+         \put(0,1.2){
+            \bool_if:NT\knowledge_hyperref_active_bool
+               {\put(-0.05,-1.04){\phantomsection}}
+            \bool_if:NT\knowledge_configuration_visibleAP_bool
+                 {\bool_if:NTF\knowledge_xcolor_active_bool
+                    {\textcolor{red}}{\use:n}
+                    {\line(0,-1){0.5}\line(1,0){0.5}}}}
+         \end{picture}{}}
+\cs_new:Nn\knowledge_itemAP:{
+  \hbox_overlap_left:n
+      {\knowledge_AP_mark:\hspace{1em}}
+  }
+\tl_new:Nn\knowledge_variant_quote_modifier_tl{\kl*}
+\tl_new:Nn\knowledge_variant_doublequote_modifier_tl{\intro*}
+\ExplSyntaxOff
+\def\makequotationactive
+  {\catcode`"13\relax}
+\def\makequotationletter
+  {\catcode`"12\relax}
+\let\quotesymbol"
+\ExplSyntaxOn
+\makequotationactive
+\edef\klactivequotationmark#1"{
+  \noexpand\tl_if_empty:nTF{#1}
+    {\noexpand\klactivedoublequotationmark}
+    {\noexpand\klquotation_parse_arobas_sep:Nw
+     \noexpand\klquotation_expand:nnn #1
+     @
+     @
+     @\noexpand\kl_end}
+}
+\edef\klactivedoublequotationmark#1""{
+  \noexpand\klquotation_parse_arobas_sep:Nw
+  \noexpand\kldoublequotation_expand:nnn #1
+  @
+  @
+  @\noexpand\kl_end
+}
+\cs_new:Npx\klquotation_parse_arobas_sep:Nw #1#2@#3@#4@#5\kl_end
+  {#1{#2}{#3}{#4}}
+
+\cs_set_eq:NN\tl_if_novalue:nTF\IfNoValueTF
+
+\cs_new:Npn\klquotation_expand:nnn
+  {\knowledge_variant_quote_modifier_tl
+   \klquotation_expand_base:nnn}
+\cs_new:Npn\kldoublequotation_expand:nnn
+  {\knowledge_variant_doublequote_modifier_tl
+   \klquotation_expand:nnn}
+\cs_new:Nn\klquotation_expand_base:nnn{
+  \tl_if_empty:nTF{#2}
+      {\klTKS{#1}{#1}{#3}}
+      {\klTKS{#1}{#2}{#3}}
+}
+\def\klactivatequotation
+  {\makequotationactive
+   \let"\klactivequotationmark}
+\def\kldeactivatequotation
+  {\makequotationletter}
+
+\kldeactivatequotation
+\cs_new:Nn\kl_protect_environment_quotation:n
+  {\clist_map_inline:nn{#1}
+    {\scope_area_set:nn{#1}
+      { push~code={\knowledgeconfigure{quotation=false}},
+      pop~code={\knowledgeconfigure{quotation=true}}}}
+      }
+
+\cs_new:Nn\klparse_absorb_modifiers:
+  {\tl_set_eq:NN\klparse_primes_tl\c_empty_tl
+   \bool_if:NTF\klparse_load_primes_bool
+     \klparse_absorb_modifiers_pses:
+     \klparse_absorb_modifiers_ses:
+  }
+
+\cs_new:Nn\klparse_absorb_modifiers_pses:
+  {\klparse_ifnextchar:NTF'
+     {\tl_put_right:Nn\klparse_primes_tl'
+       \use_i:nn\klparse_absorb_modifiers_pses:}
+     \klparse_absorb_modifiers_ses:
+   }
+
+\cs_new:Nn\klparse_absorb_modifiers_ses:
+  {\bool_if:NTF\klparse_load_subscript_bool
+       {\klparse_absorb_subscript:Nn\klparse_subscript_tl\klparse_absorb_modifiers_es:}
+       {\tl_set_eq:NN\klparse_subscript_tl\klparse_novalue_tl
+        \klparse_absorb_modifiers_es:}
+  }
+
+\cs_new:Nn\klparse_absorb_modifiers_es:
+  {\bool_if:NTF\klparse_load_supscript_bool
+    {\tl_if_empty:NTF\klparse_primes_tl
+       {\klparse_absorb_supscript:Nn\klparse_supscript_tl
+        \klparse_absorb_modifiers_ts:}
+       {\tl_set_eq:NN\klparse_supscript_tl\klparse_novalue_tl
+         \klparse_absorb_modifiers_exec:}}
+      {\tl_set_eq:NN\klparse_supscript_tl\klparse_novalue_tl
+        \klparse_absorb_modifiers_exec:}
+  }
+
+\cs_new:Nn\klparse_absorb_modifiers_ts:
+  {\bool_if:NTF\klparse_load_subscript_bool{
+     \klparse_if_novalue:NTF\klparse_subscript_tl
+      {\klparse_absorb_subscript:Nn\klparse_subscript_tl\klparse_absorb_modifiers_exec:}
+       \klparse_absorb_modifiers_exec:}
+     {\klparse_absorb_modifiers_exec:}
+  }
+\ExplSyntaxOff
+\def\absorbsupscriptNn{\absorbopt ^}
+\def\absorbsubscriptNn{\absorbopt _}
+\ExplSyntaxOn
+\cs_set_eq:NN\klparse_absorb_supscript:Nn\absorbsupscriptNn
+\cs_set_eq:NN\klparse_absorb_subscript:Nn\absorbsubscriptNn
+
+\cs_new:Npn\absorbopt#1#2#3
+    {\klparse_ifnextchar:NTF #1
+       {\klparse_absorbopt_ii:NnNn #2 {#3}}
+       {\tl_set_eq:NN #2 \klparse_novalue_tl #3}}
+
+\cs_new:Nn\klparse_absorbopt_ii:NnNn
+    {\tl_set:Nn #1 {#4} #2 }
+\cs_set_eq:NN\klparse_if_load_subscript:TF\use_i:nn
+\cs_set_eq:NN\klparse_if_load_supscript:TF\use_i:nn
+\cs_set_eq:NN\klparse_if_load_primes:TF\use_i:nn
+\cs_new:Nn\knowledge_directives_require_aci_package:nn
+  {\bool_if:cTF{knowledge_#2_syntax_bool}{}{
+      \NewKnowledgeParamPackageError{#1}{#2}}}
+\NewKnowledgeParamTl*{color}
+\NewKnowledgeParamTl*{colorbox}
+\knowledge_directives_require_aci_package:nn
+   {color,colorbox,cyclic~color}{xcolor}
+\tl_new:N\knowledge_cyclic_colors_tl
+\tl_new:N\knowledge_cyclic_color_tl
+\keys_define:nn{ knowledge~configuration~options }{
+  cyclic~colors .code:n = {\tl_gset:Nn\knowledge_cyclic_colors_tl{#1}}
+}
+\knowledgeconfigure{cyclic~colors =
+   {red,green,blue,cyan,magenta,yellow,gray,brown,lime,olive,orange,pink,purple,teal,violet}}
+\cs_new:Npn\__knowledge_cyclic_color_next:w#1,#2\__knowledge_cyclic_end
+   {\tl_gset:Nn\knowledge_cyclic_colors_tl{#2,{#1}}
+    \tl_gset:Nn\knowledge_cyclic_color_tl{#1}}
+\cs_new:Nn\knowledge_cycle_colors:
+   {\expandafter\__knowledge_cyclic_color_next:w\knowledge_cyclic_colors_tl\__knowledge_cyclic_end}
+
+\keys_define:nn{ knowledge~directives }{
+  cyclic~color .code:n = {
+       \knowledge_cycle_colors:
+       \knowledge_delay_directive:x
+            {color = {\knowledge_cyclic_color_tl}}}
+}
+\NewKnowledgeParamTl*{url}
+\NewKnowledgeParamTl*{ref}
+
+\knowledge_directives_require_aci_package:nn
+   {url,ref,autoref}{hyperref}
+\bool_if:NT\knowledge_hyperref_active_bool{
+  \DeclareExpandableDocumentCommand\knowledge_fake_klTKS{mmm}{#1}
+  \pdfstringdefDisableCommands{%
+       \let\klTKS\knowledge_fake_klTKS
+  }
+}
+\def\knowledgeIntroIndexStyle#1{\textbf{#1}}
+\NewKnowledgeParamTl{index}
+\keys_define:nn { knowledge~directives }
+{ index .code:n =  {
+    \tl_if_empty:nTF{#1}
+      {\knowledge_delay_directive:x{index={\exp_not:V\knowledge_knowledge_key_tl}}}
+      {\knowledge_delay_directive:n{index={#1}}}},
+  index .default:n = {}
+}
+
+\NewKnowledgeParamTl*[\knowledge_kl_index_number_style_tl]{index~style}
+\NewKnowledgeParamTl*[\knowledge_kl_index_parent_key_tl]{index~parent~key}
+\NewKnowledgeParamTl*[\knowledge_kl_index_key_tl]{index~key}
+\ExplSyntaxOff\makeatletter
+\newcommand\knowledgeFixHyperrefTwocolumn{
+  \RequirePackage{etoolbox}
+  \newcount\c@additionalboxlevel
+  \setcounter{additionalboxlevel}{0}
+  \newcount\c@maxboxlevel
+  \setcounter{maxboxlevel}{1}
+  \patchcmd\@combinedblfloats{\box\@outputbox}{%
+    \stepcounter{additionalboxlevel}%
+    \box\@outputbox
+  }{}{\errmessage{\noexpand\@combinedblfloats could not be patched}}
+  %
+  \AtBeginShipout{%
+    \ifnum\value{additionalboxlevel}>\value{maxboxlevel}%
+      \typeout{Warning: maxboxlevel might be too small, increase to %
+        \the\value{additionalboxlevel}%
+      }%
+    \fi
+    \@whilenum\value{additionalboxlevel}<\value{maxboxlevel}\do{%
+      \typeout{* Additional boxing of page `\thepage'}%
+      \setbox\AtBeginShipoutBox=\hbox{\copy\AtBeginShipoutBox}%
+      \stepcounter{additionalboxlevel}%
+    }%
+    \setcounter{additionalboxlevel}{0}%
+  }
+}
+\ExplSyntaxOn
+\makeatother
+\bool_if:NT\knowledge_option_texpatch_bool{
+   \bool_if:NT\knowledge_hyperref_active_bool{
+     \hypersetup{breaklinks}
+     \hypersetup{hidelinks}
+   }
+}
+\bool_if:NF\knowledge_option_composition_bool
+  {\bool_if:NF\knowledge_option_paper_bool}
+    {\bool_set_true:N\knowledge_option_composition_bool}
+\bool_if:NT\knowledge_option_composition_bool
+  {\bool_if:NT\knowledge_option_paper_bool}
+    {\bool_set_false:N\knowledge_option_composition_bool}
+
+\DeclareExpandableDocumentCommand\IfKnowledgeCompositionModeTF{}
+  {\bool_if:NTF\knowledge_option_composition_bool}
+\newif\ifKnowledgeCompositionMode
+\IfKnowledgeCompositionModeTF
+  \KnowledgeCompositionModetrue
+  \KnowledgeCompositionModefalse
+
+\DeclareExpandableDocumentCommand\IfKnowledgeElectronicModeTF{}
+  {\bool_if:NTF\knowledge_option_electronic_bool}
+\newif\ifKnowledgeElectronicMode
+\IfKnowledgeElectronicModeTF
+  \KnowledgeElectronicModetrue
+  \KnowledgeElectronicModefalse
+
+\DeclareExpandableDocumentCommand\IfKnowledgePaperModeTF{}
+  {\bool_if:NTF\knowledge_option_paper_bool}
+\DeclareExpandableDocumentCommand\IfKnowledgePaperModeF{}
+  {\IfKnowledgePaperModeTF{}}
+\newif\ifKnowledgePaperMode
+\IfKnowledgePaperModeTF
+  \KnowledgePaperModetrue
+  \KnowledgePaperModefalse
+
+\DeclareExpandableDocumentCommand\IfXcolorTF{}
+  {\bool_if:NTF\knowledge_xcolor_active_bool}
+\newif\ifXcolor
+\IfXcolorTF
+  \Xcolortrue
+  \Xcolorfalse
+\IfXcolorTF
+  {\def\knowledgeIntroIndexStyle#1{\textcolor{red}{#1}}}
+  {}
+\tl_new:Nn\knowledge_kl_default_style_tl{kl}
+\tl_new:Nn\knowledge_kl_unknown_style_tl{kl~unknown}
+\tl_new:Nn\knowledge_kl_unknown_style_cont_tl{kl~unknown~cont}
+\tl_new:Nn\knowledge_kl_styledirectives_tl{\knowledge_kl_style_tl}
+
+\ExplSyntaxOff
+\knowledgestyle{autoref link}{autoref link}
+\knowledgestyle{autoref target}{autoref target}
+\knowledgestyle{invisible}{invisible}
+
+\knowledgenewvariant\kl{
+  namespace= default,
+  default style= {autoref link},
+  unknown style= kl unknown,
+  unknown style cont= kl unknown cont,
+  style directive= style
+}
+\knowledgenewvariant\intro{
+  namespace= default,
+  default style= {autoref target},
+  unknown style= intro unknown,
+  unknown style cont= intro unknown cont,
+  style directive= intro style
+}
+\knowledgenewvariant\phantomintro{
+  namespace=default,
+  default style={invisible,autoref target},
+  unknown style=invisible,
+  unknown style cont=invisible
+}
+\knowledgenewvariant\reintro{
+  namespace=default,
+  unknown style=intro unknown,
+  unknown style cont=intro unknown cont,
+  style directive=intro style
+}
+
+\knowledgevariantmodifier{\intro*\kl}{\intro}
+\knowledgevariantmodifier{\reintro*\kl}{\reintro}
+
+\ExplSyntaxOn
+\tl_set_eq:NN\knowledge_kl_namespace_tl\knowledge_default_namespace_tl
+\newcommand\robustdisplay[1]
+  {\expandafter\use:n%\tl_trim_spaces:n
+   \expandafter{\tl_to_str:n{#1}}}
+\newcommand\robustdisplaybracket[1]
+  {[\robustdisplay{#1}]}
+\knowledgedirective{ignore}{}
+\ExplSyntaxOff
+\IfKnowledgePaperModeTF{
+  \knowledgestyle{kl unknown}{}
+  \knowledgestyle{kl unknown cont}{}
+  \knowledgestyle{intro unknown}{emphasize}
+  \knowledgestyle{intro unknown cont}{emphasize}
+}{}
+
+\IfKnowledgeCompositionModeTF{
+  \IfXcolorTF{
+    \knowledgestyle{kl unknown}{color=orange}
+    \knowledgestyle{kl unknown cont}{color=brown}
+    \knowledgestyle{intro unknown}{emphasize,color=orange}
+    \knowledgestyle{intro unknown cont}{emphasize,color=brown}
+   }{
+    \knowledgestyle{kl unknown}{underline}
+    \knowledgestyle{kl unknown cont}{underline}
+    \knowledgestyle{intro unknown}{emphasize,underline}
+    \knowledgestyle{intro unknown cont}{emphasize,underline}
+   }
+}{}
+
+\IfKnowledgeElectronicModeTF{
+  \IfXcolorTF{
+    \knowledgestyle{kl unknown}{}
+    \knowledgestyle{kl unknown cont}{}
+    \knowledgestyle{intro unknown}{emphasize}
+    \knowledgestyle{intro unknown cont}{emphasize}
+   }{
+    \knowledgestyle{kl unknown}{}
+    \knowledgestyle{kl unknown cont}{}
+    \knowledgestyle{intro unknown}{emphasize}
+    \knowledgestyle{intro unknown cont}{emphasize}
+   }
+}{}
+
+\ExplSyntaxOn
+\let\nointro\phantomintro
+
+\ExplSyntaxOff
+\newrobustcmd\KnowledgeConfigureNotion[2][blue]{
+  \knowledgedirective{#2}{autoref,style=#2,intro style=intro #2}
+  \ifKnowledgePaperMode
+    % paper mode
+    \knowledgestyle{#2}{}
+    \knowledgestyle{intro #2}{emphasize}
+  \fi
+  \ifKnowledgeCompositionMode
+    \ifXcolor
+      % composition mode with colors
+      \knowledgestyle{#2}{color={#1!70!black}}
+      \knowledgestyle{intro #2}{emphasize,color={#1}}
+    \else
+      % composition mode, no colors (use underline)
+      \knowledgestyle{#2}{underline}
+      \knowledgestyle{intro #2}{emphasize, underline}
+    \fi
+  \fi
+  \ifKnowledgeElectronicMode
+    \ifXcolor
+      % electronic mode
+      \knowledgestyle{#2}{color={#1!70!black}}
+      \knowledgestyle{intro #2}{emphasize,color={#1}}
+    \else
+      % electronic mode, no colors (use underline)
+      \knowledgestyle{#2}{underline}
+      \knowledgestyle{intro #2}{emphasize, underline}
+   \fi
+  \fi
+}
+\ExplSyntaxOn
+
+\knowledge_begin_module_if:n\knowledge_option_scope_bool
+\scope_area_set:nn
+  {part, section,subsection,subsubsection,
+   paragraph,subparagraph,subsubparagraph}
+   { category=structure,
+     autoclose = true,
+     occurrences = multiple,
+     knowledge=accepts
+   }
+\scope_area_set:nn
+  {base,document,section,subsection,subsubsection,
+   paragraph,subparagraph,subsubparagraph}
+  {knowledge=accepts}
+\scope_area_set:nn
+  {base,document}
+  {knowledge=attracts}
+\scope_area_set:nn
+  {body}
+  {knowledge=none}
+
+\scope_area_set:nn{part}{parents = {body}, forces = body }
+\scope_area_set:nn{section}{parents = {body,part}, forces = body }
+\scope_area_set:nn{subsection}{parents = section }
+\scope_area_set:nn{subsubsection}{parents = subsection }
+\scope_area_set:nn{paragraph}{parents = {document,section,subsection,subsubsection} }
+\scope_area_set:nn{subparagraph}{parents =  {paragraph}  }
+\scope_area_set:nn{subsubparagraph}{parents =  {subparagraph} }
+\scope_area_set:nn{abstract}
+  {autoclose=false,
+   occurrences=once,
+   parents={body,structure},
+   forces=body,
+   knowledge=none
+}
+\OverloadCommand\section{som}
+  {\scope_area_push:n{section}
+   \XparseArgs\SUPERsection{som}{#1}{#2}{#3}}
+\OverloadCommand\subsection{som}
+  {\scope_area_push:n{subsection}
+   \XparseArgs\SUPERsubsection{som}{#1}{#2}{#3}}
+\OverloadCommand\subsubsection{som}
+  {\scope_area_push:n{subsubsection}
+   \XparseArgs\SUPERsubsubsection{som}{#1}{#2}{#3}}
+\OverloadCommand\paragraph{som}
+  {\scope_area_push:n{paragraph}
+   \XparseArgs\SUPERparagraph{som}{#1}{#2}{#3}}
+\OverloadCommand\subparagraph{som}
+  {\scope_area_push:n{subparagraph}
+   \XparseArgs\SUPERsubparagraph{som}{#1}{#2}{#3}}
+\OverloadCommand\subsubparagraph{som}
+  {\scope_area_push:n{subsubparagraph}
+   \XparseArgs\SUPERsubsubparagraph{som}{#1}{#2}{#3}}
+\KnowledgeConfigureEnvironment?
+   {theorem,lemma,proposition,fact,conjecture,problem}
+   {category=theorem-like,label=accepts}
+\KnowledgeConfigureEnvironment?
+   {remark,proof}
+   {label=accepts,knowledge=accepts}
+\KnowledgeConfigureEnvironment?
+   {center,flushleft,flushright,minipage,quotation,quote,verbatim,verse}
+   {knowledge=accepts,label=none}
+\OverloadCommand\newtheorem{m}
+  {\KnowledgeConfigureEnvironment!{#1}{category=theorem-like,label=accepts}
+  \SUPERnewtheorem{#1}}
+\OverloadCommand\newenvironment{m}
+  {\KnowledgeConfigureEnvironment!{#1}{label=accepts}
+   \SUPERnewenvironment{#1}}
+\OverloadCommand\NewDocumentEnvironment{m}
+  {\KnowledgeConfigureEnvironment!{#1}{label=none}
+   \SUPERNewDocumentEnvironment{#1}}
+\scope_area_set:nn
+  {itemize,enumerate,description}
+  {category=itemize-like}
+
+\scope_area_set:nn{item}
+  {autoclose=true,
+   parents = itemize-like}
+
+\OverloadCommand\item{o}
+  {%\scope_categoryseq_pop_to:n{itemize-like}
+   %\scope_category_if_area_in:nnTF{trivlist}\scope_top_area_tl
+   %  {}
+   %  {\scope_area_push:n{item}}
+   \XparseArgs\SUPERitem{o}{#1}}
+
+
+\scope_area_set:nn{emph,textit,texttt,textbf}{
+    autoclose = false,
+    occurrences = multiple,
+    forces = body
+  }
+\knowledge_end_module:
+
+%%%%%%%%%%
+\ExplSyntaxOn
+\exp_args:NNV\ExplSyntaxOff\knowledgeconfigure\knowledge_configuration_pending_tl
+
+\endinput
+%%
+%% End of file `knowledge.sty'.

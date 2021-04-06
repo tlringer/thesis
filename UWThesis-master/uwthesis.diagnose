@@ -1,0 +1,20 @@
+***********
+* Summary *
+***********
+
+0 undefined knowledge(s).
+0 autoreference(s) are introduced twice.
+0 autoreference(s) are used but not introduced.
+
+1 autoreference(s) are properly used.
+0 autoreference(s) are defined but not used.
+
+
+********
+* Help *
+********
+
+\knowledgeconfigure{diagnose bar=false} deactivate `|'-notation in diagnose file.
+\knowledgeconfigure{diagnose help=false} deactivate long help in the diagnose file.
+\knowledgeconfigure{diagnose line=true} add line numbers to diagnose file.
+

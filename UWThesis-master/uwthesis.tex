@@ -26,6 +26,7 @@
 \usepackage{csquotes}
 \usepackage{amsfonts}
 \usepackage{color,xcolor,colortbl} % colors
+\usepackage[xcolor, hyperref, notion]{knowledge}
 \usepackage{chngcntr}
 \usepackage[update,prepend]{epstopdf}
 \usepackage{rotating}
@@ -37,6 +38,12 @@
 \usepackage{scalerel} % to render definitional equality
 \usepackage{bbm} % to render N for the natural numbers
 \usepackage[nounderscore]{syntax} % grammar
+
+\knowledgestyle*{notion}{color = brown}
+
+\knowledge{notion}
+  | primitive eliminators
+
 \usetikzlibrary{shapes,shapes.geometric,arrows,automata,snakes}
 
 \DeclareGraphicsExtensions{.pdf}
@@ -415,6 +422,9 @@ Max Willsey, Zach Tatlock, Steven Lyubomirsky, Andrew Liu, Mike He, Ben Kushigia
 Anders M\"ortberg, Conor McBride, Carlo Angiuli, Bas Spitters, 
 UCSD Programming Systems group, Misha,
 PL Twitter, Roy, Vikram, Alex Polozov, Esther, Ellie, Mer, students, Qi, Saba.
+
+% https://twitter.com/16kbps/status/1379266732611796993?s=20 ack this person (Rebecca Turner)
+% Does Jeff Dean get an ack? Ask him I guess
 
 \pagenumbering{arabic}
 \cleardoublepage

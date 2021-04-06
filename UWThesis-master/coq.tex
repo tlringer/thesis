@@ -1,20 +1,85 @@
-\section{The Coq Proof Assistant}
+\subsection{Terms}
 \label{sec:mot-coq}
 
-This thesis focuses on proof developments done in Coq.
-I already briefly introduced the Coq workflow in the introduction.
-Here I am going to go into a bit more detail and talk about foundations as relevant to this thesis.
-I am not going to teach you all of Coq in this thesis;
-good sources for learning Coq from scratch include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
-and Software Foundations~\cite{software-foundations}.
+Gallina and its foundations, start by showing on foundations
 
-Workflow from intro, but with specific languages named (Ltac, Gallina); refer to a diagram
+% TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
+% that links parts of that to inline cuts of the code that go with text flow so you don't need to keep moving back and forth
 
-What tactics really are, and what compiling them means
+\subsubsection{Theory: CIC$_{\omega}$}
 
-Gallina and its foundations
+\begin{figure*}
+\small
+\begin{grammar}
+<i> $\in \mathbbm{N}$, <v> $\in$ Vars, <s> $\in$ \{ Prop, Set, Type<i> \}
 
-CoC
+<t> ::= <v> \hspace{0.06cm} | \hspace{0.06cm} <s> \hspace{0.06cm} | \hspace{0.06cm} $\Pi$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} $\lambda$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} <t> <t>
+\end{grammar}
+\vspace{-0.3cm}
+\caption{Syntax for CoC$_\omega$ with (from left to right) variables, sorts, dependent types, functions, and application.}
+\label{fig:coc-syntax}
+\end{figure*}
+
+CoC (Figure~\ref{fig:coc-syntax})
+
+\begin{figure*}
+\small
+\begin{grammar}
+<t> ::= ... | \hspace{0.06cm} Ind (<v> : <t>)\{<t>,\ldots,<t>\} \hspace{0.06cm} | \hspace{0.06cm} Constr (<i>, <t>) \hspace{0.06cm} | \hspace{0.06cm} Elim(<t>, <t>)\{<t>,\ldots,<t>\}
+\end{grammar}
+\vspace{-0.3cm}
+\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and primitive eliminators.}
+\label{fig:syntax}
+\end{figure*}
+
+Inductive types, CIC (Figure~\ref{fig:coc-syntax}) (existing paper~\cite{Timany2015FirstST} has syntax in one figure) and Gallina; constructors and eliminators. I assume \intro{primitive eliminators} in this thesis.
+
+\begin{figure}
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+\caption{The \lstinline{list} datatype in CIC$_{\omega}$}
+\label{fig:list-theory}
+\end{figure}
+
+For example, a \lstinline{list} (Figure~\ref{fig:list-theory}) is an inductive datatype that is 
+either empty (the \lstinline{nil} constructor), or the result
+of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
+Mention the induction principle for \lstinline{list}.
+
+\begin{figure}
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+\caption{The \lstinline{length} function for \lstinline{list} in CIC$_{\omega}$.}
+\label{fig:length-theory}
+\end{figure}
+
+Once we have inductive types, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length-theory}).
+The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
+is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+
+\begin{figure}
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+\caption{The list \lstinline{zip} function in CIC${_\omega}$.}
+\label{fig:zip-theory}
+\end{figure}
+
+Finally we can do the thing, yay thing.
+
+\paragraph{Program}
+We can write the \lstinline{zip} function (Figure~\ref{fig:zip-theory}) that we will soon prove preserves the lengths of the input lists.
+
+\paragraph{Specification}
+then the spec, choice of specs, note here.
+
+\paragraph{Proof}
+finally this.
+how Coq checks this for the expected type.
+
+\subsubsection{Practice: Gallina}
 
 \begin{figure}
    \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
@@ -22,11 +87,7 @@ CoC
 \label{fig:list}
 \end{figure}
 
-Inductive types, theory (CIC) and practice (Gallina); constructors and eliminators.
-For example, a \lstinline{list} in Coq (Figure~\ref{fig:list}) is an inductive datatype that is 
-either empty (the \lstinline{nil} constructor), or the result
-of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
-Mention the induction principle for \lstinline{list}.
+List becomes this (Figure~\ref{fig:list}), maybe float side by side with CIC$_{\omega}$.
 
 \begin{figure}
 \begin{lstlisting}
@@ -40,11 +101,32 @@ Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
 \label{fig:length}
 \end{figure}
 
+So our length becomes this (Figure~\ref{fig:length}, maybe float side by side with CIC$_{\omega}$.
 Once we have inductive types, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length}).
 The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
 Note we can also write this using eliminators (show), and in fact that reduces to pattern matching.
-When we reason about theory we think about eliminators.
+We assumed \kl{primitive eliminators} so what we do is preprocess and so on (explain).
+We don't show that step in the rest of the paper.
 
-Conventions in this thesis, including using induction principles/eliminators instead of pattern matching, and assuming primitive.
-Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation.
+\begin{figure}
+\begin{lstlisting}
+Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
+  fix zip arg_0__ arg_1__
+        := match arg_0__, arg_1__ with
+           | nil, _bs => nil
+           | _as, nil => nil
+           | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
+  end.
+\end{lstlisting}
+\caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
+\label{fig:zip}
+\end{figure}
+
+And so on (Figure~\ref{fig:zip}, also side by side hopefully).
+
+%TODO introduce lazily and use the knowledge package: https://ctan.org/pkg/knowledge
+%
+%Conventions in this thesis with proof terms, including using induction principles/eliminators instead of pattern matching, and assuming primitive.
+%Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation.
+

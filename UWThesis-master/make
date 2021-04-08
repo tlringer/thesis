@@ -1,1 +1,1 @@
-pdflatex uwthesis && pdflatex uwthesis && bibtex uwthesis && pdflatex uwthesis && pdflatex uwthesis
+makeindex uwthesis && pdflatex uwthesis && pdflatex uwthesis && bibtex uwthesis && pdflatex uwthesis && pdflatex uwthesis

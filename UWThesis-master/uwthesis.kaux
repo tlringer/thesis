@@ -19,7 +19,12 @@
 \KAuxFileAt {uwthesis.tex}{45}
 \KAuxAutoref {default}{base}{primitive eliminators}
 
-\KAuxFileAt {uwthesis.tex}{113}
+\KAuxFileAt {uwthesis.tex}{46}
+
+\KAuxFileAt {uwthesis.tex}{47}
+\KAuxAutoref {default}{base}{Gallina}
+
+\KAuxFileAt {uwthesis.tex}{117}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
@@ -30,12 +35,15 @@
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
 \KAuxDeclaredScopeTag {sec:mot-coq}
 \KAuxNewLinkScopetagInstance {sec:mot-coq}{document}
+
+\KAuxFileAt {coq.tex}{4}
+\KAuxAutorefTarget {default}{base}{Gallina}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
 \KAuxDeclaredScopeTag {fig:syntax}
 \KAuxNewLinkScopetagInstance {fig:syntax}{document}
 
-\KAuxFileAt {coq.tex}{35}
+\KAuxFileAt {coq.tex}{40}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:list-theory}
 \KAuxNewLinkScopetagInstance {fig:list-theory}{document}

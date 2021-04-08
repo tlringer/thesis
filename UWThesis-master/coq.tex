@@ -1,6 +1,11 @@
 \subsection{Terms}
 \label{sec:mot-coq}
 
+Coq compiles every proof script to a proof term in a rich functional programming language called \intro{Gallina}.
+\toolname then decompiles the repaired proof term (with optional hints from the original proof script) back 
+to a suggested proof script that the proof engineer can maintain.
+%Here, \toolname transforms the proof term Coq compiles \lstinline{rev_app_distr} to,
+
 Gallina and its foundations, start by showing on foundations
 
 % TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
@@ -34,6 +39,7 @@ CoC (Figure~\ref{fig:coc-syntax})
 
 Inductive types, CIC (Figure~\ref{fig:coc-syntax}) (existing paper~\cite{Timany2015FirstST} has syntax in one figure) and Gallina; constructors and eliminators. I assume \intro{primitive eliminators} in this thesis.
 % TODO doesn't add it to an index, need to figure out how to do that still
+% Finally, in particular for large documents, it is good to have an index. For this,one should load the packagemakeidxbeforeknowledge. Then use it normally:putting\makeindexin the preamble and\printindexat the end of the document.Finally, theknowledgecommands are adapted in a straightforward manner
 
 \begin{figure}
 \begin{lstlisting}

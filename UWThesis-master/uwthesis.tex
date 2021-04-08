@@ -26,7 +26,7 @@
 \usepackage{csquotes}
 \usepackage{amsfonts}
 \usepackage{color,xcolor,colortbl} % colors
-\usepackage[xcolor, hyperref, notion]{knowledge}
+\usepackage[xcolor, hyperref, notion, makeidx]{knowledge}
 \usepackage{chngcntr}
 \usepackage[update,prepend]{epstopdf}
 \usepackage{rotating}
@@ -41,8 +41,12 @@
 
 \knowledgestyle*{notion}{color = brown}
 
-\knowledge{notion}
+\knowledge{notion, index=Conventions!Primitive Eliminators}
   | primitive eliminators
+\knowledge{notion, index=Languages!Gallina}
+  | Gallina
+
+\makeindex
 
 \usetikzlibrary{shapes,shapes.geometric,arrows,automata,snakes}
 
@@ -440,6 +444,8 @@ PL Twitter, Roy, Vikram, Alex Polozov, Esther, Ellie, Mer, students, Qi, Saba.
 \input{related}
 
 \input{conclusion}
+
+\printindex
 
 %
 % ==========   Bibliography

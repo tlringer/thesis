@@ -1,17 +1,18 @@
 \subsection{Terms}
 \label{sec:mot-coq}
 
-Coq compiles every proof script to a proof term in a rich functional programming language called \intro{Gallina}.
-\toolname then decompiles the repaired proof term (with optional hints from the original proof script) back 
-to a suggested proof script that the proof engineer can maintain.
-%Here, \toolname transforms the proof term Coq compiles \lstinline{rev_app_distr} to,
+% TODO knowledge indexing and so on
 
-Gallina and its foundations, start by showing on foundations
+Coq compiles every proof script to a proof term in a rich functional programming language called \intro{Gallina}.
+Gallina's foundation (Section~\ref{sec:cic}) is a rich type theory called the Calculus of Inductive Constructions (CIC$_{\omega}$).
+Gallina implements (Section~\ref{sec:gallina}) this type theory with a few small differences.
+Proof engineers can use Gallina to write programs, specifications, and (if they wish) proofs directly---this section
+demonstrates both the foundation and the implementation on an example.
 
 % TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
 % that links parts of that to inline cuts of the code that go with text flow so you don't need to keep moving back and forth
 
-\subsubsection{Theory: CIC$_{\omega}$}
+\subsubsection{Foundation: CIC$_{\omega}$}
 
 \begin{figure*}
 \small
@@ -25,7 +26,10 @@ Gallina and its foundations, start by showing on foundations
 \label{fig:coc-syntax}
 \end{figure*}
 
-CoC (Figure~\ref{fig:coc-syntax})
+The type theory that Gallina implements is CIC$_{\omega}$, or the Calculus of Inductive Constructions.
+CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
+CoC with an infinite universe hierarchy is called CoC$_{\omega}$. % TODO need to explain or defer
+The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 
 \begin{figure*}
 \small
@@ -34,12 +38,29 @@ CoC (Figure~\ref{fig:coc-syntax})
 \end{grammar}
 \vspace{-0.3cm}
 \caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and primitive eliminators.}
-\label{fig:syntax}
+\label{fig:cic-syntax}
 \end{figure*}
 
-Inductive types, CIC (Figure~\ref{fig:coc-syntax}) (existing paper~\cite{Timany2015FirstST} has syntax in one figure) and Gallina; constructors and eliminators. I assume \intro{primitive eliminators} in this thesis.
-% TODO doesn't add it to an index, need to figure out how to do that still
-% Finally, in particular for large documents, it is good to have an index. For this,one should load the packagemakeidxbeforeknowledge. Then use it normally:putting\makeindexin the preamble and\printindexat the end of the document.Finally, theknowledgecommands are adapted in a straightforward manner
+The syntax for CIC$_{\omega}$ is in Figure~\ref{fig:cic-syntax}), building on syntax from an existing paper~\cite{Timany2015FirstST}.
+CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive}.
+Inductive types are defined solely by their constructors (ways of constructing or making a term with that type)
+and eliminators (ways of eliminating or inducting over a term with that type).
+
+Consider the inductive type \lstinline{nat} of unary natural numbers:
+
+\begin{lstlisting}
+TODO nat in CIC$_{\omega}$
+\end{lstlisting}
+A unary natural number is either \lstinline{0} or the successor \lstinline{S} of another natural number;
+these are the two constructors of \lstinline{nat}.
+The eliminator this yields is the standard induction principle for natural numbers:
+
+\begin{lstlisting}
+TODO eliminator for the above
+\end{lstlisting}
+which states that a proposition about the natural numbers holds if it holds for \lstinline{0} in the base case and, in the inductive case,
+assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
+
 
 \begin{figure}
 \begin{lstlisting}
@@ -49,10 +70,17 @@ TODO
 \label{fig:list-theory}
 \end{figure}
 
-For example, a \lstinline{list} (Figure~\ref{fig:list-theory}) is an inductive datatype that is 
-either empty (the \lstinline{nil} constructor), or the result
-of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor).
-Mention the induction principle for \lstinline{list}.
+The first datatype that we need to write our proof that the list zip function preserves its length is the \lstinline{list} datatype;
+this is in Figure~\ref{fig:list-theory}, and is quite similar to \lstinline{nat}.
+There are two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
+for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
+Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
+and \lstinline{cons} sticks a new element in front of any existing list.
+The eliminator for \lstinline{list} is similarly similar to the eliminator for \lstinline{nat}:
+
+\begin{lstlisting}
+TODO eliminator for list in CIC$_{\omega}$
+\end{lstlisting}
 
 \begin{figure}
 \begin{lstlisting}
@@ -62,9 +90,12 @@ TODO
 \label{fig:length-theory}
 \end{figure}
 
-Once we have inductive types, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length-theory}).
+Once we have inductive types like \lstinline{nat} and \lstinline{list}, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length-theory}).
 The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+% TODO frame this using induction instead
+
+With those preliminaries out of the way, we can finally write the program we want to verify.
 
 \begin{figure}
 \begin{lstlisting}
@@ -73,8 +104,6 @@ TODO
 \caption{The list \lstinline{zip} function in CIC${_\omega}$.}
 \label{fig:zip-theory}
 \end{figure}
-
-Finally we can do the thing, yay thing.
 
 \paragraph{Program}
 We can write the \lstinline{zip} function (Figure~\ref{fig:zip-theory}) that we will soon prove preserves the lengths of the input lists.
@@ -86,7 +115,8 @@ then the spec, choice of specs, note here.
 finally this.
 how Coq checks this for the expected type.
 
-\subsubsection{Practice: Gallina}
+\subsubsection{Implementation: Gallina}
+\label{sec:gallina}
 
 \begin{figure}
    \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}

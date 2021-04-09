@@ -1,0 +1,31 @@
+\subsection{Tactics: Ltac}
+\label{sec:tactics}
+
+In Coq, those tactics are in a language called Ltac.
+Each tactic is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
+
+Tactics can be used to write simple proofs and functions too.
+So if we'd like, for example, we could write \lstinline{length} using tactics:
+
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+But it's much more common to use this for proofs, since controlling the details of the term can be hard (important for functions),
+but for a proof it may be enough to just have any term with the correct type.
+
+Here is one possible proof of \lstinline{zip_preserves_length} using very simple tactics:
+\begin{lstlisting}
+Lemma zip_length : zip_preserves_length.
+Proof.
+   intros a b l1.
+   induction l1 as [|_ _ IHtl1]; auto.
+   induction l2 as [|_ _ IHtl2]; intros H; auto.
+   simpl. rewrite IHtl1; auto.
+Qed.
+\end{lstlisting}
+This compiles to the thing we saw before, which then type checks as expected.
+But we never have to see the low-level proof term; we can reason about the high-level proof script instead.
+% TODO save the better version for later so that we can show how good automation can get around some of the repair stuff
+
+Mention decompiler, explain, tease implementation section.
+

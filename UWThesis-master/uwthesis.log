@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 APR 2021 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 APR 2021 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2009,8 +2009,8 @@ LaTeX Warning: Citation `TODO' on page 11 undefined on input line 168.
 LaTeX Warning: Reference `zip-pres-alt' on page 11 undefined on input line 190.
 
 
-) [11]) (./maintenance.tex) (./repair.tex [12])) (./pumpkinpatch.tex [13]
-[14
+) (./tactics.tex [11])) (./maintenance.tex) (./repair.tex [12]))
+(./pumpkinpatch.tex [13] [14
 
 
 ]
@@ -2044,7 +2044,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 10.
  [22]
-<repair/nat_ind.pdf, id=538, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=546, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2085,7 +2085,7 @@ chapter 4.
 
 ] [34])
 (./often/approach.tex
-<often/workflowa.pdf, id=899, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=907, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2362,10 +2362,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
  ) 
 Here is how much of TeX's memory you used:
- 49323 strings out of 492609
- 996391 string characters out of 6129033
- 1315629 words of memory out of 5000000
- 50584 multiletter control sequences out of 15000+600000
+ 49338 strings out of 492609
+ 996587 string characters out of 6129033
+ 1315635 words of memory out of 5000000
+ 50588 multiletter control sequences out of 15000+600000
  630399 words of font info for 736 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2305s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2386,10 +2386,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (99 pages, 1370480 bytes).
+Output written on uwthesis.pdf (99 pages, 1370776 bytes).
 PDF statistics:
- 2166 PDF objects out of 2487 (max. 8388607)
- 2004 compressed objects within 21 object streams
- 1028 named destinations out of 1200 (max. 500000)
+ 2175 PDF objects out of 2487 (max. 8388607)
+ 2013 compressed objects within 21 object streams
+ 1036 named destinations out of 1200 (max. 500000)
  93509 words of extra memory for PDF output out of 106986 (max. 10000000)
 

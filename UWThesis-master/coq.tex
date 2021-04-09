@@ -1,4 +1,4 @@
-\subsection{Terms}
+\subsection{Terms: Gallina}
 \label{sec:mot-coq}
 
 % TODO knowledge indexing and so on
@@ -11,7 +11,7 @@ Proof engineers can use Gallina (Section~\ref{sec:example}) to write programs, s
 % TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
 % that links parts of that to inline cuts of the code that go with text flow so you don't need to keep moving back and forth
 
-\subsubsection{Foundation: CIC$_{\omega}$}
+\subsubsection{Foundations}
 
 \begin{figure*}
 \small
@@ -95,7 +95,7 @@ is just the successor (\lstinline{S}) of the result of recursively calling \lsti
 With those preliminaries out of the way, we can finally write the program we want to verify.
 But first, let's switch to Gallina.
 
-\subsubsection{Implementation: Gallina}
+\subsubsection{Implementation}
 \label{sec:gallina}
 
 Gallina implements CIC$_{\omega}$, but with a few important differences.
@@ -198,8 +198,9 @@ TODO zip_preserves_length proof
 \label{fig:zip-pres-proof}
 \end{figure}
 
-\paragraph{Proof} Figure~\ref{fig:zip-pres-proof}. This is a mess, right?
+\paragraph{Proof} Figure~\ref{fig:zip-pres-proof}. Type checking and so on. But this is a mess, right?
 Comments to explain it, but would be really hard to write by hand.
 So this is why tactics exist.
+Write it interactively.
 
 

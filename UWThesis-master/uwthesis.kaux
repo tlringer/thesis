@@ -46,16 +46,21 @@
 \KAuxNewLinkScopetagInstance {fig:list-theory}{document}
 \KAuxDeclaredScopeTag {fig:length-theory}
 \KAuxNewLinkScopetagInstance {fig:length-theory}{document}
-\KAuxDeclaredScopeTag {fig:zip-theory}
-\KAuxNewLinkScopetagInstance {fig:zip-theory}{document}
 \KAuxDeclaredScopeTag {sec:gallina}
 \KAuxNewLinkScopetagInstance {sec:gallina}{document}
+
+\KAuxFileAt {coq.tex}{106}
+\KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:list}
 \KAuxNewLinkScopetagInstance {fig:list}{document}
-\KAuxDeclaredScopeTag {fig:length}
-\KAuxNewLinkScopetagInstance {fig:length}{document}
 \KAuxDeclaredScopeTag {fig:zip}
 \KAuxNewLinkScopetagInstance {fig:zip}{document}
+\KAuxDeclaredScopeTag {fig:zip-pres}
+\KAuxNewLinkScopetagInstance {fig:zip-pres}{document}
+\KAuxDeclaredScopeTag {fig:zip-pres-alt}
+\KAuxNewLinkScopetagInstance {fig:zip-pres-alt}{document}
+\KAuxDeclaredScopeTag {fig:zip-pres-proof}
+\KAuxNewLinkScopetagInstance {fig:zip-pres-proof}{document}
 \KAuxDeclaredScopeTag {sec:tactics}
 \KAuxNewLinkScopetagInstance {sec:tactics}{document}
 \KAuxDeclaredScopeTag {sec:mot-mai}

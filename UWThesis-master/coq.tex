@@ -6,8 +6,7 @@
 Coq compiles every proof script to a proof term in a rich functional programming language called \intro{Gallina}.
 Gallina's foundation (Section~\ref{sec:cic}) is a rich type theory called the Calculus of Inductive Constructions (CIC$_{\omega}$).
 Gallina implements (Section~\ref{sec:gallina}) this type theory with a few small differences.
-Proof engineers can use Gallina to write programs, specifications, and (if they wish) proofs directly---this section
-demonstrates both the foundation and the implementation on an example.
+Proof engineers can use Gallina (Section~\ref{sec:example}) to write programs, specifications, and (if they wish) proofs directly.
 
 % TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
 % that links parts of that to inline cuts of the code that go with text flow so you don't need to keep moving back and forth
@@ -37,7 +36,7 @@ The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 <t> ::= ... | \hspace{0.06cm} Ind (<v> : <t>)\{<t>,\ldots,<t>\} \hspace{0.06cm} | \hspace{0.06cm} Constr (<i>, <t>) \hspace{0.06cm} | \hspace{0.06cm} Elim(<t>, <t>)\{<t>,\ldots,<t>\}
 \end{grammar}
 \vspace{-0.3cm}
-\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and primitive eliminators.}
+\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and eliminators.}
 \label{fig:cic-syntax}
 \end{figure*}
 
@@ -61,7 +60,6 @@ TODO eliminator for the above
 which states that a proposition about the natural numbers holds if it holds for \lstinline{0} in the base case and, in the inductive case,
 assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
 
-
 \begin{figure}
 \begin{lstlisting}
 TODO
@@ -70,8 +68,7 @@ TODO
 \label{fig:list-theory}
 \end{figure}
 
-The first datatype that we need to write our proof that the list zip function preserves its length is the \lstinline{list} datatype;
-this is in Figure~\ref{fig:list-theory}, and is quite similar to \lstinline{nat}.
+The \lstinline{list} datatype we will need for our proof is in Figure~\ref{fig:list-theory}, and is quite similar to \lstinline{nat}.
 There are two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
 for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
 Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
@@ -96,37 +93,49 @@ is just the successor (\lstinline{S}) of the result of recursively calling \lsti
 % TODO frame this using induction instead
 
 With those preliminaries out of the way, we can finally write the program we want to verify.
-
-\begin{figure}
-\begin{lstlisting}
-TODO
-\end{lstlisting}
-\caption{The list \lstinline{zip} function in CIC${_\omega}$.}
-\label{fig:zip-theory}
-\end{figure}
-
-\paragraph{Program}
-We can write the \lstinline{zip} function (Figure~\ref{fig:zip-theory}) that we will soon prove preserves the lengths of the input lists.
-
-\paragraph{Specification}
-then the spec, choice of specs, note here.
-
-\paragraph{Proof}
-finally this.
-how Coq checks this for the expected type.
+But first, let's switch to Gallina.
 
 \subsubsection{Implementation: Gallina}
 \label{sec:gallina}
 
+Gallina implements CIC$_{\omega}$, but with a few important differences.
+More information is on the website, % https://coq.github.io/doc/v8.9/refman/language/gallina-specification-language.html, noting it's 8.9
+but two differences are relevant to repair:
+The first is that Gallina has constants that define terms---later on, this will help with building optimizations for repair tools.
+The second notable difference has to do with eliminators.
+The grammar for CIC$_{\omega}$ we just saw represents eliminators explicitly---that is, it has \intro{primitive eliminators} that do
+not reduce down to any other term in the language.
+Eliminators in Gallina are not primitive.
+Rather, they are constants that reduce to statements using pattern matching and guarded recursion.
+
 \begin{figure}
    \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
-\caption{The \lstinline{list} datatype in Coq, from the Coq standard library.}
+\caption{The \lstinline{list} datatype in Gallina, from the Coq standard library.}
 \label{fig:list}
 \end{figure}
 
-List becomes this (Figure~\ref{fig:list}), maybe float side by side with CIC$_{\omega}$.
+Consider, for example, the \lstinline{list} datatype, this time in Gallina (Figure~\ref{fig:list}).
+Coq automatically generates an eliminator for \lstinline{list} in Gallina:
 
-\begin{figure}
+\begin{lstlisting}
+TODO list_rect
+\end{lstlisting}
+But this eliminator is not primitive in Gallina.
+Rather, \lstinline{list_rect} is just a constant that defines another term,
+and this term uses pattern matching and recursion:
+
+\begin{lstlisting}
+TODO list_rect body
+\end{lstlisting}
+
+Throughout, in this thesis, when I present the theory, I assume \kl{primitive eliminators}.
+Likewise, in Gallina, I always use functions that apply eliminators rather than pattern matching
+and guarded recursion (the two are equivalent~\cite{TODO}).
+To handle practical code that uses pattern matching and guarded recursion,
+I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later).
+
+For example, the length function in Coq is implemented using pattern matching and guarded recursion:
+
 \begin{lstlisting}
 Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
   match l with
@@ -134,17 +143,17 @@ Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
    | _ :: l' => S (length l')
   end.
 \end{lstlisting}
-\caption{The \lstinline{length} function for \lstinline{list} in Coq, from the Coq standard library.}
-\label{fig:length}
-\end{figure}
-
-So our length becomes this (Figure~\ref{fig:length}, maybe float side by side with CIC$_{\omega}$.
-Once we have inductive types, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length}).
 The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
-Note we can also write this using eliminators (show), and in fact that reduces to pattern matching.
-We assumed \kl{primitive eliminators} so what we do is preprocess and so on (explain).
-We don't show that step in the rest of the paper.
+Using the preprocessing tool, I convert that function to a form using eliminators instead:
+
+\begin{lstlisting}
+TODO
+\end{lstlisting}
+that behaves the same way, though there are some technicalities about equalities not preserved by this preprocessing step.
+In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
+
+With that in mind, we can now write our small verified program.
 
 \begin{figure}
 \begin{lstlisting}
@@ -154,16 +163,43 @@ Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
            | nil, _bs => nil
            | _as, nil => nil
            | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
-  end.
+  end. (* TODO convert to eliminators *)
 \end{lstlisting}
 \caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
 \label{fig:zip}
 \end{figure}
 
-And so on (Figure~\ref{fig:zip}, also side by side hopefully).
+\paragraph{Program} Figure~\ref{fig:zip}.
 
-%TODO introduce lazily and use the knowledge package: https://ctan.org/pkg/knowledge
-%
-%Conventions in this thesis with proof terms, including using induction principles/eliminators instead of pattern matching, and assuming primitive.
-%Infinite universe hierarchy---mostly can ignore in this thesis, though matters in implementation.
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length, one version
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres}
+\end{figure}
+
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length, another version
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres-alt}
+\end{figure}
+
+\paragraph{Specification} Figure~\ref{fig:zip-pres} or Figure~\ref{zip-pres-alt}, note art, stronger and so on, will come back to this.
+Also this is where a lot of the power of the language comes in, worth noting.
+
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length proof
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres-proof}
+\end{figure}
+
+\paragraph{Proof} Figure~\ref{fig:zip-pres-proof}. This is a mess, right?
+Comments to explain it, but would be really hard to write by hand.
+So this is why tactics exist.
+
 

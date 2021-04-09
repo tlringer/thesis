@@ -12,9 +12,9 @@
 What would it take to empower programmers of all skill levels across all domains to formally prove
 the absence of costly or dangerous bugs in software systems---that is, to formally \textit{verify} them?
 
-Verification has already come a long way since its inception,
-especially when it comes to the scale of programs that can be verified.
-The seL4~\cite{Klein2009} verified operating system kernel, for example,
+Verification has already come a long way toward this since its inception,
+especially when it comes to the scale of systems that can be verified.
+The seL4~\cite{Klein2009} verified operating system (OS) microkernel, for example,
 is the effort of a team of proof engineers spanning more than
 a million lines of proof, costing over 20 person-years.
 Given a famous 1977 critique of verification~\cite{DeMillo1977} (emphasis mine):
@@ -51,7 +51,7 @@ This gives us reason to believe.
 Proof repair falls under the umbrella of \textit{proof engineering}: the technologies that make it easier
 to develop and maintain verified systems.
 Much like software engineering scales programming to large systems, so proof engineering scales verification to large systems. 
-In recent years, proof engineers have verified operating system (OS) micro kernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{TODO}, distributed systems~\cite{TODO}, constraint solvers~\cite{TODO}, web browser kernels~\cite{TODO}, compilers~\cite{Leroy:POPL06, Leroy2009}, file systems~\cite{TODO}, and even a quantum optimizer~\cite{TODO}.
+In recent years, proof engineers have verified OS microkernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{TODO}, distributed systems~\cite{TODO}, constraint solvers~\cite{TODO}, web browser kernels~\cite{TODO}, compilers~\cite{Leroy:POPL06, Leroy2009}, file systems~\cite{TODO}, and even a quantum optimizer~\cite{TODO}.
 As we will soon see, practitioners have found these verified systems to be more robust and secure in deployment. % TODO cite section
 % TODO maybe include the Why Proof Engineering Matters from QED at Large in Chapter 2 somewhere. Maybe move this too.
 
@@ -130,27 +130,100 @@ so that proof engineers can continue to work in that language going forward. % T
 
 \section{Results}
 
-The results of this thesis are threefold:
+The technical results of this thesis are threefold:
 
 \begin{enumerate}
-\item the \textbf{design} of differencing algorithms \& program transformations for proof repair
-\item an \textbf{implementation} of a proof repair tool 
-\item \textbf{case studies} to evaluate the tool
+\item the \textbf{design} of differencing algorithms \& program transformations for proof repair, 
+\item an \textbf{implementation} of a proof repair tool suite, and
+\item \textbf{case studies} to evaluate the tool suite on real proof repair scenarios.
 \end{enumerate}
+Viewing the thesis statement as a theorem, the proof is as follows: % TODO link to particular sections here
+
+\begin{quote}
+\textbf{Thesis Proof}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (by \textbf{design} and \textbf{implementation}). A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases (by \textbf{case studies}).
+\end{quote}
 
 \paragraph{Design}
-mention the two different kinds of each of these
+The design describes semantic differencing algorithms to extract information from breaking changes in verified systems,
+along with proof term transformations to generalize and, in some cases, apply the information to fix proofs broken by the change. % TODO redundant but shitty first draft text so whatever
+The semantic differencing algorithms compare the old and new versions of a changed term or type,
+and from that find a diff that describes that information corresponding to that change;
+the transformations then use that diff to transform some term to a more general fix.
+The details vary by the class of change supported.
+These design is guided heavily by foundational developments in depenedent type theory;
+the theory is sprinkle throughout as appropriate. % TODO may want to list or link to sections here
+More details including limitations are in the corresponding chapters. % TODO link to those chapters
+
+% TODO move these to correpsonding sections
+\iffalse
+I summarize these below; more details including limitations are in the corresponding chapters.
+
+\paragraph{Proof Repair by Example} % TODO names of classifiers below suck, but whatever fix later
+Chapter~\ref{ch:example} describes semantic differencing algorithms and proof term transformations for example-based proof repair.  % TODO more specific section here would be good, and onward
+The corresponding differencing algorithms run in response to a breaking change in the content of a program or specification. % TODO clarify ``certain''?
+They look at the difference between the old and new versions of a single example patched proof in response to that change.
+When they succeed, the diff that they find is a list of \textit{patch candidates}: functions that map back and forth between the old and new versions
+of the example patch proof in a particular context, but do not yet generalize to other contexts.
+The corresponding proof term transformations then try to transform each of those candidate patch functions to a more general \textit{reusable proof patch}:
+a function that can be applied with traditional proof automation to fix other proofs broken by the same change.
+In summary, proof repair by example has this profile:
+
+\begin{itemize}
+\item \textbf{class}: changes in the content of a program or specification 
+\item \textbf{diff}: a list of patch candidates
+\item \textbf{source}: a single example patched proof
+\item \textbf{term}: a single patch candidate
+\item \textbf{repair}: a reusable proof patch
+\end{itemize}
+Note that proof repair by example does not take care of the application step---this is handled using traditional proof automation in Coq.
+\fi
+
+\iffalse
+\paragraph{Proof Repair Across Type Equivalences}
+Chapter~\ref{chapt:pi} describes semantic differencing algorithms and proof term transformations for proof repair in response
+to changes that can be described by a type equivalence. % TODO hand-wavy; cite
+The corresponding differencing algorithms run in response to a breaking change in the structure of a datatype.
+They look at the difference between the old and new versions of that datatype.
+When they succeed, the diff that they find is a \textit{type equivalence}: a pair of functions that map back and forth between the
+two versions of the datatype (possibly with some additional information) and are mutual inverses.
+The corresponding proof term transformation then transforms a proof term defined over the old version of the dataype
+directly to a proof term defined over the new version of the datatype.
+In summary, proof repair across type equivalence has this profile:
+
+\begin{itemize}
+\item \textbf{class}: changes in the structure of a datatype
+\item \textbf{diff}: a type equivalence
+\item \textbf{source}: the changed datatype
+\item \textbf{term}: a proof term defined over the old version of the datatype
+\item \textbf{repair}: a proof term defined over the new version of the datatype
+\end{itemize}
+\fi
 
 \paragraph{Implementation}
-\sysname
-in the Coq proof assistant that doesn't extend the TCB (will need to explain the TCB or whatever)
-LOC etc
-decompiler
+The implementation shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
+and then apply that information to fix other proofs broken by the same change.
+This implementation comes in the form of a proof repair tool suite for Coq called \sysnamelong (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting the Coq Hacker).
+\sysnamelong implements two kinds of proof repair: proof repair by example (Chapter~\ref{ch:example}) % TODO implementation chapters instead
+and proof repair across type equivalences (Chapter~\ref{chapt:pi}). % 8.9.1 
+Notably, since all repairs that \sysnamelong produces are checked Coq in the end, \sysnamelong does not extend \textit{Trusted Computing Base} (TCB):
+the set of unverified components that the correctnes of the proof development depends on~\cite{TODO}. % TODO not just cite by also make this way less shitty of a definition
+In total, \sysnamelong is about 15000 lines of code implemented in OCaml.
+These 15000 lines of code consist of three plugins and a library,
+which together bridge the gap between the theory supported by design and the practical proof repair needed for the case studies.
+Toward that end, five notable features include:
+
+\begin{enumerate}
+\item a preprocessing tool to support features in the implementation language missing from the theory,
+\item a prototype decompiler from proof terms to proof scripts for better workflow integration,
+\item optimizations for efficiency,
+\item meaningful error messages for usability, and
+\item additional automation for applying patches. 
+\end{enumerate}
+More details and other features are in the corresponding chapters. % TODO link to those chapters
 
 \paragraph{Case Studies}
-for all of the tools
-summary
-forward references
+The case studies show that \sysnamelong can save work for proof engineers relative to reference manual repairs in practical use cases. % TODO link to corresponding chapters instead
+TODO for all of the tools, summary, forward references.
 
 % Dan: It might be good either in 1 or in both 3 and 4 to lay out the key /results/ -- you have _design_ of the transformation, 
 % the highly non-trivial _implementation_ in Coq in a way that doesn't extend the TCB, and you have substantial case studies to _evaluate_.

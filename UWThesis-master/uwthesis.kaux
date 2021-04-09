@@ -67,6 +67,8 @@
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}
 \KAuxNewLinkScopetagInstance {sec:mot-rep}{document}
+\KAuxDeclaredScopeTag {ch:example}
+\KAuxNewLinkScopetagInstance {ch:example}{document}
 \KAuxDeclaredScopeTag {sec:patch-motivating}
 \KAuxNewLinkScopetagInstance {sec:patch-motivating}{document}
 \KAuxDeclaredScopeTag {fig:izr}

@@ -8,17 +8,16 @@
 \contentsline {paragraph}{Case Studies}{7}{Item.11}% 
 \contentsline {section}{\numberline {1.4}Reading Guide}{7}{section.1.4}% 
 \contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Motivating Proof Repair}}{9}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Proof Engineering}{9}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Proof Development}{10}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Terms: Gallina}{10}{subsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.1.1}Foundations}{10}{subsubsection.2.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.2.1.2}Implementation}{12}{subsubsection.2.2.1.2}% 
+\contentsline {section}{\numberline {2.1}Proof Development}{10}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Terms: Gallina}{10}{subsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1.1}Foundations}{10}{subsubsection.2.1.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1.2}Implementation}{12}{subsubsection.2.1.1.2}% 
 \contentsline {paragraph}{Program}{13}{figure.caption.10}% 
 \contentsline {paragraph}{Specification}{13}{figure.caption.12}% 
-\contentsline {paragraph}{Proof}{13}{figure.caption.13}% 
-\contentsline {subsection}{\numberline {2.2.2}Tactics: Ltac}{13}{subsection.2.2.2}% 
-\contentsline {section}{\numberline {2.3}Proof Maintenance}{14}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Proof Repair}{14}{section.2.4}% 
+\contentsline {paragraph}{Proof}{14}{figure.caption.13}% 
+\contentsline {subsection}{\numberline {2.1.2}Tactics: Ltac}{14}{subsection.2.1.2}% 
+\contentsline {section}{\numberline {2.2}Proof Maintenance}{14}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Proof Repair}{15}{section.2.3}% 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{17}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Motivating Example}{17}{section.3.1}% 
 \contentsline {paragraph}{Without Proof Repair}{17}{section.3.1}% 
@@ -43,7 +42,7 @@
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{28}{subsection.3.5.2}% 
 \contentsline {subsubsection}{\numberline {3.5.2.1}Trusted Computing Base}{28}{subsubsection.3.5.2.1}% 
 \contentsline {section}{\numberline {3.6}Results}{28}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{29}{Item.18}% 
+\contentsline {paragraph}{Identifying Changes}{29}{Item.21}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{29}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{30}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{30}{lstnumber.-82.1}% 

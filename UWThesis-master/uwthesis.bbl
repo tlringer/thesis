@@ -598,6 +598,12 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
   Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
   ACM.
 
+\bibitem{PGL-045}
+Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
+\newblock Qed at large: A survey of engineering of formally verified software.
+\newblock {\em Foundations and Trends® in Programming Languages},
+  5(2-3):102--281, 2019.
+
 \bibitem{robert2018}
 Valentin Robert.
 \newblock {\em Front-end tooling for building and maintaining dependently-typed

@@ -17,45 +17,45 @@ Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 115 entries,
+You've used 116 entries,
             2118 wiz_defined-function locations,
-            1181 strings with 24693 characters,
-and the built_in function-call counts, 43194 in all, are:
-= -- 4479
-> -- 1776
+            1188 strings with 24916 characters,
+and the built_in function-call counts, 43610 in all, are:
+= -- 4517
+> -- 1804
 < -- 64
-+ -- 709
-- -- 581
-* -- 2763
-:= -- 6714
-add.period$ -- 385
-call.type$ -- 115
-change.case$ -- 618
++ -- 720
+- -- 591
+* -- 2801
+:= -- 6786
+add.period$ -- 388
+call.type$ -- 116
+change.case$ -- 626
 chr.to.int$ -- 0
-cite$ -- 121
-duplicate$ -- 1828
-empty$ -- 3504
-format.name$ -- 581
-if$ -- 9561
+cite$ -- 122
+duplicate$ -- 1839
+empty$ -- 3531
+format.name$ -- 591
+if$ -- 9644
 int.to.chr$ -- 0
-int.to.str$ -- 115
-missing$ -- 96
-newline$ -- 563
-num.names$ -- 240
-pop$ -- 766
+int.to.str$ -- 116
+missing$ -- 97
+newline$ -- 568
+num.names$ -- 242
+pop$ -- 772
 preamble$ -- 1
-purify$ -- 512
+purify$ -- 519
 quote$ -- 0
-skip$ -- 1427
+skip$ -- 1434
 stack$ -- 0
-substring$ -- 2661
-swap$ -- 601
+substring$ -- 2687
+swap$ -- 602
 text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 448
+type$ -- 452
 warning$ -- 6
-while$ -- 434
-width$ -- 118
-write$ -- 1343
+while$ -- 437
+width$ -- 119
+write$ -- 1354
 (There were 14 warnings)

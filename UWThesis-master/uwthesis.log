@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 APR 2021 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 APR 2021 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1984,7 +1984,7 @@ LaTeX Warning: Citation `TODO' on page 6 undefined on input line 209.
 
 ]
 chapter 2.
-(./engineering.tex) (./development.tex [9] (./coq.tex
+[9] (./development.tex (./coq.tex
 
 LaTeX Warning: Reference `sec:cic' on page 10 undefined on input line 7.
 
@@ -2013,7 +2013,7 @@ LaTeX Warning: Citation `TODO' on page 13 undefined on input line 168.
 LaTeX Warning: Reference `zip-pres-alt' on page 13 undefined on input line 190.
 
 
-) (./tactics.tex [13])) (./maintenance.tex) (./repair.tex [14]))
+) (./tactics.tex [13])) (./maintenance.tex [14]) (./repair.tex))
 (./pumpkinpatch.tex [15] [16
 
 
@@ -2048,7 +2048,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 10.
  [24]
-<repair/nat_ind.pdf, id=561, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=562, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2089,7 +2089,7 @@ chapter 4.
 
 ] [36])
 (./often/approach.tex
-<often/workflowa.pdf, id=922, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=923, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2336,8 +2336,12 @@ Underfull \hbox (badness 3657) in paragraph at lines 580--586
 c text-book, 2016.  Ver-sion 4.0.
  []
 
+
+LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
+(Font)              using `OMS/pplj/m/n' instead on input line 604.
+
 [89]
-Underfull \hbox (badness 1184) in paragraph at lines 615--620
+Underfull \hbox (badness 1184) in paragraph at lines 621--626
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2366,13 +2370,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
  ) 
 Here is how much of TeX's memory you used:
- 49356 strings out of 492609
- 996788 string characters out of 6129033
- 1315783 words of memory out of 5000000
- 50594 multiletter control sequences out of 15000+600000
+ 49354 strings out of 492609
+ 996720 string characters out of 6129033
+ 1315714 words of memory out of 5000000
+ 50592 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2390,10 +2394,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (101 pages, 1374339 bytes).
+Output written on uwthesis.pdf (101 pages, 1374896 bytes).
 PDF statistics:
  2191 PDF objects out of 2487 (max. 8388607)
  2027 compressed objects within 21 object streams
- 1043 named destinations out of 1200 (max. 500000)
- 93509 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1046 named destinations out of 1200 (max. 500000)
+ 93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

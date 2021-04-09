@@ -29,8 +29,6 @@
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
-\KAuxDeclaredScopeTag {sec:mot-prog}
-\KAuxNewLinkScopetagInstance {sec:mot-prog}{document}
 \KAuxDeclaredScopeTag {sec:mot-dev}
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
 \KAuxDeclaredScopeTag {sec:mot-coq}

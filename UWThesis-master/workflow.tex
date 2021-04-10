@@ -1,0 +1,138 @@
+\subsection{The Workflow}
+\label{sec:mot-workflow}
+
+Before we can write our small verified program,
+we need the \lstinline{list} datatype and the \lstinline{length} function.
+To write the \lstinline{length} function, we need the \lstinline{nat} datatype of unary natural numbers.
+All of these can be found in the Coq standard library.
+
+Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
+it is defined by its \textit{constructors} (ways of constructing a term with that type)
+or, dually, its \textit{eliminators} (ways of eliminating or inducting over a term with that type).
+A \lstinline{nat}, for example:
+
+\begin{lstlisting}
+Inductive nat :=
+| O : nat
+| S : nat $\rightarrow$ nat.
+\end{lstlisting}
+is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
+these are the two constructors of \lstinline{nat}.
+The eliminator this yields is the standard induction principle for natural numbers,
+which Coq calls \lstinline{nat_rect}: % TODO footnote about nat_ind, nat_rec, nat_rect
+
+\begin{lstlisting}
+nat_rect :
+  $\forall$ (P : nat $\rightarrow$ Type), (* motive *)
+    P O $\rightarrow$ (* base case *)
+    ($\forall$ (n : nat), P n $\rightarrow$ P (S n)) $\rightarrow$ (* inductive case *)
+    $\forall$ (n : nat), P n.
+\end{lstlisting}
+This eliminator states that a statement \lstinline{P} (called the inductive \textit{motive}) about the natural numbers
+holds if it holds for \lstinline{O} in the base case and, in the inductive case,
+assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
+
+In Gallina, each eliminator like \lstinline{nat_rect} is just a function defined by
+pattern matching and recursion.
+TODO left off here.
+
+\begin{figure}
+   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
+\caption{The \lstinline{list} datatype in Gallina, from the Coq standard library.}
+\label{fig:list}
+\end{figure}
+
+Consider, for example, the \lstinline{list} datatype (Figure~\ref{fig:list}). % TODO explain
+Coq automatically generates an eliminator for \lstinline{list} in Gallina:
+
+\begin{lstlisting}
+TODO list_rect
+\end{lstlisting}
+But this eliminator is not primitive in Gallina.
+Rather, \lstinline{list_rect} is just a constant that defines another term,
+and this term uses pattern matching and recursion:
+
+\begin{lstlisting}
+TODO list_rect body
+\end{lstlisting}
+
+For example, the length function in Coq is implemented using pattern matching and guarded recursion:
+
+\begin{lstlisting}
+Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
+  match l with
+   | nil => O
+   | _ :: l' => S (length l')
+  end.
+\end{lstlisting}
+The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
+is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+
+With that in mind, we can now write our small verified program.
+
+\begin{figure}
+\begin{lstlisting}
+Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
+  fix zip arg_0__ arg_1__
+        := match arg_0__, arg_1__ with
+           | nil, _bs => nil
+           | _as, nil => nil
+           | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
+  end. (* TODO convert to eliminators *)
+\end{lstlisting}
+\caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
+\label{fig:zip}
+\end{figure}
+
+\paragraph{Program} Figure~\ref{fig:zip}.
+
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length, one version
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres}
+\end{figure}
+
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length, another version
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres-alt}
+\end{figure}
+
+\paragraph{Specification} Figure~\ref{fig:zip-pres} or Figure~\ref{zip-pres-alt}, note art, stronger and so on, will come back to this.
+Also this is where a lot of the power of the language comes in, worth noting.
+
+\begin{figure}
+\begin{lstlisting}
+TODO zip_preserves_length proof
+\end{lstlisting}
+\caption{TODO}
+\label{fig:zip-pres-proof}
+\end{figure}
+
+\paragraph{Proof} 
+In Coq, those tactics are in a language called Ltac.
+Each tactic is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
+Here is one possible proof of \lstinline{zip_preserves_length} using very simple tactics:
+\begin{lstlisting}
+Lemma zip_length : zip_preserves_length.
+Proof.
+   intros a b l1.
+   induction l1 as [|_ _ IHtl1]; auto.
+   induction l2 as [|_ _ IHtl2]; intros H; auto.
+   simpl. rewrite IHtl1; auto.
+Qed.
+\end{lstlisting}
+This compiles to the thing we saw before, which then type checks as expected.
+But we never have to see the low-level proof term; we can reason about the high-level proof script instead.
+% TODO save the better version for later so that we can show how good automation can get around some of the repair stuff
+% TODO walk through and so on
+
+Mention decompiler, explain, tease implementation section.
+
+
+
+

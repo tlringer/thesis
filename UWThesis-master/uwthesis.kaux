@@ -31,24 +31,11 @@
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
 \KAuxDeclaredScopeTag {sec:mot-dev}
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
-\KAuxDeclaredScopeTag {sec:mot-coq}
-\KAuxNewLinkScopetagInstance {sec:mot-coq}{document}
 
-\KAuxFileAt {coq.tex}{6}
+\KAuxFileAt {development.tex}{16}
 \KAuxAutorefTarget {default}{base}{Gallina}
-\KAuxDeclaredScopeTag {fig:coc-syntax}
-\KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
-\KAuxDeclaredScopeTag {fig:cic-syntax}
-\KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
-\KAuxDeclaredScopeTag {fig:list-theory}
-\KAuxNewLinkScopetagInstance {fig:list-theory}{document}
-\KAuxDeclaredScopeTag {fig:length-theory}
-\KAuxNewLinkScopetagInstance {fig:length-theory}{document}
-\KAuxDeclaredScopeTag {sec:gallina}
-\KAuxNewLinkScopetagInstance {sec:gallina}{document}
-
-\KAuxFileAt {coq.tex}{106}
-\KAuxAutorefTarget {default}{base}{primitive eliminators}
+\KAuxDeclaredScopeTag {sec:mot-workflow}
+\KAuxNewLinkScopetagInstance {sec:mot-workflow}{document}
 \KAuxDeclaredScopeTag {fig:list}
 \KAuxNewLinkScopetagInstance {fig:list}{document}
 \KAuxDeclaredScopeTag {fig:zip}
@@ -59,8 +46,19 @@
 \KAuxNewLinkScopetagInstance {fig:zip-pres-alt}{document}
 \KAuxDeclaredScopeTag {fig:zip-pres-proof}
 \KAuxNewLinkScopetagInstance {fig:zip-pres-proof}{document}
-\KAuxDeclaredScopeTag {sec:tactics}
-\KAuxNewLinkScopetagInstance {sec:tactics}{document}
+\KAuxDeclaredScopeTag {sec:mot-theory}
+\KAuxNewLinkScopetagInstance {sec:mot-theory}{document}
+\KAuxDeclaredScopeTag {fig:coc-syntax}
+\KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
+\KAuxDeclaredScopeTag {fig:cic-syntax}
+\KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
+\KAuxDeclaredScopeTag {fig:list-theory}
+\KAuxNewLinkScopetagInstance {fig:list-theory}{document}
+\KAuxDeclaredScopeTag {fig:length-theory}
+\KAuxNewLinkScopetagInstance {fig:length-theory}{document}
+
+\KAuxFileAt {theory.tex}{90}
+\KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}

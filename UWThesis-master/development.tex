@@ -1,21 +1,41 @@
 \section{Proof Development}
 \label{sec:mot-dev}
 
-% TODO table with simplified theory languages and the implementation languages, plus a summary of some differences covered in implementation sections
+Before I motivate proof maintenance and repair, it helps to understand proof development in Coq to begin with.
+In the introduction, I briefly explained the workflow for using Coq to develop a verified system:
 
-I already briefly introduced the Coq workflow in the introduction.
-Here I am going to go into a bit more detail on the example and talk about foundations as relevant to this thesis.
-I am not going to teach you all of Coq in this thesis;
-good sources for learning Coq from scratch include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
-and Software Foundations~\cite{software-foundations}.
-More about this can also be found in the survey paper.
+\begin{quote}
+The proof engineer does three things:
 
-The introduction mentioned that proofs are written as proof scripts in a high-level language of tactics,
-and that those proof scripts compile down to proof terms in a low-level language.
-Technically, proofs can be written entirely as proof terms; tactics just make it easier to write proofs and offer abstraction.
-We'll get to tactics soon (Section~\ref{sec:tactics}), but let's start with terms (Section~\ref{sec:mot-coq}).
+\begin{enumerate}
+\item implements a program using a functional programming language,
+\item specifies what it means for the program to be correct, and
+\item proves that the program satisfies the specification.
+\end{enumerate}
+\end{quote}
+That functional programming language is a rich functional programming language called \intro{Gallina}.
+It is possile to use Gallina to write the program, the specification, and the proof---but writing the proof in Gallina can be challenging.
+Instead, proof engineers typically use Gallina to write only the program and specification,
+and write the proof interactively.
+I alluded to this in the introduction as well, when I explained the typical proof development workflow in Coq:
 
-\input{coq}
+\begin{quote}
+The proof engineer passes Coq high-level search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
+by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
+continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
+To check the proof, the proof assistant compiles it down to a low-level representation called a \textit{proof term},
+then checks that the proof term has the expected type.
+\end{quote}
+The low-level language of proof terms in Coq is \kl{Gallina}---the same rich functional programming language proof engineers use to write programs and specifications.
+The high-level language of proof scripts in Coq is a language called Ltac that we will soon see.
 
-\input{tactics}
+In this thesis, I will not teach you all of Coq.
+Good sources for learning more about Coq include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
+and Software Foundations~\cite{software-foundations}, and the survey paper by Ringer and friends 2019~\cite{PGL-045}.
+What I will do is motivate this workflow on an example (Section~\ref{sec:mot-workflow})
+and explain the theory beneath (Section~\ref{sec:mot-theory}).
+
+\input{workflow}
+
+\input{theory}
 

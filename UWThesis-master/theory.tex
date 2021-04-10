@@ -1,17 +1,5 @@
-\subsection{Terms: Gallina}
-\label{sec:mot-coq}
-
-% TODO knowledge indexing and so on
-
-Coq compiles every proof script to a proof term in a rich functional programming language called \intro{Gallina}.
-Gallina's foundation (Section~\ref{sec:cic}) is a rich type theory called the Calculus of Inductive Constructions (CIC$_{\omega}$).
-Gallina implements (Section~\ref{sec:gallina}) this type theory with a few small differences.
-Proof engineers can use Gallina (Section~\ref{sec:example}) to write programs, specifications, and (if they wish) proofs directly.
-
-% TODO one page with, side by side, list, length, zip, zip_preserves_length, and its proof? and then a little ``zoom'' icon
-% that links parts of that to inline cuts of the code that go with text flow so you don't need to keep moving back and forth
-
-\subsubsection{Foundations}
+\subsection{The Theory Beneath}
+\label{sec:mot-theory}
 
 \begin{figure*}
 \small
@@ -92,11 +80,7 @@ The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and t
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
 % TODO frame this using induction instead
 
-With those preliminaries out of the way, we can finally write the program we want to verify.
-But first, let's switch to Gallina.
-
-\subsubsection{Implementation}
-\label{sec:gallina}
+\paragraph{Bridging Theory and Practice}
 
 Gallina implements CIC$_{\omega}$, but with a few important differences.
 More information is on the website, % https://coq.github.io/doc/v8.9/refman/language/gallina-specification-language.html, noting it's 8.9
@@ -108,13 +92,7 @@ not reduce down to any other term in the language.
 Eliminators in Gallina are not primitive.
 Rather, they are constants that reduce to statements using pattern matching and guarded recursion.
 
-\begin{figure}
-   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
-\caption{The \lstinline{list} datatype in Gallina, from the Coq standard library.}
-\label{fig:list}
-\end{figure}
-
-Consider, for example, the \lstinline{list} datatype, this time in Gallina (Figure~\ref{fig:list}).
+Consider, for example, the \lstinline{list} datatype from Figure~\ref{fig:list}.
 Coq automatically generates an eliminator for \lstinline{list} in Gallina:
 
 \begin{lstlisting}
@@ -134,73 +112,12 @@ and guarded recursion (the two are equivalent~\cite{TODO}).
 To handle practical code that uses pattern matching and guarded recursion,
 I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later).
 
-For example, the length function in Coq is implemented using pattern matching and guarded recursion:
-
-\begin{lstlisting}
-Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
-  match l with
-   | nil => O
-   | _ :: l' => S (length l')
-  end.
-\end{lstlisting}
-The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
-is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
-Using the preprocessing tool, I convert that function to a form using eliminators instead:
+For example, though the length function in Coq is implemented using pattern matching and guarded recursion,
+using the preprocessing tool, I convert that function to a form using eliminators instead:
 
 \begin{lstlisting}
 TODO
 \end{lstlisting}
-that behaves the same way, though there are some technicalities about equalities not preserved by this preprocessing step.
+That behaves the same way, though there are some technicalities about equalities not preserved by this preprocessing step.
 In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
-
-With that in mind, we can now write our small verified program.
-
-\begin{figure}
-\begin{lstlisting}
-Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
-  fix zip arg_0__ arg_1__
-        := match arg_0__, arg_1__ with
-           | nil, _bs => nil
-           | _as, nil => nil
-           | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
-  end. (* TODO convert to eliminators *)
-\end{lstlisting}
-\caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
-\label{fig:zip}
-\end{figure}
-
-\paragraph{Program} Figure~\ref{fig:zip}.
-
-\begin{figure}
-\begin{lstlisting}
-TODO zip_preserves_length, one version
-\end{lstlisting}
-\caption{TODO}
-\label{fig:zip-pres}
-\end{figure}
-
-\begin{figure}
-\begin{lstlisting}
-TODO zip_preserves_length, another version
-\end{lstlisting}
-\caption{TODO}
-\label{fig:zip-pres-alt}
-\end{figure}
-
-\paragraph{Specification} Figure~\ref{fig:zip-pres} or Figure~\ref{zip-pres-alt}, note art, stronger and so on, will come back to this.
-Also this is where a lot of the power of the language comes in, worth noting.
-
-\begin{figure}
-\begin{lstlisting}
-TODO zip_preserves_length proof
-\end{lstlisting}
-\caption{TODO}
-\label{fig:zip-pres-proof}
-\end{figure}
-
-\paragraph{Proof} Figure~\ref{fig:zip-pres-proof}. Type checking and so on. But this is a mess, right?
-Comments to explain it, but would be really hard to write by hand.
-So this is why tactics exist.
-Write it interactively.
-
 

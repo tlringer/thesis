@@ -1,61 +1,95 @@
 \subsection{The Workflow}
 \label{sec:mot-workflow}
 
-\paragraph{Preliminaries}
-Before we can write our small verified program,
+Before we can write our small verified program, we need some datatypes and functions that we can find in the Coq standard library (Section~\ref{sec:prelims}).
+We can then use these datatypes and functions to write the \lstinline{zip} function and show that it preserves its length (Section~\ref{sec:verif}).
+
+\subsubsection{Preliminaries}
+\label{sec:prelims}
+
+To prove that the list zip function preserves its length,
 we need the \lstinline{list} datatype and the \lstinline{length} function.
 To write the \lstinline{length} function, we need the \lstinline{nat} datatype of unary natural numbers.
 All of these can be found in the Coq standard library.
 
-Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
-it is defined by its \textit{constructors} (ways of constructing a term with that type).
-A \lstinline{nat}, for example:
-
+\begin{figure}
+\begin{minipage}{0.30\textwidth}
 \begin{lstlisting}
 Inductive nat :=
 | O : nat
 | S : nat $\rightarrow$ nat.
 \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.68\textwidth}
+\begin{lstlisting}
+nat_rect :
+  $\forall$ (P : nat $\rightarrow$ Type),
+    P O $\rightarrow$ (* base case *)
+    ($\forall$ (n : nat),
+      (* inductive case *)
+      P n $\rightarrow$ P (S n)) $\rightarrow$
+    $\forall$ (n : nat), P n.
+\end{lstlisting}
+\end{minipage}
+\caption{The type of natural numbers \lstinline{nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{nat_rect} that Coq generates (right).}
+\label{fig:nat}
+\end{figure}
+
+Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
+it is defined by its \textit{constructors} (ways of constructing a term with that type).
+A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
 is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
 these are the two constructors of \lstinline{nat}.
-A \lstinline{list} is similar:
-
-\begin{lstlisting}
-Inductive list (T : Type) :=
-| nil : list T
-| cons : T $\rightarrow$ list T $\rightarrow$ list T.
-\end{lstlisting}
-There are two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
-for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
-Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
-and \lstinline{cons} sticks a new element in front of any existing list.
 
 Every inductive type in Gallina comes equipped with an \textit{eliminator} or induction principle
 that the proof engineer can use to write functions and proofs about the datatype.
-For example, the eliminator for \lstinline{nat} is the standard induction principle for natural numbers,
-which Coq calls \lstinline{nat_rect}: % TODO footnote about nat_ind, nat_rec, nat_rect
-
-\begin{lstlisting}
-nat_rect :
-  $\forall$ (P : nat $\rightarrow$ Type), (* motive *)
-    P O $\rightarrow$ (* base case *)
-    ($\forall$ (n : nat), P n $\rightarrow$ P (S n)) $\rightarrow$ (* inductive case *)
-    $\forall$ (n : nat), P n.
-\end{lstlisting}
+For example, the eliminator for \lstinline{nat} (Figure~\ref{fig:nat}, right) is the standard induction principle for natural numbers,
+which Coq calls \lstinline{nat_rect}. % TODO footnote about nat_ind, nat_rec, nat_rect
 This eliminator states that a statement \lstinline{P} (called the inductive \textit{motive}) about the natural numbers
-holds if it holds for \lstinline{O} in the base case and, in the inductive case,
+holds for every number if it holds for \lstinline{O} in the base case and, in the inductive case,
 assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
-The eliminator for \lstinline{list} is similar:
 
+\begin{figure}
+\begin{minipage}{0.44\textwidth}
+\begin{lstlisting}
+Inductive list (T : Type) :=
+| nil : list T
+| cons :
+    T $\rightarrow$ list T $\rightarrow$ list T.
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.54\textwidth}
 \begin{lstlisting}
 list_rect :
-  $\forall$ (T : Type) (P : list T $\rightarrow$ Type), (* motive *)
+  $\forall$ (P : list T $\rightarrow$ Type),
     P (nil T) $\rightarrow$ (* base case *)
-    ($\forall$ (t : T) (tl : list T), P tl $\rightarrow$ P (cons T t tl)) $\rightarrow$ (* inductive case *)
+    ($\forall$ (t : T) (tl : list T),
+      (* inductive case *)
+      P tl $\rightarrow$ P (cons T t tl)) $\rightarrow$
     $\forall$ (l : list T), P l.
 \end{lstlisting}
+\end{minipage}
+\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right).}
+\label{fig:list}
+\end{figure}
+
+ % TODO footnote about nat_ind, nat_rec, nat_rect
+
+A \lstinline{list} (Figure~\ref{fig:list}, left) is similar to a \lstinline{nat}, 
+but with two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
+for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
+Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
+and \lstinline{cons} sticks a new element in front of any existing list.
+Similarly, the eliminator for \lstinline{list} (Figure~\ref{fig:list}, right) looks like the eliminator for \lstinline{nat} 
 but with an argument corresponding to the parameter \lstinline{T} over which \lstinline{list} is polymorphic,
 and with an additional argument corresponding to the new element in the inductive case.
+
+One interesting thing about the types of these eliminators \lstinline{list_rect} and \lstinline{nat_rect}
+include universal quantification over all inputs, written $\forall$.
+Gallina's type system is expressive enough to include universal quantification over inputs---I will explain how
+in Section~\ref{sec:mot-theory}.
 
 \begin{figure}
 \begin{minipage}{0.42\textwidth}
@@ -95,23 +129,35 @@ For the sake of this thesis, however, I will assume \intro{primitive eliminators
 and that do not reduce to terms that use pattern matching and guarded recursion.
 Likewise, when I show Gallina code, I will always use functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
 on the right.
+I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
 To handle practical code that uses pattern matching and guarded recursion,
 I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
 In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
 
-With that in mind, we can now write our small verified program.
+\subsubsection{List Zip Preserves Length}
+\label{sec:verif}
+
+With \lstinline{nat}, \lstinline{list}, and \lstinline{length} defined, we can now write our small verified program.
+We start by writing the \lstinline{zip} program, then specify what it means to preserve its length, and then finally
+write an interactive proof that shows that specification actually holds.
+Coq checks this proof and lets us now that our proof is correct, so our \lstinline{zip} function is verified.
 
 \begin{figure}
 \begin{lstlisting}
-Definition zip {a} {b} : list a -> list b -> list (a * b)%type :=
-  fix zip arg_0__ arg_1__
-        := match arg_0__, arg_1__ with
-           | nil, _bs => nil
-           | _as, nil => nil
-           | cons a as_, cons b bs => cons (pair a b) (zip as_ bs)
-  end. (* TODO convert to eliminators *)
+zip {T$_1$} {T$_2$} (l1 : list T$_1$) (l2 : list T$_2$) : list (T$_1$ * T$_2$) :=
+  list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
+    (fun _ => nil (T$_1$ * T$_2$))
+    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) (l2: list T$_2$) =>
+      list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
+        (nil (T$_1$ * T$_2$))
+        (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
+          cons (T$_1$ * T$_2$) (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
+        l2)
+    l1
+    l2.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function from an old version of hs-to-coq~\cite{TODO}, up to renaming (TODO just say everything is, and when you introduce foundations just before this use induction principles and briefly mention fix-to-elim).}
+\caption{The list \lstinline{zip} function, taken from an old version of hs-to-coq~\cite{TODO} and translated to use eliminators. The curly brace notation means that the
+type parameters T$_1$ and T$_2$ are implicit in calls to \lstinline{zip}.}
 \label{fig:zip}
 \end{figure}
 

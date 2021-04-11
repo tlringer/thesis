@@ -36,8 +36,11 @@
 \KAuxAutorefTarget {default}{base}{Gallina}
 \KAuxDeclaredScopeTag {sec:mot-workflow}
 \KAuxNewLinkScopetagInstance {sec:mot-workflow}{document}
-\KAuxDeclaredScopeTag {fig:list}
-\KAuxNewLinkScopetagInstance {fig:list}{document}
+\KAuxDeclaredScopeTag {fig:length}
+\KAuxNewLinkScopetagInstance {fig:length}{document}
+
+\KAuxFileAt {workflow.tex}{94}
+\KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:zip}
 \KAuxNewLinkScopetagInstance {fig:zip}{document}
 \KAuxDeclaredScopeTag {fig:zip-pres}
@@ -56,9 +59,6 @@
 \KAuxNewLinkScopetagInstance {fig:list-theory}{document}
 \KAuxDeclaredScopeTag {fig:length-theory}
 \KAuxNewLinkScopetagInstance {fig:length-theory}{document}
-
-\KAuxFileAt {theory.tex}{90}
-\KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}

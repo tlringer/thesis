@@ -87,7 +87,7 @@ More information is on the website, % https://coq.github.io/doc/v8.9/refman/lang
 but two differences are relevant to repair:
 The first is that Gallina has constants that define terms---later on, this will help with building optimizations for repair tools.
 The second notable difference has to do with eliminators.
-The grammar for CIC$_{\omega}$ we just saw represents eliminators explicitly---that is, it has \intro{primitive eliminators} that do
+The grammar for CIC$_{\omega}$ we just saw represents eliminators explicitly---that is, it has \kl{primitive eliminators} that do
 not reduce down to any other term in the language.
 Eliminators in Gallina are not primitive.
 Rather, they are constants that reduce to statements using pattern matching and guarded recursion.
@@ -105,19 +105,4 @@ and this term uses pattern matching and recursion:
 \begin{lstlisting}
 TODO list_rect body
 \end{lstlisting}
-
-Throughout, in this thesis, when I present the theory, I assume \kl{primitive eliminators}.
-Likewise, in Gallina, I always use functions that apply eliminators rather than pattern matching
-and guarded recursion (the two are equivalent~\cite{TODO}).
-To handle practical code that uses pattern matching and guarded recursion,
-I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later).
-
-For example, though the length function in Coq is implemented using pattern matching and guarded recursion,
-using the preprocessing tool, I convert that function to a form using eliminators instead:
-
-\begin{lstlisting}
-TODO
-\end{lstlisting}
-That behaves the same way, though there are some technicalities about equalities not preserved by this preprocessing step.
-In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
 

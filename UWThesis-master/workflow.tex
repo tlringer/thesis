@@ -1,14 +1,14 @@
 \subsection{The Workflow}
 \label{sec:mot-workflow}
 
+\paragraph{Preliminaries}
 Before we can write our small verified program,
 we need the \lstinline{list} datatype and the \lstinline{length} function.
 To write the \lstinline{length} function, we need the \lstinline{nat} datatype of unary natural numbers.
 All of these can be found in the Coq standard library.
 
 Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
-it is defined by its \textit{constructors} (ways of constructing a term with that type)
-or, dually, its \textit{eliminators} (ways of eliminating or inducting over a term with that type).
+it is defined by its \textit{constructors} (ways of constructing a term with that type).
 A \lstinline{nat}, for example:
 
 \begin{lstlisting}
@@ -18,7 +18,21 @@ Inductive nat :=
 \end{lstlisting}
 is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
 these are the two constructors of \lstinline{nat}.
-The eliminator this yields is the standard induction principle for natural numbers,
+A \lstinline{list} is similar:
+
+\begin{lstlisting}
+Inductive list (T : Type) :=
+| nil : list T
+| cons : T $\rightarrow$ list T $\rightarrow$ list T.
+\end{lstlisting}
+There are two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
+for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
+Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
+and \lstinline{cons} sticks a new element in front of any existing list.
+
+Every inductive type in Gallina comes equipped with an \textit{eliminator} or induction principle
+that the proof engineer can use to write functions and proofs about the datatype.
+For example, the eliminator for \lstinline{nat} is the standard induction principle for natural numbers,
 which Coq calls \lstinline{nat_rect}: % TODO footnote about nat_ind, nat_rec, nat_rect
 
 \begin{lstlisting}
@@ -31,42 +45,59 @@ nat_rect :
 This eliminator states that a statement \lstinline{P} (called the inductive \textit{motive}) about the natural numbers
 holds if it holds for \lstinline{O} in the base case and, in the inductive case,
 assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
+The eliminator for \lstinline{list} is similar:
 
-In Gallina, each eliminator like \lstinline{nat_rect} is just a function defined by
-pattern matching and recursion.
-TODO left off here.
+\begin{lstlisting}
+list_rect :
+  $\forall$ (T : Type) (P : list T $\rightarrow$ Type), (* motive *)
+    P (nil T) $\rightarrow$ (* base case *)
+    ($\forall$ (t : T) (tl : list T), P tl $\rightarrow$ P (cons T t tl)) $\rightarrow$ (* inductive case *)
+    $\forall$ (l : list T), P l.
+\end{lstlisting}
+but with an argument corresponding to the parameter \lstinline{T} over which \lstinline{list} is polymorphic,
+and with an additional argument corresponding to the new element in the inductive case.
 
 \begin{figure}
-   \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
-\caption{The \lstinline{list} datatype in Gallina, from the Coq standard library.}
-\label{fig:list}
-\end{figure}
-
-Consider, for example, the \lstinline{list} datatype (Figure~\ref{fig:list}). % TODO explain
-Coq automatically generates an eliminator for \lstinline{list} in Gallina:
-
+\begin{minipage}{0.42\textwidth}
 \begin{lstlisting}
-TODO list_rect
-\end{lstlisting}
-But this eliminator is not primitive in Gallina.
-Rather, \lstinline{list_rect} is just a constant that defines another term,
-and this term uses pattern matching and recursion:
-
-\begin{lstlisting}
-TODO list_rect body
-\end{lstlisting}
-
-For example, the length function in Coq is implemented using pattern matching and guarded recursion:
-
-\begin{lstlisting}
-Definition length (T : Type) : list T $\rightarrow$ nat := fix length l :=
+Fixpoint length T l :=
   match l with
-   | nil => O
-   | _ :: l' => S (length l')
+  | nil _ => O
+  | cons _ t tl =>
+      S (length T tl)
   end.
 \end{lstlisting}
-The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
+\end{minipage}
+\hfill
+\begin{minipage}{0.54\textwidth}
+\begin{lstlisting}
+Definition length T l :=
+  list_rect T (fun _ => nat)
+    O
+    (fun t tl (length_tl : nat) =>
+      S length_tl)
+    l.
+\end{lstlisting}
+\end{minipage}
+\caption{The list \lstinline{length} function, defined both by pattern matching and recursion (left) and using the eliminator \lstinline{list_rect} (right).}
+\label{fig:length}
+\end{figure}
+
+We can use these eliminators to write functions and proofs, like the \lstinline{length} function we will need for our proof development (Figure~\ref{fig:length}, right).
+More standard is to write functions using pattern matching and guarded recursion, like the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
+Both of these two functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
+the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and guarded recursion.
+In fact, eliminators are equally expressive to pattern matching and guarded recursion~\cite{TODO}. % the general translation is hard and Coq sucks at eliminator gen though
+
+For the sake of this thesis, however, I will assume \intro{primitive eliminators}: eliminators that are a part of the core syntax and theory itself,
+and that do not reduce to terms that use pattern matching and guarded recursion.
+Likewise, when I show Gallina code, I will always use functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
+on the right.
+To handle practical code that uses pattern matching and guarded recursion,
+I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
+In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
 
 With that in mind, we can now write our small verified program.
 

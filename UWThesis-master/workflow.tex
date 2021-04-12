@@ -53,7 +53,7 @@ assuming it holds for some \lstinline{n}, it also holds for the successor \lstin
 \begin{figure}
 \begin{minipage}{0.44\textwidth}
 \begin{lstlisting}
-Inductive list (T : Type) :=
+Inductive list {T : Type} :=
 | nil : list T
 | cons :
     T $\rightarrow$ list T $\rightarrow$ list T.
@@ -63,15 +63,15 @@ Inductive list (T : Type) :=
 \begin{minipage}{0.54\textwidth}
 \begin{lstlisting}
 list_rect :
-  $\forall$ (P : list T $\rightarrow$ Type),
-    P (nil T) $\rightarrow$ (* base case *)
+  $\forall$ {T : Type} (P : list T $\rightarrow$ Type),
+    P nil $\rightarrow$ (* base case *)
     ($\forall$ (t : T) (tl : list T),
       (* inductive case *)
-      P tl $\rightarrow$ P (cons T t tl)) $\rightarrow$
+      P tl $\rightarrow$ P (cons t tl)) $\rightarrow$
     $\forall$ (l : list T), P l.
 \end{lstlisting}
 \end{minipage}
-\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right).}
+\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right). The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.}
 \label{fig:list}
 \end{figure}
 
@@ -94,18 +94,18 @@ in Section~\ref{sec:mot-theory}.
 \begin{figure}
 \begin{minipage}{0.42\textwidth}
 \begin{lstlisting}
-Fixpoint length T l :=
+Fixpoint length {T} l :=
   match l with
-  | nil _ => O
-  | cons _ t tl =>
-      S (length T tl)
+  | nil => O
+  | cons t tl =>
+      S (length tl)
   end.
 \end{lstlisting}
 \end{minipage}
 \hfill
 \begin{minipage}{0.54\textwidth}
 \begin{lstlisting}
-Definition length T l :=
+Definition length {T} l :=
   list_rect T (fun _ => nat)
     O
     (fun t tl (length_tl : nat) =>
@@ -144,24 +144,56 @@ Coq checks this proof and lets us now that our proof is correct, so our \lstinli
 
 \begin{figure}
 \begin{lstlisting}
-zip {T$_1$} {T$_2$} (l1 : list T$_1$) (l2 : list T$_2$) : list (T$_1$ * T$_2$) :=
+zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
   list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
-    (fun _ => nil (T$_1$ * T$_2$))
-    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) (l2: list T$_2$) =>
+    (fun _ => nil)
+    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) l$_2$ =>
       list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
-        (nil (T$_1$ * T$_2$))
+        nil
         (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
-          cons (T$_1$ * T$_2$) (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
-        l2)
-    l1
-    l2.
+          cons (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
+        l$_2$)
+    l$_1$
+    l$_2$.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an old version of hs-to-coq~\cite{TODO} and translated to use eliminators. The curly brace notation means that the
-type parameters T$_1$ and T$_2$ are implicit in calls to \lstinline{zip}.}
+\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
+and translated to use eliminators.}
 \label{fig:zip}
 \end{figure}
 
-\paragraph{Program} Figure~\ref{fig:zip}.
+\paragraph{Program} The list \lstinline{zip} function is in Figure~\ref{fig:zip}.
+It takes as arguments two lists \lstinline{l}$_1$ and \lstinline{l}$_2$ of possibly different types \lstinline{T}$_1$ and \lstinline{T}$_2$, and zips them together into
+a list of pairs \lstinline{(T}$_1$\lstinline{ * T}$_2$\lstinline{)}.
+For example, if the input lists are: % TODO put this in a figure tbh, like from the slides
+
+\begin{lstlisting}
+(* [1; 2; 3; 4] *)
+l$_1$ := cons 1 (cons 2 (cons 3 (cons 4 nil))).
+
+(* ["x"; "y"; "z"] *)
+l$_2$ := cons "x" (cons "y" (cons "z" nil)).
+\end{lstlisting}
+then \lstinline{zip} applied to those two lists returns:
+
+\begin{lstlisting}
+(* [(1, "x"); (2, "y"); (3, "z")] *)
+cons (1, "x") (cons (2, "y") (cons (3, "z") nil)).
+\end{lstlisting}
+It is worth noting that the implementation of \lstinline{zip} has to make some decision with
+what to do with the extra \lstinline{4} at the end---that is, how \lstinline{zip} behaves when the input
+lists are different lengths.
+The decision that this implementation makes is to just ignore those extra elements.
+
+Otherwise, the implementation is fairly standard.
+If \lstinline{l}$_1$ is \lstinline{nil} (base case of the outer induction),
+\lstinline{zip} returns \lstinline{nil}.
+Otherwise (inductive case of the outer induction),
+if \lstinline{l}$_2$ is \lstinline{nil} (base case of the inner induction),
+\lstinline{zip} returns \lstinline{nil}.
+If \lstinline{l}$_2$ is anything else (inductive case of the inner induction),
+\lstinline{zip} combines the first two elements of each list into a pair (\lstinline{(t}$_1$\lstinline{, t}$_2$\lstinline{)}),
+then sticks that in front of (using \lstinline{cons}) the result of recursively calling \lstinline{zip} on the tails of each list
+(\lstinline{zip_tl}$_1$ \lstinline{tl}$_2$). % TODO a bit hard to understand probably, may need more explanation
 
 \begin{figure}
 \begin{lstlisting}

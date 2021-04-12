@@ -17,6 +17,7 @@ The type theory that Gallina implements is CIC$_{\omega}$, or the Calculus of In
 CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
 CoC with an infinite universe hierarchy is called CoC$_{\omega}$. % TODO need to explain or defer
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
+Note that whereas in Gallina we represent universal quantification over terms or types with $\forall$, here we represent it with $\Pi$, as is standard.
 
 \begin{figure*}
 \small
@@ -24,85 +25,65 @@ The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 <t> ::= ... | \hspace{0.06cm} Ind (<v> : <t>)\{<t>,\ldots,<t>\} \hspace{0.06cm} | \hspace{0.06cm} Constr (<i>, <t>) \hspace{0.06cm} | \hspace{0.06cm} Elim(<t>, <t>)\{<t>,\ldots,<t>\}
 \end{grammar}
 \vspace{-0.3cm}
-\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and eliminators.}
+\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and \kl{primitive eliminators}.}
 \label{fig:cic-syntax}
 \end{figure*}
 
-The syntax for CIC$_{\omega}$ is in Figure~\ref{fig:cic-syntax}), building on syntax from an existing paper~\cite{Timany2015FirstST}.
+The syntax for CIC$_{\omega}$ is in Figure~\ref{fig:cic-syntax}), building on syntax from an existing paper~\cite{Timany2015FirstST};
+the type theory is standard and omitted. % TODO
 CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive}.
-Inductive types are defined solely by their constructors (ways of constructing or making a term with that type)
-and eliminators (ways of eliminating or inducting over a term with that type).
-
-Consider the inductive type \lstinline{nat} of unary natural numbers:
-
-\begin{lstlisting}
-TODO nat in CIC$_{\omega}$
-\end{lstlisting}
-A unary natural number is either \lstinline{0} or the successor \lstinline{S} of another natural number;
-these are the two constructors of \lstinline{nat}.
-The eliminator this yields is the standard induction principle for natural numbers:
+As in Gallina, inductive types are defined by their constructors and eliminators.
+Consider the inductive type \lstinline{nat} of unary natural numbers that we saw in Figure~\ref{fig:nat},
+this time in CIC$_{\omega}$: % TODO explain sorts
 
 \begin{lstlisting}
-TODO eliminator for the above
+Ind (nat : Set) {
+  nat,
+  nat $\rightarrow$ nat
+}
 \end{lstlisting}
-which states that a proposition about the natural numbers holds if it holds for \lstinline{0} in the base case and, in the inductive case,
-assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
-
-\begin{figure}
-\begin{lstlisting}
-TODO
-\end{lstlisting}
-\caption{The \lstinline{list} datatype in CIC$_{\omega}$}
-\label{fig:list-theory}
-\end{figure}
-
-The \lstinline{list} datatype we will need for our proof is in Figure~\ref{fig:list-theory}, and is quite similar to \lstinline{nat}.
-There are two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
-for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
-Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
-and \lstinline{cons} sticks a new element in front of any existing list.
-The eliminator for \lstinline{list} is similarly similar to the eliminator for \lstinline{nat}:
+where the \lstinline{O} constructor type is the zeroth element in the list, and the \lstinline{S} constructor type is the first element.
+Accordingly, the terms:
 
 \begin{lstlisting}
-TODO eliminator for list in CIC$_{\omega}$
+Constr (O, nat)
 \end{lstlisting}
+and:
 
-\begin{figure}
 \begin{lstlisting}
-TODO
+Constr (1, nat)
 \end{lstlisting}
-\caption{The \lstinline{length} function for \lstinline{list} in CIC$_{\omega}$.}
-\label{fig:length-theory}
-\end{figure}
+refer to the constructors \lstinline{O} and \lstinline{S}, respectively.
 
-Once we have inductive types like \lstinline{nat} and \lstinline{list}, we can write functions and proofs about them, like the \lstinline{length} function (Figure~\ref{fig:length-theory}).
-The \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
-is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
-% TODO frame this using induction instead
+As in Gallina, \lstinline{nat} comes associated with an eliminator.
+Unlike in Gallina, here we truly assume \kl{primitive eliminators}---that these eliminators
+do not reduce at all.
+Instead, we represent them explicitly with the \lstinline{Elim} construct.
+Thus, to eliminate over a natural number \lstinline{n} with motive \lstinline{P},
+we write: % TODO check
 
-\paragraph{Bridging Theory and Practice}
+\begin{lstlisting}
+Elim (n, P) {
+  f$_O$,
+  f$_S$
+}
+\end{lstlisting}
+where functions \lstinline{f}$_O$ and \lstinline{f}$_S$ prove the base and inductive cases, respectively.
+When \lstinline{n}, \lstinline{P}, \lstinline{f}$_O$, and \lstinline{f}$_S$ are arbitrary,
+this statement has the same type as \lstinline{nat_rect} in Gallina.
 
 Gallina implements CIC$_{\omega}$, but with a few important differences.
 More information is on the website, % https://coq.github.io/doc/v8.9/refman/language/gallina-specification-language.html, noting it's 8.9
 but two differences are relevant to repair:
-The first is that Gallina has constants that define terms---later on, this will help with building optimizations for repair tools.
-The second notable difference has to do with eliminators.
-The grammar for CIC$_{\omega}$ we just saw represents eliminators explicitly---that is, it has \kl{primitive eliminators} that do
-not reduce down to any other term in the language.
-Eliminators in Gallina are not primitive.
-Rather, they are constants that reduce to statements using pattern matching and guarded recursion.
+The first is that Gallina lacks \kl{primitive eliminators}, as we mentioned earlier.
+The second notable difference is that Gallina has constants that define terms---later on, this will help with building optimizations for repair tools.
 
-Consider, for example, the \lstinline{list} datatype from Figure~\ref{fig:list}.
-Coq automatically generates an eliminator for \lstinline{list} in Gallina:
+Otherwise, a proof repair tool for Gallina can harness the power of CIC$_{\omega}$. This type theory is fairly simple,
+but $\Pi$ makes it possible to quantify over both terms and types,
+so that we can state powerful theorems and prove that they old.
+Inductive types make it possible to write proofs by induction.
+Both of these constructs mean that terms in Gallina are extremely structured,
+and as we will soon see, that structure makes a proof repair tool's job much easier.
+For now, though, let us return to our proof development and demonsrate why we need a repair tool to begin with.
 
-\begin{lstlisting}
-TODO list_rect
-\end{lstlisting}
-But this eliminator is not primitive in Gallina.
-Rather, \lstinline{list_rect} is just a constant that defines another term,
-and this term uses pattern matching and recursion:
-
-\begin{lstlisting}
-TODO list_rect body
-\end{lstlisting}
 

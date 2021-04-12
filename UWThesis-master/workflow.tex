@@ -196,52 +196,202 @@ then sticks that in front of (using \lstinline{cons}) the result of recursively 
 (\lstinline{zip_tl}$_1$ \lstinline{tl}$_2$). % TODO a bit hard to understand probably, may need more explanation
 
 \begin{figure}
+\begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
-TODO zip_preserves_length, one version
+Theorem zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$.
 \end{lstlisting}
-\caption{TODO}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\begin{lstlisting}
+Theorem zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length (zip l$_1$ l$_2$) = min (length l$_1$) (length l$_2$).
+\end{lstlisting}
+\end{minipage}
+\caption{Two possible specifications of a proof that \lstinline{zip} preserves the length of the input lists.}
 \label{fig:zip-pres}
 \end{figure}
 
-\begin{figure}
-\begin{lstlisting}
-TODO zip_preserves_length, another version
-\end{lstlisting}
-\caption{TODO}
-\label{fig:zip-pres-alt}
-\end{figure}
+\paragraph{Specification} Once we have written our \lstinline{zip} function, we can then specify what we 
+want to prove about it: that the \lstinline{zip} function preserves the lengths of the inputs \lstinline{l}$_1$ and \lstinline{l}$_2$.
+We do this by defining a type \lstinline{zip_preserves_length} (Figure~\ref{fig:zip-pres}, left), which in Coq we state as a \lstinline{Theorem}.
+This theorem takes advantage of Gallina's rich type system to quantify over all possible input lists \lstinline{l}$_1$ and \lstinline{l}$_2$.
+It says that if the lengths of the inputs are the same, then the length of the output is the same as the lengths of the inputs.
+Our proof will soon show that this type is inhabited, and so this statement is true.
 
-\paragraph{Specification} Figure~\ref{fig:zip-pres} or Figure~\ref{zip-pres-alt}, note art, stronger and so on, will come back to this.
-Also this is where a lot of the power of the language comes in, worth noting.
+It is worth noting that this step of choosing a specification is a bit of an art---we have some freedom when we choose our specification.
+We could just as well have chosen a different version of \lstinline{zip_preserves_length} (Figure~\ref{fig:zip-pres}, right)
+that states that the length of the output is the \textit{minimum} of the lengths of the inputs (using \lstinline{min} from the Coq standard library).
+This is also true for our \lstinline{zip} implementation, and in fact it is stronger---it implies the original theorem as well.
+But regardless of which version we choose, we then get to the fun part of actually writing our proof.
 
-\begin{figure}
-\begin{lstlisting}
-TODO zip_preserves_length proof
-\end{lstlisting}
-\caption{TODO}
-\label{fig:zip-pres-proof}
-\end{figure}
-
-\paragraph{Proof} 
-In Coq, those tactics are in a language called Ltac.
+\paragraph{Proof} As I mentioned earlier, it is possible to write proofs directly in Gallina---but this can be difficult.
+Instead, it is more common to write proofs interactively using the tactic language Ltac.
 Each tactic is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
-Here is one possible proof of \lstinline{zip_preserves_length} using very simple tactics:
+The way that this works is, after we state the theorem that we want to prove:
+
 \begin{lstlisting}
-Lemma zip_length : zip_preserves_length.
-Proof.
-   intros a b l1.
-   induction l1 as [|_ _ IHtl1]; auto.
-   induction l2 as [|_ _ IHtl2]; intros H; auto.
-   simpl. rewrite IHtl1; auto.
-Qed.
+Theorem zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$.
 \end{lstlisting}
-This compiles to the thing we saw before, which then type checks as expected.
-But we never have to see the low-level proof term; we can reason about the high-level proof script instead.
-% TODO save the better version for later so that we can show how good automation can get around some of the repair stuff
-% TODO walk through and so on
+we then add one more word:
 
-Mention decompiler, explain, tease implementation section.
+\begin{lstlisting}
+Proof.
+\end{lstlisting}
+then step down past that word inside of an IDE. % TODO expand acronym? or something?
+The IDE then drops into an interactive proof mode.
+In that proof mode, it tracks the context of the proof so far, along with the goal we want to prove.
+After each tactic we type and step past, Coq responds by refining the goal into some subgoal
+and updating the context.
+We continue this until no goals remain.
+The survey paper~\cite{PGL-045} has a good overview of the tactic language in Coq and in other proof assistants,
+plus different interfaces and IDEs for writing proofs interactively and screenshots of them in action.
 
+\begin{figure}
+\begin{lstlisting}
+Theorem zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$.
+Proof.
+  intros T1 T2 l1.
+  induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
+  - auto.
+  - intros l2. induction l2 as [|t$_2$ tl$_2$ IHtl$_2$].
+    + intros H. auto.
+    + intros H. simpl. rewrite IHtl$_1$; auto.
+Defined.
+\end{lstlisting}
+\begin{lstlisting}
+zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$
+:=
+fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
+  list_rect
+    (fun (l$_1$ : list T$_1$) =>
+      $\forall$ (l$_2$ : list T$_2$),
+        length l$_1$ = length l$_2$ $\rightarrow$
+        length (zip l$_1$ l$_2$) = length l$_1$)
+    (fun (l$_2$ : list T$_2$) _ => eq_refl)
+    (fun (t$_1$ : T$_1$) (tl$_1$ : list T$_1$)
+         (IHtl$_1$ :
+           $\forall$ (l$_2$ : list T2),
+             length tl$_1$ = length l$_2$ $\rightarrow$
+             length (zip tl$_1$ l$_2$) = length tl$_1$)
+         (l$_2$ : list T$_2$) =>
+      list_rect
+        (fun (l$_2$ : list T$_2$) =>
+          length (cons t$_1$ tl$_1$) = length l$_2$ $\rightarrow$
+          length (zip (cons t$_1$ tl$_1$) l$_2$) = length (cons t$_1$ tl$_1$))
+        (fun (H : length T$_1$ (cons t$_1$ tl$_1$) = length nil) => eq_sym H)
+        (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) _ (H : length (cons t$_1$ tl$_1$) = length (cons t$_2$ tl$_2$)) =>
+          eq_ind_r
+            (fun (n : nat) => S n = S (length tl$_1$))
+            eq_refl
+            (IHtl$_1$ tl$_2$ (eq_add_S (length tl$_1$) (length tl$_2$) H)))
+        l2)
+  l1
+  l2.
+\end{lstlisting}
+\caption{A proof script (left) and corresponding proof term (right) in Coq that shows that the list zip function preserves its length.}
+\label{fig:zip-proof}
+\end{figure}
+
+Figure~\ref{fig:zip-proof} shows a proof script for this theorem (left), along with the corresponding proof term (right).
+As we can see, the proof term is quite complicated.
+Thankfully, the details do not matter to us, since we can write the high-level proof script on the left instead.
+Even though this proof script is still a bit manual for the sake of demonstration,
+it is much simpler than the low-level proof term.
+
+To write the proof script on the left of Figure~\ref{fig:zip-proof}, we start by stepping past \lstinline{Proof} in our IDE.
+After this, our initial context (above the line) is empty, and our initial goal (below the line) is the original theorem:
+
+\begin{lstlisting}
+______________________________________(1/1)
+$\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+  length l$_1$ = length l$_2$ $\rightarrow$
+  length (zip l$_1$ l$_2$) = length l$_1$.
+\end{lstlisting}
+We start this proof with the introduction tactic \lstinline{intros}:
+
+\begin{lstlisting}
+  intros T$_1$ T$_2$ l$_1$.
+\end{lstlisting}
+This is essentially the equivalent of the natural language proof strategy ``assume arbitrary \lstinline{T}$_1$, \lstinline{T}$_2$, and \lstinline{l}$_1$.''
+That is, it moves the universally quantified arguments from our goal into our context:
+
+\begin{lstlisting}
+T$_1$ : Type
+T$_2$ : Type
+l$_1$ : list T$_1$
+______________________________________(1/1)
+$\forall$ (l$_2$ : list T$_2$),
+  length l$_1$ = length l$_2$ $\rightarrow$
+  length (zip l$_1$ l$_2$) = length l$_1$.
+\end{lstlisting}
+From this state, we can induct over the input list (choosing names for variables Coq introduces in the inductive case):
+
+\begin{lstlisting}
+  induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
+\end{lstlisting}
+This breaks into two subgoals and subcontexts: one for the base case and one for the inductive case.
+The base case:
+\begin{lstlisting}
+T$_1$ : Type
+T$_2$ : Type
+______________________________________(1/2)
+$\forall$ l$_2$ : list T$_2$,
+  length nil = length l$_3$ $\rightarrow$
+  length (zip nil l$_2$) = length nil.
+\end{lstlisting}
+holds by reflexivity, which the \lstinline{auto} tactic takes care of.
+
+In the inductive case:
+
+\begin{lstlisting}
+T$_1$ : Type
+T$_2$ : Type
+t$_1$ : T$_1$
+tl$_1$ : list T$_1$
+IHtl$_1$ : $\forall$ l$_2$ : list T$_2$,
+        length tl$_1$ = length l$_2$ $\rightarrow$
+        length (zip tl$_1$ l$_2$) = length tl$_1$
+______________________________________(2/2)
+$\forall$ l$_2$ : list T2,
+  length (cons t$_1$ tl$_1$) = length l$_2$ $\rightarrow$
+  length (zip (cons t$_1$ tl$_1$) l$_2$) = length (cons t$_1$ tl$_1$).
+\end{lstlisting}
+we again use \lstinline{intros} and \lstinline{induction}, this time to induct over \lstinline{l}$_2$.
+This again produces two subgoals: one for the base case and one for the inductive case.
+The base case has an absurd hypothesis, which we introduce as \lstinline{H} and then use \lstinline{auto} to show our conclusion holds.
+The inductive case holds by simplification and rewriting by the inductive hypothesis \lstinline{IHtl}$_1$.
+
+After this, no goals remain, so our proof is done; we can write \lstinline{Defined}.
+What happens when we write \lstinline{Defined} is that Coq produces the proof term on the right of Figure~\ref{fig:zip-proof}. % TODO syntax highlighting, maybe explain
+It then checks the type of that term and ensures that it is exactly the theorem we have stated.
+Since it is, Coq lets us know that our proof is correct, so our \lstinline{zip} function is verified.
+Thankfully, though, we never have to write the low-level proof term ourselves; we see proofs as these high-level proof csripts.
+
+Some correspondence between the proof script and proof term may already be clear.
+For example, every call to \lstinline{induction} in the proof script shows up as an application of the eliminator \lstinline{list_rect}
+in the proof term.
+In Section~\ref{TODO}, I will explain this connection in more detail by introducing a prototype decompiler from proof terms back up to proof scripts.
+This decompiler makes it possible for \sysname to work over highly structured Gallina terms,
+but produce proof scripts that the proof engineer can use going forward.
+
+These tactics are a form of \textit{proof automation}, and they do indeed make proof development easier than writing raw proof terms.
+Unfortunately, this flavor of proof automation a bit naive when it comes to \textit{maintaining} proofs in the face of change.
+Proof repair is a new form of proof automation that understands how proofs evolve over time.
+But it is exactly the rich structure of the type theory beneath Gallina that makes a principled approach to proof repair possible.
 
 
 

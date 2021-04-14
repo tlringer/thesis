@@ -261,12 +261,11 @@ Theorem zip_preserves_length :
     length l$_1$ = length l$_2$ $\rightarrow$
     length (zip l$_1$ l$_2$) = length l$_1$.
 Proof.
-  intros T1 T2 l1.
-  induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
-  - auto.
-  - intros l2. induction l2 as [|t$_2$ tl$_2$ IHtl$_2$].
-    + intros H. auto.
-    + intros H. simpl. rewrite IHtl$_1$; auto.
+  intros T1 T2 l1. (@\codesimb{induction l$_1$}@) as [|t$_1$ tl$_1$ IHtl$_1$].
+  - (@\codesima{auto.}@)
+  - intros l2. (@\codesimc{induction l2}@) as [|t$_2$ tl$_2$ IHtl$_2$].
+    + (@\codesimd{intros H. auto.}@)
+    + (@\codesime{intros H. simpl. rewrite IHtl$_1$; auto.}@)
 Defined.
 \end{lstlisting}
 \begin{lstlisting}
@@ -276,43 +275,30 @@ zip_preserves_length :
     length (zip l$_1$ l$_2$) = length l$_1$
 :=
 fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
-  list_rect
-    (fun (l$_1$ : list T$_1$) =>
-      $\forall$ (l$_2$ : list T$_2$),
-        length l$_1$ = length l$_2$ $\rightarrow$
-        length (zip l$_1$ l$_2$) = length l$_1$)
-    (fun (l$_2$ : list T$_2$) _ => eq_refl)
-    (fun (t$_1$ : T$_1$) (tl$_1$ : list T$_1$)
-         (IHtl$_1$ :
-           $\forall$ (l$_2$ : list T2),
-             length tl$_1$ = length l$_2$ $\rightarrow$
-             length (zip tl$_1$ l$_2$) = length tl$_1$)
-         (l$_2$ : list T$_2$) =>
-      list_rect
-        (fun (l$_2$ : list T$_2$) =>
-          length (cons t$_1$ tl$_1$) = length l$_2$ $\rightarrow$
-          length (zip (cons t$_1$ tl$_1$) l$_2$) = length (cons t$_1$ tl$_1$))
-        (fun (H : length T$_1$ (cons t$_1$ tl$_1$) = length nil) => eq_sym H)
-        (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) _ (H : length (cons t$_1$ tl$_1$) = length (cons t$_2$ tl$_2$)) =>
-          eq_ind_r
-            (fun (n : nat) => S n = S (length tl$_1$))
-            eq_refl
-            (IHtl$_1$ tl$_2$ (eq_add_S (length tl$_1$) (length tl$_2$) H)))
-        l2)
-  l1
-  l2.
+  (@\codesimb{list\_rect}@) (fun (l$_1$ : list T$_1$) => $\ldots$)
+    (@\codesima{(fun (l$_2$ : list T$_2$) \_ => eq\_refl)}@)
+    (fun (t$_1$ : T$_1$) (tl$_1$ : list T$_1$) (IHtl$_1$ : $\ldots$) (l$_2$ : list T$_2$) =>
+      (@\codesimc{list\_rect}@) (fun (l$_2$ : list T$_2$) => $\ldots$)
+        (@\codesimd{(fun (H : $\ldots$) => eq\_sym H)}@)
+        (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) (IHtl$_2$ : $\ldots$) =>
+          (@\codesime{fun (H : $\ldots$) => eq\_ind\_r $\ldots$ eq\_refl (IHtl$_1$ $\ldots$)}@))
+        (@\codesimc{l$_2$}@))
+  (@\codesimb{l$_1$}@)
+  l$_2$.
 \end{lstlisting}
-\caption{A proof script (left) and corresponding proof term (right) in Coq that shows that the list zip function preserves its length.}
+\caption{A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length.
+Some details of the proof term are omitted for simplicity.
+Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
 \label{fig:zip-proof}
 \end{figure}
 
-Figure~\ref{fig:zip-proof} shows a proof script for this theorem (left), along with the corresponding proof term (right).
+Figure~\ref{fig:zip-proof} shows a proof script for this theorem (top), along with the corresponding proof term (bottom).
 As we can see, the proof term is quite complicated.
-Thankfully, the details do not matter to us, since we can write the high-level proof script on the left instead.
+Thankfully, the details do not matter to us, since we can write the high-level proof script on the top instead.
 Even though this proof script is still a bit manual for the sake of demonstration,
 it is much simpler than the low-level proof term.
 
-To write the proof script on the left of Figure~\ref{fig:zip-proof}, we start by stepping past \lstinline{Proof} in our IDE.
+To write the proof script on the top of Figure~\ref{fig:zip-proof}, we start by stepping past \lstinline{Proof} in our IDE.
 After this, our initial context (above the line) is empty, and our initial goal (below the line) is the original theorem:
 
 \begin{lstlisting}
@@ -376,7 +362,7 @@ The base case has an absurd hypothesis, which we introduce as \lstinline{H} and 
 The inductive case holds by simplification and rewriting by the inductive hypothesis \lstinline{IHtl}$_1$.
 
 After this, no goals remain, so our proof is done; we can write \lstinline{Defined}.
-What happens when we write \lstinline{Defined} is that Coq produces the proof term on the right of Figure~\ref{fig:zip-proof}. % TODO syntax highlighting, maybe explain
+What happens when we write \lstinline{Defined} is that Coq produces the proof term on the bottom of Figure~\ref{fig:zip-proof}. % TODO syntax highlighting, maybe explain
 It then checks the type of that term and ensures that it is exactly the theorem we have stated.
 Since it is, Coq lets us know that our proof is correct, so our \lstinline{zip} function is verified.
 Thankfully, though, we never have to write the low-level proof term ourselves; we see proofs as these high-level proof csripts.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  12 APR 2021 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1842,13 +1842,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 320
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 322
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 320.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 322.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 320.
+(Font)              using `OMS/cmsy/m/n' instead on input line 322.
 
 [3] [4
 
@@ -1864,32 +1864,32 @@ Package microtype Info: Character `013' is missing
 <family3.jpg, id=36, 593.21625pt x 386.44376pt>
 File: family3.jpg Graphic file (type jpg)
 <use family3.jpg>
-Package pdftex.def Info: family3.jpg  used on input line 367.
+Package pdftex.def Info: family3.jpg  used on input line 369.
 (pdftex.def)             Requested size: 218.38226pt x 142.26378pt.
 <family12.jpg, id=37, 393.47pt x 573.14125pt>
 File: family12.jpg Graphic file (type jpg)
 <use family12.jpg>
-Package pdftex.def Info: family12.jpg  used on input line 368.
+Package pdftex.def Info: family12.jpg  used on input line 370.
 (pdftex.def)             Requested size: 97.6648pt x 142.26378pt.
 <family4.jpg, id=38, 385.44pt x 578.16pt>
 File: family4.jpg Graphic file (type jpg)
 <use family4.jpg>
-Package pdftex.def Info: family4.jpg  used on input line 369.
+Package pdftex.def Info: family4.jpg  used on input line 371.
 (pdftex.def)             Requested size: 94.84238pt x 142.26378pt.
 <family8.jpg, id=39, 602.25pt x 401.5pt>
 File: family8.jpg Graphic file (type jpg)
 <use family8.jpg>
-Package pdftex.def Info: family8.jpg  used on input line 370.
+Package pdftex.def Info: family8.jpg  used on input line 372.
 (pdftex.def)             Requested size: 213.4005pt x 142.26378pt.
 <family11.jpg, id=40, 572.1375pt x 384.43625pt>
 File: family11.jpg Graphic file (type jpg)
 <use family11.jpg>
-Package pdftex.def Info: family11.jpg  used on input line 371.
+Package pdftex.def Info: family11.jpg  used on input line 373.
 (pdftex.def)             Requested size: 211.7312pt x 142.26378pt.
 <family10.jpg, id=41, 1535.7375pt x 2055.68pt>
 File: family10.jpg Graphic file (type jpg)
 <use family10.jpg>
-Package pdftex.def Info: family10.jpg  used on input line 372.
+Package pdftex.def Info: family10.jpg  used on input line 374.
 (pdftex.def)             Requested size: 106.27063pt x 142.26378pt.
  [7 <./family3.jpg> <./family12.jpg> <./family4.jpg> <./family8.jpg> <./family1
 1.jpg> <./family10.jpg>] [8
@@ -1897,19 +1897,19 @@ Package pdftex.def Info: family10.jpg  used on input line 372.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 39
-2.
+4.
  (./uwthesis.toc)
 \tf@toc=\write7
 \openout7 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 399.
+(Font)              scaled to size 10.42007pt on input line 401.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 399.
+(Font)              scaled to size 7.91925pt on input line 401.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 399.
+(Font)              scaled to size 10.42007pt on input line 401.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 399.
+(Font)              scaled to size 7.91925pt on input line 401.
  [9
 
 
@@ -1997,7 +1997,7 @@ LaTeX Warning: Citation `TODO' on page 13 undefined on input line 160.
 
 [13] [14] [15] [16]
 
-LaTeX Warning: Reference `TODO' on page 17 undefined on input line 387.
+LaTeX Warning: Reference `TODO' on page 17 undefined on input line 373.
 
 [17]) (./theory.tex
 LaTeX Font Info:    Try loading font information for U+bbm on input line 7.
@@ -2005,7 +2005,7 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 7.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [18]))
-(./maintenance.tex) (./repair.tex [19])) (./pumpkinpatch.tex [20]
+(./maintenance.tex [19]) (./repair.tex)) (./pumpkinpatch.tex [20]
 chapter 3.
 (./repair/motivating.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
@@ -2042,7 +2042,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 10.
  [28]
-<repair/nat_ind.pdf, id=720, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=703, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2083,7 +2083,7 @@ chapter 4.
 
 ] [40])
 (./often/approach.tex
-<often/workflowa.pdf, id=1081, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1065, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2301,8 +2301,8 @@ l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
 )) (./uwthesis.ind [82]
-Overfull \hbox (2.85655pt too wide) in paragraph at lines 4--5
-[]| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []13[], []19[] 
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--5
+[]| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []13[], []18[],
  []
 
 [83
@@ -2348,11 +2348,11 @@ Underfull \hbox (badness 1184) in paragraph at lines 621--626
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 456.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 458.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 458.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2365,16 +2365,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49466 strings out of 492609
- 998407 string characters out of 6129033
- 1339345 words of memory out of 5000000
- 50581 multiletter control sequences out of 15000+600000
+ 49449 strings out of 492609
+ 998138 string characters out of 6129033
+ 1316631 words of memory out of 5000000
+ 50580 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2392,10 +2392,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (105 pages, 1394468 bytes).
+Output written on uwthesis.pdf (105 pages, 1394700 bytes).
 PDF statistics:
- 2376 PDF objects out of 2487 (max. 8388607)
- 2205 compressed objects within 23 object streams
- 1173 named destinations out of 1200 (max. 500000)
+ 2357 PDF objects out of 2487 (max. 8388607)
+ 2187 compressed objects within 22 object streams
+ 1157 named destinations out of 1200 (max. 500000)
  93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

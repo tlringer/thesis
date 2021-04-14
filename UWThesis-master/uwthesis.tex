@@ -177,34 +177,36 @@
   \colorbox{orange!25}{\reducedstrut#1\/}%
   \endgroup
 } % to highlight the difference between two code blocks
+
 \newcommand{\codesima}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
-  \colorbox{orange!25}{\reducedstrut#1\/}%
+  \colorbox{orange!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{2}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
+\renewcommand{\textsuperscript}[1]{}
 \newcommand{\codesimb}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
-  \colorbox{red!25}{\reducedstrut#1\/}%
+  \colorbox{red!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{1}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
 \newcommand{\codesimc}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
-  \colorbox{yellow!25}{\reducedstrut#1\/}%
+  \colorbox{yellow!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{3}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
 \newcommand{\codesimd}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
-  \colorbox{green!25}{\reducedstrut#1\/}%
+  \colorbox{green!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{4}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
 \newcommand{\codesime}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
-  \colorbox{blue!25}{\reducedstrut#1\/}%
+  \colorbox{blue!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{5}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
 \newcommand{\codeauto}[1]{%

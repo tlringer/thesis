@@ -57,7 +57,7 @@
 \contentsline {paragraph}{Replay}{37}{subsection.3.6.3}% 
 \contentsline {paragraph}{Search}{37}{lstnumber.-109.2}% 
 \contentsline {paragraph}{Apply}{37}{lstnumber.-110.2}% 
-\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{38}{subsubsection.3.6.3.1}% 
+\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{37}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{38}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{39}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Motivating Example}{39}{section.4.1}% 

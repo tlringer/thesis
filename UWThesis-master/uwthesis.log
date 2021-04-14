@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2042,7 +2042,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 10.
  [28]
-<repair/nat_ind.pdf, id=703, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=707, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2083,7 +2083,7 @@ chapter 4.
 
 ] [40])
 (./often/approach.tex
-<often/workflowa.pdf, id=1065, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1069, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2368,10 +2368,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49449 strings out of 492609
- 998138 string characters out of 6129033
+ 49454 strings out of 492609
+ 998214 string characters out of 6129033
  1316631 words of memory out of 5000000
- 50580 multiletter control sequences out of 15000+600000
+ 50581 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2392,10 +2392,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (105 pages, 1394700 bytes).
+Output written on uwthesis.pdf (105 pages, 1394831 bytes).
 PDF statistics:
- 2357 PDF objects out of 2487 (max. 8388607)
- 2187 compressed objects within 22 object streams
- 1157 named destinations out of 1200 (max. 500000)
+ 2362 PDF objects out of 2487 (max. 8388607)
+ 2192 compressed objects within 22 object streams
+ 1161 named destinations out of 1200 (max. 500000)
  93501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

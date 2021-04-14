@@ -68,7 +68,17 @@ Elim (n, P) {
   f$_S$
 }
 \end{lstlisting}
-where functions \lstinline{f}$_O$ and \lstinline{f}$_S$ prove the base and inductive cases, respectively.
+where functions:
+
+\begin{lstlisting}
+f$_O$ : P O
+\end{lstlisting}
+and:
+
+\begin{lstlisting}
+f$_S$ : $\Pi$ (n : nat) . $\Pi$ (IHn : P n) . P (S n)
+\end{lstlisting}
+prove the base and inductive cases, respectively.
 When \lstinline{n}, \lstinline{P}, \lstinline{f}$_O$, and \lstinline{f}$_S$ are arbitrary,
 this statement has the same type as \lstinline{nat_rect} in Gallina.
 

@@ -1,12 +1,10 @@
 \section{Approach}
 
-% New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
-
-In the example from Section~\ref{sec:patch-motivating}, we can see how the example change in one proof carries enough information
+In the example from Section~\ref{sec:patch-motivating}, the example change in one proof carries enough information
 to fix other proofs broken by the same change (namely the rewrite by \lstinline{INR\_IPR}).
 So a tool can extract that, generalize it, and use it to fix other proofs broken by the same change.
 
-The key insight behind \sysname's approach is that this is true more generally.
+\sysname takes advantage of this more generally.
 To use \sysname, the programmer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
 \sysname extracts that information into a \textit{patch candidate}---which is localized to the context of the example, but not enough to fix other proofs broken by the change.
 It then generalizes that candidate into a \textit{reusable patch}: a function
@@ -14,18 +12,25 @@ that can be used to fix other broken proofs broken by the same change, which \sy
 
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the example patched proof.
 \sysname can extract and generalize that information.
-Application works with hint databases or is manual.
-Here is the system diagram for \sysname.
-The \sysname repository contains a detailed user guide.
-
 As mentioned earlier, \sysname does this using a combination of semantic differencing and program transformations.
 Differencing looks at the difference between versions of the example patched proof for this information, and finds the candidate.
 Then, program transformations modify that candidate to produce the reusable proof patch.
 
-And of course all of this happens over proof terms, since tactics might hide necessary in information.
-Of course this is hard to see on the example from Section~\ref{sec:patch-motivating},
-since we were lucky enough to see the difference in tactics here.
-Let's look at a toy example for which that isn't true.
+And of course all of this happens over proof terms, since tactics might hide necessary information.
+For now, support for both proof scripts and patch application is simple (see Section~\ref{sec:TODO}), though both of these are addressed in Chapter~\ref{sec:TODO}.
+This section shows how differencing and proof term transformations come together in \sysname on an example (Section~\ref{sec:TODO}),
+then specifies differencing and the transformations more precisely (Section~\ref{sec:TODO}).
+
+\subsection{System Overview}
+\label{sec:pumpkin-overview}
+
+% New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
+
+Here is the system diagram for \sysname.
+The \sysname repository contains a detailed user guide.
+
+And of course all of this happens over proof terms, since tactics might hide necessary information.
+Example before didn't show this, but this example will.
 
 \begin{figure*}
 \begin{minipage}{0.50\textwidth}
@@ -187,4 +192,14 @@ using this configuration:
 
 Later we will see real-world examples that demonstrate more configurations.
 
+\subsection{Specification}
+\label{sec:pumpkin-spec}
+
+High-level specification of both differencing (Section~\ref{spec-pumpkin-diff}) and transformations (Section~\ref{spec-pumpkin-trans}), with inputs and outputs.
+
+\subsubsection{Specifying Differencing}
+\label{sec:spec-pumpkin-diff}
+
+\subsubsection{Specifying the Transformations}
+\label{sec:spec-pumpkin-trans}
 

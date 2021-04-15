@@ -90,10 +90,18 @@ The second notable difference is that Gallina has constants that define terms---
 
 Otherwise, a proof repair tool for Gallina can harness the power of CIC$_{\omega}$. This type theory is fairly simple,
 but $\Pi$ makes it possible to quantify over both terms and types,
-so that we can state powerful theorems and prove that they old.
+so that we can state powerful theorems and prove that they hold.
 Inductive types make it possible to write proofs by induction.
 Both of these constructs mean that terms in Gallina are extremely structured,
 and as we will soon see, that structure makes a proof repair tool's job much easier.
-For now, though, let us return to our proof development and demonsrate why we need a repair tool to begin with.
+
+But this structure can be difficult for proof engineers to work with,
+which is why proof engineers typically rely on the tactics we saw in Section~\ref{sec:mot-workflow}.
+Tactics more generally are a form of \textit{proof automation}, and this proof automation makes it much
+simpler to develop proofs to begin with.
+But it turns out this proof automation is a bit naive when it comes to \textit{maintaining} proofs
+as programs and specifications change over time.
+Proof repair is a new form of proof automation for maintaining proofs: it uses the rich type information carried by proof terms
+to automatically fix broken proofs in response to change.
 
 

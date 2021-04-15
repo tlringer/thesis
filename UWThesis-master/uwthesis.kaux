@@ -63,6 +63,14 @@
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
+\KAuxDeclaredScopeTag {sec:changes}
+\KAuxNewLinkScopetagInstance {sec:changes}{document}
+\KAuxDeclaredScopeTag {sec:processes}
+\KAuxNewLinkScopetagInstance {sec:processes}{document}
+\KAuxDeclaredScopeTag {sec:irl}
+\KAuxNewLinkScopetagInstance {sec:irl}{document}
+\KAuxDeclaredScopeTag {sec:thus-repair}
+\KAuxNewLinkScopetagInstance {sec:thus-repair}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}
 \KAuxNewLinkScopetagInstance {sec:mot-rep}{document}
 \KAuxDeclaredScopeTag {ch:example}

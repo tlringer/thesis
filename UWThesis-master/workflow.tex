@@ -374,10 +374,9 @@ In Section~\ref{TODO}, I will explain this connection in more detail by introduc
 This decompiler makes it possible for \sysname to work over highly structured Gallina terms,
 but produce proof scripts that the proof engineer can use going forward.
 
-These tactics are a form of \textit{proof automation}, and they do indeed make proof development easier than writing raw proof terms.
-Unfortunately, this flavor of proof automation a bit naive when it comes to \textit{maintaining} proofs in the face of change.
-Proof repair is a new form of proof automation that understands how proofs evolve over time.
-But it is exactly the rich structure of the type theory beneath Gallina that makes a principled approach to proof repair possible.
+Writing proofs using tactics does indeed proof development easier than writing raw proof terms.
+But these highly structured proof terms carry a lot of information that is lost at the level of tactics.
+It is exactly that rich structure---the type theory beneath Gallina---that makes a principled approach to proof repair possible.
 
 
 

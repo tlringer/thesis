@@ -35,11 +35,11 @@
 \contentsline {paragraph}{Output: Patch Candidates}{30}{subsection.3.2.3}% 
 \contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{30}{subsection.3.2.4}% 
 \contentsline {paragraph}{Input: Patch Candidates}{30}{subsection.3.2.4}% 
-\contentsline {paragraph}{Output: Reusable Proof Patch}{30}{subsection.3.2.4}% 
+\contentsline {paragraph}{Output: Reusable Proof Patch}{31}{subsection.3.2.4}% 
 \contentsline {section}{\numberline {3.3}Differencing}{31}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Transformation}{31}{section.3.4}% 
 \contentsline {paragraph}{Patch Specialization}{31}{section.3.4}% 
-\contentsline {paragraph}{Patch Abstraction}{31}{section.3.4}% 
+\contentsline {paragraph}{Patch Abstraction}{32}{section.3.4}% 
 \contentsline {paragraph}{Patch Inversion}{32}{lstnumber.-68.2}% 
 \contentsline {paragraph}{Lemma Factoring}{33}{lstnumber.-73.5}% 
 \contentsline {section}{\numberline {3.5}Implementation}{33}{section.3.5}% 

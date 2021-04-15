@@ -3,25 +3,26 @@
 In the example from Section~\ref{sec:patch-motivating}, the example change in one proof carries enough information
 to fix other proofs broken by the same change (namely the rewrite by \lstinline{INR\_IPR}).
 So a tool can extract that, generalize it, and use it to fix other proofs broken by the same change.
-
 \sysname takes advantage of this more generally.
-To use \sysname, the programmer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
+
+To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
 \sysname extracts that information into a \textit{patch candidate}---which is localized to the context of the example, but not enough to fix other proofs broken by the change.
 It then generalizes that candidate into a \textit{reusable patch}: a function
 that can be used to fix other broken proofs broken by the same change, which \sysname defines as a Coq term.
-
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the example patched proof.
 \sysname can extract and generalize that information.
-As mentioned earlier, \sysname does this using a combination of semantic differencing and program transformations.
-Differencing looks at the difference between versions of the example patched proof for this information, and finds the candidate.
-Then, program transformations modify that candidate to produce the reusable proof patch.
+
+\sysname focuses in particular on searching for patches to proofs that break in response changes in the \textit{content}, but not the \textit{structure}
+of programs and specifications (Section~\ref{sec:pumpkin-scope}).
+As mentioned earlier, \sysname does this using a combination of semantic differencing and proof term transformations.
+Differencing (Section~\ref{sec:pumpkin-spec-diff} looks at the difference between versions of the example patched proof for this information, and finds the candidate.
+Then, proof term transformations (Section~\ref{pumpkin-spec-trans}) modify that candidate to produce the reusable proof patch.
 And of course all of this happens over proof terms, since tactics might hide necessary information
 (example before didn't show this, but example here will).
 For now, support for both proof scripts and patch application is simple (see Section~\ref{sec:TODO}), though both of these are addressed in Chapter~\ref{sec:TODO}.
 
-Segue.
-
 \subsection{Workflow: Patching by Example}
+\label{sec:pumpkin-workflow}
 
 \begin{figure}
 %\begin{algorithm}
@@ -42,8 +43,7 @@ Segue.
 \label{alg:patching}	
 \end{figure}
 
-These two parts come together to form the proof patch search procedure in Figure~\ref{alg:patching}.
-\sysname exposes a \lstinline{Patch Proof} command that calls out to this procedure.
+\sysname exposes a \lstinline{Patch Proof} command that invokes the proof patch search procedure in Figure~\ref{alg:patching}.
 \lstinline{Patch Proof} takes as input the old and new version of an example proof patched in response to some breaking change.
 When succesful, it returns the reusable proof patch as a function, and defines it in Coq.
 There are some limitations in scope described partially here and partially in the repository.
@@ -198,7 +198,9 @@ Later we will see real-world examples that demonstrate more configurations, too.
 For now let's talk about the scope more.
 
 \subsection{Scope: Changes in Content}
+\label{sec:pumpkin-scope}
 
+% TODO somewhere distinguish between prototype and suite of tools meaningfully
 The 2018 \sysname prototype searches for patches to proofs broken by changes in the content of programs and specifications.
 The corresponding differencing algorithms run in response to a breaking change in the content of a program or specification. % TODO clarify ``certain''?
 They focus in particular on changes that do not add, remove, or rearrange any assumptions.
@@ -209,6 +211,7 @@ Basically the main barrier here is that this produces a function that the user m
 Thus it can't handle changes that move things around, as these need to be transformed directly.
 
 \subsection{Differencing: Candidates from Examples}
+\label{sec:pumpkin-spec-diff}
 
 high-level spec, more below
 
@@ -224,6 +227,7 @@ Functions that map back and forth between the old and new versions
 of the example patch proof in a particular context, but do not yet generalize to other contexts.
 
 \subsection{Transformations: Patches from Candidates}
+\label{sec:pumpkin-spec-trans}
 
 high-level spec, more below
 

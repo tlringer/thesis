@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1977,7 +1977,7 @@ Package microtype Info: Character `013' is missing
 (microtype)             Ignoring protrusion settings for this character.
 [4] [5]
 
-LaTeX Warning: Citation `TODO' on page 6 undefined on input line 209.
+LaTeX Warning: Citation `TODO' on page 6 undefined on input line 186.
 
 [6] (./guide.tex)) (./motivating.tex [7] [8
 
@@ -2054,33 +2054,19 @@ LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 20.
 
 LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 20.
 
-
-LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 21.
-
-
-LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 22.
-
-(./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 34.
+[27] (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [27] [28]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 144.
-LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 144.
- [29]
+) [28] [29]
 
-LaTeX Warning: Reference `spec-pumpkin-diff' on page 30 undefined on input line
- 198.
+LaTeX Warning: Reference `TODO' on page 30 undefined on input line 205.
 
-
-LaTeX Warning: Reference `spec-pumpkin-trans' on page 30 undefined on input lin
-e 198.
-
-) (./repair/differencing.tex [30]) (./repair/transformation.tex [31] [32])
+[30]) (./repair/differencing.tex) (./repair/transformation.tex [31] [32])
 (./repair/implementation.tex [33]
-<repair/nat_ind.pdf, id=820, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=813, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2100,11 +2086,10 @@ LaTeX Warning: Reference `sec:fail' on page 35 undefined on input line 115.
 LaTeX Warning: Reference `sec:composeintro' on page 36 undefined on input line 
 165.
 
-) [36] (./repair/results.tex [37] (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
+[36]) (./repair/results.tex [37] (./repair/compcert.tex) (./repair/compcert.tex
+) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[38]
+(./repair/bintonat.tex) (./repair/bintonat.tex) [38]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2114,8 +2099,8 @@ Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 e in tactics---rewriting
  []
 
-[40] (./repair/divide.tex) (./repair/divide.tex) [41]) (./repair/conclusion.tex
-[42])) (./often.tex [43] [44
+[40] (./repair/divide.tex) (./repair/divide.tex) [41] [42])
+(./repair/conclusion.tex)) (./often.tex [43] [44
 
 
 ]
@@ -2200,7 +2185,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 Overfull \hbox (10.49026pt too wide) in paragraph at lines 656--664
-\OT1/pplj/m/n/10.95 (-20) Figure []28[] shows the in-ter-est-ing deriva-tions f
+\OT1/pplj/m/n/10.95 (-20) Figure []30[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
@@ -2408,13 +2393,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49586 strings out of 492609
- 1000400 string characters out of 6129033
- 1317646 words of memory out of 5000000
- 50635 multiletter control sequences out of 15000+600000
+ 49567 strings out of 492609
+ 999887 string characters out of 6129033
+ 1317170 words of memory out of 5000000
+ 50616 multiletter control sequences out of 15000+600000
  630937 words of font info for 744 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2337s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2432,7 +2417,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (111 pages, 1440299 bytes).
+Output written on uwthesis.pdf (111 pages, 1442158 bytes).
 PDF statistics:
  2484 PDF objects out of 2487 (max. 8388607)
  2304 compressed objects within 24 object streams

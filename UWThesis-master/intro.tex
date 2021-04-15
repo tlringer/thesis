@@ -156,29 +156,6 @@ More details including limitations are in the corresponding chapters. % TODO lin
 
 % TODO move these to correpsonding sections
 \iffalse
-I summarize these below; more details including limitations are in the corresponding chapters.
-
-\paragraph{Proof Repair by Example} % TODO names of classifiers below suck, but whatever fix later
-Chapter~\ref{ch:example} describes semantic differencing algorithms and proof term transformations for example-based proof repair.  % TODO more specific section here would be good, and onward
-The corresponding differencing algorithms run in response to a breaking change in the content of a program or specification. % TODO clarify ``certain''?
-They look at the difference between the old and new versions of a single example patched proof in response to that change.
-When they succeed, the diff that they find is a list of \textit{patch candidates}: functions that map back and forth between the old and new versions
-of the example patch proof in a particular context, but do not yet generalize to other contexts.
-The corresponding proof term transformations then try to transform each of those candidate patch functions to a more general \textit{reusable proof patch}:
-a function that can be applied with traditional proof automation to fix other proofs broken by the same change.
-In summary, proof repair by example has this profile:
-
-\begin{itemize}
-\item \textbf{class}: changes in the content of a program or specification 
-\item \textbf{diff}: a list of patch candidates
-\item \textbf{source}: a single example patched proof
-\item \textbf{term}: a single patch candidate
-\item \textbf{repair}: a reusable proof patch
-\end{itemize}
-Note that proof repair by example does not take care of the application step---this is handled using traditional proof automation in Coq.
-\fi
-
-\iffalse
 \paragraph{Proof Repair Across Type Equivalences}
 Chapter~\ref{chapt:pi} describes semantic differencing algorithms and proof term transformations for proof repair in response
 to changes that can be described by a type equivalence. % TODO hand-wavy; cite

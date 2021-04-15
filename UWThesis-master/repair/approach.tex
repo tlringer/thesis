@@ -15,22 +15,43 @@ In other words, looking back to the thesis statement, the information shows up i
 As mentioned earlier, \sysname does this using a combination of semantic differencing and program transformations.
 Differencing looks at the difference between versions of the example patched proof for this information, and finds the candidate.
 Then, program transformations modify that candidate to produce the reusable proof patch.
-
-And of course all of this happens over proof terms, since tactics might hide necessary information.
+And of course all of this happens over proof terms, since tactics might hide necessary information
+(example before didn't show this, but example here will).
 For now, support for both proof scripts and patch application is simple (see Section~\ref{sec:TODO}), though both of these are addressed in Chapter~\ref{sec:TODO}.
-This section shows how differencing and proof term transformations come together in \sysname on an example (Section~\ref{sec:TODO}),
-then specifies differencing and the transformations more precisely (Section~\ref{sec:TODO}).
 
-\subsection{System Overview}
-\label{sec:pumpkin-overview}
+Segue.
+
+\subsection{Workflow: Patching by Example}
+
+\begin{figure}
+%\begin{algorithm}
+\begin{algorithmic}
+\renewcommand{\thealgorithm}{}
+\footnotesize
+\caption{\footnotesize{find\_patch(term, term', direction)}}
+    \STATE \diff{\textit{diff} types of term and term' for goals}
+    \STATE \diff{\textit{diff} term and term' for candidates}
+    \IF{there are candidates}
+      \STATE \diff{\textit{factor}, \textit{abstract}, \textit{specialize}, and/or \textit{invert} candidates}
+      \IFRETURN{there are patches}{patches}
+    \ENDIF
+    \RETURN failure
+\end{algorithmic}
+%\end{algorithm}
+\caption{Search procedure for a reusable proof patch in \sysname.}
+\label{alg:patching}	
+\end{figure}
+
+These two parts come together to form the proof patch search procedure in Figure~\ref{alg:patching}.
+\sysname exposes a \lstinline{Patch Proof} command that calls out to this procedure.
+\lstinline{Patch Proof} takes as input the old and new version of an example proof patched in response to some breaking change.
+When succesful, it returns the reusable proof patch as a function, and defines it in Coq.
+There are some limitations in scope described partially here and partially in the repository.
+The \sysname repository also contains a detailed user guide.
+Options described in the implementation section make it possible to automate application to some degree as well if desired,
+and the implementation describes a lot more, too.
 
 % New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
-
-Here is the system diagram for \sysname.
-The \sysname repository contains a detailed user guide.
-
-And of course all of this happens over proof terms, since tactics might hide necessary information.
-Example before didn't show this, but this example will.
 
 \begin{figure*}
 \begin{minipage}{0.50\textwidth}
@@ -58,6 +79,22 @@ the difference in terms that corresponds to a patch.}
 \label{fig:example}
 \end{figure*}
 
+% TODO list of configurations supported?
+The specifics of this procedure vary by the particular class of change.
+\sysname infers a \textit{configuration} from the example change.
+This configuration customizes the highlighted lines for an entire class of changes:
+It determines what to diff on lines 1 and 2,
+and what transformations to run to achieve what goal on line 4.
+There are four transformations that turn patch candidates into reusable proof patches:
+
+\begin{enumerate}
+\item \textit{Patch specialization} to arguments
+\item \textit{Patch abstraction} of arguments or functions
+\item \textit{Patch inversion} to reverse a patch
+\item \textit{Lemma factoring} to break a term into parts
+\end{enumerate}
+The configuration chooses among these strategically based on the structure of the proof term.
+
 To motivate this workflow, consider using \sysname to search the proofs in
 Figure~\ref{fig:example} for a patch between conclusions.
 Except we will show a place where the lemma is actually applied.
@@ -69,96 +106,9 @@ We invoke the plugin using \lstinline{old} and \lstinline{new} as the example ch
 \begin{lstlisting}[language=ml4]
   Patch Proof old new as patch.
 \end{lstlisting}
-\sysname first determines the type that a patch from \lstinline{new} to \lstinline{old} should have.
-To determine this, it semantically \textit{diffs} the types and finds this goal type (line 2):
 
-\begin{lstlisting}[language=coq]
-  (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= p}@) -> (@\diff{n <= p + 1}@)
-\end{lstlisting}
-It then breaks each inductive proof into cases and determines an intermediate goal type for the candidate.
-%recursively searches each case for a candidate.
-In the base case, for example, it \textit{diffs} the types and determines that a candidate
-between the base cases of \lstinline{new} and \lstinline{old} should have this type (lines 11 and 12):
-
-\begin{lstlisting}
-  (@\diff{(fun p0 => n <= p0)}@) m -> (@\diff{(fun p0 => n <= p0 + 1)}@) m
-\end{lstlisting}
-It then \textit{diffs} the terms (line 13) for such a candidate:
-
-\begin{lstlisting}
-  fun n m p H0 H1 =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
-\end{lstlisting}
-
-This candidate is close, but it is not yet a patch. This candidate
-maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
-be applied to \lstinline{p}).
-
-This is where the transformations come in.
-There are four:
-
-\begin{enumerate}
-\item \textit{Patch specialization} to arguments
-\item \textit{Patch abstraction} of arguments or functions
-\item \textit{Patch inversion} to reverse a patch
-\item \textit{Lemma factoring} to break a term into parts
-\end{enumerate}
-
-Here, \sysname \textit{abstracts} this candidate by \lstinline{m} (line 11), which lifts it out of the base case:
-
-\begin{lstlisting}
-  fun (@\diff{n0}@) n m p H0 H1 =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@) n m p, n <= m -> m <= p -> n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
-\end{lstlisting}
-\sysname then \textit{specializes} this candidate to \lstinline{p} (line 16), the argument
-to the conclusion of \lstinline{le_ind}. This produces a patch:
-
-\begin{lstlisting}
-  patch n m p H0 H1 := (@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
-\end{lstlisting}
-The user can then use \lstinline{patch} to fix other broken proofs.
-For example, given a proof that applies \lstinline{old}, the user can use \lstinline{patch} to prove the same conclusion
-by applying \lstinline{new}:
-
-\begin{lstlisting}[language=coq]
-  (@\succeeds{apply old.}@)(@\vspace{-0.1cm}@)
-  (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
-\end{lstlisting}
-This can happen automatically through hint databases.
-
-This simple example uses only two transformations. The other transformations help turn candidates
-into patches in similar ways. We discuss all of this in detail later.
-
-\paragraph{Configuration}
-
-The components come together to form a proof patch finding procedure:
-
-\begin{algorithm}
-\begin{algorithmic}[1]
-\renewcommand{\thealgorithm}{}
-\footnotesize
-\caption{\footnotesize{find\_patch(term, term', direction)}}
-    \STATE \diff{\textit{diff} types of term and term' for goals}
-    \STATE \diff{\textit{diff} term and term' for candidates}
-    \IF{there are candidates}
-      \STATE \diff{\textit{factor}, \textit{abstract}, \textit{specialize}, and/or \textit{invert} candidates}
-      \IFRETURN{there are patches}{patches}
-    \ENDIF
-    \RETURN failure
-\end{algorithmic}
-\label{alg:patching}	
-\end{algorithm}
-\sysname infers a \textit{configuration} from the example change.
-This configuration customizes the highlighted lines for an entire class of changes:
-It determines what to diff on lines 1 and 2,
-and how to use the components on line 4.
-
-For example, to find a patch for Figure~\ref{fig:example},
-\sysname used the configuration for changes in conclusions of two proofs
+The first thing that \sysname does is determine the configuration.
+Here, it uses the configuration for changes in conclusions of two proofs
 that induct over the same hypothesis. Given two such
 proofs:
 
@@ -166,13 +116,13 @@ proofs:
 %such procedure in this section; we descibe three more
 %in Section~\ref{sec:case}.
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) x, H x -> (@\diff{P}@) x(@\vspace{-0.1cm}@)
-  (@\ltacforall@) x, H x -> (@\diff{P'}@) x
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P}@) x(@\vspace{-0.1cm}@)
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x
 \end{lstlisting}
 \sysname searches for a patch with this type:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) x, H x -> (@\diff{P'}@) x -> (@\diff{P}@) x
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x $\rightarrow$ (@\diff{P}@) x
 \end{lstlisting}
 using this configuration:
 
@@ -190,16 +140,97 @@ using this configuration:
 \end{algorithmic}
 \end{algorithm}
 
-Later we will see real-world examples that demonstrate more configurations.
+When it runs the procedure,
+\sysname first determines the type that a patch from \lstinline{new} to \lstinline{old} should have.
+To determine this, it semantically \textit{diffs} the types and finds this goal type:
 
-\subsection{Specification}
-\label{sec:pumpkin-spec}
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
+\end{lstlisting}
+It then breaks each inductive proof into cases and determines an intermediate goal type for the candidate.
+%recursively searches each case for a candidate.
+In the base case, for example, it \textit{diffs} the types and determines that a candidate
+between the base cases of \lstinline{new} and \lstinline{old} should have this type (lines 11 and 12):
 
-High-level specification of both differencing (Section~\ref{spec-pumpkin-diff}) and transformations (Section~\ref{spec-pumpkin-trans}), with inputs and outputs.
+\begin{lstlisting}
+  (@\diff{(fun p0 => n <= p0)}@) m $\rightarrow$ (@\diff{(fun p0 => n <= p0 + 1)}@) m
+\end{lstlisting}
+It then \textit{diffs} the terms (line 13) for such a candidate:
 
-\subsubsection{Specifying Differencing}
-\label{sec:spec-pumpkin-diff}
+\begin{lstlisting}
+  fun n m p H0 H1 =>(@\vspace{-0.04cm}@)
+    (fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
+\end{lstlisting}
 
-\subsubsection{Specifying the Transformations}
-\label{sec:spec-pumpkin-trans}
+This candidate is close, but it is not yet a patch. This candidate
+maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
+be applied to \lstinline{p}).
+
+Here, \sysname \textit{abstracts} this candidate by \lstinline{m} (line 11), which lifts it out of the base case:
+
+\begin{lstlisting}
+  fun (@\diff{n0}@) n m p H0 H1 =>(@\vspace{-0.04cm}@)
+    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) (@\diff{n0}@) n m p, n <= m -> m <= p -> n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
+\end{lstlisting}
+\sysname then \textit{specializes} this candidate to \lstinline{p} (line 16), the argument
+to the conclusion of \lstinline{le_ind}. This produces a patch:
+
+\begin{lstlisting}
+  patch n m p H0 H1 := (@\vspace{-0.04cm}@)
+    (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
+\end{lstlisting}
+The user can then use \lstinline{patch} to fix other broken proofs.
+For example, given a proof that applies \lstinline{old}, the user can use \lstinline{patch} to prove the same conclusion
+by applying \lstinline{new}:
+
+\begin{lstlisting}[language=coq]
+  (@\succeeds{apply old.}@)(@\vspace{-0.1cm}@)
+  (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
+\end{lstlisting}
+This can happen automatically through hint databases.
+
+This simple example uses only two transformations. The other transformations help turn candidates
+into patches in similar ways. We discuss all of this in detail later.
+Later we will see real-world examples that demonstrate more configurations, too.
+For now let's talk about the scope more.
+
+\subsection{Scope: Changes in Content}
+
+The 2018 \sysname prototype searches for patches to proofs broken by changes in the content of programs and specifications.
+The corresponding differencing algorithms run in response to a breaking change in the content of a program or specification. % TODO clarify ``certain''?
+They focus in particular on changes that do not add, remove, or rearrange any assumptions.
+Chapter~\ref{TODO} explains an extension to \sysname that supports a broad class of
+changes in datatypes that may change in those ways.
+
+Basically the main barrier here is that this produces a function that the user must apply.
+Thus it can't handle changes that move things around, as these need to be transformed directly.
+
+\subsection{Differencing: Candidates from Examples}
+
+high-level spec, more below
+
+\paragraph{Input: Example Patched Proof}
+They look at the difference between the old and new versions of a single example patched proof in response to that change.
+Old and new version of example patched proof.
+%\sysname is a proof-of-concept and does not yet handle some kinds of proofs.
+%In each scenario, we made minor modifications to proofs so that we could use \sysname (for example,
+%using induction instead of destruction).
+
+\paragraph{Output: Patch Candidates}
+Functions that map back and forth between the old and new versions
+of the example patch proof in a particular context, but do not yet generalize to other contexts.
+
+\subsection{Transformations: Patches from Candidates}
+
+high-level spec, more below
+
+\paragraph{Input: Patch Candidates}
+They come from differencing.
+
+\paragraph{Output: Reusable Proof Patch}
+The corresponding proof term transformations then try to transform each of those candidate patch functions to a more general \textit{reusable proof patch}:
+a function that can be applied with traditional proof automation to fix other proofs broken by the same change.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2017,21 +2017,21 @@ lj/m/n/10.95 (-20) Our spec-i-fi-ca-tion of []
 
 [20] [21]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 187.
+(Font)              scaled to size 9.37807pt on input line 189.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 187.
+(Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 187.
+(Font)              scaled to size 5.21004pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 187.
+(Font)              scaled to size 9.37807pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 187.
+(Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 187.
+(Font)              scaled to size 5.21004pt on input line 189.
 <maintenance/fig/patch.png, id=546, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
-Package pdftex.def Info: maintenance/fig/patch.png  used on input line 190.
+Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
 (pdftex.def)             Requested size: 336.0pt x 202.21732pt.
  [22]) (./repair.tex [23 <./maintenance/fig/patch.png>]))
 (./pumpkinpatch.tex [24]
@@ -2058,7 +2058,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
  [29]) (./repair/differencing.tex [30])
 (./repair/transformation.tex [31]) (./repair/implementation.tex [32]
-<repair/nat_ind.pdf, id=794, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=801, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2099,7 +2099,7 @@ chapter 4.
 
 ] [44])
 (./often/approach.tex
-<often/workflowa.pdf, id=1156, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1163, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2384,8 +2384,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49547 strings out of 492609
- 999685 string characters out of 6129033
+ 49554 strings out of 492609
+ 999734 string characters out of 6129033
  1317160 words of memory out of 5000000
  50614 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
@@ -2408,10 +2408,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (109 pages, 1437473 bytes).
+Output written on uwthesis.pdf (109 pages, 1438868 bytes).
 PDF statistics:
- 2461 PDF objects out of 2487 (max. 8388607)
- 2284 compressed objects within 23 object streams
- 1218 named destinations out of 1440 (max. 500000)
+ 2471 PDF objects out of 2487 (max. 8388607)
+ 2294 compressed objects within 23 object streams
+ 1225 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

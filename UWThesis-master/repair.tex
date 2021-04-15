@@ -1,6 +1,9 @@
 \section{Proof Repair}
 \label{sec:mot-rep}
 
+(Still outline text, since I'm getting too antsy and feel like I want to move to the technical chapters again for a bit, but I'm going to explain the parallel structure of the technical
+chapters at the bottom of this section, so that you can understand what I'll be attempting and how this will flow in.)
+
 Name inspired by program repair, but quite different as we'll soon see.
 
 Recall thesis: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
@@ -19,4 +22,17 @@ This is great because this language gives us so much information and certainty. 
 
 But it's also challenging because this language is so unforgiving. Plus, in the end, we need these tactic proofs, not just proof terms. So we can't just reuse program repair tools. (generals related work)
 
-So next two chapters will show two tools in our tool suite that work this way, how they handle these challenges, and how they save work.
+So next two chapters will show two tools in my tool suite that work this way, how they handle these challenges, and how they save work.
+They will have parallel organization (informal for now but hopefully gives you a sense of what I'm thinking):
+
+\begin{enumerate}
+\item \textbf{Motivating Example}: an example change that motivates the class of repairs the tool supports.
+\item \textbf{Approach}: a specification for the repair tool, including what kind of changes it supports, where it looks to extract \& generalize changes, what the extracted
+\& generalized change actually is, and (for the second tool) how it applies those changes. expected inputs and outputs, plus fit to thesis frame.
+\item \textbf{Differencing}: design of differencing algorithms.
+\item \textbf{Transformation}: design of proof term transformations.
+\item \textbf{Implementation}: how this is actually implemented for Coq.
+\item \textbf{Results}: proof that this can save work relative to reference manual repairs.
+\item \textbf{Conclusion}: conclusion, limitations, lessons.
+\end{enumerate}
+

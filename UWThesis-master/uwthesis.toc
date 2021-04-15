@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{36}{subsection.3.5.2}% 
 \contentsline {subsubsection}{\numberline {3.5.2.1}Trusted Computing Base}{36}{subsubsection.3.5.2.1}% 
 \contentsline {section}{\numberline {3.6}Results}{36}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{37}{Item.27}% 
+\contentsline {paragraph}{Identifying Changes}{37}{Item.34}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{37}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{38}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{38}{lstnumber.-98.1}% 

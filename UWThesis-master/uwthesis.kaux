@@ -69,8 +69,8 @@
 \KAuxNewLinkScopetagInstance {sec:processes}{document}
 \KAuxDeclaredScopeTag {sec:irl}
 \KAuxNewLinkScopetagInstance {sec:irl}{document}
-\KAuxDeclaredScopeTag {sec:thus-repair}
-\KAuxNewLinkScopetagInstance {sec:thus-repair}{document}
+\KAuxDeclaredScopeTag {fig:patch}
+\KAuxNewLinkScopetagInstance {fig:patch}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}
 \KAuxNewLinkScopetagInstance {sec:mot-rep}{document}
 \KAuxDeclaredScopeTag {ch:example}

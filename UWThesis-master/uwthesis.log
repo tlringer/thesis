@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  14 APR 2021 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2015,17 +2015,36 @@ Overfull \hbox (14.86966pt too wide) in paragraph at lines 35--42
 lj/m/n/10.95 (-20) Our spec-i-fi-ca-tion of []
  []
 
-[20] [21]) (./repair.tex [22])) (./pumpkinpatch.tex [23] [24
-
-
-]
+[20] [21]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 187.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 187.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 187.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 187.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 187.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 187.
+<maintenance/fig/patch.png, id=546, 660.4675pt x 397.485pt>
+File: maintenance/fig/patch.png Graphic file (type png)
+<use maintenance/fig/patch.png>
+Package pdftex.def Info: maintenance/fig/patch.png  used on input line 190.
+(pdftex.def)             Requested size: 336.0pt x 202.21732pt.
+ [22]) (./repair.tex [23 <./maintenance/fig/patch.png>]))
+(./pumpkinpatch.tex [24]
 chapter 3.
 (./repair/motivating.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 30.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-[25]
+[25
+
+
+]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 66.
 ) (./repair/approach.tex [26] (./repair/introex.tex) (./repair/introex.tex) (./
@@ -2038,21 +2057,8 @@ put line 139.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 139.
  [29]) (./repair/differencing.tex [30])
-(./repair/transformation.tex [31]) (./repair/implementation.tex
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 10.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 10.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 10.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 10.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 10.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 10.
- [32]
-<repair/nat_ind.pdf, id=787, 391.4625pt x 200.75pt>
+(./repair/transformation.tex [31]) (./repair/implementation.tex [32]
+<repair/nat_ind.pdf, id=794, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 68.
@@ -2093,7 +2099,7 @@ chapter 4.
 
 ] [44])
 (./often/approach.tex
-<often/workflowa.pdf, id=1148, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1156, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
@@ -2170,7 +2176,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 Overfull \hbox (10.49026pt too wide) in paragraph at lines 656--664
-\OT1/pplj/m/n/10.95 (-20) Figure []27[] shows the in-ter-est-ing deriva-tions f
+\OT1/pplj/m/n/10.95 (-20) Figure []28[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
@@ -2378,10 +2384,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49538 strings out of 492609
- 999540 string characters out of 6129033
- 1317087 words of memory out of 5000000
- 50609 multiletter control sequences out of 15000+600000
+ 49547 strings out of 492609
+ 999685 string characters out of 6129033
+ 1317160 words of memory out of 5000000
+ 50614 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2402,10 +2408,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (109 pages, 1405194 bytes).
+Output written on uwthesis.pdf (109 pages, 1437473 bytes).
 PDF statistics:
- 2454 PDF objects out of 2487 (max. 8388607)
- 2279 compressed objects within 23 object streams
- 1217 named destinations out of 1440 (max. 500000)
- 93501 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2461 PDF objects out of 2487 (max. 8388607)
+ 2284 compressed objects within 23 object streams
+ 1218 named destinations out of 1440 (max. 500000)
+ 93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

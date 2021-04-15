@@ -6,7 +6,7 @@ Like all software systems, verified systems evolve over time.
 The difference is that, for verified systems, the proofs must evolve alongside the rest of the system (Section~\ref{sec:changes}).
 Proof engineers typically use development processes to make proofs less likely to break in the face of these changes (Section~\ref{sec:processes}).
 Still, even with these development processes, breaking changes happen all the time, even for experts (Section~\ref{sec:irl}).
-All of this points to a need for change-aware proof automation---that is, proof repair (Section~\ref{sec:thus-repair}).
+All of this points to a need for change-aware proof automation---that is, proof repair.
 
 \subsection{Breaking Changes}
 \label{sec:changes}
@@ -126,11 +126,13 @@ causing a cascading effect of change.
 \subsection{Building Robust Proofs}
 \label{sec:processes}
 
-There are a lot of development processes people use to make proofs less likely to break to begin with (survey paper)
+TODO There are a lot of development processes people use to make proofs less likely to break to begin with (survey paper).
 
-affinity lemmas and reference to \lstinline{zip} example.
+TODO two examples. First, affinity lemmas and reference to \lstinline{zip} example.
+Second, better tactics like from CPDT and how could help is in \lstinline{zip} example.
 
-tactics and how they relate
+TODO quick summary of some other ideas from survey paper.
+For more, see the survey paper.
 
 \iffalse
 In that case, it may help us to define a more general \lstinline{patch} corresponding to the change:
@@ -169,24 +171,57 @@ from example changes in proofs.
 \subsection{Even Experts are Human}
 \label{sec:irl}
 
-Still, even with these development processes, breaking changes happen all the time, even for experts.
+% REPLICA text here (TODO do I cite it if it just contains excertps?)
 
-But still, even with these, the reality: This happens all the time (REPLICA)
+Even with good development processes, proof engineers change programs and specifications all the time---and this does break proofs, even for experts.
+To find evidence of this in the real world, I built a Coq plugin called \toolname 
+(REPL Instrumentation for Coq Analysis) that listens to the Read Eval Print
+Loop (REPL)---a simple loop that all user interaction with Coq passes through---to collect data that the proof engineer sends to Coq during development.
+%This includes data difficult to obtain from other sources, like failed
+%proof attempts and incremental changes to definitions.
+I used \toolname to collect a month's worth of granular data on 
+the proof developments of 8 intermediate to expert Coq users.
+I visualized and analyzed this data to classify hundreds changes to programs and specifications,
+and fixes to broken proofs.
+The resulting data, analyses, and proof repair benchmarks are publicly available with the proof engineers' 
+consent.\footnote{\url{http://github.com/uwplse/analytics-data}}
 
-And in fact not just after developing a proof, but during development too (REPLICA)
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{maintenance/fig/patch.png}
+  \caption{Patches to a lemma by an expert proof engineer.}
+  \label{fig:patch}
+\end{figure}
 
-And breaks proofs even for experts (REPLICA)
+Changes to programs and specifications were often formulaic and repetitive.
+For example, Figure~\ref{fig:patch} shows an example change by an expert proof engineer.
+In this change, the proof engineer wraps two arguments into a single application of \lstinline{Val}
+in three different hypotheses of a lemma.
+This change did not occur in isolation: the proof engineer patched 10 other definitions or lemmas
+in similarly, wrapping arguments into an application of
+\lstinline{Val}.
+%I suspect that this was due to a change in the definition of \lstinline{absr},
+%but I was not able to confirm this since
+%the change in question occurred before the beginning of the study.
 
-And it's an extra big problem when you have a large development and the changes are outside of your control
+Changes to programs and specifications did break proofs, even for expert proof engineers.
+The proof engineers most often (75\% of the time) fixed broken proofs by stepping 
+up above those proofs in the UI and fixing something else, like a specification.
+That is, development and maintenance were in reality tightly coupled.
 
-Hence Social Processes
+But sometimes, proof engineers did not successfully fix proofs broken by changes in programs and specifications.
+For example, for the change in Figure~\ref{fig:patch},
+the expert proof engineer admitted or aborted (that is, gave up on) the proofs of four of the five
+broken lemmas after this change.
+In other words, right now, even experts sometimes just give up in the face of change.
 
-\subsection{The Need for Repair}
-\label{sec:thus-repair}
+TODO: And it's an extra big problem when you have a large development and the changes are outside of your control.
 
-Why automation breaks, even with good development processes
+TODO: Hence Social Processes.
 
-Hence proof repair---smarter automation
+TODO: Why automation breaks, even with good development processes.
+In other words, even experts are human.
+And automation doesn't understand how things change, so can't help the human out.
+But proof repair---smarter proof automation---can.
 
 % TODO for now, just a copy-paste of analytics original paper, including the bib---will change soon
 

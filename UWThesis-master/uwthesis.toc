@@ -22,8 +22,7 @@
 \contentsline {paragraph}{Changing our Specification}{21}{lstnumber.-29.10}% 
 \contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{22}{subsection.2.2.2}% 
 \contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{22}{subsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.4}The Need for Repair}{22}{subsection.2.2.4}% 
-\contentsline {section}{\numberline {2.3}Proof Repair}{22}{section.2.3}% 
+\contentsline {section}{\numberline {2.3}Proof Repair}{23}{section.2.3}% 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{25}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Motivating Example}{25}{section.3.1}% 
 \contentsline {paragraph}{Without Proof Repair}{25}{section.3.1}% 
@@ -75,15 +74,15 @@
 \contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{52}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Search Procedures}{54}{subsection.4.3.3}% 
 \contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{54}{subsubsection.4.3.3.1}% 
-\contentsline {paragraph}{Searching for the Indexer}{58}{figure.caption.28}% 
+\contentsline {paragraph}{Searching for the Indexer}{58}{figure.caption.29}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{60}{subsubsection.4.3.3.2}% 
-\contentsline {paragraph}{Core Search Algorithm}{60}{figure.caption.30}% 
+\contentsline {paragraph}{Core Search Algorithm}{60}{figure.caption.31}% 
 \contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{61}{subsubsection.4.3.3.3}% 
 \contentsline {paragraph}{Designing new Search Procedures}{61}{subsubsection.4.3.3.3}% 
 \contentsline {subsection}{\numberline {4.3.4}Limitations}{61}{subsection.4.3.4}% 
 \contentsline {section}{\numberline {4.4}Transformation}{61}{section.4.4}% 
-\contentsline {paragraph}{Lifting Eliminators}{64}{figure.caption.33}% 
-\contentsline {paragraph}{Lifting Constructors}{66}{figure.caption.35}% 
+\contentsline {paragraph}{Lifting Eliminators}{64}{figure.caption.34}% 
+\contentsline {paragraph}{Lifting Constructors}{66}{figure.caption.36}% 
 \contentsline {paragraph}{Core Lifting Algorithm}{66}{lstnumber.-179.1}% 
 \contentsline {subsection}{\numberline {4.4.1}Limitations}{66}{subsection.4.4.1}% 
 \contentsline {section}{\numberline {4.5}Implementation}{68}{section.4.5}% 

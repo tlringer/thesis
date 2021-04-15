@@ -1,7 +1,5 @@
 \section{Approach}
 
-% TODO framing this like the DEVOID spec.tex file would be cool, just mention decompiler somewhere
-
 % Barely from PUMPKIN Pi approach with a bit of intro
 
 \toolnamec can do much more than permute constructors.
@@ -10,9 +8,21 @@ Given an equivalence between types \Aa and \B,
 It does this in a way that allows for removing references to \Aa, which is essential for proof repair,
 since \Aa may be an old version of an updated type.
 
-Like I mentioned earlier, this also works using differencing and program transformations over proof terms.
-Here, differencing thus looks at the difference between versions of the changed datatype, and finds something called a type equivalence (Section~\ref{sec:scope}). Sometimes differencing is automatic, and sometimes it's manual.
-Then, program transformation ports proofs across the equivalence directly (Section~\ref{sec:repair}). So they take care of application.
+The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically patch broken proofs in response to a broad class of changes in datatypes.
+\toolnamec in particular repairs proofs in response to changes in types that correspond to \textit{type equivalences}~\cite{univalent2013homotopy},
+or pairs of functions that map between two types (possibly with some additional information) and are mutual inverses (Section~\ref{sec:scope}).\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
+(Sentence framing to thesis as in \sysname section will go here.)
+
+Like the original \sysname prototype, it also does this using a combination of differencing and proof term transformations.
+The corresponding differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.
+When they succeed, the diff that they find is that type equivalence.
+The proof engineer can also pass the type equivalence to \toolnamec directly, effectively doing differencing by hand.
+In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the dataype
+directly to a proof term defined over the new version of the datatype.
+(Mention decompiler briefly, tease implementation section and case studies, say something cute.)
+
+\subsection{Workflow: Configure, Transform, Decompile}
+\label{sec:pi-workflow}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{often/workflowa.pdf}
@@ -34,22 +44,45 @@ There are currently four search procedures for automatic configuration implement
 Manual configuration makes it possible
 for the proof engineer to configure the transformation to any equivalence,
 even without a search procedure.
-Section~\ref{sec:search} shows examples of both workflows applied to real scenarios
+Section~\ref{sec:search} shows examples of both workflows applied to real scenarios.
+
+% TODO make longer w/ example if needed
 
 \subsection{Scope: Type Equivalences}
-\label{sec:scope}
+\label{sec:pi-scope}
 
 % TODO: Explain that differencing is what finds these type equivalences, or sometimes we do differencing ourselves
-\toolnamec repairs proofs in response to changes in types that correspond to \textit{type equivalences}~\cite{univalent2013homotopy},
-or pairs of functions that map between two types and are mutual inverses.\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
+
+\begin{figure}
+\begin{minipage}{0.48\columnwidth}
+\lstinputlisting[firstline=1, lastline=3]{often/equiv2.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\columnwidth}
+\lstinputlisting[firstline=5, lastline=7]{often/equiv2.tex}
+\end{minipage}
+\vspace{-0.4cm}
+\caption{The old type \lstinline{I} (left) is either \lstinline{A} or \lstinline{B}. The new type \lstinline{J} (right) is \lstinline{I} with \lstinline{A} and \lstinline{B} factored out to \lstinline{bool} (\codediff{orange}).}
+\label{fig:equivalence2}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{0.48\textwidth}
+   \lstinputlisting[firstline=1, lastline=3]{often/listtovect.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.58\textwidth}
+   \lstinputlisting[firstline=5, lastline=7]{often/listtovect.tex}
+\end{minipage}
+\vspace{-0.4cm}
+\caption{A vector (bottom) is a list (top) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
+\label{fig:listtovect}
+\end{figure}
+
+\toolnamec automatically repairs proofs in response to changes in types that correspond to type equivalences.
 When a type equivalence between types \Aa and \B exists, those types are \textit{equivalent} (denoted \Aa $\simeq$ \B). % for example:
 Figure~\ref{fig:equivalence} shows a type equivalence between the two versions of \lstinline{list}
 from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
-
-%
-%\begin{lstlisting}
-%Old.list $\simeq$ New.list
-%\end{lstlisting}
 
 To give some intuition for what kinds of changes can be described by equivalences, we preview two changes below.
 See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
@@ -112,8 +145,26 @@ While Coq lacks quotient types,
 it is possible to achieve a similar outcome and use \toolnamec for changes that add or remove information
 when those changes can be expressed as equivalences between $\Sigma$ types or sum types.
 
-\subsection{Goal: Transport with a Twist}
-\label{sec:repair}
+\subsection{Differencing: Equivalences from Changes}
+\label{sec:pi-spec-diff}
+
+Differencing takes as inputs $\ldots$ and returns $\ldots$:
+
+\begin{itemize}
+\item \textbf{Inputs}: $\ldots$, assuming:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\end{itemize}
+
+other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
+
+\subsection{Transformation: Transport with a Twist}
+\label{sec:pi-spec-trans}
 
 The goal of \toolnamec is to implement a kind of proof reuse known as \textit{transport}~\cite{univalent2013homotopy},
 but in a way that is suitable for repair.
@@ -139,50 +190,24 @@ The original \lstinline{rev_app_distr} is equal to the repaired proof up to tran
 since both prove the same thing the same way up to the equivalence, and up to the changes in \lstinline{++}
 and \lstinline{rev}.
 
+The transformation takes as input $\ldots$ and returns $\ldots$:
+
+\begin{itemize}
+\item \textbf{Inputs}: $\ldots$, assuming:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\end{itemize}
+
+other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
+
 Transport typically works by applying the functions that make up the equivalence to convert
 inputs and outputs between types.
 This approach would not be suitable for repair, since it does not make it possible to remove the old type \Aa.
 \toolnamec implements transport in a way that allows for removing references to \Aa---by proof term transformation.
-
-%The goal of a proof repair tool like \toolnamec is to define a transport method that
-%can remove references to the old specification, %rather than converting back and forth like standard transport methods.
-%%That way, the proof repair tool can produce proofs that no longer refer in any way to the old specification,
-%since the old specification may no longer exist.
-
-%Section~\ref{sec:overview} showed a simple case of this: \toolnamec
-%reused the proof of \lstinline{rev_app_distr} defined over \lstinline{Old.list}
-%to generate a new proof of \lstinline{rev_app_distr} defined over equivalent \lstinline{New.list}.
-%Furthermore, it did so in a way that removed all references to \lstinline{Old.list} in the proof
-%and in its dependencies.
-%That way, after calling \lstinline{Repair}, \lstinline{Old.list} could be removed.
-
-%\subsection{A Tool for Proof Repair Across Equivalences}
-%\label{sec:time}
-
-\begin{figure}
-\begin{minipage}{0.48\columnwidth}
-\lstinputlisting[firstline=1, lastline=3]{often/equiv2.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\columnwidth}
-\lstinputlisting[firstline=5, lastline=7]{often/equiv2.tex}
-\end{minipage}
-\vspace{-0.4cm}
-\caption{The old type \lstinline{I} (left) is either \lstinline{A} or \lstinline{B}. The new type \lstinline{J} (right) is \lstinline{I} with \lstinline{A} and \lstinline{B} factored out to \lstinline{bool} (\codediff{orange}).}
-\label{fig:equivalence2}
-\end{figure}
-
-\begin{figure}
-\begin{minipage}{0.48\textwidth}
-   \lstinputlisting[firstline=1, lastline=3]{often/listtovect.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.58\textwidth}
-   \lstinputlisting[firstline=5, lastline=7]{often/listtovect.tex}
-\end{minipage}
-\vspace{-0.4cm}
-\caption{A vector (bottom) is a list (top) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
-\label{fig:listtovect}
-\end{figure}
 
 

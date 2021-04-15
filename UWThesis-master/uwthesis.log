@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1977,7 +1977,7 @@ Package microtype Info: Character `013' is missing
 (microtype)             Ignoring protrusion settings for this character.
 [4] [5]
 
-LaTeX Warning: Citation `TODO' on page 6 undefined on input line 186.
+LaTeX Warning: Citation `TODO' on page 6 undefined on input line 164.
 
 [6] (./guide.tex)) (./motivating.tex [7] [8
 
@@ -2112,48 +2112,52 @@ chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 (./often/equivproof.tex) (./often/equivproof.tex) [45] [46])
 (./often/approach.tex
-<often/workflowa.pdf, id=1178, 799.98875pt x 348.30125pt>
+
+LaTeX Warning: Reference `sec:scope' on page 47 undefined on input line 13.
+
+[47]
+<often/workflowa.pdf, id=1201, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
-Package pdftex.def Info: often/workflowa.pdf  used on input line 18.
+Package pdftex.def Info: often/workflowa.pdf  used on input line 28.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- [47] [48 <./often/workflowa.pdf>] [49]
-(./often/equiv2.tex) (./often/equiv2.tex) (./often/listtovect.tex)
+ (./often/equiv2.tex) (./often/equiv2.tex) (./often/listtovect.tex)
 (./often/listtovect.tex)
-Overfull \hbox (22.57913pt too wide) in paragraph at lines 176--184
+Overfull \hbox (22.57913pt too wide) in paragraph at lines 70--78
 []$[]$  $[]$
  []
 
-) (./often/differencing.tex
+[48 <./often/workflowa.pdf>] [49] [50]) (./often/differencing.tex
 
-LaTeX Warning: Citation `Ringer2019' on page 50 undefined on input line 36.
-
-
-LaTeX Warning: Reference `sec:generic' on page 50 undefined on input line 40.
+LaTeX Warning: Citation `Ringer2019' on page 51 undefined on input line 36.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 50 undefined on input lin
+LaTeX Warning: Reference `sec:generic' on page 51 undefined on input line 40.
+
+
+LaTeX Warning: Reference `sec:implementation' on page 51 undefined on input lin
 e 42.
 
-[50] [51] [52] (./often/nattobin.tex) (./often/nattobin.tex)
+[51] [52] [53] (./often/nattobin.tex) (./often/nattobin.tex)
 Overfull \hbox (5.2102pt too wide) in paragraph at lines 185--196
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[53]
+[54]
 Overfull \hbox (48.09023pt too wide) in paragraph at lines 274--275
 [][][][]  
  []
 
-[54] [55]
+[55]
 
 LaTeX Warning: Citation `Ringer2019' on page 56 undefined on input line 342.
 
+[56]
 
-LaTeX Warning: Reference `sec:example' on page 56 undefined on input line 371.
+LaTeX Warning: Reference `sec:example' on page 57 undefined on input line 371.
 
-[56] [57]
+[57] [58]
 Overfull \hbox (2.41995pt too wide) in paragraph at lines 478--502
 []$[]$  $[]$
  []
@@ -2163,7 +2167,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 508--532
 []$[]$
  []
 
-[58] [59]
+[59]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 555.
 
@@ -2177,7 +2181,7 @@ Overfull \hbox (54.74294pt too wide) in paragraph at lines 554--590
  [][] 
  []
 
-[60]
+[60] [61]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 652
 .
 LaTeX Font Info:    No file OMScmtt.fd. on input line 652.
@@ -2193,7 +2197,6 @@ Overfull \hbox (10.49026pt too wide) in paragraph at lines 656--664
 or the judg-ment $[]$
  []
 
-[61]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 668.
 
@@ -2207,11 +2210,11 @@ Overfull \hbox (56.84816pt too wide) in paragraph at lines 667--695
  [][] 
  []
 
-[62]) (./often/transformation.tex
+[62]) (./often/transformation.tex [63]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 8.
 
-[63] [64] [65]
+[64] [65]
 Underfull \hbox (badness 10000) in paragraph at lines 187--213
 
  []
@@ -2224,10 +2227,11 @@ Overfull \hbox (58.00378pt too wide) in paragraph at lines 216--250
  [][] 
  []
 
+[66]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 281.
 
-[66] [67]
+[67]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 323.
 
@@ -2397,11 +2401,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49579 strings out of 492609
- 1000318 string characters out of 6129033
- 1317666 words of memory out of 5000000
- 50633 multiletter control sequences out of 15000+600000
- 630668 words of font info for 740 fonts, out of 8000000 for 9000
+ 49595 strings out of 492609
+ 1000640 string characters out of 6129033
+ 1283938 words of memory out of 5000000
+ 50642 multiletter control sequences out of 15000+600000
+ 630873 words of font info for 744 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2421,10 +2425,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (111 pages, 1442361 bytes).
+Output written on uwthesis.pdf (111 pages, 1445027 bytes).
 PDF statistics:
- 2487 PDF objects out of 2487 (max. 8388607)
- 2307 compressed objects within 24 object streams
- 1231 named destinations out of 1440 (max. 500000)
+ 2490 PDF objects out of 2984 (max. 8388607)
+ 2310 compressed objects within 24 object streams
+ 1233 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

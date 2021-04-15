@@ -154,28 +154,6 @@ These design is guided heavily by foundational developments in depenedent type t
 the theory is sprinkle throughout as appropriate. % TODO may want to list or link to sections here
 More details including limitations are in the corresponding chapters. % TODO link to those chapters
 
-% TODO move these to correpsonding sections
-\iffalse
-\paragraph{Proof Repair Across Type Equivalences}
-Chapter~\ref{chapt:pi} describes semantic differencing algorithms and proof term transformations for proof repair in response
-to changes that can be described by a type equivalence. % TODO hand-wavy; cite
-The corresponding differencing algorithms run in response to a breaking change in the structure of a datatype.
-They look at the difference between the old and new versions of that datatype.
-When they succeed, the diff that they find is a \textit{type equivalence}: a pair of functions that map back and forth between the
-two versions of the datatype (possibly with some additional information) and are mutual inverses.
-The corresponding proof term transformation then transforms a proof term defined over the old version of the dataype
-directly to a proof term defined over the new version of the datatype.
-In summary, proof repair across type equivalence has this profile:
-
-\begin{itemize}
-\item \textbf{class}: changes in the structure of a datatype
-\item \textbf{diff}: a type equivalence
-\item \textbf{source}: the changed datatype
-\item \textbf{term}: a proof term defined over the old version of the datatype
-\item \textbf{repair}: a proof term defined over the new version of the datatype
-\end{itemize}
-\fi
-
 \paragraph{Implementation}
 The implementation shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
 and then apply that information to fix other proofs broken by the same change.

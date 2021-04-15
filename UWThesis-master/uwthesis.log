@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 14:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2081,11 +2081,11 @@ Overfull \hbox (9.2838pt too wide) in paragraph at lines 76--81
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[34 <./repair/nat_ind.pdf>]
+[34]
 
 LaTeX Warning: Reference `sec:fail' on page 35 undefined on input line 115.
 
-[35]
+[35 <./repair/nat_ind.pdf>]
 
 LaTeX Warning: Reference `sec:composeintro' on page 36 undefined on input line 
 165.
@@ -2403,7 +2403,7 @@ Here is how much of TeX's memory you used:
  50633 multiletter control sequences out of 15000+600000
  630668 words of font info for 740 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2421,7 +2421,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (111 pages, 1442780 bytes).
+Output written on uwthesis.pdf (111 pages, 1442361 bytes).
 PDF statistics:
  2487 PDF objects out of 2487 (max. 8388607)
  2307 compressed objects within 24 object streams

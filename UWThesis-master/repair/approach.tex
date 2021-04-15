@@ -209,12 +209,27 @@ changes in datatypes that may change in those ways.
 
 Basically the main barrier here is that this produces a function that the user must apply.
 Thus it can't handle changes that move things around, as these need to be transformed directly.
+Mention the particular configurations implemented here honestly, but then note that general approach is cool when it produces a function.
 
 \subsection{Differencing: Candidates from Examples}
 \label{sec:pumpkin-spec-diff}
 
-high-level spec, more below
+Differencing takes as inputs $\ldots$ and returns $\ldots$:
 
+\begin{itemize}
+\item \textbf{Inputs}: $\ldots$, assuming:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\end{itemize}
+
+other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
+
+\iffalse
 \paragraph{Input: Example Patched Proof}
 They look at the difference between the old and new versions of a single example patched proof in response to that change.
 Old and new version of example patched proof.
@@ -225,16 +240,32 @@ Old and new version of example patched proof.
 \paragraph{Output: Patch Candidates}
 Functions that map back and forth between the old and new versions
 of the example patch proof in a particular context, but do not yet generalize to other contexts.
+\fi
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}
 
-high-level spec, more below
+The transformations takes as inputs $\ldots$ and return $\ldots$:
 
+\begin{itemize}
+\item \textbf{Inputs}: $\ldots$, assuming:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\begin{itemize}
+\item $\ldots$
+\end{itemize}
+\end{itemize}
+
+other details like what is proven or whatever
+
+\iffalse
 \paragraph{Input: Patch Candidates}
 They come from differencing.
 
 \paragraph{Output: Reusable Proof Patch}
 The corresponding proof term transformations then try to transform each of those candidate patch functions to a more general \textit{reusable proof patch}:
 a function that can be applied with traditional proof automation to fix other proofs broken by the same change.
+\fi
 

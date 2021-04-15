@@ -31,11 +31,7 @@
 \contentsline {subsection}{\numberline {3.2.1}Workflow: Patching by Example}{27}{subsection.3.2.1}% 
 \contentsline {subsection}{\numberline {3.2.2}Scope: Changes in Content}{30}{subsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{30}{subsection.3.2.3}% 
-\contentsline {paragraph}{Input: Example Patched Proof}{30}{subsection.3.2.3}% 
-\contentsline {paragraph}{Output: Patch Candidates}{30}{subsection.3.2.3}% 
 \contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{30}{subsection.3.2.4}% 
-\contentsline {paragraph}{Input: Patch Candidates}{30}{subsection.3.2.4}% 
-\contentsline {paragraph}{Output: Reusable Proof Patch}{31}{subsection.3.2.4}% 
 \contentsline {section}{\numberline {3.3}Differencing}{31}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Transformation}{31}{section.3.4}% 
 \contentsline {paragraph}{Patch Specialization}{31}{section.3.4}% 
@@ -45,28 +41,28 @@
 \contentsline {section}{\numberline {3.5}Implementation}{33}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{33}{subsection.3.5.1}% 
 \contentsline {subsubsection}{\numberline {3.5.1.1}Semantic Differencing}{33}{subsubsection.3.5.1.1}% 
-\contentsline {subsubsection}{\numberline {3.5.1.2}Transformations}{35}{subsubsection.3.5.1.2}% 
-\contentsline {paragraph}{Patch Specialization}{35}{subsubsection.3.5.1.2}% 
-\contentsline {paragraph}{Patch Abstraction}{35}{subsubsection.3.5.1.2}% 
+\contentsline {subsubsection}{\numberline {3.5.1.2}Transformations}{34}{subsubsection.3.5.1.2}% 
+\contentsline {paragraph}{Patch Specialization}{34}{subsubsection.3.5.1.2}% 
+\contentsline {paragraph}{Patch Abstraction}{34}{subsubsection.3.5.1.2}% 
 \contentsline {paragraph}{Patch Inversion}{36}{lstnumber.-83.3}% 
 \contentsline {paragraph}{Lemma Factoring}{36}{lstnumber.-84.2}% 
 \contentsline {subsubsection}{\numberline {3.5.1.3}Inside the Procedure}{36}{subsubsection.3.5.1.3}% 
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{37}{subsection.3.5.2}% 
 \contentsline {subsubsection}{\numberline {3.5.2.1}Trusted Computing Base}{37}{subsubsection.3.5.2.1}% 
 \contentsline {section}{\numberline {3.6}Results}{37}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{37}{Item.34}% 
+\contentsline {paragraph}{Identifying Changes}{38}{Item.34}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{38}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{38}{subsection.3.6.1}% 
+\contentsline {paragraph}{Replay}{39}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{39}{lstnumber.-98.1}% 
 \contentsline {paragraph}{Apply}{39}{lstnumber.-99.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{39}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{39}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{40}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{40}{subsection.3.6.2}% 
 \contentsline {paragraph}{Search}{40}{lstnumber.-106.2}% 
 \contentsline {paragraph}{Apply}{40}{lstnumber.-107.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{40}{subsubsection.3.6.2.1}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{41}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{41}{subsection.3.6.3}% 
-\contentsline {paragraph}{Replay}{41}{subsection.3.6.3}% 
+\contentsline {paragraph}{Replay}{42}{subsection.3.6.3}% 
 \contentsline {paragraph}{Search}{42}{lstnumber.-116.2}% 
 \contentsline {paragraph}{Apply}{42}{lstnumber.-117.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{42}{subsubsection.3.6.3.1}% 

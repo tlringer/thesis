@@ -210,7 +210,8 @@ Consider a simplified version of the example in Figure~\ref{fig:example}, using 
   %\REPEAT
     \STATE \textit{diff} \diff{theorem conclusions} of old\_proof and new\_proof for goals
     \STATE \textit{diff} \diff{function bodies} of old\_proof and new\_proof for candidates
-    $\ldots$
+    \STATE \textbf{if} there are candidates \textbf{then}
+    \STATE \hspace*{1em} \textit{transform} candidates
 \end{algorithmic}
 \end{algorithm}
 Rather than look at the entire example, let us look for now at just the base case (line 13):
@@ -250,18 +251,49 @@ In summary, differencing has the following specification:
 \item each term in \lstinline{candidates} has the inferred goal type for the change.
 \end{itemize}
 \end{itemize}
-In the end, the patch candidates map back and forth between the old and new versions
-of the example patch proof in a particular context according to the inferred goal for that change, but do not yet generalize to other contexts.
 \sysname could in theory infer the wrong goal type, but this would not sacrifice soundness---it would mean only that
 the patch procedure would fail to produce a useful patch in the end, not that it would produce ill-typed terms.
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}
 
+Differencing produces patch candidates that are localized to a particular context according to the inferred goal for that change,
+but does not yet generalize to other contexts.
+The transformations are what take each candidate and tries to modify it to produce a term that \textit{does} generalize to other contexts.
+If it succeeds, it has found a \textit{reusable patch}.
 
-% New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
+Consider once more the example in Figure~\ref{fig:example}.
+The candidate patch that differencing found:
 
-Example used this configuration:
+\begin{lstlisting}[language=coq]
+  candidate := fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H.
+\end{lstlisting}
+has this type:
+
+\begin{lstlisting}
+  candidate : (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
+\end{lstlisting}
+The reusable patch that \sysname is looking for, however, should have this type:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
+\end{lstlisting}
+as this is the goal that \sysname inferred for this configuration.
+The transformations that \sysname runs will attempt to transform the candidate
+into a patch with that type.
+
+The details of which transformations to run vary by configuration.
+There are four transformations that turn patch candidates into reusable proof patches:
+
+\begin{enumerate}
+\item \textit{patch specialization} to arguments,
+\item \textit{patch generalization} of arguments or functions,
+\item \textit{patch inversion} to reverse a patch, and
+\item \textit{lemma factoring} to break a term into parts.
+\end{enumerate}
+Each configuration chooses among these transformations strategically based on the structure of the proof term.
+
+For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the configuration with two transformations:
 
 \begin{algorithm}
 \footnotesize
@@ -270,22 +302,24 @@ Example used this configuration:
 %  \STATE Build trees for search
   %\STATE build trees for proofs
   %\REPEAT
-    \STATE \textit{diff} \diff{conclusions of the theorems} of old\_proof and new\_proof for goals
-    \STATE \textit{diff} \diff{bodies of the proof terms} for candidates
+    \STATE \textit{diff} conclusions of the theorems of old\_proof and new\_proof for goals
+    \STATE \textit{diff} bodies of the proof terms for candidates
     \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} \textit{abstract} and then \textit{specialize} candidates
+    \STATE \hspace*{1em} \diff{\textit{generalize} and then \textit{specialize}} candidates
 \end{algorithmic}
 \end{algorithm}
-
-was close, now we want a real patch though.
-Here, \sysname \textit{abstracts} this candidate by \lstinline{m} (line 11), which lifts it out of the base case:
+That is, first, \sysname \textit{generalizes} the candidate by \lstinline{m} (line 11), which lifts it out of the base case:
 
 \begin{lstlisting}
   fun (@\diff{n0}@) n m p H0 H1 =>(@\vspace{-0.04cm}@)
     (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@) n m p, n <= m -> m <= p -> n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
+  : (@\ltacforall@) (@\diff{n0}@) n m p,
+      n <= m $\rightarrow$
+      m <= p $\rightarrow$
+      n <= (@\diff{n0}@) $\rightarrow$
+      n <= (@\diff{n0}@) + 1.
 \end{lstlisting}
-\sysname then \textit{specializes} this candidate to \lstinline{p} (line 16), the argument
+\sysname then \textit{specializes} this generalized candidate to \lstinline{p} (line 16), the argument
 to the conclusion of \lstinline{le_ind}. This produces a patch:
 
 \begin{lstlisting}
@@ -293,31 +327,13 @@ to the conclusion of \lstinline{le_ind}. This produces a patch:
     (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)(@\vspace{-0.04cm}@)
   : (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
 \end{lstlisting}
-The user can then use \lstinline{patch} to fix other broken proofs.
-For example, given a proof that applies \lstinline{old}, the user can use \lstinline{patch} to prove the same conclusion
-by applying \lstinline{new}:
+which has the goal type.
 
-\begin{lstlisting}[language=coq]
-  (@\succeeds{apply old.}@)(@\vspace{-0.1cm}@)
-  (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
-\end{lstlisting}
-This can happen automatically through hint databases.
-
-This simple example uses only two transformations. The other transformations help turn candidates
-into patches in similar ways. We discuss all of this in detail later.
-Later we will see real-world examples that demonstrate more configurations, too.
-For now let's talk about the scope more.
-
-Mentioned earlier there's a configuration for the procedure.
-There are four transformations that turn patch candidates into reusable proof patches:
-
-\begin{enumerate}
-\item \textit{Patch specialization} to arguments
-\item \textit{Patch abstraction} of arguments or functions
-\item \textit{Patch inversion} to reverse a patch
-\item \textit{Lemma factoring} to break a term into parts
-\end{enumerate}
-The configuration chooses among these strategically based on the structure of the proof term.
+This simple example uses only two transformations.
+The other transformations help turn candidates into patches in similar ways, all guided by
+the structure of the proof term.
+I will describe these transformations more in Section~\ref{sec:pumpkin-trans},
+and present real-world examples that demonstrate more configurations in Section~\ref{sec:pumpkin-results}.
 
 \paragraph{Summary}
 In summary, the transformations have the following specification:

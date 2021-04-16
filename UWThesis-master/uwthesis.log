@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 11:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2071,9 +2071,9 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [28] [29] [30] [31] [32]) (./repair/differencing.tex [33])
+) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex)
 (./repair/transformation.tex [34] [35]) (./repair/implementation.tex [36]
-<repair/nat_ind.pdf, id=882, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=893, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 74.
@@ -2084,11 +2084,11 @@ Overfull \hbox (9.2838pt too wide) in paragraph at lines 82--87
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[37 <./repair/nat_ind.pdf>]
+[37]
 
 LaTeX Warning: Reference `sec:fail' on page 38 undefined on input line 121.
 
-[38]
+[38 <./repair/nat_ind.pdf>]
 
 LaTeX Warning: Reference `sec:composeintro' on page 39 undefined on input line 
 171.
@@ -2102,8 +2102,8 @@ Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 e in tactics---rewriting
  []
 
-[43] (./repair/divide.tex) (./repair/divide.tex) [44]) (./repair/conclusion.tex
-[45])) (./often.tex [46]
+[43] (./repair/divide.tex) (./repair/divide.tex) [44] [45])
+(./repair/conclusion.tex)) (./often.tex [46]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 (./often/equivproof.tex) (./often/equivproof.tex) [47
@@ -2115,7 +2115,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 49 undefined on input line 13.
 
 [49]
-<often/workflowa.pdf, id=1262, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1276, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2400,13 +2400,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49653 strings out of 492609
- 1001677 string characters out of 6129033
+ 49662 strings out of 492609
+ 1001816 string characters out of 6129033
  1290298 words of memory out of 5000000
  50663 multiletter control sequences out of 15000+600000
  631078 words of font info for 748 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2424,10 +2424,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (113 pages, 1455820 bytes).
+Output written on uwthesis.pdf (113 pages, 1457047 bytes).
 PDF statistics:
- 2556 PDF objects out of 2984 (max. 8388607)
- 2374 compressed objects within 24 object streams
- 1265 named destinations out of 1440 (max. 500000)
+ 2571 PDF objects out of 2984 (max. 8388607)
+ 2389 compressed objects within 24 object streams
+ 1274 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

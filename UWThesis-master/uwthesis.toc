@@ -33,40 +33,40 @@
 \contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{31}{subsection.3.2.3}% 
 \contentsline {paragraph}{Summary}{32}{lstnumber.-64.1}% 
 \contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{32}{subsection.3.2.4}% 
-\contentsline {paragraph}{Summary}{33}{Item.36}% 
-\contentsline {section}{\numberline {3.3}Differencing}{33}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Transformation}{34}{section.3.4}% 
-\contentsline {paragraph}{Patch Specialization}{34}{section.3.4}% 
-\contentsline {paragraph}{Patch Abstraction}{34}{section.3.4}% 
-\contentsline {paragraph}{Patch Inversion}{35}{lstnumber.-73.2}% 
-\contentsline {paragraph}{Lemma Factoring}{35}{lstnumber.-78.5}% 
+\contentsline {paragraph}{Summary}{33}{lstnumber.-69.3}% 
+\contentsline {section}{\numberline {3.3}Differencing}{34}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Transformation}{35}{section.3.4}% 
+\contentsline {paragraph}{Patch Specialization}{35}{section.3.4}% 
+\contentsline {paragraph}{Patch Abstraction}{35}{section.3.4}% 
+\contentsline {paragraph}{Patch Inversion}{35}{lstnumber.-75.2}% 
+\contentsline {paragraph}{Lemma Factoring}{36}{lstnumber.-80.5}% 
 \contentsline {section}{\numberline {3.5}Implementation}{36}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{36}{subsection.3.5.1}% 
-\contentsline {subsubsection}{\numberline {3.5.1.1}Semantic Differencing}{36}{subsubsection.3.5.1.1}% 
-\contentsline {subsubsection}{\numberline {3.5.1.2}Transformations}{37}{subsubsection.3.5.1.2}% 
-\contentsline {paragraph}{Patch Specialization}{37}{subsubsection.3.5.1.2}% 
+\contentsline {subsubsection}{\numberline {3.5.1.1}Semantic Differencing}{37}{subsubsection.3.5.1.1}% 
+\contentsline {subsubsection}{\numberline {3.5.1.2}Transformations}{38}{subsubsection.3.5.1.2}% 
+\contentsline {paragraph}{Patch Specialization}{38}{subsubsection.3.5.1.2}% 
 \contentsline {paragraph}{Patch Abstraction}{38}{subsubsection.3.5.1.2}% 
-\contentsline {paragraph}{Patch Inversion}{38}{lstnumber.-88.3}% 
-\contentsline {paragraph}{Lemma Factoring}{39}{lstnumber.-89.2}% 
+\contentsline {paragraph}{Patch Inversion}{39}{lstnumber.-90.3}% 
+\contentsline {paragraph}{Lemma Factoring}{39}{lstnumber.-91.2}% 
 \contentsline {subsubsection}{\numberline {3.5.1.3}Inside the Procedure}{39}{subsubsection.3.5.1.3}% 
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{40}{subsection.3.5.2}% 
 \contentsline {subsubsection}{\numberline {3.5.2.1}Trusted Computing Base}{40}{subsubsection.3.5.2.1}% 
 \contentsline {section}{\numberline {3.6}Results}{40}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{40}{Item.39}% 
+\contentsline {paragraph}{Identifying Changes}{41}{Item.39}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{41}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{41}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{42}{lstnumber.-103.1}% 
-\contentsline {paragraph}{Apply}{42}{lstnumber.-104.1}% 
+\contentsline {paragraph}{Replay}{42}{subsection.3.6.1}% 
+\contentsline {paragraph}{Search}{42}{lstnumber.-105.1}% 
+\contentsline {paragraph}{Apply}{42}{lstnumber.-106.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{42}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{42}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{43}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{43}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{43}{lstnumber.-111.2}% 
-\contentsline {paragraph}{Apply}{43}{lstnumber.-112.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{43}{subsubsection.3.6.2.1}% 
-\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{44}{subsection.3.6.3}% 
-\contentsline {paragraph}{Replay}{44}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{45}{lstnumber.-121.2}% 
-\contentsline {paragraph}{Apply}{45}{lstnumber.-122.2}% 
+\contentsline {paragraph}{Search}{43}{lstnumber.-113.2}% 
+\contentsline {paragraph}{Apply}{43}{lstnumber.-114.2}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{44}{subsubsection.3.6.2.1}% 
+\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{45}{subsection.3.6.3}% 
+\contentsline {paragraph}{Replay}{45}{subsection.3.6.3}% 
+\contentsline {paragraph}{Search}{45}{lstnumber.-123.2}% 
+\contentsline {paragraph}{Apply}{45}{lstnumber.-124.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{45}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{46}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{47}{chapter.4}% 
@@ -90,7 +90,7 @@
 \contentsline {section}{\numberline {4.4}Transformation}{66}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{68}{figure.caption.35}% 
 \contentsline {paragraph}{Lifting Constructors}{69}{figure.caption.37}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{70}{lstnumber.-184.1}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{70}{lstnumber.-186.1}% 
 \contentsline {subsection}{\numberline {4.4.1}Limitations}{70}{subsection.4.4.1}% 
 \contentsline {section}{\numberline {4.5}Implementation}{72}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{72}{subsection.4.5.1}% 

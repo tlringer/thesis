@@ -19,7 +19,7 @@ When a program or specification changes and this breaks many proofs,
 it extracts information found in the difference between the old and new versions of a single patched proof,
 and generalizes that to a \emph{reusable patch} that can fix other proofs broken by the same change.
 
-\paragraph{Without Proof Repair} Experienced Coq proof engineers use design principles and custom tactics to make proofs
+\paragraph{Without Proof Repair} Experienced proof engineers use design principles and custom tactics to make proofs
 resilient to change. These techniques are useful for large proof developments, but they
 place the burden of change on the proof engineer. This can be problematic
 when change occurs outside of the proof engineers's control.
@@ -51,9 +51,10 @@ Consider a commit from the Coq 8.7 release~\cite{coq87commit}.
 This commit redefined injection from integers to reals (Figure~\ref{fig:izr}).
 This change broke 18 proofs in the standard library. 
 
-The Coq developer who committed the change fixed the broken proofs, then
-made an additional 12 commits to address the change in \lstinline{coq-contribs},
-a regression suite of projects that the Coq developers maintain as versions change.
+The Coq standard library developer who committed the change fixed most of the broken proofs,
+but failed to fix some of them. % TODO how many?
+The developer then made an additional 12 commits to address the change in \lstinline{coq-contribs},
+a regression suite of projects that the Coq standard library developers maintain as Coq versions change.
 Many of these changes were simple. For example, the developer wrote a lemma that describes the change:
 
 \lstset{language=coq, aboveskip=3pt, belowskip=3pt}
@@ -61,7 +62,7 @@ Many of these changes were simple. For example, the developer wrote a lemma that
   Lemma INR_IPR : (@\ltacforall@)p, INR (Pos.to_nat p) = IPR p.
 \end{lstlisting}
 The developer then used this lemma to fix broken proofs within the standard library. 
-For example, one proof broke on this line:
+For example, the proof of the lemma \lstinline{plus_negative_positive} broke on this line: % TODO check to make sure this is the right theorem name IRL
 
 \begin{lstlisting}
   (@\fails{rewrite Pos2Nat.inj\_sub by trivial.}@)
@@ -69,16 +70,16 @@ For example, one proof broke on this line:
 It succeeded with the lemma:
 
 \begin{lstlisting}
-  rewrite (@\diff{<- 3!INR\_IPR}@), (@\succeeds{Pos2Nat.inj\_sub by trivial.}@)
+  rewrite (@\diff{$\leftarrow$ 3!INR\_IPR}@), (@\succeeds{Pos2Nat.inj\_sub by trivial.}@)
 \end{lstlisting}
 
-These changes are outside-facing: Coq users have to make similar changes to their own proofs when
-they update from Coq 8.6 to Coq 8.7. The Coq developer can update some tactics to account for this, but it is 
-impossible to account for every tactic that users could use.
-Furthermore, while the developer responsible for the changes knows about
-the lemma that describes the change, the Coq user does not. The Coq user must determine
+These changes were outside-facing: proof engineers had to make similar changes to their own proofs when
+they updated their developments from Coq 8.6 to Coq 8.7. The Coq standard library developer could have updated some tactics to account for this, but it 
+would have been impossible to account for every tactic that proof engineers could use.
+Furthermore, while the library developer responsible for the changes knows about
+the lemma that describes the change, the proof engineer does not. The proof engineer must determine
 how the definition has changed and how to address the change, perhaps by reading documentation or by
-talking to the developers. 
+talking to the Coq standard library developers. 
 
 \paragraph{With Proof Repair} When a proof engineer updates the Coq standard library, a proof repair tool can determine
 that the definition has changed, then analyze changes in the standard library and in \lstinline{coq-contribs}

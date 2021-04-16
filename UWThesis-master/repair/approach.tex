@@ -1,38 +1,53 @@
 \section{Approach}
 \label{sec:pumpkin-approach}
 
-In the example from Section~\ref{sec:patch-motivating}, the example change in one proof carries enough information
-to fix other proofs broken by the same change (namely the rewrite by \lstinline{INR\_IPR}).
-So a tool can extract that, generalize it, and use it to fix other proofs broken by the same change.
-\sysname takes advantage of this more generally.
+In the example from Section~\ref{sec:patch-motivating}, the change in \lstinline{IZR} broke many proofs.
+The example patch to a single proof (the proof of \lstinline{plus_negative_positive}) carried enough information (the rewrite by \lstinline{INR_IPR})
+to fix the other broken proofs.
+More generally, example-based proof repair takes advantage of the fact that an example patch to a broken proof can carry enough information to fix other proofs
+broken by the same change.
 
+\sysname implements a prototype of this.
 To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
-\sysname extracts that information into a \textit{patch candidate}---which is localized to the context of the example, but not enough to fix other proofs broken by the change.
-It then generalizes that candidate into a \textit{reusable patch}: a function
+\sysname extracts that information into a \textit{patch candidate}---a function that describes the change in the example patched proof,
+but that is localized to the context of the example, and not yet enough to fix other proofs broken by the change.
+\sysname then generalizes that candidate into a \textit{reusable patch}: a function
 that can be used to fix other broken proofs broken by the same change, which \sysname defines as a Coq term.
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the example patched proof.
-\sysname can extract and generalize that information.
+\sysname can extract, generalize, and in some cases apply that information.
 
-\sysname focuses in particular on searching for patches to proofs that break in response changes in the \textit{content}, but not the \textit{structure}
-of programs and specifications (Section~\ref{sec:pumpkin-scope}).
-As mentioned earlier, \sysname does this using a combination of semantic differencing and proof term transformations.
+The \sysname prototype focuses on finding reusable patches to proofs in response to certain changes in the content of programs and specifications (Section~\ref{sec:pumpkin-scope}).
+It does this using a combination of semantic differencing and proof term transformations:
 Differencing (Section~\ref{sec:pumpkin-spec-diff} looks at the difference between versions of the example patched proof for this information, and finds the candidate.
 Then, proof term transformations (Section~\ref{pumpkin-spec-trans}) modify that candidate to produce the reusable proof patch.
-And of course all of this happens over proof terms, since tactics might hide necessary information
-(example before didn't show this, but example here will).
-For now, support for both proof scripts and patch application is simple (see Section~\ref{sec:TODO}), though both of these are addressed in Chapter~\ref{sec:TODO}.
+All of this happens over proof terms in Gallina, since tactics may hide necessary information as I will soon show.
+\sysname has only preliminary support for proof script integration and patch application (see Section~\ref{sec:pumpkin-impl}),
+though I will address this limitation with the \toolnamec extension in Chapter~\ref{chapt:pi}.
 
 \subsection{Workflow: Patching by Example}
 \label{sec:pumpkin-workflow}
+
+The interface to \sysname is exposed to the proof engineer as a command.
+Commands in Coq are similar to tactics, except that they can occur outside of the context of proofs, and define new terms.
+In this case, \sysname extends Coq with a new command called \lstinline{Patch Proof}, with the syntax:
+
+\begin{lstlisting}
+  Patch Proof old_proof new_proof as patch_name. 
+\end{lstlisting}
+where \lstinline{old_proof} and \lstinline{new_proof} are the old and new versions of the example patched proof,
+and \lstinline{patch_name} is the desired name of the reusable proof patch.\footnote{Section~\ref{sec:pumpkin-impl} describes an alternative interface for \sysname with Git integration.}
+This invokes the \sysname plugin, which searches for a reusable proof patch
+and defines it as a new term if successful.
+All terms that \sysname defines are type checked in the end, so \sysname does not extend the TCB. % TODO use the cool knowledge package here, since introduced a while ago 
 
 \begin{figure}
 %\begin{algorithm}
 \begin{algorithmic}
 \renewcommand{\thealgorithm}{}
 \footnotesize
-\caption{\footnotesize{find\_patch(term, term', direction)}}
-    \STATE \diff{\textit{diff} types of term and term' for goals}
-    \STATE \diff{\textit{diff} term and term' for candidates}
+\caption{\footnotesize{find\_patch(old\_proof, new\_proof)}}
+    \STATE \diff{\textit{diff} types of old\_proof and new\_proof for goals}
+    \STATE \diff{\textit{diff} terms old\_proof and new\_proof for candidates}
     \IF{there are candidates}
       \STATE \diff{\textit{factor}, \textit{abstract}, \textit{specialize}, and/or \textit{invert} candidates}
       \IFRETURN{there are patches}{patches}
@@ -44,13 +59,10 @@ For now, support for both proof scripts and patch application is simple (see Sec
 \label{alg:patching}	
 \end{figure}
 
-\sysname exposes a \lstinline{Patch Proof} command that invokes the proof patch search procedure in Figure~\ref{alg:patching}.
+When the proof engineer calls \lstinline{Patch Proof}, this invokes the proof patch search procedure in Figure~\ref{alg:patching}.
 \lstinline{Patch Proof} takes as input the old and new version of an example proof patched in response to some breaking change.
 When succesful, it returns the reusable proof patch as a function, and defines it in Coq.
-There are some limitations in scope described partially here and partially in the repository.
-The \sysname repository also contains a detailed user guide.
-Options described in the implementation section make it possible to automate application to some degree as well if desired,
-and the implementation describes a lot more, too.
+The \sysname repository contains a more detailed user guide.
 
 % New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
 
@@ -79,22 +91,6 @@ corresponding proof terms (bottom) with relevant type information. We highlight 
 the difference in terms that corresponds to a patch.}
 \label{fig:example}
 \end{figure*}
-
-% TODO list of configurations supported?
-The specifics of this procedure vary by the particular class of change.
-\sysname infers a \textit{configuration} from the example change.
-This configuration customizes the highlighted lines for an entire class of changes:
-It determines what to diff on lines 1 and 2,
-and what transformations to run to achieve what goal on line 4.
-There are four transformations that turn patch candidates into reusable proof patches:
-
-\begin{enumerate}
-\item \textit{Patch specialization} to arguments
-\item \textit{Patch abstraction} of arguments or functions
-\item \textit{Patch inversion} to reverse a patch
-\item \textit{Lemma factoring} to break a term into parts
-\end{enumerate}
-The configuration chooses among these strategically based on the structure of the proof term.
 
 To motivate this workflow, consider using \sysname to search the proofs in
 Figure~\ref{fig:example} for a patch between conclusions.
@@ -245,6 +241,24 @@ of the example patch proof in a particular context, but do not yet generalize to
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}
+
+% TODO list of configurations supported?
+The \sysname repository describes the classes of change that the
+\sysname prototype supports.
+The details of the \sysname search procedure vary by class of change.
+Thus, before running the search procedure, \sysname infers a \textit{configuration} from the example change.
+This configuration customizes the highlighted lines for an entire class of changes:
+It determines what to diff on lines 1 and 2,
+and what transformations to run to achieve what goal on line 4.
+There are four transformations that turn patch candidates into reusable proof patches:
+
+\begin{enumerate}
+\item \textit{Patch specialization} to arguments
+\item \textit{Patch abstraction} of arguments or functions
+\item \textit{Patch inversion} to reverse a patch
+\item \textit{Lemma factoring} to break a term into parts
+\end{enumerate}
+The configuration chooses among these strategically based on the structure of the proof term.
 
 The transformations takes as inputs $\ldots$ and return $\ldots$:
 

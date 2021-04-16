@@ -11,7 +11,8 @@ since \Aa may be an old version of an updated type.
 The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically patch broken proofs in response to a broad class of changes in datatypes.
 \toolnamec in particular repairs proofs in response to changes in types that correspond to \textit{type equivalences}~\cite{univalent2013homotopy},
 or pairs of functions that map between two types (possibly with some additional information) and are mutual inverses (Section~\ref{sec:scope}).\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
-(Sentence framing to thesis as in \sysname section will go here.)
+In other words, looking back to the thesis statement, the information shows up in the difference between versions of the changed datatype.
+\toolnamec can extract and generalize that information, then apply it to fix other broken proofs.
 
 Like the original \sysname prototype, it also does this using a combination of differencing and proof term transformations.
 The corresponding differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2044,34 +2044,40 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 31.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
+Overfull \hbox (35.19145pt too wide) in paragraph at lines 64--66
+\OT1/pplj/m/n/10.95 (-20) stan-dard li-brary. For ex-am-ple, the proof of the l
+emma []
+ []
 
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 68.
 [26]) (./repair/approach.tex
+Overfull \hbox (10.39867pt too wide) in paragraph at lines 4--9
+\OT1/pplj/m/n/10.95 (-20) The ex-am-ple patch to a sin-gle proof (the proof of 
+[]
+ []
+
 
 LaTeX Warning: Reference `pumpkin-spec-trans' on page 27 undefined on input lin
-e 20.
-
-
-LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 23.
-
-
-LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 23.
+e 22.
 
 [27]
+Package microtype Info: Character `013' is missing
+(microtype)             in font `OT1/pplj/m/sc/9'.
+(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 51.
  (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [28] [29] [30]
 
-LaTeX Warning: Reference `TODO' on page 31 undefined on input line 208.
+LaTeX Warning: Reference `TODO' on page 31 undefined on input line 204.
 
-) (./repair/differencing.tex [31]) (./repair/transformation.tex [32] [33])
+[31]) (./repair/differencing.tex) (./repair/transformation.tex [32] [33])
 (./repair/implementation.tex [34]
-<repair/nat_ind.pdf, id=832, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=834, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 69.
@@ -2082,11 +2088,11 @@ Overfull \hbox (9.2838pt too wide) in paragraph at lines 77--82
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[35 <./repair/nat_ind.pdf>]
+[35]
 
 LaTeX Warning: Reference `sec:fail' on page 36 undefined on input line 116.
 
-[36]
+[36 <./repair/nat_ind.pdf>]
 
 LaTeX Warning: Reference `sec:composeintro' on page 37 undefined on input line 
 166.
@@ -2094,18 +2100,14 @@ LaTeX Warning: Reference `sec:composeintro' on page 37 undefined on input line
 [37]) (./repair/results.tex [38] (./repair/compcert.tex) (./repair/compcert.tex
 ) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) [39]
-Package microtype Info: Character `013' is missing
-(microtype)             in font `OT1/pplj/m/sc/9'.
-(microtype)             Ignoring protrusion settings for this character.
- [40]
+(./repair/bintonat.tex) (./repair/bintonat.tex) [39] [40]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-[41] (./repair/divide.tex) (./repair/divide.tex) [42]) (./repair/conclusion.tex
-[43])) (./often.tex [44]
+[41] (./repair/divide.tex) (./repair/divide.tex) [42] [43])
+(./repair/conclusion.tex)) (./often.tex [44]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 (./often/equivproof.tex) (./often/equivproof.tex) [45
@@ -2117,18 +2119,18 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 47 undefined on input line 13.
 
 [47]
-<often/workflowa.pdf, id=1209, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1216, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
-Package pdftex.def Info: often/workflowa.pdf  used on input line 28.
+Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- (./often/equiv2.tex) (./often/equiv2.tex) (./often/listtovect.tex)
-(./often/listtovect.tex)
-Overfull \hbox (22.57913pt too wide) in paragraph at lines 70--78
+ (./often/equiv2.tex) (./often/equiv2.tex) [48 <./often/workflowa.pdf>]
+(./often/listtovect.tex) (./often/listtovect.tex)
+Overfull \hbox (22.57913pt too wide) in paragraph at lines 71--79
 []$[]$  $[]$
  []
 
-[48 <./often/workflowa.pdf>] [49] [50]) (./often/differencing.tex
+[49] [50]) (./often/differencing.tex
 
 LaTeX Warning: Citation `Ringer2019' on page 51 undefined on input line 36.
 
@@ -2402,13 +2404,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49611 strings out of 492609
- 1001052 string characters out of 6129033
- 1285294 words of memory out of 5000000
- 50658 multiletter control sequences out of 15000+600000
+ 49616 strings out of 492609
+ 1001148 string characters out of 6129033
+ 1289294 words of memory out of 5000000
+ 50660 multiletter control sequences out of 15000+600000
  630873 words of font info for 744 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2426,10 +2428,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (111 pages, 1447251 bytes).
+Output written on uwthesis.pdf (111 pages, 1449454 bytes).
 PDF statistics:
- 2497 PDF objects out of 2984 (max. 8388607)
- 2317 compressed objects within 24 object streams
- 1233 named destinations out of 1440 (max. 500000)
+ 2504 PDF objects out of 2984 (max. 8388607)
+ 2324 compressed objects within 24 object streams
+ 1236 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

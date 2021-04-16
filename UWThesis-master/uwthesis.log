@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2073,7 +2073,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34])
 (./repair/transformation.tex [35]) (./repair/implementation.tex [36] [37]
-<repair/nat_ind.pdf, id=911, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=905, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 74.
@@ -2115,7 +2115,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 51 undefined on input line 13.
 
 [51]
-<often/workflowa.pdf, id=1285, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1279, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2400,8 +2400,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49669 strings out of 492609
- 1001901 string characters out of 6129033
+ 49661 strings out of 492609
+ 1001769 string characters out of 6129033
  1290304 words of memory out of 5000000
  50668 multiletter control sequences out of 15000+600000
  631078 words of font info for 748 fonts, out of 8000000 for 9000
@@ -2424,10 +2424,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (115 pages, 1457966 bytes).
+Output written on uwthesis.pdf (115 pages, 1457666 bytes).
 PDF statistics:
- 2580 PDF objects out of 2984 (max. 8388607)
- 2396 compressed objects within 24 object streams
- 1276 named destinations out of 1440 (max. 500000)
+ 2573 PDF objects out of 2984 (max. 8388607)
+ 2389 compressed objects within 24 object streams
+ 1268 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

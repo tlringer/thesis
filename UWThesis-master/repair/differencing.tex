@@ -3,52 +3,33 @@
 
 % From Motivating the Core. Some of this might move into the Approach.
 
-The first step finds this goal type:
-
-\begin{lstlisting}[language=coq]
-  (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
-\end{lstlisting}
-It then breaks each inductive proof into cases and determines an intermediate goal type for the candidate.
-%recursively searches each case for a candidate.
-In the base case, for example, it \textit{diffs} the types and determines that a candidate
-between the base cases of \lstinline{new} and \lstinline{old} should have this type (lines 11 and 12):
-
-\begin{lstlisting}
-  (@\diff{(fun p0 => n <= p0)}@) m $\rightarrow$ (@\diff{(fun p0 => n <= p0 + 1)}@) m
-\end{lstlisting}
-It then \textit{diffs} the terms (line 13) for such a candidate:
-
-\begin{lstlisting}
-  fun n m p H0 H1 =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
-\end{lstlisting}
-This candidate is close, but it is not yet a patch. This candidate
-maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
-be applied to \lstinline{p}). % TODO redundant for now
-
-Note again it's over terms since tactics would have been insufficient,
-and it understands and is guided by semantics! This is cool and should probably open this section.
 Differencing is aware of and guided by the semantics of Coq's rich proof term language Gallina---that is, it is a \textit{semantic differencing} algorithm.
-In other words, it takes advantage of Gallina's rich structure to guide the differencing process,
-then uses Gallina's rich type system to ensure that it finds a correct candidate patch in the end.
-I will explain this in more detail in Section~\ref{sec:pumpkin-diff}.
-Simply exploring the syntactic difference %between terms 
-makes it hard to identify
-which changes are meaningful.
-For example, in the inductive case (line 14), the inductive hypothesis
-changes:
+This means that differencing can take advantage of the structure and information carried in every proof term,
+thanks to Gallina's rich type theory CIC$_{\omega}$.
+The rich structure of terms helps guide differencing for each configuration,
+while the rich information in their types helps ensure correctness in the end.
+
+Consider once again the example from Figure~\ref{fig:example}, but this time not just the base case.
+Both versions of the proof are inductive proofs using the same induction principle, with slightly different motives.
+Accordingly, differencing knows that there are two places to look for candidates, namely the base case (line 13)
+and the inductive case (line 14).
+Differencing breaks each inductive proof into these cases, then recursively calls itself for each case.
+In the base case, it finds the candidate from Section~\ref{sec:pumpkin-spec-diff}.
+Since this candidate has the desired type for the configuration specialized to the base case, differencing knows it has successfully found a candidate.
+
+The rich type information proof terms carry helps prevent exploration of syntactic differences that are not meaningful.
+For example, in the inductive case of the proof term from Figure~\ref{fig:example} (line 14), the inductive hypothesis \lstinline{IHle} changes:
 
 \begin{lstlisting}[language=coq]
-  ... (IHle : (@\diff{n <= m0 + 1}@)) ...(@\vspace{-0.08cm}@)
-  ... (IHle : (@\diff{n <= m0}@)) ...
+  $\ldots$ (IHle : (@\diff{n <= m0 + 1}@)) $\ldots$(@\vspace{-0.08cm}@)
+  $\ldots$ (IHle : (@\diff{n <= m0}@)) $\ldots$
 \end{lstlisting}
-
-However, the type of \lstinline{IHle} changes for \emph{any} two inductive proofs over \lstinline{le}
+Notably, though, the type of \lstinline{IHle} changes for \emph{any} two inductive proofs over \lstinline{le}
 with different conclusions. A syntactic differencing component 
 may identify this change as a candidate.
-Our semantic differencing component knows that it can ignore this change.
+My semantic differencing algorithms know that they can ignore this change.
 
+% TODO left off here
 note somewhere that it actually recursively diffs
 
 Plus parts of Inside the Core, Testing Boundaries, Future Work

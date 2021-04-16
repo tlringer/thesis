@@ -222,13 +222,13 @@ Rather than look at the entire example, let us look for now at just the base cas
   old_proof := (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@)(@\vspace{-0.1cm}@)
   new_proof := H : (@\diff{n <= m}@)
 \end{lstlisting}
-The semantic differencing component first identifies the difference in their types, here:
+The semantic differencing component first identifies the difference in their types (lines 11 and 12), here:
 
 \begin{lstlisting}
   (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
 \end{lstlisting}
 This is the \textit{candidate} goal type.
-It then finds a difference in terms that has that type:
+It then finds a difference in terms that has that type (line 13):
 
 \begin{lstlisting}[language=coq]
   fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H

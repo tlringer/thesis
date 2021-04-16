@@ -1,16 +1,28 @@
 \chapter{Proof Repair by Example}
 \label{ch:example}
 
-The first tool (PUMPKIN PATCH) focuses on changes in programs and specifications, though these changes are limited in scope as we'll see later.
+The first tool in the \sysname plugin suite is the original \sysname plugin, which I implemented in 2018 as a prototype to show that proof repair was possible.
+The \sysname prototype includes only preliminary automation for \textit{applying} patches,
+and supports changes that are limited in scope in a way that is fundamental to the approach.
+The results for the \sysname prototype are also preliminary, and the implementation does not yet integrate smoothly into proof engineering workflows.
+The \toolnamec extension that I will show you in Chapter~\ref{chapt:pi} will address all of these limitations.
+In this chapter, when I refer to \sysname, I am referring to this prototype, and not to the suite with the \toolnamec extension.
 
-What this tool does is, when programs and specifications change and this breaks a lot of proofs, it lets the proof engineer fix just one of those proofs. It then generalizes the example patch into something that can fix other proofs broken by the same change.
+% From PUMPKIN PATCH intro:
+\sysname implements an \textit{example-based} approach to proof repair in response to breaking changes in the content of programs and specifications,
+so called because of its resemblence to programming by example in the domain of program synthesis~\cite{DBLP:journals/ftpl/GulwaniPS17}.
+In this approach, the proof engineer provides an \textit{example} of how to adapt a proof to a breaking change.
+A tool then generalizes the example adaptation into a \textit{reusable patch} that the proof engineer can use to fix other proofs broken by that change.
+In this way, example-based proof repair is a new form of proof automation that accounts for how breaking changes in programs and specifications
+are reflected in repairs to the proofs they break.
 
-So in other words, the information from those changes is carried in the difference between the old and new version of the example patched proof.
-PUMPKIN PATCH generalizes that information.
-
-Application can be automated in some cases at the end, or it can be manual.
-
-The work saved is shown retroactively on case studies replaying changes from large proof devleopments in Git. Results for this tool are preliminary compared to what we'll see later, since this was the first prototype.
+In other words, in the frame of the thesis, example-based proof repair extracts information from changes in proofs,
+then generalizes it to information corresponding to changes in the programs and specifications that broke those proofs to begin with (Section~\ref{sec:pumpkin-approach}).
+This extraction and generalization works at the level of proof terms, through a combination of a novel semantic differencing algorithm over proof terms (Section~\ref{sec:pumpkin-diff}) and 
+a suite of semantics-aware proof term transformations (Section~\ref{sec:pumpkin-trans}).
+\sysname automates this process (Section~\ref{sec:pumpkin-impl}).
+Case studies show retroactively that \sysname could have saved work for proof engineers
+on major proof developments (Section~\ref{sec:case}).
 
 \input{repair/motivating}
 

@@ -79,6 +79,8 @@
 \KAuxNewLinkScopetagInstance {sec:patch-motivating}{document}
 \KAuxDeclaredScopeTag {fig:izr}
 \KAuxNewLinkScopetagInstance {fig:izr}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-approach}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-approach}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-workflow}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-workflow}{document}
 \KAuxDeclaredScopeTag {alg:patching}
@@ -91,6 +93,12 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-spec-diff}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-spec-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-spec-trans}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-diff}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-diff}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-trans}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-trans}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-impl}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-impl}{document}
 \KAuxDeclaredScopeTag {fig:cattree}
 \KAuxNewLinkScopetagInstance {fig:cattree}{document}
 \KAuxDeclaredScopeTag {sec:algimpl}

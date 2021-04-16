@@ -6,22 +6,23 @@
 % 2. User didn't fix all of the library functions, even; paper didn't mention that.
 % 3. Reframe so less visionary?
 % 4. Flow with thesis frame?
+% TODO for real, get this working in vanilla pumpkin patch also
 
-Traditional proof automation considers only the current state of
-theorems, proofs, and definitions. This is a missed opportunity: verification projects 
-are rarely static. Like other software, these projects evolve over time.
+Traditional proof automation considers only the current state of programs, specifications, and proofs.
+This is a missed opportunity: verified software systems are rarely static.
+Like unverified systems, verified systems evolve over time.
 
 With traditional proof automation, the burden of change largely falls on proof engineers.
-This does not have to be true. Proof automation
-can view theorems, proofs, and definitions as fluid entities:
-when a proof or specification changes,
-a tool can search the difference between the old and new versions
-for a \emph{reusable patch} that can fix broken proofs.
+Proof repair by example shows that this does not have to be true.
+It is a form of proof automation that views programs, specifications, and proofs as fluid entities.
+When a program or specification changes and this breaks many proofs,
+it extracts information found in the difference between the old and new versions of a single patched proof,
+and generalizes that to a \emph{reusable patch} that can fix other proofs broken by the same change.
 
-\paragraph{Without Proof Repair} Experienced Coq programmers use design principles and custom tactics to make proofs
+\paragraph{Without Proof Repair} Experienced Coq proof engineers use design principles and custom tactics to make proofs
 resilient to change. These techniques are useful for large proof developments, but they
-place the burden of change on the programmer. This can be problematic
-when change occurs outside of the programmer's control.
+place the burden of change on the proof engineer. This can be problematic
+when change occurs outside of the proof engineers's control.
 
 \begin{figure*}
 \begin{minipage}{0.55\textwidth}
@@ -79,9 +80,9 @@ the lemma that describes the change, the Coq user does not. The Coq user must de
 how the definition has changed and how to address the change, perhaps by reading documentation or by
 talking to the developers. 
 
-\paragraph{With Proof Repair} When a user updates the Coq standard library, a proof repair tool can determine
+\paragraph{With Proof Repair} When a proof engineer updates the Coq standard library, a proof repair tool can determine
 that the definition has changed, then analyze changes in the standard library and in \lstinline{coq-contribs}
 that resulted from the change in definition (in this case, rewriting by the lemma).
 It can extract a reusable patch from those changes, which it can automatically apply within broken user proofs.
-The user never has to consider how the definition has changed.
+The proof engineer never has to consider how the definition has changed.
 

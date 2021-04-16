@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  15 APR 2021 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2041,11 +2041,11 @@ chapter 3.
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 30.
+nput line 31.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 66.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
 
 [26]) (./repair/approach.tex
 
@@ -2058,9 +2058,10 @@ LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 23.
 
 LaTeX Warning: Reference `sec:TODO' on page 27 undefined on input line 23.
 
+[27]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 36.
-[27] (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
+ (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
@@ -2403,7 +2404,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
 Here is how much of TeX's memory you used:
  49611 strings out of 492609
  1001052 string characters out of 6129033
- 1288294 words of memory out of 5000000
+ 1285294 words of memory out of 5000000
  50658 multiletter control sequences out of 15000+600000
  630873 words of font info for 744 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2425,7 +2426,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (111 pages, 1447124 bytes).
+Output written on uwthesis.pdf (111 pages, 1447251 bytes).
 PDF statistics:
  2497 PDF objects out of 2984 (max. 8388607)
  2317 compressed objects within 24 object streams

@@ -156,75 +156,7 @@ it determines what to diff on lines 1 and 2,
 and what transformations to run to achieve what goal on line 4.
 
 Figure~\ref{fig:example} used the configuration for a change in the conclusion of a theorem.
-Section~\ref{sec:pumpkin-results} describes real-world examples that demonstrate more configurations.
-In total, the \sysname prototype currently implements six configurations, corresponding to changes in:
-
-\begin{enumerate}
-\item conclusions of theorems,
-\item hypotheses of theorems,
-\item dependent arguments to constructors of inductive types, 
-\item conclusions of constructors of inductive types,
-\item cases of fixpoints, and
-\item nothing.\footnote{This change, while trivial, can be used to optimize proofs! See Section~\ref{sec:pumpkin-impl}.}
-\end{enumerate}
-The support for these changes is limited in expressiveness in power;
-more information on limitations in scope can be found in the repository. % TODO link
-
-\subsection{Differencing: Candidates from Examples}
-\label{sec:pumpkin-spec-diff}
-
-Differencing takes as inputs $\ldots$ and returns $\ldots$:
-
-\begin{itemize}
-\item \textbf{Inputs}: $\ldots$, assuming:
-\begin{itemize}
-\item $\ldots$
-\end{itemize}
-\item \textbf{Outputs}: $\ldots$, guaranteeing:
-\begin{itemize}
-\item $\ldots$
-\end{itemize}
-\end{itemize}
-
-other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
-
-\iffalse
-\paragraph{Input: Example Patched Proof}
-They look at the difference between the old and new versions of a single example patched proof in response to that change.
-Old and new version of example patched proof.
-%\sysname is a proof-of-concept and does not yet handle some kinds of proofs.
-%In each scenario, we made minor modifications to proofs so that we could use \sysname (for example,
-%using induction instead of destruction).
-
-\paragraph{Output: Patch Candidates}
-Functions that map back and forth between the old and new versions
-of the example patch proof in a particular context, but do not yet generalize to other contexts.
-\fi
-
-\subsection{Transformations: Patches from Candidates}
-\label{sec:pumpkin-spec-trans}
-
-
-% New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
-
-
-
-To motivate this workflow, consider using \sysname to search the proofs in
-Figure~\ref{fig:example} for a patch between conclusions.
-Except we will show a place where the lemma is actually applied.
-Note that the tactics don't change even though the terms do---and even though the change could break other proofs.
-
-So what do we do?
-We invoke the plugin using \lstinline{old} and \lstinline{new} as the example change:
-
-\begin{lstlisting}[language=ml4]
-  Patch Proof old new as patch.
-\end{lstlisting}
-
-The first thing that \sysname does is determine the configuration.
-Here, it uses the configuration for changes in conclusions of two proofs
-that induct over the same hypothesis. Given two such
-proofs:
+Given two such proofs:
 
 %We describe one
 %such procedure in this section; we descibe three more
@@ -233,12 +165,41 @@ proofs:
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P}@) x(@\vspace{-0.1cm}@)
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x
 \end{lstlisting}
-\sysname searches for a patch with this type:
+\sysname searches for a patch with this goal type:
 
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x $\rightarrow$ (@\diff{P}@) x
 \end{lstlisting}
-using this configuration:
+
+Section~\ref{sec:pumpkin-results} describes real-world examples that demonstrate more configurations.
+In total, the \sysname prototype currently implements five configurations, corresponding to changes in:
+
+\begin{enumerate}
+\item conclusions of theorems,
+\item hypotheses of theorems,
+\item dependent arguments to constructors of inductive types, 
+\item conclusions of constructors of inductive types, and
+\item cases of fixpoints.
+\end{enumerate}
+The support for these changes is limited in expressiveness in power;
+more information on limitations in scope can be found in the repository. % TODO link
+
+\subsection{Differencing: Candidates from Examples}
+\label{sec:pumpkin-spec-diff}
+
+Differencing operates over terms and types. Differencing tactics
+would be insufficient, since tactics and hints may mask patches.
+For example, for the change in Figure~\ref{fig:example},
+the tactics are identical, even though the proof term changes.\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
+are additional examples in the repository (\lstinline{Cex.v}).} % TODO what? What did this even mean? lmao
+Differencing instead looks at the change in terms to extract the patch candidates.
+
+In the end, differencing identifies the semantic difference between the old and new versions of the proof terms for the example patched proof.
+The semantic difference is the difference between two terms that corresponds to the difference between their types.
+I will explain this more in Section~\ref{sec:pumpkin-diff}.
+
+The details of the semantic difference and where differencing looks to find it vary by configuration.
+Consider a simplified version of the example in Figure~\ref{fig:example}, using the configuration for changes in conclusions:
 
 \begin{algorithm}
 \footnotesize
@@ -247,40 +208,76 @@ using this configuration:
 %  \STATE Build trees for search
   %\STATE build trees for proofs
   %\REPEAT
-    \STATE \textit{diff} conclusion types for goals
-    \STATE \textit{diff} conclusion terms for candidates
+    \STATE \textit{diff} \diff{theorem conclusions} of old\_proof and new\_proof for goals
+    \STATE \textit{diff} \diff{function bodies} of old\_proof and new\_proof for candidates
+    $\ldots$
+\end{algorithmic}
+\end{algorithm}
+Rather than look at the entire example, let us look for now at just the base case (line 13):
+
+\begin{lstlisting}[language=coq]
+  old_proof := (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@)(@\vspace{-0.1cm}@)
+  new_proof := H : (@\diff{n <= m}@)
+\end{lstlisting}
+The semantic differencing component first identifies the difference in their types, here:
+
+\begin{lstlisting}
+  (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
+\end{lstlisting}
+It then finds a difference in terms that has that type:
+
+\begin{lstlisting}[language=coq]
+  fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
+\end{lstlisting}
+This is the \emph{candidate} for a reusable patch.
+This candidate is close, but it is not yet a reusable patch. In particular, this candidate
+maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
+be applied to \lstinline{p}).
+This is where the proof term transformations will come in.
+
+\paragraph{Summary}
+In summary, differencing has the following specification:
+
+% TODO may need to improve this, just want something here for now
+\begin{itemize}
+\item \textbf{Inputs}: \lstinline{old_proof} and \lstinline{new_proof}, assuming:
+\begin{itemize}
+\item the types change only in content, and
+\item the corresponding class of change in content is supported.
+\end{itemize}
+\item \textbf{Outputs}: a list of terms \lstinline{candidates} of patch candidates, guaranteeing:
+\begin{itemize}
+\item each term in \lstinline{candidates} has the inferred goal type for the change.
+\end{itemize}
+\end{itemize}
+In the end, the patch candidates map back and forth between the old and new versions
+of the example patch proof in a particular context according to the inferred goal for that change, but do not yet generalize to other contexts.
+\sysname could in theory infer the wrong goal type, but this would not sacrifice soundness---it would mean only that
+the patch procedure would fail to produce a useful patch in the end, not that it would produce ill-typed terms.
+
+\subsection{Transformations: Patches from Candidates}
+\label{sec:pumpkin-spec-trans}
+
+
+% New (outline for now), plus parts of PUMPKIN PATCH Motivating the Core
+
+Example used this configuration:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+%  Is it really necessary to say that an algorithm might do initialization?
+%  \STATE Build trees for search
+  %\STATE build trees for proofs
+  %\REPEAT
+    \STATE \textit{diff} \diff{conclusions of the theorems} of old\_proof and new\_proof for goals
+    \STATE \textit{diff} \diff{bodies of the proof terms} for candidates
     \STATE \textbf{if} there are candidates \textbf{then}
     \STATE \hspace*{1em} \textit{abstract} and then \textit{specialize} candidates
 \end{algorithmic}
 \end{algorithm}
 
-When it runs the procedure,
-\sysname first determines the type that a patch from \lstinline{new} to \lstinline{old} should have.
-To determine this, it semantically \textit{diffs} the types and finds this goal type:
-
-\begin{lstlisting}[language=coq]
-  (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
-\end{lstlisting}
-It then breaks each inductive proof into cases and determines an intermediate goal type for the candidate.
-%recursively searches each case for a candidate.
-In the base case, for example, it \textit{diffs} the types and determines that a candidate
-between the base cases of \lstinline{new} and \lstinline{old} should have this type (lines 11 and 12):
-
-\begin{lstlisting}
-  (@\diff{(fun p0 => n <= p0)}@) m $\rightarrow$ (@\diff{(fun p0 => n <= p0 + 1)}@) m
-\end{lstlisting}
-It then \textit{diffs} the terms (line 13) for such a candidate:
-
-\begin{lstlisting}
-  fun n m p H0 H1 =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m -> m <= p -> (@\diff{n <= m}@) -> (@\diff{n <= m + 1}@)
-\end{lstlisting}
-
-This candidate is close, but it is not yet a patch. This candidate
-maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
-be applied to \lstinline{p}).
-
+was close, now we want a real patch though.
 Here, \sysname \textit{abstracts} this candidate by \lstinline{m} (line 11), which lifts it out of the base case:
 
 \begin{lstlisting}
@@ -322,7 +319,8 @@ There are four transformations that turn patch candidates into reusable proof pa
 \end{enumerate}
 The configuration chooses among these strategically based on the structure of the proof term.
 
-The transformations takes as inputs $\ldots$ and return $\ldots$:
+\paragraph{Summary}
+In summary, the transformations have the following specification:
 
 \begin{itemize}
 \item \textbf{Inputs}: $\ldots$, assuming:

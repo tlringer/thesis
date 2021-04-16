@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2072,38 +2072,38 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [28] [29] [30] [31] [32]) (./repair/differencing.tex [33])
-(./repair/transformation.tex [34]) (./repair/implementation.tex [35] [36]
-<repair/nat_ind.pdf, id=896, 391.4625pt x 200.75pt>
+(./repair/transformation.tex [34] [35]) (./repair/implementation.tex [36]
+<repair/nat_ind.pdf, id=882, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
-Package pdftex.def Info: repair/nat_ind.pdf  used on input line 72.
+Package pdftex.def Info: repair/nat_ind.pdf  used on input line 74.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
 
-Overfull \hbox (9.2838pt too wide) in paragraph at lines 80--85
+Overfull \hbox (9.2838pt too wide) in paragraph at lines 82--87
 [] []\OT1/pplj/m/sc/10.95 (-20) p a t c h s p e -c i a l -i z a -t i o n[] \OT1
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
 [37 <./repair/nat_ind.pdf>]
 
-LaTeX Warning: Reference `sec:fail' on page 38 undefined on input line 119.
+LaTeX Warning: Reference `sec:fail' on page 38 undefined on input line 121.
 
 [38]
 
 LaTeX Warning: Reference `sec:composeintro' on page 39 undefined on input line 
-169.
+171.
 
-) (./repair/results.tex [39] (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
+[39]) (./repair/results.tex [40] (./repair/compcert.tex) (./repair/compcert.tex
+) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) [40] [41] [42]
+(./repair/bintonat.tex) (./repair/bintonat.tex) [41] [42]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-(./repair/divide.tex) (./repair/divide.tex) [43] [44]) (./repair/conclusion.tex
-)) (./often.tex [45] [46]
+[43] (./repair/divide.tex) (./repair/divide.tex) [44]) (./repair/conclusion.tex
+[45])) (./often.tex [46]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 (./often/equivproof.tex) (./often/equivproof.tex) [47
@@ -2115,7 +2115,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 49 undefined on input line 13.
 
 [49]
-<often/workflowa.pdf, id=1265, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1262, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2400,10 +2400,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49654 strings out of 492609
- 1001690 string characters out of 6129033
+ 49653 strings out of 492609
+ 1001677 string characters out of 6129033
  1290298 words of memory out of 5000000
- 50662 multiletter control sequences out of 15000+600000
+ 50663 multiletter control sequences out of 15000+600000
  631078 words of font info for 748 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2424,10 +2424,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (113 pages, 1453589 bytes).
+Output written on uwthesis.pdf (113 pages, 1455820 bytes).
 PDF statistics:
- 2559 PDF objects out of 2984 (max. 8388607)
- 2377 compressed objects within 24 object streams
- 1267 named destinations out of 1440 (max. 500000)
+ 2556 PDF objects out of 2984 (max. 8388607)
+ 2374 compressed objects within 24 object streams
+ 1265 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

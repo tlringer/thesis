@@ -105,8 +105,8 @@
 \KAuxNewLinkScopetagInstance {sec:algimpl}{document}
 \KAuxDeclaredScopeTag {sec:tcb}
 \KAuxNewLinkScopetagInstance {sec:tcb}{document}
-\KAuxDeclaredScopeTag {sec:case}
-\KAuxNewLinkScopetagInstance {sec:case}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-results}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-results}{document}
 \KAuxDeclaredScopeTag {fig:int}
 \KAuxNewLinkScopetagInstance {fig:int}{document}
 \KAuxDeclaredScopeTag {fig:bintonat}

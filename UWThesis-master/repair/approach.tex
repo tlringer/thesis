@@ -183,6 +183,8 @@ In total, the \sysname prototype currently implements five configurations, corre
 \end{enumerate}
 The support for these changes is limited in expressiveness in power;
 more information on limitations in scope can be found in the repository. % TODO link
+Extending \sysname with new configurations amounts to extending key functions in the implementation
+with a case corresponding to the new configuration.
 
 \subsection{Differencing: Candidates from Examples}
 \label{sec:pumpkin-spec-diff}
@@ -225,6 +227,7 @@ The semantic differencing component first identifies the difference in their typ
 \begin{lstlisting}
   (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
 \end{lstlisting}
+This is the \textit{candidate} goal type.
 It then finds a difference in terms that has that type:
 
 \begin{lstlisting}[language=coq]
@@ -241,18 +244,19 @@ In summary, differencing has the following specification:
 
 % TODO may need to improve this, just want something here for now
 \begin{itemize}
-\item \textbf{Inputs}: \lstinline{old_proof} and \lstinline{new_proof}, assuming:
+\item \textbf{Inputs}: \lstinline{old_proof}, \lstinline{new_proof}, a configuration \lstinline{config}, and a final goal type \lstinline{goal}, assuming:
 \begin{itemize}
-\item the types change only in content, and
-\item the corresponding class of change in content is supported.
+\item the change from \lstinline{old_proof} to \lstinline{new_proof} is in the class of changes supported by \lstinline{config}.
 \end{itemize}
-\item \textbf{Outputs}: a list of terms \lstinline{candidates} of patch candidates, guaranteeing:
+\item \textbf{Outputs}: a list of terms \lstinline{candidates} of patch candidates, and a candidate goal type \lstinline{candidate_goal}, guaranteeing:
 \begin{itemize}
-\item each term in \lstinline{candidates} has the inferred goal type for the change.
+\item each term in \lstinline{candidates} has type \lstinline{candidate_goal}.
 \end{itemize}
 \end{itemize}
-\sysname could in theory infer the wrong goal type, but this would not sacrifice soundness---it would mean only that
-the patch procedure would fail to produce a useful patch in the end, not that it would produce ill-typed terms.
+\sysname infers the configuration type and the final goal from the change itself, so the proof engineer does not have to provide this information.
+\sysname could in theory infer the wrong configuration or the wrong goal type, but this would not sacrifice soundness---it would mean only that
+the patch procedure would either fail to produce a patch, or produce a patch that is not useful in the end.
+All terms that \sysname produces are well-typed. % TODO hyphen or no hyphen?
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}
@@ -336,27 +340,23 @@ I will describe these transformations more in Section~\ref{sec:pumpkin-trans},
 and present real-world examples that demonstrate more configurations in Section~\ref{sec:pumpkin-results}.
 
 \paragraph{Summary}
-In summary, the transformations have the following specification:
+In summary, the transformations together have the following specification:
 
+% TODO I hate this, should make it clearer, for both summaries so far
 \begin{itemize}
-\item \textbf{Inputs}: $\ldots$, assuming:
+\item \textbf{Inputs}: the inputs and outputs of differencing, assuming:
 \begin{itemize}
-\item $\ldots$
+\item the assumptions and guarantees from differencing hold.
 \end{itemize}
-\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\item \textbf{Outputs}: a term \lstinline{patch} that is the reusable proof patch, guaranteeing:
 \begin{itemize}
-\item $\ldots$
+\item \lstinline{patch} has the inferred final \lstinline{goal} type for the change.
 \end{itemize}
 \end{itemize}
-
-other details like what is proven or whatever
-
-\iffalse
-\paragraph{Input: Patch Candidates}
-They come from differencing.
-
-\paragraph{Output: Reusable Proof Patch}
-The corresponding proof term transformations then try to transform each of those candidate patch functions to a more general \textit{reusable proof patch}:
-a function that can be applied with traditional proof automation to fix other proofs broken by the same change.
-\fi
+When these transformations fail, or when the list of candidates that differencing returns is empty,
+\sysname simply fails to return a patch.
+As with differencing, it is possible that a mistake in the implementation of a given configuration
+leads to a final \lstinline{goal} type is not useful to the proof engineer,
+but this cannot soundness:
+every \lstinline{patch} \toolname produces is well-typed.
 

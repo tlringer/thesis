@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 APR 2021 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 APR 2021 08:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2071,51 +2071,56 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34])
-(./repair/transformation.tex [35]) (./repair/implementation.tex [36] [37]
-<repair/nat_ind.pdf, id=905, 391.4625pt x 200.75pt>
+) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34]
+<repair/nat_ind.pdf, id=830, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
-Package pdftex.def Info: repair/nat_ind.pdf  used on input line 74.
+Package pdftex.def Info: repair/nat_ind.pdf  used on input line 58.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
+ [35 <./repair/nat_ind.pdf>]
+Overfull \hbox (16.71048pt too wide) in paragraph at lines 152--157
+[] []\OT1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \OT1/pplj/m
+/n/10.95 (-20) Pro-gram-mers some-times make mul-ti-ple changes
+ []
 
-Overfull \hbox (9.2838pt too wide) in paragraph at lines 82--87
+[36]) (./repair/transformation.tex [37]) (./repair/implementation.tex [38]
+[39]
+Overfull \hbox (9.2838pt too wide) in paragraph at lines 80--85
 [] []\OT1/pplj/m/sc/10.95 (-20) p a t c h s p e -c i a l -i z a -t i o n[] \OT1
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[38 <./repair/nat_ind.pdf>]
 
-LaTeX Warning: Reference `sec:fail' on page 39 undefined on input line 121.
+LaTeX Warning: Reference `sec:fail' on page 40 undefined on input line 119.
 
-[39]
+[40]
 
-LaTeX Warning: Reference `sec:composeintro' on page 40 undefined on input line 
-171.
+LaTeX Warning: Reference `sec:composeintro' on page 41 undefined on input line 
+169.
 
-) (./repair/results.tex [40] (./repair/compcert.tex) (./repair/compcert.tex)
-(./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
+[41]) (./repair/results.tex [42] (./repair/compcert.tex) (./repair/compcert.tex
+) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) [41] [42] [43]
+(./repair/bintonat.tex) (./repair/bintonat.tex) [43] [44]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-(./repair/divide.tex) (./repair/divide.tex) [44] [45]) (./repair/conclusion.tex
-)) (./often.tex [46] [47] [48
-
-
-]
+[45] (./repair/divide.tex) (./repair/divide.tex) [46] [47])
+(./repair/conclusion.tex)) (./often.tex [48]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
-(./often/equivproof.tex) (./often/equivproof.tex) [49] [50])
+(./often/equivproof.tex) (./often/equivproof.tex) [49
+
+
+] [50])
 (./often/approach.tex
 
 LaTeX Warning: Reference `sec:scope' on page 51 undefined on input line 13.
 
 [51]
-<often/workflowa.pdf, id=1279, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1323, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2192,7 +2197,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 Overfull \hbox (10.49026pt too wide) in paragraph at lines 656--664
-\OT1/pplj/m/n/10.95 (-20) Figure []30[] shows the in-ter-est-ing deriva-tions f
+\OT1/pplj/m/n/10.95 (-20) Figure []31[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
@@ -2400,13 +2405,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
  ) 
 Here is how much of TeX's memory you used:
- 49661 strings out of 492609
- 1001769 string characters out of 6129033
- 1290304 words of memory out of 5000000
- 50668 multiletter control sequences out of 15000+600000
- 631078 words of font info for 748 fonts, out of 8000000 for 9000
+ 49712 strings out of 492609
+ 1002626 string characters out of 6129033
+ 1290586 words of memory out of 5000000
+ 50682 multiletter control sequences out of 15000+600000
+ 631347 words of font info for 752 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2424,10 +2429,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (115 pages, 1457666 bytes).
+Output written on uwthesis.pdf (115 pages, 1464776 bytes).
 PDF statistics:
- 2573 PDF objects out of 2984 (max. 8388607)
- 2389 compressed objects within 24 object streams
- 1268 named destinations out of 1440 (max. 500000)
+ 2624 PDF objects out of 2984 (max. 8388607)
+ 2439 compressed objects within 25 object streams
+ 1300 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

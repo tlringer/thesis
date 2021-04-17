@@ -17,7 +17,11 @@ While our system is a very early prototype under active development, we have mad
 The interested reader can follow along in the repository. % This link is old, and it is no longer a prototype, so adjust
 Our prototype has no impact on the trusted computing base (Section~\ref{sec:tcb}).
 
-\subsubsection{Semantic Differencing} We implement semantic differencing over \emph{trees}:
+% TODO redundant for now
+\subsubsection{Semantic Differencing} 
+\label{sec:pumpkin-impl-diff}
+
+We implement semantic differencing over \emph{trees}:
 \sysname compiles each proof term into a tree (\lstinline{evaluation.ml}). In these trees,
 every node is a type context, and every edge is an extension to that type context with a 
 new term.\footnote{These trees are inspired by categorical models of dependent type theory~\cite{Hofmann97}.}
@@ -54,6 +58,8 @@ to query abstraction for the final patch:
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) (@\diff{n}@), P' (@\diff{n}@) -> P (@\diff{n}@)
 \end{lstlisting}
+
+
 The differencing component is \textit{lazy}: it compiles terms into trees one step at a time.
 It then \emph{expands} each tree as needed to find candidates (\lstinline{expansion.ml}).
 For example, consider searching two functions for a patch between conclusions:
@@ -68,14 +74,6 @@ then expands and recursively diffs the bodies \lstinline{b} and \lstinline{b'} i
 
 The tool always maintains pointers to easily switch between the tree and AST representations of the terms.
 This representation enables extensibility.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[scale=0.55]{repair/nat_ind}
-\end{center}
-\caption{The type of (left) and tree for (right) the induction principle \lstinline{nat_ind}. The solid edges represent hypotheses, and the dotted edges represent the proof obligations for each case in an inductive proof.}
-\label{fig:cattree}
-\end{figure}
 
 \subsubsection{Transformations}
 
@@ -195,7 +193,7 @@ To implement new configurations for different classes of changes, we simply twea
 
 Needed: hints and so on, any work done since, the Git interface, whatever.
 
-\subsubsection{Trusted Computing Base}
+\subsection{Trusted Computing Base}
 \label{sec:tcb}
 
 A common concern for Coq plugins is an increase in the trusted computing base.
@@ -205,3 +203,7 @@ While \sysname does not yet support Coq 8.7, it only calls the internal Coq func
 developers plan to expose in the safe API~\cite{coqPR}.
 Furthermore, Coq type-checks terms that plugins produce.
 Since \sysname does not modify the type checker, it cannot produce an ill-typed term.
+
+\subsection{Performance}
+
+(From the evaluation section.)

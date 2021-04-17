@@ -105,10 +105,16 @@
 \KAuxNewLinkScopetagInstance {fig:stronger}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-trans-design}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-trans-design}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-trans-limitations}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl-diff}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-impl-trans}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-impl-trans}{document}
 \KAuxDeclaredScopeTag {sec:algimpl}
 \KAuxNewLinkScopetagInstance {sec:algimpl}{document}
 \KAuxDeclaredScopeTag {sec:tcb}

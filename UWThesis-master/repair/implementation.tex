@@ -3,12 +3,13 @@
 
 parts of PUMPKIN PATCH Inside the Core, plus more.
 
-add something about Git, add something about hint application, add something about regrets (compiling to trees) and limitations,
+add something about Git, add something about hint application, add something about regrets (compiling to trees) and 
+limitations (consider the challenges \& patch generation suite if not used at all in the previous section),
 add something about optimization via the identity class of change (changes in nothing, sixth configuration).
 
 you said efficiently the approach chapter for search, so probably include the numbers from that experiment here
 
-debruijn, constants (reducing), whatever
+debruijn, constants (reducing), evar maps, whatever
 
 \subsection{Tool Details}
 
@@ -78,7 +79,9 @@ The tool always maintains pointers to easily switch between the tree and AST rep
 This representation enables extensibility.
 
 \subsubsection{Transformations}
+\label{sec:pumpkin-impl-trans}
 
+% TODO redundant for now
 \paragraph{Patch Specialization} Specialization (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
 all of which are Coq terms.
 It applies the candidate to the arguments, then it $\beta\iota$-reduces~\cite{equality} the result using Coq's

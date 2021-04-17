@@ -95,8 +95,12 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-spec-trans}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-diff}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-diff-design}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-diff-design}{document}
 \KAuxDeclaredScopeTag {fig:cattree}
 \KAuxNewLinkScopetagInstance {fig:cattree}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-diff-limitations}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-diff-limitations}{document}
 \KAuxDeclaredScopeTag {fig:stronger}
 \KAuxNewLinkScopetagInstance {fig:stronger}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans}

@@ -3,10 +3,12 @@
 
 parts of PUMPKIN PATCH Inside the Core, plus more.
 
-add something about Git, add something about hint application, add something about regrets (compiling to trees),
+add something about Git, add something about hint application, add something about regrets (compiling to trees) and limitations,
 add something about optimization via the identity class of change (changes in nothing, sixth configuration).
 
 you said efficiently the approach chapter for search, so probably include the numbers from that experiment here
+
+debruijn, constants (reducing), whatever
 
 \subsection{Tool Details}
 
@@ -207,3 +209,33 @@ Since \sysname does not modify the type checker, it cannot produce an ill-typed 
 \subsection{Performance}
 
 (From the evaluation section.)
+
+
+\paragraph{A Challenge for Differencing}  (orphaned)
+For one pair of proofs of theorems 
+with propositionally equal conclusions (Figure~\ref{fig:stronger}),
+the differencing component failed to find candidates in either direction.
+These proofs both contain the same proof of a stronger lemma;
+\sysname found patches from this lemma to
+both \lstinline{old} and \lstinline{new},
+but it was unable to find a patch between \lstinline{old} and \lstinline{new}.
+A patch may show up deep in the difference between \lstinline{le_plus_trans}
+and \lstinline{le_S}, but even if we $\delta$-reduce (unfold the definition of~\cite{equality}) \lstinline{le_plus_trans}, this is not obvious:
+
+\begin{lstlisting}
+    le_plus_trans n m p (H : n <= m) :=(@\vspace{-0.04cm}@)
+      (fun lemma : m <= m + p =>(@\vspace{-0.04cm}@)
+        trans_contra_inv_impl_morphism(@\vspace{-0.04cm}@)
+          PreOrder_Transitive(@\vspace{-0.04cm}@)
+          (m + p)(@\vspace{-0.04cm}@)
+          m(@\vspace{-0.04cm}@)
+          lemma)(@\vspace{-0.04cm}@)
+      (le_add_r m p)(@\vspace{-0.04cm}@)
+      H
+\end{lstlisting}
+
+This points to two difficulties in finding patches: Knowing when to $\delta$-reduce terms 
+is difficult; exploring the appropriate time for reduction
+may produce patches for pairs that \sysname currently cannot patch.
+Furthermore, finding patches is more challenging
+when neither theorem has a conclusion that is as strong as possible.

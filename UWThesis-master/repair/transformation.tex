@@ -12,25 +12,17 @@ Section~\ref{sec:pumpkin-impl-trans} describes the implementation in \sysname.
 \subsection{Design}
 \label{sec:pumpkin-trans-design}
 
+% TODO honestly this should go in spec then? both of these in each section? and just say we don't show too much here since prototype?
 The transformations together recurse over the structure of each term in the list of candidates $\vec{t}$ in an environment $\Gamma$,
 and adapt that candidate to some new context in a goal-direct manner.
 In the end, if successful, they produce a reusable proof patch $p$ with type $G$, where $G$ is the inferred goal type.
-That is, we can view the high-level composition of transformations as a single judgment:
-
-% TODO honestly this should go in spec then? both of these in each section? and just say we don't show too much here since prototype?
-
-\begin{mathpar}
-%\begin{minipage}{0.45\textwidth}
-\mprset{flushleft} 
-\small
-\hfill\fbox{$\Gamma$ $\vdash$ $(\vec{t},\ G) \Downarrow_{t} p$ }\\
-\end{mathpar}
-where $\Gamma \vdash p : G$.
+That is, we can view the high-level composition of transformations as a single judgment
+$\Gamma\ \vdash\ (\vec{t},\ G)\ \Downarrow_{t} p$, where in the end, $\Gamma \vdash p : G$. 
 
 The details vary by transformation,
 and the details of which transformations run at all and in what order to reach the goal vary by configuration.
 For historical reasons, as \sysname was a prototype, these tranformations are not formalized. % TODO formalize if time
-Here I describe the design of the four transformations in CIC${_\omega}$.
+Here I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
 Section~\ref{sec:pumpkin-impl-trans} describes additional features needed for implementation in Gallina,
 and the \toolnamec extension in Chapter~\ref{chapt:pi} formalizes a more elegant proof term transformation building on some of the insights from the \sysname transformation prototypes.
 
@@ -44,6 +36,17 @@ To find a patch for Figure~\ref{fig:example}, for example, \sysname
 specialized the patch candidate to \lstinline{p} to produce the final patch.
 
 Specialization takes a single patch candidate, some arguments, and a reduction strategy, and returns a new candidate.
+It first applies the function to the argument, then applies the reduction strategy on the result.
+The default reducer, for example, uses $\beta\iota$-reduction in Coq~\cite{equality}.
+Section~\ref{sec:pumpkin-impl-trans} decribes other reducers.
+The only requirement for a reducer is that the end result should be definitionally equal to the original.
+
+Depending on the configuration and the step in the process, the transformed candidate may be the reusable patch,
+or it may just be an intermediate candidate.
+It is the job of the patch finding procedure to provide both the candidate and the arguments,
+and to determine which transformation to run next, if applicable.
+
+\iffalse
 It works by combining application with reduction, with just one derivation:
 
 \begin{mathpar}
@@ -56,80 +59,81 @@ It works by combining application with reduction, with just one derivation:
 \end{mathpar}
 There is just one super weird thing I do not even know if I am allowed to do here:
 the reduction strategy $\Downarrow_{r}$ is itself a transformation that reduces a term in an arbitrary way.
-The default reducer, for example, uses $\beta\iota$-reduction in Coq~\cite{equality}.
-Other reducers do not reduce at all, or remove unecessary applications of the identity function.
-The only requirement is that the end result should be definitionally equal to the original.
+\fi
 
-Depending on the configuration and the step in the process, this transformed candidate may be the reusable patch,
-or it may just be an intermediate candidate.
-It is the job of the patch finding procedure to provide both the candidate and the arguments,
-and to determine which transformation to run next, if applicable.
+\paragraph{Generalization} In other cases, a patch candidate is too specific.
+Generalization takes a candidate that is too specific and generalizes it.
+We saw this for the example in e~\ref{fig:example} as well:
+to go from the candidate that \sysname found in the base case to the eventual reusable patch,
+\sysname generalized the candidate by the argument \lstinline{m} (before applying specialization).
 
-\paragraph{Generalization} (Left off here.) A tool should be able to abstract patch candidates of this form by the common argument:
+There are two kinds of generalization.
+The first generalizes candidates that map between types that share a common argument, like: % TODO need to explain the arrow syntax and assume we can do it for CIC somewhere
 
 \begin{lstlisting}[language=coq]
-  candidate : P' t -> P t(@\vspace{-0.08cm}@)
-  candidate_abs : (@\ltacforall@) (@\diff{t0}@), P' (@\diff{t0}@) -> P (@\diff{t0}@)
+  $Q\ t\ \rightarrow P\ t$
 \end{lstlisting}
-and it should be able to abstract patch candidates of this form by the common function:
+to abstract the common argument:
 
 \begin{lstlisting}[language=coq]
-  candidate : P t' -> P t(@\vspace{-0.08cm}@)
-  candidate_abs : (@\ltacforall@) (@\diff{P0}@), (@\diff{P0}@) t' -> (@\diff{P0}@) t
+  $Pi (\diff{t0} : T),\ Q\ \diff{t0} \rightarrow P\ \diff{t0}$
+\end{lstlisting}
+where $T$ is the type of $t$.
+The second generalizes candidates that map between types that share a common function, like:
+
+\begin{lstlisting}[language=coq]
+  $P\ t'\ \rightarrow P\ t$
+\end{lstlisting}
+to abstract the common function:
+
+\begin{lstlisting}[language=coq]
+  $Pi (\diff{P0} : T),\ \diff{P0} t' \rightarrow \diff{P0} t$
 \end{lstlisting} 
+where $T$ is the type of $P0$.
 
-This is necessary because the tool may find candidates in an applied form.
-For example, when searching for a patch between the proofs in Figure~\ref{fig:example},
-\sysname finds a candidate in the difference of base cases. To produce a patch, 
-\sysname must abstract the candidate by the argument \lstinline{m}.
-Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
-
-Abstraction (\lstinline{abstraction.ml}) takes a patch candidate, 
-the goal type, and the function arguments or function to abstract.
-It first generalizes the candidate, wrapping it inside of a lambda from the type of the term to abstract.
+Generalization takes a patch candidate, the goal type, and the function arguments or function to abstract.
+It first wraps the candidate inside of a lambda from the type of the term to abstract.
 Then, it substitutes terms inside the body with the abstract term.
-It continues to do this until there is nothing left to abstract, then filters results by the goal type.
-Consider, for example, abstracting this candidate by \lstinline{m}:
+It continues to do this until there is nothing left to generalize, then filters results by the goal type.
+Consider, for example, abstracting this candidate by \lstinline{m}: % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
-  fun (H : n <= m) => le_plus_trans n m 1 H(@\vspace{-0.04cm}@)
-  : n <= m -> n <= m + 1
+  $\lambda (H : n <= m) . \mathrm{le_plus_trans}\ n\ m\ (S O)\ H$
+  $: n <= m $\rightarrow$ n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
-The generalization step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
+where \lstinline{<=} is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
+The first step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  fun ((@\diff{n0}@) : nat) =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= m) => le_plus_trans n m 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@), n <= m -> n <= m + 1
+  $\lambda (\diff{n0} : nat) . \lambda (H : n <= m) . \mathrm{le_plus_trans}\ n\ m\ (S O)\ H)$
+  $: \Pi (\diff{n0} : nat), n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
-The substitution step replaces \lstinline{m} with \lstinline{n0}:
+The second step substitutes \lstinline{n0} for \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  fun ((@\diff{n0}@) : nat) =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@), n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
+  $\lambda (\diff{n0} : nat) . \lambda (H : n <= \diff{n0}) . \mathrm{le_plus_trans}\ n\ \diff{n0}\ (S O)\ H)$
+  $: \Pi (\diff{n0} : nat), n <= \diff{n0} \rightarrow n <= \mathrm{plus}\ \diff{n0}\ 1$
 \end{lstlisting}
 
-Abstraction uses a list of \textit{abstraction strategies} to determine what subterms
-to substitute. In this case, the simplest strategy works: The tool
+In general, generalization is a kind of anti-unification problem, % TODO cite and so on
+as the terms and types may be reduced,
+so that the common function or argument does not appear explicitly.
+This is of course undecidable.
+This poses a challenge for abstraction in the second step---substitution.
+
+To handle this challenge, generalization uses a list of \textit{abstraction strategies} to determine what subterms to substitute.
+In this case, the simplest strategy works: the tool
 replaces all terms that are convertible to the concrete argument \lstinline{m} with the abstract argument
-\lstinline{n0}, which produces a single candidate. Type-checking this candidate confirms that it is a patch.
-
+\lstinline{n0}, which produces a single candidate. Type checking this candidate confirms that it is a patch.
 In some cases, the simplest strategy is not sufficient, even when it is possible to abstract the term.
-It may be possible to produce a patch only by abstracting \emph{some} of the subterms
-convertible to the argument or function (we show an example of this in Section~\ref{sec:fail}),
-or the term may not contain any subterms convertible to the argument or function at all.
-We implement several strategies to account for this. The combinations strategy, for example,
-tries all combinations of substituting only some of the convertible subterms with the abstract argument. 
-The pattern-based strategy substitutes subterms that match a certain pattern
-with a term that corresponds to that pattern.
+Section~\ref{sec:pumpkin-impl-trans} describes a sample of other strategies.
 
 It is the job of the patch finding procedure to provide the candidate and the terms to abstract.
 In addition, each configuration includes a list of strategies.
 The configuration for changes in conclusions, for example, starts with the simplest strategy,
 and moves on to more complex strategies only if that strategy fails.
 This design makes abstraction simple to extend with new strategies and simple to call with different strategies
-for different classes of changes.
+for different configurations, or even as an optimization for the proof engineer.
 
 \paragraph{Inversion} The tool should be able to invert a patch candidate.
 This is necessary to search for isomorphisms.
@@ -246,6 +250,10 @@ paths of factors along the way, and it discards any paths that cannot reach \lst
 This section describes a few fundamental limitations of the transformations in \sysname,
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-trans}.
+
+\paragraph{Abstraction Strategies}
+Not reduced and so on.
+Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
 
 \paragraph{Dependent Factoring} The current factoring algorithm can handle paths
 with more than two factors, but it fails when \lstinline{Y} depends on \lstinline{X}.

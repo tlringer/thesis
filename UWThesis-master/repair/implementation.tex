@@ -88,6 +88,8 @@ It applies the candidate to the arguments, then it $\beta\iota$-reduces~\cite{eq
 \lstinline{Reduction.nf_betaiota} function. It is the job of the 
 patch finding procedure to provide both the candidate and the arguments.
 
+(Explain: other reducers do not reduce at all, or remove unecessary applications of the identity function.)
+
 \paragraph{Patch Abstraction} Abstraction (\lstinline{abstraction.ml}) takes a patch candidate, 
 the goal type, and the function arguments or function to abstract.
 It first generalizes the candidate, wrapping it inside of a lambda from the type of the term to abstract.

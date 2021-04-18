@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 APR 2021 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 APR 2021 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2071,36 +2071,20 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
-) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 50.
-
-[35]
-<repair/nat_ind.pdf, id=848, 391.4625pt x 200.75pt>
+) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34] [35]
+<repair/nat_ind.pdf, id=850, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
-Package pdftex.def Info: repair/nat_ind.pdf  used on input line 128.
+Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
  [36 <./repair/nat_ind.pdf>]
-Overfull \hbox (14.13942pt too wide) in paragraph at lines 206--217
+Overfull \hbox (14.13942pt too wide) in paragraph at lines 196--207
 [] []\OT1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \OT1/pplj/m
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-[37]) (./repair/transformation.tex
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 25.
-
-[38]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 50.
-
-[39]
-
-LaTeX Warning: Reference `sec:fail' on page 40 undefined on input line 120.
-
-[40] [41]
-Overfull \hbox (1.3722pt too wide) in paragraph at lines 254--260
+[37]) (./repair/transformation.tex [38] [39] [40] [41]
+Overfull \hbox (1.3722pt too wide) in paragraph at lines 262--268
 [] []\OT1/pplj/m/sc/10.95 (-20) m o d -e l -i n g d i -v e r s e p r o o f s t 
 y l e s[] \OT1/pplj/m/n/10.95 (-20) Coq pro-gram-mers use di-verse
  []
@@ -2112,12 +2096,12 @@ Overfull \hbox (9.2838pt too wide) in paragraph at lines 85--90
  []
 
 
-LaTeX Warning: Reference `sec:fail' on page 44 undefined on input line 124.
+LaTeX Warning: Reference `sec:fail' on page 44 undefined on input line 126.
 
 [44]
 
 LaTeX Warning: Reference `sec:composeintro' on page 45 undefined on input line 
-174.
+176.
 
 [45] [46]) (./repair/results.tex [47] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
@@ -2129,8 +2113,8 @@ Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 e in tactics---rewriting
  []
 
-[50] (./repair/divide.tex) (./repair/divide.tex) [51]) (./repair/conclusion.tex
-[52])) (./often.tex [53] [54
+[50] (./repair/divide.tex) (./repair/divide.tex) [51] [52])
+(./repair/conclusion.tex)) (./often.tex [53] [54
 
 
 ]
@@ -2427,13 +2411,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49772 strings out of 492609
- 1003937 string characters out of 6129033
+ 49771 strings out of 492609
+ 1003917 string characters out of 6129033
  1291120 words of memory out of 5000000
- 50709 multiletter control sequences out of 15000+600000
+ 50710 multiletter control sequences out of 15000+600000
  631078 words of font info for 748 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2337s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2451,10 +2435,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (121 pages, 1482470 bytes).
+Output written on uwthesis.pdf (121 pages, 1483364 bytes).
 PDF statistics:
  2702 PDF objects out of 2984 (max. 8388607)
  2510 compressed objects within 26 object streams
- 1338 named destinations out of 1440 (max. 500000)
+ 1336 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

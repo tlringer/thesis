@@ -47,9 +47,10 @@
 \contentsline {subsection}{\numberline {3.4.1}Design}{38}{subsection.3.4.1}% 
 \contentsline {paragraph}{Specialization}{39}{subsection.3.4.1}% 
 \contentsline {paragraph}{Generalization}{39}{subsection.3.4.1}% 
-\contentsline {paragraph}{Inversion}{40}{lstnumber.-87.3}% 
-\contentsline {paragraph}{Factoring}{41}{lstnumber.-93.2}% 
+\contentsline {paragraph}{Inversion}{40}{lstnumber.-88.2}% 
+\contentsline {paragraph}{Factoring}{41}{lstnumber.-94.2}% 
 \contentsline {subsection}{\numberline {3.4.2}Limitations}{42}{subsection.3.4.2}% 
+\contentsline {paragraph}{Abstraction Strategies}{42}{subsection.3.4.2}% 
 \contentsline {paragraph}{Dependent Factoring}{42}{subsection.3.4.2}% 
 \contentsline {paragraph}{Modeling Diverse Proof Styles}{42}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}Implementation}{42}{section.3.5}% 
@@ -58,8 +59,8 @@
 \contentsline {subsubsection}{\numberline {3.5.1.2}Transformations}{44}{subsubsection.3.5.1.2}% 
 \contentsline {paragraph}{Patch Specialization}{44}{subsubsection.3.5.1.2}% 
 \contentsline {paragraph}{Patch Abstraction}{44}{subsubsection.3.5.1.2}% 
-\contentsline {paragraph}{Patch Inversion}{45}{lstnumber.-104.3}% 
-\contentsline {paragraph}{Lemma Factoring}{45}{lstnumber.-105.2}% 
+\contentsline {paragraph}{Patch Inversion}{45}{lstnumber.-105.3}% 
+\contentsline {paragraph}{Lemma Factoring}{45}{lstnumber.-106.2}% 
 \contentsline {subsubsection}{\numberline {3.5.1.3}Inside the Procedure}{45}{subsubsection.3.5.1.3}% 
 \contentsline {subsection}{\numberline {3.5.2}Workflow Integration}{46}{subsection.3.5.2}% 
 \contentsline {subsection}{\numberline {3.5.3}Trusted Computing Base}{46}{subsection.3.5.3}% 
@@ -69,18 +70,18 @@
 \contentsline {paragraph}{Identifying Changes}{47}{Item.39}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{48}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{48}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{49}{lstnumber.-120.1}% 
-\contentsline {paragraph}{Apply}{49}{lstnumber.-121.1}% 
+\contentsline {paragraph}{Search}{48}{lstnumber.-121.1}% 
+\contentsline {paragraph}{Apply}{49}{lstnumber.-122.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{49}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{49}{subsection.3.6.2}% 
-\contentsline {paragraph}{Replay}{50}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{50}{lstnumber.-128.2}% 
-\contentsline {paragraph}{Apply}{50}{lstnumber.-129.2}% 
+\contentsline {paragraph}{Replay}{49}{subsection.3.6.2}% 
+\contentsline {paragraph}{Search}{50}{lstnumber.-129.2}% 
+\contentsline {paragraph}{Apply}{50}{lstnumber.-130.2}% 
 \contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{50}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{51}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{51}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{52}{lstnumber.-138.2}% 
-\contentsline {paragraph}{Apply}{52}{lstnumber.-139.2}% 
+\contentsline {paragraph}{Search}{52}{lstnumber.-139.2}% 
+\contentsline {paragraph}{Apply}{52}{lstnumber.-140.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{52}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{53}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{55}{chapter.4}% 
@@ -104,7 +105,7 @@
 \contentsline {section}{\numberline {4.4}Transformation}{74}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{76}{figure.caption.36}% 
 \contentsline {paragraph}{Lifting Constructors}{77}{figure.caption.38}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{78}{lstnumber.-201.1}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{78}{lstnumber.-202.1}% 
 \contentsline {subsection}{\numberline {4.4.1}Limitations}{78}{subsection.4.4.1}% 
 \contentsline {section}{\numberline {4.5}Implementation}{80}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{80}{subsection.4.5.1}% 

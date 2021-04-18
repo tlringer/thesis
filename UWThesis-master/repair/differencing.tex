@@ -42,14 +42,8 @@ Section~\ref{sec:pumpkin-impl-diff} describes the implementation in \sysname.
 Differencing recurses over the structure of two terms $t_A$ and $t_B$ in a common environment $\Gamma$.
 When it recurses, it extends $\Gamma$ with common assumptions, then differences subterms.
 In each case, it carries a goal type $G$, and returns a list of patch candidates $\vec{t}$ that each have that goal type.
-That is, we can view it as a judgment:
-
-\begin{mathpar}
-%\begin{minipage}{0.45\textwidth}
-\mprset{flushleft} 
-\small
-\hfill\fbox{$\Gamma$ $\vdash$ $(t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ }\vspace{-0.55cm}\\
-\end{mathpar}
+That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$,
+where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
 
 The details of this vary by the structure of the term and the configuration, with different heuristics corresponding to different subterm-configuration combinations.
 For historical reasons, as \sysname was a prototype and differencing of proof terms was novel at the time, these heuristics are not formalized. % TODO formalize if time
@@ -158,11 +152,7 @@ Furthermore, it knows that the inductive hypotheis cannot show up in the patch i
 so it attempts to remove any occurrences of the inductive hypothesis in any candidate.
 
 When differencing finds a candidate, it knows $Q$ and $P$ as well as the arguments $O$ or $S\ n$.
-This makes it simple for \sysname to later query the transformations for the final patch, with type:
-
-\begin{lstlisting}
-  $Q \rightarrow P$
-\end{lstlisting}
+This makes it simple for \sysname to later query the transformations for the final patch, with type $Q \rightarrow P$.
 
 \subsection{Limitations}
 \label{sec:pumpkin-diff-limitations}

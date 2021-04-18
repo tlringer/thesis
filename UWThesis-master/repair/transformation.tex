@@ -63,7 +63,7 @@ the reduction strategy $\Downarrow_{r}$ is itself a transformation that reduces 
 
 \paragraph{Generalization} In other cases, a patch candidate is too specific.
 Generalization takes a candidate that is too specific and generalizes it.
-We saw this for the example in e~\ref{fig:example} as well:
+We saw this for the example in Figure~\ref{fig:example} as well:
 to go from the candidate that \sysname found in the base case to the eventual reusable patch,
 \sysname generalized the candidate by the argument \lstinline{m} (before applying specialization).
 
@@ -76,7 +76,7 @@ The first generalizes candidates that map between types that share a common argu
 to abstract the common argument:
 
 \begin{lstlisting}[language=coq]
-  $Pi (\diff{t0} : T),\ Q\ \diff{t0} \rightarrow P\ \diff{t0}$
+  $\Pi (\diff{t0} : T),\ Q\ \diff{t0} \rightarrow P\ \diff{t0}$
 \end{lstlisting}
 where $T$ is the type of $t$.
 The second generalizes candidates that map between types that share a common function, like:
@@ -87,7 +87,7 @@ The second generalizes candidates that map between types that share a common fun
 to abstract the common function:
 
 \begin{lstlisting}[language=coq]
-  $Pi (\diff{P0} : T),\ \diff{P0} t' \rightarrow \diff{P0} t$
+  $\Pi (\diff{P0} : T),\ \diff{P0} t' \rightarrow \diff{P0} t$
 \end{lstlisting} 
 where $T$ is the type of $P0$.
 
@@ -98,20 +98,20 @@ It continues to do this until there is nothing left to generalize, then filters 
 Consider, for example, abstracting this candidate by \lstinline{m}: % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
-  $\lambda (H : n <= m) . \mathrm{le_plus_trans}\ n\ m\ (S O)\ H$
-  $: n <= m $\rightarrow$ n <= \mathrm{plus}\ m\ 1$
+  $\lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S O)\ H$
+  $: n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
 where \lstinline{<=} is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
 The first step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : nat) . \lambda (H : n <= m) . \mathrm{le_plus_trans}\ n\ m\ (S O)\ H)$
+  $\lambda (\diff{n0} : nat) . \lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S O)\ H)$
   $: \Pi (\diff{n0} : nat), n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
 The second step substitutes \lstinline{n0} for \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : nat) . \lambda (H : n <= \diff{n0}) . \mathrm{le_plus_trans}\ n\ \diff{n0}\ (S O)\ H)$
+  $\lambda (\diff{n0} : nat) . \lambda (H : n <= \diff{n0}) . \mathrm{le\_plus\_trans}\ n\ \diff{n0}\ (S O)\ H)$
   $: \Pi (\diff{n0} : nat), n <= \diff{n0} \rightarrow n <= \mathrm{plus}\ \diff{n0}\ 1$
 \end{lstlisting}
 
@@ -135,32 +135,29 @@ and moves on to more complex strategies only if that strategy fails.
 This design makes abstraction simple to extend with new strategies and simple to call with different strategies
 for different configurations, or even as an optimization for the proof engineer.
 
-\paragraph{Inversion} The tool should be able to invert a patch candidate.
-This is necessary to search for isomorphisms.
-It is also necessary to search for implications between propositionally
-equal types, since candidates may appear in the wrong direction.
-For example, consider two list lemmas (we write \lstinline{length} as \lstinline{len}):
+\paragraph{Inversion} Sometimes, when two types are propositionally equal, % TODO explain this earlier in Coq explanation and so on, too, and refer back; use pi explanation
+candidate patches may appear in the wrong direction.
+For example, consider two list lemmas (this example is in Coq rather than CIC$_{\omega}$ for simplicity): % TODO just use CIC here and below 
 
 \begin{lstlisting}[language=coq]
-  old : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len l(@\vspace{-0.08cm}@)
-  new : (@\ltacforall@) l' l, len (l' ++ l) = len l' + len (rev l)
+  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l(@\vspace{-0.08cm}@)
+  new : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length (rev l)
 \end{lstlisting} 
-
 If \sysname searches the difference in proofs of these lemmas for a patch from the 
 conclusion of \lstinline{new} to the conclusion of \lstinline{old},
 it may find a candidate \emph{backwards}:
 
 \begin{lstlisting}
   candidate l' l (H : (@\diff{old}@) l' l) :=(@\vspace{-0.04cm}@)
-    eq_ind_r ... (@\diff{(rev\_length l)}@)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) l' l, (@\diff{old}@) l' l -> (@\diff{new}@) l' l
+    eq_rect_r ... (@\diff{(rev\_length l)}@)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) l' l, (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l
 \end{lstlisting}
 The component can invert this to get the patch: %from \lstinline{new} to \lstinline{old}:
 
 \begin{lstlisting}
   patch l' l (H : (@\diff{new}@) l' l) :=(@\vspace{-0.04cm}@)
-    eq_ind_r ... (@\diff{(eq\_sym (rev\_length l))}@)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) l' l, (@\diff{new}@) l' l -> (@\diff{old}@) l' l
+    eq_rect_r ... (@\diff{(eq\_sym (rev\_length l))}@)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) l' l, (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l
 \end{lstlisting}
 We can then use this patch to port proofs.
 For example, if we add this patch to a hint database~\cite{hints},
@@ -168,79 +165,62 @@ we can port this proof:
 
 \begin{lstlisting}
   Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
-    len (rev (l' ++ l)) = len (rev l) + len (rev l').(@\vspace{-0.04cm}@)
+    length (rev (l' ++ l)) = length (rev l) + length (rev l').(@\vspace{-0.04cm}@)
   Proof.(@\vspace{-0.04cm}@)
     intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)(@\vspace{-0.04cm}@)
-  Qed.
+  Defined.
 \end{lstlisting}
 to this proof:
 
 \begin{lstlisting}
   Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
-    len (rev (l' ++ l)) = len (rev l) + len (rev l').(@\vspace{-0.04cm}@)
+    length (rev (l' ++ l)) = length (rev l) + length (rev l').(@\vspace{-0.04cm}@)
   Proof.(@\vspace{-0.04cm}@)
     intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)(@\vspace{-0.04cm}@)
-  Qed.
+  Defined.
 \end{lstlisting}
 
 Rewrites like \lstinline{candidate} are \textit{invertible}:
 We can invert any rewrite in one direction by rewriting in the opposite direction.
 In contrast, it is not possible to invert the patch \sysname
 found for Figure~\ref{fig:example}.
-Inversion will necessarily sometimes fail, since not all terms are invertible.
-%Not all terms are invertible. It is not possible, for example, to invert the patch 
-%Inversion will necessarily sometimes fail.
 
-Patch inversion (\lstinline{inverting.ml}) exploits symmetry to try to reverse the conclusions of a 
-candidate patch.
+When a candidate is invertible, patch inversion exploits symmetry to try to reverse the conclusions of a candidate patch.
 It first factors the candidate using the factoring component, then calls the primitive inversion
 function on each factor, then finally folds the resulting list in reverse.
 The primitive inversion function exploits symmetry. 
-For example, equality is symmetric, so the component can invert any application of \lstinline{eq_ind} or \lstinline{eq_ind_r}
-(any rewrite). Indeed, \lstinline{eq_ind} and \lstinline{eq_ind_r} are inverses, and are related by symmetry:
+For example, equality is symmetric, so the component can invert any application of the equality eliminators.
+I will explain this more in Section~\ref{sec:pumpkin-impl-diff}.
 
-\begin{lstlisting}[language=coq]
-  (@\diff{eq\_ind\_r}@) A x P (H : P x) y (H0 : y = x) :=(@\vspace{-0.04cm}@)
-    (@\diff{eq\_ind}@) x (fun y0 : A => P y0) H y ((@\diff{eq\_sym}@) H0)	
-\end{lstlisting}
-If inversion does not recognize that the type is symmetric, it
-swaps subterms and type-checks the result to see if it is an inverse.
-
-\paragraph{Factoring} The tool should be able to factor a term into a sequence of lemmas.
-This can help break other problems, like abstraction, into smaller subproblems.
+\paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
+This can break other problems, like abstraction, into smaller subproblems.
 It is also necessary to invert certain terms.
-Consider inverting an arbitrary sequence of two rewrites:
+Consider inverting an arbitrary sequence of two rewrites (again in Coq rather than CIC$_{\omega}$): % TODO just use CIC here and above 
 
 \begin{lstlisting}
-  t := (@\diff{eq\_ind\_r G ...}@) ((@\diff{eq\_ind\_r F ...}@))
+  t : X $\rightarrow$ Z := (@\diff{eq\_ind\_r G ...}@) ((@\diff{eq\_ind\_r F ...}@)).
 \end{lstlisting}
 We can view \lstinline{t} as a term that composes two functions:
 
 \begin{lstlisting}
-  g := (@\diff{eq\_ind\_r G ...}@)(@\vspace{-0.04cm}@)
-  f := (@\diff{eq\_ind\_r F ...}@)(@\vspace{-0.04cm}@)
-  t := g $\circ$ f
+  g : Y $\rightarrow$ Z := (@\diff{eq\_ind\_r G ...}@)(@\vspace{-0.04cm}@)
+  f : X $\rightarrow$ Y := (@\diff{eq\_ind\_r F ...}@)(@\vspace{-0.04cm}@)
+  t : X $\rightarrow$ Z := g $\circ$ f.
 \end{lstlisting}
 The inverse of \lstinline{t} is the following:
 
 \begin{lstlisting}
-  t$\inv$ := f$\inv$ $\circ$ g$\inv$
+  t$\inv$ : Z $\rightarrow$ X := f$\inv$ $\circ$ g$\inv$.
 \end{lstlisting}
 To invert \lstinline{t}, \sysname identifies the factors \lstinline{[f; g]}, 
 inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
 then folds and applies the inverse factors in the opposite direction.
 
-The lemma factoring component (\lstinline{factoring.ml}) searches within a term
-for its factors. For example,
-if the term composes two functions, it returns both factors:
-
-\begin{lstlisting}[language=coq]
-  t : (@\diff{X}@) -> (@\diff{Z}@)                (* term *)(@\vspace{-0.04cm}@)
- [f : (@\diff{X}@) -> (@\diff{Y}@); g : (@\diff{Y}@) -> (@\diff{Z}@)] (* factors *)
-\end{lstlisting}
-In this case, the component takes the composite term and \lstinline{X} as arguments.
-It first searches as deep as possible for a term of type \lstinline{X -> Y} for some \lstinline{Y}.
-If it finds such a term, then it recursively searches for a term with type \lstinline{Y -> Z}. 
+The lemma factoring component looks within a term for its factors.
+For the term above, it returns both factors: \lstinline{f} and \lstinline{g}.
+In this case, factoring takes the composite term and \lstinline{X} as arguments.
+It first searches as deep as possible for a term of type \lstinline{X} $\rightarrow$ \lstinline{Y} for some \lstinline{Y}.
+If it finds such a term, then it recursively searches for a term with type \lstinline{Y} $\rightarrow$ \lstinline{Z}. 
 It maintains all possible 
 paths of factors along the way, and it discards any paths that cannot reach \lstinline{Z}.
 
@@ -251,18 +231,22 @@ This section describes a few fundamental limitations of the transformations in \
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-trans}.
 
-\paragraph{Abstraction Strategies}
+\paragraph{Undecidability} (Needs rewording but draft text, whatever.)
 Not reduced and so on.
 Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
+Inversion will necessarily sometimes fail, since not all terms are invertible.
+(Needs a sentence about SOTA.)
 
 \paragraph{Dependent Factoring} The current factoring algorithm can handle paths
 with more than two factors, but it fails when \lstinline{Y} depends on \lstinline{X}.
 Other components may benefit from dependent factoring; we leave this to future work.
+(Needs a sentence about SOTA.)
 
-\paragraph{Modeling Diverse Proof Styles} Coq programmers use diverse proof styles;
-the ideal tool should support many different styles.
+\paragraph{Modeling Diverse Proof Styles} (Needs adjustment to current frame.)
+Coq programmers use diverse proof styles; the ideal tool should support many different styles.
 Proofs about decidable domains that apply the term \lstinline{dec_not_not}
 pose difficulties for abstraction and inversion; the ideal tool should support these. 
 \sysname has limited support for changes in hypotheses, fixpoints, constructors, 
 pattern matching, and nested induction; the ideal tool should implement these features.
+(Needs a sentence about SOTA.)
 

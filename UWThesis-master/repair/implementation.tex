@@ -17,6 +17,7 @@ The interested reader can follow along in the repository.
 % from Inside the Core
 % Some of this may be better placed in earlier sections
 % TODO use the cool links
+% TODO which comes first, trees or configuration finding
 
 The implementation (Section~\ref{sec:pumpkin-impl-procedure}) of the procedure from Figure~\ref{alg:patching} in Section~\ref{sec:pumpkin-workflow}
 starts with a preprocessing step which compiles the proof terms to 
@@ -31,12 +32,11 @@ while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directl
 \subsubsection{The Procedure}
 \label{sec:pumpkin-impl-procedure}
 
-The implementation (\lstinline{patcher.ml4})
-
-The \sysname prototype exposes the patch finding procedure to users through the Coq command \lstinline{Patch Proof}. \sysname automatically
-infers which configuration to use for the procedure from the example change. For example, to
-find a patch for the case study in Section~\ref{sec:compcert}, we
-used this command:
+The \sysname prototype exposes the patch finding procedure (\lstinline{patcher.ml4}) to users through the Coq command \lstinline{Patch Proof}. 
+After compiling to trees,
+\sysname automatically infers which configuration to use for the procedure from the example change. For example, to
+find a patch for the case study we will see in Section~\ref{sec:compcert}, I
+used this command: % TODO adapt this text since case studies are no longer before this, maybe move figure and so on here
 
 \begin{lstlisting}[language=ml4]
   Patch Proof Old.unsigned_range unsigned_range as patch.
@@ -49,11 +49,12 @@ Internally, \sysname represents configurations as sets of options,
 which it passes to the procedure. The procedure uses these options to determine
 how to compose components (for example, whether to abstract candidates) 
 and how to customize components (for example, whether semantic differencing should look for an intermediate lemma).
-To implement new configurations for different classes of changes, we simply tweak the options.
+To implement new configurations for different classes of changes, I simply tweak the options.
 
 \subsubsection{Differencing} 
 \label{sec:pumpkin-impl-diff}
 
+(Left off here.)
 We implement semantic differencing over \emph{trees}:
 \sysname compiles each proof term into a tree (\lstinline{evaluation.ml}). In these trees,
 every node is a type context, and every edge is an extension to that type context with a 

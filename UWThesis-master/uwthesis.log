@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 APR 2021 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  19 APR 2021 07:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,6 +1590,12 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
+LaTeX Warning: Label `fig:stronger' multiply defined.
+
+
+LaTeX Warning: Label `fig:stronger@cref' multiply defined.
+
+
 LaTeX Warning: Label `fig:final' multiply defined.
 
 
@@ -2090,79 +2096,85 @@ Overfull \hbox (9.2838pt too wide) in paragraph at lines 85--90
 /pplj/m/n/10.95 (-20) Spe-cial-iza-tion ([][][][][][][][]) takes a patch
  []
 
-[43]
-
-LaTeX Warning: Reference `sec:fail' on page 44 undefined on input line 126.
-
-[44]
+[43] [44]
 
 LaTeX Warning: Reference `sec:composeintro' on page 45 undefined on input line 
 176.
 
-[45]) (./repair/results.tex [46] (./repair/compcert.tex) (./repair/compcert.tex
-) (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
+[45]
+
+LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 249.
+
+[46]
+
+LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
+(Font)              using `OT1/pplj/bx/n' instead on input line 268.
+
+[47] [48] [49]) (./repair/results.tex [50] (./repair/compcert.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-(./repair/bintonat.tex) (./repair/bintonat.tex) [47] [48] [49]
+(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
+[51] [52]
 Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 []\OT1/pplj/m/n/10.95 (-20) Attempting the ob-vi-ous patch from the dif-fer-enc
 e in tactics---rewriting
  []
 
-(./repair/divide.tex) (./repair/divide.tex) [50] [51]) (./repair/conclusion.tex
-)) (./often.tex [52] [53] [54
-
-
-]
+[53] (./repair/divide.tex) (./repair/divide.tex) [54] [55])
+(./repair/conclusion.tex)) (./often.tex [56]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
-(./often/equivproof.tex) (./often/equivproof.tex) [55] [56])
+(./often/equivproof.tex) (./often/equivproof.tex) [57
+
+
+] [58])
 (./often/approach.tex
 
-LaTeX Warning: Reference `sec:scope' on page 57 undefined on input line 13.
+LaTeX Warning: Reference `sec:scope' on page 59 undefined on input line 13.
 
-[57]
-<often/workflowa.pdf, id=1390, 799.98875pt x 348.30125pt>
+[59]
+<often/workflowa.pdf, id=1488, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- (./often/equiv2.tex) (./often/equiv2.tex) [58 <./often/workflowa.pdf>]
+ (./often/equiv2.tex) (./often/equiv2.tex) [60 <./often/workflowa.pdf>]
 (./often/listtovect.tex) (./often/listtovect.tex)
 Overfull \hbox (22.57913pt too wide) in paragraph at lines 71--79
 []$[]$  $[]$
  []
 
-[59] [60]) (./often/differencing.tex
+[61] [62]) (./often/differencing.tex
 
-LaTeX Warning: Citation `Ringer2019' on page 61 undefined on input line 36.
-
-
-LaTeX Warning: Reference `sec:generic' on page 61 undefined on input line 40.
+LaTeX Warning: Citation `Ringer2019' on page 63 undefined on input line 36.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 61 undefined on input lin
+LaTeX Warning: Reference `sec:generic' on page 63 undefined on input line 40.
+
+
+LaTeX Warning: Reference `sec:implementation' on page 63 undefined on input lin
 e 42.
 
-[61] [62] [63] (./often/nattobin.tex) (./often/nattobin.tex)
+[63] [64] [65] (./often/nattobin.tex) (./often/nattobin.tex)
 Overfull \hbox (5.2102pt too wide) in paragraph at lines 185--196
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[64]
+[66]
 Overfull \hbox (48.09023pt too wide) in paragraph at lines 274--275
 [][][][]  
  []
 
-[65]
+[67]
 
-LaTeX Warning: Citation `Ringer2019' on page 66 undefined on input line 342.
+LaTeX Warning: Citation `Ringer2019' on page 68 undefined on input line 342.
 
-[66]
+[68]
 
-LaTeX Warning: Reference `sec:example' on page 67 undefined on input line 371.
+LaTeX Warning: Reference `sec:example' on page 69 undefined on input line 371.
 
-[67] [68]
+[69] [70]
 Overfull \hbox (2.41995pt too wide) in paragraph at lines 478--502
 []$[]$  $[]$
  []
@@ -2172,7 +2184,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 508--532
 []$[]$
  []
 
-[69]
+[71]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 555.
 
@@ -2186,7 +2198,7 @@ Overfull \hbox (54.74294pt too wide) in paragraph at lines 554--590
  [][] 
  []
 
-[70] [71]
+[72] [73]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 652
 .
 LaTeX Font Info:    No file OMScmtt.fd. on input line 652.
@@ -2198,7 +2210,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 Overfull \hbox (10.49026pt too wide) in paragraph at lines 656--664
-\OT1/pplj/m/n/10.95 (-20) Figure []31[] shows the in-ter-est-ing deriva-tions f
+\OT1/pplj/m/n/10.95 (-20) Figure []32[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
@@ -2215,11 +2227,11 @@ Overfull \hbox (56.84816pt too wide) in paragraph at lines 667--695
  [][] 
  []
 
-[72]) (./often/transformation.tex [73]
+[74]) (./often/transformation.tex [75]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 8.
 
-[74] [75]
+[76] [77]
 Underfull \hbox (badness 10000) in paragraph at lines 187--213
 
  []
@@ -2232,25 +2244,25 @@ Overfull \hbox (58.00378pt too wide) in paragraph at lines 216--250
  [][] 
  []
 
-[76]
+[78]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 281.
 
-[77]
+[79]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 323.
 
-) (./often/implementation.tex [78] [79]
+) (./often/implementation.tex [80] [81]
 
-LaTeX Warning: Citation `Ringer2019' on page 80 undefined on input line 39.
+LaTeX Warning: Citation `Ringer2019' on page 82 undefined on input line 39.
 
-[80]
+[82]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 83.
 
-[81]
+[83]
 
-LaTeX Warning: Reference `sec:second' on page 82 undefined on input line 155.
+LaTeX Warning: Reference `sec:second' on page 84 undefined on input line 155.
 
 
 Overfull \hbox (18.95294pt too wide) in paragraph at lines 212--225
@@ -2258,7 +2270,7 @@ Overfull \hbox (18.95294pt too wide) in paragraph at lines 212--225
  term of []
  []
 
-[82] [83]) (./often/results.tex
+[84] [85]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -2267,44 +2279,44 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Citation `Ringer2019' on page 84 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 86 undefined on input line 53.
 
 
-LaTeX Warning: Citation `Ringer2019' on page 84 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 86 undefined on input line 53.
 
-[84] [85] (./often/replica.tex) (./often/replica.tex)
+[86] [87] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 86 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 88 undefined on input line 113.
 
-[86]
+[88]
 
-LaTeX Warning: Citation `replica' on page 87 undefined on input line 165.
+LaTeX Warning: Citation `replica' on page 89 undefined on input line 165.
 
-[87] [88]) (./often/conclusion.tex)) (./related.tex [89] [90
+[89] [90]) (./often/conclusion.tex)) (./related.tex [91] [92
 
 
 ]
 chapter 5.
-[91]
-
-LaTeX Warning: Citation `Ringer2019' on page 92 undefined on input line 97.
-
-[92]
-
-LaTeX Warning: Citation `ZimmermannH15' on page 93 undefined on input line 110.
-
-
-
-LaTeX Warning: Citation `tabareau:hal-01559073' on page 93 undefined on input l
-ine 110.
-
 [93]
 
-LaTeX Warning: Citation `pons2000generalization' on page 94 undefined on input 
+LaTeX Warning: Citation `Ringer2019' on page 94 undefined on input line 97.
+
+[94]
+
+LaTeX Warning: Citation `ZimmermannH15' on page 95 undefined on input line 110.
+
+
+
+LaTeX Warning: Citation `tabareau:hal-01559073' on page 95 undefined on input l
+ine 110.
+
+[95]
+
+LaTeX Warning: Citation `pons2000generalization' on page 96 undefined on input 
 line 160.
 
 
-LaTeX Warning: Citation `ringer2018adapting' on page 94 undefined on input line
+LaTeX Warning: Citation `ringer2018adapting' on page 96 undefined on input line
  172.
 
 
@@ -2313,17 +2325,17 @@ Overfull \hbox (8.96135pt too wide) in paragraph at lines 204--209
  on Is-abelle/Isar [[]],
  []
 
-[94]
+[96]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 95 undefined on input line 218.
+LaTeX Warning: Citation `Chrzaszcz2003' on page 97 undefined on input line 218.
 
 
 
-LaTeX Warning: Citation `replica' on page 95 undefined on input line 230.
+LaTeX Warning: Citation `replica' on page 97 undefined on input line 230.
 
-[95]) (./conclusion.tex [96]
+[97]) (./conclusion.tex [98]
 chapter 6.
-(./next.tex [97
+(./next.tex [99
 
 
 ]
@@ -2338,23 +2350,23 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [98]
+)) (./uwthesis.ind [100]
 Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--5
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []13[], []18[],
  []
 
-[99
+[101
 
 
 
 
 
 
-]) (./uwthesis.bbl [100
+]) (./uwthesis.bbl [102
 
 
 
-] [101] [102] [103] [104] [105] [106] [107] [108]
+] [103] [104] [105] [106] [107] [108] [109] [110]
 Underfull \hbox (badness 1163) in paragraph at lines 580--586
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2376,13 +2388,13 @@ c text-book, 2016.  Ver-sion 4.0.
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 604.
 
-[109]
+[111]
 Underfull \hbox (badness 1184) in paragraph at lines 621--626
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[110]) [111]
+[112]) [113]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux)
@@ -2406,13 +2418,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49764 strings out of 492609
- 1003811 string characters out of 6129033
- 1291120 words of memory out of 5000000
- 50709 multiletter control sequences out of 15000+600000
- 631078 words of font info for 748 fonts, out of 8000000 for 9000
+ 49888 strings out of 492609
+ 1005651 string characters out of 6129033
+ 1291820 words of memory out of 5000000
+ 50745 multiletter control sequences out of 15000+600000
+ 631488 words of font info for 756 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2430,10 +2442,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (121 pages, 1482517 bytes).
+Output written on uwthesis.pdf (123 pages, 1497722 bytes).
 PDF statistics:
- 2695 PDF objects out of 2984 (max. 8388607)
- 2503 compressed objects within 26 object streams
- 1330 named destinations out of 1440 (max. 500000)
+ 2809 PDF objects out of 2984 (max. 8388607)
+ 2614 compressed objects within 27 object streams
+ 1408 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -111,6 +111,8 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl}{document}
+\KAuxDeclaredScopeTag {sec:tool}
+\KAuxNewLinkScopetagInstance {sec:tool}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl-diff}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl-trans}
@@ -119,6 +121,18 @@
 \KAuxNewLinkScopetagInstance {sec:algimpl}{document}
 \KAuxDeclaredScopeTag {sec:tcb}
 \KAuxNewLinkScopetagInstance {sec:tcb}{document}
+\KAuxDeclaredScopeTag {sec:workflow}
+\KAuxNewLinkScopetagInstance {sec:workflow}{document}
+\KAuxDeclaredScopeTag {sec:eval}
+\KAuxNewLinkScopetagInstance {sec:eval}{document}
+\KAuxDeclaredScopeTag {fig:stronger}
+\KAuxNewLinkScopetagInstance {fig:stronger}{document}
+\KAuxDeclaredScopeTag {sec:suite}
+\KAuxNewLinkScopetagInstance {sec:suite}{document}
+\KAuxDeclaredScopeTag {sec:fail}
+\KAuxNewLinkScopetagInstance {sec:fail}{document}
+\KAuxDeclaredScopeTag {sec:perf}
+\KAuxNewLinkScopetagInstance {sec:perf}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-results}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-results}{document}
 \KAuxDeclaredScopeTag {fig:int}

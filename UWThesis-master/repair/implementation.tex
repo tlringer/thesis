@@ -25,7 +25,8 @@ trees (like the tree in Figure~\ref{fig:cattree}).\footnote{Representing proof t
 than just in the theory is one of my biggest regrets three years later, and I am actively working on removing this representation from the implementation.
 It is very useful for understanding how differencing works over inductive types, but it adds clutter to the implementation that make it difficult to maintain.
 \toolnamec represents proof terms as terms, and avoids this representation.}
-Differencing (Section~\ref{sec:pumpkin-impl-diff} operates over those trees, 
+The implementation always maintains pointers to easily switch between the tree and AST representations of the terms.
+Differencing (Section~\ref{sec:pumpkin-impl-diff} operates over trees, 
 while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directly over the terms those trees represent.
 \sysname has no impact on the trusted computing base (Section~\ref{sec:tcb}).
 
@@ -33,9 +34,9 @@ while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directl
 \label{sec:pumpkin-impl-procedure}
 
 The \sysname prototype exposes the patch finding procedure (\lstinline{patcher.ml4}) to users through the Coq command \lstinline{Patch Proof}. 
-After compiling to trees,
-\sysname automatically infers which configuration to use for the procedure from the example change. For example, to
-find a patch for the case study we will see in Section~\ref{sec:compcert}, I
+After compiling to trees (\lstinline{evaluation.ml},
+\sysname automatically infers which configuration to use for the procedure from the example change. % TODO link to right part of code
+For example, to find a patch for the case study we will see in Section~\ref{sec:compcert}, I
 used this command: % TODO adapt this text since case studies are no longer before this, maybe move figure and so on here
 
 \begin{lstlisting}[language=ml4]
@@ -54,51 +55,13 @@ To implement new configurations for different classes of changes, I simply tweak
 \subsubsection{Differencing} 
 \label{sec:pumpkin-impl-diff}
 
-(Left off here.)
-We implement semantic differencing over \emph{trees}:
-\sysname compiles each proof term into a tree (\lstinline{evaluation.ml}). In these trees,
-every node is a type context, and every edge is an extension to that type context with a 
-new term.\footnote{These trees are inspired by categorical models of dependent type theory~\cite{Hofmann97}.}
-Correspondingly, type differencing (to identify goal types) compares nodes, 
-and term differencing (to find candidates) compares edges. (Note that this is a regret, in a footnote.)
-
-sec:pumpkin-diff
-
-The component (\lstinline{differencing.ml}) uses these nodes and edges to prioritize semantically
-relevant differences. At the lowest level, it calls a primitive differencing function 
-which checks if it can substitute one term within another term to find a function between their types.
-
-The key benefit to this model is that it gives us a natural way to express inductive proofs, so
-that differencing can efficiently identify good candidates.
-Consider, for example, searching for a patch between conclusions of two inductive proofs of theorems about the natural numbers:
-
-\begin{lstlisting}[language=coq]
-  nat_ind (@\diff{P}@) ... (fun (IH : (@\diff{P}@) n) => ...) : (@\ltacforall@) n, (@\diff{P}@) n(@\vspace{-0.08cm}@)
-  nat_ind (@\diff{P'}@) ... (fun (IH : (@\diff{P'}@) n) => ...) : (@\ltacforall@) n, (@\diff{P'}@) n
-\end{lstlisting}
-In each case, the component diffs the terms in the dotted edges of the tree for \lstinline{nat_ind} (Figure~\ref{fig:cattree}) to
-try to find a term that maps between conclusions of that case:
-
-\begin{lstlisting}[language=coq]
-  P' (@\diff{0}@) -> P (@\diff{0}@)           (* base case candidate *)(@\vspace{-0.08cm}@)
-  P' (@\diff{(S n)}@) -> P (@\diff{(S n)}@) (* inductive case candidate *)
-\end{lstlisting}
-The component also knows that the change in the type of \lstinline{IH} is inconsequential (it occurs for any change in conclusion).
-Furthermore, it knows that \lstinline{IH} cannot show up as a hypothesis in the patch,
-so it attempts to remove any occurrences of \lstinline{IH} in any candidate.
-
-When the component finds a candidate, it knows \lstinline{P'} and \lstinline{P}
-as well as the arguments \lstinline{0} or \lstinline{(S n)}. This makes it simple
-to query abstraction for the final patch:
-
-\begin{lstlisting}[language=coq]
-  (@\ltacforall@) (@\diff{n}@), P' (@\diff{n}@) -> P (@\diff{n}@)
-\end{lstlisting}
-
+As noted in Section~\ref{sec:pumpkin-diff}, differencing (\lstinline{differencing.ml}) operates over trees.
+Differencing uses the structure of these trees to prioritize semantically relevant differences.
+At the lowest level, it calls a primitive differencing function which checks if it can substitute one term within another term to find a function between their types.
 
 The differencing component is \textit{lazy}: it compiles terms into trees one step at a time.
 It then \emph{expands} each tree as needed to find candidates (\lstinline{expansion.ml}).
-For example, consider searching two functions for a patch between conclusions:
+For example, differencing two functions for a patch between conclusions:
 %For example, suppose both terms are functions that take an argument of the same type:
 
 \begin{lstlisting}
@@ -107,9 +70,6 @@ For example, consider searching two functions for a patch between conclusions:
 \end{lstlisting}
 Differencing introduces a single term of type \lstinline{T} to a common environment,
 then expands and recursively diffs the bodies \lstinline{b} and \lstinline{b'} in that environment.
-
-The tool always maintains pointers to easily switch between the tree and AST representations of the terms.
-This representation enables extensibility.
 
 \subsubsection{Transformation}
 \label{sec:pumpkin-impl-trans}

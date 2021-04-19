@@ -113,12 +113,12 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl}{document}
 \KAuxDeclaredScopeTag {sec:tool}
 \KAuxNewLinkScopetagInstance {sec:tool}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-impl-procedure}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-impl-procedure}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl-diff}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl-trans}{document}
-\KAuxDeclaredScopeTag {sec:algimpl}
-\KAuxNewLinkScopetagInstance {sec:algimpl}{document}
 \KAuxDeclaredScopeTag {sec:tcb}
 \KAuxNewLinkScopetagInstance {sec:tcb}{document}
 \KAuxDeclaredScopeTag {sec:workflow}

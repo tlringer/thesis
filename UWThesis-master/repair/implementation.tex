@@ -11,6 +11,8 @@ along with some new features that go beyond the original prototype and help with
 plus an evaluation of the boundaries of the \sysname prototype that still stand (Section~\ref{sec:eval}).
 The interested reader can follow along in the repository.
 
+% TODO somewhere, need to mention some of the things to consider in implementation, like constants
+
 \subsection{Tool Details}
 \label{sec:tool}
 
@@ -74,16 +76,31 @@ then expands and recursively diffs the bodies \lstinline{b} and \lstinline{b'} i
 \subsubsection{Transformation}
 \label{sec:pumpkin-impl-trans}
 
-% TODO redundant for now
-\paragraph{Patch Specialization} Specialization (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
-all of which are Coq terms.
-It applies the candidate to the arguments, then it $\beta\iota$-reduces~\cite{equality} the result using Coq's
-\lstinline{Reduction.nf_betaiota} function. It is the job of the 
-patch finding procedure to provide both the candidate and the arguments.
+\sysname implements the four transformations from Section~\ref{sec:pumpkin-trans}:
+specialization, generalization, inversion, and factoring.
+These transformations operate directly over terms in Gallina.
+The \sysname procedure chooses among them by configuration,
+and in the end checks the type of the patch to ensure that is has the goal type.
+\sysname also determines what arguments to pass to each transformation based on the configuration.
 
-(Explain: other reducers do not reduce at all, or remove unecessary applications of the identity function.)
+\paragraph{Specialization} Specialization (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
+all of which are Gallina terms.
+It also takes a custom reducer (\lstinline{reducers.ml}) % in coq-plugin-lib
+as a higher-order function that reducers a Coq term.
+It applies the candidate function to the arguments, then reducers the result using the supplied reducer.
 
-\paragraph{Patch Abstraction} Abstraction (\lstinline{abstraction.ml}) takes a patch candidate, 
+The default specializer $\beta\iota\zeta$-reduces~\cite{equality} the result using Coq's
+\lstinline{Reduction.nf_betaiotazeta} function. % TODO explain all of these somewhere, perhaps when you introduce Coq and equality in Section 2
+Other reducers include one that does not reduce at all, one that removes unecessary applications of the identity function, 
+one that does weak head reduction, one that completely normalizes terms, one that removes unused hypotheses,
+and one that applies $\delta$ reduction.
+There are also higher-order combinators for reducers,
+including chain reduction with errors, chain reduction without errors, and reduction over the types of supplied terms.
+This makes it possible for configurations to highly customize specialization,
+and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
+I expose these reducers and combinators in the Coq plugin library. % TODO link and explain
+
+\paragraph{Generalization} Abstraction (\lstinline{abstraction.ml}) takes a patch candidate, 
 the goal type, and the function arguments or function to abstract.
 It first generalizes the candidate, wrapping it inside of a lambda from the type of the term to abstract.
 Then, it substitutes terms inside the body with the abstract term.
@@ -184,8 +201,11 @@ some forward reference to tactic work later, and other workflow help.
 \paragraph{Git Integration}
 
 \paragraph{Patch Application}
+hint mechanism, decompiler using \lstinline{Decompile} command.
 
 \paragraph{Proof Optimization}
+
+\paragraph{Transformation Interfaces} interfaces to components.
 
 \subsection{Testing Boundaries}
 \label{sec:eval}

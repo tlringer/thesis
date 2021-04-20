@@ -87,7 +87,7 @@ and in the end checks the type of the patch to ensure that is has the goal type.
 all of which are Gallina terms.
 It also takes a custom reducer (\lstinline{reducers.ml}) % in coq-plugin-lib
 as a higher-order function that reducers a Coq term.
-It applies the candidate function to the arguments, then reducers the result using the supplied reducer.
+It applies the candidate function to the arguments, then reduces the result using the supplied reducer.
 
 The default specializer $\beta\iota\zeta$-reduces~\cite{equality} the result using Coq's
 \lstinline{Reduction.nf_betaiotazeta} function. % TODO explain all of these somewhere, perhaps when you introduce Coq and equality in Section 2
@@ -100,52 +100,26 @@ This makes it possible for configurations to highly customize specialization,
 and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
 I expose these reducers and combinators in the Coq plugin library. % TODO link and explain
 
-\paragraph{Generalization} Abstraction (\lstinline{abstraction.ml}) takes a patch candidate, 
-the goal type, and the function arguments or function to abstract.
-It first generalizes the candidate, wrapping it inside of a lambda from the type of the term to abstract.
-Then, it substitutes terms inside the body with the abstract term.
-It continues to do this until there is nothing left to abstract, then filters results by the goal type.
-Consider, for example, abstracting this candidate by \lstinline{m}:
+\paragraph{Generalization} Generalization (\lstinline{abstraction.ml}) % TODO rename
+takes a patch candidate, the goal type, and the arguments or function to abstract,
+all as Gallina terms.
+It also takes a list of abstraction strategies to determine what subterms to substitute.
+After abstracting the candidate to a lambda term, it substitutes subterms inside of the body with the abstract term
+using the supplied list of abstraction straegies, in order.
 
-\begin{lstlisting}[language=coq]
-  fun (H : n <= m) => le_plus_trans n m 1 H(@\vspace{-0.04cm}@)
-  : n <= m -> n <= m + 1
-\end{lstlisting}
-The generalization step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
-
-\begin{lstlisting}[language=coq]
-  fun ((@\diff{n0}@) : nat) =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= m) => le_plus_trans n m 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@), n <= m -> n <= m + 1
-\end{lstlisting}
-The substitution step replaces \lstinline{m} with \lstinline{n0}:
-
-\begin{lstlisting}[language=coq]
-  fun ((@\diff{n0}@) : nat) =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) (@\diff{n0}@), n <= (@\diff{n0}@) -> n <= (@\diff{n0}@) + 1
-\end{lstlisting}
-
-Abstraction uses a list of \textit{abstraction strategies} to determine what subterms
-to substitute. In this case, the simplest strategy works: The tool
-replaces all terms that are convertible to the concrete argument \lstinline{m} with the abstract argument
-\lstinline{n0}, which produces a single candidate. Type-checking this candidate confirms that it is a patch.
-
-In some cases, the simplest strategy is not sufficient, even when it is possible to abstract the term.
-It may be possible to produce a patch only by abstracting \emph{some} of the subterms
-convertible to the argument or function (we show an example of this in Section~\ref{sec:fail}),
+The simplest strategy replaces all terms convertible to a particular concrete argument % TODO explain convertible/definitionally equal
+with the supplied abstract argument.
+In some cases, this strategy is not sufficient.
+It may be possible to produce a patch only by generalizing \emph{some} of the subterms
+convertible to the argument or function (I will show an example of this in Section~\ref{sec:fail}),
 or the term may not contain any subterms convertible to the argument or function at all.
-We implement several strategies to account for this. The combinations strategy, for example,
+
+I implement several strategies to account for this. The combinations strategy, for example,
 tries all combinations of substituting only some of the convertible subterms with the abstract argument. 
 The pattern-based strategy substitutes subterms that match a certain pattern
 with a term that corresponds to that pattern.
-
-It is the job of the patch finding procedure to provide the candidate and the terms to abstract.
-In addition, each configuration includes a list of strategies.
-The configuration for changes in conclusions, for example, starts with the simplest strategy,
-and moves on to more complex strategies only if that strategy fails.
-This design makes abstraction simple to extend with new strategies and simple to call with different strategies
-for different classes of changes.
+Some strategies reduce before abstracting, and some do not.
+I expose these strategies in the \sysname OCaml API (\lstinline{abstracters.mli}). % TODO missing earlier section on OCaml/Coq plugins
 
 \paragraph{Patch Inversion} Patch inversion (\lstinline{inverting.ml}) exploits symmetry to try to reverse the conclusions of a 
 candidate patch.

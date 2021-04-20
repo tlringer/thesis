@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 APR 2021 07:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 APR 2021 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2092,14 +2092,13 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 192--203
 [37]) (./repair/transformation.tex [38] [39] [40] [41])
 (./repair/implementation.tex [42] [43] [44] [45]
 
-LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 236.
+LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 210.
 
-[46]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
-(Font)              using `OT1/pplj/bx/n' instead on input line 255.
+(Font)              using `OT1/pplj/bx/n' instead on input line 229.
 
-[47] [48] [49]) (./repair/results.tex [50] (./repair/compcert.tex)
+[46] [47] [48] [49]) (./repair/results.tex [50] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
@@ -2109,8 +2108,8 @@ Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 e in tactics---rewriting
  []
 
-[53] (./repair/divide.tex) (./repair/divide.tex) [54] [55])
-(./repair/conclusion.tex)) (./often.tex [56]
+[53] (./repair/divide.tex) (./repair/divide.tex) [54]) (./repair/conclusion.tex
+[55])) (./often.tex [56]
 chapter 4.
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 (./often/equivproof.tex) (./often/equivproof.tex) [57
@@ -2122,7 +2121,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 59 undefined on input line 13.
 
 [59]
-<often/workflowa.pdf, id=1486, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1474, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2407,13 +2406,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49893 strings out of 492609
- 1005693 string characters out of 6129033
- 1291820 words of memory out of 5000000
- 50745 multiletter control sequences out of 15000+600000
+ 49884 strings out of 492609
+ 1005538 string characters out of 6129033
+ 1291821 words of memory out of 5000000
+ 50747 multiletter control sequences out of 15000+600000
  632160 words of font info for 767 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2431,10 +2430,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (123 pages, 1498358 bytes).
+Output written on uwthesis.pdf (123 pages, 1496521 bytes).
 PDF statistics:
- 2805 PDF objects out of 2984 (max. 8388607)
- 2610 compressed objects within 27 object streams
- 1400 named destinations out of 1440 (max. 500000)
+ 2791 PDF objects out of 2984 (max. 8388607)
+ 2597 compressed objects within 26 object streams
+ 1389 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

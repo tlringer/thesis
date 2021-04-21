@@ -1,143 +1,9 @@
 \subsection{The Workflow}
 \label{sec:mot-workflow}
 
-Before we can write our small verified program, we need some datatypes and functions that we can find in the Coq standard library (Section~\ref{sec:prelims}).
-We can then use these datatypes and functions to write the \lstinline{zip} function and show that it preserves its length (Section~\ref{sec:verif}).
-
-\subsubsection{Preliminaries}
-\label{sec:prelims}
-
-To prove that the list zip function preserves its length,
-we need the \lstinline{list} datatype and the \lstinline{length} function.
-To write the \lstinline{length} function, we need the \lstinline{nat} datatype of unary natural numbers.
-All of these can be found in the Coq standard library.
-
-\begin{figure}
-\begin{minipage}{0.30\textwidth}
-\begin{lstlisting}
-Inductive nat :=
-| O : nat
-| S : nat $\rightarrow$ nat.
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.68\textwidth}
-\begin{lstlisting}
-nat_rect :
-  $\forall$ (P : nat $\rightarrow$ Type),
-    P O $\rightarrow$ (* base case *)
-    ($\forall$ (n : nat),
-      (* inductive case *)
-      P n $\rightarrow$ P (S n)) $\rightarrow$
-    $\forall$ (n : nat), P n.
-\end{lstlisting}
-\end{minipage}
-\caption{The type of natural numbers \lstinline{nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{nat_rect} that Coq generates (right).}
-\label{fig:nat}
-\end{figure}
-
-Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
-it is defined by its \textit{constructors} (ways of constructing a term with that type).
-A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
-is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
-these are the two constructors of \lstinline{nat}.
-
-Every inductive type in Gallina comes equipped with an \textit{eliminator} or induction principle
-that the proof engineer can use to write functions and proofs about the datatype.
-For example, the eliminator for \lstinline{nat} (Figure~\ref{fig:nat}, right) is the standard induction principle for natural numbers,
-which Coq calls \lstinline{nat_rect}. % TODO footnote about nat_ind, nat_rec, nat_rect
-This eliminator states that a statement \lstinline{P} (called the inductive \textit{motive}) about the natural numbers
-holds for every number if it holds for \lstinline{O} in the base case and, in the inductive case,
-assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
-
-\begin{figure}
-\begin{minipage}{0.44\textwidth}
-\begin{lstlisting}
-Inductive list {T : Type} :=
-| nil : list T
-| cons :
-    T $\rightarrow$ list T $\rightarrow$ list T.
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.54\textwidth}
-\begin{lstlisting}
-list_rect :
-  $\forall$ {T : Type} (P : list T $\rightarrow$ Type),
-    P nil $\rightarrow$ (* base case *)
-    ($\forall$ (t : T) (tl : list T),
-      (* inductive case *)
-      P tl $\rightarrow$ P (cons t tl)) $\rightarrow$
-    $\forall$ (l : list T), P l.
-\end{lstlisting}
-\end{minipage}
-\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right). The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.}
-\label{fig:list}
-\end{figure}
-
- % TODO footnote about nat_ind, nat_rec, nat_rect
-
-A \lstinline{list} (Figure~\ref{fig:list}, left) is similar to a \lstinline{nat}, 
-but with two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
-for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
-Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
-and \lstinline{cons} sticks a new element in front of any existing list.
-Similarly, the eliminator for \lstinline{list} (Figure~\ref{fig:list}, right) looks like the eliminator for \lstinline{nat} 
-but with an argument corresponding to the parameter \lstinline{T} over which \lstinline{list} is polymorphic,
-and with an additional argument corresponding to the new element in the inductive case.
-
-One interesting thing about the types of these eliminators \lstinline{list_rect} and \lstinline{nat_rect}
-include universal quantification over all inputs, written $\forall$.
-Gallina's type system is expressive enough to include universal quantification over inputs---I will explain how
-in Section~\ref{sec:mot-theory}.
-
-\begin{figure}
-\begin{minipage}{0.42\textwidth}
-\begin{lstlisting}
-Fixpoint length {T} l :=
-  match l with
-  | nil => O
-  | cons t tl =>
-      S (length tl)
-  end.
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.54\textwidth}
-\begin{lstlisting}
-Definition length {T} l :=
-  list_rect T (fun _ => nat)
-    O
-    (fun t tl (length_tl : nat) =>
-      S length_tl)
-    l.
-\end{lstlisting}
-\end{minipage}
-\caption{The list \lstinline{length} function, defined both by pattern matching and recursion (left) and using the eliminator \lstinline{list_rect} (right).}
-\label{fig:length}
-\end{figure}
-
-We can use these eliminators to write functions and proofs, like the \lstinline{length} function we will need for our proof development (Figure~\ref{fig:length}, right).
-More standard is to write functions using pattern matching and guarded recursion, like the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
-Both of these two functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
-the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
-is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
-Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and guarded recursion.
-In fact, eliminators are equally expressive to pattern matching and guarded recursion~\cite{TODO}. % the general translation is hard and Coq sucks at eliminator gen though
-
-For the sake of this thesis, however, I will assume \intro{primitive eliminators}: eliminators that are a part of the core syntax and theory itself,
-and that do not reduce to terms that use pattern matching and guarded recursion.
-Likewise, when I show Gallina code, I will always use functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
-on the right.
-I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
-To handle practical code that uses pattern matching and guarded recursion,
-I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
-In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
-
-\subsubsection{List Zip Preserves Length}
-\label{sec:verif}
-
-With \lstinline{nat}, \lstinline{list}, and \lstinline{length} defined, we can now write our small verified program.
+% TODO move this back to pattern matching!!! since eliminator stuff will come later
+For a moment, let us assume some primitives from the Coq standard library: the type \lstinline{nat} of natural numbers,
+the type \lstinline{list} of polymorphic lists, and the \lstinline{length} function that computes the length of a list as a natural number.
 We start by writing the \lstinline{zip} program, then specify what it means to preserve its length, and then finally
 write an interactive proof that shows that specification actually holds.
 Coq checks this proof and lets us now that our proof is correct, so our \lstinline{zip} function is verified.
@@ -377,6 +243,8 @@ but produce proof scripts that the proof engineer can use going forward.
 Writing proofs using tactics does indeed proof development easier than writing raw proof terms.
 But these highly structured proof terms carry a lot of information that is lost at the level of tactics.
 It is exactly that rich structure---the type theory beneath Gallina---that makes a principled approach to proof repair possible.
+
+
 
 
 

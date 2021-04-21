@@ -39,6 +39,16 @@ I motivate this using the small list zip example in three parts:
 \end{enumerate}
 I will refer to the example and theory introduced in this chapter in later chapters, so it is good to at least skim this chapter regardless of Coq experience.
 
+%I think Chapter 2 probably has the right content you need for what follows.  The order /within/ Chapter 2 probably makes it more challenging to readers (or at least me) than is needed.  Would it work to reorder and refactor something like this:
+%  * Current 2.0 and 2.1.0
+%  *  But then 2.1.1.2 List Zip Preserves Length as a 2.X -- just for the moment take, as people actually do in practice, the standard library's types and functions as 'primitives'
+%  * *Then* say, actually, those aren't built-in to Coq, they're just inductive types/definitions and we will take them as defined in terms of eliminators not pattern matching and such.
+%  * *Then* go even lower-level and say, actually this is all CIC
+
+%Okay, so now for proof maintenance, we can see what's going on at all three of the previous levels: what happens to programmers, why the proofs break, what this means at the most foundational level
+
+%And then what proof repair can do about it.
+
 \input{development}
 
 \input{maintenance}

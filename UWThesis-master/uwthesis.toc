@@ -10,12 +10,10 @@
 \contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Motivating Proof Repair}}{9}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Proof Development}{10}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}The Workflow}{11}{subsection.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1.1}Preliminaries}{11}{subsubsection.2.1.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1.2}List Zip Preserves Length}{13}{subsubsection.2.1.1.2}% 
-\contentsline {paragraph}{Program}{14}{figure.caption.8}% 
-\contentsline {paragraph}{Specification}{14}{figure.caption.9}% 
-\contentsline {paragraph}{Proof}{15}{figure.caption.9}% 
-\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{18}{subsection.2.1.2}% 
+\contentsline {paragraph}{Program}{11}{figure.caption.5}% 
+\contentsline {paragraph}{Specification}{12}{figure.caption.6}% 
+\contentsline {paragraph}{Proof}{13}{figure.caption.6}% 
+\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{16}{subsection.2.1.2}% 
 \contentsline {section}{\numberline {2.2}Proof Maintenance}{19}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{20}{subsection.2.2.1}% 
 \contentsline {paragraph}{Changing our Program}{20}{Item.20}% 

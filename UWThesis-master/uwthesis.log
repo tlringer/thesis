@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1990,28 +1990,30 @@ LaTeX Warning: Citation `TODO' on page 6 undefined on input line 164.
 
 ]
 chapter 2.
-[9] (./development.tex [10] (./workflow.tex [11]
+[9] (./development.tex [10] (./workflow.tex
 
-LaTeX Warning: Citation `TODO' on page 12 undefined on input line 126.
-
-[12]
-
-LaTeX Warning: Citation `TODO' on page 13 undefined on input line 160.
+LaTeX Warning: Citation `TODO' on page 11 undefined on input line 26.
 
 
-LaTeX Warning: Citation `TODO' on page 13 undefined on input line 160.
+LaTeX Warning: Citation `TODO' on page 11 undefined on input line 26.
 
-[13] [14] [15] [16]
+[11] [12] [13] [14]
 
-LaTeX Warning: Reference `TODO' on page 17 undefined on input line 373.
+LaTeX Warning: Reference `TODO' on page 15 undefined on input line 239.
 
-[17]) (./theory.tex
-LaTeX Font Info:    Try loading font information for U+bbm on input line 7.
+[15]) (./theory.tex [16]
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+LaTeX Warning: Citation `TODO' on page 17 undefined on input line 120.
+
+[17]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 135.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [18]))
 (./maintenance.tex [19]
+
+LaTeX Warning: Reference `sec:verif' on page 20 undefined on input line 24.
+
 
 LaTeX Warning: Reference `TODO' on page 20 undefined on input line 30.
 
@@ -2034,7 +2036,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 189.
-<maintenance/fig/patch.png, id=546, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=550, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
@@ -2078,7 +2080,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34] [35]
-<repair/nat_ind.pdf, id=853, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=848, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2129,7 +2131,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 61 undefined on input line 13.
 
 [61]
-<often/workflowa.pdf, id=1509, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1504, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2414,10 +2416,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49904 strings out of 492609
- 1005853 string characters out of 6129033
- 1291790 words of memory out of 5000000
- 50757 multiletter control sequences out of 15000+600000
+ 49895 strings out of 492609
+ 1005668 string characters out of 6129033
+ 1291542 words of memory out of 5000000
+ 50750 multiletter control sequences out of 15000+600000
  631955 words of font info for 763 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2438,10 +2440,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (125 pages, 1502282 bytes).
+Output written on uwthesis.pdf (125 pages, 1501533 bytes).
 PDF statistics:
- 2828 PDF objects out of 2984 (max. 8388607)
- 2631 compressed objects within 27 object streams
- 1404 named destinations out of 1440 (max. 500000)
+ 2823 PDF objects out of 2984 (max. 8388607)
+ 2626 compressed objects within 27 object streams
+ 1402 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

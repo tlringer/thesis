@@ -36,19 +36,6 @@
 \KAuxAutorefTarget {default}{base}{Gallina}
 \KAuxDeclaredScopeTag {sec:mot-workflow}
 \KAuxNewLinkScopetagInstance {sec:mot-workflow}{document}
-\KAuxDeclaredScopeTag {sec:prelims}
-\KAuxNewLinkScopetagInstance {sec:prelims}{document}
-\KAuxDeclaredScopeTag {fig:nat}
-\KAuxNewLinkScopetagInstance {fig:nat}{document}
-\KAuxDeclaredScopeTag {fig:list}
-\KAuxNewLinkScopetagInstance {fig:list}{document}
-\KAuxDeclaredScopeTag {fig:length}
-\KAuxNewLinkScopetagInstance {fig:length}{document}
-
-\KAuxFileAt {workflow.tex}{128}
-\KAuxAutorefTarget {default}{base}{primitive eliminators}
-\KAuxDeclaredScopeTag {sec:verif}
-\KAuxNewLinkScopetagInstance {sec:verif}{document}
 \KAuxDeclaredScopeTag {fig:zip}
 \KAuxNewLinkScopetagInstance {fig:zip}{document}
 \KAuxDeclaredScopeTag {fig:zip-pres}
@@ -57,6 +44,15 @@
 \KAuxNewLinkScopetagInstance {fig:zip-proof}{document}
 \KAuxDeclaredScopeTag {sec:mot-theory}
 \KAuxNewLinkScopetagInstance {sec:mot-theory}{document}
+\KAuxDeclaredScopeTag {fig:nat}
+\KAuxNewLinkScopetagInstance {fig:nat}{document}
+\KAuxDeclaredScopeTag {fig:list}
+\KAuxNewLinkScopetagInstance {fig:list}{document}
+\KAuxDeclaredScopeTag {fig:length}
+\KAuxNewLinkScopetagInstance {fig:length}{document}
+
+\KAuxFileAt {theory.tex}{122}
+\KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
 \KAuxDeclaredScopeTag {fig:cic-syntax}

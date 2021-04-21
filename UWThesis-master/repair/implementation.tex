@@ -121,20 +121,28 @@ with a term that corresponds to that pattern.
 Some strategies reduce before abstracting, and some do not.
 I expose these strategies in the \sysname OCaml API (\lstinline{abstracters.mli}). % TODO missing earlier section on OCaml/Coq plugins
 
-\paragraph{Patch Inversion} Patch inversion (\lstinline{inverting.ml}) exploits symmetry to try to reverse the conclusions of a 
-candidate patch.
-It first factors the candidate using the factoring component, then calls the primitive inversion
-function on each factor, then finally folds the resulting list in reverse.
-The primitive inversion function exploits symmetry. 
-For example, equality is symmetric, so the component can invert any application of \lstinline{eq_ind} or \lstinline{eq_ind_r}
-(any rewrite). Indeed, \lstinline{eq_ind} and \lstinline{eq_ind_r} are inverses, and are related by symmetry:
+\paragraph{Inversion} Inversion (\lstinline{inverting.ml}) takes as input a patch candidate as a Gallina proof term,
+and tries to reverse the conclusion of its type.
+It works by first factoring the candidate,
+then exploiting symmetry properties to invert those factors,
+then finally composing the inverted factors in the opposite order.
+
+For example, the equality eliminator in Gallina is \lstinline{eq_rect}--the \lstinline{rewrite} tactic in Ltac
+often compiles down to an application of \lstinline{eq_rect} % TODO be consistent about this vs eq_ind, including intermediate arguments
+Since equality is symmetric, the Coq standard library also comes equipped with an inverse function \lstinline{eq_rect_r},
+related to \lstinline{eq_rect} by symmetry of equality:
 
 \begin{lstlisting}[language=coq]
-  (@\diff{eq\_ind\_r}@) A x P (H : P x) y (H0 : y = x) :=(@\vspace{-0.04cm}@)
-    (@\diff{eq\_ind}@) x (fun y0 : A => P y0) H y ((@\diff{eq\_sym}@) H0)	
-\end{lstlisting}
-If inversion does not recognize that the type is symmetric, it
-swaps subterms and type-checks the result to see if it is an inverse.
+  (@\diff{eq\_rect\_r}@) A x P (H : P x) y (H0 : y = x) :=(@\vspace{-0.04cm}@)
+    (@\diff{eq\_rect}@) x (fun y0 : A => P y0) H y ((@\diff{eq\_sym}@) H0)	
+\end{lstlisting} % TODO types
+When inversion encounters a single application of \lstinline{eq_rect} in one of its factors,
+it reverses it by applying symmetry of equality, effectively producing an application of \lstinline{eq_rect_r}.
+The opposite direction works similarly.
+
+If inversion does not recognize any type symmetry properties it can exploit in a factor, it
+strategically swaps subterms in the factor and type checks the result to see if it is an inverse.
+This essentially amounts to an ad hoc attempt to discover symmetry properties in the factor.
 
 \paragraph{Lemma Factoring} The lemma factoring component (\lstinline{factoring.ml}) searches within a term
 for its factors. For example,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2092,12 +2092,12 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 192--203
 [37]) (./repair/transformation.tex [38] [39] [40] [41])
 (./repair/implementation.tex [42] [43] [44] [45]
 
-LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 237.
+LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 241.
 
 [46]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
-(Font)              using `OT1/pplj/bx/n' instead on input line 256.
+(Font)              using `OT1/pplj/bx/n' instead on input line 260.
 
 [47] [48] [49]) (./repair/results.tex [50] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
@@ -2122,7 +2122,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 59 undefined on input line 13.
 
 [59]
-<often/workflowa.pdf, id=1489, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1485, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2356,29 +2356,29 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--5
 
 
 ] [103] [104] [105] [106] [107] [108] [109] [110]
-Underfull \hbox (badness 1163) in paragraph at lines 580--586
+Underfull \hbox (badness 1163) in paragraph at lines 572--578
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 3396) in paragraph at lines 580--586
+Underfull \hbox (badness 3396) in paragraph at lines 572--578
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 580--586
+Underfull \hbox (badness 3657) in paragraph at lines 572--578
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 604.
+(Font)              using `OMS/pplj/m/n' instead on input line 596.
 
 [111]
-Underfull \hbox (badness 1184) in paragraph at lines 621--626
+Underfull \hbox (badness 1184) in paragraph at lines 613--618
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2407,10 +2407,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49900 strings out of 492609
- 1005766 string characters out of 6129033
- 1291821 words of memory out of 5000000
- 50750 multiletter control sequences out of 15000+600000
+ 49896 strings out of 492609
+ 1005724 string characters out of 6129033
+ 1291759 words of memory out of 5000000
+ 50748 multiletter control sequences out of 15000+600000
  632160 words of font info for 767 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2431,10 +2431,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (123 pages, 1497440 bytes).
+Output written on uwthesis.pdf (123 pages, 1496723 bytes).
 PDF statistics:
- 2808 PDF objects out of 2984 (max. 8388607)
- 2613 compressed objects within 27 object streams
- 1402 named destinations out of 1440 (max. 500000)
+ 2804 PDF objects out of 2984 (max. 8388607)
+ 2609 compressed objects within 27 object streams
+ 1400 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

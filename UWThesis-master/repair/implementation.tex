@@ -1,6 +1,8 @@
 \section{Implementation}
 \label{sec:pumpkin-impl}
 
+% TODO somewhere, something about plugins, either here or earlier. LOC and so on.
+
 The source code of the \sysnamelong proof repair plugin suite is on Github.\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH}} % TODO thesis release
 It includes the source code of the \sysname prototype plugin, extended with a number of new features,
 including the more advanced \toolnamec plugin that I will present in Chapter~\ref{chapt:pi}.
@@ -178,19 +180,21 @@ It then assumes \lstinline{Y}, and recursively factors the term
 it gets from substituting in that hypothesis for \lstinline{f} (here, it assumes \lstinline{b = d}, and substitutes to derive the term \lstinline{g}).
 It repeats this until it is able to reach the conclusion type (here \lstinline{a = d}, the type of the conclusion of \lstinline{g}),
 at which point it has found the only possible path of factors, and it is done.
+It returns these factors as Gallina terms.
 
 \subsubsection{Trusted Computing Base}
 \label{sec:tcb}
 
-% TODO left off here...
-
-A common concern for Coq plugins is an increase in the trusted computing base.
-The Coq developers provide a safe plugin API in Coq 8.7 to address this~\cite{coq87news}.
-Our prototype takes this into consideration:
-While \sysname does not yet support Coq 8.7, it only calls the internal Coq functions that the 
-developers plan to expose in the safe API~\cite{coqPR}.
-Furthermore, Coq type-checks terms that plugins produce.
+A common concern for proof developments is an increase in the trusted computing base (TCB). % TODO need to explain this somewhere earlier
+%The Coq developers provide a safe plugin API in Coq 8.7 to address this~\cite{coq87news}.
+%Our prototype takes this into consideration:
+%While \sysname does not yet support Coq 8.7, it only calls the internal Coq functions that the 
+%developers plan to expose in the safe API~\cite{coqPR}.
+\sysname is implemented as a Coq plugin.
+Coq type checks all terms that plugins produce.
 Since \sysname does not modify the type checker, it cannot produce an ill-typed term.
+\sysname also does not add any axioms.
+Thus, \sysname does not increase the TCB. % ugh whatever
 
 \subsection{Workflow Integration}
 \label{sec:workflow}

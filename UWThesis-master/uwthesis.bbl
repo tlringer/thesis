@@ -249,10 +249,6 @@ Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
   Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
   USA, 1977. ACM.
 
-\bibitem{coq87news}
-Maxime D\'{e}nes.
-\newblock Coq 8.7 beta 1 is out, 2017.
-
 \bibitem{DBLP:journals/corr/abs-1803-08150}
 Larry Diehl, Denis Firsov, and Aaron Stump.
 \newblock Generic zero-cost reuse for dependent types.
@@ -413,10 +409,6 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 Hsiang-Shang Ko and Jeremy Gibbons.
 \newblock Programming with ornaments.
 \newblock {\em Journal of Functional Programming}, 27, 2016.
-
-\bibitem{coqPR}
-Matej Kosik.
-\newblock Coq pull request \# 652: Put all plugins behind an ``api'', 2017.
 
 \bibitem{differential-assertion-checking-2}
 Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.

@@ -78,7 +78,7 @@
 \contentsline {paragraph}{Identifying Changes}{51}{Item.47}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{52}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{52}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{53}{lstnumber.-128.1}% 
+\contentsline {paragraph}{Search}{52}{lstnumber.-128.1}% 
 \contentsline {paragraph}{Apply}{53}{lstnumber.-129.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{53}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{53}{subsection.3.6.2}% 

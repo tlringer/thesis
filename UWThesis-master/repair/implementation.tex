@@ -54,7 +54,21 @@ Internally, \sysname represents configurations as sets of options,
 which it passes to the procedure. The procedure uses these options to determine
 how to compose components (for example, whether to abstract candidates) 
 and how to customize components (for example, whether semantic differencing should look for an intermediate lemma).
-To implement new configurations for different classes of changes, I simply tweak the options.
+In total, the \sysname prototype currently implements six configurations.
+The first five correspond to changes in:
+
+\begin{enumerate}
+\item conclusions of theorems,
+\item hypotheses of theorems,
+\item dependent arguments to constructors of inductive types, 
+\item conclusions of constructors of inductive types, and
+\item cases of fixpoints.
+\end{enumerate}
+The final configuration is useful for proof optimization (Section~\ref{sec:workflow}).
+The support for these changes is limited in expressiveness in power;
+more information on limitations in scope can be found in the repository. % TODO link
+Extending \sysname with new configurations amounts to extending key functions in the implementation
+with a case corresponding to the new configuration.
 
 \subsubsection{Differencing} 
 \label{sec:pumpkin-impl-diff}
@@ -84,6 +98,8 @@ These transformations operate directly over terms in Gallina.
 The \sysname procedure chooses among them by configuration,
 and in the end checks the type of the patch to ensure that is has the goal type.
 \sysname also determines what arguments to pass to each transformation based on the configuration.
+As a bonus, \sysname exposes commands that correspond to each of these transformations (\lstinline{patcher.ml4}),
+so that proof engineers can call them outside of the proof patching procedure.
 
 \paragraph{Specialization} Specialization (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
 all of which are Gallina terms.
@@ -192,25 +208,26 @@ A common concern for proof developments is an increase in the trusted computing 
 %developers plan to expose in the safe API~\cite{coqPR}.
 \sysname is implemented as a Coq plugin.
 Coq type checks all terms that plugins produce.
-Since \sysname does not modify the type checker, it cannot produce an ill-typed term.
-\sysname also does not add any axioms.
-Thus, \sysname does not increase the TCB. % ugh whatever
+Since \sysname does not modify the type checker, it cannot produce an ill typed term.
+\sysname also does not add any axioms,
+and so does not increase the TCB. % ugh whatever. I think there's better text on this in another paper
 
 \subsection{Workflow Integration}
 \label{sec:workflow}
 
-add something about Git, add something about hint application,
-add something about optimization via the identity class of change (changes in nothing, sixth configuration).
-some forward reference to tactic work later, and other workflow help.
+Since releasing the \sysname prototype, I have extended \sysname with many features
+for better integration into proof engineering workflows.
+This section summarizes three: Git integration, support for applying patches and generating tactics,
+and proof optmization.
 
 \paragraph{Git Integration}
+git thing
 
 \paragraph{Patch Application}
 hint mechanism, decompiler using \lstinline{Decompile} command.
 
 \paragraph{Proof Optimization}
-
-\paragraph{Transformation Interfaces} interfaces to components.
+changes in nothing; sixth configuration
 
 \subsection{Testing Boundaries}
 \label{sec:eval}

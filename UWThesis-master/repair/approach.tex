@@ -171,20 +171,9 @@ Given two such proofs:
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x $\rightarrow$ (@\diff{P}@) x
 \end{lstlisting}
 
-Section~\ref{sec:pumpkin-results} describes real-world examples that demonstrate more configurations.
-In total, the \sysname prototype currently implements five configurations, corresponding to changes in:
-
-\begin{enumerate}
-\item conclusions of theorems,
-\item hypotheses of theorems,
-\item dependent arguments to constructors of inductive types, 
-\item conclusions of constructors of inductive types, and
-\item cases of fixpoints.
-\end{enumerate}
-The support for these changes is limited in expressiveness in power;
-more information on limitations in scope can be found in the repository. % TODO link
-Extending \sysname with new configurations amounts to extending key functions in the implementation
-with a case corresponding to the new configuration.
+In total, the \sysname prototype currently implements six configurations.
+Section~\ref{sec:pumpkin-impl-procedure} explains these configurations,
+and Section~\ref{sec:pumpkin-results} describes real-world examples that demonstrate more configurations.
 
 \subsection{Differencing: Candidates from Examples}
 \label{sec:pumpkin-spec-diff}

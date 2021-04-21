@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2078,7 +2078,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [28] [29] [30] [31] [32] [33]) (./repair/differencing.tex [34] [35]
-<repair/nat_ind.pdf, id=850, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=853, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2089,15 +2089,15 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 192--203
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-[37]) (./repair/transformation.tex [38] [39] [40] [41])
+) (./repair/transformation.tex [37] [38] [39] [40] [41])
 (./repair/implementation.tex [42] [43] [44] [45]
 
-LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 241.
+LaTeX Warning: Reference `sec:case' on page 46 undefined on input line 258.
 
 [46]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
-(Font)              using `OT1/pplj/bx/n' instead on input line 260.
+(Font)              using `OT1/pplj/bx/n' instead on input line 277.
 
 [47] [48] [49]) (./repair/results.tex [50] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
@@ -2122,7 +2122,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 59 undefined on input line 13.
 
 [59]
-<often/workflowa.pdf, id=1485, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1487, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2431,10 +2431,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (123 pages, 1496723 bytes).
+Output written on uwthesis.pdf (123 pages, 1496794 bytes).
 PDF statistics:
- 2804 PDF objects out of 2984 (max. 8388607)
- 2609 compressed objects within 27 object streams
+ 2806 PDF objects out of 2984 (max. 8388607)
+ 2611 compressed objects within 27 object streams
  1400 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

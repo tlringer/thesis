@@ -144,26 +144,45 @@ If inversion does not recognize any type symmetry properties it can exploit in a
 strategically swaps subterms in the factor and type checks the result to see if it is an inverse.
 This essentially amounts to an ad hoc attempt to discover symmetry properties in the factor.
 
-\paragraph{Lemma Factoring} The lemma factoring component (\lstinline{factoring.ml}) searches within a term
-for its factors. For example,
-if the term composes two functions, it returns both factors:
+\paragraph{Factoring} Factoring (\lstinline{factoring.ml}) takes as input a proof term in Gallina,
+and attempts to break it into factors.
+When it succeeds, it returns the factors as a list of terms;
+otherwise, it returns the empty list.
 
-\begin{lstlisting}[language=coq]
-  t : (@\diff{X}@) -> (@\diff{Z}@)                (* term *)(@\vspace{-0.04cm}@)
- [f : (@\diff{X}@) -> (@\diff{Y}@); g : (@\diff{Y}@) -> (@\diff{Z}@)] (* factors *)
+Factoring works by searching with a term for factors.
+Consider factoring a sequence of rewrites:
+\begin{lstlisting}
+  t (a b c d : nat) (H : a = b) (H0 : b = c) (H1 : c = d) : a = d :=
+    eq_rect_r
+      (fun (a0 : nat) => a0 = d)
+      (eq_rect_r (fun (b0 : nat) => b0 = d) H1 H0)
+      H.
 \end{lstlisting}
-In this case, the component takes the composite term and \lstinline{X} as arguments.
-It first searches as deep as possible for a term of type \lstinline{X -> Y} for some \lstinline{Y}.
-If it finds such a term, then it recursively searches for a term with type \lstinline{Y -> Z}. 
-It maintains all possible 
-paths of factors along the way, and it discards any paths that cannot reach \lstinline{Z}.
+into two independent rewrites:
 
-The current implementation can handle paths
-with more than two factors, but it fails when \lstinline{Y} depends on \lstinline{X}.
-Other components may benefit from dependent factoring; we leave this to future work.
+\begin{lstlisting}
+  f (a b c d : nat) (H : a = b) (H0 : b = c) (H1 : c = d) : b = d :=
+    eq_rect_r (fun (b0 : nat) => b0 = d) H1 H0.
+
+  g (a b c d : nat) (H : a = b) (H0 : b = c) (H1 : b = d) : a = d :=
+    eq_rect_r (fun (a0 : nat) => a0 = d) H1 H.
+
+  t (a b c d : nat) (H : a = b) (H0 : b = c) (H1 : c = d) : a = d :=
+    g a b c d H H0 (f a b c d H H0 H1).
+\end{lstlisting}
+To discover \lstinline{f} and \lstinline{g},
+factoring starts by assuming all of the hypotheses of \lstinline{t},
+then searching as deep as possible within the conclusion of \lstinline{t} for a term
+of type \lstinline{Y} for some \lstinline{Y} (here, the conclusion of \lstinline{f}, with type \lstinline{b = d}).
+It then assumes \lstinline{Y}, and recursively factors the term
+it gets from substituting in that hypothesis for \lstinline{f} (here, it assumes \lstinline{b = d}, and substitutes to derive the term \lstinline{g}).
+It repeats this until it is able to reach the conclusion type (here \lstinline{a = d}, the type of the conclusion of \lstinline{g}),
+at which point it has found the only possible path of factors, and it is done.
 
 \subsubsection{Trusted Computing Base}
 \label{sec:tcb}
+
+% TODO left off here...
 
 A common concern for Coq plugins is an increase in the trusted computing base.
 The Coq developers provide a safe plugin API in Coq 8.7 to address this~\cite{coq87news}.

@@ -194,29 +194,31 @@ I will explain this more in Section~\ref{sec:pumpkin-impl-diff}.
 
 \paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
 This can break other problems, like abstraction, into smaller subproblems.
-It is also necessary to invert certain terms.
-Consider inverting an arbitrary sequence of two rewrites (again in Coq rather than CIC$_{\omega}$): % TODO just use CIC here and above 
+It is also necessary to invert certain terms, since the inverse of:
 
 \begin{lstlisting}
-  t : X $\rightarrow$ Z := (@\diff{eq\_ind\_r G ...}@) ((@\diff{eq\_ind\_r F ...}@)).
+  $g \circ f$
+  : $X \rightarrow Z$
 \end{lstlisting}
-We can view \lstinline{t} as a term that composes two functions:
+where:
 
 \begin{lstlisting}
-  g : Y $\rightarrow$ Z := (@\diff{eq\_ind\_r G ...}@)(@\vspace{-0.04cm}@)
-  f : X $\rightarrow$ Y := (@\diff{eq\_ind\_r F ...}@)(@\vspace{-0.04cm}@)
-  t : X $\rightarrow$ Z := g $\circ$ f.
+  $g : Y \rightarrow Z$
+  $f : X \rightarrow Y$
 \end{lstlisting}
-The inverse of \lstinline{t} is the following:
+for arbitrary non-dependent types $X$, $Y$, and $Z$,
+is of course:
 
 \begin{lstlisting}
-  t$\inv$ : Z $\rightarrow$ X := f$\inv$ $\circ$ g$\inv$.
+  $f\inv \circ g\inv$
+  : $Z \rightarrow X$ 
 \end{lstlisting}
-To invert \lstinline{t}, \sysname identifies the factors \lstinline{[f; g]}, 
+This shows up often for inverting sequences of rewrites, as I will show in Section~\ref{sec:pumpkin-impl-diff}.
+To invert a term like this, \sysname identifies the factors \lstinline{[f; g]}, 
 inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
 then folds and applies the inverse factors in the opposite direction.
 
-The lemma factoring component looks within a term for its factors.
+The factoring transformation looks within a term for its factors.
 For the term above, it returns both factors: \lstinline{f} and \lstinline{g}.
 In this case, factoring takes the composite term and \lstinline{X} as arguments.
 It first searches as deep as possible for a term of type \lstinline{X} $\rightarrow$ \lstinline{Y} for some \lstinline{Y}.

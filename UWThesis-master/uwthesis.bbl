@@ -596,6 +596,10 @@ Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
 
+\bibitem{pumpkin-git}
+Talia Ringer and Nathaniel Yazdani.
+\newblock Pumpkin-git, 2018.
+
 \bibitem{robert2018}
 Valentin Robert.
 \newblock {\em Front-end tooling for building and maintaining dependently-typed

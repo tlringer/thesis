@@ -212,22 +212,56 @@ Since \sysname does not modify the type checker, it cannot produce an ill typed 
 \sysname also does not add any axioms,
 and so does not increase the TCB. % ugh whatever. I think there's better text on this in another paper
 
-\subsection{Workflow Integration}
+\subsection{Extensions}
 \label{sec:workflow}
 
 Since releasing the \sysname prototype, I have extended \sysname with many features
 for better integration into proof engineering workflows.
-This section summarizes three: Git integration, support for applying patches and generating tactics,
+This section summarizes three: Git integration, support for applying patches,
 and proof optmization.
+I detail tactic generation and more when I discuss the \toolnamec extension to \sysnamelong
+in Chapter~\ref{chapt:pi}.
 
-\paragraph{Git Integration}
-git thing
+% new, from Git repo though
+\paragraph{Git Integration} \sysnamelong exposes a Git interface to \sysname
+called \sysname-git~\cite{pumpkin-git}.
+\sysname-git makes it possible to call \sysname's \lstinline{Patch Proof} command by command line over Git commits.
+To call \sysname-git, the proof engineer simply runs the command:
+
+\begin{lstlisting}
+  pumpkin-git example_proof file.v -rev rev
+\end{lstlisting}
+This will search for a patch that corresponds to the change in \lstinline{example_proof} in \lstinline{file.v} compared to the the revision \lstinline{rev}
+of the local repository. It will then prompt the proof engineer with the patch it finds, and either overwrite the file (with consent) 
+or otherwise save the results to a temporary file. There are many options to control the behavior of \sysname-git,
+all of which can be found in the repository.
 
 \paragraph{Patch Application}
-hint mechanism, decompiler using \lstinline{Decompile} command.
+For the \sysname prototype, the differencing algorithm and proof term transformations extract and generalize information form example patched proofs
+in the form of reusable patches. The prototype does not yet support applying the patches that it finds automatically.
+Since implementing the prototype, I have extended \sysname-git with preliminary support for patch application via hint generation.
+The interface is: % TODO cite and explain
+
+\begin{lstlisting}
+  pumpkin-git example_proof_id file.v -rev rev -hint
+\end{lstlisting}
+This places the generated patch in a hint database in Coq.
+Coq applies hints in its hint databases automatically, in some cases taking care of the changes at the proof script level
+that the proof engineer would have to make to use these patches.
+
+Since the \sysname prototype, I have also extended \sysnamelong with the \toolnamec plugin.
+The \toolnamec plugin does applies the changes that it finds in all cases.
+Furthermore, it exposes a decompiler from proof terms back up to tactic scripts---this
+decompiler is exposed to the \sysname plugin as well, so that proof engineers can decompile patches
+back to tactics by calling the \lstinline{Decompile} command.
+I will discuss this and more in Chapter~\ref{chapt:pi}.
 
 \paragraph{Proof Optimization}
-changes in nothing; sixth configuration
+Five of the implemented configurations correspond to changes, but the sixth configuration is special:
+it corresponds to the absence of change.
+This makes it possible to reuse all of the \sysname infrascture to optimize proofs
+to automatically remove extra calls to induction.
+See \lstinline{Optimization.v} for more information.
 
 \subsection{Testing Boundaries}
 \label{sec:eval}

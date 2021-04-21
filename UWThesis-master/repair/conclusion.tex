@@ -1,11 +1,36 @@
 \section{Conclusion}
 
-Rehashing thesis and how we do it
+% some future work I guess?
+Recall that this thesis set out to prove that:
 
-What we haven't accomplished yet at this point (parts of PUMPKIN PATCH future work).
+\begin{quote}
+\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+\end{quote}
+Or, in other words, there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+even when proof engineers do not follow good development processes,
+or when change occurs outside of proof engineers' control.
 
-The \textsc{Pumpkin Patch} prototype did not apply the patches that it finds,
-handle changes in structure, or include support for tactics beyond the use of hints.
-The next chapter addresses these limitations.
+With \sysname, it is fair to say:
+
+\begin{quote}
+\textbf{Thesis \diff{So Far}}: \diff{Some changes in programs and} \\
+\diff{specifications, and the corresponding changes in proofs broken} \\
+\diff{by those changes} carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
+\end{quote}
+This is progress, but it is not so satisfying.
+As I have shown you throughout this chapter, the \sysname prototype is too limited in both theory and implementation.
+Most notably, the \sysname prototype has limited support for patch application and supports
+a narrow class of changes.
+And as I mentioned earlier, without considering the extension from the next chapter, 
+the \sysname prototype does not include any support for tactics beyond the use of hints.
+
+The next chapter will address these limitations.
+In doing so, it will show how the thesis holds on a broad class of changes,
+with more principled and better integrated support for patch application and tactic generation.
+It will show how all of this helps proof engineers in the real world---not just retroactively,
+but in real time.
+
+
+
 
 

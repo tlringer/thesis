@@ -289,22 +289,21 @@ fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
 
 \lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 
-In the case studies in Section~\ref{sec:case}, we showed how
-the core components are useful for real scenarios.
-In this section, we explore the boundary between what the \sysname prototype can and cannot handle.
-It is precisely this boundary that informs us how to improve the implementations of the
-core components.
+In this section, I explore the boundary between what the semantic differencing
+and transformation implementations in the \sysname prototype can and cannot handle.
+It is precisely this boundary that informs how to improve the implementations.
 
-To evaluate this boundary, we tested the core components of \sysname on a suite of 50 pairs of proofs (Section~\ref{sec:suite}).
-We designed 11 of these pairs to succeed, then modified their proofs to produce the remaining 39 pairs
+To evaluate this boundary, I tested the \sysname prototype on a suite of 50 pairs of proofs (Section~\ref{sec:suite}).
+I designed 11 of these pairs to succeed, then modified their proofs to produce the remaining 39 pairs
 that try to stress the core functionality of the tool.
 %28 of the 50 variants did not stress \sysname at all.
-We learned the following from the pairs
+
+I learned the following from the pairs
 that tested \sysname's limitations:
 
 \begin{enumerate}
 \item \textbf{The failed pairs drive improvements.} \\
-\sysname failed on 17 of 50 pairs. These pairs tell us how to improve the core. (Section~\ref{sec:fail})
+\sysname failed on 17 of 50 pairs. These pairs tell inform how to improve differencing and transformations in the future. (Section~\ref{sec:fail})
 \item \textbf{The pairs unearth abstraction strategies.} \\
 \sysname produced an exponential number of candidates in 5 of 50 pairs.
 New abstraction strategies can dramatically reduce the number of candidates. (Section~\ref{sec:fail})
@@ -316,25 +315,24 @@ Simple changes can make \sysname more efficient. (Section~\ref{sec:perf})
 \subsubsection{Patch Generation Suite}
 \label{sec:suite}
 
-We wrote a suite\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH/blob/cpp18/plugin/coq/Variants.v}} of 50 pairs of proofs.
-We wrote these proofs ourselves since searching for proof patches is a new domain,
-so there was no existing benchmark suite to work with.
-We used the following methodology:
+I wrote a suite\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH/blob/cpp18/plugin/coq/Variants.v}} of 50 pairs of proofs. % TODO update link
+I wrote these proofs myself since there was no existing benchmark suite to work with.
+I used the following methodology:
 %We designed 11 pairs to succeed, then modified these pairs to produce the remaining 39 pairs
 %that stress the functionalti
 %We designed 11 pairs to succeed:
 
 \begin{enumerate}
-\item Choose theorems \lstinline{old} and \lstinline{new}
-\item Write similar inductive proofs of \lstinline{old} and \lstinline{new}
-\item Modify the proof of \lstinline{old} to produce more pairs
-\item Search for patches from \lstinline{new} to \lstinline{old}
-\item If possible, search for patches from \lstinline{old} to \lstinline{new}
+\item Choose theorems \lstinline{old} and \lstinline{new}.
+\item Write similar inductive proofs of \lstinline{old} and \lstinline{new}.
+\item Modify the proof of \lstinline{old} to produce more pairs.
+\item Search for patches from \lstinline{new} to \lstinline{old}.
+\item If possible, search for patches from \lstinline{old} to \lstinline{new}.
 \end{enumerate}
-
-In total, we chose 11 pairs of theorems \lstinline{old} and \lstinline{new}, and we wrote
+In total, I chose 11 pairs of theorems \lstinline{old} and \lstinline{new}, and I wrote
 50 pairs of proofs of those theorems.
 
+\iffalse
 For example, one pair of theorems \lstinline{old} and \lstinline{new} was a 
 simplification of the auxiliary lemmas
 that we encountered in the case study in Section~\ref{sec:foundations}.
@@ -353,19 +351,20 @@ For the second proof of \lstinline{old}, we commuted the rewrites:
 We then searched for patches in both directions,
 since the conclusions of \lstinline{old}
 and \lstinline{new} were propositionally equal.
+\fi
 
-Our goal was to determine what changes to proofs stress the components
+My goal was to determine what changes to proofs stress the components
 and how to use that information to drive improvements.
-We focused on differences in conclusions, the most supported configuration.
+I focused on differences in conclusions, the most supported configuration at the time.
 %The procedure defaults to \lstinline{old} when it cannot find a patch; 
 %we marked each pair a success if \sysname found a direct patch,
 %and a failure if it returned the default.
 Since \sysname operates over terms,
-we removed redundant proof terms, even if they were produced by different tactics.
-We controlled the first pair of proofs of each pair of theorems for features we had not yet implemented,
+I removed redundant proof terms, even if they were produced by different tactics.
+I controlled the first pair of proofs of each pair of theorems for features I had not yet implemented at the time,
 like nested induction, changes in hypotheses, and abstracting \lstinline{omega} terms.
 These features sometimes showed up in later proofs (for example, after moving a rewrite);
-we kept these proofs in the suite, since isolated changes to supported proofs that
+I kept these proofs in the suite, since isolated changes to supported proofs that
 introduce unsupported features can inform future improvements.	
 
 \subsubsection{Three Challenges}
@@ -375,13 +374,13 @@ introduce unsupported features can inform future improvements.
 did not stress \sysname at all: \sysname found the correct candidate immediately and was able to abstract it
 in one try.
 The pairs that \sysname failed to patch and the successful pairs that stressed abstraction
-reveal key information about how to improve the core components.
-We walk through three examples.
+reveal key information about how to improve differencing and the transformations.
+I walk through three examples below.
 Future tools can use these as challenge problems to improve upon \sysname.
 
 \paragraph{A Challenge for Differencing} For one pair of proofs of theorems 
 with propositionally equal conclusions (Figure~\ref{fig:stronger}),
-the differencing component failed to find candidates in either direction.
+differencing failed to find candidates in either direction.
 These proofs both contain the same proof of a stronger lemma;
 \sysname found patches from this lemma to
 both \lstinline{old} and \lstinline{new},
@@ -390,20 +389,21 @@ A patch may show up deep in the difference between \lstinline{le_plus_trans}
 and \lstinline{le_S}, but even if we $\delta$-reduce (unfold the definition of~\cite{equality}) \lstinline{le_plus_trans}, this is not obvious:
 
 \begin{lstlisting}
-    le_plus_trans n m p (H : n <= m) :=(@\vspace{-0.04cm}@)
-      (fun lemma : m <= m + p =>(@\vspace{-0.04cm}@)
-        trans_contra_inv_impl_morphism(@\vspace{-0.04cm}@)
-          PreOrder_Transitive(@\vspace{-0.04cm}@)
-          (m + p)(@\vspace{-0.04cm}@)
-          m(@\vspace{-0.04cm}@)
-          lemma)(@\vspace{-0.04cm}@)
-      (le_add_r m p)(@\vspace{-0.04cm}@)
-      H
+  le_plus_trans n m p (H : n <= m) :=(@\vspace{-0.04cm}@)
+    (fun lemma : m <= m + p =>(@\vspace{-0.04cm}@)
+      trans_contra_inv_impl_morphism(@\vspace{-0.04cm}@)
+        PreOrder_Transitive(@\vspace{-0.04cm}@)
+        (m + p)(@\vspace{-0.04cm}@)
+        m(@\vspace{-0.04cm}@)
+        lemma)(@\vspace{-0.04cm}@)
+    (le_add_r m p)(@\vspace{-0.04cm}@)
+    H.
 \end{lstlisting}
-
 This points to two difficulties in finding patches: Knowing when to $\delta$-reduce terms 
 is difficult; exploring the appropriate time for reduction
-may produce patches for pairs that \sysname currently cannot patch.
+may produce patches for pairs that \sysname currently cannot patch
+(the \toolnamec extension in Chapter~\ref{chapt:pi} is deliberately strategic about $\delta$ reduction,
+building on this insight).
 Furthermore, finding patches is more challenging
 when neither theorem has a conclusion that is as strong as possible.
 
@@ -411,95 +411,82 @@ when neither theorem has a conclusion that is as strong as possible.
 \sysname found a patch in one direction, but failed to invert it:
 
 \begin{lstlisting}[language=coq]
-    fun n m p (_ : n <= m) (_ : m <= p) (H1 : n <= p) =>(@\vspace{-0.04cm}@)
-      gt_le_S n (S p) (le_lt_n_Sm n p H1)(@\vspace{-0.04cm}@)
-    : (@\ltacforall@) n m p, n <= m -> m <= p -> n <= p -> S n <= S p
+  fun n m p (_ : n <= m) (_ : m <= p) (H1 : n <= p) =>(@\vspace{-0.04cm}@)
+    gt_le_S n (S p) (le_lt_n_Sm n p H1)(@\vspace{-0.04cm}@)
+  : (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ n <= p $\rightarrow$ S n <= S p.
 \end{lstlisting}
-
-The inversion component was unable to invert this term, even though an inverse does exist.
-To invert this, the component needs to know to $\delta$-reduce \lstinline{gt_le_S}:
+Inversion was unable to invert this term, even though an inverse does exist.
+To invert this, inversion needs to know to $\delta$-reduce \lstinline{gt_le_S}:
 
 \begin{lstlisting}[language=coq]
   gt_le_S n m :=(@\vspace{-0.04cm}@)
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{n0 < m0}@) -> (@\diff{S n0 <= m0}@)) => H n m) (@\vspace{-0.1cm}@)
     ...(@\vspace{-0.1cm}@)
-  : (@\ltacforall@) n m, (@\diff{n < m}@) -> (@\diff{S n <= m}@)
+  : (@\ltacforall@) n m, (@\diff{n < m}@) $\rightarrow$ (@\diff{S n <= m}@).
 \end{lstlisting}
-
 It then needs to swap the hypothesis with the conclusion in \lstinline{H} to produce the inverse:
 
 \begin{lstlisting}[language=coq]
   gt_le_S$\inv$ n m :=(@\vspace{-0.04cm}@)
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{S n0 <= m0}@) -> (@\diff{n0 < m0}@)) => H n m)(@\vspace{-0.1cm}@)
     ...(@\vspace{-0.1cm}@)
-   : (@\ltacforall@) n m, (@\diff{S n <= m}@) -> (@\diff{n < m}@)
+   : (@\ltacforall@) n m, (@\diff{S n <= m}@) $\rightarrow$ (@\diff{n < m}@)
 \end{lstlisting}
 
 Inversion currently swaps subterms when it is not
 aware of any symmetry properties about the inductive type. However,
-it does not know when to $\delta$-reduce function definitions. Furthermore, 
+it does not know when to $\delta$-reduce function definitions (again, something the \toolnamec extension in Chapter~\ref{chapt:pi} is deliberately strategic about). Furthermore, 
 there are many possible subterms to swap;
 for inversion to know to only swap the subterms of \lstinline{H}, it must have a better
 understanding of the structure of the term. Both of these are ways to improve inversion.
 
-\paragraph{A Challenge for Abstraction} Abstraction produced an exponential number of candidates when abstracting a patch candidate with this type:
+\paragraph{A Challenge for Generalization} Generalization produced an exponential number of candidates when abstracting a patch candidate with this type:
 
 \begin{lstlisting}[language=coq]
-    (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
-      (fun m => n <= max m n0) n ->(@\vspace{-0.04cm}@)
-      (fun m => n <= max n0 m) n
+  (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
+    (fun m => n <= max m n0) n $\rightarrow$(@\vspace{-0.04cm}@)
+    (fun m => n <= max n0 m) n
 \end{lstlisting}
-
-The goal was to abstract by \lstinline{n} and produce a patch with this type:
+The goal was to generalize by \lstinline{n} and produce a patch with this type:
 
 \begin{lstlisting}[language=coq]
-    (@\ltacforall@) (@\diff{m0}@) n n0,(@\vspace{-0.04cm}@)
-      n <= max (@\diff{m0}@) n0 ->(@\vspace{-0.04cm}@)
-      n <= max n0 (@\diff{m0}@)
+  (@\ltacforall@) (@\diff{m0}@) n n0,(@\vspace{-0.04cm}@)
+    n <= max (@\diff{m0}@) n0 $\rightarrow$(@\vspace{-0.04cm}@)
+    n <= max n0 (@\diff{m0}@)
 \end{lstlisting}
-
-%search found the following applied patch, For 5 variants, \sysname found a patch, but only after producing an exponential number of abstract candidates.
-%While this did not have a significant impact on time, these variants uncover natural ways to extend abstraction
-%to produce fewer candidates.
-%For example, for one pair of proof terms, search found an applied patch:
-
-The difficulty was in determining which occurrences of \lstinline{n} to abstract.
-The component needed to abstract only the highlighted occurrences:
+The difficulty was in determining which occurrences of \lstinline{n} to generalize.
+The component needed to generalize only the highlighted occurrences:
 
 \begin{lstlisting}
-    fun n n0 (H0 : n <= max n0 (@\diff{n}@)) =>(@\vspace{-0.04cm}@)
-      @eq_ind_r (@\vspace{-0.04cm}@)
-        nat (@\vspace{-0.04cm}@)
-        (max n0 (@\diff{n}@))(@\vspace{-0.04cm}@)
-        (fun n1 => n <= n1)(@\vspace{-0.04cm}@)
-        H0(@\vspace{-0.04cm}@)
-        (max (@\diff{n}@) n0)(@\vspace{-0.04cm}@)
-        (max_comm (@\diff{n}@) n0)
+  fun n n0 (H0 : n <= max n0 (@\diff{n}@)) =>(@\vspace{-0.04cm}@)
+    @eq_ind_r (@\vspace{-0.04cm}@)
+      nat (@\vspace{-0.04cm}@)
+      (max n0 (@\diff{n}@))(@\vspace{-0.04cm}@)
+      (fun n1 => n <= n1)(@\vspace{-0.04cm}@)
+      H0(@\vspace{-0.04cm}@)
+      (max (@\diff{n}@) n0)(@\vspace{-0.04cm}@)
+      (max_comm (@\diff{n}@) n0)
 \end{lstlisting}
-
 The simplest abstraction strategy failed, and a more
 complex strategy
 succeeded only after producing exponentially many candidates.
 While this did not have a significant impact on time,
-this case gives rise to a new class of abstraction strategies:
-semantics-aware abstraction.
+this makes a good case for abstraction strategies that are semantics-aware.
 In this case, we know from the type of the candidate
 and the type of \lstinline{eq_ind_r} that these two hypothesis types 
 are equivalent (similarly for the conclusion types):
 
 \begin{lstlisting}
-    (fun m => n <= max m n0) n(@\vspace{-0.04cm}@)
-    (fun n1 => n <= n1) (max n0 n)
+  (fun m => n <= max m n0) n(@\vspace{-0.04cm}@)
+  (fun n1 => n <= n1) (max n0 n)
 \end{lstlisting}
-
-The tool can search recursively for patches to find two patches that bridge the two equivalent
+The tool could search recursively for patches to find two patches that bridge the two equivalent
 types:
 
 \begin{lstlisting}
-    p1 := fun n => max n0 n(@\vspace{-0.04cm}@)
-    p2 := fun n => max n n0
+  p1 := fun n => max n0 n(@\vspace{-0.04cm}@)
+  p2 := fun n => max n n0
 \end{lstlisting}
-
 Then the candidate type is exactly this:
 
 \begin{lstlisting}
@@ -507,27 +494,22 @@ Then the candidate type is exactly this:
       (fun n1 => n <= n1) (@\diff{(p2 n)}@) ->(@\vspace{-0.04cm}@)
       (fun n1 => n <= n1) (@\diff{(p1 n)}@)
 \end{lstlisting}
-
 Abstraction should thus abstract the highlighted subterms and the
 terms that have types constrained by those subterms.
 %It should not change \lstinline{(fun n1 => n <= n1)}.
-This produces a patch in one candidate:
+This would produce a patch in one candidate:
 
 \begin{lstlisting}
-    fun (@\diff{m0}@) n n0 (H0 : n <= max n0 (@\diff{m0}@)) =>(@\vspace{-0.04cm}@)
-      @eq_ind_r (@\vspace{-0.04cm}@)
-        nat (@\vspace{-0.04cm}@)
-        (max n0 (@\diff{m0}@))           (* p1 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
-        (fun n1 => n <= n1) (* P *)(@\vspace{-0.04cm}@)
-        H0                    (* : P (p1 (@\diff{m0}@)) *)(@\vspace{-0.04cm}@)
-        (max (@\diff{m0}@) n0)           (* p2 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
-        (max_comm (@\diff{m0}@) n0)      (* : p1 (@\diff{m0}@) = p2 (@\diff{m0}@) *)
+  fun (@\diff{m0}@) n n0 (H0 : n <= max n0 (@\diff{m0}@)) =>(@\vspace{-0.04cm}@)
+    @eq_ind_r (@\vspace{-0.04cm}@)
+      nat (@\vspace{-0.04cm}@)
+      (max n0 (@\diff{m0}@))           (* p1 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
+      (fun n1 => n <= n1) (* P *)(@\vspace{-0.04cm}@)
+      H0                    (* : P (p1 (@\diff{m0}@)) *)(@\vspace{-0.04cm}@)
+      (max (@\diff{m0}@) n0)           (* p2 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
+      (max_comm (@\diff{m0}@) n0)      (* : p1 (@\diff{m0}@) = p2 (@\diff{m0}@) *)
 \end{lstlisting}
-
-%This is a significant engineering effort, but it generalizes beyond this case.
-This same strategy would find a patch for one of the pairs that \sysname failed to 
-abstract. %This suggests that even if this strategy increases runtime,
-%it 
+This same strategy would find a patch for one of the pairs that \sysname failed to abstract.
 This is a natural future direction for abstraction.
 
 \subsubsection{Performance}
@@ -535,21 +517,14 @@ This is a natural future direction for abstraction.
 
 \sysname performed well for all pairs. The slowest success took \SI{48}{\ms}.\footnote{i7-4790K, at 4.00 GHz, 32 GB RAM}
 When \sysname failed, it failed fast. The slowest failure took \SI{7}{\ms}.
-While we find this promising, proof terms were small ($\le$ 67 LOC);
-we leave evaluating performance on larger terms
-to future work.
+While I found this promising, proof terms were small ($\le$ 67 LOC);
+the evaluation for the \toolnamec extension in Chapter~\ref{chapt:pi} will show
+how \sysnamelong can support large proof developments in an order of seconds.
 
-%When \sysname failed, it failed fast. The slowest failure took \SI{7}{\ms}.
-%This was a case of nested induction, which we are yet to implement: \sysname interpreted the difference of parameters
-%in the nested inductive case as significant and tried to abstract that candidate. This difference
-%was not actually significant, so search failed.
-
-% TODO double-check that that's true
-
-\sysname was slowest %at finding patches 
-when the patch showed up inverted in the difference of proofs,
-since \sysname had to search twice, once in each direction.
-A future procedure may %implement search in both directions at once,
+%\sysname was slowest %at finding patches 
+%when the patch showed up inverted in the difference of proofs,
+%since \sysname had to search twice, once in each direction.
+%A future procedure may %implement search in both directions at once,
 %or may 
-determine which direction to search first ahead of time; proof term size may be a simple heuristic for this.
+%determine which direction to search first ahead of time; proof term size may be a simple heuristic for this.
 

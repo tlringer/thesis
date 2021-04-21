@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 APR 2021 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2096,14 +2096,10 @@ Overfull \hbox (19.65938pt too wide) in paragraph at lines 234--238
 e change in []
  []
 
-[46]
-
-LaTeX Warning: Reference `sec:case' on page 47 undefined on input line 292.
-
-[47]
+[46] [47]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
-(Font)              using `OT1/pplj/bx/n' instead on input line 311.
+(Font)              using `OT1/pplj/bx/n' instead on input line 310.
 
 [48] [49] [50]) (./repair/results.tex [51] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
@@ -2115,8 +2111,8 @@ Overfull \hbox (7.49109pt too wide) in paragraph at lines 221--223
 e in tactics---rewriting
  []
 
-[54] (./repair/divide.tex) (./repair/divide.tex) [55] [56])
-(./repair/conclusion.tex)) (./often.tex [57] [58
+[54] (./repair/divide.tex) (./repair/divide.tex) [55]) (./repair/conclusion.tex
+[56])) (./often.tex [57] [58
 
 
 ]
@@ -2128,7 +2124,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 61 undefined on input line 13.
 
 [61]
-<often/workflowa.pdf, id=1503, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1501, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2413,13 +2409,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 49913 strings out of 492609
- 1005959 string characters out of 6129033
+ 49903 strings out of 492609
+ 1005841 string characters out of 6129033
  1291790 words of memory out of 5000000
- 50758 multiletter control sequences out of 15000+600000
- 632160 words of font info for 767 fonts, out of 8000000 for 9000
+ 50757 multiletter control sequences out of 15000+600000
+ 631955 words of font info for 763 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,83p,9083b,2309s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2437,10 +2433,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (125 pages, 1499883 bytes).
+Output written on uwthesis.pdf (125 pages, 1499331 bytes).
 PDF statistics:
- 2824 PDF objects out of 2984 (max. 8388607)
- 2627 compressed objects within 27 object streams
- 1407 named destinations out of 1440 (max. 500000)
+ 2820 PDF objects out of 2984 (max. 8388607)
+ 2623 compressed objects within 27 object streams
+ 1403 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

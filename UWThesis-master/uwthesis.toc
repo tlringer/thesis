@@ -69,27 +69,27 @@
 \contentsline {paragraph}{Proof Optimization}{47}{lstnumber.-103.1}% 
 \contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{47}{subsection.3.5.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{48}{subsubsection.3.5.3.1}% 
-\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{49}{subsubsection.3.5.3.2}% 
+\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{48}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Differencing}{49}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{49}{lstnumber.-108.9}% 
-\contentsline {paragraph}{A Challenge for Abstraction}{50}{lstnumber.-111.4}% 
+\contentsline {paragraph}{A Challenge for Inversion}{49}{lstnumber.-106.9}% 
+\contentsline {paragraph}{A Challenge for Generalization}{50}{lstnumber.-109.4}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{51}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{51}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{52}{Item.47}% 
+\contentsline {paragraph}{Identifying Changes}{51}{Item.47}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{52}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{53}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{53}{lstnumber.-130.1}% 
-\contentsline {paragraph}{Apply}{53}{lstnumber.-131.1}% 
+\contentsline {paragraph}{Replay}{52}{subsection.3.6.1}% 
+\contentsline {paragraph}{Search}{53}{lstnumber.-128.1}% 
+\contentsline {paragraph}{Apply}{53}{lstnumber.-129.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{53}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{54}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{53}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{54}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{54}{lstnumber.-138.2}% 
-\contentsline {paragraph}{Apply}{54}{lstnumber.-139.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{55}{subsubsection.3.6.2.1}% 
+\contentsline {paragraph}{Search}{54}{lstnumber.-136.2}% 
+\contentsline {paragraph}{Apply}{54}{lstnumber.-137.2}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{54}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{55}{subsection.3.6.3}% 
-\contentsline {paragraph}{Replay}{56}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{56}{lstnumber.-148.2}% 
-\contentsline {paragraph}{Apply}{56}{lstnumber.-149.2}% 
+\contentsline {paragraph}{Replay}{55}{subsection.3.6.3}% 
+\contentsline {paragraph}{Search}{56}{lstnumber.-146.2}% 
+\contentsline {paragraph}{Apply}{56}{lstnumber.-147.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{56}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{57}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{59}{chapter.4}% 
@@ -113,7 +113,7 @@
 \contentsline {section}{\numberline {4.4}Transformation}{78}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{80}{figure.caption.37}% 
 \contentsline {paragraph}{Lifting Constructors}{81}{figure.caption.39}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{82}{lstnumber.-211.1}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{82}{lstnumber.-209.1}% 
 \contentsline {subsection}{\numberline {4.4.1}Limitations}{82}{subsection.4.4.1}% 
 \contentsline {section}{\numberline {4.5}Implementation}{84}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{84}{subsection.4.5.1}% 

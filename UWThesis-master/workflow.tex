@@ -172,8 +172,8 @@ $\forall$ l$_2$ : list T2,
 \end{lstlisting}
 we again use \lstinline{intros} and \lstinline{induction}, this time to induct over \lstinline{l}$_2$.
 This again produces two subgoals: one for the base case and one for the inductive case.
-The base case has an absurd hypothesis, which we introduce as \lstinline{H} and then use \lstinline{auto} to show our conclusion holds.
-The inductive case holds by simplification and rewriting by the inductive hypothesis \lstinline{IHtl}$_1$.
+The base case has an absurd hypothesis, which we introduce as \lstinline{H} and then use \lstinline{auto} to show our conclusion holds:
+The inductive case holds by simplification and rewriting by the inductive hypothesis \lstinline{IHtl}$_1$. % TODO show
 
 After this, no goals remain, so our proof is done; we can write \lstinline{Defined}.
 What happens when we write \lstinline{Defined} is that Coq compiles that proof script down to a proof term.

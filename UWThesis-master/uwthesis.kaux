@@ -52,6 +52,8 @@
 \KAuxNewLinkScopetagInstance {fig:zip-proof}{document}
 \KAuxDeclaredScopeTag {sec:mot-theory}
 \KAuxNewLinkScopetagInstance {sec:mot-theory}{document}
+\KAuxDeclaredScopeTag {sec:gallina}
+\KAuxNewLinkScopetagInstance {sec:gallina}{document}
 \KAuxDeclaredScopeTag {fig:nat}
 \KAuxNewLinkScopetagInstance {fig:nat}{document}
 \KAuxDeclaredScopeTag {fig:list}
@@ -59,7 +61,7 @@
 \KAuxDeclaredScopeTag {fig:length}
 \KAuxNewLinkScopetagInstance {fig:length}{document}
 
-\KAuxFileAt {theory.tex}{143}
+\KAuxFileAt {theory.tex}{150}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}

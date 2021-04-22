@@ -1,26 +1,12 @@
 \subsection{The Theory Beneath}
 \label{sec:mot-theory}
 
-\iffalse
-\begin{figure}
-\begin{lstlisting}
-zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
-  list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
-    (fun _ => nil)
-    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) l$_2$ =>
-      list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
-        nil
-        (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
-          cons (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
-        l$_2$)
-    l$_1$
-    l$_2$.
-\end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
-and translated to use eliminators.}
-\label{fig:zip}
-\end{figure}
-\fi % TODO use this
+Now that we have written a small proof development in Coq, let us take a step back and look at the theoretical foundations that make this possible.
+While proof scripts help humans write proofs, it is thanks to the proof terms these compile down to that Coq is able to check our proof in the end.
+These proof terms (left off here).
+
+\subsubsection{Gallina}
+\label{sec:gallina}
 
 (Needs readjustment to new frame.)
 Our proof that the list zip function preserves its length uses \lstinline{nat} and \lstinline{list}
@@ -140,6 +126,27 @@ is just the successor (\lstinline{S}) of the result of recursively calling \lsti
 Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and guarded recursion.
 In fact, eliminators are equally expressive to pattern matching and guarded recursion~\cite{TODO}. % the general translation is hard and Coq sucks at eliminator gen though
 
+\iffalse
+\begin{figure}
+\begin{lstlisting}
+zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
+  list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
+    (fun _ => nil)
+    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) l$_2$ =>
+      list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
+        nil
+        (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
+          cons (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
+        l$_2$)
+    l$_1$
+    l$_2$.
+\end{lstlisting}
+\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
+and translated to use eliminators.}
+\label{fig:zip}
+\end{figure}
+\fi % TODO use this
+
 For the sake of this thesis, however, I will assume \intro{primitive eliminators}: eliminators that are a part of the core syntax and theory itself,
 and that do not reduce to terms that use pattern matching and guarded recursion.
 Likewise, when I show Gallina code, I will always use functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
@@ -149,6 +156,9 @@ To handle practical code that uses pattern matching and guarded recursion,
 I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
 In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
 
+(Explain proof term again, now.)
+
+\subsubsection{CIC$_{\omega}$}
 
 \begin{figure*}
 \small

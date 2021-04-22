@@ -1,6 +1,12 @@
 \begin{theindex}
 
+  \item Conventions
+    \subitem Primitive Eliminators, \hyperpage{17--19}
+
+  \indexspace
+
   \item Languages
-    \subitem Gallina, \hyperpage{10}
+    \subitem Gallina, \hyperpage{10--12}, \hyperpage{14}
+    \subitem Ltac, \hyperpage{11, 12}
 
 \end{theindex}

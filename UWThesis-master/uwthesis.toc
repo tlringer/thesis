@@ -13,129 +13,129 @@
 \contentsline {paragraph}{Program}{11}{figure.caption.5}% 
 \contentsline {paragraph}{Specification}{12}{figure.caption.6}% 
 \contentsline {paragraph}{Proof}{12}{figure.caption.6}% 
-\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{16}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{14}{subsection.2.1.2}% 
 \contentsline {subsubsection}{\numberline {2.1.2.1}Gallina}{16}{subsubsection.2.1.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.2.2}CIC$_{\omega }$}{18}{subsubsection.2.1.2.2}% 
-\contentsline {section}{\numberline {2.2}Proof Maintenance}{19}{section.2.2}% 
+\contentsline {subsubsection}{\numberline {2.1.2.2}Calculus of Inductive Constructions}{18}{subsubsection.2.1.2.2}% 
+\contentsline {section}{\numberline {2.2}Proof Maintenance}{20}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{20}{subsection.2.2.1}% 
-\contentsline {paragraph}{Changing our Program}{20}{Item.20}% 
-\contentsline {paragraph}{Changing our Specification}{21}{lstnumber.-29.10}% 
+\contentsline {paragraph}{Changing our Program}{21}{Item.20}% 
+\contentsline {paragraph}{Changing our Specification}{21}{lstnumber.-30.10}% 
 \contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{22}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{22}{subsection.2.2.3}% 
-\contentsline {section}{\numberline {2.3}Proof Repair}{23}{section.2.3}% 
-\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{25}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Motivating Example}{26}{section.3.1}% 
-\contentsline {paragraph}{Without Proof Repair}{26}{section.3.1}% 
-\contentsline {paragraph}{With Proof Repair}{27}{lstnumber.-41.1}% 
-\contentsline {section}{\numberline {3.2}Approach}{27}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Workflow: Repair by Example}{28}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Scope: Changes in Content}{30}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{31}{subsection.3.2.3}% 
-\contentsline {paragraph}{Summary}{32}{lstnumber.-64.1}% 
-\contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{32}{subsection.3.2.4}% 
-\contentsline {paragraph}{Summary}{33}{lstnumber.-69.3}% 
-\contentsline {section}{\numberline {3.3}Differencing}{34}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Design}{34}{subsection.3.3.1}% 
-\contentsline {paragraph}{Identity}{35}{subsection.3.3.1}% 
-\contentsline {paragraph}{Application}{35}{subsection.3.3.1}% 
-\contentsline {paragraph}{Functions}{35}{lstnumber.-72.1}% 
-\contentsline {paragraph}{Eliminators}{36}{lstnumber.-76.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Limitations}{37}{subsection.3.3.2}% 
-\contentsline {paragraph}{Heuristics}{37}{subsection.3.3.2}% 
-\contentsline {paragraph}{Isolating Changes}{37}{figure.caption.18}% 
-\contentsline {section}{\numberline {3.4}Transformation}{38}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Design}{38}{subsection.3.4.1}% 
-\contentsline {paragraph}{Specialization}{38}{subsection.3.4.1}% 
-\contentsline {paragraph}{Generalization}{39}{subsection.3.4.1}% 
-\contentsline {paragraph}{Inversion}{40}{lstnumber.-88.2}% 
-\contentsline {paragraph}{Factoring}{41}{lstnumber.-93.5}% 
-\contentsline {subsection}{\numberline {3.4.2}Limitations}{41}{subsection.3.4.2}% 
-\contentsline {paragraph}{Undecidability}{41}{subsection.3.4.2}% 
-\contentsline {paragraph}{Dependent Factoring}{41}{subsection.3.4.2}% 
-\contentsline {paragraph}{Modeling Diverse Proof Styles}{42}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Implementation}{42}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Tool Details}{42}{subsection.3.5.1}% 
-\contentsline {subsubsection}{\numberline {3.5.1.1}The Procedure}{42}{subsubsection.3.5.1.1}% 
-\contentsline {subsubsection}{\numberline {3.5.1.2}Differencing}{43}{subsubsection.3.5.1.2}% 
-\contentsline {subsubsection}{\numberline {3.5.1.3}Transformation}{44}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Specialization}{44}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Generalization}{44}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Inversion}{45}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Factoring}{45}{lstnumber.-99.2}% 
-\contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{46}{subsubsection.3.5.1.4}% 
-\contentsline {subsection}{\numberline {3.5.2}Extensions}{46}{subsection.3.5.2}% 
-\contentsline {paragraph}{Git Integration}{46}{subsection.3.5.2}% 
-\contentsline {paragraph}{Patch Application}{46}{lstnumber.-102.1}% 
-\contentsline {paragraph}{Proof Optimization}{47}{lstnumber.-103.1}% 
-\contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{47}{subsection.3.5.3}% 
-\contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{48}{subsubsection.3.5.3.1}% 
-\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{48}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Differencing}{49}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{49}{lstnumber.-106.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{50}{lstnumber.-109.4}% 
-\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{51}{subsubsection.3.5.3.3}% 
-\contentsline {section}{\numberline {3.6}Results}{51}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{51}{Item.47}% 
-\contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{52}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{52}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{52}{lstnumber.-128.1}% 
-\contentsline {paragraph}{Apply}{53}{lstnumber.-129.1}% 
-\contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{53}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{53}{subsection.3.6.2}% 
-\contentsline {paragraph}{Replay}{54}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{54}{lstnumber.-136.2}% 
-\contentsline {paragraph}{Apply}{54}{lstnumber.-137.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{54}{subsubsection.3.6.2.1}% 
-\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{55}{subsection.3.6.3}% 
-\contentsline {paragraph}{Replay}{55}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{56}{lstnumber.-146.2}% 
-\contentsline {paragraph}{Apply}{56}{lstnumber.-147.2}% 
-\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{56}{subsubsection.3.6.3.1}% 
-\contentsline {section}{\numberline {3.7}Conclusion}{57}{section.3.7}% 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{59}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Motivating Example}{59}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Approach}{61}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{62}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{63}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{64}{subsection.4.2.3}% 
-\contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{64}{subsection.4.2.4}% 
-\contentsline {section}{\numberline {4.3}Differencing}{65}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}The Configuration}{66}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{69}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Search Procedures}{71}{subsection.4.3.3}% 
-\contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{71}{subsubsection.4.3.3.1}% 
-\contentsline {paragraph}{Searching for the Indexer}{74}{figure.caption.32}% 
-\contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{76}{subsubsection.4.3.3.2}% 
-\contentsline {paragraph}{Core Search Algorithm}{77}{figure.caption.34}% 
-\contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{77}{subsubsection.4.3.3.3}% 
-\contentsline {paragraph}{Designing new Search Procedures}{77}{subsubsection.4.3.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Limitations}{78}{subsection.4.3.4}% 
-\contentsline {section}{\numberline {4.4}Transformation}{78}{section.4.4}% 
-\contentsline {paragraph}{Lifting Eliminators}{80}{figure.caption.37}% 
-\contentsline {paragraph}{Lifting Constructors}{81}{figure.caption.39}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{82}{lstnumber.-209.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{82}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{84}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{84}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{84}{subsection.4.5.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{84}{subsubsection.4.5.2.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{84}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{85}{subsubsection.4.5.2.3}% 
-\contentsline {section}{\numberline {4.6}Results}{88}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{93}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{95}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{95}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{96}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{101}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{101}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{101}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{101}{chapter.6}% 
-\contentsline {paragraph}{Automation}{102}{chapter.6}% 
-\contentsline {paragraph}{Integration}{102}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{102}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{102}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{102}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{102}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{102}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{102}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{102}{chapter.6}% 
+\contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{23}{subsection.2.2.3}% 
+\contentsline {section}{\numberline {2.3}Proof Repair}{24}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{27}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Motivating Example}{28}{section.3.1}% 
+\contentsline {paragraph}{Without Proof Repair}{28}{section.3.1}% 
+\contentsline {paragraph}{With Proof Repair}{29}{lstnumber.-42.1}% 
+\contentsline {section}{\numberline {3.2}Approach}{29}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Workflow: Repair by Example}{30}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Scope: Changes in Content}{32}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{33}{subsection.3.2.3}% 
+\contentsline {paragraph}{Summary}{34}{lstnumber.-65.1}% 
+\contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{34}{subsection.3.2.4}% 
+\contentsline {paragraph}{Summary}{35}{lstnumber.-70.3}% 
+\contentsline {section}{\numberline {3.3}Differencing}{36}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Design}{36}{subsection.3.3.1}% 
+\contentsline {paragraph}{Identity}{37}{subsection.3.3.1}% 
+\contentsline {paragraph}{Application}{37}{subsection.3.3.1}% 
+\contentsline {paragraph}{Functions}{37}{lstnumber.-73.1}% 
+\contentsline {paragraph}{Eliminators}{38}{lstnumber.-77.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Limitations}{39}{subsection.3.3.2}% 
+\contentsline {paragraph}{Heuristics}{39}{subsection.3.3.2}% 
+\contentsline {paragraph}{Isolating Changes}{39}{figure.caption.19}% 
+\contentsline {section}{\numberline {3.4}Transformation}{40}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Design}{40}{subsection.3.4.1}% 
+\contentsline {paragraph}{Specialization}{40}{subsection.3.4.1}% 
+\contentsline {paragraph}{Generalization}{41}{subsection.3.4.1}% 
+\contentsline {paragraph}{Inversion}{42}{lstnumber.-89.2}% 
+\contentsline {paragraph}{Factoring}{43}{lstnumber.-94.5}% 
+\contentsline {subsection}{\numberline {3.4.2}Limitations}{43}{subsection.3.4.2}% 
+\contentsline {paragraph}{Undecidability}{43}{subsection.3.4.2}% 
+\contentsline {paragraph}{Dependent Factoring}{43}{subsection.3.4.2}% 
+\contentsline {paragraph}{Modeling Diverse Proof Styles}{44}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Implementation}{44}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Tool Details}{44}{subsection.3.5.1}% 
+\contentsline {subsubsection}{\numberline {3.5.1.1}The Procedure}{44}{subsubsection.3.5.1.1}% 
+\contentsline {subsubsection}{\numberline {3.5.1.2}Differencing}{45}{subsubsection.3.5.1.2}% 
+\contentsline {subsubsection}{\numberline {3.5.1.3}Transformation}{46}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Specialization}{46}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Generalization}{46}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Inversion}{47}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Factoring}{47}{lstnumber.-100.2}% 
+\contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{48}{subsubsection.3.5.1.4}% 
+\contentsline {subsection}{\numberline {3.5.2}Extensions}{48}{subsection.3.5.2}% 
+\contentsline {paragraph}{Git Integration}{48}{subsection.3.5.2}% 
+\contentsline {paragraph}{Patch Application}{48}{lstnumber.-103.1}% 
+\contentsline {paragraph}{Proof Optimization}{49}{lstnumber.-104.1}% 
+\contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{49}{subsection.3.5.3}% 
+\contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{50}{subsubsection.3.5.3.1}% 
+\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{50}{subsubsection.3.5.3.2}% 
+\contentsline {paragraph}{A Challenge for Differencing}{51}{subsubsection.3.5.3.2}% 
+\contentsline {paragraph}{A Challenge for Inversion}{51}{lstnumber.-107.9}% 
+\contentsline {paragraph}{A Challenge for Generalization}{52}{lstnumber.-110.4}% 
+\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{53}{subsubsection.3.5.3.3}% 
+\contentsline {section}{\numberline {3.6}Results}{53}{section.3.6}% 
+\contentsline {paragraph}{Identifying Changes}{53}{Item.47}% 
+\contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{54}{subsection.3.6.1}% 
+\contentsline {paragraph}{Replay}{54}{subsection.3.6.1}% 
+\contentsline {paragraph}{Search}{54}{lstnumber.-129.1}% 
+\contentsline {paragraph}{Apply}{55}{lstnumber.-130.1}% 
+\contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{55}{subsubsection.3.6.1.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{55}{subsection.3.6.2}% 
+\contentsline {paragraph}{Replay}{56}{subsection.3.6.2}% 
+\contentsline {paragraph}{Search}{56}{lstnumber.-137.2}% 
+\contentsline {paragraph}{Apply}{56}{lstnumber.-138.2}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{56}{subsubsection.3.6.2.1}% 
+\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{57}{subsection.3.6.3}% 
+\contentsline {paragraph}{Replay}{57}{subsection.3.6.3}% 
+\contentsline {paragraph}{Search}{58}{lstnumber.-147.2}% 
+\contentsline {paragraph}{Apply}{58}{lstnumber.-148.2}% 
+\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{58}{subsubsection.3.6.3.1}% 
+\contentsline {section}{\numberline {3.7}Conclusion}{59}{section.3.7}% 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{61}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Motivating Example}{61}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Approach}{63}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{64}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{65}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{66}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{66}{subsection.4.2.4}% 
+\contentsline {section}{\numberline {4.3}Differencing}{67}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}The Configuration}{68}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{71}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Search Procedures}{73}{subsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{73}{subsubsection.4.3.3.1}% 
+\contentsline {paragraph}{Searching for the Indexer}{76}{figure.caption.33}% 
+\contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{78}{subsubsection.4.3.3.2}% 
+\contentsline {paragraph}{Core Search Algorithm}{79}{figure.caption.35}% 
+\contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{79}{subsubsection.4.3.3.3}% 
+\contentsline {paragraph}{Designing new Search Procedures}{79}{subsubsection.4.3.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Limitations}{80}{subsection.4.3.4}% 
+\contentsline {section}{\numberline {4.4}Transformation}{80}{section.4.4}% 
+\contentsline {paragraph}{Lifting Eliminators}{82}{figure.caption.38}% 
+\contentsline {paragraph}{Lifting Constructors}{83}{figure.caption.40}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{84}{lstnumber.-210.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{84}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{86}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{86}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{86}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{86}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{86}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{87}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{90}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{95}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{97}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{97}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{98}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{103}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{103}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{103}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{103}{chapter.6}% 
+\contentsline {paragraph}{Automation}{104}{chapter.6}% 
+\contentsline {paragraph}{Integration}{104}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{104}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{104}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{104}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{104}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{104}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{104}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{104}{chapter.6}% 

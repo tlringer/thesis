@@ -225,13 +225,6 @@ since we can write the high-level proof script on the top instead.
 Even though this proof script is still a bit manual for the sake of demonstration,
 it is much simpler than the low-level proof term.
 
-Still, there is a correspondence between the proof script and the proof term, highlighted in the same color in Figure~\ref{fig:zip-proof}.
-For example, every call to \lstinline{induction} in the proof script shows up as an application of a function \lstinline{list_rect},
-which is the induction principle for \lstinline{list}.
-In Section~\ref{TODO}, I will explain this connection in more detail by introducing a prototype decompiler from proof terms back up to proof scripts.
-This decompiler makes it possible for \sysname to work over highly structured \kl{Gallina} terms,
-but produce proof scripts that the proof engineer can use going forward.
-
 Writing proofs using tactics does indeed proof development easier than writing raw proof terms.
 But these highly structured proof terms carry a lot of information that is lost at the level of tactics.
 It is exactly that rich structure---the type theory beneath \kl{Gallina}---that makes a principled approach to proof repair possible.

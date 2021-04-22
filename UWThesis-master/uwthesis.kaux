@@ -29,7 +29,14 @@
 \KAuxFileAt {uwthesis.tex}{49}
 \KAuxAutoref {default}{base}{Ltac}
 
-\KAuxFileAt {uwthesis.tex}{119}
+\KAuxFileAt {uwthesis.tex}{50}
+
+\KAuxFileAt {uwthesis.tex}{51}
+\KAuxAutoref {default}{base}{Calculus of Inductive Constructions}
+
+\KAuxFileAt {uwthesis.tex}{52}
+
+\KAuxFileAt {uwthesis.tex}{122}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
@@ -52,6 +59,9 @@
 \KAuxNewLinkScopetagInstance {fig:zip-proof}{document}
 \KAuxDeclaredScopeTag {sec:mot-theory}
 \KAuxNewLinkScopetagInstance {sec:mot-theory}{document}
+
+\KAuxFileAt {theory.tex}{7}
+\KAuxAutorefTarget {default}{base}{Calculus of Inductive Constructions}
 \KAuxDeclaredScopeTag {sec:gallina}
 \KAuxNewLinkScopetagInstance {sec:gallina}{document}
 \KAuxDeclaredScopeTag {fig:nat}
@@ -60,11 +70,18 @@
 \KAuxNewLinkScopetagInstance {fig:list}{document}
 \KAuxDeclaredScopeTag {fig:length}
 \KAuxNewLinkScopetagInstance {fig:length}{document}
+\KAuxDeclaredScopeTag {fig:zip-elim}
+\KAuxNewLinkScopetagInstance {fig:zip-elim}{document}
 
-\KAuxFileAt {theory.tex}{150}
+\KAuxFileAt {theory.tex}{151}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
+\KAuxDeclaredScopeTag {sec:cic}
+\KAuxNewLinkScopetagInstance {sec:cic}{document}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
+
+\KAuxFileAt {theory.tex}{191}
+\KAuxAutorefTarget {default}{base}{Calculus of Inductive Constructions}
 \KAuxDeclaredScopeTag {fig:cic-syntax}
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
 \KAuxDeclaredScopeTag {sec:mot-mai}

@@ -3,15 +3,19 @@
 
 Now that we have written a small proof development in Coq, let us take a step back and look at the theoretical foundations that make this possible.
 While proof scripts help humans write proofs, it is thanks to the proof terms these compile down to that Coq is able to check our proof in the end.
-These proof terms (left off here).
+These proof terms are in a rich functional programming language called \kl{Gallina} (Section~\ref{sec:gallina}).
+Gallina implements a rich type theory called the \intro{Calculus of Inductive Constructions} (Section~\ref{sec:cic}).
+This rich type theory makes it possible to write programs, specifications, and proofs in Coq,
+and have a small part of Coq check those proofs in the end.
 
 \subsubsection{Gallina}
 \label{sec:gallina}
 
-(Needs readjustment to new frame.)
-Our proof that the list zip function preserves its length uses \lstinline{nat} and \lstinline{list}
-datatypes from the standard library, as well as a \lstinline{length} function..
-All of these can be found in the Coq standard library.
+Gallina is a rich functional programming language with support for writing proofs.
+To see the power of Gallina, let us dissect our proof that \lstinline{zip} preserves its length.
+I mentioned earlier that the \lstinline{nat} and \lstinline{list} datatypes,
+and the \lstinline{length} function itself, can all be found inside of the Coq standard library.
+But looking into these datatypes and this function already points to many useful features of Gallina.
 
 \begin{figure}
 \begin{minipage}{0.30\textwidth}
@@ -89,8 +93,7 @@ and with an additional argument corresponding to the new element in the inductiv
 
 One interesting thing about the types of these eliminators \lstinline{list_rect} and \lstinline{nat_rect}
 include universal quantification over all inputs, written $\forall$.
-Gallina's type system is expressive enough to include universal quantification over inputs---I will explain how
-in Section~\ref{sec:mot-theory}.
+Gallina's type system is expressive enough to include universal quantification over inputs, as we will soon see.
 
 \begin{figure}
 \begin{minipage}{0.42\textwidth}
@@ -118,7 +121,7 @@ Definition length {T} l :=
 \label{fig:length}
 \end{figure}
 
-We can use these eliminators to write functions and proofs, like the \lstinline{length} function we will need for our proof development (Figure~\ref{fig:length}, right).
+We can use these eliminators to write functions and proofs, like the \lstinline{length} function (Figure~\ref{fig:length}, right).
 More standard is to write functions using pattern matching and guarded recursion, like the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
 Both of these two functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
 the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
@@ -126,7 +129,6 @@ is just the successor (\lstinline{S}) of the result of recursively calling \lsti
 Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and guarded recursion.
 In fact, eliminators are equally expressive to pattern matching and guarded recursion~\cite{TODO}. % the general translation is hard and Coq sucks at eliminator gen though
 
-\iffalse
 \begin{figure}
 \begin{lstlisting}
 zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
@@ -143,22 +145,36 @@ zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$
 \end{lstlisting}
 \caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
 and translated to use eliminators.}
-\label{fig:zip}
+\label{fig:zip-elim}
 \end{figure}
-\fi % TODO use this
 
 For the sake of this thesis, however, I will assume \intro{primitive eliminators}: eliminators that are a part of the core syntax and theory itself,
 and that do not reduce to terms that use pattern matching and guarded recursion.
-Likewise, when I show Gallina code, I will always use functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
+Likewise, when I show Gallina code, from this point forward, I will favor functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
 on the right.
-I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
+%I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
+
 To handle practical code that uses pattern matching and guarded recursion,
 I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
+Figure~\ref{fig:zip-elim}, for example, shows the \lstinline{zip} function after running this tool.
 In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
 
-(Explain proof term again, now.)
+With that in mind, we can now look back at the proof script and corresponding proof term in Figure~\ref{fig:zip-proof}.
+There is a correpsondence between the proof script and the proof term, highlighted in the same color:
+The proof term is a function from the context to a body that proves the goal type.
+Every call to \lstinline{induction} in the proof script shows up as an application of the \lstinline{list} eliminator 
+\lstinline{list_rect}, with the cases corresponding to the appropriate arguments of the eliminator.
+The first call to \lstinline{auto} compiles down to \lstinline{eq_refl}, the constructor for the inductive equality type.
+The second call to \lstinline{auto} compiles down to \lstinline{eq_sym}, the proof of symmetry of equality in the Coq standard library. % TODO not using absurd then?
+Rewrites compile down to applications of an eliminator over the inductive equality type called \lstinline{eq_ind_r}.
 
-\subsubsection{CIC$_{\omega}$}
+Still, the proof terms can be difficult for a proof engineer to write and understand.
+In Section~\ref{TODO}, I will introduce a prototype decompiler from proof terms back up to proof scripts
+that makes it possible for \sysnamelong to work over highly structured \kl{Gallina} terms,
+but produce proof scripts that the proof engineer can use going forward.
+
+\subsubsection{Calculus of Inductive Constructions}
+\label{sec:cic}
 
 \begin{figure*}
 \small
@@ -172,7 +188,7 @@ In the rest of the paper, I skip this preprocessing step in examples, but I desc
 \label{fig:coc-syntax}
 \end{figure*}
 
-The type theory that Gallina implements is CIC$_{\omega}$, or the Calculus of Inductive Constructions.
+The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Calculus of Inductive Constructions}.
 CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
 CoC with an infinite universe hierarchy is called CoC$_{\omega}$. % TODO need to explain or defer
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.

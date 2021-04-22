@@ -1,6 +1,27 @@
 \subsection{The Theory Beneath}
 \label{sec:mot-theory}
 
+\iffalse
+\begin{figure}
+\begin{lstlisting}
+zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
+  list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
+    (fun _ => nil)
+    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) l$_2$ =>
+      list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
+        nil
+        (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
+          cons (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
+        l$_2$)
+    l$_1$
+    l$_2$.
+\end{lstlisting}
+\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
+and translated to use eliminators.}
+\label{fig:zip}
+\end{figure}
+\fi % TODO use this
+
 (Needs readjustment to new frame.)
 Our proof that the list zip function preserves its length uses \lstinline{nat} and \lstinline{list}
 datatypes from the standard library, as well as a \lstinline{length} function..

@@ -4,26 +4,20 @@
 % TODO move this back to pattern matching!!! since eliminator stuff will come later
 For a moment, let us assume some primitives from the Coq standard library: the type \lstinline{nat} of natural numbers,
 the type \lstinline{list} of polymorphic lists, and the \lstinline{length} function that computes the length of a list as a natural number.
-We start by writing the \lstinline{zip} program, then specify what it means to preserve its length, and then finally
+We start by writing the list \lstinline{zip} program, then specify what it means to preserve its length, and then finally
 write an interactive proof that shows that specification actually holds.
 Coq checks this proof and lets us now that our proof is correct, so our \lstinline{zip} function is verified.
 
 \begin{figure}
 \begin{lstlisting}
 zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2$) :=
-  list_rect (fun _ : list T$_1$ => list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$))
-    (fun _ => nil)
-    (fun t$_1$ tl$_1$ (zip_tl$_1$ : list T$_2$ $\rightarrow$ list (T$_1$ * T$_2$)) l$_2$ =>
-      list_rect (fun _ : list T$_2$ => list (T$_1$ * T$_2$))
-        nil
-        (fun t$_2$ tl$_2$ (_ : list (T$_1$ * T$_2$)) =>
-          cons (t$_1$, t$_2$) (zip_tl$_1$ tl$_2$))
-        l$_2$)
-    l$_1$
-    l$_2$.
+  match l$_1$, l$_2$ with
+  | nil, _ => nil
+  | _, nil => nil
+  | cons t$_1$ tl$_1$, cons t$_2$ tl$_2$ => cons (t$_1$, t$_2$) (zip tl$_1$ tl$_2$)
+  end.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
-and translated to use eliminators.}
+\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO}.} % TODO hs-to-coq cite
 \label{fig:zip}
 \end{figure}
 
@@ -51,15 +45,13 @@ lists are different lengths.
 The decision that this implementation makes is to just ignore those extra elements.
 
 Otherwise, the implementation is fairly standard.
-If \lstinline{l}$_1$ is \lstinline{nil} (base case of the outer induction),
-\lstinline{zip} returns \lstinline{nil}.
-Otherwise (inductive case of the outer induction),
-if \lstinline{l}$_2$ is \lstinline{nil} (base case of the inner induction),
-\lstinline{zip} returns \lstinline{nil}.
-If \lstinline{l}$_2$ is anything else (inductive case of the inner induction),
+If \lstinline{l}$_1$ is \lstinline{nil} (first case),
+or if \lstinline{l}$_2$ is \lstinline{nil} (second case), 
+then \lstinline{zip} returns \lstinline{nil}.
+Otherwise,
 \lstinline{zip} combines the first two elements of each list into a pair (\lstinline{(t}$_1$\lstinline{, t}$_2$\lstinline{)}),
 then sticks that in front of (using \lstinline{cons}) the result of recursively calling \lstinline{zip} on the tails of each list
-(\lstinline{zip_tl}$_1$ \lstinline{tl}$_2$). % TODO a bit hard to understand probably, may need more explanation
+(\lstinline{zip} \lstinline{tl}$_1$ \lstinline{tl}$_2$). % TODO a bit hard to understand probably, may need more explanation
 
 \begin{figure}
 \begin{minipage}{0.49\textwidth}
@@ -85,7 +77,7 @@ Theorem zip_preserves_length :
 \paragraph{Specification} Once we have written our \lstinline{zip} function, we can then specify what we 
 want to prove about it: that the \lstinline{zip} function preserves the lengths of the inputs \lstinline{l}$_1$ and \lstinline{l}$_2$.
 We do this by defining a type \lstinline{zip_preserves_length} (Figure~\ref{fig:zip-pres}, left), which in Coq we state as a \lstinline{Theorem}.
-This theorem takes advantage of Gallina's rich type system to quantify over all possible input lists \lstinline{l}$_1$ and \lstinline{l}$_2$.
+This theorem takes advantage of \kl{Gallina}'s rich type system to quantify over all possible input lists \lstinline{l}$_1$ and \lstinline{l}$_2$.
 It says that if the lengths of the inputs are the same, then the length of the output is the same as the lengths of the inputs.
 Our proof will soon show that this type is inhabited, and so this statement is true.
 
@@ -95,9 +87,9 @@ that states that the length of the output is the \textit{minimum} of the lengths
 This is also true for our \lstinline{zip} implementation, and in fact it is stronger---it implies the original theorem as well.
 But regardless of which version we choose, we then get to the fun part of actually writing our proof.
 
-\paragraph{Proof} As I mentioned earlier, it is possible to write proofs directly in Gallina---but this can be difficult.
-Instead, it is more common to write proofs interactively using the tactic language Ltac.
-Each tactic is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
+\paragraph{Proof} As I mentioned earlier, it is possible to write proofs directly in \kl{Gallina}---but this can be difficult.
+Instead, it is more common to write proofs interactively using the tactic language \kl{Ltac}.
+Each tactic in \kl{Ltac} is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
 The way that this works is, after we state the theorem that we want to prove:
 
 \begin{lstlisting}
@@ -120,52 +112,8 @@ We continue this until no goals remain.
 The survey paper~\cite{PGL-045} has a good overview of the tactic language in Coq and in other proof assistants,
 plus different interfaces and IDEs for writing proofs interactively and screenshots of them in action.
 
-\begin{figure}
-\begin{lstlisting}
-Theorem zip_preserves_length :
-  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
-    length l$_1$ = length l$_2$ $\rightarrow$
-    length (zip l$_1$ l$_2$) = length l$_1$.
-Proof.
-  intros T1 T2 l1. (@\codesimb{induction l$_1$}@) as [|t$_1$ tl$_1$ IHtl$_1$].
-  - (@\codesima{auto.}@)
-  - intros l2. (@\codesimc{induction l2}@) as [|t$_2$ tl$_2$ IHtl$_2$].
-    + (@\codesimd{intros H. auto.}@)
-    + (@\codesime{intros H. simpl. rewrite IHtl$_1$; auto.}@)
-Defined.
-\end{lstlisting}
-\begin{lstlisting}
-zip_preserves_length :
-  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
-    length l$_1$ = length l$_2$ $\rightarrow$
-    length (zip l$_1$ l$_2$) = length l$_1$
-:=
-fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
-  (@\codesimb{list\_rect}@) (fun (l$_1$ : list T$_1$) => $\ldots$)
-    (@\codesima{(fun (l$_2$ : list T$_2$) \_ => eq\_refl)}@)
-    (fun (t$_1$ : T$_1$) (tl$_1$ : list T$_1$) (IHtl$_1$ : $\ldots$) (l$_2$ : list T$_2$) =>
-      (@\codesimc{list\_rect}@) (fun (l$_2$ : list T$_2$) => $\ldots$)
-        (@\codesimd{(fun (H : $\ldots$) => eq\_sym H)}@)
-        (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) (IHtl$_2$ : $\ldots$) =>
-          (@\codesime{fun (H : $\ldots$) => eq\_ind\_r $\ldots$ eq\_refl (IHtl$_1$ $\ldots$)}@))
-        (@\codesimc{l$_2$}@))
-  (@\codesimb{l$_1$}@)
-  l$_2$.
-\end{lstlisting}
-\caption{A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length.
-Some details of the proof term are omitted for simplicity.
-Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
-\label{fig:zip-proof}
-\end{figure}
-
-Figure~\ref{fig:zip-proof} shows a proof script for this theorem (top), along with the corresponding proof term (bottom).
-As we can see, the proof term is quite complicated.
-Thankfully, the details do not matter to us, since we can write the high-level proof script on the top instead.
-Even though this proof script is still a bit manual for the sake of demonstration,
-it is much simpler than the low-level proof term.
-
-To write the proof script on the top of Figure~\ref{fig:zip-proof}, we start by stepping past \lstinline{Proof} in our IDE.
-After this, our initial context (above the line) is empty, and our initial goal (below the line) is the original theorem:
+In this case, after stepping past \lstinline{Proof} in our IDE, 
+our initial context (above the line) is empty, and our initial goal (below the line) is the original theorem:
 
 \begin{lstlisting}
 ______________________________________(1/1)
@@ -173,7 +121,7 @@ $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
   length l$_1$ = length l$_2$ $\rightarrow$
   length (zip l$_1$ l$_2$) = length l$_1$.
 \end{lstlisting}
-We start this proof with the introduction tactic \lstinline{intros}:
+We can start this proof with the introduction tactic \lstinline{intros}:
 
 \begin{lstlisting}
   intros T$_1$ T$_2$ l$_1$.
@@ -228,21 +176,65 @@ The base case has an absurd hypothesis, which we introduce as \lstinline{H} and 
 The inductive case holds by simplification and rewriting by the inductive hypothesis \lstinline{IHtl}$_1$.
 
 After this, no goals remain, so our proof is done; we can write \lstinline{Defined}.
-What happens when we write \lstinline{Defined} is that Coq produces the proof term on the bottom of Figure~\ref{fig:zip-proof}. % TODO syntax highlighting, maybe explain
+What happens when we write \lstinline{Defined} is that Coq compiles that proof script down to a proof term.
 It then checks the type of that term and ensures that it is exactly the theorem we have stated.
 Since it is, Coq lets us know that our proof is correct, so our \lstinline{zip} function is verified.
-Thankfully, though, we never have to write the low-level proof term ourselves; we see proofs as these high-level proof csripts.
 
-Some correspondence between the proof script and proof term may already be clear.
-For example, every call to \lstinline{induction} in the proof script shows up as an application of the eliminator \lstinline{list_rect}
-in the proof term.
+\begin{figure}
+\begin{lstlisting}
+Theorem zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$.
+Proof.
+  intros T1 T2 l1. (@\codesimb{induction l$_1$}@) as [|t$_1$ tl$_1$ IHtl$_1$].
+  - (@\codesima{auto.}@)
+  - intros l2. (@\codesimc{induction l2}@) as [|t$_2$ tl$_2$ IHtl$_2$].
+    + (@\codesimd{intros H. auto.}@)
+    + (@\codesime{intros H. simpl. rewrite IHtl$_1$; auto.}@)
+Defined.
+\end{lstlisting}
+\begin{lstlisting}
+zip_preserves_length :
+  $\forall$ {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
+    length l$_1$ = length l$_2$ $\rightarrow$
+    length (zip l$_1$ l$_2$) = length l$_1$
+:=
+fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
+  (@\codesimb{list\_rect}@) (fun (l$_1$ : list T$_1$) => $\ldots$)
+    (@\codesima{(fun (l$_2$ : list T$_2$) \_ => eq\_refl)}@)
+    (fun (t$_1$ : T$_1$) (tl$_1$ : list T$_1$) (IHtl$_1$ : $\ldots$) (l$_2$ : list T$_2$) =>
+      (@\codesimc{list\_rect}@) (fun (l$_2$ : list T$_2$) => $\ldots$)
+        (@\codesimd{(fun (H : $\ldots$) => eq\_sym H)}@)
+        (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) (IHtl$_2$ : $\ldots$) =>
+          (@\codesime{fun (H : $\ldots$) => eq\_ind\_r $\ldots$ eq\_refl (IHtl$_1$ $\ldots$)}@))
+        (@\codesimc{l$_2$}@))
+  (@\codesimb{l$_1$}@)
+  l$_2$.
+\end{lstlisting}
+\caption{A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length.
+Some details of the proof term are omitted for simplicity.
+Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
+\label{fig:zip-proof}
+\end{figure}
+
+Figure~\ref{fig:zip-proof} shows the resulting proof script for this theorem (top), along with the corresponding proof term (bottom).
+As we can see, the proof term is quite complicated---I will explain what it means soon, in Section~\ref{sec:mot-theory}.
+The important thing to note for now is that  the details of this low-leve proof term do not matter to us,
+since we can write the high-level proof script on the top instead.
+Even though this proof script is still a bit manual for the sake of demonstration,
+it is much simpler than the low-level proof term.
+
+Still, there is a correspondence between the proof script and the proof term, highlighted in the same color in Figure~\ref{fig:zip-proof}.
+For example, every call to \lstinline{induction} in the proof script shows up as an application of a function \lstinline{list_rect},
+which is the induction principle for \lstinline{list}.
 In Section~\ref{TODO}, I will explain this connection in more detail by introducing a prototype decompiler from proof terms back up to proof scripts.
-This decompiler makes it possible for \sysname to work over highly structured Gallina terms,
+This decompiler makes it possible for \sysname to work over highly structured \kl{Gallina} terms,
 but produce proof scripts that the proof engineer can use going forward.
 
 Writing proofs using tactics does indeed proof development easier than writing raw proof terms.
 But these highly structured proof terms carry a lot of information that is lost at the level of tactics.
-It is exactly that rich structure---the type theory beneath Gallina---that makes a principled approach to proof repair possible.
+It is exactly that rich structure---the type theory beneath \kl{Gallina}---that makes a principled approach to proof repair possible.
 
 
 

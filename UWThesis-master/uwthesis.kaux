@@ -24,7 +24,12 @@
 \KAuxFileAt {uwthesis.tex}{47}
 \KAuxAutoref {default}{base}{Gallina}
 
-\KAuxFileAt {uwthesis.tex}{117}
+\KAuxFileAt {uwthesis.tex}{48}
+
+\KAuxFileAt {uwthesis.tex}{49}
+\KAuxAutoref {default}{base}{Ltac}
+
+\KAuxFileAt {uwthesis.tex}{119}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
@@ -34,6 +39,9 @@
 
 \KAuxFileAt {development.tex}{16}
 \KAuxAutorefTarget {default}{base}{Gallina}
+
+\KAuxFileAt {development.tex}{30}
+\KAuxAutorefTarget {default}{base}{Ltac}
 \KAuxDeclaredScopeTag {sec:mot-workflow}
 \KAuxNewLinkScopetagInstance {sec:mot-workflow}{document}
 \KAuxDeclaredScopeTag {fig:zip}
@@ -51,7 +59,7 @@
 \KAuxDeclaredScopeTag {fig:length}
 \KAuxNewLinkScopetagInstance {fig:length}{document}
 
-\KAuxFileAt {theory.tex}{122}
+\KAuxFileAt {theory.tex}{143}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}

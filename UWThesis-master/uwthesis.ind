@@ -1,12 +1,19 @@
 \begin{theindex}
 
+  \item Conventions
+    \subitem Primitive Eliminators, \hyperpage{17}, \hyperpage{19, 20}
+
+  \indexspace
+
   \item Languages
-    \subitem Gallina, \hyperpage{10--12}, \hyperpage{14}
+    \subitem Gallina, \hyperpage{10--12}, \hyperpage{14}, 
+		\hyperpage{18}
     \subitem Ltac, \hyperpage{11, 12}
 
   \indexspace
 
   \item Type Theories
-    \subitem Calculus of Inductive Constructions, \hyperpage{14}
+    \subitem Calculus of Inductive Constructions, \hyperpage{14}, 
+		\hyperpage{18}
 
 \end{theindex}

@@ -1,14 +1,105 @@
 \chapter{Proof Repair Across Type Equivalences}
 \label{chapt:pi}
 
-This extension to the suite adds support for a broad class of changes in datatypes, handling a large class of practical repair scenarios.
-What this tool (PUMPKIN Pi) does is, when datatypes change and this breaks a lot of proofs, it generalizes the change in datatype itself (possibly with some user input) so that it can automatically fix proofs broken by the change in datatype. 
+This chapter presents the \toolnamec extension to the \sysnamelong proof repair plugin suite for Coq 8.8 % TODO 8.9.1 etc
+that is available on Github.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}{\lstinline{GUIDE.md}}.} % TODO update links
+\toolnamec is a plugin that adds support for a broad class of changes in datatypes, handling a large class of practical repair scenarios.
+
+\iffalse
+It makes progress on two challenges that the \sysname prototype had left open:
+
+\begin{enumerate}
+\item \sysname supported a very limited classes of changes in datatypes, namely those that do not change structure.
+Other existing tools for proof refactoring and repair developed since \sysname still supported only a predefined set of changes~\cite{robert2018, wibergh2019}. As my user study showed, none of these were informed by the current needs of proof engineers. %~\cite{replica}. TODO elaborate?
+\item \sysname, like other proof repair tools developed since, had only preliminary integration with typical proof engineering workflows~\cite{PGL-045, robert2018}. %, and may impose additional proof obligations like proving relations corresponding to changes~\cite{Ringer2019}. TODO include something from DEVOID
+\end{enumerate}
+\fi
+
+
+%The result is a flexible proof repair tool that: 
+
+%\begin{enumerate}
+%\item supports changes in types informed by proof engineers and not supported by other tools, and
+%\item suggests tactic scripts and proves relations corresponding to certain changes for better workflow integration.
+%\end{enumerate}
+
+\iffalse
+\mysubsubsec{Addressing Challenge 1: Flexible Type Support}
+The case studies in Section~\ref{sec:search}---summarized in Table~\ref{fig:changes} on page~\pageref{fig:changes}---show that \toolname is flexible enough to support
+a wide range of proof engineering use cases. % can support a flexible class of changes informed by the needs of proof engineers within a unified framework.
+In general, \toolname can support any change described by an equivalence, though it takes the equivalence in a
+deconstructed form that we call a \textit{configuration}.
+The configuration expresses to the proof term transformation how to translate functions and proofs defined over the old version of a type
+to refer only to the new version, and how to do so in a way that does not break definitional equality.
+The proof engineer can write this configuration in Coq and feed it to \toolname (\textit{manual configuration} in Table~\ref{fig:changes}),
+configuring \toolname to support the change. %from directly within Coq.
+
+\mysubsubsec{Addressing Challenge 2: Workflow Integration}
+Research on workflow integration for proof repair tools is in its infancy.
+\toolname is built with workflow integration in mind.
+For example, \toolname is the only proof repair tool we are aware of that produces suggested proof scripts (rather than proof terms) for repaired proofs,
+a challenge highlighted in existing proof repair work~\cite{pumpkinpatch, robert2018} and in 
+a survey of proof engineering~\cite{PGL-045}.
+In addition, \toolname implements search procedures that 
+automatically discover configurations and prove the equivalences they induce for four different classes of 
+changes (\textit{automatic configuration} in Table~\ref{fig:changes}),
+decreasing the burden of proof obligations imposed on the proof engineer.
+Our partnership with an industrial proof engineer has informed other changes to further improve workflow integration
+(Sections~\ref{sec:implementation} and~\ref{sec:search}).
+
+\begin{figure}
+%\includegraphics[width=\columnwidth]{workflowa.pdf}
+\includegraphics[width=\columnwidth]{workflowa.pdf}
+\vspace{-0.7cm}
+\caption{The workflow for \toolname.}
+\vspace{-0.1cm}
+\label{fig:system}
+\end{figure}
+
+\mysubsubsec{Bringing it Together}
+Figure~\ref{fig:system} shows how this comes together when the proof engineer invokes \toolname:
+
+\begin{enumerate}
+\item The proof engineer \textbf{Configure}s \toolname, either manually or automatically.
+\item The configured \textbf{Transform} transforms the old proof term into the new proof term.
+\item \textbf{Decompile} suggests a new proof script. % given the new proof term.
+\end{enumerate}
+There are currently four search procedures for automatic configuration implemented in \toolname (see Table~\ref{fig:changes} on page~\pageref{fig:changes}).
+%All four search procedures generate equivalence proofs as in Figure~\ref{fig:equivalence} automatically (\href{https://github.com/uwplse/pumpkin-pi/%blob/master/plugin/src/automation/search/search.ml}{search.ml} and \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/src/automation/search/equivalence.ml}{equivalence.ml}),
+%then configure (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/src/automation/lift/liftconfig.ml}{liftconfig.ml}) the transformation %to those equivalences.
+Manual configuration makes it possible
+for the proof engineer to configure the transformation to any equivalence,
+even without a search procedure.
+Section~\ref{sec:search} shows examples of both workflows applied to real scenarios.
+\fi
+
+
+\iffalse
+
+% From PUMPKIN PATCH intro:
+\sysname implements an \textit{example-based} approach to proof repair in response to breaking changes in the content of programs and specifications,
+so called because of its resemblence to programming by example in the domain of program synthesis~\cite{DBLP:journals/ftpl/GulwaniPS17}.
+In this approach, the proof engineer provides an \textit{example} of how to adapt a proof to a breaking change.
+A tool then generalizes the example adaptation into a \textit{reusable patch} that the proof engineer can use to fix other proofs broken by that change.
+In this way, example-based proof repair is a new form of proof automation that accounts for how breaking changes in programs and specifications
+are reflected in repairs to the proofs they break.
+
+In other words, in the frame of the thesis, example-based proof repair extracts information from changes in proofs,
+then generalizes it to information corresponding to changes in the programs and specifications that broke those proofs to begin with (Section~\ref{sec:pumpkin-approach}).
+This extraction and generalization works at the level of proof terms, through a combination of a novel semantic differencing algorithm over proof terms (Section~\ref{sec:pumpkin-diff}) and 
+a suite of semantics-aware proof term transformations (Section~\ref{sec:pumpkin-trans}).
+\sysname automates this process (Section~\ref{sec:pumpkin-impl}).
+Case studies show retroactively that \sysname could have saved work for proof engineers
+on major proof developments (Section~\ref{sec:pumpkin-results}).
+\fi
 
 So in other words, the information from those changes is carried in the difference between the old and new version of the changed datatype, possibly with some user input.
 
 PUMPKIN Pi generalizes that information and applies it automatically.
 
 The work saved is shown on a lot of case studies (see Table from PUMPKIN Pi).
+
+
 
 \input{often/motivating}
 

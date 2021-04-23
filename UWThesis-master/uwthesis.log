@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 APR 2021 09:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  23 APR 2021 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2139,7 +2139,7 @@ chapter 4.
 LaTeX Warning: Reference `sec:scope' on page 63 undefined on input line 13.
 
 [63]
-<often/workflowa.pdf, id=1534, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1537, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 29.
@@ -2356,7 +2356,12 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [104] [105
+)) (./uwthesis.ind [104]
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--5
+[]| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []17[], []19[],
+ []
+
+[105
 
 
 
@@ -2367,8 +2372,7 @@ l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
 
 
 
-] [107] [108] [109]
-[110] [111] [112] [113] [114]
+] [107] [108] [109] [110] [111] [112] [113] [114]
 Underfull \hbox (badness 1163) in paragraph at lines 572--578
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2424,11 +2428,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
- 49931 strings out of 492609
- 1006403 string characters out of 6129033
+ 49939 strings out of 492609
+ 1006472 string characters out of 6129033
  1292341 words of memory out of 5000000
- 50772 multiletter control sequences out of 15000+600000
- 631955 words of font info for 763 fonts, out of 8000000 for 9000
+ 50774 multiletter control sequences out of 15000+600000
+ 632213 words of font info for 767 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2448,10 +2452,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (127 pages, 1504804 bytes).
+Output written on uwthesis.pdf (127 pages, 1506385 bytes).
 PDF statistics:
- 2857 PDF objects out of 2984 (max. 8388607)
- 2658 compressed objects within 27 object streams
- 1414 named destinations out of 1440 (max. 500000)
+ 2865 PDF objects out of 2984 (max. 8388607)
+ 2666 compressed objects within 27 object streams
+ 1415 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

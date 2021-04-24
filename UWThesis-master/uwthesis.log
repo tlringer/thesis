@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2177,79 +2177,75 @@ LaTeX Warning: Reference `pi:approach' on page 67 undefined on input line 195.
 
 [67] [68]) (./often/differencing.tex [69] [70] [71] (./often/nattobin.tex)
 (./often/nattobin.tex)
-Overfull \hbox (5.2102pt too wide) in paragraph at lines 179--190
+Overfull \hbox (5.2102pt too wide) in paragraph at lines 180--191
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [72] [73]
-Overfull \hbox (48.09023pt too wide) in paragraph at lines 267--268
+Overfull \hbox (48.09023pt too wide) in paragraph at lines 268--269
 [][][][]  
  []
 
 [74]
-Overfull \hbox (6.1325pt too wide) in paragraph at lines 303--312
+Overfull \hbox (6.1325pt too wide) in paragraph at lines 304--313
 [] []\OT1/pplj/m/sc/10.95 (-20) e q u i v -a -l e n c e[] \OT1/pplj/m/n/10.95 (
 -20) To pre-serve the equiv-a-lence (Fig-ure []29[], left), []
  []
 
-
-LaTeX Warning: Citation `Ringer2019' on page 75 undefined on input line 340.
-
 [75]
 
-LaTeX Warning: Reference `sec:example' on page 76 undefined on input line 369.
+LaTeX Warning: Reference `sec:example' on page 76 undefined on input line 361.
 
 [76] [77]
-Overfull \hbox (2.41995pt too wide) in paragraph at lines 476--500
+Overfull \hbox (2.41995pt too wide) in paragraph at lines 468--492
 []$[]$  $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--530
+Underfull \hbox (badness 10000) in paragraph at lines 498--522
 []$[]$
  []
 
-[78]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 553.
+LaTeX Font Warning: Command \small invalid in math mode on input line 545.
 
 
-Overfull \hbox (57.78168pt too wide) in paragraph at lines 552--588
+Overfull \hbox (57.78168pt too wide) in paragraph at lines 544--580
  [][] 
  []
 
 
-Overfull \hbox (54.74294pt too wide) in paragraph at lines 552--588
+Overfull \hbox (54.74294pt too wide) in paragraph at lines 544--580
  [][] 
  []
 
-[79] [80]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 650
+[78] [79] [80]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 642
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 650.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 642.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 650.
+(Font)              for symbol `textbraceleft' on input line 642.
 
 
-Overfull \hbox (10.49026pt too wide) in paragraph at lines 654--662
+Overfull \hbox (10.49026pt too wide) in paragraph at lines 646--654
 \OT1/pplj/m/n/10.95 (-20) Figure []33[] shows the in-ter-est-ing deriva-tions f
 or the judg-ment $[]$
  []
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 666.
+LaTeX Font Warning: Command \small invalid in math mode on input line 658.
 
 
-Overfull \hbox (59.9401pt too wide) in paragraph at lines 665--693
+Overfull \hbox (59.9401pt too wide) in paragraph at lines 657--685
  [][] 
  []
 
 
-Overfull \hbox (56.84816pt too wide) in paragraph at lines 665--693
+Overfull \hbox (56.84816pt too wide) in paragraph at lines 657--685
  [][] 
  []
 
@@ -2464,10 +2460,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
- 49996 strings out of 492609
- 1007410 string characters out of 6129033
- 1291620 words of memory out of 5000000
- 50807 multiletter control sequences out of 15000+600000
+ 49998 strings out of 492609
+ 1007474 string characters out of 6129033
+ 1291722 words of memory out of 5000000
+ 50811 multiletter control sequences out of 15000+600000
  632729 words of font info for 775 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2488,10 +2484,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1518350 bytes).
+Output written on uwthesis.pdf (129 pages, 1518515 bytes).
 PDF statistics:
- 2926 PDF objects out of 2984 (max. 8388607)
- 2724 compressed objects within 28 object streams
- 1429 named destinations out of 1440 (max. 500000)
+ 2925 PDF objects out of 2984 (max. 8388607)
+ 2723 compressed objects within 28 object streams
+ 1427 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

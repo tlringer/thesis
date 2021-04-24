@@ -197,27 +197,40 @@ In total, \toolnamec currently implements four search procedures for automatic c
 I will explain these more in Sections~\ref{sec:pi-diff} and~\ref{sec:pi-implementation}.
 Each search procedure automates differencing for an entire class of changes that correspond to type equivalences. 
 
+Manual configuration makes it possible for the proof engineer to skip differencing, so that \toolnamec is not limited by the 
+search procedures currently implemented.
 Manual configuration supports any change that can be described by a type equivalence.
-To configure \toolnamec manually, the proof engineer can run \toolnamec's \lstinline{Configure repair} command before invoking \lstinline{Repair},
-and pass it the equivalence herself.
+To configure \toolnamec manually, the proof engineer can pass the equivalence to \toolnamec's \lstinline{Configure repair} command before invoking \lstinline{Repair}.
 This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
 
 \paragraph{Summary}
 
-Differencing takes as inputs $\ldots$ and returns $\ldots$:
+In summary, differencing has the following specification:
 
 \begin{itemize}
-\item \textbf{Inputs}: $\ldots$, assuming:
+\item \textbf{Inputs}: Types \Aa\ and \B, assuming:
 \begin{itemize}
-\item $\ldots$
+\item there is a type equivalence describing the change from \Aa to \B (possibly with some new information) and
+\item the corresponding change is in a class currently supported by a search procedure for automatic configuration.
 \end{itemize}
-\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\item \textbf{Outputs}:
 \begin{itemize}
-\item $\ldots$
+\item functions \lstinline{f} and \lstinline{g},
+\item proofs \lstinline{section} and \lstinline{retraction}, and
+\item a configuration $c$,
+\end{itemize}
+guaranteeing:
+\begin{itemize}
+\item \lstinline{f} and \lstinline{g} form an equivalence that describes the change from \Aa to \B (possibly with some new information),
+\item \lstinline{section} and \lstinline{retraction} prove the equivalence between \lstinline{f} and \lstinline{g}, and
+\item $c$ is a decomposition of the equivalence.
 \end{itemize}
 \end{itemize}
-
-other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
+Section~\ref{sec:pi-diff} describes what it means for $c$ to be a decomposition of the equivalence,
+and proves that every configuration corresponds to an equivalence, and similarly in the opposite direction.
+Manual configuration takes in the configuration directly.
+In either case, the transformation uses this configuration to automatically repair proofs in response to the change
+from \Aa to \B that the equivalence correponds to.
 
 \subsection{Transformation: Transport with a Twist}
 \label{sec:pi-spec-trans}

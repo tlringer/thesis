@@ -11,9 +11,11 @@ since \Aa may be an old version of an updated type.
 
 The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically patch broken proofs in response to a broad class of changes in datatypes.
 \toolnamec in particular repairs proofs in response to changes in types that correspond to \textit{type equivalences}~\cite{univalent2013homotopy},
-or pairs of functions that map between two types (possibly with some additional information) and are mutual inverses (Section~\ref{sec:scope}).\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
+or pairs of functions that map between two types (possibly with some additional information) and are mutual inverses (Section~\ref{sec:pi-scope}).\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the changed datatype.
-\toolnamec can extract and generalize that information, then apply it to fix other broken proofs.
+With automatic configuration, \toolname can extract and generalize that information to a type equivalence, then apply it to fix other broken proofs.
+With manual configuration, the human extracts and generalizes the information corresponding to the change, but \toolnamec can still apply it
+to fix other broken proofs.
 
 Like the original \sysname prototype, it also does this using a combination of differencing and proof term transformations.
 The corresponding differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.
@@ -21,7 +23,8 @@ When they succeed, the diff that they find is that type equivalence.
 The proof engineer can also pass the type equivalence to \toolnamec directly, effectively doing differencing by hand.
 In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the dataype
 directly to a proof term defined over the new version of the datatype.
-(Mention decompiler briefly, tease implementation section and case studies, say something cute.)
+\toolnamec further supports proof script integration and other features for better workflow integration (Section~\ref{pi-implementation}),
+with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
 
 \subsection{Workflow: Configure, Transform, Decompile}
 \label{sec:pi-workflow}
@@ -103,7 +106,7 @@ from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatical
 To give some intuition for what kinds of changes can be described by equivalences, we preview two changes below.
 See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
 
-\mysubsubsec{Factoring out Constructors}
+\paragraph{Factoring out Constructors}
 Consider changing the type \lstinline{I} to the type \lstinline{J} 
 in Figure~\ref{fig:equivalence2}.
 \lstinline{J} can be viewed as \lstinline{I} with its two constructors \lstinline{A} and \lstinline{B} pulled out to a
@@ -140,7 +143,7 @@ and repairing proofs of De Morgan's laws. % constr_refactor.v
 %Otherwise, they behave the same way as the functions and proofs over \lstinline{I} up to the equivalence between
 %\lstinline{I} and \lstinline{J}---Section~\ref{sec:repair} explains this intuition more formally.
 
-\mysubsubsec{Adding a Dependent Index}
+\paragraph{Adding a Dependent Index}
 At first glance, the word \textit{equivalence} may seem to imply that \toolnamec can support only changes in
 which the proof engineer does not add or remove information.
 But equivalences are more powerful than they may seem.
@@ -163,6 +166,8 @@ when those changes can be expressed as equivalences between $\Sigma$ types or su
 
 \subsection{Differencing: Equivalences from Changes}
 \label{sec:pi-spec-diff}
+
+\paragraph{Summary}
 
 Differencing takes as inputs $\ldots$ and returns $\ldots$:
 
@@ -206,6 +211,13 @@ The original \lstinline{rev_app_distr} is equal to the repaired proof up to tran
 since both prove the same thing the same way up to the equivalence, and up to the changes in \lstinline{++}
 and \lstinline{rev}.
 
+Transport typically works by applying the functions that make up the equivalence to convert
+inputs and outputs between types.
+This approach would not be suitable for repair, since it does not make it possible to remove the old type \Aa.
+\toolnamec implements transport in a way that allows for removing references to \Aa---by proof term transformation.
+
+\paragraph{Summary}
+
 The transformation takes as input $\ldots$ and returns $\ldots$:
 
 \begin{itemize}
@@ -218,12 +230,7 @@ The transformation takes as input $\ldots$ and returns $\ldots$:
 \item $\ldots$
 \end{itemize}
 \end{itemize}
-
 other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
 
-Transport typically works by applying the functions that make up the equivalence to convert
-inputs and outputs between types.
-This approach would not be suitable for repair, since it does not make it possible to remove the old type \Aa.
-\toolnamec implements transport in a way that allows for removing references to \Aa---by proof term transformation.
 
 

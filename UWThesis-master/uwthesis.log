@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 08:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 08:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2152,20 +2152,22 @@ LaTeX Warning: Reference `sec:pi-approach' on page 62 undefined on input line 4
 (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex) [62]
 [63]) (./often/approach.tex
 
-LaTeX Warning: Reference `sec:scope' on page 64 undefined on input line 14.
+LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
+ 26.
 
-<often/workflowa.pdf, id=1531, 799.98875pt x 348.30125pt>
+[64]
+<often/workflowa.pdf, id=1542, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
-Package pdftex.def Info: often/workflowa.pdf  used on input line 30.
+Package pdftex.def Info: often/workflowa.pdf  used on input line 33.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
-[64]
 
-LaTeX Warning: Reference `sec:search' on page 65 undefined on input line 49.
+
+LaTeX Warning: Reference `sec:search' on page 65 undefined on input line 52.
 
 (./often/equivproof.tex) (./often/equivproof.tex) (./often/equiv2.tex)
 (./often/equiv2.tex) (./often/listtovect.tex) (./often/listtovect.tex)
-Overfull \hbox (22.57913pt too wide) in paragraph at lines 86--94
+Overfull \hbox (22.57913pt too wide) in paragraph at lines 89--97
 []$[]$  $[]$
  []
 
@@ -2173,15 +2175,14 @@ Overfull \hbox (22.57913pt too wide) in paragraph at lines 86--94
 
 LaTeX Warning: Citation `Ringer2019' on page 68 undefined on input line 37.
 
-[68]
 
-LaTeX Warning: Reference `sec:generic' on page 69 undefined on input line 41.
+LaTeX Warning: Reference `sec:generic' on page 68 undefined on input line 41.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 69 undefined on input lin
+LaTeX Warning: Reference `sec:implementation' on page 68 undefined on input lin
 e 43.
 
-[69]
+[68] [69]
 
 LaTeX Warning: Reference `sec:search' on page 70 undefined on input line 96.
 
@@ -2204,7 +2205,7 @@ LaTeX Warning: Citation `Ringer2019' on page 74 undefined on input line 343.
 
 LaTeX Warning: Reference `sec:example' on page 75 undefined on input line 372.
 
-[75]
+[75] [76]
 Overfull \hbox (2.41995pt too wide) in paragraph at lines 479--503
 []$[]$  $[]$
  []
@@ -2214,7 +2215,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 509--533
 []$[]$
  []
 
-[76] [77]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 556.
 
@@ -2228,7 +2228,7 @@ Overfull \hbox (54.74294pt too wide) in paragraph at lines 555--591
  [][] 
  []
 
-[78] [79]
+[77] [78] [79]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 653
 .
 LaTeX Font Info:    No file OMScmtt.fd. on input line 653.
@@ -2459,8 +2459,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
  49963 strings out of 492609
- 1006933 string characters out of 6129033
- 1323073 words of memory out of 5000000
+ 1006941 string characters out of 6129033
+ 1339073 words of memory out of 5000000
  50794 multiletter control sequences out of 15000+600000
  632213 words of font info for 767 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2482,10 +2482,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1510078 bytes).
+Output written on uwthesis.pdf (129 pages, 1510518 bytes).
 PDF statistics:
- 2892 PDF objects out of 2984 (max. 8388607)
- 2691 compressed objects within 27 object streams
+ 2895 PDF objects out of 2984 (max. 8388607)
+ 2694 compressed objects within 27 object streams
  1419 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

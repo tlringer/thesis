@@ -46,7 +46,7 @@ At a high level, the configuration helps the transformation achieve two goals:
 \item preserve equality up to transport across the equivalence between \Aa and \B (Section~\ref{sec:pi-diff-equiv}), and 
 \item produce well-typed terms (Section~\ref{sec:pi-diff-equal}).
 \end{enumerate}
-This configuration is a pair of pairs:
+To differencing, this configuration is a pair of pairs of terms:
 
 \begin{lstlisting}
 ((DepConstr, DepElim), (Eta, Iota))(@\vspace{-0.05cm}@)
@@ -56,7 +56,7 @@ each of which corresponds to one of the two goals:
 \lstinline{Eta} and \lstinline{Iota} define how to transform $\eta$-expansion and $\iota$-reduction of constructors and eliminators, thereby producing well-typed terms.
 
 Formally, every correct configuration corresponds to an initial algebra of an endofunctor,
-and correctness---that every configuration induces an equivalence, and similarly in the opposite direction---follows by Lambek's theorem (Section~\ref{sec:art}).\footnote{When I met with Michael Schulman over coffee in San Diego a few years ago, he at various points said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
+and correctness---that every configurations and equivalences are isomorphic---follows by Lambek's theorem (Section~\ref{sec:art}).\footnote{When I met with Michael Schulman over coffee in San Diego a few years ago, he at various points said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
 Anders M\"{o}rtberg and Carlo Angiuli identified this connection, and Carlo explained it to me in great detail.
 It is quite beautiful!}  % TODO
 Each search procedure for automatic configuration produces both the configuration and the equivalence that it induces (Section~\ref{sec:proc}).
@@ -72,9 +72,9 @@ I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
 \subsection{Preserving the Equivalence}
 \label{sec:pi-diff-equiv}
 
-To preserve the equivalence, the configuration ports terms over \Aa to terms over \B by viewing each
+To preserve the equivalence, the configuration maps terms over \Aa to terms over \B by viewing each
 term of type \B as if it were an \Aa.
-This way, the rest of the transformation can replace values of \Aa with values of \B, and
+This way, the transformation in Section~\ref{sec:pi-trans} can replace values of \Aa with values of \B, and
 inductive proofs about \Aa with inductive proofs about \B, %, then recursively transform
 %subterms 
 all without changing the order or number of arguments.
@@ -84,7 +84,7 @@ and \lstinline{DepElim} (\textit{dependent constructors} and \textit{eliminators
 These describe how to construct and eliminate \Aa and \B, wrapping the types with a common inductive structure.
 The transformation requires the same number of dependent constructors and cases in dependent eliminators for \Aa and \B,
 even if \Aa and \B are types with different numbers of constructors
-(\Aa and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:search}).
+(\Aa and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:pi-results}).
 
 For the \lstinline{list} change from Section~\ref{sec:overview},
 the configuration that \toolnamec discovers uses the dependent constructors
@@ -121,9 +121,9 @@ DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=(@\vspac
 In both these examples, the interesting work moves into the configuration:
 the configuration for the first swaps constructors and cases,
 and the configuration for the second maps constructors and cases over \lstinline{list} to constructors and cases over \lstinline{packed_vect}. %packs constructors and eliminates projections.
-That way, the transformation need not add, drop, or reorder arguments.
+That way, the transformation need not add, drop, or reorder arguments---it can truly be generic over type equivalences.
 %In essence, all of the difficult work moves into the configuration.
-Furthermore, both examples use automatic configuration, so \toolnamec's \textbf{Configure} component 
+Furthermore, both examples use automatic configuration, so differencing in \toolnamec's \textbf{Configure} component
 discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \Aa and \B, taking care of even the difficult work.
 
 \subsection{Producing Well-Typed Terms}
@@ -135,7 +135,7 @@ CIC$_{\omega}$ distinguishes between two important kinds of equality: those that
 That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they reduce to the same normal form,
 and propositionally equal if there is a proof that \lstinline{t = t'} using the inductive
 equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
-the converse is not in general true.
+the converse is not in general true. % TODO this should probably go into an earlier section
 
 When a datatype changes, sometimes, definitional equalities defined over the old version of that type must become propositional.
 A naive proof term transformation may fail to generate well-typed terms if it does not account for this.
@@ -154,7 +154,7 @@ The configuration for the change from \lstinline{list} to \lstinline{packed_vect
 It uses $\eta$-expansion for $\Sigma$:
 
 \begin{lstlisting}
-Eta(packed_vect) := $\lambda$(s:packed_vect).$\exists$ ($\pi_l$ s) ($\pi_r$ s).(@\vspace{-0.05cm}@)
+  Eta(packed_vect) := $\lambda$(s:packed_vect).$\exists$ ($\pi_l$ s) ($\pi_r$ s).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 which is propositional and not definitional in Coq.
 Thanks to this, we can forego the assumption that our language has primitive projections (definitional $\eta$ for $\Sigma$).
@@ -181,7 +181,7 @@ of \lstinline{DepElim} on the corresponding case.
 This is needed, for example, to port proofs about unary numbers \lstinline{nat} to
 proofs about binary numbers \lstinline{N} (Figure~\ref{fig:nattobin}).
 While we can define \lstinline{DepConstr} and \lstinline{DepElim} to induce an equivalence
-between them~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, % nonorn.v
+between them~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, % nonorn.v (TODO update links throughout)
 we run into trouble reasoning about applications of \lstinline{DepElim},
 since proofs about \lstinline{nat} that hold by reflexivity do not necessarily hold by reflexivity over \lstinline{N}. 
 For example, in Coq, while \lstinline{S (n + m)  = S n + m} holds by reflexivity over \lstinline{nat},
@@ -193,37 +193,37 @@ For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
 $\iota$-reduction is definitional over \lstinline{nat}, since a proof of:
 
 \begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-  DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
+    DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
+    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 holds by reflexivity.
 \lstinline{Iota} for \lstinline{nat} in the \lstinline{S} case is a rewrite by that proof by reflexivity~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
 with type:
 
 \begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-  Iota(1, nat, Q) :(@\vspace{-0.04cm}@)
-    Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
-    Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
+    Iota(1, nat, Q) :(@\vspace{-0.04cm}@)
+      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
+      Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 In contrast, $\iota$ for \lstinline{N} is propositional, since the 
 theorem: %over \lstinline{N}:
 
 \begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-  DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-  (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
+    DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
+    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 no longer holds by reflexivity.
 \lstinline{Iota} for \lstinline{N} is a rewrite by the propositional equality that proves this theorem~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
 with type:
 
 \begin{lstlisting}
-$\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, N) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-  Iota(1, N, Q) :(@\vspace{-0.04cm}@)
-    Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
-    Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, N) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
+    Iota(1, N, Q) :(@\vspace{-0.04cm}@)
+      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
+      Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 By replacing \lstinline{Iota} over \lstinline{nat} with \lstinline{Iota} over \lstinline{N},
 the transformation replaces rewrites by reflexivity over \lstinline{nat} to rewrites by propositional equalities over \lstinline{N}.
@@ -240,10 +240,6 @@ then definitional $\iota$ over one would become propositional $\iota$ over the o
 
 \subsection{Configurations as Initial Algebras}
 \label{sec:art}
-
-(Carlo theory will go here: basically the names aren't coincidences, it's because this corresponds
-to an initial algebra, so it's more natural when you have inductive types but more general than that.
-Draw diagram, explain what each part corresponds to.)
 
 \begin{figure*}
 \begin{minipage}{0.43\textwidth}
@@ -285,6 +281,10 @@ of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).}
 \label{fig:spec}
 \end{figure*}
 
+(Carlo theory will be integrated into here when I have time: basically the names aren't coincidences, it's because this corresponds
+to an initial algebra, so it's more natural when you have inductive types but more general than that.
+Draw diagram, explain what each part corresponds to. Explain that correctness is just Lambek's!)
+
 Choosing a configuration necessarily depends in some way on the proof engineer's intentions:
 there can be infinitely many equivalences that correspond to a 
 change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \Aa is equivalent to \lstinline{unit} refined by \Aa). % refine_unit.v
@@ -299,7 +299,7 @@ Figure~\ref{fig:spec} specifies the correctness criteria for the configuration.
 These criteria relate \lstinline{DepConstr}, \lstinline{DepElim}, \lstinline{Eta}, and \lstinline{Iota}
 in a way that preserves equivalence coherently with equality.
 
-\mysubsubsec{Equivalence}
+\paragraph{Equivalence}
 To preserve the equivalence (Figure~\ref{fig:spec}, left), \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
 (\lstinline{section} and \lstinline{retraction} must hold for \lstinline{f} and \lstinline{g}).
 \lstinline{DepConstr} over \Aa and \B must be equal up to transport across that equivalence (\lstinline{constr_ok}), 
@@ -310,7 +310,7 @@ as doing so will preserve equality up to transport for those subterms.
 This makes it possible for the transformation
 to avoid applying \lstinline{f} and \lstinline{g}, instead porting terms from \Aa directly to \B.
 
-\mysubsubsec{Equality}
+\paragraph{Equality}
 To ensure coherence with equality (Figure~\ref{fig:spec}, right),
 \lstinline{Eta} and \lstinline{Iota} must prove $\eta$ and $\iota$.
 That is, \lstinline{Eta} must have the same definitional behavior as the dependent eliminator (\lstinline{elim_eta}),
@@ -319,7 +319,7 @@ Each \lstinline{Iota} must prove and rewrite along the simplification (\textit{r
 This makes it possible for the transformation to
 avoid applying \lstinline{section} and \lstinline{retraction}.
 
-\mysubsubsec{Correctness}
+\paragraph{Correctness}
 With these correctness criteria for a configuration, we get the completeness result (proven in Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/arbitrary.v}{\circled{8}}) that every equivalence induces a configuration. % arbitrary.v
 We also obtain an algorithm for the soundness result that every configuration induces an equivalence.
 

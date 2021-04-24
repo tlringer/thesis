@@ -1,7 +1,8 @@
 \begin{theindex}
 
   \item Conventions
-    \subitem Primitive Eliminators, \hyperpage{17}, \hyperpage{19, 20}
+    \subitem Primitive Eliminators, \hyperpage{17}, \hyperpage{19, 20}, 
+		\hyperpage{71}
 
   \indexspace
 
@@ -14,6 +15,6 @@
 
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{14}, 
-		\hyperpage{18}
+		\hyperpage{18}, \hyperpage{71}
 
 \end{theindex}

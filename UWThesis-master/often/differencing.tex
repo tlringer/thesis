@@ -31,41 +31,21 @@ DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ } : P l :=(@\vspace{-0.0
 \label{fig:listconfig}
 \end{figure*}
 
-At the heart of \toolnamec is a configurable proof term transformation for transporting
-proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
-It is a generalization of the transformation from an earlier version of \toolnamec called
-\textsc{Devoid}~\cite{Ringer2019}, which solved this problem a particular class of equivalences.
-
-The transformation takes as input a deconstructed equivalence that we call a \textit{configuration}.
-This section introduces the configuration (Section~\ref{sec:configurable}),
-defines the transformation that builds on that (Section~\ref{sec:generic}),
-then specifies correctness criteria for the configuration (Section~\ref{sec:art}).
-Section~\ref{sec:implementation} describes the additional work needed to implement this transformation.
-
-\mysubsubsec{Conventions}
-All terms that we introduce in this section are in the Calculus of Inductive Constructions (CIC$_{\omega}$), the type theory
-that Coq's proof term language Gallina implements.
-CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that depend on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}. CIC$_{\omega}$ extends CoC with
-inductive types~\cite{inductive}.
-Inductive types are defined solely by their constructors (like \lstinline{nil} and \lstinline{cons} for \lstinline{list}) and eliminators (like the induction principle for \lstinline{list}); this section assumes that these eliminators are primitive.
-
-The syntax for CIC$_{\omega}$ with primitive eliminators is in Figure~\ref{fig:syntax}.
-The typing rules are standard.
-We assume inductive types $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
-and an equality type \lstinline{=} with constructor \lstinline{eq_refl}.
-We use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
-
-\subsection{The Configuration}
-\label{sec:configurable}
-
+Differencing---whether done by the tool (automatic configuration) or by the proof engineer (manual configuration)---identifies 
+and proves a type equivalence. But differening further decomposes that equivalence into a form called a \textit{configuration}. 
 The configuration is the key to building a proof term transformation that implements transport in a way that is suitable for repair.
+
 Each configuration corresponds to an equivalence \Aa $\simeq$ \B.
 It deconstructs the equivalence into things that talk about \Aa, and things that talk about \B.
 It does so in a way that hides details
 specific to the equivalence, like the order or number of arguments to an induction principle or type.
 
-At a high level, the configuration helps the transformation achieve two goals: preserve equality up to transport across the equivalence 
-between \Aa and \B, and produce well-typed terms.
+At a high level, the configuration helps the transformation achieve two goals: 
+
+\begin{enumerate}
+\item preserve equality up to transport across the equivalence between \Aa and \B (Section~\ref{sec:pi-diff-equiv}), and 
+\item produce well-typed terms (Section~\ref{sec:pi-diff-equal}).
+\end{enumerate}
 This configuration is a pair of pairs:
 
 \begin{lstlisting}
@@ -74,13 +54,24 @@ This configuration is a pair of pairs:
 each of which corresponds to one of the two goals:
 \lstinline{DepConstr} and \lstinline{DepElim} define how to transform constructors and eliminators, thereby preserving the equivalence, and 
 \lstinline{Eta} and \lstinline{Iota} define how to transform $\eta$-expansion and $\iota$-reduction of constructors and eliminators, thereby producing well-typed terms.
-Each of these is defined in CIC$_{\omega}$ for each equivalence.
 
-Carlo theory will go here: basically the names aren't coincidences, it's because this corresponds
-to an initial algebra, so it's more natural when you have inductive types but more general than that.
-Draw diagram, explain what each part corresponds to.
+Formally, every correct configuration corresponds to an initial algebra of an endofunctor,
+and correctness---that every configuration induces an equivalence, and similarly in the opposite direction---follows by Lambek's theorem (Section~\ref{sec:art}).\footnote{When I met with Michael Schulman over coffee in San Diego a few years ago, he at various points said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
+Anders M\"{o}rtberg and Carlo Angiuli identified this connection, and Carlo explained it to me in great detail.
+It is quite beautiful!}  % TODO
+Each search procedure for automatic configuration produces both the configuration and the equivalence that it induces (Section~\ref{sec:proc}).
+Manual configuration takes as input the configuration directly.
 
-\mysubsubsec{Preserving the Equivalence}
+\paragraph{Conventions} All terms that I introduce in this section are in \kl{CIC$_{\omega}$} with \kl{primitive eliminators}
+%Recall that the syntax for CIC$_{\omega}$ with primitive eliminators is in Figures~\ref{fig:coc-syntax} and~\ref{fig:cic-syntax} in Section~\ref{sec:cic}
+%on page~\pageref{sec:cic}, and that the typing rules are standard and omitted. 
+I assume inductive types $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
+and an equality type \lstinline{=} with constructor \lstinline{eq_refl}.
+I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
+
+\subsection{Preserving the Equivalence}
+\label{sec:pi-diff-equiv}
+
 To preserve the equivalence, the configuration ports terms over \Aa to terms over \B by viewing each
 term of type \B as if it were an \Aa.
 This way, the rest of the transformation can replace values of \Aa with values of \B, and
@@ -135,7 +126,9 @@ That way, the transformation need not add, drop, or reorder arguments.
 Furthermore, both examples use automatic configuration, so \toolnamec's \textbf{Configure} component 
 discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \Aa and \B, taking care of even the difficult work.
 
-\mysubsubsec{Producing Well-Typed Terms}
+\subsection{Producing Well-Typed Terms}
+\label{sec:pi-diff-equal}
+
 The other configuration parts \lstinline{Eta} and \lstinline{Iota} deal with producing well-typed terms,
 in particular by transporting equalities.
 CIC$_{\omega}$ distinguishes between two important kinds of equality: those that hold by reduction (\textit{definitional} equality), and those that hold by proof (\textit{propositional} equality).
@@ -245,9 +238,12 @@ then if $\iota$ is definitional for \Aa, it will be possible to choose
 Otherwise, if \Aa and \B (like \lstinline{nat} and \lstinline{N}) have different inductive structures,
 then definitional $\iota$ over one would become propositional $\iota$ over the other.
 
-\subsection{Specifying Correct Configurations}
+\subsection{Configurations as Initial Algebras}
 \label{sec:art}
 
+(Carlo theory will go here: basically the names aren't coincidences, it's because this corresponds
+to an initial algebra, so it's more natural when you have inductive types but more general than that.
+Draw diagram, explain what each part corresponds to.)
 
 \begin{figure*}
 \begin{minipage}{0.43\textwidth}

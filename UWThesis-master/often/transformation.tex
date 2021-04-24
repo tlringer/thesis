@@ -110,6 +110,15 @@ $\lambda$ (T : Type) (l m : (@\codediff{B}@)) .(@\vspace{-0.04cm}@)
 \label{fig:appswap1}
 \end{figure*}
 
+(Some redundant text right now.)
+At the heart of \toolnamec is a configurable proof term transformation for transporting
+proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
+The transformation takes as input a deconstructed equivalence that we call a \textit{configuration}.
+This section introduces the configuration (Section~\ref{sec:configurable}),
+defines the transformation that builds on that (Section~\ref{sec:generic}),
+then specifies correctness criteria for the configuration (Section~\ref{sec:art}).
+Section~\ref{sec:implementation} describes the additional work needed to implement this transformation.
+
 Figure~\ref{fig:final} shows the proof term transformation $\Gamma \vdash t \Uparrow t'$ that forms the core of \toolnamec.
 The transformation is parameterized over equivalent types \Aa and \B (\textsc{Equivalence})
 as well as the configuration.

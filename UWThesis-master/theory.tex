@@ -205,7 +205,7 @@ Note that whereas in Gallina we represent universal quantification over terms or
 \end{figure*}
 
 The syntax for CIC$_{\omega}$ is in Figure~\ref{fig:cic-syntax}), building on syntax from an existing paper~\cite{Timany2015FirstST};
-the type theory is standard and omitted. % TODO
+the typing rules are standard and omitted. % TODO
 CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive}.
 As in Gallina, inductive types are defined by their constructors and eliminators.
 Consider the inductive type \lstinline{nat} of unary natural numbers that we saw in Figure~\ref{fig:nat},
@@ -278,5 +278,21 @@ But it turns out this proof automation is a bit naive when it comes to \textit{m
 as programs and specifications change over time.
 Proof repair is a new form of proof automation for maintaining proofs: it uses the rich type information carried by proof terms
 to automatically fix broken proofs in response to change.
+
+\iffalse
+% TODO work in missing conventions somewhere
+\mysubsubsec{Conventions}
+All terms that we introduce in this section are in the Calculus of Inductive Constructions (CIC$_{\omega}$), the type theory
+that Coq's proof term language Gallina implements.
+CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that depend on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}. CIC$_{\omega}$ extends CoC with
+inductive types~\cite{inductive}.
+Inductive types are defined solely by their constructors (like \lstinline{nil} and \lstinline{cons} for \lstinline{list}) and eliminators (like the induction principle for \lstinline{list}); this section assumes that these eliminators are primitive.
+
+The syntax for CIC$_{\omega}$ with primitive eliminators is in Figure~\ref{fig:syntax}.
+The typing rules are standard.
+We assume inductive types $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
+and an equality type \lstinline{=} with constructor \lstinline{eq_refl}.
+We use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
+\fi
 
 

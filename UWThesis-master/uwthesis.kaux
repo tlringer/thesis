@@ -198,8 +198,10 @@
 \KAuxNewLinkScopetagInstance {sec:pi-diff}{document}
 \KAuxDeclaredScopeTag {fig:listconfig}
 \KAuxNewLinkScopetagInstance {fig:listconfig}{document}
-\KAuxDeclaredScopeTag {sec:configurable}
-\KAuxNewLinkScopetagInstance {sec:configurable}{document}
+\KAuxDeclaredScopeTag {sec:pi-diff-equiv}
+\KAuxNewLinkScopetagInstance {sec:pi-diff-equiv}{document}
+\KAuxDeclaredScopeTag {sec:pi-diff-equal}
+\KAuxNewLinkScopetagInstance {sec:pi-diff-equal}{document}
 \KAuxDeclaredScopeTag {fig:nattobin}
 \KAuxNewLinkScopetagInstance {fig:nattobin}{document}
 \KAuxDeclaredScopeTag {sec:art}

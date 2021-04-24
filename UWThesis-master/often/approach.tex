@@ -29,6 +29,20 @@ with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
 \subsection{Workflow: Configure, Transform, Decompile}
 \label{sec:pi-workflow}
 
+As with \sysname, the interface to \toolnamec is exposed to the proof engineer as a command.
+\toolnamec extends \sysnamelong with a new command called \lstinline{Repair},
+with the syntax:
+
+\begin{lstlisting}
+Repair old_type new_type in old_proof.
+\end{lstlisting}
+where \lstinline{old_type} and \lstinline{new_type} are the old and new 
+versions of the changed dataype, and \lstinline{old_proof} is the old version
+of the proof broken by that change in datatype.
+This invokes the \toolnamec plugin, which updates the old version of the proof to some new version of the proof
+defined over the new version of the datatype, then defines it as a new proof term and suggests a corresponding new proof script if successful.
+All terms that \toolnamec defines are type checked in the end, so \toolnamec does not extend the TCB.
+
 \begin{figure}
 \includegraphics[width=\columnwidth]{often/workflowa.pdf}
 \vspace{-0.7cm}
@@ -37,7 +51,6 @@ with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
 \label{fig:system}
 \end{figure}
 
-% TODO need to tie this in with terminology differencing etc
 Figure~\ref{fig:system} shows how this comes together when the proof engineer invokes \toolnamec:
 
 \begin{enumerate}
@@ -49,12 +62,21 @@ There are currently four search procedures for automatic configuration implement
 Manual configuration makes it possible
 for the proof engineer to configure the transformation to any equivalence,
 even without a search procedure.
-Section~\ref{sec:search} shows examples of both workflows applied to real scenarios.
 
-% TODO make longer w/ example if needed
+The breaking change to Figure~\ref{fig:listswap} in Section~\ref{pi:approach}, for example, used automatic configuration.
+When we invoked \toolnamec:
+
+\begin{lstlisting}
+  Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
+\end{lstlisting}
+it invoked a search procedure that differenced \lstinline{Old.list} and \lstinline{New.list},
+then transformed \lstinline{rev_app_distr} to use \lstinline{New.list} in place of \lstinline{Old.list}.
+In the end, it suggested a proof script to us that we could use going forward.
 
 \subsection{Scope: Type Equivalences}
 \label{sec:pi-scope}
+
+(Left off here.)
 
 % TODO: Explain that differencing is what finds these type equivalences, or sometimes we do differencing ourselves
 

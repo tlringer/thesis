@@ -50,7 +50,7 @@ When we change the \lstinline{list} type, this proof no longer works.
 To repair this proof with \toolnamec, we run this command:
 
 \begin{lstlisting}
-Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
+  Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
 \end{lstlisting}
 assuming the old and new list types from Figure~\ref{fig:listswap} are in modules \lstinline{Old} and \lstinline{New}.
 This suggests a proof script that succeeds (in $\codeauto{light blue}$ to denote \toolnamec produces it automatically):

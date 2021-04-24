@@ -247,10 +247,10 @@ If $t$ is a function, then $t'$ behaves the same way modulo the equivalence;
 if $t$ is a proof, then $t'$ proves the same theorem the same way modulo the equivalence.
 
 When transport across $A \simeq B$ takes $t$ to $t'$,
-we say that $t$ and $t'$ are \textit{equal up to transport}
+I say that $t$ and $t'$ are \textit{equal up to transport}
 across that equivalence (denoted $t \equiv_{A \simeq B} t'$).\footnote{This notation should be interpreted in a metatheory with \textit{univalence}---a property that Coq lacks---or it should be approximated in Coq.
 The details of transport with univalence are in the Homotopy Type Theory book~\cite{univalent2013homotopy}, and an approximation in Coq is in the univalent parametricity framework paper~\cite{tabareau2017equivalences}. For equivalent \Aa and \B, there can be many equivalences $A \simeq B$.
-Equality up to transport is across a \textit{particular} equivalence, but we erase this in the 
+Equality up to transport is across a \textit{particular} equivalence, but I erase this in the 
 notation.}
 In Section~\ref{sec:overview}, the original append function \lstinline{++} over \lstinline{Old.list}
 and the repaired append function \lstinline{++} over \lstinline{New.list} that \toolnamec produces are
@@ -281,7 +281,7 @@ In summary, the transformation has the following specification:
 \item a proof term $t$,
 \end{itemize}
 assuming $c$ corresponds to a type equivalence describing the change from \Aa to \B (possibly with some new information).
-\item \textbf{Outputs}: $\ldots$, guaranteeing:
+\item \textbf{Outputs}: a proof term $t'$, guaranteeing:
 \begin{itemize}
 \item \smallmath{$t'$} refers to \B in place of \Aa, and
 \item $t$ and $t'$ are equal up to transport along the equivalence formed by $c$.
@@ -289,5 +289,5 @@ assuming $c$ corresponds to a type equivalence describing the change from \Aa to
 \end{itemize}
 This specification glazes over a few important issues, most notably that \B may refer to \Aa (so \toolnamec has specialized termination logic),
 and that it may be desirable to port only \textit{some} instances of \Aa to \B (but \toolnamec by default ports \textit{all} instances). 
-I discuss these more in Sections~\ref{sec:pi-trans} and~\ref{sec:pi-impl}.
+I discuss these more in Sections~\ref{sec:pi-trans} and~\ref{sec:pi-implementation}.
 

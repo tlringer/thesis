@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  24 APR 2021 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2175,18 +2175,22 @@ Overfull \hbox (22.57913pt too wide) in paragraph at lines 152--160
 
 LaTeX Warning: Reference `pi:approach' on page 67 undefined on input line 195.
 
-[67] [68]) (./often/differencing.tex
+[67] [68]
 
-LaTeX Warning: Citation `Ringer2019' on page 69 undefined on input line 37.
+LaTeX Warning: Reference `sec:pi-impl' on page 69 undefined on input line 292.
+
+) (./often/differencing.tex [69]
+
+LaTeX Warning: Citation `Ringer2019' on page 70 undefined on input line 37.
 
 
-LaTeX Warning: Reference `sec:generic' on page 69 undefined on input line 41.
+LaTeX Warning: Reference `sec:generic' on page 70 undefined on input line 41.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 69 undefined on input lin
+LaTeX Warning: Reference `sec:implementation' on page 70 undefined on input lin
 e 43.
 
-[69] [70]
+[70]
 
 LaTeX Warning: Reference `sec:search' on page 71 undefined on input line 96.
 
@@ -2196,12 +2200,12 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 186--197
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[72]
+[72] [73]
 Overfull \hbox (48.09023pt too wide) in paragraph at lines 275--276
 [][][][]  
  []
 
-[73] [74]
+[74]
 
 LaTeX Warning: Citation `Ringer2019' on page 75 undefined on input line 344.
 
@@ -2209,7 +2213,7 @@ LaTeX Warning: Citation `Ringer2019' on page 75 undefined on input line 344.
 
 LaTeX Warning: Reference `sec:example' on page 76 undefined on input line 373.
 
-[76]
+[76] [77]
 Overfull \hbox (2.41995pt too wide) in paragraph at lines 480--504
 []$[]$  $[]$
  []
@@ -2219,7 +2223,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--534
 []$[]$
  []
 
-[77] [78]
+[78]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 557.
 
@@ -2294,11 +2298,10 @@ LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 40.
 
 LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 46.
 
-[89]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 84.
 
-[90]
+[89] [90]
 
 LaTeX Warning: Reference `sec:second' on page 91 undefined on input line 156.
 
@@ -2465,8 +2468,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
  49978 strings out of 492609
- 1007170 string characters out of 6129033
- 1324177 words of memory out of 5000000
+ 1007172 string characters out of 6129033
+ 1293181 words of memory out of 5000000
  50803 multiletter control sequences out of 15000+600000
  632213 words of font info for 767 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2488,10 +2491,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1516397 bytes).
+Output written on uwthesis.pdf (129 pages, 1516878 bytes).
 PDF statistics:
- 2910 PDF objects out of 2984 (max. 8388607)
- 2708 compressed objects within 28 object streams
+ 2913 PDF objects out of 2984 (max. 8388607)
+ 2711 compressed objects within 28 object streams
  1425 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

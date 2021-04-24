@@ -106,28 +106,28 @@
 \contentsline {paragraph}{Summary}{68}{lstnumber.-169.1}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{68}{subsection.4.2.4}% 
 \contentsline {paragraph}{Summary}{69}{lstnumber.-170.2}% 
-\contentsline {section}{\numberline {4.3}Differencing}{69}{section.4.3}% 
+\contentsline {section}{\numberline {4.3}Differencing}{70}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}The Configuration}{70}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{73}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{74}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Search Procedures}{75}{subsection.4.3.3}% 
-\contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{75}{subsubsection.4.3.3.1}% 
+\contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{76}{subsubsection.4.3.3.1}% 
 \contentsline {paragraph}{Searching for the Indexer}{79}{figure.caption.33}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{81}{subsubsection.4.3.3.2}% 
-\contentsline {paragraph}{Core Search Algorithm}{81}{figure.caption.35}% 
+\contentsline {paragraph}{Core Search Algorithm}{82}{figure.caption.35}% 
 \contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{82}{subsubsection.4.3.3.3}% 
 \contentsline {paragraph}{Designing new Search Procedures}{82}{subsubsection.4.3.3.3}% 
 \contentsline {subsection}{\numberline {4.3.4}Limitations}{82}{subsection.4.3.4}% 
 \contentsline {section}{\numberline {4.4}Transformation}{82}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{85}{figure.caption.38}% 
-\contentsline {paragraph}{Lifting Constructors}{87}{figure.caption.40}% 
+\contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.40}% 
 \contentsline {paragraph}{Core Lifting Algorithm}{87}{lstnumber.-213.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{89}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{89}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{89}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{87}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{87}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{87}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{89}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{89}{subsubsection.4.5.2.1}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{89}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{90}{subsubsection.4.5.2.3}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{89}{subsubsection.4.5.2.3}% 
 \contentsline {section}{\numberline {4.6}Results}{93}{section.4.6}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{98}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{99}{chapter.5}% 

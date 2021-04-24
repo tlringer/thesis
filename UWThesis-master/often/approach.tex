@@ -196,11 +196,13 @@ in Section~\ref{pi:approach}, differencing discovered and proved the equivalence
 In total, \toolnamec currently implements four search procedures for automatic configuration;
 I will explain these more in Sections~\ref{sec:pi-diff} and~\ref{sec:pi-implementation}.
 Each search procedure automates differencing for an entire class of changes that correspond to type equivalences. 
+In the end, it returns a configuration that corresponds to the equivalence (see Section~\ref{sec:pi-diff} for details),
+along with the equivalence itself.
 
 Manual configuration makes it possible for the proof engineer to skip differencing, so that \toolnamec is not limited by the 
 search procedures currently implemented.
 Manual configuration supports any change that can be described by a type equivalence.
-To configure \toolnamec manually, the proof engineer can pass the equivalence to \toolnamec's \lstinline{Configure repair} command before invoking \lstinline{Repair}.
+To configure \toolnamec manually, the proof engineer can pass the configuration correspond to the equivalence to \toolnamec's \lstinline{Configure Repair} command before invoking \lstinline{Repair}.
 This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
 
 \paragraph{Summary}
@@ -208,9 +210,9 @@ This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https:/
 In summary, differencing has the following specification:
 
 \begin{itemize}
-\item \textbf{Inputs}: Types \Aa\ and \B, assuming:
+\item \textbf{Inputs}: types \Aa\ and \B, assuming:
 \begin{itemize}
-\item there is a type equivalence describing the change from \Aa to \B (possibly with some new information) and
+\item there is a type equivalence describing the change from \Aa to \B (possibly with some new information), and
 \item the corresponding change is in a class currently supported by a search procedure for automatic configuration.
 \end{itemize}
 \item \textbf{Outputs}:
@@ -222,20 +224,23 @@ In summary, differencing has the following specification:
 guaranteeing:
 \begin{itemize}
 \item \lstinline{f} and \lstinline{g} form an equivalence that describes the change from \Aa to \B (possibly with some new information),
-\item \lstinline{section} and \lstinline{retraction} prove the equivalence between \lstinline{f} and \lstinline{g}, and
+\item \lstinline{section} and \lstinline{retraction} prove that \lstinline{f} and \lstinline{g} form an equivalence, and
 \item $c$ is a decomposition of the equivalence.
 \end{itemize}
 \end{itemize}
+The new information for the change in Figure~\ref{fig:listtovect}, for example, is the length of the list.
+Differencing discovers the equivalence corresponding to this change, as well as a configuration $c$ that is a decomposition of this equivalence.
 Section~\ref{sec:pi-diff} describes what it means for $c$ to be a decomposition of the equivalence,
-and proves that every configuration corresponds to an equivalence, and similarly in the opposite direction.
-Manual configuration takes in the configuration directly.
-In either case, the transformation uses this configuration to automatically repair proofs in response to the change
-from \Aa to \B that the equivalence correponds to.
+and proves that this is possible for any equivalence.
+Manual configuration, on the other hand, takes in the configuration directly.
+In either case, the transformation uses this configuration to automatically repair broken proofs.
+
+ % TODO in impl, note that it's not quite just automatic and manual, but actually some automatic configurations take human guidance
 
 \subsection{Transformation: Transport with a Twist}
 \label{sec:pi-spec-trans}
 
-The goal of \toolnamec is to implement a kind of proof reuse known as \textit{transport}~\cite{univalent2013homotopy},
+\toolnamec repairs proofs in response to these changes by implementing a kind of proof reuse known as \textit{transport}~\cite{univalent2013homotopy},
 but in a way that is suitable for repair.
 Informally, transport takes a term $t$ and produces a term $t'$ that is the same as $t$ modulo an equivalence $A \simeq B$.
 If $t$ is a function, then $t'$ behaves the same way modulo the equivalence;
@@ -252,8 +257,8 @@ and the repaired append function \lstinline{++} over \lstinline{New.list} that \
 equal up to transport across the equivalence from Figure~\ref{fig:equivalence}, since (by \lstinline{app_ok}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}):
 
 \begin{lstlisting}
-$\forall$ T (l1 l2 : Old.list T),(@\vspace{-0.04cm}@)
-  swap T (l1 ++ l2) = (swap T l1) ++ (swap T l2).(@\vspace{-0.05cm}@)
+  $\forall$ T (l1 l2 : Old.list T),(@\vspace{-0.04cm}@)
+    swap T (l1 ++ l2) = (swap T l1) ++ (swap T l2).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 The original \lstinline{rev_app_distr} is equal to the repaired proof up to transport,
 since both prove the same thing the same way up to the equivalence, and up to the changes in \lstinline{++}
@@ -266,19 +271,23 @@ This approach would not be suitable for repair, since it does not make it possib
 
 \paragraph{Summary}
 
-The transformation takes as input $\ldots$ and returns $\ldots$:
+In summary, the transformation has the following specification:
 
 \begin{itemize}
-\item \textbf{Inputs}: $\ldots$, assuming:
+\item \textbf{Inputs}:
 \begin{itemize}
-\item $\ldots$
+\item types \Aa\ and \B,
+\item the configuration $c$, and
+\item a proof term $t$,
 \end{itemize}
+assuming $c$ corresponds to a type equivalence describing the change from \Aa to \B (possibly with some new information).
 \item \textbf{Outputs}: $\ldots$, guaranteeing:
 \begin{itemize}
-\item $\ldots$
+\item \smallmath{$t'$} refers to \B in place of \Aa, and
+\item $t$ and $t'$ are equal up to transport along the equivalence formed by $c$.
 \end{itemize}
 \end{itemize}
-other details like what is proven or whatever (here, maybe the list of differencing procedures actually supported?)
-
-
+This specification glazes over a few important issues, most notably that \B may refer to \Aa (so \toolnamec has specialized termination logic),
+and that it may be desirable to port only \textit{some} instances of \Aa to \B (but \toolnamec by default ports \textit{all} instances). 
+I discuss these more in Sections~\ref{sec:pi-trans} and~\ref{sec:pi-impl}.
 

@@ -100,18 +100,18 @@
 \contentsline {section}{\numberline {4.2}Approach}{64}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{65}{subsection.4.2.1}% 
 \contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{66}{subsection.4.2.2}% 
-\contentsline {paragraph}{Factoring out Constructors}{67}{figure.caption.28}% 
+\contentsline {paragraph}{Factoring out Constructors}{66}{figure.caption.27}% 
 \contentsline {paragraph}{Adding a Dependent Index}{67}{figure.caption.28}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{67}{subsection.4.2.3}% 
 \contentsline {paragraph}{Summary}{67}{subsection.4.2.3}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{68}{subsection.4.2.4}% 
 \contentsline {paragraph}{Summary}{68}{lstnumber.-169.2}% 
-\contentsline {section}{\numberline {4.3}Differencing}{69}{section.4.3}% 
+\contentsline {section}{\numberline {4.3}Differencing}{68}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}The Configuration}{69}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Specifying Correct Configurations}{73}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Search Procedures}{74}{subsection.4.3.3}% 
 \contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{75}{subsubsection.4.3.3.1}% 
-\contentsline {paragraph}{Searching for the Indexer}{77}{figure.caption.33}% 
+\contentsline {paragraph}{Searching for the Indexer}{78}{figure.caption.33}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{80}{subsubsection.4.3.3.2}% 
 \contentsline {paragraph}{Core Search Algorithm}{80}{figure.caption.35}% 
 \contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{81}{subsubsection.4.3.3.3}% 
@@ -121,7 +121,7 @@
 \contentsline {paragraph}{Lifting Eliminators}{84}{figure.caption.38}% 
 \contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.40}% 
 \contentsline {paragraph}{Core Lifting Algorithm}{86}{lstnumber.-212.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{88}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{86}{subsection.4.4.1}% 
 \contentsline {section}{\numberline {4.5}Implementation}{88}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{88}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{88}{subsection.4.5.2}% 

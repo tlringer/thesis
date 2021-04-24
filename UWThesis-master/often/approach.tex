@@ -76,10 +76,6 @@ In the end, it suggested a proof script to us that we could use going forward.
 \subsection{Scope: Type Equivalences}
 \label{sec:pi-scope}
 
-(Left off here.)
-
-% TODO: Explain that differencing is what finds these type equivalences, or sometimes we do differencing ourselves
-
 \begin{figure*}
 \codeauto{%
 \begin{minipage}{0.48\textwidth}
@@ -94,6 +90,14 @@ In the end, it suggested a proof script to us that we could use going forward.
 \label{fig:equivalence}
 \end{figure*}
 
+\toolnamec automatically repairs proofs in response to changes in types that correspond to type equivalences.
+When a type equivalence between types \Aa and \B exists, those types are \textit{equivalent} (denoted \Aa $\simeq$ \B). % for example:
+Figure~\ref{fig:equivalence} shows a type equivalence between the two versions of \lstinline{list}
+from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
+
+To give some intuition for what kinds of changes can be described by equivalences, I preview two changes below.
+See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
+
 \begin{figure}
 \begin{minipage}{0.48\columnwidth}
 \lstinputlisting[firstline=1, lastline=3]{often/equiv2.tex}
@@ -106,27 +110,6 @@ In the end, it suggested a proof script to us that we could use going forward.
 \caption{The old type \lstinline{I} (left) is either \lstinline{A} or \lstinline{B}. The new type \lstinline{J} (right) is \lstinline{I} with \lstinline{A} and \lstinline{B} factored out to \lstinline{bool} (\codediff{orange}).}
 \label{fig:equivalence2}
 \end{figure}
-
-\begin{figure}
-\begin{minipage}{0.48\textwidth}
-   \lstinputlisting[firstline=1, lastline=3]{often/listtovect.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.58\textwidth}
-   \lstinputlisting[firstline=5, lastline=7]{often/listtovect.tex}
-\end{minipage}
-\vspace{-0.4cm}
-\caption{A vector (bottom) is a list (top) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
-\label{fig:listtovect}
-\end{figure}
-
-\toolnamec automatically repairs proofs in response to changes in types that correspond to type equivalences.
-When a type equivalence between types \Aa and \B exists, those types are \textit{equivalent} (denoted \Aa $\simeq$ \B). % for example:
-Figure~\ref{fig:equivalence} shows a type equivalence between the two versions of \lstinline{list}
-from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
-
-To give some intuition for what kinds of changes can be described by equivalences, we preview two changes below.
-See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
 
 \paragraph{Factoring out Constructors}
 Consider changing the type \lstinline{I} to the type \lstinline{J} 
@@ -164,6 +147,19 @@ and repairing proofs of De Morgan's laws. % constr_refactor.v
 %These repaired functions and proofs refer to \lstinline{J} in place of \lstinline{I}.
 %Otherwise, they behave the same way as the functions and proofs over \lstinline{I} up to the equivalence between
 %\lstinline{I} and \lstinline{J}---Section~\ref{sec:repair} explains this intuition more formally.
+
+\begin{figure}
+\begin{minipage}{0.48\textwidth}
+   \lstinputlisting[firstline=1, lastline=3]{often/listtovect.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.58\textwidth}
+   \lstinputlisting[firstline=5, lastline=7]{often/listtovect.tex}
+\end{minipage}
+\vspace{-0.4cm}
+\caption{A vector (bottom) is a list (top) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
+\label{fig:listtovect}
+\end{figure}
 
 \paragraph{Adding a Dependent Index}
 At first glance, the word \textit{equivalence} may seem to imply that \toolnamec can support only changes in

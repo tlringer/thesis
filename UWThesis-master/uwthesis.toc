@@ -99,7 +99,7 @@
 \contentsline {section}{\numberline {4.1}Motivating Example}{62}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Approach}{64}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{65}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{66}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{65}{subsection.4.2.2}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{67}{subsection.4.2.3}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{67}{subsection.4.2.4}% 
 \contentsline {section}{\numberline {4.3}Differencing}{68}{section.4.3}% 
@@ -109,21 +109,21 @@
 \contentsline {subsubsection}{\numberline {4.3.3.1}Algebraic Ornaments}{74}{subsubsection.4.3.3.1}% 
 \contentsline {paragraph}{Searching for the Indexer}{78}{figure.caption.33}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Searching for Promote and Forget}{80}{subsubsection.4.3.3.2}% 
-\contentsline {paragraph}{Core Search Algorithm}{80}{figure.caption.35}% 
+\contentsline {paragraph}{Core Search Algorithm}{81}{figure.caption.35}% 
 \contentsline {subsubsection}{\numberline {4.3.3.3}Other Search Procedures}{81}{subsubsection.4.3.3.3}% 
 \contentsline {paragraph}{Designing new Search Procedures}{81}{subsubsection.4.3.3.3}% 
 \contentsline {subsection}{\numberline {4.3.4}Limitations}{81}{subsection.4.3.4}% 
 \contentsline {section}{\numberline {4.4}Transformation}{81}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{84}{figure.caption.38}% 
-\contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.40}% 
+\contentsline {paragraph}{Lifting Constructors}{85}{figure.caption.40}% 
 \contentsline {paragraph}{Core Lifting Algorithm}{86}{lstnumber.-210.1}% 
 \contentsline {subsection}{\numberline {4.4.1}Limitations}{86}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{88}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{88}{subsection.4.5.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{86}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{86}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{88}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{88}{subsubsection.4.5.2.1}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{88}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{89}{subsubsection.4.5.2.3}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{88}{subsubsection.4.5.2.3}% 
 \contentsline {section}{\numberline {4.6}Results}{92}{section.4.6}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{97}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{99}{chapter.5}% 

@@ -176,8 +176,6 @@
 \KAuxNewLinkScopetagInstance {sec:overview}{document}
 \KAuxDeclaredScopeTag {fig:listswap}
 \KAuxNewLinkScopetagInstance {fig:listswap}{document}
-\KAuxDeclaredScopeTag {fig:equivalence}
-\KAuxNewLinkScopetagInstance {fig:equivalence}{document}
 \KAuxDeclaredScopeTag {pi-approach}
 \KAuxNewLinkScopetagInstance {pi-approach}{document}
 \KAuxDeclaredScopeTag {sec:pi-workflow}
@@ -186,6 +184,8 @@
 \KAuxNewLinkScopetagInstance {fig:system}{document}
 \KAuxDeclaredScopeTag {sec:pi-scope}
 \KAuxNewLinkScopetagInstance {sec:pi-scope}{document}
+\KAuxDeclaredScopeTag {fig:equivalence}
+\KAuxNewLinkScopetagInstance {fig:equivalence}{document}
 \KAuxDeclaredScopeTag {fig:equivalence2}
 \KAuxNewLinkScopetagInstance {fig:equivalence2}{document}
 \KAuxDeclaredScopeTag {fig:listtovect}

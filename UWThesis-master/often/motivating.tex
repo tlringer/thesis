@@ -13,28 +13,14 @@
 \end{minipage}
 \vspace{-0.4cm}
 \caption{A change from the old version of \lstinline{list} (left) to the new version of \lstinline{list} (right).
-The old version of \lstinline{list} is an inductive datatype that is either empty (the \lstinline{nil} constructor), or the result
+Recall that \lstinline{list} is an inductive datatype that is either empty (the \lstinline{nil} constructor), or the result
 of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor). The change swaps these
 two constructors (\codediff{orange}).}
 \label{fig:listswap}
 \end{figure*}
 
-\begin{figure*}
-\codeauto{%
-\begin{minipage}{0.48\textwidth}
-\lstinputlisting[firstline=1, lastline=13]{often/equivproof.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-\lstinputlisting[firstline=15, lastline=28]{often/equivproof.tex}
-\end{minipage}}
-\vspace{-0.3cm}
-\caption{Two functions between \lstinline{Old.list} and \lstinline{New.list} (top) that form an equivalence (bottom).}
-\label{fig:equivalence}
-\end{figure*}
-
 Consider a simple example of using \toolnamec: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
-This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:search}).
+This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:pi-results}).
 Even such a simple change can cause trouble, as in this proof from the Coq standard library (comments ours for clarity):\footnote{We use induction instead of pattern matching.}
 
 \begin{lstlisting}
@@ -47,8 +33,8 @@ Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
   (@\color{gray}{(* y cons *)}@) simpl. rewrite app_nil_r; auto.(@\vspace{-0.04cm}@)
   (@\color{gray}{(* both cons: *)}@) intro y. simpl.(@\vspace{-0.04cm}@)
   rewrite (IHl y). rewrite app_assoc; trivial.(@\vspace{-0.04cm}@)
-Qed.(@\vspace{-0.05cm}@)
-\end{lstlisting}
+Defined.(@\vspace{-0.05cm}@)
+\end{lstlisting} % TODO note about defined versus Qed earlier on
 This lemma says that appending (\lstinline{++}) two lists and reversing (\lstinline{rev}) the result behaves the same as appending
 the reverse of the second list onto the reverse of the first list.
 The proof script works by induction over the input lists \lstinline{x} and \lstinline{y}:
@@ -62,21 +48,6 @@ When we change the \lstinline{list} type, this proof no longer works.
 %When we change the \lstinline{list} type, we get the \textit{new specification}.
 %But the \textit{old proof} or tactic script no longer works with this new specification.
 To repair this proof with \toolnamec, we run this command:
-
-\iffalse
-\begin{figure}
-\begin{minipage}{0.46\textwidth}
-   \lstinputlisting[firstline=1, lastline=3]{listswap.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.46\textwidth}
-   \lstinputlisting[firstline=5, lastline=7]{listswap.tex}
-\end{minipage}
-\vspace{-0.4cm}
-\caption{The updated \lstinline{list} (bottom) is the old \lstinline{list} (top) with its two constructors swapped (\codediff{orange}).}
-\label{fig:listswap}
-\end{figure}
-\fi
 
 \begin{lstlisting}
 Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
@@ -92,10 +63,10 @@ Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
   - (@\color{gray}{(* x nil: *)}@) induction y0 as [a l H| ].(@\vspace{-0.04cm}@)
     + (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r. auto.(@\vspace{-0.04cm}@)
     + (@\color{gray}{(* y nil: *)}@) auto.(@\vspace{-0.04cm}@)
-Qed.(@\vspace{-0.05cm}@)
+Defined.(@\vspace{-0.05cm}@)
 \end{lstlisting}
 where the dependencies (\lstinline{rev}, \lstinline{++}, \lstinline{app_assoc}, and \lstinline{app_nil_r}) have
-also been updated automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v
+also been updated automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v, TODO update links
 If we would like, we can manually modify this to something that more closely matches the style of the original proof script:
 
 \begin{lstlisting}
@@ -106,16 +77,16 @@ Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
   (@\color{gray}{(* x nil: *)}@) induction y as [a l IHl|].(@\vspace{-0.04cm}@)
   (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r; auto.(@\vspace{-0.04cm}@)
   (@\color{gray}{(* y nil: *)}@) simpl. auto.(@\vspace{-0.04cm}@)
-Qed.(@\vspace{-0.04cm}@)
+Defined.(@\vspace{-0.04cm}@)
 \end{lstlisting}
 We can even repair the entire list module from the Coq standard library all at once by running the \lstinline{Repair module}
 command~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v
 When we are done, we can get rid of \lstinline{Old.list}. % entirely.
 
 The key to success is taking advantage of Coq's structured proof term language:
-Coq compiles every proof script to a proof term in a rich functional programming language called 
+Recall that Coq compiles every proof script to a proof term in the rich functional programming language
 %Gallina that is based on the calculus of inductive  constructions---\toolnamec repairs that term.
-Gallina---\toolnamec repairs that term.
+\kl{Gallina}---\toolnamec repairs that term.
 \toolnamec then decompiles the repaired proof term (with optional hints from the original proof script) back 
 to a suggested proof script that the proof engineer can maintain.
 %Here, \toolnamec transforms the proof term Coq compiles \lstinline{rev_app_distr} to,
@@ -127,7 +98,7 @@ It is not clear which lines to swap since these tactics do not have a semantics 
 Furthermore, just swapping lines is not enough: even for such a simple change, we must also swap
 arguments, so \lstinline{induction x as [| a l IHl]} becomes \lstinline{induction x as [a l IHl|]}.
 %Handling even swapping constructors this way would require a search procedure that would not generalize to other changes.
-A recent thesis~\cite{robert2018} describes the challenges of repairing tactics in detail.
+Valentin Robert's thesis~\cite{robert2018} describes the challenges of repairing tactics in detail.
 \toolnamec's approach circumvents this challenge.
 
 %\toolnamec's approach circumvents this challenge. % by transforming proof terms, then decompiling the transformed proof term to a tactic script.

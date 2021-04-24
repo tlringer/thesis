@@ -206,6 +206,8 @@
 \KAuxNewLinkScopetagInstance {sec:art}{document}
 \KAuxDeclaredScopeTag {fig:spec}
 \KAuxNewLinkScopetagInstance {fig:spec}{document}
+\KAuxDeclaredScopeTag {sec:proc}
+\KAuxNewLinkScopetagInstance {sec:proc}{document}
 \KAuxDeclaredScopeTag {fig:syntax}
 \KAuxNewLinkScopetagInstance {fig:syntax}{document}
 \KAuxDeclaredScopeTag {fig:common}

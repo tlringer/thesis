@@ -185,6 +185,23 @@ when those changes can be expressed as equivalences between $\Sigma$ types or su
 \subsection{Differencing: Equivalences from Changes}
 \label{sec:pi-spec-diff}
 
+Differencing in \toolnamec is what configures the proof term transformation with a particular type equivalence.
+By default, when the proof engineer invokes the \lstinline{Repair} command, differencing runs automatically.
+For example, when we invoked:
+
+\begin{lstlisting}
+  Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
+\end{lstlisting}
+in Section~\ref{pi:approach}, differencing discovered and proved the equivalence in Figure~\ref{fig:equivalence}.
+In total, \toolnamec currently implements four search procedures for automatic configuration;
+I will explain these more in Sections~\ref{sec:pi-diff} and~\ref{sec:pi-implementation}.
+Each search procedure automates differencing for an entire class of changes that correspond to type equivalences. 
+
+Manual configuration supports any change that can be described by a type equivalence.
+To configure \toolnamec manually, the proof engineer can run \toolnamec's \lstinline{Configure repair} command before invoking \lstinline{Repair},
+and pass it the equivalence herself.
+This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
+
 \paragraph{Summary}
 
 Differencing takes as inputs $\ldots$ and returns $\ldots$:

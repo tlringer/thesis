@@ -178,6 +178,8 @@
 \KAuxNewLinkScopetagInstance {fig:listswap}{document}
 \KAuxDeclaredScopeTag {fig:equivalence}
 \KAuxNewLinkScopetagInstance {fig:equivalence}{document}
+\KAuxDeclaredScopeTag {pi-approach}
+\KAuxNewLinkScopetagInstance {pi-approach}{document}
 \KAuxDeclaredScopeTag {sec:pi-workflow}
 \KAuxNewLinkScopetagInstance {sec:pi-workflow}{document}
 \KAuxDeclaredScopeTag {fig:system}
@@ -192,6 +194,8 @@
 \KAuxNewLinkScopetagInstance {sec:pi-spec-diff}{document}
 \KAuxDeclaredScopeTag {sec:pi-spec-trans}
 \KAuxNewLinkScopetagInstance {sec:pi-spec-trans}{document}
+\KAuxDeclaredScopeTag {sec:pi-diff}
+\KAuxNewLinkScopetagInstance {sec:pi-diff}{document}
 \KAuxDeclaredScopeTag {fig:listconfig}
 \KAuxNewLinkScopetagInstance {fig:listconfig}{document}
 \KAuxDeclaredScopeTag {sec:configurable}
@@ -210,6 +214,8 @@
 \KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
 \KAuxDeclaredScopeTag {fig:searchpromote}
 \KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
+\KAuxDeclaredScopeTag {sec:pi-trans}
+\KAuxNewLinkScopetagInstance {sec:pi-trans}{document}
 \KAuxDeclaredScopeTag {fig:final}
 \KAuxNewLinkScopetagInstance {fig:final}{document}
 \KAuxDeclaredScopeTag {fig:appswap1}
@@ -222,14 +228,16 @@
 \KAuxNewLinkScopetagInstance {fig:construct}{document}
 \KAuxDeclaredScopeTag {fig:final}
 \KAuxNewLinkScopetagInstance {fig:final}{document}
+\KAuxDeclaredScopeTag {sec:pi-implementation}
+\KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
 \KAuxDeclaredScopeTag {fig:ltacsyntax1}
 \KAuxNewLinkScopetagInstance {fig:ltacsyntax1}{document}
 \KAuxDeclaredScopeTag {fig:someantics}
 \KAuxNewLinkScopetagInstance {fig:someantics}{document}
 \KAuxDeclaredScopeTag {fig:rainbow}
 \KAuxNewLinkScopetagInstance {fig:rainbow}{document}
-\KAuxDeclaredScopeTag {sec:search}
-\KAuxNewLinkScopetagInstance {sec:search}{document}
+\KAuxDeclaredScopeTag {sec:pi-results}
+\KAuxNewLinkScopetagInstance {sec:pi-results}{document}
 \KAuxDeclaredScopeTag {fig:changes}
 \KAuxNewLinkScopetagInstance {fig:changes}{document}
 \KAuxDeclaredScopeTag {fig:replica}

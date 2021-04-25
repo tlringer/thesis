@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2229,18 +2229,33 @@ Overfull \hbox (66.33852pt too wide) in paragraph at lines 564--565
 LaTeX Font Warning: Command \small invalid in math mode on input line 570.
 
 
-Overfull \hbox (108.74336pt too wide) in paragraph at lines 569--603
+Overfull \hbox (31.10234pt too wide) in paragraph at lines 569--604
  $ [][] 
  []
 
 
-Overfull \hbox (108.4613pt too wide) in paragraph at lines 569--603
+Overfull \hbox (70.11812pt too wide) in paragraph at lines 569--604
+ [] 
+ []
+
+
+Overfull \hbox (7.59872pt too wide) in paragraph at lines 569--604
  [][] 
  []
 
 
-Overfull \hbox (100.10329pt too wide) in paragraph at lines 569--603
+Overfull \hbox (100.10329pt too wide) in paragraph at lines 569--604
  [][] 
+ []
+
+
+Overfull \hbox (146.11165pt too wide) in paragraph at lines 569--604
+ [][] 
+ []
+
+
+Overfull \hbox (376.99031pt too wide) in paragraph at lines 569--604
+ []$ 
  []
 
 [80] [81]) (./often/transformation.tex
@@ -2258,11 +2273,12 @@ LaTeX Warning: Reference `sec:generic' on page 82 undefined on input line 118.
 LaTeX Warning: Reference `sec:implementation' on page 82 undefined on input lin
 e 120.
 
-[82] [83] [84]
+[82] [83]
 Underfull \hbox (badness 10000) in paragraph at lines 197--223
 
  []
 
+[84]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 227.
 
@@ -2275,22 +2291,21 @@ Overfull \hbox (58.00378pt too wide) in paragraph at lines 226--260
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 291.
 
-[86]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 333.
 
-) (./often/implementation.tex [87] [88]
+[86] [87]) (./often/implementation.tex
 
-LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 40.
+LaTeX Warning: Citation `Ringer2019' on page 88 undefined on input line 40.
 
+[88]
 
 LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 46.
 
-[89]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 84.
 
-[90]
+[89] [90]
 
 LaTeX Warning: Reference `sec:second' on page 91 undefined on input line 156.
 
@@ -2318,20 +2333,20 @@ LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
 
 LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
 
-[93] [94] (./often/replica.tex) (./often/replica.tex)
+(./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 95 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 93 undefined on input line 113.
 
-[95]
+[93] [94]
 
-LaTeX Warning: Citation `replica' on page 96 undefined on input line 165.
+LaTeX Warning: Citation `replica' on page 95 undefined on input line 165.
 
-[96] [97]) (./often/conclusion.tex)) (./related.tex [98]
-chapter 5.
-[99
+[95] [96]) (./often/conclusion.tex)) (./related.tex [97] [98
 
 
 ]
+chapter 5.
+[99]
 
 LaTeX Warning: Citation `Ringer2019' on page 100 undefined on input line 97.
 
@@ -2459,7 +2474,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
 Here is how much of TeX's memory you used:
  49984 strings out of 492609
  1007304 string characters out of 6129033
- 1293440 words of memory out of 5000000
+ 1292459 words of memory out of 5000000
  50804 multiletter control sequences out of 15000+600000
  633503 words of font info for 787 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2481,7 +2496,7 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1513066 bytes).
+Output written on uwthesis.pdf (129 pages, 1512095 bytes).
 PDF statistics:
  2898 PDF objects out of 2984 (max. 8388607)
  2698 compressed objects within 27 object streams

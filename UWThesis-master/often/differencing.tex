@@ -445,9 +445,9 @@ $A_I$ := $\mathrm{Ind} (\mathit{Ty}_{A_I} : (\Pi (i : I). \mathrm{s}_{A_I}))\{\m
 $\mathrm{P}_A$ := $\Pi (a : A) . \mathrm{s}_A$
 $\mathrm{P}_{A_I}$ := $\Pi (i : I) (a_i : A_I\ i) . \mathrm{s}_{A_I}$
 
-$\forall 1 \le i \le n,$
-  $\mathrm{E}_{A_j}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(i,\ A),\ C_{A_j})$
-  $\mathrm{E}_{B_j}\ (p_{A_I} : \mathrm{P}_{A_I})$ := $\xi(A_I,\ p_{A_I},\ \mathrm{Constr}(i,\ A_I),\ C_{A_{I_j}})$
+$\forall 1 \le j \le n,$
+  $\mathrm{E}_{A_j}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(j,\ A),\ C_{A_j})$
+  $\mathrm{E}_{B_j}\ (p_{A_I} : \mathrm{P}_{A_I})$ := $\xi(A_I,\ p_{A_I},\ \mathrm{Constr}(j,\ A_I),\ C_{A_{I_j}})$
 \end{lstlisting}
 \vspace{-0.3cm}
 \caption{Common definitions.}
@@ -568,41 +568,42 @@ this produces a function that computes the length of a list:
 \begin{mathpar}
 \mprset{flushleft}  
 \small
-\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{D_C} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(t_A,\ t_{A_I}) \Downarrow_{D_C} (t'_A,\ t'_{A_I}) $ }\\
 
-\inferrule[TODO] 
-  { \\ } 
-  { \\ }
+\inferrule[DepConstr] 
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \pi } 
+  { \Gamma \vdash (\mathrm{Constr}(j,\ A),\ \mathrm{Constr} (j,\ A_I)) \Downarrow_{D_C}
+                  (\mathrm{Constr}(j,\ A),\ \lambda (a : A) . \exists\ (\pi\ a)\ (\mathrm{Constr}(j,\ A_I) \ldots)) }
 
-\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{D_E} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{D_E} \ldots $ }\\
 
-\inferrule[TODO] 
+\inferrule[DepElim] 
   { \\ } 
   { \\ }
 
 \hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{\eta} \vec{t}$ }\\
 
-\inferrule[TODO] 
+\inferrule[Eta] 
   { \\ } 
   { \\ }
 
 \hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{\iota} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
 
-\inferrule[TODO] 
+\inferrule[Iota] 
   { \\ } 
   { \\ }
 
-\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_c c$ }\\
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_c ((\mathrm{DepConstr}, \mathrm{DepElim}), (\mathrm{Eta}, \mathrm{Iota}))$ }\\
 
 \inferrule[Config] 
-  { \Gamma \vdash (A,\ A_I) \Downarrow_{D_C} \vec{D_C} \\
-    \Gamma \vdash (A,\ A_I) \Downarrow_{D_E} \vec{D_E} \\\\
+  { \Gamma \vdash \{ (\mathrm{Constr}(1,\ A),\ \mathrm{Constr}(1,\ A_I)) \ldots (\mathrm{Constr}(n,\ A),\ \mathrm{Constr}(n,\ A_I)) \} \Downarrow_{D_C} \{ (\mathrm{DepConstr}(1,\ A), \mathrm{DepConstr}(1,\ A_I)) \ldots (\mathrm{DepConstr}(n,\ A), \mathrm{DepConstr}(n,\ A_I)) \} \\
+    \Gamma \vdash (A,\ A_I) \Downarrow_{D_E} D_E \\\\
     \Gamma \vdash (A,\ A_I) \Downarrow_{\eta} \eta \\
     \Gamma \vdash (A,\ A_I) \Downarrow_{\iota} \vec{\iota} }
-  { \Gamma \vdash (A,\ A_I) \Downarrow_{c} ((\vec{D_C}, \vec{D_E}), (\eta, \vec{\iota}))}
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{c} ((\{ (\mathrm{DepConstr}(1,\ A), \mathrm{DepConstr}(1,\ A_I)) \ldots (\mathrm{DepConstr}(n,\ A), \mathrm{DepConstr}(n,\ A_I)) \}, \vec{D_E}), (\eta, \vec{\iota}))}
 \end{mathpar}	
 \vspace{-0.5cm}
-\caption{Differencing for the configuration.}
+\caption{Differencing for the configuration. (Work in progress! Porting from an old form.)}
 \label{fig:searchconfig}
 \end{figure}
 
@@ -611,13 +612,13 @@ Figure~\ref{fig:searchconfig} shows the derivations for the judgment \smallmath{
 that differences the two types for the configuration.
 This consists of four judgments: one for each configuration part.
 
-\subparagraph*{Differencing for \lstinline{DepConstr}.}
+\subparagraph*{Differencing for \lstinline{DepConstr}.} (Work in progress.)
 
-\subparagraph*{Differencing for \lstinline{DepElim}.}
+\subparagraph*{Differencing for \lstinline{DepElim}.} (Work in progress.)
 
-\subparagraph*{Differencing for \lstinline{Eta}.}
+\subparagraph*{Differencing for \lstinline{Eta}.} (Work in progress.)
 
-\subparagraph*{Differencing for \lstinline{Iota}.}
+\subparagraph*{Differencing for \lstinline{Iota}.} (Work in progress.)
 
 \subparagraph*{Composing the Result.}
 The core differencing algorithm produces the configuration parts, then composes them into a tuple.
@@ -736,7 +737,8 @@ How hard, how useful.)
 
 (Limitations and whether they're addressed in other tools yet or not.)
 
-\paragraph{Something} Basically syntactic restrictions on inputs for automatic differencing, documented in \toolnamec.
+\iffalse
+\paragraph{Syntactic Restrictions} Basically syntactic restrictions on inputs for automatic differencing, documented in \toolnamec.
 
 \begin{itemize}
 \item \textbf{Inputs}: Inductive types \Aa\ and \B, assuming:
@@ -751,4 +753,5 @@ How hard, how useful.)
 \item the outputs form the ornamental promotion isomorphism between the inputs.
 \end{itemize}
 \end{itemize}
+\fi
 

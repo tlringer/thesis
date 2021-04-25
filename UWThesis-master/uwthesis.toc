@@ -120,24 +120,23 @@
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{76}{subsection.4.3.4}% 
 \contentsline {subsection}{\numberline {4.3.5}Algebraic Ornaments}{76}{subsection.4.3.5}% 
 \contentsline {paragraph}{Differencing for the Indexer}{78}{figure.caption.32}% 
-\contentsline {paragraph}{Differencing for the Configuration}{80}{lstnumber.-199.2}% 
-\contentsline {paragraph}{Core Search Algorithm}{80}{figure.caption.34}% 
-\contentsline {subsubsection}{\numberline {4.3.5.1}Other Search Procedures}{81}{subsubsection.4.3.5.1}% 
-\contentsline {subsection}{\numberline {4.3.6}Limitations}{81}{subsection.4.3.6}% 
-\contentsline {paragraph}{Something}{81}{subsection.4.3.6}% 
-\contentsline {section}{\numberline {4.4}Transformation}{83}{section.4.4}% 
+\contentsline {paragraph}{Differencing for the Configuration}{80}{figure.caption.34}% 
+\contentsline {subsubsection}{\numberline {4.3.5.1}Other Search Procedures}{82}{subsubsection.4.3.5.1}% 
+\contentsline {subsection}{\numberline {4.3.6}Limitations}{82}{subsection.4.3.6}% 
+\contentsline {paragraph}{Something}{82}{subsection.4.3.6}% 
+\contentsline {section}{\numberline {4.4}Transformation}{82}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{85}{figure.caption.37}% 
 \contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.39}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{86}{lstnumber.-209.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{88}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{88}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{88}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{88}{subsection.4.5.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{88}{subsubsection.4.5.2.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{88}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{89}{subsubsection.4.5.2.3}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{87}{lstnumber.-209.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{87}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{89}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{89}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{89}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{89}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{89}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{90}{subsubsection.4.5.2.3}% 
 \contentsline {section}{\numberline {4.6}Results}{93}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{97}{section.4.7}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{98}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{99}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Programs}{99}{section.5.1}% 
 \contentsline {section}{\numberline {5.2}Proofs}{100}{section.5.2}% 

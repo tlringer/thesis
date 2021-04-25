@@ -242,8 +242,8 @@
 \KAuxNewLinkScopetagInstance {fig:common}{document}
 \KAuxDeclaredScopeTag {fig:searchindexer}
 \KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
-\KAuxDeclaredScopeTag {fig:searchpromote}
-\KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
+\KAuxDeclaredScopeTag {fig:searchconfig}
+\KAuxNewLinkScopetagInstance {fig:searchconfig}{document}
 \KAuxDeclaredScopeTag {sec:other}
 \KAuxNewLinkScopetagInstance {sec:other}{document}
 \KAuxDeclaredScopeTag {sec:pi-diff-limits}

@@ -455,12 +455,10 @@ $\forall 1 \le i \le n,$
 \end{figure}
 
 % TODO note code produces equivalence directly for historical reasons I guess? Maybe in implementation section?
-The differencing algorithm is in Figure~\ref{searchconfig}.
-It builds on five intermediate steps: one to generate \lstinline{indexer} (Figure~\ref{fig:searchindexer}),
-and one to generate each of the configuration parts (Figures~\ref{searchconstr}, \ref{searchelim}, \ref{searcheta}, and~\ref{searchiota}).
+The differencing starts by generating the \lstinline{indexer} (Figure~\ref{fig:searchindexer}),
+then uses that to generate each of the configuration parts (Figure~\ref{searchconfig}).
 
 \paragraph{Differencing for the Indexer}
-
 Then differencing generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
 which consists of three judgments: one to generate the motive, one to generate each case,
 and one to compose the motive and cases.
@@ -566,9 +564,69 @@ this produces a function that computes the length of a list:
     (@\codeauto{\{0, $\lambda$ (t$_l$ : T) (l : list T) (IH$_l$ : ($\lambda$ (l : list T) . nat) l) . S IH$_l$\}}@)
 \end{lstlisting}
 
+\begin{figure}
+\begin{mathpar}
+\mprset{flushleft}  
+\small
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{D_C} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
+
+\inferrule[TODO] 
+  { \\ } 
+  { \\ }
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{D_E} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
+
+\inferrule[TODO] 
+  { \\ } 
+  { \\ }
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{\eta} \vec{t}$ }\\
+
+\inferrule[TODO] 
+  { \\ } 
+  { \\ }
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{\iota} \{ (t_{A_1}, t_{A_{I_1}}) \ldots (t_{A_n}, t_{A_{I_n}}) \} $ }\\
+
+\inferrule[TODO] 
+  { \\ } 
+  { \\ }
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_c c$ }\\
+
+\inferrule[Config] 
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{D_C} \vec{D_C} \\
+    \Gamma \vdash (A,\ A_I) \Downarrow_{D_E} \vec{D_E} \\\\
+    \Gamma \vdash (A,\ A_I) \Downarrow_{\eta} \eta \\
+    \Gamma \vdash (A,\ A_I) \Downarrow_{\iota} \vec{\iota} }
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{c} ((\vec{D_C}, \vec{D_E}), (\eta, \vec{\iota}))}
+\end{mathpar}	
+\vspace{-0.5cm}
+\caption{Differencing for the configuration.}
+\label{fig:searchconfig}
+\end{figure}
+
 \paragraph{Differencing for the Configuration}
-(Left off here.)
-Figure~\ref{fig:searchpromote} shows the interesting derivations for the judgment \smallmath{$(T_A,\ T_B) \Downarrow_p t$}
+Figure~\ref{fig:searchconfig} shows the derivations for the judgment \smallmath{$(T_A,\ T_{A_I}) \Downarrow_c c$}
+that differences the two types for the configuration.
+This consists of four judgments: one for each configuration part.
+
+\subparagraph*{Differencing for \lstinline{DepConstr}.}
+
+\subparagraph*{Differencing for \lstinline{DepElim}.}
+
+\subparagraph*{Differencing for \lstinline{Eta}.}
+
+\subparagraph*{Differencing for \lstinline{Iota}.}
+
+\subparagraph*{Composing the Result.}
+The core differencing algorithm produces the configuration parts, then composes them into a tuple.
+In addition, it saves \lstinline{indexer}, and uses the algorithm shown earlier to discover
+\lstinline{f} and \lstinline{g} from the configuration, and prove \lstinline{section} and \lstinline{retraction}
+hold for \lstinline{f} and \lstinline{g}.
+For algebraic ornaments, it additional proves coherence by reflexivity.
+
+\iffalse
 that searches for \lstinline{promote}:
 \textsc{Promote-Motive} identifies the motive 
 as \B\ with a new index (which it computes using \lstinline{indexer}, denoted by metavariable \smallmath{$\pi$}).
@@ -617,23 +675,54 @@ Finally, \textsc{Promote-Ind} not only recurses into each case, but also packs t
 \label{fig:searchpromote}
 \end{figure}
 
+\begin{figure}
+\begin{mathpar}
+%\begin{minipage}{0.45\textwidth}
+\mprset{flushleft} 
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i_{m}} t$ }\vspace{-0.55cm}\\
+
+\inferrule[Index-Motive] 
+  { \\ }
+  { \Gamma \vdash (A, A_I) \Downarrow_{i_{m}} \lambda (a : A) . I }\\
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i_{c}} t$ }\vspace{-0.4cm}\\
+
+\inferrule[Index-Conclusion]
+  { \\ }
+  { \Gamma \vdash (p_A\ a,\ p_{A_I}\ i\ a_i) \Downarrow_{i_{c}} i } 
+
+\inferrule[Index-Hypothesis] % new hypothesis for index
+  { \mathrm{new}\ n_{A_I}\ b_{A_I} \\\\ \Gamma,\ n_{A_I} : t_{A_I} \vdash (\Pi (n_A : t_A) . b_A,\ b_{A_I}) \Downarrow_{i_{c}} t }
+  {  \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_{A_I} : t_{A_I}) . b_{A_I}) \Downarrow_{i_{c}} t}
+
+\inferrule[Index-IH] % inductive hypothesis
+  { \Gamma \vdash (A, A_I) \Downarrow_{i_{m}} p \\
+    \Gamma,\ n_A : p\ a \vdash (b_A,\ b_{A_I} [n_A / i]) \Downarrow_{i_{c}} t }
+  { \Gamma \vdash (\Pi (n_A : p_A\ a) . b_A,\ \Pi (n_{A_I} : p_{A_I}\ i\ b) . b_{A_I}) \Downarrow_{i_{c}} \lambda (n_A : p\ a) . t }
+
+\inferrule[Index-Prod] % otherwise, unchanged (when we get rid of the gross fall-through thing, needs not new, and needs to check t_A and t_B not IHs)
+  { \Gamma,\ n_A : t_A \vdash (b_A,\ b_{A_I} [n_A / n_{A_I}]) \Downarrow_{i_{c}} t }
+  { \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_{A_I} : t_{A_I}) . b_{A_I}) \Downarrow_{i_{c}} \lambda (n_A : t_A) . t }\\
+
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i} t$ }\vspace{-0.5cm}\\
+
+\inferrule[Index-Ind] 
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{i_{m}} p \\
+    \Gamma,\ p_A : \mathrm{P}_A,\ p_{A_I} : \mathrm{P}_{A_I} \vdash \{ (\mathrm{E}_{A_1}\ p_A,\ \mathrm{E}_{A_{I_1}}\ p_{A_I}),\ldots,(\mathrm{E}_{A_n}\ p_A,\ \mathrm{E}_{A_{I_n}}\ p_{A_I}) \} \Downarrow_{i_{c}} \vec{f} } 
+  { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \lambda (a : A) . \mathrm{Elim}(a, p) \vec{f}}
+\end{mathpar}	
+\vspace{-0.5cm}
+\caption{Differencing for the indexer function.}
+\label{fig:searchindexer}
+\end{figure}
+
 The omitted derivations to search for \lstinline{forget} are similar,
 except that the domain and range are switched. Consequentially, \lstinline{indexer} is never needed;
 \textsc{Forget-Motive} removes the index rather than inserting it, and \textsc{Forget-IH} no longer substitutes the index.
 Additionally, \textsc{Forget-Hypothesis} adds the hypothesis for the new index
 rather than skipping it, and \textsc{Forget-Ind} eliminates over the projection rather than packing the result. %of applying the eliminator.
-
-\paragraph{Core Search Algorithm} The core search algorithm produces \lstinline{indexer},
-\lstinline{promote}, and \lstinline{forget}, then composes them into a tuple. This tuple is how \toolnameb represents ornaments internally.
-\toolnameb has options (used in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/Example.v}{\lstinline{Example.v}}) that tell search to generate proofs that its outputs are correct, thereby increasing confidence in and
-usefulness of those outputs.
-The proof of \lstinline{coherence} is reflexivity.
-The intuition behind 
-the automation to prove \lstinline{section} and \lstinline{retraction} (\href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/src/automation/equivalence.ml}{\lstinline{equivalence.ml}}) 
-is that
-\lstinline{promote} and \lstinline{forget} map along corresponding constructors, so inductive cases preserve equalities.
-Thus, each inductive case of these proofs is generated by a fold that rewrites each recursive reference,
-with reflexivity as identity.
+\fi
 
 \subsubsection{Other Search Procedures}
 \label{sec:other}

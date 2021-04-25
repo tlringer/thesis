@@ -36,7 +36,30 @@
 
 \KAuxFileAt {uwthesis.tex}{52}
 
-\KAuxFileAt {uwthesis.tex}{122}
+\KAuxFileAt {uwthesis.tex}{53}
+
+\KAuxFileAt {uwthesis.tex}{54}
+\KAuxAutoref {default}{base}{algebraic ornaments}
+
+\KAuxFileAt {uwthesis.tex}{55}
+
+\KAuxFileAt {uwthesis.tex}{56}
+
+\KAuxFileAt {uwthesis.tex}{57}
+\KAuxAutoref {default}{base}{type equivalences}
+
+\KAuxFileAt {uwthesis.tex}{58}
+
+\KAuxFileAt {uwthesis.tex}{59}
+
+\KAuxFileAt {uwthesis.tex}{60}
+
+\KAuxFileAt {uwthesis.tex}{61}
+
+\KAuxFileAt {uwthesis.tex}{62}
+\KAuxAutoref {default}{base}{transport}
+
+\KAuxFileAt {uwthesis.tex}{132}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
@@ -210,14 +233,19 @@
 \KAuxNewLinkScopetagInstance {fig:spec}{document}
 \KAuxDeclaredScopeTag {sec:proc}
 \KAuxNewLinkScopetagInstance {sec:proc}{document}
-\KAuxDeclaredScopeTag {fig:syntax}
-\KAuxNewLinkScopetagInstance {fig:syntax}{document}
+\KAuxDeclaredScopeTag {sec:alg-orn}
+\KAuxNewLinkScopetagInstance {sec:alg-orn}{document}
+
+\KAuxFileAt {differencing.tex}{364}
+\KAuxAutorefTarget {default}{base}{algebraic ornaments}
 \KAuxDeclaredScopeTag {fig:common}
 \KAuxNewLinkScopetagInstance {fig:common}{document}
 \KAuxDeclaredScopeTag {fig:searchindexer}
 \KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
 \KAuxDeclaredScopeTag {fig:searchpromote}
 \KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
+\KAuxDeclaredScopeTag {sec:other}
+\KAuxNewLinkScopetagInstance {sec:other}{document}
 \KAuxDeclaredScopeTag {sec:pi-diff-limits}
 \KAuxNewLinkScopetagInstance {sec:pi-diff-limits}{document}
 \KAuxDeclaredScopeTag {sec:pi-trans}

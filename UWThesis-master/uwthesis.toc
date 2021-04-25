@@ -16,11 +16,14 @@
 \contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{14}{subsection.2.1.2}% 
 \contentsline {subsubsection}{\numberline {2.1.2.1}Gallina}{16}{subsubsection.2.1.2.1}% 
 \contentsline {subsubsection}{\numberline {2.1.2.2}Calculus of Inductive Constructions}{18}{subsubsection.2.1.2.2}% 
+\contentsline {paragraph}{Conventions}{20}{lstnumber.-28.1}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ back to Gallina}{20}{lstnumber.-28.1}% 
+\contentsline {paragraph}{From Gallina back to Coq}{20}{lstnumber.-28.1}% 
 \contentsline {section}{\numberline {2.2}Proof Maintenance}{20}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{20}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{21}{subsection.2.2.1}% 
 \contentsline {paragraph}{Changing our Program}{21}{Item.20}% 
-\contentsline {paragraph}{Changing our Specification}{21}{lstnumber.-30.10}% 
-\contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{22}{subsection.2.2.2}% 
+\contentsline {paragraph}{Changing our Specification}{22}{lstnumber.-30.10}% 
+\contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{23}{subsection.2.2.2}% 
 \contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{23}{subsection.2.2.3}% 
 \contentsline {section}{\numberline {2.3}Proof Repair}{24}{section.2.3}% 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{27}{chapter.3}% 
@@ -107,33 +110,33 @@
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{68}{subsection.4.2.4}% 
 \contentsline {paragraph}{Summary}{69}{lstnumber.-170.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{70}{section.4.3}% 
-\contentsline {paragraph}{Conventions}{71}{lstnumber.-173.1}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{71}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{72}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Configurations as Initial Algebras}{74}{subsection.4.3.3}% 
 \contentsline {paragraph}{Equivalence}{75}{figure.caption.31}% 
 \contentsline {paragraph}{Equality}{75}{figure.caption.31}% 
 \contentsline {paragraph}{Correctness}{75}{figure.caption.31}% 
+\contentsline {paragraph}{Equivalences from Configurations}{75}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{76}{subsection.4.3.4}% 
-\contentsline {paragraph}{Algebraic Ornaments}{76}{subsection.4.3.4}% 
-\contentsline {paragraph}{Searching for the Indexer}{78}{figure.caption.33}% 
-\contentsline {subsubsection}{\numberline {4.3.4.1}Searching for Promote and Forget}{81}{subsubsection.4.3.4.1}% 
-\contentsline {paragraph}{Core Search Algorithm}{81}{figure.caption.35}% 
-\contentsline {paragraph}{Other Search Procedures}{82}{figure.caption.35}% 
-\contentsline {paragraph}{Equivalences from Configurations}{82}{figure.caption.35}% 
-\contentsline {subsection}{\numberline {4.3.5}Limitations}{83}{subsection.4.3.5}% 
-\contentsline {section}{\numberline {4.4}Transformation}{83}{section.4.4}% 
-\contentsline {paragraph}{Lifting Eliminators}{85}{figure.caption.38}% 
-\contentsline {paragraph}{Lifting Constructors}{87}{figure.caption.40}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{87}{lstnumber.-213.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{89}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{89}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{89}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.3.5}Algebraic Ornaments}{76}{subsection.4.3.5}% 
+\contentsline {paragraph}{Differencing for the Indexer}{78}{figure.caption.32}% 
+\contentsline {paragraph}{Differencing for the Configuration}{80}{lstnumber.-200.2}% 
+\contentsline {paragraph}{Core Search Algorithm}{80}{figure.caption.34}% 
+\contentsline {subsubsection}{\numberline {4.3.5.1}Other Search Procedures}{81}{subsubsection.4.3.5.1}% 
+\contentsline {subsection}{\numberline {4.3.6}Limitations}{81}{subsection.4.3.6}% 
+\contentsline {paragraph}{Something}{81}{subsection.4.3.6}% 
+\contentsline {section}{\numberline {4.4}Transformation}{82}{section.4.4}% 
+\contentsline {paragraph}{Lifting Eliminators}{85}{figure.caption.37}% 
+\contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.39}% 
+\contentsline {paragraph}{Core Lifting Algorithm}{87}{lstnumber.-210.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Limitations}{87}{subsection.4.4.1}% 
+\contentsline {section}{\numberline {4.5}Implementation}{87}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{87}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{89}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{89}{subsubsection.4.5.2.1}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{89}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{90}{subsubsection.4.5.2.3}% 
-\contentsline {section}{\numberline {4.6}Results}{94}{section.4.6}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{89}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{93}{section.4.6}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{98}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{99}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Programs}{99}{section.5.1}% 

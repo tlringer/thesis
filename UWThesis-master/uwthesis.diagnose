@@ -7,7 +7,7 @@
 0 autoreference(s) are used but not introduced.
 
 3 autoreference(s) are properly used.
-0 autoreference(s) are defined but not used.
+1 autoreference(s) are defined but not used.
 
 
 ********
@@ -24,5 +24,12 @@
 
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:191: {Calculus of Inductive Constructions}{default}{base}
+
+
+***********************************
+* Autoref introduced but not used *
+***********************************
+
+uwthesis.tex:54: {algebraic ornaments}{default}{base}
 
 

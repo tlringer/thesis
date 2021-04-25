@@ -438,29 +438,17 @@ and each \smallmath{$\mathrm{E}_{A_j}$} denotes the type of the eliminator for t
 Analogous names are also reserved for input type \AI.
 
 \begin{figure}
-\begin{minipage}{0.60\textwidth}
 \begin{lstlisting}
-(@\vspace{-0.4cm}@)
 $A$ := $\mathrm{Ind} (\mathit{Ty}_A : \mathrm{s}_A)\{\mathrm{C}_{A_1}, \ldots, \mathrm{C}_{A_n}\}$
-(@\vspace{-0.4cm}@)
 $A_I$ := $\mathrm{Ind} (\mathit{Ty}_{A_I} : (\Pi (i : I). \mathrm{s}_{A_I}))\{\mathrm{C}_{A_{I_1}}, \ldots, \mathrm{C}_{A_{I_n}}\}$
+
+$\mathrm{P}_A$ := $\Pi (a : A) . \mathrm{s}_A$
+$\mathrm{P}_{A_I}$ := $\Pi (i : I) (a_i : A_I\ i) . \mathrm{s}_{A_I}$
+
 $\forall 1 \le i \le n,$
   $\mathrm{E}_{A_j}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(i,\ A),\ C_{A_j})$
   $\mathrm{E}_{B_j}\ (p_{A_I} : \mathrm{P}_{A_I})$ := $\xi(A_I,\ p_{A_I},\ \mathrm{Constr}(i,\ A_I),\ C_{A_{I_j}})$
 \end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.40\textwidth}
-\begin{lstlisting}
-(@\vspace{-0.4cm}@)
-$\mathrm{P}_A$ := $\Pi (a : A) . \mathrm{s}_A$
-(@\vspace{-0.4cm}@)
-$\mathrm{P}_{A_I}$ := $\Pi (i : I) (a_i : A_I\ i) . \mathrm{s}_{A_I}$
-$\phantom{skip}$
-$\phantom{skip}$
-$\phantom{skip}$
-\end{lstlisting}
-\end{minipage}
 \vspace{-0.3cm}
 \caption{Common definitions.}
 \label{fig:common}
@@ -488,28 +476,26 @@ and one to compose the motive and cases.
   { \\ }
   { \Gamma \vdash (A, A_I) \Downarrow_{i_{m}} \lambda (a : A) . I }\\
 
-\hfill\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i_{c}} t$ }\vspace{-0.4cm}\\
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i_{c}} t$ }\vspace{-0.4cm}\\
 
 \inferrule[Index-Conclusion]
   { \\ }
   { \Gamma \vdash (p_A\ a,\ p_{A_I}\ i\ a_i) \Downarrow_{i_{c}} i } 
 
 \inferrule[Index-Hypothesis] % new hypothesis for index
-  { \mathrm{new}\ n_{A_I}\ b_{A_I} \\ \Gamma,\ n_{A_I} : t_{A_I} \vdash (\Pi (n_A : t_A) . b_A,\ b_{A_I}) \Downarrow_{i_{c}} t }
+  { \mathrm{new}\ n_{A_I}\ b_{A_I} \\\\ \Gamma,\ n_{A_I} : t_{A_I} \vdash (\Pi (n_A : t_A) . b_A,\ b_{A_I}) \Downarrow_{i_{c}} t }
   {  \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_{A_I} : t_{A_I}) . b_{A_I}) \Downarrow_{i_{c}} t}
 
 \inferrule[Index-IH] % inductive hypothesis
-  { \Gamma \vdash (A, A_I) \Downarrow_{i_{m}} p \\\\ 
+  { \Gamma \vdash (A, A_I) \Downarrow_{i_{m}} p \\
     \Gamma,\ n_A : p\ a \vdash (b_A,\ b_{A_I} [n_A / i]) \Downarrow_{i_{c}} t }
-  { \Gamma \vdash (\Pi (n_A : p_A\ a) . b_A,\ \Pi (n_{A_I} : p_{A_I}\ i\ b) . b_{A_I}) \\\\ 
-    \phantom{\Gamma} \Downarrow_{i_{c}} \lambda (n_A : p\ a) . t }
+  { \Gamma \vdash (\Pi (n_A : p_A\ a) . b_A,\ \Pi (n_{A_I} : p_{A_I}\ i\ b) . b_{A_I}) \Downarrow_{i_{c}} \lambda (n_A : p\ a) . t }
 
 \inferrule[Index-Prod] % otherwise, unchanged (when we get rid of the gross fall-through thing, needs not new, and needs to check t_A and t_B not IHs)
   { \Gamma,\ n_A : t_A \vdash (b_A,\ b_{A_I} [n_A / n_{A_I}]) \Downarrow_{i_{c}} t }
-  { \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_{A_I} : t_{A_I}) . b_{A_I}) \\\\
-    \phantom{\Gamma} \Downarrow_{i_{c}} \lambda (n_A : t_A) . t }\\
+  { \Gamma \vdash (\Pi (n_A : t_A) . b_A,\ \Pi (n_{A_I} : t_{A_I}) . b_{A_I}) \Downarrow_{i_{c}} \lambda (n_A : t_A) . t }\\
 
-\hfill\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i} t$ }\vspace{-0.5cm}\\
+\hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i} t$ }\vspace{-0.5cm}\\
 
 \inferrule[Index-Ind] 
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i_{m}} p \\

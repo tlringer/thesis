@@ -233,10 +233,8 @@
 \KAuxNewLinkScopetagInstance {fig:spec}{document}
 \KAuxDeclaredScopeTag {sec:proc}
 \KAuxNewLinkScopetagInstance {sec:proc}{document}
-\KAuxDeclaredScopeTag {sec:alg-orn}
-\KAuxNewLinkScopetagInstance {sec:alg-orn}{document}
 
-\KAuxFileAt {differencing.tex}{364}
+\KAuxFileAt {differencing.tex}{360}
 \KAuxAutorefTarget {default}{base}{algebraic ornaments}
 \KAuxDeclaredScopeTag {fig:common}
 \KAuxNewLinkScopetagInstance {fig:common}{document}
@@ -244,8 +242,6 @@
 \KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
 \KAuxDeclaredScopeTag {fig:searchpromote}
 \KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
-\KAuxDeclaredScopeTag {sec:other}
-\KAuxNewLinkScopetagInstance {sec:other}{document}
 \KAuxDeclaredScopeTag {sec:pi-diff-limits}
 \KAuxNewLinkScopetagInstance {sec:pi-diff-limits}{document}
 \KAuxDeclaredScopeTag {sec:pi-trans}
@@ -258,6 +254,10 @@
 \KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
 \KAuxDeclaredScopeTag {sec:pi-details}
 \KAuxNewLinkScopetagInstance {sec:pi-details}{document}
+\KAuxDeclaredScopeTag {sec:pi-details-diff}
+\KAuxNewLinkScopetagInstance {sec:pi-details-diff}{document}
+\KAuxDeclaredScopeTag {sec:pi-details-trans}
+\KAuxNewLinkScopetagInstance {sec:pi-details-trans}{document}
 \KAuxDeclaredScopeTag {sec:pi-workflow}
 \KAuxNewLinkScopetagInstance {sec:pi-workflow}{document}
 \KAuxDeclaredScopeTag {fig:ltacsyntax1}

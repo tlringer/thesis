@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2198,87 +2198,57 @@ Overfull \hbox (6.1325pt too wide) in paragraph at lines 300--309
 -20) To pre-serve the equiv-a-lence (Fig-ure []29[], left), []
  []
 
-[75] [76]
+[75] [76] [77]
 
-LaTeX Warning: Reference `searchconfig' on page 77 undefined on input line 459.
-
-
-[77]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 470.
+LaTeX Font Warning: Command \small invalid in math mode on input line 479.
 
 [78] [79]
-Overfull \hbox (31.1388pt too wide) in paragraph at lines 555--556
+Overfull \hbox (31.1388pt too wide) in paragraph at lines 564--565
 [][][][][][][][][][]  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 564
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 573
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 564.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 573.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 564.
+(Font)              for symbol `textbraceleft' on input line 573.
 
 
-Overfull \hbox (66.33852pt too wide) in paragraph at lines 564--565
+Overfull \hbox (66.33852pt too wide) in paragraph at lines 573--574
 [][][][][][][][][][]  
  []
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 570.
-
-
-Overfull \hbox (31.10234pt too wide) in paragraph at lines 569--604
- $ [][] 
+Overfull \hbox (10.39911pt too wide) in paragraph at lines 578--586
+\OT1/pplj/m/n/10.95 (-20) Figure []32[] shows the in-ter-est-ing deriva-tions f
+or the judg-ment $[]$
  []
 
 
-Overfull \hbox (70.11812pt too wide) in paragraph at lines 569--604
- [] 
- []
+LaTeX Font Warning: Command \small invalid in math mode on input line 594.
 
-
-Overfull \hbox (7.59872pt too wide) in paragraph at lines 569--604
- [][] 
- []
-
-
-Overfull \hbox (100.10329pt too wide) in paragraph at lines 569--604
- [][] 
- []
-
-
-Overfull \hbox (146.11165pt too wide) in paragraph at lines 569--604
- [][] 
- []
-
-
-Overfull \hbox (376.99031pt too wide) in paragraph at lines 569--604
- []$ 
- []
-
-[80] [81]) (./often/transformation.tex
+[80]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
 
-LaTeX Warning: Reference `sec:configurable' on page 82 undefined on input line 
+LaTeX Warning: Reference `sec:configurable' on page 81 undefined on input line 
 117.
 
 
-LaTeX Warning: Reference `sec:generic' on page 82 undefined on input line 118.
+LaTeX Warning: Reference `sec:generic' on page 81 undefined on input line 118.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 82 undefined on input lin
+LaTeX Warning: Reference `sec:implementation' on page 81 undefined on input lin
 e 120.
 
-[82] [83]
+[81] [82] [83]
 Underfull \hbox (badness 10000) in paragraph at lines 197--223
 
  []
 
-[84]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 227.
 
@@ -2287,7 +2257,7 @@ Overfull \hbox (58.00378pt too wide) in paragraph at lines 226--260
  [][] 
  []
 
-[85]
+[84] [85]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 291.
 
@@ -2298,28 +2268,27 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 333.
 
 LaTeX Warning: Citation `Ringer2019' on page 88 undefined on input line 40.
 
+
+LaTeX Warning: Reference `sec:search' on page 88 undefined on input line 46.
+
 [88]
-
-LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 46.
-
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 84.
 
+
+LaTeX Warning: Reference `sec:second' on page 89 undefined on input line 156.
+
 [89] [90]
-
-LaTeX Warning: Reference `sec:second' on page 91 undefined on input line 156.
-
-
 Overfull \hbox (18.95294pt too wide) in paragraph at lines 213--226
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
-[91] [92]
+[91]
 
-LaTeX Warning: Reference `sec:search' on page 93 undefined on input line 288.
+LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 288.
 
-) (./often/results.tex
+[92]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -2333,11 +2302,11 @@ LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
 
 LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
 
-(./often/replica.tex) (./often/replica.tex)
+[93] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 93 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 94 undefined on input line 113.
 
-[93] [94]
+[94]
 
 LaTeX Warning: Citation `replica' on page 95 undefined on input line 165.
 
@@ -2472,10 +2441,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 49984 strings out of 492609
- 1007304 string characters out of 6129033
- 1292459 words of memory out of 5000000
- 50804 multiletter control sequences out of 15000+600000
+ 49986 strings out of 492609
+ 1007353 string characters out of 6129033
+ 1292135 words of memory out of 5000000
+ 50803 multiletter control sequences out of 15000+600000
  633503 words of font info for 787 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2496,10 +2465,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1512095 bytes).
+Output written on uwthesis.pdf (129 pages, 1511541 bytes).
 PDF statistics:
- 2898 PDF objects out of 2984 (max. 8388607)
- 2698 compressed objects within 27 object streams
- 1403 named destinations out of 1440 (max. 500000)
+ 2905 PDF objects out of 2984 (max. 8388607)
+ 2704 compressed objects within 28 object streams
+ 1406 named destinations out of 1440 (max. 500000)
  93506 words of extra memory for PDF output out of 106986 (max. 10000000)
 

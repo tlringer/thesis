@@ -119,11 +119,15 @@
 \contentsline {paragraph}{Equivalences from Configurations}{75}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{76}{subsection.4.3.4}% 
 \contentsline {subsection}{\numberline {4.3.5}Algebraic Ornaments}{76}{subsection.4.3.5}% 
-\contentsline {paragraph}{Differencing for the Indexer}{78}{figure.caption.32}% 
-\contentsline {paragraph}{Differencing for the Configuration}{80}{figure.caption.34}% 
-\contentsline {subsubsection}{\numberline {4.3.5.1}Other Search Procedures}{82}{subsubsection.4.3.5.1}% 
-\contentsline {subsection}{\numberline {4.3.6}Limitations}{82}{subsection.4.3.6}% 
-\contentsline {section}{\numberline {4.4}Transformation}{82}{section.4.4}% 
+\contentsline {paragraph}{Common Definitions}{77}{lstnumber.-191.1}% 
+\contentsline {subsubsection}{\numberline {4.3.5.1}Differencing for the Indexer}{78}{subsubsection.4.3.5.1}% 
+\contentsline {paragraph}{Generating the Motive}{78}{figure.caption.33}% 
+\contentsline {paragraph}{Generating Each Case}{78}{lstnumber.-194.1}% 
+\contentsline {paragraph}{Composing the Result}{80}{lstnumber.-198.1}% 
+\contentsline {subsubsection}{\numberline {4.3.5.2}Differencing for the Configuration}{80}{subsubsection.4.3.5.2}% 
+\contentsline {subsubsection}{\numberline {4.3.5.3}Other Search Procedures}{81}{subsubsection.4.3.5.3}% 
+\contentsline {subsection}{\numberline {4.3.6}Limitations}{81}{subsection.4.3.6}% 
+\contentsline {section}{\numberline {4.4}Transformation}{81}{section.4.4}% 
 \contentsline {paragraph}{Lifting Eliminators}{84}{figure.caption.37}% 
 \contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.39}% 
 \contentsline {paragraph}{Core Lifting Algorithm}{86}{lstnumber.-209.1}% 

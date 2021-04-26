@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1598,12 +1598,6 @@ LaTeX Warning: Label `fig:stronger' multiply defined.
 
 LaTeX Warning: Label `fig:stronger@cref' multiply defined.
 
-
-LaTeX Warning: Label `fig:final' multiply defined.
-
-
-LaTeX Warning: Label `fig:final@cref' multiply defined.
-
 )
 \openout1 = `uwthesis.aux'.
 
@@ -2233,62 +2227,31 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 594.
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
+[81] [82] [83]) (./often/implementation.tex [84]
 
-LaTeX Warning: Reference `sec:configurable' on page 81 undefined on input line 
-117.
-
-
-LaTeX Warning: Reference `sec:generic' on page 81 undefined on input line 118.
+LaTeX Warning: Citation `Ringer2019' on page 85 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 81 undefined on input lin
-e 120.
+LaTeX Warning: Reference `sec:search' on page 85 undefined on input line 46.
 
-[81] [82] [83]
-Underfull \hbox (badness 10000) in paragraph at lines 197--223
-
- []
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 227.
-
-
-Overfull \hbox (58.00378pt too wide) in paragraph at lines 226--260
- [][] 
- []
-
-[84] [85]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 291.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 333.
-
-[86] [87]) (./often/implementation.tex
-
-LaTeX Warning: Citation `Ringer2019' on page 88 undefined on input line 40.
-
-
-LaTeX Warning: Reference `sec:search' on page 88 undefined on input line 46.
-
-[88]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 84.
 
+[85] [86]
 
-LaTeX Warning: Reference `sec:second' on page 89 undefined on input line 156.
+LaTeX Warning: Reference `sec:second' on page 87 undefined on input line 156.
 
-[89] [90]
+[87]
 Overfull \hbox (18.95294pt too wide) in paragraph at lines 213--226
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
-[91]
+[88]
 
-LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 288.
+LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 288.
 
-[92]) (./often/results.tex
+) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -2297,45 +2260,45 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 53.
 
 
-LaTeX Warning: Citation `Ringer2019' on page 93 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 53.
 
-[93] (./often/replica.tex) (./often/replica.tex)
+[89] [90] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 94 undefined on input line 113.
+LaTeX Warning: Reference `sec:key1' on page 91 undefined on input line 113.
 
-[94]
+[91]
 
-LaTeX Warning: Citation `replica' on page 95 undefined on input line 165.
+LaTeX Warning: Citation `replica' on page 92 undefined on input line 165.
 
-[95] [96]) (./often/conclusion.tex)) (./related.tex [97] [98
+[92] [93]) (./often/conclusion.tex)) (./related.tex [94]
+chapter 5.
+[95
 
 
 ]
-chapter 5.
-[99]
 
-LaTeX Warning: Citation `Ringer2019' on page 100 undefined on input line 97.
+LaTeX Warning: Citation `Ringer2019' on page 96 undefined on input line 97.
 
-[100]
+[96]
 
-LaTeX Warning: Citation `ZimmermannH15' on page 101 undefined on input line 110
-.
+LaTeX Warning: Citation `ZimmermannH15' on page 97 undefined on input line 110.
 
 
-LaTeX Warning: Citation `tabareau:hal-01559073' on page 101 undefined on input 
-line 110.
 
-[101]
+LaTeX Warning: Citation `tabareau:hal-01559073' on page 97 undefined on input l
+ine 110.
 
-LaTeX Warning: Citation `pons2000generalization' on page 102 undefined on input
- line 160.
+[97]
+
+LaTeX Warning: Citation `pons2000generalization' on page 98 undefined on input 
+line 160.
 
 
-LaTeX Warning: Citation `ringer2018adapting' on page 102 undefined on input lin
-e 172.
+LaTeX Warning: Citation `ringer2018adapting' on page 98 undefined on input line
+ 172.
 
 
 Overfull \hbox (8.96135pt too wide) in paragraph at lines 204--209
@@ -2343,17 +2306,17 @@ Overfull \hbox (8.96135pt too wide) in paragraph at lines 204--209
  on Is-abelle/Isar [[]],
  []
 
-[102]
+[98]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 103 undefined on input line 218
-.
+LaTeX Warning: Citation `Chrzaszcz2003' on page 99 undefined on input line 218.
 
 
-LaTeX Warning: Citation `replica' on page 103 undefined on input line 230.
 
-[103]) (./conclusion.tex [104]
+LaTeX Warning: Citation `replica' on page 99 undefined on input line 230.
+
+[99]) (./conclusion.tex [100]
 chapter 6.
-(./next.tex [105
+(./next.tex [101
 
 
 ]
@@ -2368,23 +2331,23 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [106]
+)) (./uwthesis.ind [102]
 Overfull \hbox (4.17055pt too wide) in paragraph at lines 6--8
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []17[], []19[],
  []
 
-[107
+[103
 
 
 
 
 
 
-]) (./uwthesis.bbl [108
+]) (./uwthesis.bbl [104
 
 
 
-] [109] [110] [111] [112] [113] [114] [115] [116]
+] [105] [106] [107] [108] [109] [110] [111] [112]
 Underfull \hbox (badness 1163) in paragraph at lines 572--578
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2406,13 +2369,13 @@ c text-book, 2016.  Ver-sion 4.0.
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 596.
 
-[117]
+[113]
 Underfull \hbox (badness 1184) in paragraph at lines 617--622
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[118]) [119]
+[114]) [115]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2441,11 +2404,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 49986 strings out of 492609
- 1007353 string characters out of 6129033
- 1292135 words of memory out of 5000000
- 50803 multiletter control sequences out of 15000+600000
- 633503 words of font info for 787 fonts, out of 8000000 for 9000
+ 49927 strings out of 492609
+ 1006389 string characters out of 6129033
+ 1293555 words of memory out of 5000000
+ 50778 multiletter control sequences out of 15000+600000
+ 633209 words of font info for 786 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2465,10 +2428,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (129 pages, 1511541 bytes).
+Output written on uwthesis.pdf (125 pages, 1495108 bytes).
 PDF statistics:
- 2905 PDF objects out of 2984 (max. 8388607)
- 2704 compressed objects within 28 object streams
- 1406 named destinations out of 1440 (max. 500000)
- 93506 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2842 PDF objects out of 2984 (max. 8388607)
+ 2646 compressed objects within 27 object streams
+ 1372 named destinations out of 1440 (max. 500000)
+ 92994 words of extra memory for PDF output out of 106986 (max. 10000000)
 

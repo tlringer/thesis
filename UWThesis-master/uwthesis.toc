@@ -128,31 +128,30 @@
 \contentsline {subsubsection}{\numberline {4.3.5.3}Other Search Procedures}{81}{subsubsection.4.3.5.3}% 
 \contentsline {subsection}{\numberline {4.3.6}Limitations}{81}{subsection.4.3.6}% 
 \contentsline {section}{\numberline {4.4}Transformation}{81}{section.4.4}% 
-\contentsline {paragraph}{Lifting Eliminators}{84}{figure.caption.37}% 
-\contentsline {paragraph}{Lifting Constructors}{86}{figure.caption.39}% 
-\contentsline {paragraph}{Core Lifting Algorithm}{86}{lstnumber.-209.1}% 
-\contentsline {subsection}{\numberline {4.4.1}Limitations}{88}{subsection.4.4.1}% 
-\contentsline {section}{\numberline {4.5}Implementation}{88}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Tool Details}{88}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{88}{subsection.4.5.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{88}{subsubsection.4.5.2.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{88}{subsubsection.4.5.2.2}% 
-\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{89}{subsubsection.4.5.2.3}% 
-\contentsline {section}{\numberline {4.6}Results}{93}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{97}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{99}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Programs}{99}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{100}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{105}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{105}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{105}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{105}{chapter.6}% 
-\contentsline {paragraph}{Automation}{106}{chapter.6}% 
-\contentsline {paragraph}{Integration}{106}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{106}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{106}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{106}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{106}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{106}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{106}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{106}{chapter.6}% 
+\contentsline {subsection}{\numberline {4.4.1}Unification Heuristics}{83}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Specifying a Correct Transformation}{84}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Limitations}{84}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Implementation}{84}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Tool Details}{84}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{85}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Configure}{85}{subsubsection.4.5.2.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Transform}{85}{subsubsection.4.5.2.2}% 
+\contentsline {subsubsection}{\numberline {4.5.2.3}Decompile}{85}{subsubsection.4.5.2.3}% 
+\contentsline {section}{\numberline {4.6}Results}{89}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{94}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{95}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Programs}{95}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Proofs}{96}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{101}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{101}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{101}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{101}{chapter.6}% 
+\contentsline {paragraph}{Automation}{102}{chapter.6}% 
+\contentsline {paragraph}{Integration}{102}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{102}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{102}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{102}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{102}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{102}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{102}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{102}{chapter.6}% 

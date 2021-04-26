@@ -254,14 +254,6 @@
 \KAuxNewLinkScopetagInstance {fig:final}{document}
 \KAuxDeclaredScopeTag {fig:appswap1}
 \KAuxNewLinkScopetagInstance {fig:appswap1}{document}
-\KAuxDeclaredScopeTag {fig:convenience}
-\KAuxNewLinkScopetagInstance {fig:convenience}{document}
-\KAuxDeclaredScopeTag {fig:ind}
-\KAuxNewLinkScopetagInstance {fig:ind}{document}
-\KAuxDeclaredScopeTag {fig:construct}
-\KAuxNewLinkScopetagInstance {fig:construct}{document}
-\KAuxDeclaredScopeTag {fig:final}
-\KAuxNewLinkScopetagInstance {fig:final}{document}
 \KAuxDeclaredScopeTag {sec:pi-implementation}
 \KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
 \KAuxDeclaredScopeTag {fig:ltacsyntax1}

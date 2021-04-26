@@ -110,14 +110,11 @@ $\lambda$ (T : Type) (l m : (@\codediff{B}@)) .(@\vspace{-0.04cm}@)
 \label{fig:appswap1}
 \end{figure*}
 
-(Some redundant text right now.)
 At the heart of \toolnamec is a configurable proof term transformation for transporting
 proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
-The transformation takes as input a deconstructed equivalence that we call a \textit{configuration}.
-This section introduces the configuration (Section~\ref{sec:configurable}),
-defines the transformation that builds on that (Section~\ref{sec:generic}),
-then specifies correctness criteria for the configuration (Section~\ref{sec:art}).
-Section~\ref{sec:implementation} describes the additional work needed to implement this transformation.
+The transformation takes as input the configuration.
+This section introduces the transformation that builds on that.
+Section~\ref{sec:pi-implementation} describes the additional work needed to implement this transformation.
 
 Figure~\ref{fig:final} shows the proof term transformation $\Gamma \vdash t \Uparrow t'$ that forms the core of \toolnamec.
 The transformation is parameterized over equivalent types \Aa and \B (\textsc{Equivalence})
@@ -128,12 +125,14 @@ It implicitly constructs an updated context $\Gamma'$ in which to interpret $t'$
 The proof term transformation is (perhaps deceptively) simple by design:
 it moves the bulk of the work into the configuration,
 and represents the configuration explicitly.
-Of course, typical proof terms in Coq do not apply these configuration
+This configuration either comes from automatic configuration (like the search procedure in the previous section),
+or directly from the proof engineer.
+Of course, in both of these cases, typical proof terms in Coq do not apply these configuration
 terms explicitly.
 \toolnamec does some additional work using \textit{unification heuristics} to get real proof terms into this format before running the transformation.
 It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration.
 
-\mysubsubsec{Unification Heuristics}
+\subsection{Unification Heuristics}
 The transformation does not fully describe the search procedure for transforming terms that \toolnamec implements.
 Before running the transformation, \toolnamec \textit{unifies} subterms with particular \Aa (fixing parameters and indices),
 and with applications of configuration terms over \Aa. 
@@ -162,13 +161,7 @@ by the time it runs.
 When even Coq's unification is not enough, \toolnamec relies on proof engineers to provide hints
 in the form of annotations~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}.
 
-\mysubsubsec{Algebraic Ornaments} % TODO from DEVOID unchanged, needs adjustment to fit into PUMPKIN Pi transformation
-Consider instantiating the transformation to algebraic ornaments.
-We show only one direction of the algorithm, promoting 
-from \Aa\ to packed \B; the forgetful direction is similar.
-The core algorithm (Figure~\ref{fig:final}) builds on a set of common definitions (Figure~\ref{fig:convenience}) and 
-two intermediate judgments: one to lift eliminators (Figure~\ref{fig:ind}) and one to lift constructors (Figure~\ref{fig:construct}).
-
+\iffalse
 \begin{figure}
 \begin{lstlisting}
 (@\vspace{-0.4cm}@)
@@ -393,8 +386,10 @@ The remaining derivations recurse predictably.
 \caption{Core lifting algorithm.}
 \label{fig:final}
 \end{figure}
+\fi
 
-\mysubsubsec{Specifying a Correct Transformation}
+\subsection{Specifying a Correct Transformation}
+
 The implementation of this transformation in \toolnamec produces a term that Coq type checks, and so does not
 add to the trusted computing base.
 As \toolnamec is an engineering tool, there is no need to formally prove the transformation correct, though doing so would be satisfying.
@@ -414,4 +409,4 @@ It would be possible to generate per-transformation proofs of correctness, but t
 
 \subsection{Limitations}
 
-Limitations and whether they're addressed in other tools yet
+(Limitations and whether they're addressed in other tools yet.)

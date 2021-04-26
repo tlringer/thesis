@@ -112,14 +112,12 @@ $\lambda$ (T : Type) (l m : (@\codediff{B}@)) .(@\vspace{-0.04cm}@)
 
 At the heart of \toolnamec is a configurable proof term transformation for transporting
 proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
-The transformation takes as input the configuration.
-This section introduces the transformation that builds on that.
-Section~\ref{sec:pi-implementation} describes the additional work needed to implement this transformation.
-
-Figure~\ref{fig:final} shows the proof term transformation $\Gamma \vdash t \Uparrow t'$ that forms the core of \toolnamec.
-The transformation is parameterized over equivalent types \Aa and \B (\textsc{Equivalence})
-as well as the configuration.
-It assumes $\eta$-expanded functions.
+Figure~\ref{fig:final} shows this proof term transformation.
+The transformation $\Gamma \vdash t \Uparrow t'$ takes some term $t$ defined over the old version of a type
+to a new term $t'$ defined over the new version of the type.
+It is parameterized over equivalent types \Aa and \B (\textsc{Equivalence})
+as well as the configuration for that equivalence.
+It assumes $\eta$-expanded functions. % TODO move this into conventions
 It implicitly constructs an updated context $\Gamma'$ in which to interpret $t'$, but this is not needed for computation.
 
 The proof term transformation is (perhaps deceptively) simple by design:
@@ -129,10 +127,15 @@ This configuration either comes from automatic configuration (like the search pr
 or directly from the proof engineer.
 Of course, in both of these cases, typical proof terms in Coq do not apply these configuration
 terms explicitly.
-\toolnamec does some additional work using \textit{unification heuristics} to get real proof terms into this format before running the transformation.
-It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration.
+\toolnamec does some additional work using \textit{unification heuristics} to get real proof terms into this format before 
+running the transformation (Section~\ref{sec:trans-unification}).
+It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration,
+replacing \Aa with \B (Section~\ref{sec:trans-correctness}).
+In doing so, it addresses several of the limitations from the \sysname transformations (Section~\ref{sec:pi-trans-limitations}).
 
 \subsection{Unification Heuristics}
+\label{sec:trans-unification}
+
 The transformation does not fully describe the search procedure for transforming terms that \toolnamec implements.
 Before running the transformation, \toolnamec \textit{unifies} subterms with particular \Aa (fixing parameters and indices),
 and with applications of configuration terms over \Aa. 
@@ -389,6 +392,7 @@ The remaining derivations recurse predictably.
 \fi
 
 \subsection{Specifying a Correct Transformation}
+\label{sec:trans-correctness}
 
 The implementation of this transformation in \toolnamec produces a term that Coq type checks, and so does not
 add to the trusted computing base.
@@ -403,10 +407,11 @@ then $t$ and $t'$ are equal up to transport, and $t'$ refers to \B in place of \
 The key steps in this transformation that make this possible are porting terms along the configuration % corresponding
 %to a particular equivalence 
 (\textsc{Dep-Constr}, \textsc{Dep-Elim}, \textsc{Eta}, and \textsc{Iota}).
-%The rest is straightforward.
+The rest is straightforward.
 For metatheoretical reasons, without additional axioms, a proof of this theorem in Coq can only be approximated~\cite{tabareau2017equivalences}.
 It would be possible to generate per-transformation proofs of correctness, but this does not serve an engineering need.
 
-\subsection{Limitations}
+\subsection{Revisiting Limitations}
+\label{sec:pi-trans-limitations}
 
-(Limitations and whether they're addressed in other tools yet.)
+(Revisiting the limitations from \sysname).

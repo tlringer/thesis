@@ -250,6 +250,12 @@
 \KAuxNewLinkScopetagInstance {fig:final}{document}
 \KAuxDeclaredScopeTag {fig:appswap1}
 \KAuxNewLinkScopetagInstance {fig:appswap1}{document}
+\KAuxDeclaredScopeTag {sec:trans-unification}
+\KAuxNewLinkScopetagInstance {sec:trans-unification}{document}
+\KAuxDeclaredScopeTag {sec:trans-correctness}
+\KAuxNewLinkScopetagInstance {sec:trans-correctness}{document}
+\KAuxDeclaredScopeTag {sec:pi-trans-limitations}
+\KAuxNewLinkScopetagInstance {sec:pi-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pi-implementation}
 \KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
 \KAuxDeclaredScopeTag {sec:pi-details}

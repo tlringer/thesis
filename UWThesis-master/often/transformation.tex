@@ -395,7 +395,7 @@ The remaining derivations recurse predictably.
 \label{sec:trans-correctness}
 
 The implementation of this transformation in \toolnamec produces a term that Coq type checks, and so does not
-add to the trusted computing base.
+add to the TCB.
 As \toolnamec is an engineering tool, there is no need to formally prove the transformation correct, though doing so would be satisfying.
 The goal of such a proof would be to show that % the transformation preserves equality up to transport along the equivalence $A \simeq B$,
 %while no longer referring to the old specification.
@@ -414,4 +414,24 @@ It would be possible to generate per-transformation proofs of correctness, but t
 \subsection{Revisiting Limitations}
 \label{sec:pi-trans-limitations}
 
-(Revisiting the limitations from \sysname).
+The transformations in \sysname struggled with undecidability and modeling diverse proof styles.
+The \toolnamec transformation partially addresses this.
+As in the previous chapter, limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pi-details-trans}.
+
+\paragraph{Undecidability}
+\toolnamec cannot totally get rid of undecidability, but what it can do is move
+the burden of undecidability outside of the details of the algorithm.
+This is what the unification heuristics accomplish.
+Most notably, since unification heuristics are abstracted from the transformation itself,
+this makes it relatively simple to hook in a human-assisted workflow using annotations.
+\toolnamec implements this.
+Still, the \toolnamec transformation does struggle sometimes with termination.
+I decribe this more in Section~\ref{sec:pi-implementation}.
+
+\paragraph{Modeling Diverse Proof Styles}
+Unlike the procedures from \sysname, the \toolnamec transformation is generic over the proof term structure.
+This benefit again comes from decoupling unification from the transformation,
+and from the fact that the transformation is defined over any possible Gallina term.
+The only difficulties show up at the level of implementation details,
+which I will describe in Section~\ref{sec:pi-implementation}.
+

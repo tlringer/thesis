@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  26 APR 2021 15:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  26 APR 2021 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2231,10 +2231,11 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
 LaTeX Warning: Citation `Ringer2019' on page 87 undefined on input line 64.
 
+[87]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 92.
 
-[87] [88]
+[88]
 
 LaTeX Warning: Reference `sec:second' on page 89 undefined on input line 164.
 
@@ -2566,10 +2567,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (137 pages, 1533976 bytes).
+Output written on uwthesis.pdf (137 pages, 1535272 bytes).
 PDF statistics:
- 2947 PDF objects out of 2984 (max. 8388607)
- 2738 compressed objects within 28 object streams
+ 2950 PDF objects out of 2984 (max. 8388607)
+ 2741 compressed objects within 28 object streams
  1411 named destinations out of 1440 (max. 500000)
  93010 words of extra memory for PDF output out of 106986 (max. 10000000)
 

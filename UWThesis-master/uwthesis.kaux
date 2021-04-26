@@ -256,6 +256,10 @@
 \KAuxNewLinkScopetagInstance {fig:appswap1}{document}
 \KAuxDeclaredScopeTag {sec:pi-implementation}
 \KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
+\KAuxDeclaredScopeTag {sec:pi-details}
+\KAuxNewLinkScopetagInstance {sec:pi-details}{document}
+\KAuxDeclaredScopeTag {sec:pi-workflow}
+\KAuxNewLinkScopetagInstance {sec:pi-workflow}{document}
 \KAuxDeclaredScopeTag {fig:ltacsyntax1}
 \KAuxNewLinkScopetagInstance {fig:ltacsyntax1}{document}
 \KAuxDeclaredScopeTag {fig:someantics}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  25 APR 2021 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1598,6 +1598,12 @@ LaTeX Warning: Label `fig:stronger' multiply defined.
 
 LaTeX Warning: Label `fig:stronger@cref' multiply defined.
 
+
+LaTeX Warning: Label `sec:pi-workflow' multiply defined.
+
+
+LaTeX Warning: Label `sec:pi-workflow@cref' multiply defined.
+
 )
 \openout1 = `uwthesis.aux'.
 
@@ -2229,29 +2235,29 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
 [81] [82] [83]) (./often/implementation.tex [84]
 
-LaTeX Warning: Citation `Ringer2019' on page 85 undefined on input line 40.
+LaTeX Warning: Citation `Ringer2019' on page 85 undefined on input line 48.
 
 
-LaTeX Warning: Reference `sec:search' on page 85 undefined on input line 46.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 84.
+LaTeX Font Warning: Command \small invalid in math mode on input line 76.
 
 [85] [86]
 
-LaTeX Warning: Reference `sec:second' on page 87 undefined on input line 156.
+LaTeX Warning: Reference `sec:second' on page 87 undefined on input line 148.
 
 [87]
-Overfull \hbox (18.95294pt too wide) in paragraph at lines 213--226
+Overfull \hbox (18.95294pt too wide) in paragraph at lines 205--218
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
 [88]
 
-LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 288.
+LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 280.
 
-) (./often/results.tex
+
+LaTeX Warning: Reference `sec:search' on page 89 undefined on input line 298.
+
+[89]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 12.
 
@@ -2260,12 +2266,12 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 10--53
  []
 
 
-LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 90 undefined on input line 53.
 
 
-LaTeX Warning: Citation `Ringer2019' on page 89 undefined on input line 53.
+LaTeX Warning: Citation `Ringer2019' on page 90 undefined on input line 53.
 
-[89] [90] (./often/replica.tex) (./often/replica.tex)
+[90] (./often/replica.tex) (./often/replica.tex)
 
 LaTeX Warning: Reference `sec:key1' on page 91 undefined on input line 113.
 
@@ -2404,10 +2410,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 49927 strings out of 492609
- 1006389 string characters out of 6129033
- 1293555 words of memory out of 5000000
- 50778 multiletter control sequences out of 15000+600000
+ 49933 strings out of 492609
+ 1006521 string characters out of 6129033
+ 1292104 words of memory out of 5000000
+ 50782 multiletter control sequences out of 15000+600000
  633209 words of font info for 786 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2428,10 +2434,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (125 pages, 1495108 bytes).
+Output written on uwthesis.pdf (125 pages, 1496804 bytes).
 PDF statistics:
- 2842 PDF objects out of 2984 (max. 8388607)
- 2646 compressed objects within 27 object streams
- 1372 named destinations out of 1440 (max. 500000)
+ 2846 PDF objects out of 2984 (max. 8388607)
+ 2650 compressed objects within 27 object streams
+ 1374 named destinations out of 1440 (max. 500000)
  92994 words of extra memory for PDF output out of 106986 (max. 10000000)
 

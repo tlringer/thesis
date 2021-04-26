@@ -36,6 +36,7 @@ Warning--I didn't find a database entry for "pons2000generalization"
 Warning--I didn't find a database entry for "ringer2018adapting"
 Warning--I didn't find a database entry for "opdyke1992refactoring"
 Warning--I didn't find a database entry for "mens2004survey"
+Warning--I didn't find a database entry for "robert2018front"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
@@ -43,45 +44,45 @@ Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 114 entries,
+You've used 115 entries,
             2118 wiz_defined-function locations,
-            1216 strings with 25714 characters,
-and the built_in function-call counts, 43112 in all, are:
-= -- 4468
-> -- 1790
+            1221 strings with 25791 characters,
+and the built_in function-call counts, 43348 in all, are:
+= -- 4488
+> -- 1797
 < -- 64
-+ -- 713
-- -- 587
-* -- 2771
-:= -- 6705
-add.period$ -- 383
-call.type$ -- 114
-change.case$ -- 618
++ -- 716
+- -- 589
+* -- 2780
+:= -- 6744
+add.period$ -- 386
+call.type$ -- 115
+change.case$ -- 622
 chr.to.int$ -- 0
-cite$ -- 120
-duplicate$ -- 1821
-empty$ -- 3482
-format.name$ -- 587
-if$ -- 9540
+cite$ -- 121
+duplicate$ -- 1835
+empty$ -- 3510
+format.name$ -- 589
+if$ -- 9592
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 96
-newline$ -- 559
-num.names$ -- 238
-pop$ -- 761
+int.to.str$ -- 115
+missing$ -- 97
+newline$ -- 564
+num.names$ -- 240
+pop$ -- 769
 preamble$ -- 1
-purify$ -- 513
+purify$ -- 516
 quote$ -- 0
-skip$ -- 1419
+skip$ -- 1426
 stack$ -- 0
-substring$ -- 2651
-swap$ -- 600
+substring$ -- 2656
+swap$ -- 602
 text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 444
+type$ -- 448
 warning$ -- 6
-while$ -- 431
-width$ -- 117
-write$ -- 1335
-(There were 40 warnings)
+while$ -- 433
+width$ -- 118
+write$ -- 1345
+(There were 41 warnings)

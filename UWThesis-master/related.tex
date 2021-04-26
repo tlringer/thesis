@@ -1,14 +1,13 @@
 \chapter{Related Work}
 \label{sec:related}
 
-% TODO whatever else isn't here yet, and some of this might be factored out or partially factored out---all papers, including survey, plus generals
+% TODO whatever else isn't here yet, and some of this might be factored out or partially factored out---all papers, including survey, plus generals.
+% then organize and clean.
 
 TODO somewhere here or elsewhere (if elsewhere, fix references): talk about what lessons carry over to automated theorem provers,
 and which lessons carry over to other ITPs, and what work is needed to reach those tools.
 
-\section{Programs}
-
-\subsection*{Program Repair} 
+\section{Program Repair}
 
 % From sysname Pi, unchanged
 
@@ -46,7 +45,7 @@ this overview focuses on behavioral repair, or patching the code, as opposed to 
 more information on other repair tools %and on behavioral repair tools not immediately relevant to the \sysname\ vision
 can be found in the survey.
 
-\subsubsection{Lessons from Test-Based Program Repair}
+\subsection{Lessons from Test-Based Program Repair}
 \label{sec:lessons}
 
 A recent paper~\cite{Qi:2015:APP:2771783.2771791} calls results from test-based program repair into
@@ -165,7 +164,7 @@ In evaluating proof repair tools, it is important to compare to an acceptable ba
 manual inspection of patches~\cite{DBLP:journals/corr/abs-1811-02429} 
 may provide reassurance that patches are correct.
 
-\subsubsection{Program Repair Techniques}
+\subsection{Program Repair Techniques}
 \label{sec:techniques}
 % TODO maybe break into subsubsections without high-level technique sections, depends how long they are
 % TODO or better: split into techniques that sysname already uses in a sense, then another subsubsection for techniques
@@ -350,7 +349,7 @@ It does not yet automate it in a tool.
 %\end{enumerate}
 %\end{enumerate}
 
-\paragraph{Implications for Proof Repair}
+\subsection{Implications for Proof Repair}
 
 \sysname\ uses similar techniques to existing tools, though it is in a different language
 and so encounters different challenges. Some things are in fact easier for \sysname\ than for other tools;
@@ -440,50 +439,9 @@ proofs as in proof-directed repair
 can help a tool like \sysname\
 repair functions as well.
 
-%Reflexive parsing:
-%\begin{enumerate}
-%\item How it is useful to us:
-%\begin{enumerate}
-%\item Could think about writing patches for refactorings by hand
-%\item Could be useful when we think about some changes as code transformations, especially for refactorings (mentioned in sysname paper)
-%\item Then we could also think about searching for them, not just writing them
-%\item Also could help when thinking not only about Coq, but other proof assistants, when we're thinking about some language-independence
-%\end{enumerate}
-%Where it falls short for us:
-%\begin{enumerate}
-%\item Coq already has its own evar system so why not just reuse that? Or its notation system somehow? Or see how those are implemented?
-%\item Only refactorings, which are a small piece
-%\item No idea how Coq's parser works but it's weird
-%\end{enumerate}
-%\end{enumerate}
+\section{Type Theory}
 
-% TODO any other stuff
-
-% ---
-
-%\subsubsection{Orphaned}
-
-%TODO move these elsewhere as needed
-
-%\paragraph{Weimer}
-
-%Abstract behavioral model, patch generation technique, safety policy, static
-
-% TODO 187
-
-%\paragraph{Pachika}
-
-%Abstract behavioral model, Java
-
-% TODO 30
-
-%\paragraph{Modular and Verified Automatic Program Repair}
-
-% TODO 104
-
-% TODO more at some point
-
-\subsection*{Ornaments}
+\subsection{Ornaments}
 
 % From DEVOID, unchanged
 
@@ -497,17 +455,30 @@ In doing so, it takes advantage of the properties of algebraic ornaments~\cite{m
 It also introduces the first search algorithm to identify ornaments, which in the past 
 was identified as a ``gap'' in the literature~\cite{ko2016programming}.
 
-\subsection*{Programming by Example}
+\subsection{Transport}
+
+The \toolnamec transformation implements transport.
+Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
+UP~\cite{tabareau2017equivalences} approximates it
+in Coq, only sometimes relying on functional extensionality.
+While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
+
+\section{Other Programming Tools}
+
+\subsection{Program Synthesis}
 
 % From sysname PATCH, unchanged
 
+\paragraph{Programming by Example}
 Our approach generalizes an example that the programmer provides.
 This is similar to programming by example, a subfield of 
 program synthesis~\cite{DBLP:journals/ftpl/GulwaniPS17}. 
 This field addresses different challenges in different logics,
 but may drive solutions to similar problems in a dependently typed language.
 
-\subsection*{Differencing \& Incremental Computation}
+\paragraph{Neural Synthesis} (Ongoing work is related to this---really promising approach.)
+
+\subsection{Differencing \& Incremental Computation}
 
 % From sysname PATCH, unchanged
 
@@ -521,6 +492,7 @@ Differential assertion checking~\cite{differential-assertion-checking-2} analyze
 versions of a program for relative correctness with respect to a specification.
 Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
 All of these may be useful for improving semantic differencing.
+
 
 \section{Proofs}
 
@@ -576,12 +548,6 @@ due to the problem that \lstinline{Iota} addresses.
 CoqEAL may be most useful to chain with \toolnamec to get faster functions.
 Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
 better workflow support for changes that do not correspond to equivalences.
-
-The \toolnamec transformation implements transport.
-Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
-UP~\cite{tabareau2017equivalences} approximates it
-in Coq, only sometimes relying on functional extensionality.
-While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
 
 Recent work~\cite{tabareau2019marriage} extends UP with 
 a white-box transformation that may work for repair.
@@ -643,26 +609,6 @@ with CI systems, and fully support version updates.
 \textit{Refactoring} is the restructuring of code in a way that preserves semantics~\cite{opdyke1992refactoring};
 more can be found in a survey~\cite{mens2004survey}.
 \textit{Proof refactoring}~\cite{WhitesidePhD} is program refactoring for proofs.
-The proof refactoring tool Levity~\cite{Bourke12} for Isabelle/HOL has seen large-scale industrial use.
-Levity focuses on a different task: moving lemmas.
-Chick~\cite{robert2018} and RefactorAgda~\cite{wibergh2019} are proof refactoring tools
-in a Gallina-like language and in Agda, respectively.
-% that also support a few changes that can be viewed as repairs~\cite{PGL-045}.
-%Chick operates over a Gallina-like language, while RefactorAgda is implemented in Agda.
-These tools support primarily syntactic changes and do not have tactic support.
-% changes these tools support are still primarily syntactic,
-%and neither of these tools have tactic support.
-
-A few proof refactoring tools operate directly over tactics:
-POLAR~\cite{Dietrich2013} refactors proof scripts in languages based on Isabelle/Isar~\cite{Wenzel2007isar},
-CoqPIE~\cite{Roe2016} is an IDE with support for simple refactorings of Ltac scripts, and
-Tactician~\cite{adams2015} is a refactoring tool for switching between tactics and tacticals.
-This approach is not tractable for more complex changes~\cite{robert2018}.
-
-\iffalse
-\textit{Refactoring} is the restructuring of code in a way that preserves semantics~\cite{opdyke1992refactoring};
-more can be found in a survey~\cite{mens2004survey}.
-\textit{Proof refactoring} is refactoring in the setting of proof development~\cite{WhitesidePhD}.
 Proof refactoring tools help automate this process, propogating a single change throughout the proof development.
 Like program refactoring tools, proof refactoring tools can help keep developments
 maintainable as they change over time~\cite{Bourke12}. In that way, it is possible to consider refactoring tools 
@@ -675,16 +621,14 @@ Proof refactoring tools can operate either at the level of proof automation or a
 
 \paragraph{Refactoring Automation}
 
-In proof assistants like Coq, proof engineers typically interact primarily with automation;
-the details of proof terms are abstracted away. Accordingly, many proof refactoring tools
-refactor automation directly, addressing challenges unique to proof engineering. % TODO like?
- % TODO adjust POLAR paragraph in survey paper to be more accurate
-One such tool is \textsc{POLAR}~\cite{Dietrich2013}, a generic framework for proof refactoring. 
-%\textsc{POLAR} is instantiated with two languages,
-%both of which are based on the high-level proof language Isabelle/Isar~\cite{Wenzel2007isar}.
-%Hiscript~\cite{WhitesidePhD}, a language with support for refactoring,
-%and $\Omega$\textsc{script}~\cite{dietrich2011assertion}, a language with support for a proof search
-%technique called proof planning~\cite{Bundy:1988:UEP:648228.752123}. % TODO in survey paper, write about separately in automation or something
+A few proof refactoring tools operate directly over tactics:
+POLAR~\cite{Dietrich2013} refactors proof scripts in languages based on Isabelle/Isar~\cite{Wenzel2007isar},
+CoqPIE~\cite{Roe2016} is an IDE with support for simple refactorings of Ltac scripts, and
+Tactician~\cite{adams2015} is a refactoring tool for proof scripts in HOL Light
+that focuses on refactoring proofs between sequences of tactics and tacticals (tactic combinators like
+the semicolon in Ltac).
+This approach is not tractable for more complex changes~\cite{robert2018}.
+
 Refactoring in \textsc{POLAR} works through a combination of rewrite rules that operate over
 a graph representation of the underlying language. % TODO elaborate
 \textsc{POLAR} implements ten refactorings by default,
@@ -704,9 +648,16 @@ For example, Levity~\cite{Bourke12} is a proof refactoring tool for an old versi
 moves lemmas %in such a way as 
 to maximize reuse. The design of Levity is informed by
 experiences with two large proof developments.
-Tactician~\cite{adams2015} is a refactoring tool for proof scripts in HOL Light
-that focuses on refactoring proofs between sequences of tactics and tacticals (tactic combinators like
-the semicolon in Ltac).
+Levity has seen large scale industrial use.
+
+Chick~\cite{robert2018} and RefactorAgda~\cite{wibergh2019} are proof refactoring tools
+in a Gallina-like language and in Agda, respectively.
+% that also support a few changes that can be viewed as repairs~\cite{PGL-045}.
+%Chick operates over a Gallina-like language, while RefactorAgda is implemented in Agda.
+These tools support primarily syntactic changes and do not have tactic support.
+% changes these tools support are still primarily syntactic,
+%and neither of these tools have tactic support.
+
 %The Why3~\cite{Bobot2013} verification platform,
 %a front-end which integrates several backend theorem provers and proof assistants including Coq, 
 %includes functionality which automatically ports user tactics across sessions. 
@@ -776,6 +727,7 @@ The Chick workflow is similar to the \sysname\ workflow:
 Like \sysname, Chick takes a set of example changes (in this case, supplied by the programmer),
 and uses a program differencing algorithm to determine the changes to make elsewhere in the program.
 
+\iffalse
 Chick also has some clear differences from \sysname, aside from operating over the Chick language instead of Gallina itself.
 Unlike early versions of \sysname, Chick also applies the changes it finds to derive the new program.
 However, Chick does this using a syntactic algorithm that handles simple transformations and does

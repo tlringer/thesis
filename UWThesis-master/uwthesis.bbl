@@ -556,6 +556,11 @@ Lawrence~C. Paulson and Jasmin~Christian Blanchette.
   International Workshop on the Implementation of Logics (IWIL 2010)}, volume~2
   of {\em EPiC Series}, pages 1--11. EasyChair, 2012.
 
+\bibitem{ltac2}
+Pierre-Marie P{\'e}drot.
+\newblock Ltac2: Tactical warfare.
+\newblock In {\em CoqPL 2019}, 2019.
+
 \bibitem{Pei:2014:APR:2731750.2731779}
 Yu~Pei, Carlo~A. Furia, Martin Nordio, and Bertrand Meyer.
 \newblock Automatic program repair by fixing contracts.

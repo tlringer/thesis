@@ -4,18 +4,25 @@
 The source code of the \toolnamec plugin is on Github.
 It also ships with the \sysnamelong plugin suite by default.
 As with \sysname, the latest version supports Coq 8.8, with Coq 8.9.1 support in a branch.
-This section decribes the implementation of differencing and transformation in the \toolnamec plugin (Section~\ref{sec:pi-details}),
+This section decribes the implementation of the core functionality of the \toolnamec plugin (Section~\ref{sec:pi-details}),
 along with important features for workflow integration (Section~\ref{sec:pi-workflow}).
 The interested reader can follow along in the repository.
-(Need to add \textsc{Devoid} things and organize and fill in.)
 
 \subsection{Tool Details}
 \label{sec:pi-details}
 
 % PUMPKIN Pi, unchanged
-(Implemented in blah blah blah, and so on.)
+The implementation (Section~\ref{sec:pi-details-command}) of the \lstinline{Repair} command
+looks up the configuration for the types, invoking a search procedure for automatic configuration if relevant.
+The configuration, whether obtained manually or automatically, is cached for future calls to \lstinline{Repair}.
+The implementations of the differencing search procedures for automatic configuration (Section~\ref{sec:pi-details-diff})
+have freedom over the details of how they are implemented, as long as they return configurations in the end.
+The transformation (Section~\ref{sec:pi-details-trans}) operates directly over proof terms in Gallina, with the cached configuration
+also defined as proof terms in Gallina.
+As with \sysname, the \toolnamec extension to \sysnamelong does not extend the TCB in any way (Section~\ref{sec:pi-tcb}).
 
 \subsubsection{The Command}
+\label{sec:pi-details-command}
 
 \subsubsection{Differencing}
 \label{sec:pi-details-diff}
@@ -64,6 +71,15 @@ of the transformation handles language differences to scale from CIC$_{\omega}$ 
 We use the existing \lstinline{Preprocess}~\cite{Ringer2019} command to turn pattern matching and fixpoints into 
 eliminators.
 We handle refolding of constants in constructors using \lstinline{DepConstr}.
+
+\subsubsection{Trusted Computing Base}
+\label{sec:pi-tcb}
+
+As with \sysname, \toolnamec is implemented as a Coq plugin, and produces terms that Coq type checks in the end.
+\toolnamec does not modify the type checker, and furthermore does not add any axioms, so it does not increase the TCB.
+This is perhaps even more notable for \toolnamec, since all other implementations of transport across equivalences
+that I am aware of at least sometimes add axioms.
+Since \toolnamec implements transport as a proof term transformation, it is able to circumvent this and not increase the TCB in any way.
 
 \subsection{Workflow Integration}
 \label{sec:pi-workflow}
@@ -336,6 +352,7 @@ by reasoning separately about the projections~\href{https://github.com/uwplse/pu
 We added informative error messages~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/lib/ornerrors.ml}{\circled{22}} to help the proof engineer distinguish between user errors and bugs. % TODO link to errors
 These features helped with workflow integration. % tactic decompiler helped with integration into proof engineering workflows.
 
+(Also whole module processing, somewhere.)
 
 
 

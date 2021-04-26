@@ -143,17 +143,27 @@
 \contentsline {section}{\numberline {4.7}Conclusion}{94}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{95}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Programs}{95}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Proofs}{96}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{101}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{101}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{101}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{101}{chapter.6}% 
-\contentsline {paragraph}{Automation}{102}{chapter.6}% 
-\contentsline {paragraph}{Integration}{102}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{102}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{102}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{102}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{102}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{102}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{102}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{102}{chapter.6}% 
+\contentsline {subsubsection}{\numberline {5.1.0.1}Lessons from Test-Based Program Repair}{96}{subsubsection.5.1.0.1}% 
+\contentsline {paragraph}{Tools Evaluated}{96}{subsubsection.5.1.0.1}% 
+\contentsline {paragraph}{Why These Tools Produce Incorrect Patches}{96}{subsubsection.5.1.0.1}% 
+\contentsline {paragraph}{Producing Correct Patches}{97}{subsubsection.5.1.0.1}% 
+\contentsline {paragraph}{Implications for Proof Repair}{98}{subsubsection.5.1.0.1}% 
+\contentsline {subsubsection}{\numberline {5.1.0.2}Program Repair Techniques}{98}{subsubsection.5.1.0.2}% 
+\contentsline {paragraph}{Regression Repair}{98}{subsubsection.5.1.0.2}% 
+\contentsline {paragraph}{Repair by Example}{99}{subsubsection.5.1.0.2}% 
+\contentsline {paragraph}{Specification-Based Repair}{100}{subsubsection.5.1.0.2}% 
+\contentsline {paragraph}{Implications for Proof Repair}{100}{subsubsection.5.1.0.2}% 
+\contentsline {section}{\numberline {5.2}Proofs}{103}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{109}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{109}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{109}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{109}{chapter.6}% 
+\contentsline {paragraph}{Automation}{110}{chapter.6}% 
+\contentsline {paragraph}{Integration}{110}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{110}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{110}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{110}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{110}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{110}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{110}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{110}{chapter.6}% 

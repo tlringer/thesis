@@ -494,11 +494,6 @@ Guillaume Melquiond.
 \newblock Commit to coq: Make izr use a compact representation of integers,
   2017.
 
-\bibitem{Mens:2004:SSR:972215.972286}
-Tom Mens and Tom Tourw{\'e}.
-\newblock A survey of software refactoring.
-\newblock {\em IEEE Trans. Softw. Eng.}, 30(2):126--139, February 2004.
-
 \bibitem{Miller:2012:PHL:2331097}
 Dale Miller and Gopalan Nadathur.
 \newblock {\em Programming with Higher-Order Logic}.

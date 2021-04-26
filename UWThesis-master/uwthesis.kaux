@@ -274,4 +274,8 @@
 \KAuxNewLinkScopetagInstance {fig:replica}{document}
 \KAuxDeclaredScopeTag {sec:related}
 \KAuxNewLinkScopetagInstance {sec:related}{document}
+\KAuxDeclaredScopeTag {sec:lessons}
+\KAuxNewLinkScopetagInstance {sec:lessons}{document}
+\KAuxDeclaredScopeTag {sec:techniques}
+\KAuxNewLinkScopetagInstance {sec:techniques}{document}
 \KAuxEOF {}

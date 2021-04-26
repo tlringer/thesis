@@ -6,10 +6,36 @@ Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Ringer2019"
 Warning--I didn't find a database entry for "replica"
+Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1811-02429"
+Warning--I didn't find a database entry for "LeGoues:2012:SSA:2337223.2337225"
+Warning--I didn't find a database entry for "Qi:2014:SRS:2568225.2568254"
+Warning--I didn't find a database entry for "Weimer:2013:LPE:3107656.3107702"
+Warning--I didn't find a database entry for "nguyen2013semfix"
+Warning--I didn't find a database entry for "Xuan:2017:NAR:3071893.3071964"
+Warning--I didn't find a database entry for "Mechtaev:2015:DLS:2818754.2818811"
+Warning--I didn't find a database entry for "Ke:2015:RPS:2916135.2916260"
+Warning--I didn't find a database entry for "daniel2009reassert"
+Warning--I didn't find a database entry for "gao2015fixing"
+Warning--I didn't find a database entry for "Yang:2017:BTC:3106237.3106274"
+Warning--I didn't find a database entry for "Tan:2015:RAR:2818754.2818813"
+Warning--I didn't find a database entry for "Long:2015:SPR:2786805.2786811"
+Warning--I didn't find a database entry for "Zhang:2017:ATD:3097368.3097448"
+Warning--I didn't find a database entry for "meng2011systematic"
+Warning--I didn't find a database entry for "meng2013lase"
+Warning--I didn't find a database entry for "andersen2010generic"
+Warning--I didn't find a database entry for "padioleau2008documenting"
+Warning--I didn't find a database entry for "Henkel:2005:CCR:1062455.1062512"
+Warning--I didn't find a database entry for "10.1007/978-3-540-24721-0_20"
+Warning--I didn't find a database entry for "Wei:2010:AFP:1831708.1831716"
+Warning--I didn't find a database entry for "pei2014automated"
+Warning--I didn't find a database entry for "gopinath2011specification"
+Warning--I didn't find a database entry for "dennis2006proof"
 Warning--I didn't find a database entry for "ZimmermannH15"
 Warning--I didn't find a database entry for "tabareau:hal-01559073"
 Warning--I didn't find a database entry for "pons2000generalization"
 Warning--I didn't find a database entry for "ringer2018adapting"
+Warning--I didn't find a database entry for "opdyke1992refactoring"
+Warning--I didn't find a database entry for "mens2004survey"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
@@ -17,45 +43,45 @@ Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 115 entries,
+You've used 114 entries,
             2118 wiz_defined-function locations,
-            1184 strings with 24849 characters,
-and the built_in function-call counts, 43449 in all, are:
-= -- 4503
-> -- 1803
+            1216 strings with 25714 characters,
+and the built_in function-call counts, 43112 in all, are:
+= -- 4468
+> -- 1790
 < -- 64
-+ -- 719
-- -- 591
-* -- 2799
-:= -- 6760
-add.period$ -- 386
-call.type$ -- 115
-change.case$ -- 623
++ -- 713
+- -- 587
+* -- 2771
+:= -- 6705
+add.period$ -- 383
+call.type$ -- 114
+change.case$ -- 618
 chr.to.int$ -- 0
-cite$ -- 121
-duplicate$ -- 1832
-empty$ -- 3509
-format.name$ -- 591
-if$ -- 9608
+cite$ -- 120
+duplicate$ -- 1821
+empty$ -- 3482
+format.name$ -- 587
+if$ -- 9540
 int.to.chr$ -- 0
-int.to.str$ -- 115
-missing$ -- 97
-newline$ -- 564
-num.names$ -- 240
-pop$ -- 764
+int.to.str$ -- 114
+missing$ -- 96
+newline$ -- 559
+num.names$ -- 238
+pop$ -- 761
 preamble$ -- 1
-purify$ -- 517
+purify$ -- 513
 quote$ -- 0
-skip$ -- 1427
+skip$ -- 1419
 stack$ -- 0
-substring$ -- 2682
-swap$ -- 601
+substring$ -- 2651
+swap$ -- 600
 text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 448
+type$ -- 444
 warning$ -- 6
-while$ -- 435
-width$ -- 118
-write$ -- 1346
-(There were 14 warnings)
+while$ -- 431
+width$ -- 117
+write$ -- 1335
+(There were 40 warnings)

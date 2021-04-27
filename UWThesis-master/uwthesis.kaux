@@ -59,11 +59,31 @@
 \KAuxFileAt {uwthesis.tex}{62}
 \KAuxAutoref {default}{base}{transport}
 
-\KAuxFileAt {uwthesis.tex}{132}
+\KAuxFileAt {uwthesis.tex}{63}
+
+\KAuxFileAt {uwthesis.tex}{64}
+\KAuxAutoref {default}{base}{RanDair Porter}
+
+\KAuxFileAt {uwthesis.tex}{65}
+
+\KAuxFileAt {uwthesis.tex}{66}
+
+\KAuxFileAt {uwthesis.tex}{67}
+\KAuxAutoref {default}{base}{Nathaniel Yazdani}
+
+\KAuxFileAt {uwthesis.tex}{68}
+
+\KAuxFileAt {uwthesis.tex}{69}
+
+\KAuxFileAt {uwthesis.tex}{139}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
+
+\KAuxFileAt {guide.tex}{13}
+\KAuxAutorefTarget {default}{base}{RanDair Porter}
+\KAuxAutorefTarget {default}{base}{Nathaniel Yazdani}
 \KAuxDeclaredScopeTag {sec:mot-dev}
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
 
@@ -270,6 +290,8 @@
 \KAuxNewLinkScopetagInstance {sec:pi-tcb}{document}
 \KAuxDeclaredScopeTag {sec:pi-workflow}
 \KAuxNewLinkScopetagInstance {sec:pi-workflow}{document}
+\KAuxDeclaredScopeTag {sec:decompiler}
+\KAuxNewLinkScopetagInstance {sec:decompiler}{document}
 \KAuxDeclaredScopeTag {fig:ltacsyntax1}
 \KAuxNewLinkScopetagInstance {fig:ltacsyntax1}{document}
 \KAuxDeclaredScopeTag {fig:someantics}

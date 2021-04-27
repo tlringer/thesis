@@ -6,6 +6,14 @@
 
 % Below is PUMPKIN Pi Case Studies unchanged
 
+\toolnamec is flexible and useful.
+It can help and in fact has helped proof engineers save work on a variety of real proof repair scenarios (Section~\ref{sec:results}).
+In addition, the approach taken has measurable benefits in terms of both work savings and performance
+relative to a comparable tool for the class of changes on which \kl{Nate} and I have done an extended evaluation (Section~\ref{sec:eval}).
+
+\subsection{\toolnamec Eight Ways}
+\label{sec:results}
+
 \begin{table*}
 \small
   \begin{tabular}{|l|l|l|c|l|l|}
@@ -51,7 +59,7 @@
   \end{tabular}
 \vspace{0.05cm}
   \caption{Some changes using \toolnamec (left to right): class of changes, kind of configuration, examples, whether using \toolnamec saved development time relative to reference manual repairs (\good\xspace if yes, \ok\xspace if comparable, \bad\xspace if no), and Coq tools we know of that support repair along (Repair) or automatic proof of (Search) the equivalence corresponding to each example. Tools considered are \textsc{Devoid}~\cite{Ringer2019}, the Univalent Parametricity (UP) white-box transformation~\cite{tabareau2019marriage}, and the tool from Magaud \& Bertot 2000~\cite{magaud2000changing}. \toolnamec is the only one that suggests tactics.
-More nuanced comparisons to these and more are in Section~\ref{sec:related}.}
+More nuanced comparisons to these and more are in Chapter~\ref{sec:related}.}
 \vspace{-0.4cm}
 \label{fig:changes}
 \end{table*}
@@ -66,25 +74,27 @@ the preliminary success of the prototype decompiler,
 and clear paths to better serving proof engineers.
 Detailed walkthroughs are in the code.
 
-\mysubsubsec{Algebraic Ornaments: Lists to Packed Vectors}
+\paragraph{Algebraic Ornaments: Lists to Packed Vectors}
+\iffalse
 The transformation in \toolnamec is a generalization of the transformation from \textsc{Devoid}.
 \textsc{Devoid} supported proof reuse across \textit{algebraic ornaments}, which describe relations
 between two inductive types, where one type is the other indexed by a fold~\cite{mcbride}.
 A standard example is the relation between a list and a
 length-indexed vector (Figure~\ref{fig:listtovect}).
-
-\toolnamec implements a search procedure for automatic configuration of algebraic ornaments.
+\fi
+\toolnamec implements a search procedure for automatic configuration of \kl{algebraic ornaments},
+detailed in Section~\ref{sec:proc}.
 %The search procedure moves the work specific to algebraic ornaments into the \toolnamec configuration.
-The result is all functionality from \textsc{Devoid}, plus tactic suggestions.
+%The result is all functionality from \textsc{Devoid}, plus tactic suggestions.
 %which allows it to implement the  functionality from \textsc{Devoid}.
-In file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, we used this to port
-functions and a proof from lists to vectors of \textit{some} length, since \lstinline{list T} $\simeq$ \lstinline{packed_vect T}.
-The decompiler helped us write proofs in the order of hours that we had found
-too hard to write by hand,
+In file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, I used this to port
+functions and a proof from lists to vectors of \textit{some} length, since \lstinline{list T} $\simeq$ $\Sigma$\lstinline{(n : nat).vector T n}.
+The decompiler helped me write proofs in the order of hours that I had found too hard to write by hand,
 though the suggested tactics did need massaging.
 % as the decompiler struggled with motive inference
 %for induction with dependent types.
 %Additional effort is needed to improve tactic suggestions for dependent types.
+%Section~\ref{sec:eval} describes benefits for both workflow integration and performance over a comparable tool for this use case.
 
 \begin{figure*}
 \begin{minipage}{0.48\textwidth}
@@ -100,12 +110,12 @@ though the suggested tactics did need massaging.
 \label{fig:replica}
 \end{figure*}
 
-\mysubsubsec{Unpack Sigma Types: Vectors of Particular Lengths}
+\paragraph{Unpack Sigma Types: Vectors of Particular Lengths}
 %The previous case study showed how to get between lists and vectors of \textit{some} length.
-In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, we then ported functions and proofs to vectors of a \textit{particular} length, 
-like \lstinline{vector T n}.
-\textsc{Devoid} had left this step to the proof engineer.
-We supported this in \toolnamec by chaining the previous change
+In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, I then ported functions and proofs to 
+vectors of a \textit{particular} length, like \lstinline{vector T n}.
+%\textsc{Devoid} had left this step to the proof engineer.
+I supported this in \toolnamec by chaining the previous change
 with an automatic configuration for unpacking sigma types.
 %To support this, we used one additional automatic configuration for unpacking sigma types.
 %This configuration corresponds to the equivalence between sigma types at a particular projection
@@ -121,12 +131,12 @@ and 2) generate a custom eliminator for combining
 list terms with length invariants.
 %This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
 The resulting workflow works not just for lists and vectors, but for any algebraic ornament,
-automating manual effort from \textsc{Devoid}.
+automating otherwise manual effort.
 The suggested tactics were helpful for writing proofs in the order of hours
-that we had struggled with manually over the course of days, but only after massaging.
+that I had struggled with manually over the course of days, but only after massaging.
 More effort is needed to improve tactic suggestions for dependent types.
 
-\mysubsubsec{Tuples \& Records: Industrial Use}
+\paragraph{Tuples \& Records: Industrial Use}
 An industrial proof engineer at the company \company has been using \toolnamec in proving
 correct an implementation of the TLS handshake protocol.
 %While this is ongoing work, thus far,
@@ -161,9 +171,9 @@ followed by later returns.
 %Both informed improvements to \toolnamec, like better error messages, caching,
 %and a way to tell \toolnamec not to $\delta$-reduce certain terms.
 
-\mysubsubsec{Permute Constructors: Modifying a Language}
+\paragraph{Permute Constructors: Modifying a Language}
 The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
-from the \textsc{Replica} user study of proof engineers~\cite{replica}.
+from the \textsc{Replica} user study of proof engineers seen earlier. % TODO link
 A change from one of the benchmarks is in Figure~\ref{fig:replica}.
 The proof engineer had a simple language represented by an inductive type \lstinline{Term},
 as well as some definitions and proofs about the language.
@@ -171,7 +181,7 @@ The proof engineer swapped two constructors in the language,
 and added a new constructor \lstinline{Bool}.
 
 This case study and the next case study break this change into two parts.
-In the first part, we used \toolnamec with automatic configuration to repair functions and proofs about the language
+In the first part, I used \toolnamec with automatic configuration to repair functions and proofs about the language
 after swapping the constructors~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
 %We also succeeded at more difficult variants of this,
 %like swapping constructors with the same type, renaming all of the constructors,
@@ -192,12 +202,12 @@ so there was not a difference in development time.
 %Each variant of the \textsc{Replica} swapping change took \toolnamec less than 5 seconds, % TODO specs, reproduction
 %and the change adding a constructor took \toolnamec less than 30 seconds. % TODO specs, reproduction
 
-\mysubsubsec{Add new Constructors: Extending a Language}
-We then used \toolnamec to repair functions 
+\paragraph{Add new Constructors: Extending a Language}
+I then used \toolnamec to repair functions 
 after adding the new constructor in Figure~\ref{fig:replica}, separating out the proof obligations for the new constructor from the old terms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}}.
 %The resulting functions were guaranteed to preserve the behavior of the old terms. % TODO do the proofs too
 This change combined manual and automatic configuration.
-We defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across the equivalence \lstinline{Old.Term + Diff} $\simeq$ \lstinline{New.Term}.
+I defined an inductive type \lstinline{Diff} and (using partial automation) a configuration to port the terms across the equivalence \lstinline{Old.Term + Diff} $\simeq$ \lstinline{New.Term}.
 This resulted in case explosion, but was formulaic, and pointed to a clear path for automation of this class of changes.
 The repaired functions guaranteed preservation of the behavior of the original functions. %over \lstinline{Old.Term} before the change.
 
@@ -206,24 +216,23 @@ For example, \toolnamec did not yet save us time over the proof engineer from th
 fully automating the configuration would have helped significantly.
 In addition, the repaired terms were (unlike in the swap case) inefficient compared to human-written terms.
 For now, they make good regression tests for the human-written terms---in the future,
-we hope to automate the discovery of the more efficient terms,
+I hope to automate the discovery of the more efficient terms,
 or use the refinement framework CoqEAL~\cite{cohen:hal-01113453}
 to get between proofs of the inefficient and efficient terms.
 
-\vspace{0.105cm}
-\mysubsubsec{Factor out Constructors: External Example}
-The change from Figure~\ref{fig:equivalence2} came at the request of a non-author.
-We supported this using a manual configuration that described which constructor to map to \lstinline{true}
+\paragraph{Factor out Constructors: External Example}
+The change from Figure~\ref{fig:equivalence2} came at the request of an anonymous reviewer.
+I supported this using a manual configuration that described which constructor to map to \lstinline{true}
 and which constructor to map to \lstinline{false}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
-The configuration was very simple for us to write, and the repaired tactics were immediately useful.
+The configuration was very simple for me to write, and the repaired tactics were immediately useful.
 The development time savings were on the order of minutes for a small proof development.
 Since most of the modest development time went into writing the configuration,
-we expect time savings would increase for a larger development.
+I expect time savings would increase for a larger development.
 
-\vspace{0.105cm}
-\mysubsubsec{Permute Hypotheses: External Example}
-The change in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} came at the request of a different non-author (a cubical type theory expert),
-and shows how to  use \toolnamec to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
+\paragraph{Permute Hypotheses: External Example}
+The change in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} came at the request of Anders M\"{o}rtberg,
+a cubical type theory expert. % TODO use knowledge package
+It shows how to use \toolnamec to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
 \lstinline{T2} $\rightarrow$ \lstinline{T1} $\rightarrow$ \lstinline{T3}.
 This configuration was manual.
 Since neither type was inductive, this change used the generic construction for any equivalence.
@@ -232,28 +241,27 @@ This worked well, but necessitated some manual annotation due to the lack of cus
 manual configuration, and so did not yet save development time, and likely still would not have had the proof development been larger.
 Supporting custom unification heuristics would improve this workflow.
 
-\vspace{0.105cm}
-\mysubsubsec{Change Inductive Structure: Unary to Binary}
-In \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, we used \toolnamec to support a classic example of changing inductive structure:
+\paragraph{Change Inductive Structure: Unary to Binary}
+In \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}, I used \toolnamec to support a classic example of changing inductive structure:
 updating unary to binary numbers,
 as in Figure~\ref{fig:nattobin}.
 % TODO fin and vect? mention somewhere?
 Binary numbers allow for a fast addition function, found in the Coq standard library.
-In the style of Magaud \& Bertot 2000~\cite{magaud2000changing}, we used \toolnamec to derive a slow binary
+In the style of Magaud \& Bertot 2000~\cite{magaud2000changing}, I used \toolnamec to derive a slow binary
 addition function that does not refer to \lstinline{nat},
 and to port proofs from unary to slow binary addition.
-We then showed that the ported theorems hold over fast binary addition.
+I then showed that the ported theorems hold over fast binary addition.
 
 %The implementation of this is in \lstinline{nonorn.v}.
 The configuration for \lstinline{N} used definitions from the Coq standard library
 for \lstinline{DepConstr} and \lstinline{DepElim} that had the desired behavior with no changes.
 \lstinline{Iota} over the successor case was a rewrite by a lemma
-from the standard library that reduced the successor case of the eliminator that we used for \lstinline{DepElim}:
+from the standard library that reduced the successor case of the eliminator that I used for \lstinline{DepElim}:
 
 \begin{lstlisting}
-N.peano_rect_succ : $\forall$ P pO pS n,(@\vspace{-0.04cm}@)
-  N.peano_rect P pO pS (N.succ n) =(@\vspace{-0.04cm}@)
-  pS n (N.peano_rect P pO pS n).(@\vspace{-0.05cm}@)
+  N.peano_rect_succ : $\forall$ P pO pS n,(@\vspace{-0.04cm}@)
+    N.peano_rect P pO pS (N.succ n) =(@\vspace{-0.04cm}@)
+    pS n (N.peano_rect P pO pS n).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 %
 %\begin{lstlisting}
@@ -267,23 +275,178 @@ N.peano_rect_succ : $\forall$ P pO pS n,(@\vspace{-0.04cm}@)
 %\end{lstlisting}
 The need for nontrivial \lstinline{Iota} comes from the fact that \lstinline{N} and \lstinline{nat}
 have different inductive structures.
-By writing a manual configuration with this \lstinline{Iota}, it was possible for us to implement this transformation 
-that had been its own tool.
+By writing a manual configuration with this \lstinline{Iota}, it was possible to instantiate the \toolnamec transformation
+to the transformation that had been its own tool.
 
 While porting addition from \lstinline{nat} to \lstinline{N} was automatic after configuring \toolnamec,
 porting proofs about addition took more work.
 Due to the lack of unification heuristics for manual configuration,
-we had to annotate the proof term to tell \toolnamec that implicit casts in the inductive cases of proofs were applications of \lstinline{Iota}
+I had to annotate the proof term to tell \toolnamec that implicit casts in the inductive cases of proofs were applications of \lstinline{Iota}
 over \lstinline{nat}.
 These annotations were formulaic, but tricky to write.
 Unification heuristics would go a long way toward improving the workflow. % for this use case.
 
-After annotating, we obtained automatically repaired proofs about slow binary addition,
-which we found simple to port to fast binary addition.
-We hope to automate this last step in the future using CoqEAL. %~\cite{cohen:hal-01113453}.
+After annotating, I obtained automatically repaired proofs about slow binary addition,
+which I found simple to port to fast binary addition.
+I hope to automate this last step in the future using CoqEAL. %~\cite{cohen:hal-01113453}.
 Repaired tactics were partially useful, but failed to understand custom eliminators like \lstinline{N.peano_rect}, and to generate useful
 tactics for applications of \lstinline{Iota}; both of these are clear paths to more useful tactics.
 The development time for this proof with \toolnamec was comparable to reference manual repairs by external proof engineers.
 Custom unification heuristics would help bring returns on investment for experts in this use case.
+
+\subsection{Evaluation: \toolnamec for Transport}
+\label{sec:eval}
+
+\toolnamec implements transport across equivalences in a way that is suitable for repair.
+\kl{Nate} and I compared \toolnamec to another tool for transport across equivalences in Coq,
+using algebraic ornaments as an example.
+We used \toolnamec to automatically discover and transport functions and proofs along the equivalences
+corresponding to these ornaments for two scenarios:
+
+\begin{enumerate}
+\item Single Iteration: from binary trees to sized binary trees
+\item Multiple Iterations: from binary trees to binary search trees to AVL trees
+\end{enumerate}
+At the time, the decompiler was not yet implemented, so we focused solely on proof terms.
+For comparison, we also used the ornaments that \toolnamec discovered to transport functions
+and proofs using the UP black-box transformation~\cite{tabareau2017equivalences}.
+\toolnamec produced faster functions and smaller terms, especially when composing multiple iterations of repair.
+In addition, \toolnamec imposed little burden on the user, and the equivalences \toolnamec discovered proved useful to UP.
+
+We chose UP for comparison because it also implements transport across equivalences in Coq,
+and because doing so demonstrates the benefits of specialized automation for classes of equivalences like ornaments.
+At the time of evaluation, the UP white-box transformation did not exist, so we used the black-box transformation.
+Using the white-box transformation would likely improve the performance of functions and proofs generated by UP when applicable.
+Our experiences suggest that it is possible to use both tools in concert.
+Chapter~\ref{sec:related} discusses UP in more detail.
+
+\paragraph{Setup}
+The code is in the \href{http://github.com/uwplse/ornamental-search/tree/itp+equiv/plugin/eval}{\lstinline{eval}} folder of the repository.
+For each scenario,
+\kl{Nate} ran \toolnamec to search for an ornament,
+and then transported functions and proofs along that ornament using both \toolnamec and UP.
+He noted the amount of user interaction (Section~\ref{sec:caseuser}),
+and together we measured the performance of transported terms (Section~\ref{sec:caseperf}).
+To test the performance of transported terms, we tested runtime by 
+taking the median of ten runs using \lstinline{Time Eval vm_compute} with test values in Coq 8.8.0,
+and we tested size by normalizing and running \lstinline{coqwc} on the result.\footnote{i5-5300U, at 2.30GHz, 16 GB RAM}
+
+In the first scenario, Nate transported traversal functions along with proofs that their outputs are permutations of each other
+from binary trees (\lstinline{tree}) to sized binary trees (\lstinline{Sized.tree}).
+In the second scenario, he transported the traversal functions to AVL trees (\lstinline{avl}) through four intermediate
+types (one for each new index),
+and he lifted a search function from BSTs (\lstinline{bst}) to AVL trees through
+one intermediate type. 
+Both scenarios considered only full binary trees.
+
+To fit \lstinline{bst} and \lstinline{avl} into algebraic ornaments for \toolnamec,
+we decided to use boolean indices to track invariants.
+While the resulting types are not the most natural definitions,
+this scenario demonstrates that it is possible to express interesting changes to structured types as algebraic ornaments,
+and that lifting across these types in \toolnamec produces efficient functions.
+
+\subsubsection{User Experience}
+\label{sec:caseuser}
+
+For each intermediate type in each scenario, Nate used \toolnamec to discover the equivalence.
+This was enough for \toolnamec to lift functions and proofs 
+with no additional proof burden and no additional axioms.
+To use UP without \toolnamec, Nate would have had to prove the equivalence by hand,
+but instead he was able to use the equivalence generated by \toolnamec.
+In addition, to use UP, he had to prove univalent parametricity of each inductive type;
+these proofs were small, but required specialized knowledge.
+To lift the proof of the theorem \lstinline{pre_permutes} using UP, 
+he had to prove the univalent parametric relation between the unlifted and lifted versions of the
+functions that the theorem referenced; this pulled in the functional extensionality axiom, which was not necessary 
+using \toolnamec.
+
+In the second scenario, to simulate the incremental workflow \toolnameb requires, Nate transported along each intermediate type, then unpacked the result.
+For example, the ornament from \lstinline{bst} to \lstinline{avl} passed through an intermediate type;
+Nate lifted \lstinline{search} to this type first, unpacked the result, and then repeated this process.
+In this scenario, using UP differently or using \toolnamec with a manual configuration could have saved some work relative to the workflow chosen,
+since with those workflows, it is possible to skip 
+the intermediate type;\footnote{The performances of the terms that UP produces are sensitive to the equivalence used;
+for a 100 node tree, this alternate workflow in UP produced a search function
+which is hundreds of times slower and traversal functions which are thousands of times slower
+than the functions that \toolnamec produced. In addition, the lifted proof of \lstinline{pre_permutes} using UP failed to normalize
+with a timeout of one hour.}
+\toolnamec with automatic configuration is best fit where an incremental workflow is desirable.
+
+\subsubsection{Performance}
+\label{sec:caseperf}
+
+
+\begin{figure}
+\small
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ |l|l|c|c|c|c|c| }
+ \hline
+  & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
+\hline
+ \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{523}(1.00\mathrm{x})$ \\
+\cline{2-7}
+ & \textbf{\toolnameb} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
+\cline{2-7}
+ & \textbf{UP} & $\phantom{2}0.0$ & $\phantom{6}1.0$ & $\phantom{3}27.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{2}486.5\ (162.17\mathrm{x})$ & $\phantom{5}8078.5\ \phantom{5}(218.33\mathrm{x})$ \\
+\hline
+\end{tabular}
+}%
+%\end{minipage}
+\vspace{-0.25cm}
+\caption{Median runtime (ms) of the original (\lstinline{tree}) and transported (\lstinline{Sized.tree}) \lstinline{preorder} over ten runs with test inputs ranging from about 10 to about 10000 nodes.}
+\label{tab:size1}
+\end{figure}
+
+\begin{figure}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ |l|l|c|c|c|c|c| }
+ \hline
+   & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
+\hline
+ \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{512}(1.00\mathrm{x})$  \\ \cline{2-7}
+ & \textbf{\toolnameb} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{UP} & $\phantom{1}1.0$ & $11.0$ & $152.0\ \phantom{(33.50\mathrm{x})}$ & $2976.5\ (992.17\mathrm{x})$ & $56636.5\ (1530.72\mathrm{x})$ \\ \hline
+ \multirow{3}{*}{\smallmath{$\texttt{search}$}} & \textbf{Unlifted} & $\phantom{1}0.0$ & $\phantom{6}0.0$  & $\phantom{22}2.0\ \phantom{1}(1.00\mathrm{x})$  & $\phantom{123}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{312}29.0\ \phantom{513}(1.00\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{\toolnameb} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{UP} & $\phantom{1}1.0$ & $\phantom{6}5.0$ & $\phantom{1}67.0\ (33.50\mathrm{x})$ & $1062.0\ (354.00\mathrm{x})$ & $15370.5\ \phantom{5}(530.02\mathrm{x})$  \\
+\hline
+\end{tabular}
+}
+%\end{minipage}
+\vspace{-0.25cm}
+\caption{Median runtime (ms) of the original (\lstinline{tree}) and transported (\lstinline{avl}) \lstinline{preorder},
+plus the original (\lstinline{bst}) and transported (\lstinline{avl}) \lstinline{search}, over ten runs with inputs ranging from about 10 to about 100000 nodes.}
+\label{tab:size2}
+\end{figure}
+
+Relative to UP, \toolnamec produced faster functions.
+Figure~\ref{tab:size1} summarizes
+runtime in the first scenario for \lstinline{preorder},
+and Figure~\ref{tab:size2} summarizes
+runtime in the second scenario for \lstinline{preorder} and \lstinline{search}.
+The \lstinline{inorder} and \lstinline{postorder} functions performed similarly to \lstinline{preorder}.
+The functions \toolnamec produced imposed modest overhead for smaller inputs, but were
+tens to hundreds of times faster than the functions that UP produced for larger inputs.
+This performance gap was more pronounced over multiple iterations of lifting.
+
+\toolnamec also produced smaller terms:
+in the first scenario, 13 vs. 25 LOC for \lstinline{preorder},
+12 vs. 24 LOC for \lstinline{inorder}, and 17 vs. 29 LOC for \lstinline{postorder};
+and in the second scenario, 21 vs. 120 LOC for \lstinline{preorder}, 20 vs. 119 LOC for \lstinline{inorder}, 
+24 vs. 125 LOC for \lstinline{postorder}, and 31 vs. 52 LOC for \lstinline{search}.
+In the first scenario, the transported proof of \lstinline{pre_permutes} using \toolnameb was 85 LOC;
+the transported proof of \lstinline{pre_permutes} using UP was 1463184 LOC.
+
+I suspect \toolnamec provided these performance benefits because it directly
+transformed induction principles, whereas the UP black-box transformation implemented transport in a standard way,
+defining transported functions in terms of the original functions. 
+The multiple iteration case in particular highlights this,
+since UP's black box approach makes lifted terms much slower and larger as the number of iterations increases,
+while \toolnamec's approach does not.
+After this evaluation and several discussions with the authors, UP later introduced a white-box
+transformation similar to the \toolnamec transformation~\cite{tabareau2019marriage},
+though with some limitations I will discuss in Chapter~\ref{sec:related}.
 
 

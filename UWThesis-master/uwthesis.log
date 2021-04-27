@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1604,6 +1604,12 @@ LaTeX Warning: Label `sec:pi-workflow' multiply defined.
 
 LaTeX Warning: Label `sec:pi-workflow@cref' multiply defined.
 
+
+LaTeX Warning: Label `sec:eval' multiply defined.
+
+
+LaTeX Warning: Label `sec:eval@cref' multiply defined.
+
 )
 \openout1 = `uwthesis.aux'.
 
@@ -2161,7 +2167,7 @@ LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
  26.
 
 [64]
-<often/workflowa.pdf, id=1546, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1547, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2253,211 +2259,222 @@ T1/pplj/m/n/10.95 (-20) pretty
 
 [94]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 21.
 
-Overfull \hbox (283.1196pt too wide) in paragraph at lines 11--54
+Overfull \hbox (283.1196pt too wide) in paragraph at lines 19--62
 [][]
  []
 
 
-LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 54.
+LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 62.
 
 
-LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 54.
+LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 62.
 
-[95] (./often/replica.tex) (./often/replica.tex)
+(./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 96 undefined on input line 114.
+LaTeX Warning: Reference `sec:key1' on page 95 undefined on input line 124.
 
-[96]
 
-LaTeX Warning: Citation `replica' on page 97 undefined on input line 166.
+Underfull \hbox (badness 10000) in paragraph at lines 115--125
+[] []\OT1/pplj/m/sc/10.95 (-2) u n -p a c k s i g m a t y p e s : v e c -t o r 
+s o f p a r -t i c -u -l a r l e n g t h s[] \OT1/pplj/m/n/10.95 (-2) In
+ []
 
-[97] [98]) (./often/conclusion.tex)) (./related.tex [99] [100
+[95] [96]
+Overfull \hbox (5.39363pt too wide) in paragraph at lines 206--213
+[] []\OT1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t 
+e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
+ []
+
+[97] [98] [99] [100]
+LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
+ [101]) (./often/conclusion.tex)) (./related.tex [102]
+chapter 5.
+
+LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 103 undefin
+ed on input line 56.
+
+[103
 
 
 ]
-chapter 5.
 
-LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 101 undefin
-ed on input line 56.
-
-[101]
-
-LaTeX Warning: Citation `LeGoues:2012:SSA:2337223.2337225' on page 102 undefine
+LaTeX Warning: Citation `LeGoues:2012:SSA:2337223.2337225' on page 104 undefine
 d on input line 64.
 
 
-LaTeX Warning: Citation `Qi:2014:SRS:2568225.2568254' on page 102 undefined on 
+LaTeX Warning: Citation `Qi:2014:SRS:2568225.2568254' on page 104 undefined on 
 input line 64.
 
 
-LaTeX Warning: Citation `Weimer:2013:LPE:3107656.3107702' on page 102 undefined
+LaTeX Warning: Citation `Weimer:2013:LPE:3107656.3107702' on page 104 undefined
  on input line 64.
-
-[102]
-
-LaTeX Warning: Citation `nguyen2013semfix' on page 103 undefined on input line 
-110.
-
-
-LaTeX Warning: Citation `Xuan:2017:NAR:3071893.3071964' on page 103 undefined o
-n input line 113.
-
-
-LaTeX Warning: Citation `Mechtaev:2015:DLS:2818754.2818811' on page 103 undefin
-ed on input line 115.
-
-
-LaTeX Warning: Citation `Ke:2015:RPS:2916135.2916260' on page 103 undefined on 
-input line 115.
-
-
-LaTeX Warning: Citation `daniel2009reassert' on page 103 undefined on input lin
-e 118.
-
-
-LaTeX Warning: Citation `gao2015fixing' on page 103 undefined on input line 119
-.
-
-
-LaTeX Warning: Citation `Yang:2017:BTC:3106237.3106274' on page 103 undefined o
-n input line 121.
-
-
-LaTeX Warning: Citation `Tan:2015:RAR:2818754.2818813' on page 103 undefined on
- input line 125.
-
-
-LaTeX Warning: Citation `Long:2015:SPR:2786805.2786811' on page 103 undefined o
-n input line 126.
-
-[103]
-
-LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 104 undefin
-ed on input line 164.
-
-
-LaTeX Warning: Citation `daniel2009reassert' on page 104 undefined on input lin
-e 192.
-
-
-LaTeX Warning: Citation `Tan:2015:RAR:2818754.2818813' on page 104 undefined on
- input line 198.
 
 [104]
 
-LaTeX Warning: Citation `Zhang:2017:ATD:3097368.3097448' on page 105 undefined 
-on input line 205.
+LaTeX Warning: Citation `nguyen2013semfix' on page 105 undefined on input line 
+110.
 
 
-LaTeX Warning: Citation `gao2015fixing' on page 105 undefined on input line 229
-.
+LaTeX Warning: Citation `Xuan:2017:NAR:3071893.3071964' on page 105 undefined o
+n input line 113.
+
+
+LaTeX Warning: Citation `Mechtaev:2015:DLS:2818754.2818811' on page 105 undefin
+ed on input line 115.
 
 
 LaTeX Warning: Citation `Ke:2015:RPS:2916135.2916260' on page 105 undefined on 
-input line 238.
+input line 115.
+
+
+LaTeX Warning: Citation `daniel2009reassert' on page 105 undefined on input lin
+e 118.
+
+
+LaTeX Warning: Citation `gao2015fixing' on page 105 undefined on input line 119
+.
+
+
+LaTeX Warning: Citation `Yang:2017:BTC:3106237.3106274' on page 105 undefined o
+n input line 121.
+
+
+LaTeX Warning: Citation `Tan:2015:RAR:2818754.2818813' on page 105 undefined on
+ input line 125.
+
+
+LaTeX Warning: Citation `Long:2015:SPR:2786805.2786811' on page 105 undefined o
+n input line 126.
 
 [105]
 
-LaTeX Warning: Citation `meng2011systematic' on page 106 undefined on input lin
+LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 106 undefin
+ed on input line 164.
+
+
+LaTeX Warning: Citation `daniel2009reassert' on page 106 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Citation `Tan:2015:RAR:2818754.2818813' on page 106 undefined on
+ input line 198.
+
+[106]
+
+LaTeX Warning: Citation `Zhang:2017:ATD:3097368.3097448' on page 107 undefined 
+on input line 205.
+
+
+LaTeX Warning: Citation `gao2015fixing' on page 107 undefined on input line 229
+.
+
+
+LaTeX Warning: Citation `Ke:2015:RPS:2916135.2916260' on page 107 undefined on 
+input line 238.
+
+[107]
+
+LaTeX Warning: Citation `meng2011systematic' on page 108 undefined on input lin
 e 245.
 
 
-LaTeX Warning: Citation `meng2013lase' on page 106 undefined on input line 249.
+LaTeX Warning: Citation `meng2013lase' on page 108 undefined on input line 249.
 
 
 
-LaTeX Warning: Citation `andersen2010generic' on page 106 undefined on input li
+LaTeX Warning: Citation `andersen2010generic' on page 108 undefined on input li
 ne 252.
 
 
-LaTeX Warning: Citation `padioleau2008documenting' on page 106 undefined on inp
+LaTeX Warning: Citation `padioleau2008documenting' on page 108 undefined on inp
 ut line 252.
 
 
-LaTeX Warning: Citation `Henkel:2005:CCR:1062455.1062512' on page 106 undefined
+LaTeX Warning: Citation `Henkel:2005:CCR:1062455.1062512' on page 108 undefined
  on input line 258.
 
 
-LaTeX Warning: Citation `10.1007/978-3-540-24721-0_20' on page 106 undefined on
+LaTeX Warning: Citation `10.1007/978-3-540-24721-0_20' on page 108 undefined on
  input line 302.
 
 
-LaTeX Warning: Citation `Wei:2010:AFP:1831708.1831716' on page 106 undefined on
+LaTeX Warning: Citation `Wei:2010:AFP:1831708.1831716' on page 108 undefined on
  input line 307.
 
 
-LaTeX Warning: Citation `pei2014automated' on page 106 undefined on input line 
+LaTeX Warning: Citation `pei2014automated' on page 108 undefined on input line 
 307.
 
 
-LaTeX Warning: Citation `gopinath2011specification' on page 106 undefined on in
+LaTeX Warning: Citation `gopinath2011specification' on page 108 undefined on in
 put line 309.
 
 
-LaTeX Warning: Citation `dennis2006proof' on page 106 undefined on input line 3
+LaTeX Warning: Citation `dennis2006proof' on page 108 undefined on input line 3
 21.
 
-[106] [107] [108]
+[108] [109] [110]
 Overfull \hbox (4.62564pt too wide) in paragraph at lines 479--480
 [] []\OT1/pplj/m/sc/10.95 (-20) n e u -r a l s y n -t h e -s i s[] \OT1/pplj/m/
 n/10.95 (-20) (On-go-ing work is re-lated to this---really promis-
  []
 
-[109]
+[111]
 
-LaTeX Warning: Citation `Ringer2019' on page 110 undefined on input line 519.
+LaTeX Warning: Citation `Ringer2019' on page 112 undefined on input line 519.
 
 
-LaTeX Warning: Citation `ZimmermannH15' on page 110 undefined on input line 532
+LaTeX Warning: Citation `ZimmermannH15' on page 112 undefined on input line 532
 .
 
 
-LaTeX Warning: Citation `tabareau:hal-01559073' on page 110 undefined on input 
+LaTeX Warning: Citation `tabareau:hal-01559073' on page 112 undefined on input 
 line 532.
-
-[110]
-
-LaTeX Warning: Citation `pons2000generalization' on page 111 undefined on input
- line 576.
-
-
-LaTeX Warning: Citation `ringer2018adapting' on page 111 undefined on input lin
-e 588.
-
-
-LaTeX Warning: Citation `opdyke1992refactoring' on page 111 undefined on input 
-line 609.
-
-
-LaTeX Warning: Citation `mens2004survey' on page 111 undefined on input line 61
-0.
-
-[111]
-
-LaTeX Warning: Citation `robert2018front' on page 112 undefined on input line 6
-41.
-
-
-LaTeX Warning: Citation `robert2018front' on page 112 undefined on input line 6
-82.
 
 [112]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 113 undefined on input line 752
-.
+LaTeX Warning: Citation `pons2000generalization' on page 113 undefined on input
+ line 576.
+
+
+LaTeX Warning: Citation `ringer2018adapting' on page 113 undefined on input lin
+e 588.
+
+
+LaTeX Warning: Citation `opdyke1992refactoring' on page 113 undefined on input 
+line 609.
+
+
+LaTeX Warning: Citation `mens2004survey' on page 113 undefined on input line 61
+0.
 
 [113]
 
-LaTeX Warning: Citation `replica' on page 114 undefined on input line 764.
+LaTeX Warning: Citation `robert2018front' on page 114 undefined on input line 6
+41.
 
-) (./conclusion.tex [114] [115] [116
+
+LaTeX Warning: Citation `robert2018front' on page 114 undefined on input line 6
+82.
+
+[114]
+
+LaTeX Warning: Citation `Chrzaszcz2003' on page 115 undefined on input line 752
+.
+
+[115]
+
+LaTeX Warning: Citation `replica' on page 116 undefined on input line 764.
+
+) (./conclusion.tex [116] [117] [118
 
 
 ]
 chapter 6.
-(./next.tex [117]
+(./next.tex [119]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -2469,23 +2486,23 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [118]
+)) (./uwthesis.ind [120]
 Overfull \hbox (4.17055pt too wide) in paragraph at lines 10--12
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []17[], []19[],
  []
 
-[119
+[121
 
 
 
 
 
 
-]) (./uwthesis.bbl [120
+]) (./uwthesis.bbl [122
 
 
 
-] [121] [122] [123] [124] [125] [126] [127] [128]
+] [123] [124] [125] [126] [127] [128] [129] [130]
 Underfull \hbox (badness 1163) in paragraph at lines 572--578
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2507,13 +2524,13 @@ c text-book, 2016.  Ver-sion 4.0.
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 596.
 
-[129]
+[131]
 Underfull \hbox (badness 1184) in paragraph at lines 617--622
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[130]) [131]
+[132]) [133]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2521,10 +2538,9 @@ Underfull \hbox (badness 1184) in paragraph at lines 617--622
 Package knowledge Warning: Some knowledge is introduced twice. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
-(./uwthesis.kaux)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
- (./uwthesis.aux)
+(./uwthesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
@@ -2542,13 +2558,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
- 50078 strings out of 492609
- 1008946 string characters out of 6129033
- 1293913 words of memory out of 5000000
- 50852 multiletter control sequences out of 15000+600000
- 634082 words of font info for 802 fonts, out of 8000000 for 9000
+ 50134 strings out of 492609
+ 1009756 string characters out of 6129033
+ 1295738 words of memory out of 5000000
+ 50890 multiletter control sequences out of 15000+600000
+ 634496 words of font info for 809 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2559,17 +2575,18 @@ ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
-/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
-no/uplri8a.pfb>
-Output written on uwthesis.pdf (141 pages, 1549975 bytes).
+2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/tex
+mf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
+e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
+palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
+o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
+8a.pfb>
+Output written on uwthesis.pdf (143 pages, 1563506 bytes).
 PDF statistics:
- 3031 PDF objects out of 3580 (max. 8388607)
- 2817 compressed objects within 29 object streams
- 1429 named destinations out of 1440 (max. 500000)
+ 3073 PDF objects out of 3580 (max. 8388607)
+ 2856 compressed objects within 29 object streams
+ 1441 named destinations out of 1728 (max. 500000)
  93010 words of extra memory for PDF output out of 106986 (max. 10000000)
 

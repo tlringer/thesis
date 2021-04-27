@@ -156,41 +156,54 @@
 \contentsline {paragraph}{Pretty Printing}{94}{figure.caption.39}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{94}{subsubsection.4.5.2.2}% 
 \contentsline {section}{\numberline {4.6}Results}{95}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{99}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{101}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Program Repair}{101}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}Lessons from Test-Based Program Repair}{102}{subsection.5.1.1}% 
-\contentsline {paragraph}{Tools Evaluated}{102}{subsection.5.1.1}% 
-\contentsline {paragraph}{Why These Tools Produce Incorrect Patches}{102}{subsection.5.1.1}% 
-\contentsline {paragraph}{Producing Correct Patches}{103}{subsection.5.1.1}% 
-\contentsline {paragraph}{Implications for Proof Repair}{104}{subsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.1.2}Program Repair Techniques}{104}{subsection.5.1.2}% 
-\contentsline {paragraph}{Regression Repair}{104}{subsection.5.1.2}% 
-\contentsline {paragraph}{Repair by Example}{105}{subsection.5.1.2}% 
-\contentsline {paragraph}{Specification-Based Repair}{106}{subsection.5.1.2}% 
-\contentsline {subsection}{\numberline {5.1.3}Implications for Proof Repair}{106}{subsection.5.1.3}% 
-\contentsline {section}{\numberline {5.2}Type Theory}{108}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}Ornaments}{108}{subsection.5.2.1}% 
-\contentsline {subsection}{\numberline {5.2.2}Transport}{109}{subsection.5.2.2}% 
-\contentsline {section}{\numberline {5.3}Other Programming Tools}{109}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Program Synthesis}{109}{subsection.5.3.1}% 
-\contentsline {paragraph}{Programming by Example}{109}{subsection.5.3.1}% 
-\contentsline {paragraph}{Neural Synthesis}{109}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Differencing \& Incremental Computation}{109}{subsection.5.3.2}% 
-\contentsline {section}{\numberline {5.4}Proofs}{109}{section.5.4}% 
-\contentsline {paragraph}{Refactoring Automation}{112}{section.5.4}% 
-\contentsline {paragraph}{Refactoring Specifications and Proof Terms}{112}{section.5.4}% 
-\contentsline {paragraph}{Implications for Proof Repair}{113}{section.5.4}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{117}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{117}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{117}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{117}{chapter.6}% 
-\contentsline {paragraph}{Automation}{118}{chapter.6}% 
-\contentsline {paragraph}{Integration}{118}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{118}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{118}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{118}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{118}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{118}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{118}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{118}{chapter.6}% 
+\contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{95}{subsection.4.6.1}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{95}{table.caption.40}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{95}{figure.caption.41}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{97}{figure.caption.41}% 
+\contentsline {paragraph}{Permute Constructors: Modifying a Language}{97}{figure.caption.41}% 
+\contentsline {paragraph}{Add new Constructors: Extending a Language}{98}{figure.caption.41}% 
+\contentsline {paragraph}{Factor out Constructors: External Example}{98}{figure.caption.41}% 
+\contentsline {paragraph}{Permute Hypotheses: External Example}{98}{figure.caption.41}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{98}{figure.caption.41}% 
+\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{99}{subsection.4.6.2}% 
+\contentsline {paragraph}{Setup}{100}{Item.67}% 
+\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{100}{subsubsection.4.6.2.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{102}{subsubsection.4.6.2.2}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{102}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{103}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Program Repair}{103}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Lessons from Test-Based Program Repair}{104}{subsection.5.1.1}% 
+\contentsline {paragraph}{Tools Evaluated}{104}{subsection.5.1.1}% 
+\contentsline {paragraph}{Why These Tools Produce Incorrect Patches}{104}{subsection.5.1.1}% 
+\contentsline {paragraph}{Producing Correct Patches}{105}{subsection.5.1.1}% 
+\contentsline {paragraph}{Implications for Proof Repair}{106}{subsection.5.1.1}% 
+\contentsline {subsection}{\numberline {5.1.2}Program Repair Techniques}{106}{subsection.5.1.2}% 
+\contentsline {paragraph}{Regression Repair}{106}{subsection.5.1.2}% 
+\contentsline {paragraph}{Repair by Example}{107}{subsection.5.1.2}% 
+\contentsline {paragraph}{Specification-Based Repair}{108}{subsection.5.1.2}% 
+\contentsline {subsection}{\numberline {5.1.3}Implications for Proof Repair}{108}{subsection.5.1.3}% 
+\contentsline {section}{\numberline {5.2}Type Theory}{110}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Ornaments}{110}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}Transport}{111}{subsection.5.2.2}% 
+\contentsline {section}{\numberline {5.3}Other Programming Tools}{111}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Program Synthesis}{111}{subsection.5.3.1}% 
+\contentsline {paragraph}{Programming by Example}{111}{subsection.5.3.1}% 
+\contentsline {paragraph}{Neural Synthesis}{111}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Differencing \& Incremental Computation}{111}{subsection.5.3.2}% 
+\contentsline {section}{\numberline {5.4}Proofs}{111}{section.5.4}% 
+\contentsline {paragraph}{Refactoring Automation}{114}{section.5.4}% 
+\contentsline {paragraph}{Refactoring Specifications and Proof Terms}{114}{section.5.4}% 
+\contentsline {paragraph}{Implications for Proof Repair}{115}{section.5.4}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{119}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{119}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{119}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{119}{chapter.6}% 
+\contentsline {paragraph}{Automation}{120}{chapter.6}% 
+\contentsline {paragraph}{Integration}{120}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{120}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{120}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{120}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{120}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{120}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{120}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{120}{chapter.6}% 

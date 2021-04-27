@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1857,13 +1857,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 345
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 346
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 345.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 346.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 345.
+(Font)              using `OMS/cmsy/m/n' instead on input line 346.
 
 [3] [4
 
@@ -1879,32 +1879,32 @@ Package microtype Info: Character `013' is missing
 <family3.jpg, id=36, 593.21625pt x 386.44376pt>
 File: family3.jpg Graphic file (type jpg)
 <use family3.jpg>
-Package pdftex.def Info: family3.jpg  used on input line 392.
+Package pdftex.def Info: family3.jpg  used on input line 393.
 (pdftex.def)             Requested size: 218.38226pt x 142.26378pt.
 <family12.jpg, id=37, 393.47pt x 573.14125pt>
 File: family12.jpg Graphic file (type jpg)
 <use family12.jpg>
-Package pdftex.def Info: family12.jpg  used on input line 393.
+Package pdftex.def Info: family12.jpg  used on input line 394.
 (pdftex.def)             Requested size: 97.6648pt x 142.26378pt.
 <family4.jpg, id=38, 385.44pt x 578.16pt>
 File: family4.jpg Graphic file (type jpg)
 <use family4.jpg>
-Package pdftex.def Info: family4.jpg  used on input line 394.
+Package pdftex.def Info: family4.jpg  used on input line 395.
 (pdftex.def)             Requested size: 94.84238pt x 142.26378pt.
 <family8.jpg, id=39, 602.25pt x 401.5pt>
 File: family8.jpg Graphic file (type jpg)
 <use family8.jpg>
-Package pdftex.def Info: family8.jpg  used on input line 395.
+Package pdftex.def Info: family8.jpg  used on input line 396.
 (pdftex.def)             Requested size: 213.4005pt x 142.26378pt.
 <family11.jpg, id=40, 572.1375pt x 384.43625pt>
 File: family11.jpg Graphic file (type jpg)
 <use family11.jpg>
-Package pdftex.def Info: family11.jpg  used on input line 396.
+Package pdftex.def Info: family11.jpg  used on input line 397.
 (pdftex.def)             Requested size: 211.7312pt x 142.26378pt.
 <family10.jpg, id=41, 1535.7375pt x 2055.68pt>
 File: family10.jpg Graphic file (type jpg)
 <use family10.jpg>
-Package pdftex.def Info: family10.jpg  used on input line 397.
+Package pdftex.def Info: family10.jpg  used on input line 398.
 (pdftex.def)             Requested size: 106.27063pt x 142.26378pt.
  [7 <./family3.jpg> <./family12.jpg> <./family4.jpg> <./family8.jpg> <./family1
 1.jpg> <./family10.jpg>] [8
@@ -1912,19 +1912,19 @@ Package pdftex.def Info: family10.jpg  used on input line 397.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 41
-7.
+8.
  (./uwthesis.toc)
 \tf@toc=\write7
 \openout7 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 424.
+(Font)              scaled to size 10.42007pt on input line 425.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 424.
+(Font)              scaled to size 7.91925pt on input line 425.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 424.
+(Font)              scaled to size 10.42007pt on input line 425.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 424.
+(Font)              scaled to size 7.91925pt on input line 425.
  [9
 
 
@@ -2543,11 +2543,11 @@ Underfull \hbox (badness 1184) in paragraph at lines 617--622
 Package knowledge Warning: Some knowledge is introduced twice. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
 (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2560,12 +2560,12 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
  50150 strings out of 492609
  1009907 string characters out of 6129033
- 1295738 words of memory out of 5000000
+ 1295739 words of memory out of 5000000
  50890 multiletter control sequences out of 15000+600000
  635164 words of font info for 821 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2588,7 +2588,7 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (143 pages, 1564347 bytes).
+Output written on uwthesis.pdf (143 pages, 1564887 bytes).
 PDF statistics:
  3078 PDF objects out of 3580 (max. 8388607)
  2861 compressed objects within 29 object streams

@@ -206,7 +206,6 @@
   \colorbox{orange!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{2}}\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
-\renewcommand{\textsuperscript}[1]{}
 \newcommand{\codesimb}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
@@ -237,6 +236,8 @@
   \colorbox{cyan!30}{\reducedstrut#1\/}%
   \endgroup
 } % to highlight automatically-generated terms
+
+%\renewcommand{\textsuperscript}[1]{}
 
 % Table highlighting
 \newcommand{\indpat}[1]{\cellcolor{blue!30}{#1}} % extending inductive types

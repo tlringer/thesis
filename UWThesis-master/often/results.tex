@@ -360,7 +360,7 @@ he had to prove the univalent parametric relation between the unlifted and lifte
 functions that the theorem referenced; this pulled in the functional extensionality axiom, which was not necessary 
 using \toolnamec.
 
-In the second scenario, to simulate the incremental workflow \toolnameb requires, Nate transported along each intermediate type, then unpacked the result.
+In the second scenario, to simulate the incremental workflow \toolnamec requires, Nate transported along each intermediate type, then unpacked the result.
 For example, the ornament from \lstinline{bst} to \lstinline{avl} passed through an intermediate type;
 Nate lifted \lstinline{search} to this type first, unpacked the result, and then repeated this process.
 In this scenario, using UP differently or using \toolnamec with a manual configuration could have saved some work relative to the workflow chosen,
@@ -386,7 +386,7 @@ with a timeout of one hour.}
 \hline
  \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{523}(1.00\mathrm{x})$ \\
 \cline{2-7}
- & \textbf{\toolnameb} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
+ & \textbf{\toolnamec} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
 \cline{2-7}
  & \textbf{UP} & $\phantom{2}0.0$ & $\phantom{6}1.0$ & $\phantom{3}27.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{2}486.5\ (162.17\mathrm{x})$ & $\phantom{5}8078.5\ \phantom{5}(218.33\mathrm{x})$ \\
 \hline
@@ -406,10 +406,10 @@ with a timeout of one hour.}
    & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
 \hline
  \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{512}(1.00\mathrm{x})$  \\ \cline{2-7}
- & \textbf{\toolnameb} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{\toolnamec} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
  & \textbf{UP} & $\phantom{1}1.0$ & $11.0$ & $152.0\ \phantom{(33.50\mathrm{x})}$ & $2976.5\ (992.17\mathrm{x})$ & $56636.5\ (1530.72\mathrm{x})$ \\ \hline
  \multirow{3}{*}{\smallmath{$\texttt{search}$}} & \textbf{Unlifted} & $\phantom{1}0.0$ & $\phantom{6}0.0$  & $\phantom{22}2.0\ \phantom{1}(1.00\mathrm{x})$  & $\phantom{123}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{312}29.0\ \phantom{513}(1.00\mathrm{x})$ \\ \cline{2-7}
- & \textbf{\toolnameb} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{\toolnamec} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
  & \textbf{UP} & $\phantom{1}1.0$ & $\phantom{6}5.0$ & $\phantom{1}67.0\ (33.50\mathrm{x})$ & $1062.0\ (354.00\mathrm{x})$ & $15370.5\ \phantom{5}(530.02\mathrm{x})$  \\
 \hline
 \end{tabular}
@@ -436,7 +436,7 @@ in the first scenario, 13 vs. 25 LOC for \lstinline{preorder},
 12 vs. 24 LOC for \lstinline{inorder}, and 17 vs. 29 LOC for \lstinline{postorder};
 and in the second scenario, 21 vs. 120 LOC for \lstinline{preorder}, 20 vs. 119 LOC for \lstinline{inorder}, 
 24 vs. 125 LOC for \lstinline{postorder}, and 31 vs. 52 LOC for \lstinline{search}.
-In the first scenario, the transported proof of \lstinline{pre_permutes} using \toolnameb was 85 LOC;
+In the first scenario, the transported proof of \lstinline{pre_permutes} using \toolnamec was 85 LOC;
 the transported proof of \lstinline{pre_permutes} using UP was 1463184 LOC.
 
 I suspect \toolnamec provided these performance benefits because it directly
@@ -444,9 +444,14 @@ transformed induction principles, whereas the UP black-box transformation implem
 defining transported functions in terms of the original functions. 
 The multiple iteration case in particular highlights this,
 since UP's black box approach makes lifted terms much slower and larger as the number of iterations increases,
-while \toolnamec's approach does not.
-After this evaluation and several discussions with the authors, UP later introduced a white-box
-transformation similar to the \toolnamec transformation~\cite{tabareau2019marriage},
-though with some limitations I will discuss in Chapter~\ref{sec:related}.
+while \toolnamec's approach does not.\footnote{After this evaluation and several discussions with the authors, UP later introduced the white-box
+transformation, which is similar to the \toolnamec transformation~\cite{tabareau2019marriage},
+though it does not yet support arbitrary equivalences (the black-box transformation of course does).
+At the time of the evaluation, \toolnamec also did not yet support arbitrary equivalences,
+though the UP black-box transformation did.
+The development of both the UP white-box transformation and the generalized \toolnamec transformation
+happened with frequent conversations between the authors of both papers, and doubtlessly involved mutual influence on one another.
+It was wonderful, and involved multiple trips to France.
+I will discuss UP more in Chapter~\ref{sec:related}.} 
 
 

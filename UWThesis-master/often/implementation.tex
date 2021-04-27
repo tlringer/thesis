@@ -56,19 +56,56 @@ The repository includes more information on all of these.
 \subsubsection{Differencing}
 \label{sec:pi-details-diff}
 
-implementation of the search procedures
+As mentioned in Section~\ref{sec:proc}, differencing inside of
+\toolnamec implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}:
 
-the four search procedures so far
+\begin{enumerate}
+\item algebraic ornaments,
+\item unpacking $\Sigma$ types,
+\item swapping constructors, and
+\item moving between nested pairs and records.
+\end{enumerate}
+I already detailed the first of these in Section~\ref{sec:prof}.
+The second is often used in combination with the first, to get from equivalences of this form:
 
-how hard it is to define new search procedures
+\begin{lstlisting}
+  $A \equiv \Sigma (i : I) . A_I i$
+\end{lstlisting}
+to equivalences of this form:
 
-weird details: refolding, historical approach, 
+\begin{lstlisting}
+  $\Sigma (a : A) . \pi a = i \equiv A_I i$
+\end{lstlisting}
+where $\pi$ is the indexer.
+The first two configurations are used in combination, for example,
+to repair proofs in response to the change from lists to vectors of a particular length in Figure~\ref{fig:listtovect},
+as long as the proof engineer proves the missing length invariant.
+This differencing algorithm is implemented by simply instantiating the types \Aa and \B of a generic 
+configuration that can be defined inside of Coq directly.
 
-\paragraph{Syntactic Restrictions}
+The third configuration---invoked in the example in Section~\ref{sec:overview}---constructs a swap map
+that maps the constructors of \Aa to the swapped constructors of \B, then otherwise runs an algorithm much like
+the algorithm for algebraic ornaments.
+When there are multiple possible swap maps, it returns an ordered list of possible mappings to choose from,
+and prompts the proof engineer to select one. % TODO link, here and elsewhere...
+It also lets the proof engineer supply the swap map directly, and from that can derive the configuration, the equivalence, and the proof.
+The fourth search procedure is similar to the search procedure for algebraic ornaments, but with some additional logic
+to handle nested tuples.
+
+All search procedures have the historical detail of defining the equivalence first, then deriving the configuration from it,
+rather than the other way around.
 For simplicity, the search procedures currently implemented inside of \toolnamec make some syntactic assumptions
 about the input and output types.
-For example, the algorithm for differencing algebraic ornaments $\ldots$. 
 The details of these restrictions can be found inside of the repository. % TODO link
+
+Defining new search procedures comes with a lot of freedom, as long as the search procedures produce a configuration in the end.
+I found it simple to add configuration four in a matter of a few days in response to a request by an industrial proof engineer,
+reusing existing functions defined in other search procedures.
+I would not expect the average proof engineer to be able to do the same, and I have not yet asked anyone else to write a search procedure
+to gauge the effort involved for others.
+It is notable that manual configuration is always an option when search procedures do not exist,
+but the results in Section~\ref{sec:pi-results} suggest that automatic configuration is very helpful for saving developer effort,
+and so worth implementing for useful classes of equivalences.
 
 \subsubsection{Transformation}
 \label{sec:pi-details-trans}

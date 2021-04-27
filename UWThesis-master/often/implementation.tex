@@ -65,7 +65,7 @@ As mentioned in Section~\ref{sec:proc}, differencing inside of
 \item swapping constructors, and
 \item moving between nested pairs and records.
 \end{enumerate}
-I already detailed the first of these in Section~\ref{sec:prof}.
+I already detailed the first of these in Section~\ref{sec:proc}.
 The second is often used in combination with the first, to get from equivalences of this form:
 
 \begin{lstlisting}
@@ -110,33 +110,60 @@ and so worth implementing for useful classes of equivalences.
 \subsubsection{Transformation}
 \label{sec:pi-details-trans}
 
-There were three hard things about this.
-Everything else was standard.
+The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}
+of the transformation from Section~\ref{sec:pi-trans} operates over terms in Gallina.
+It takes as input two types \Aa and \B, along with a configuration that induces an equivalence between them.
+\Aa and \B may not necessarily be the inputs to differencing---in the case of algebraic ornaments, for example,
+differencing takes \Aa and \AI as inputs, but the transformation takes \Aa and \B as inputs,
+where \B is $\Sigma (i : I).A_I i$.
 
-\mysubsubsec{Termination}
+The unification heuristics run before the transformation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}},
+and in the end return which transformation derivation to run,
+and with which arguments~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}.
+For the most part, the derivations are implemented in a way that corresponds to the derivations in Figure~\ref{fig:final}
+on page~\pageref{fig:final}, but with a few differences highlighted below.
+
+\paragraph{From CIC$_{\omega}$ to Gallina}
+The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}} % lift.ml
+of the transformation handles language differences to scale from CIC$_{\omega}$ to Gallina.
+For example, recall that the transformation assumes \kl{primitive eliminators}, while Gallina implements eliminators in terms of pattern matching and fixpoints. 
+To handle terms that use these features, \toolnamec includes a \lstinline{Preprocess} command that translates  % TODO link to repo
+these terms into corresponding eliminator applications.\footnote{My collaborator Nate Yazdani wrote this command, and it is available as a standalone plugin on Github. % TODO link
+I helped him design and test the command, but did not write any of the code.}
+This command can preprocess a definition (like \lstinline{length} from Figure~\ref{fig:length} on page~\pageref{fig:length}) or an entire module
+(like \lstinline{List}, as shown in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/ListToVect.v}{\lstinline{ListToVect.v}}) for lifting. % TODO update links
+It currently supports fixpoints that are structurally recursive on only 
+immediate substructures.\footnote{This is enough to preprocess many practical terms, including the entire \lstinline{List} module.
+But it is not as general as it could be.
+A more general translation may help \toolnamec support more terms, and discussions
+with Coq developers a couple of years ago suggest that the implementation of such a translation
+building on work from the equations~\cite{sozeau:equations} plugin was in progress.
+I do not know the current status of that project.}
+To translate such a fixpoint, it first extracts a motive, then generates each case
+by partially reducing the function's body under a hypothetical context for the constructor arguments.
+The implementation documents this and other language differences.
+
+\paragraph{Optimizations}
+In addition to cases for the derivations, the implementation of the transformation includes a number of cases
+that correspond to optimizations.
+The code denotes these explicitly~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}
+and explains them in detail in comments~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}.
+For example, the transformation assumes that all terms are fully \smallmath{$\eta$}-expanded. Sometimes,
+however, \smallmath{$\eta$}-expansion is not necessary.
+For efficiency, rather than fully \smallmath{$\eta$}-expand ahead of time, \toolnamec \smallmath{$\eta$}-expands lazily, 
+only when it is necessary for correctness.
+The \lstinline{LazyEta} optimization implements this.
+Section~\ref{sec:engineers} describes some other optimizations included for the sake of integration with proof engineering workflows.
+
+\paragraph{Termination}
 When a subterm unifies with a configuration term, this suggests that \toolnamec \textit{can}
 transform the subterm, but it does not necessarily mean that it \textit{should}.
 In some cases, doing so would result in nontermination.
-For example, if \B is a refinement of \Aa, then we can always run \textsc{Equivalence}
+For example, if \B is a refinement of \Aa, then the transformation can always run \textsc{Equivalence}
 over and over again, forever.
 %\textsc{Devoid} ruled out this case by simply prohibiting the case where \B refers to \A, but we found it sometimes
 %useful to support this case.
-We thus include some simple termination checks in our code~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}. % liftrules.ml
-
-\mysubsubsec{Intent}
-Even when termination is guaranteed, whether to transform a subterm depends on intent.
-That is, \toolnamec automates the case of porting \textit{every} \Aa to \B,
-but proof engineers sometimes wish to port only \textit{some} $A$s to $B$s.
-\toolnamec has some support for this using an interactive workflow~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/minimal_records.v}{\circled{13}},
-with plans for automatic support in the future. % minimal_records.v, but show this
-%We helped the proof engineer do this by interacting with \toolnamec using a particular workflow.
-
-\mysubsubsec{From CIC$_{\omega}$ to Coq}
-The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}} % lift.ml
-of the transformation handles language differences to scale from CIC$_{\omega}$ to Coq.
-We use the existing \lstinline{Preprocess}~\cite{Ringer2019} command to turn pattern matching and fixpoints into 
-eliminators.
-We handle refolding of constants in constructors using \lstinline{DepConstr}.
+\toolnamec thus includes some simple termination checks in the code~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}. % liftrules.ml
 
 \subsubsection{Trusted Computing Base}
 \label{sec:pi-tcb}
@@ -391,6 +418,7 @@ It maintains the recursive proof structure for formatting. %, then uses that to 
 Once the proof engineer has the new proof, she can remove the old one.
 
 \subsubsection{Reaching Real Proof Engineers}
+\label{sec:engineers}
 
 Many of our design decisions in implementing \toolnamec were informed by our partnership with
 an industrial proof engineer (Section~\ref{sec:search}).
@@ -404,12 +432,8 @@ With these caches, the proof engineer found \toolnamec efficient enough to use o
  % caching.ml
 %These caches are implemented in \href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/src/cache/caching.ml}{caching.ml}.
 %or recurse into certain modules.
-% set certain terms or modules as opaque to \toolnamec, to prevent unnecessary $\delta$-reduction.
+% set certain terms or modules as opaque to \toolnamec, to prevent unnecessary $\delta$-reduction
 
-The transformation assumes that all terms are fully \smallmath{$\eta$}-expanded. Sometimes,
-however, \smallmath{$\eta$}-expansion is not necessary.
-For efficiency, rather than fully \smallmath{$\eta$}-expand ahead of time, \toolnamec \smallmath{$\eta$}-expands lazily, 
-only when it is necessary for correctness.
 
 The experiences of proof engineers also inspired new features.
 For example, we implemented a search procedure to generate custom eliminators %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/src/automation/search/smartelim.ml}{smartelim.ml})
@@ -419,6 +443,14 @@ We added informative error messages~\href{https://github.com/uwplse/pumpkin-pi/b
 These features helped with workflow integration. % tactic decompiler helped with integration into proof engineering workflows.
 
 (Also whole module processing, somewhere.)
+
+\paragraph{Intent}
+Even when termination is guaranteed, whether to transform a subterm depends on intent.
+That is, \toolnamec automates the case of porting \textit{every} \Aa to \B,
+but proof engineers sometimes wish to port only \textit{some} $A$s to $B$s.
+\toolnamec has some support for this using an interactive workflow~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/minimal_records.v}{\circled{13}},
+with plans for automatic support in the future. % minimal_records.v, but show this
+%We helped the proof engineer do this by interacting with \toolnamec using a particular workflow.
 
 
 

@@ -627,6 +627,13 @@ Daniel Selsam and Leonardo de~Moura.
   Reasoning: 8th International Joint Conference}, IJCAR 2016, pages 99--115,
   Cham, 2016. Springer International Publishing.
 
+\bibitem{sozeau:equations}
+Matthieu Sozeau.
+\newblock Equations: A dependent pattern-matching compiler.
+\newblock In Matt Kaufmann and Lawrence~C. Paulson, editors, {\em Interactive
+  Theorem Proving}, pages 419--434, Berlin, Heidelberg, 2010. Springer Berlin
+  Heidelberg.
+
 \bibitem{Sozeau2008}
 Matthieu Sozeau and Nicolas Oury.
 \newblock First-class type classes.

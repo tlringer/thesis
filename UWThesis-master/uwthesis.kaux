@@ -276,6 +276,8 @@
 \KAuxNewLinkScopetagInstance {fig:someantics}{document}
 \KAuxDeclaredScopeTag {fig:rainbow}
 \KAuxNewLinkScopetagInstance {fig:rainbow}{document}
+\KAuxDeclaredScopeTag {sec:engineers}
+\KAuxNewLinkScopetagInstance {sec:engineers}{document}
 \KAuxDeclaredScopeTag {sec:pi-results}
 \KAuxNewLinkScopetagInstance {sec:pi-results}{document}
 \KAuxDeclaredScopeTag {fig:changes}

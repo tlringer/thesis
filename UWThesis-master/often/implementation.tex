@@ -24,6 +24,35 @@ As with \sysname, the \toolnamec extension to \sysnamelong does not extend the T
 \subsubsection{The Command}
 \label{sec:pi-details-command}
 
+The implementation of \toolnamec exposes the repair workflow
+to proof engineers through the \lstinline{Repair} command. % TODO link to code
+This invokes the workflow from Figure~\ref{fig:system} on page~\pageref{fig:system}.
+When the proof engineer invokes the command:
+
+\begin{lstlisting}
+  Repair A B in old_proof as new_proof.
+\end{lstlisting}
+The first step---\textsc{Configure}---looks up \Aa and \B in a cache of configurations.
+If it finds one, it uses that; otherwise, it runs the differencing search procedures for automatic configuration.
+If that fails, it prompts the proof engineer to supply a configuration manually.
+Proof engineers can supply manual configurations by defining them as Gallina terms and
+providing them to the \lstinline{Configure Repair} command.
+
+Once \toolnamec has found a configuration, the next step---\textsc{Transform}---runs the transformation.
+It transforms \lstinline{old_proof} into some new proof term, then defines the new proof term as \lstinline{new_proof}.
+It is also possile to ask \toolnamec to automatically generate a name. % TODO is it?
+The final step---\textsc{Decompile}---runs in the end to produce a suggested proof script.
+
+There are a few other useful commands in \toolnamec that are detailed in the repository.
+Notably, the \lstinline{Repair Module} command operates over entire modules at once and defines new modules.
+The \lstinline{Preprocess} command converts functions to use eliminators, so that the transformation
+can assume \kl{primitive eliminators}.
+The \lstinline{Lift} and \lstinline{Lift Module} commands skip the decompilation step,
+when only the term is desired in the end.
+Several options make it possible to control whether \toolnamec generates correctness proofs,
+as well as how aggressively it runs optimizations, and what it considers in its optimizations.
+The repository includes more information on all of these.
+
 \subsubsection{Differencing}
 \label{sec:pi-details-diff}
 
@@ -85,7 +114,7 @@ Since \toolnamec implements transport as a proof term transformation, it is able
 \label{sec:pi-workflow}
 
 % PUMPKIN Pi Decompiler & impl
-(Segue.)
+(Segue. Also note have spoken about configure and transform, but what about decompiler? That's here, plus some other cool stuff.)
 
 \subsubsection{Decompiling to Tactics}
 

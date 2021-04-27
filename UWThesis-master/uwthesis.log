@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  26 APR 2021 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  26 APR 2021 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2227,29 +2227,37 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 595.
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
-[83] [84] [85]) (./often/implementation.tex [86] [87]
+[83] [84] [85]) (./often/implementation.tex [86]
+Overfull \hbox (21.62834pt too wide) in paragraph at lines 41--45
+[]\OT1/pplj/m/n/10.95 (-20) Once \OT1/pplj/m/sc/10.95 (-20) Pump-kin P\OT1/pplj
+/m/n/10.95 (-20) i has found a con-fig-u-ra-tion, the next step---\OT1/pplj/m/s
+c/10.95 (-20) Transform\OT1/pplj/m/n/10.95 (-20) ---
+ []
 
-LaTeX Warning: Citation `Ringer2019' on page 88 undefined on input line 71.
+[87]
 
+LaTeX Warning: Citation `Ringer2019' on page 88 undefined on input line 100.
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 108.
+[88]
 
-[88] [89]
+LaTeX Font Warning: Command \small invalid in math mode on input line 137.
 
-LaTeX Warning: Reference `sec:second' on page 90 undefined on input line 180.
+[89]
 
+LaTeX Warning: Reference `sec:second' on page 90 undefined on input line 209.
 
-Overfull \hbox (18.95294pt too wide) in paragraph at lines 237--250
+[90]
+Overfull \hbox (18.95294pt too wide) in paragraph at lines 266--279
 \OT1/pplj/m/n/10.95 (-20) are needed to move this to Coq. The gen-er-ated proof
  term of []
  []
 
-[90] [91]
+[91]
 
-LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 312.
+LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 341.
 
 
-LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 330.
+LaTeX Warning: Reference `sec:search' on page 92 undefined on input line 359.
 
 [92]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
@@ -2542,10 +2550,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 50023 strings out of 492609
- 1008081 string characters out of 6129033
- 1292216 words of memory out of 5000000
- 50827 multiletter control sequences out of 15000+600000
+ 50027 strings out of 492609
+ 1008134 string characters out of 6129033
+ 1293148 words of memory out of 5000000
+ 50829 multiletter control sequences out of 15000+600000
  633414 words of font info for 790 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2566,10 +2574,10 @@ onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on uwthesis.pdf (139 pages, 1537272 bytes).
+Output written on uwthesis.pdf (139 pages, 1539804 bytes).
 PDF statistics:
- 2964 PDF objects out of 2984 (max. 8388607)
- 2753 compressed objects within 28 object streams
- 1414 named destinations out of 1440 (max. 500000)
+ 2969 PDF objects out of 2984 (max. 8388607)
+ 2758 compressed objects within 28 object streams
+ 1416 named destinations out of 1440 (max. 500000)
  93010 words of extra memory for PDF output out of 106986 (max. 10000000)
 

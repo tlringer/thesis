@@ -26,12 +26,23 @@ See my survey paper on proof engineering for a detailed overview of the field~\c
 \subsection{Proof Assistants}
 \label{sec:ass}
 
-% other proof assistants, how this stuff carries over
+Introduction, definition, de bruijn.
+
+Summary of proof assistants.
+
+I will discuss how these differ and the implications for proof repair.
+
+\paragraph{Foundations} Most notably, proof terms.
+But also differences in logics.
+
+\paragraph{Aesthetics} Like different tactic languages.
 
 \subsection{Proof Evolution}
 \label{sec:refrep}
 
 \paragraph{Proof Refactoring}
+
+\paragraph{Proof Repair}
 
 \paragraph{Dependency Management}
 
@@ -49,234 +60,56 @@ See my survey paper on proof engineering for a detailed overview of the field~\c
 \section{Program Repair}
 \label{sec:repair}
 
-\section{More Inspiration}
-\label{sec:inspiration}
-
-Other inspiration comes from type theory (Section~\ref{sec:typetheory}),
-program synthesis (Section~\ref{sec:synthesis}),
-differencing (Section~\ref{sec:diff-incremental}),
-program transformations (Section~\ref{sec:rel-transformations}),
-automated theorem proving (Section~\ref{sec:atp}),
-and user studies (Section~\ref{sec:user-studies}).
-
-\subsection{Type Theory}
-\label{sec:typetheory}
-
-\paragraph{Ornaments}
-
-\paragraph{Transport}
-
-\paragraph{Parametricity}
-
-\subsection{Program Synthesis}
-\label{sec:synthesis}
-
-\paragraph{Programming by Example}
-
-\paragraph{Neurosymbolic Programming}
-
-\subsection{Differencing}
-\label{sec:diff-incremental}
-
-\subsection{Program Transformations}
-\label{sec:rel-transformation}
-
-\subsection{Automated Theorem Proving}
-\label{sec:atp}
-
-% how stuff caries over to ATP, plus stuff about e-graphs and so on
-
-\paragraph{E-Graphs}
-
-\subsection{User Studies}
-\label{sec:user-studies}
-
-
-\iffalse
-
-TODO somewhere here or elsewhere (if elsewhere, fix references): talk about what lessons carry over to automated theorem provers,
-and which lessons carry over to other ITPs, and what work is needed to reach those tools.
-
-\section{Program Repair}
-
 % From sysname Pi, unchanged
 
 Proof repair can be viewed as a form of \textit{program repair}~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526}
-for proof assistants.
-Proof assistants like Coq are a good fit for program repair: A recent paper~\cite{Qi:2015:APP:2771783.2771791} 
-recommends that program repair tools draw on extra information
-such as specifications or example patches. In Coq, specifications and examples 
-are rich and widely available: specifications thanks to dependent types,
-and examples thanks to constructivism.
+for proof assistants. % TODO use knowledge package
+Proof assistants like Coq are an especially good fit for program repair (Section~\ref{sec:lessons}).
+While it is not straightforward to apply existing program repair techniques to proof assistants,
+looking to them for inspiration may help improve proof repair tools more in the future (Section~\ref{sec:techniques}).
 
-% From sysname PATCH, unchanged
-
-Program repair tools for 
-languages with non-dependent type 
-systems~\cite{Pei:2014:APR:2731750.2731779, Long:2016:APG:2837614.2837617, Le:2017:SSS:3106237.3106309, Mechtaev:2016:ASM:2884781.2884807, Monperrus2015} 
-may have applications in the context of a dependently typed language.
-Similarly, our work may have applications within program repair in these languages:
-Future applications of our approach may repurpose it to repair programs for functional languages.
-
-% From Generals, unchanged
-
-While proof repair tools like \sysname\ are new, the broader domain of program repair is well-established.
-A recent survey paper in program repair~\cite{Monperrus:2018:ASR:3177787.3105906} distinguishes between different repair tools
-based on the \textit{oracle} they use to determine what behavior is correct and thus what it means to fix the behavior. 
-Examples of oracles include test suites (\textit{test-based} repair) and specifications (\textit{specification-based} repair);
-proof repair is a kind of specification-based repair.
-%outputs of static analyses, and invariants. 
-%Lessons and techniques from program repair tools provide useful insights for proof repair. % TODO uninspiring intro
-This overview starts with a discussion of lessons learned from recent results in test-based program repair that have revealed
-problems with existing tools and research methodologies (Section~\ref{sec:lessons}). It then discusses
-techniques from existing program repair tools that are relevant to proof repair (Section~\ref{sec:techniques}). 
-In the language of the program repair survey, %~\cite{Monperrus:2018:ASR:3177787.3105906},
-this overview focuses on behavioral repair, or patching the code, as opposed to state repair, or patching the dynamic behavior;
-more information on other repair tools %and on behavioral repair tools not immediately relevant to the \sysname\ vision
-can be found in the survey.
-
-\subsection{Lessons from Test-Based Program Repair}
+\subsection{An Especially Good Fit}
 \label{sec:lessons}
 
-A recent paper~\cite{Qi:2015:APP:2771783.2771791} calls results from test-based program repair into
-question. The paper shows that most of the reported patches generated by the popular test-based program repair tools
-are not correct, and that a tool which only removes functionality
-performs as well %on the evaluation suites 
-as these tools. These observations %from this paper
-are later reaffirmed in a different setting~\cite{DBLP:journals/corr/abs-1811-02429}.
-A close look shows that these observations highlight why proof repair
-is a promising flavor of program repair, and carry important lessons
-for proof repair.
+A recent survey of program repair distinguishes between repair tools based on the \textit{oracle} they use to
+judge whether a patch is correct.
+For example, proof repair is a kind of \textit{specification-based} repair,
+since it uses a specification (a goal type derived from differencing) as an oracle.
+Program repair tools sometimes use other oracles---commonly, test suites (\textit{test-based} repair).
 
-\paragraph{Tools Evaluated}
-The paper calls into question
-the patches produced by three test-based program repair tools:
-GenProg~\cite{LeGoues:2012:SSA:2337223.2337225}, RSRepair~\cite{Qi:2014:SRS:2568225.2568254}, and AE~\cite{Weimer:2013:LPE:3107656.3107702}.
-%Initial results suggested that these tools are extremely effective; the review calls these results into question.
-%We briefly explain each of these tools for context.
+A recent paper~\cite{Qi:2015:APP:2771783.2771791} shows that most of the reported patches generated by a popular test-based program repair tool
+are not correct; these observations are later reaffirmed in a different setting~\cite{DBLP:journals/corr/abs-1811-02429}.
+In response, the paper recommends that program repair tools draw on extra information, like specifications or example patches.
+In Coq, specifications and examples 
+are rich and widely available: specifications thanks to dependent types,
+and examples thanks to constructivism.
+This shows why proof repair in Coq is an especially good fit for program repair.
+ 
+\paragraph{Specifications} In Coq. Tease Section~\ref{sec:techniques}.
 
-GenProg uses genetic programming to identify patches: It discovers variants of repaired programs, then uses a fitness function derived from test cases
-to evaluate those variants. It forms its search space for patches based on existing code elsewhere in the program,
-then inserts, deletes, and swaps code and control flow to produce variants. It evaluates whether a patch is
-a success by ensuring that tests in the test suite that ought to pass do pass, and tests in the test suite that ought to fail do fail.
-It also attempts to minimize the difference between the original and fixed program.
-GenProg has been used as the baseline for comparison for many other tools, and has over 120 citations.
+\paragraph{Examples} In Coq. Tease Section~\ref{sec:techniques}.
 
-RSRepair uses random search, a simpler technique that does not use a fitness function. % TODO 139, are there other papers to cite here? Is the one cited 139?
-RSRepair also attempts to limit the search space.
-The authors recommend using random search as a baseline for comparison for other tools;
-this has been done many times, and the paper has over 140 citations.
-
-AE utilizes both a program equivalence relation and % TODO read in more detail and make sure you understand
-adaptive search, a technique which iteratively adapts solutions to simpler search problems.
-AE first identifies patch candidates using a program equivalence relation, then uses a sequence of 
-two adaptive search algorithms to identify a patch from those candidates.
-It minimizes the cost of the patch according to a cost model.
-AE has also been used as a baseline for many comparisons, and has over 130 citations.
-
-\paragraph{Why These Tools Produce Incorrect Patches}
-The paper notes several reasons for the discrepancy 
-between reported and actual patch correctness results. For one, tests in the evaluation suites for these tools
-are underspecified; for example, some tests check whether
-a program terminates with an exit code of 0, but do not check the program output.
-In addition, patches are often overfit to the tests in the test suite; additional tests expose problems with those patches.
-In fact, some patches are outright harmful, as they introduce new problems which the test suite
-does not check for.
-
-This discrepancy is not solely a property of the test suites in question;
-running the same tools on strengthened versions of the test suites produces no patches at all.
-The authors postulate that this may be because the correct patches for the stronger test suites are not in the
-search space for these tools, or because they are in the search space, but the tools
-cannot find them efficiently enough. 
-
-\paragraph{Producing Correct Patches}
-To improve program repair tools in the future, the paper recommends richer search 
-spaces and search algorithms that can effectively search those enriched search spaces. 
-In addition, the paper recommends augmenting program repair techniques with additional information outside of
-tests, such as code from other applications, example patches, or specifications.
-
-Many test-based program repair tools meet these criteria, some developed before these results came to light,
-and some in response to these results. 
-SemFix~\cite{nguyen2013semfix}, for example,
-generalizes test suites to specifications, which the authors claim improves the performance of search.
-%It uses symbolic execution to generate specifications that encode passing the test suite, then synthesizes patches that satisfy the specification. 
-Similarly, NOPOL~\cite{Xuan:2017:NAR:3071893.3071964} repairs a certain class of bugs by generating and solving SMT formulas from a test suite.
-Other tools that augment test-based techniques with constraint problems include
-directFix~\cite{Mechtaev:2015:DLS:2818754.2818811} and SearchRepair~\cite{Ke:2015:RPS:2916135.2916260}. % TODO are there more? If so, add
-
-Some tools avoid using test suites to judge correctness of candidate patches, and instead
-bring the programmer into the loop. For example, both ReAssert~\cite{daniel2009reassert}
-and QACrashFix~\cite{gao2015fixing} suggest repairs directly to the programmer. % TODO is this true? accurate?
-% TODO more here if they exist
-Opad~\cite{Yang:2017:BTC:3106237.3106274} provides an alternative to expecting the test-based repair tool
-to make use of extra information. Instead, Opad automatically detects overfitted patches and improves existing test suites.
-The evaluation shows that using Opad to improve test suites improves the performance of several test-based program repair tools. % TODO accuracy check
-
-Prophet~\cite{Long:2016:APG:2837614.2837617} and Relifix~\cite{Tan:2015:RAR:2818754.2818813} use example patches or code that used to be 
-correct in order to identify or rank patches, and SPR~\cite{Long:2015:SPR:2786805.2786811} uses a novel technique to effectively search a rich search space;
-more information on tools that use techniques especially relevant to \sysname\ can be found in Section~\ref{sec:techniques}.
-
-It is not clear to what extent the claims many of these tools make would stand up to the evaluation methodology from this paper.
-The NOPOL paper inadvertedly highlights  when it uses the same example as the SemFix paper,
-but finds a different patch which is also correct, since the tests are underconstrained; it's unclear
-if both of these patches actually \textit{behave} correctly. % TODO check if the NOPOL paper addresses this
-Reevaluating these tools with the strengthened test suites may help
-confirm whether the recommendations for improving test-based repair tools have already been realized
-effectively. % TODO does this exist anywhere?
-
-\paragraph{Implications for Proof Repair}
-These observations show why proof repair is particularly promising. In the world of proof repair, there is always additional information,
-since the theorem that the tool patches is a specification.
-This means that as long as the specification is correct, these tools cannot produce
-incorrect patches. \sysname\ goes one step further and uses more additional information
-by deriving patches from example patches, which makes search more efficient.
-
-These observations also carry important lessons for proof repair.
-For one, many of the other techniques that the authors recommend for augmenting repair tools with
-additional information may be useful in the context of proof repair.
-It may be particularly interesting to look at techniques that have already been used
-successfully in other tools. For example, SemFix uses a synthesis technique;
-the analogue to this in the context of proof repair is proof search. 
-While the underlying logics are different, if a proof repair tool
-can state its problem as a classic proof search problem, then higher-level ideas
-from these program repair tools may cross over.
-
-% TODO more in paragraph about implications of some of the tools that do correct
-
-In addition, proof repair tools should be careful not to trim the search space so that it no
-longer contains correct patches.
-Furthermore, just as tests can test useless properties, so theorems can state useless properties;
-in order for proof repair tools to be useful, the specification must actually be correct.
-Any proof repair tool that changes the specification itself should come equipped with a proof (be it 
-internal or metatheoretical) that the specifications it produces are meaningful.
-
-In evaluating proof repair tools, it is important to compare to an acceptable baseline; 
-manual inspection of patches~\cite{DBLP:journals/corr/abs-1811-02429} 
-may provide reassurance that patches are correct.
-
-\subsection{Program Repair Techniques}
+\subsection{Techniques for Inspiration}
 \label{sec:techniques}
-% TODO maybe break into subsubsections without high-level technique sections, depends how long they are
-% TODO or better: split into techniques that sysname already uses in a sense, then another subsubsection for techniques
-% future sysname might want to use or learn from
 
-%\sysname\ is, in a sense, a program repair tool for Coq. 
-%In the language of the survey on program repair~\cite{Monperrus:2018:ASR:3177787.3105906},
-\sysname\ is specification-based, since it uses a specification (a goal type derived from the difference
-between the old and new type) as the oracle to judge whether a patch (a term) is correct (has that type). To identify
-patches, \sysname\ uses program differencing to identify candidate patches from example changes, 
-then generalizes those candidates into patches that fix broken proofs that used to go through; existing program repair tools also generalize
-examples and repair regressed code.
-Tools that these techniques can offer lessons for how to improve those techniques within proof repair tools like \sysname.
-%and tools that use different techniques may provide leads on how to integrate new techniques into \sysname\ in the future.
-%This overview samples a number of program repair tools and techniques that are relevant to \sysname,
-%then discusses the implications for \sysname.
+% TODO explain why here it's not straightforward to just use program repair tools for proof repair, like did in the talk.
+% But then segue into saying the techniques are still useful.
 
-\paragraph{Regression Repair} Regression repair tools target regression bugs,
-or bugs introduced by changes in code.
-In a sense, \sysname\ is a regression repair tool for Coq, as it repairs regression bugs in proofs:
-proofs that used to succeed, but because of some change in specification, no longer succeed.
+This section discusses techniques from existing program repair tools that are relevant to proof repair.
+It focuses in particular on what a recent survey~\cite{Monperrus:2018:ASR:3177787.3105906} of proof engineering calls behavioral repair,
+or patching the code, rather than state repair, or patching the dynamic behavior.
+Among behavioral repair tools, it focuses on regression repair, repair by example, and specification-based repair.
 
+\paragraph{Regression Repair}
+Regression repair tools target regression bugs, or bugs introduced by changes in code.
+In some sense, proof repair is a kind of regression repair, as it repairs
+proofs that used to succeed, but after some change, no longer do.
+
+\paragraph{Repair by Example}
+
+\paragraph{Specification-Based Repair}
+
+\iffalse
 Test-based regression repair tools repair code that causes a set of tests (the \textit{regressed tests}) that used to pass to no longer pass,
 such that regressed tests pass on the repaired code.
 One such tool is ReAssert~\cite{daniel2009reassert} for Java,
@@ -284,12 +117,9 @@ which focuses on regressions caused by refactoring.
 ReAssert uses a program analysis to identify broken code,
 chooses a strategy for repair, and suggests repairs to the programmer using that strategy that cause regressed tests to pass.
 It loops through strategies until one works or none remain.
-% TODO results?
 Another such tool is Relifix~\cite{Tan:2015:RAR:2818754.2818813} for C.
-%which does not limit itself to refactorings.
 Relifix uses a manual inspection to find code transformations based on regressions, then searches those transformations for 
-patches that make the regressed tests pass without making other tests fail. % TODO read in more detail, add info if necessary
-% TODO results?
+patches that make the regressed tests pass without making other tests fail.
 
 % fix up transition or whatever
 While not a regression repair tool, GRAFTER~\cite{Zhang:2017:ATD:3097368.3097448} is a related tool that adapts the tests themselves,
@@ -350,64 +180,18 @@ It records refactorings that the library developer makes inside of the IDE,
 then replays the refactorings in in client code, reconstructing everything from the recorded trace. % TODO accuracy check
 % TODO results? guarantees? limitations?
 
-% TODO maybe, if time: sun2008automated, sun2010propagating
-
-%\paragraph{Staged Program Repair} % TODO better intro here I guess
-%\textit{Staged program repair}~\cite{Long:2015:SPR:2786805.2786811} is a technique to search a rich search space effectively.
-%This technique involves using staged repair operators, and discarding candidates that cannot be patches as the tool iterates. % TODO accurate? reread
-%It has some similarities to the way that \sysname\ uses intermediate goals to identify candidate patches before it generalizes them.
-% TODO really sysname has some similarities to it; also fix up this paragraph it sucks
-
-%%The tool that implements this technique is SPR. % TODO what language?
-%It makes use of a number of repair strategies which can be parameterized, so that instead of each strategy
-%representing a single program transformation, it instead represents a class of transformations.
-%It then tries to find a parameter with which it can instantiate that strategy. If it can't
-%instantiate the strategy, it moves on other strategies.
-%In this way, % TODO how does this connect?
-%it can rule out many candidate patches ahead of time, which makes the search space for a correct patch much smaller.
-% TODO results, and how this connects to Prophet
-% TODO only put back in if we actually need it
-
-% TODO read and write about
-
-%\paragraph{Static Analysis for Program Repair}
-%ReAssert~\cite{daniel2009reassert} again?
-
-% TODO do this only if time
-
-%\paragraph{Logozzo and Ball}
-
-%Static analysis
-
-% TODO 104
-
-%\paragraph{Gupta et al.}
-
-%Static analysis, repairing compiler errors, uses language model based on deep learning
-
-% TODO 59
-
 \paragraph{Specification-Based Repair} Some tools use specifications as an oracle, like \sysname.
 Sometimes these tools combine this with other oracles like tests. % TODO fix up a lot
 For example, Automated Debugging Using Path-Based Weakest Preconditions~\cite{10.1007/978-3-540-24721-0_20} % TODO does this have a reasonable name of a tool?
 uses pre and post conditions written in FOL to locate buggy statements and generate repairs, 
 then runs tests to verify the repairs. 
-%are successful. % TODO check for accuracy
-% TODO does it use solvers or what? seems to do some kind of differencing, then modification based on that, but really confusing, need to read in detail
+
 AutoFix-E~\cite{Wei:2010:AFP:1831708.1831716, pei2014automated} uses contracts
 to repair Eiffel programs. % TODO also something about repair templates; read in more detail maybe
 Specification-Based Program Repair Using SAT~\cite{gopinath2011specification} % TODO ugh name your tools guys
 encodes pre and post conditions in combination with other constraints from the code % TODO accuracy check
 into SAT and then uses Alloy to generate patches. % TODO accuracy check again
 
-%TODO:  This paper~\cite{konighofer2011automated}
-%Pre and post conditions, assertions, SMT
-% TODO read and add if it belongs
-
-% TODO cite Harper [8] from the paper, which the methodology is apparently based on
-%\sysname\ uses theorem statements as specifications. In the world of program repair,
-%there is one methodology that does something similar, though it does not repair proofs directly.
-%Instead, 
 Proof-directed repair~\cite{dennis2006proof} presents a methodology
 for repairing programs based on information from incomplete proofs in Isabelle.
 Essentially, the programmer writes a proof, and then uses feedback
@@ -416,28 +200,6 @@ In a sense, since if the repair succeeds the proof should go through,
 it uses proofs as an oracle. The paper presents a few techniques for fixing the broken code,
 then shows some examples using those techniques with existing tools.
 It does not yet automate it in a tool.
-
-%\paragraph{Reflexive Parsing}
-
-% TODO A Reflexive and Automated Approach to Syntactic Pattern Matching in Code Transformations -- only discuss
-% if more relevant and if time
-% TODO what paper is this? find citation
-
-%\begin{enumerate}
-%\item What they did:
-%\begin{enumerate}
-%\item All about helping users write code transformations for tool-assisted refactoring without making them learn details of the IR of the language they're %writing code transformations for%
-%\item From the user's perspective, just a syntactic pattern that extends the base language
-%\item Inference engine goes from syntactic pattern to IR (this was already done before their paper though)
-%\item But language-independent implementations of this are hard, so they address a bunch of challenges for this
-%\end{enumerate}
-%\item How they did it:
-%\begin{enumerate}
-%\item Using a parser generator to address those challenges
-%\item Parser generator generators a parser, which acts as the inference engine to generate the IR
-%\item So you can add just a single line to the grammar of the language to turn on syntactic pattern matching
-%\end{enumerate}
-%\end{enumerate}
 
 \subsection{Implications for Proof Repair}
 
@@ -493,23 +255,6 @@ so that clients can circumvent the search functionality; something like the trac
 uses may provide useful insight on how to accomplish this. % do we need this? sounds weird in our context
 The use of comments at the library developer level is also potentially useful, as is the idea of a simple log for manual replay.
 
-%\sysname, like SPR, discards candidates that can't pass as it goes
-%Staged program repair: SPR is similar to \sysname\ in the way it discards candidates that can't pass as it goes, the way we do intermediate type goals.
-%Repair strategies that can be parameterized that represent classes of transformations are kind of like strategies in \sysname\ or whatever we call them.
-%The way it rules out a lot of candidates as it goes instead of generating a bunch of repairs, trying those, failing, and revisiting the search is also similar
-%to \sysname\ and its intermediate type goals that need to be satisfied.
-%This general technique probably could actually be useful for Coq. The idea of parameterizing classes of transformations could be useful,
-%especially when we have a lot of different kinds of changes and maybe aren't even sure which one to apply (search might be hard to scale for this)
-%or have multiple changes in succession.
-%Maybe there are intermediate unification problems that are not difficult that could rule out a lot of candidates.
-%Obviously, we don't need tests since we have specifications.
-%I guess the interesting part would be whether there are ways to parameterize transformation classes similarly to SPR that make the search or unification problem
-%tractable, and make it more efficient than just naively scaling the way we currently do things. I honestly don't have an answer.
-%The kinds of repairs they're concerned with aren't as much of a thing in proof repair.
-
-% TODO only include SPR stuff if it feels like it's missing
-% TODO only if time: Static analysis: stuff
-
 Specification-based repair tools use
 the same kind of oracle \sysname\ uses,
 though there is a lot of diversity
@@ -528,6 +273,55 @@ on repairing functions; perhaps using partial
 proofs as in proof-directed repair
 can help a tool like \sysname\
 repair functions as well.
+\fi
+
+\section{More Inspiration}
+\label{sec:inspiration}
+
+Other inspiration comes from type theory (Section~\ref{sec:typetheory}),
+program synthesis (Section~\ref{sec:synthesis}),
+differencing (Section~\ref{sec:diff-incremental}),
+program transformations (Section~\ref{sec:rel-transformation}),
+automated theorem proving (Section~\ref{sec:atp}),
+and user studies (Section~\ref{sec:user-studies}).
+
+\subsection{Type Theory}
+\label{sec:typetheory}
+
+\paragraph{Ornaments}
+
+\paragraph{Transport}
+
+\paragraph{Parametricity}
+
+\subsection{Program Synthesis}
+\label{sec:synthesis}
+
+\paragraph{Programming by Example}
+
+\paragraph{Neurosymbolic Programming}
+
+\subsection{Differencing}
+\label{sec:diff-incremental}
+
+\subsection{Program Transformations}
+\label{sec:rel-transformation}
+
+\subsection{Automated Theorem Proving}
+\label{sec:atp}
+
+% how stuff caries over to ATP, plus stuff about e-graphs and so on
+
+\paragraph{E-Graphs}
+
+\subsection{User Studies}
+\label{sec:user-studies}
+
+
+\iffalse
+
+TODO somewhere here or elsewhere (if elsewhere, fix references): talk about what lessons carry over to automated theorem provers,
+and which lessons carry over to other ITPs, and what work is needed to reach those tools.
 
 \section{Type Theory}
 

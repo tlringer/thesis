@@ -334,6 +334,10 @@
 \KAuxNewLinkScopetagInstance {sec:automation}{document}
 \KAuxDeclaredScopeTag {sec:repair}
 \KAuxNewLinkScopetagInstance {sec:repair}{document}
+\KAuxDeclaredScopeTag {sec:lessons}
+\KAuxNewLinkScopetagInstance {sec:lessons}{document}
+\KAuxDeclaredScopeTag {sec:techniques}
+\KAuxNewLinkScopetagInstance {sec:techniques}{document}
 \KAuxDeclaredScopeTag {sec:inspiration}
 \KAuxNewLinkScopetagInstance {sec:inspiration}{document}
 \KAuxDeclaredScopeTag {sec:typetheory}

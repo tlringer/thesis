@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2289,16 +2289,17 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 
 ]
 chapter 5.
+[105]
 
-LaTeX Warning: Reference `sec:rel-transformations' on page 105 undefined on inp
-ut line 58.
+LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 106 undefin
+ed on input line 81.
 
-[105]) (./conclusion.tex [106]
-chapter 6.
-(./next.tex [107
+[106]) (./conclusion.tex [107] [108
 
 
 ]
+chapter 6.
+(./next.tex [109]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -2310,7 +2311,7 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [108]
+)) (./uwthesis.ind [110]
 Overfull \hbox (1.024pt too wide) in paragraph at lines 4--6
 []| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []7[], []95[], []99[],
  []
@@ -2320,46 +2321,47 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 11--13
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []17[], []19[],
  []
 
-[109
+[111
 
 
 
 
 
 
-]) (./uwthesis.bbl [110
+]) (./uwthesis.bbl [112
 
 
 
-] [111] [112]
-Underfull \hbox (badness 1852) in paragraph at lines 210--216
+] [113] [114]
+Underfull \hbox (badness 1852) in paragraph at lines 221--227
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 210--216
+Underfull \hbox (badness 1360) in paragraph at lines 221--227
 \OT1/pplj/m/n/10.95 (+20) Cas-ingh-ino, Marco Gaboardi, Michael Green-berg, Cat
 []alin
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 210--216
+Underfull \hbox (badness 4582) in paragraph at lines 221--227
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 210--216
+Underfull \hbox (badness 4805) in paragraph at lines 221--227
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
+[115]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 220.
+(Font)              using `OMS/pplj/m/n' instead on input line 239.
 
-[113]) [114]
+) [116]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2387,10 +2389,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 49996 strings out of 492609
- 1007355 string characters out of 6129033
- 1294216 words of memory out of 5000000
- 50850 multiletter control sequences out of 15000+600000
+ 50015 strings out of 492609
+ 1007783 string characters out of 6129033
+ 1294620 words of memory out of 5000000
+ 50862 multiletter control sequences out of 15000+600000
  633603 words of font info for 797 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2412,10 +2414,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (124 pages, 1496196 bytes).
+Output written on uwthesis.pdf (126 pages, 1501443 bytes).
 PDF statistics:
- 2836 PDF objects out of 2984 (max. 8388607)
- 2640 compressed objects within 27 object streams
- 1358 named destinations out of 1440 (max. 500000)
+ 2859 PDF objects out of 2984 (max. 8388607)
+ 2661 compressed objects within 27 object streams
+ 1365 named destinations out of 1440 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

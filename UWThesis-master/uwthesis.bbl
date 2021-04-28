@@ -96,6 +96,12 @@ Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
   (OASIcs)}, pages 59--68, Dagstuhl, Germany, 2011. Schloss
   Dagstuhl--Leibniz-Zentrum fuer Informatik.
 
+\bibitem{Gazzola:2018:ASR:3180155.3182526}
+Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
+\newblock Automatic software repair: A survey.
+\newblock In {\em Proceedings of the 40th International Conference on Software
+  Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
+
 \bibitem{DBLP:journals/ftpl/GulwaniPS17}
 Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
 \newblock Program synthesis.
@@ -187,6 +193,11 @@ Guillaume Melquiond.
 \newblock Commit to coq: Make izr use a compact representation of integers,
   2017.
 
+\bibitem{Monperrus:2018:ASR:3177787.3105906}
+Martin Monperrus.
+\newblock Automatic software repair: A bibliography.
+\newblock {\em ACM Comput. Surv.}, 51(1):17:1--17:24, January 2018.
+
 \bibitem{murraybp}
 Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
@@ -213,6 +224,14 @@ Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
 \newblock {\em Software Foundations}.
 \newblock Electronic textbook, 2016.
 \newblock Version 4.0. \texttt{http://www.cis.upenn.edu/~bcpierce/sf}.
+
+\bibitem{Qi:2015:APP:2771783.2771791}
+Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
+\newblock An analysis of patch plausibility and correctness for
+  generate-and-validate patch generation systems.
+\newblock In {\em Proceedings of the 2015 International Symposium on Software
+  Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
+  ACM.
 
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.

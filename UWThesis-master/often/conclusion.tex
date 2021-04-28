@@ -1,5 +1,36 @@
 \section{Conclusion}
 
-Rehashing thesis and how we do it
+The \toolnamec plugin addresses the main limitations of the \sysname prototype:
+\sysname had limited support for patch application,
+supported a narrow class of changes,
+did not support typical proof engineering workflows like tactics,
+and only retroactively \textit{could have} helped proof engineers in a few practical use cases.
+\toolnamec, in contrast, supports patch application in a principled manner,
+broadens the scope of \sysnamelong to include a large and flexible class of changes,
+is built with workflow integration including tactics in mind,
+and can save and in fact already has saved work for proof engineers in practical use cases.
 
-What we got here beyond what we had in PUMPKIN PATCH, segue into next chapter
+At this point, it is fair to say that my thesis holds:
+
+\begin{quote}
+\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff},~\ref{sec:pumpkin-trans},~\ref{sec:pi-approach},~\ref{sec:pi-diff},and~\ref{pi-trans}). A tool that automates this (Sections~\ref{sec:pumpkin-impl} and~\ref{sec:pi-implementation}) can save work for proof engineers relative to reference manual repairs in 
+practical use cases (Sections~\ref{sec:pumpkin-results} and~\ref{sec:pi-results}).
+\end{quote}
+And so there really is \textit{reason to believe}. % TODO knowledge package
+
+It is, importantly, not just me who believes this now.
+Consider a recent article by a proof engineer saying just this (emphasis mine, again): % TODO link: https://galois.com/blog/2020/12/proofs-should-repair-themselves/
+
+\begin{quote}
+We have \textit{reason to think} such proof repair is tractable. Rather than trying to synthesize a complete proof from nothing---a problem known to be immensely difficult---we 
+start from a correct proof of fairly similar software. We will be attempting proof reconstruction \textit{within a known neighborhood}.
+\end{quote}
+The proof engineer credited my work on Twitter, % TODO link to Twitter
+but noted that there ought to be much, much more work in this space.
+I agree, and I am excited to share some ideas for this in Chapter~\ref{chapt:conclusions}.
+
+But first, I would like to back up a bit and talk about other work in this space,
+in part because doing so is standard, and in part because it has been and continues to be a wonderful source of inspiration.
+I would not skip this chapter---remember that I wrote a whole survey paper of proof engineering,
+so I take related work quite seriously.
+If you are still awake, please enjoy Chapter~\ref{sec:related}.

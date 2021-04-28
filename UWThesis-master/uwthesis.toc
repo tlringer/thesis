@@ -171,6 +171,26 @@
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{102}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{102}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{105}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Proof Engineering}{105}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{105}{subsection.5.1.1}% 
+\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{105}{subsection.5.1.2}% 
+\contentsline {paragraph}{Proof Refactoring}{105}{subsection.5.1.2}% 
+\contentsline {paragraph}{Proof Repair}{105}{subsection.5.1.2}% 
+\contentsline {paragraph}{Dependency Management}{105}{subsection.5.1.2}% 
+\contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{105}{subsection.5.1.3}% 
+\contentsline {subsection}{\numberline {5.1.4}Proof Design}{105}{subsection.5.1.4}% 
+\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{105}{subsection.5.1.5}% 
+\contentsline {section}{\numberline {5.2}Program Repair}{105}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}More Inspiration}{105}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Type Theory}{106}{subsection.5.3.1}% 
+\contentsline {paragraph}{Ornaments}{106}{subsection.5.3.1}% 
+\contentsline {paragraph}{Transport}{106}{subsection.5.3.1}% 
+\contentsline {paragraph}{Parametricity}{106}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{106}{subsection.5.3.2}% 
+\contentsline {paragraph}{Programming by Example}{106}{subsection.5.3.2}% 
+\contentsline {paragraph}{Neurosymbolic Programming}{106}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Differencing \& Incremental Computation}{106}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}User Studies}{106}{subsection.5.3.4}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{107}{chapter.6}% 
 \contentsline {paragraph}{More Proof Assistants}{107}{chapter.6}% 
 \contentsline {paragraph}{More Changes}{107}{chapter.6}% 

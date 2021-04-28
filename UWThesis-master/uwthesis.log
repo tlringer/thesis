@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 11:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2053,7 +2053,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 189.
-<maintenance/fig/patch.png, id=568, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=574, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
@@ -2097,7 +2097,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [30] [31] [32] [33] [34] [35]) (./repair/differencing.tex [36] [37]
-<repair/nat_ind.pdf, id=874, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=880, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2160,7 +2160,7 @@ LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
  26.
 
 [64]
-<often/workflowa.pdf, id=1541, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1547, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2289,12 +2289,15 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 
 ]
 chapter 5.
-) (./conclusion.tex [105] [106
+
+LaTeX Warning: Reference `sec:atp' on page 105 undefined on input line 54.
+
+[105]) (./conclusion.tex [106]
+chapter 6.
+(./next.tex [107
 
 
 ]
-chapter 6.
-(./next.tex [107]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -2383,10 +2386,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 49922 strings out of 492609
- 1005911 string characters out of 6129033
- 1292725 words of memory out of 5000000
- 50790 multiletter control sequences out of 15000+600000
+ 49986 strings out of 492609
+ 1007123 string characters out of 6129033
+ 1294006 words of memory out of 5000000
+ 50842 multiletter control sequences out of 15000+600000
  633603 words of font info for 797 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2408,10 +2411,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (124 pages, 1492313 bytes).
+Output written on uwthesis.pdf (124 pages, 1495472 bytes).
 PDF statistics:
- 2792 PDF objects out of 2984 (max. 8388607)
- 2597 compressed objects within 26 object streams
- 1344 named destinations out of 1440 (max. 500000)
- 92978 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2831 PDF objects out of 2984 (max. 8388607)
+ 2635 compressed objects within 27 object streams
+ 1356 named destinations out of 1440 (max. 500000)
+ 93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

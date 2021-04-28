@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  27 APR 2021 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2153,19 +2153,14 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 [61
 
 
-]
-
-LaTeX Warning: Reference `sec:pi-approach' on page 62 undefined on input line 4
-7.
-
-(./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex) [62]
-[63]) (./often/approach.tex
+] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
+[62] [63]) (./often/approach.tex
 
 LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
  26.
 
 [64]
-<often/workflowa.pdf, id=1548, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1549, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2288,15 +2283,8 @@ e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
 [97] [98] [99] [100]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
- [101]) (./often/conclusion.tex [102]
-
-LaTeX Warning: Reference `sec:pi-approach' on page 103 undefined on input line 
-16.
-
-
-LaTeX Warning: Reference `pi-trans' on page 103 undefined on input line 16.
-
-)) (./related.tex [103] [104
+ [101]) (./often/conclusion.tex [102])) (./related.tex
+[103] [104
 
 
 ]
@@ -2569,10 +2557,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 50159 strings out of 492609
- 1010065 string characters out of 6129033
+ 50157 strings out of 492609
+ 1010054 string characters out of 6129033
  1295876 words of memory out of 5000000
- 50897 multiletter control sequences out of 15000+600000
+ 50895 multiletter control sequences out of 15000+600000
  635164 words of font info for 821 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2594,10 +2582,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (145 pages, 1568517 bytes).
+Output written on uwthesis.pdf (145 pages, 1568589 bytes).
 PDF statistics:
- 3099 PDF objects out of 3580 (max. 8388607)
- 2880 compressed objects within 29 object streams
+ 3102 PDF objects out of 3580 (max. 8388607)
+ 2883 compressed objects within 29 object streams
  1444 named destinations out of 1728 (max. 500000)
  93010 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -5,84 +5,49 @@ The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Ringer2019"
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1811-02429"
-Warning--I didn't find a database entry for "LeGoues:2012:SSA:2337223.2337225"
-Warning--I didn't find a database entry for "Qi:2014:SRS:2568225.2568254"
-Warning--I didn't find a database entry for "Weimer:2013:LPE:3107656.3107702"
-Warning--I didn't find a database entry for "nguyen2013semfix"
-Warning--I didn't find a database entry for "Xuan:2017:NAR:3071893.3071964"
-Warning--I didn't find a database entry for "Mechtaev:2015:DLS:2818754.2818811"
-Warning--I didn't find a database entry for "Ke:2015:RPS:2916135.2916260"
-Warning--I didn't find a database entry for "daniel2009reassert"
-Warning--I didn't find a database entry for "gao2015fixing"
-Warning--I didn't find a database entry for "Yang:2017:BTC:3106237.3106274"
-Warning--I didn't find a database entry for "Tan:2015:RAR:2818754.2818813"
-Warning--I didn't find a database entry for "Long:2015:SPR:2786805.2786811"
-Warning--I didn't find a database entry for "Zhang:2017:ATD:3097368.3097448"
-Warning--I didn't find a database entry for "meng2011systematic"
-Warning--I didn't find a database entry for "meng2013lase"
-Warning--I didn't find a database entry for "andersen2010generic"
-Warning--I didn't find a database entry for "padioleau2008documenting"
-Warning--I didn't find a database entry for "Henkel:2005:CCR:1062455.1062512"
-Warning--I didn't find a database entry for "10.1007/978-3-540-24721-0_20"
-Warning--I didn't find a database entry for "Wei:2010:AFP:1831708.1831716"
-Warning--I didn't find a database entry for "pei2014automated"
-Warning--I didn't find a database entry for "gopinath2011specification"
-Warning--I didn't find a database entry for "dennis2006proof"
-Warning--I didn't find a database entry for "ZimmermannH15"
-Warning--I didn't find a database entry for "tabareau:hal-01559073"
-Warning--I didn't find a database entry for "pons2000generalization"
-Warning--I didn't find a database entry for "ringer2018adapting"
-Warning--I didn't find a database entry for "opdyke1992refactoring"
-Warning--I didn't find a database entry for "mens2004survey"
-Warning--I didn't find a database entry for "robert2018front"
-Warning--I didn't find a database entry for "Chrzaszcz2003"
-Warning--I didn't find a database entry for "replica"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
-Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty publisher in univalent2013homotopy
-Warning--empty school in williamsphd
-You've used 116 entries,
+You've used 48 entries,
             2118 wiz_defined-function locations,
-            1227 strings with 25945 characters,
-and the built_in function-call counts, 43818 in all, are:
-= -- 4539
-> -- 1812
-< -- 65
-+ -- 721
-- -- 593
-* -- 2807
-:= -- 6813
-add.period$ -- 390
-call.type$ -- 116
-change.case$ -- 626
+            775 strings with 11529 characters,
+and the built_in function-call counts, 15800 in all, are:
+= -- 1560
+> -- 699
+< -- 18
++ -- 281
+- -- 230
+* -- 980
+:= -- 2513
+add.period$ -- 142
+call.type$ -- 48
+change.case$ -- 253
 chr.to.int$ -- 0
-cite$ -- 122
-duplicate$ -- 1858
-empty$ -- 3550
-format.name$ -- 593
-if$ -- 9702
+cite$ -- 52
+duplicate$ -- 624
+empty$ -- 1317
+format.name$ -- 230
+if$ -- 3433
 int.to.chr$ -- 0
-int.to.str$ -- 116
-missing$ -- 98
-newline$ -- 569
-num.names$ -- 244
-pop$ -- 775
+int.to.str$ -- 48
+missing$ -- 30
+newline$ -- 229
+num.names$ -- 96
+pop$ -- 360
 preamble$ -- 1
-purify$ -- 519
+purify$ -- 209
 quote$ -- 0
-skip$ -- 1445
+skip$ -- 506
 stack$ -- 0
-substring$ -- 2693
-swap$ -- 612
-text.length$ -- 65
+substring$ -- 848
+swap$ -- 175
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 452
-warning$ -- 6
-while$ -- 439
-width$ -- 119
-write$ -- 1358
-(There were 41 warnings)
+type$ -- 186
+warning$ -- 4
+while$ -- 150
+width$ -- 50
+write$ -- 510
+(There were 6 warnings)

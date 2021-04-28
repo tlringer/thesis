@@ -175,7 +175,6 @@
 \contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{105}{subsection.5.1.1}% 
 \contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{105}{subsection.5.1.2}% 
 \contentsline {paragraph}{Proof Refactoring}{105}{subsection.5.1.2}% 
-\contentsline {paragraph}{Proof Repair}{105}{subsection.5.1.2}% 
 \contentsline {paragraph}{Dependency Management}{105}{subsection.5.1.2}% 
 \contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{105}{subsection.5.1.3}% 
 \contentsline {paragraph}{Proof Transformation}{105}{subsection.5.1.3}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 12:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2291,7 +2291,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 chapter 5.
 
 LaTeX Warning: Reference `sec:rel-transformations' on page 105 undefined on inp
-ut line 56.
+ut line 58.
 
 [105]) (./conclusion.tex [106]
 chapter 6.
@@ -2412,10 +2412,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (124 pages, 1495730 bytes).
+Output written on uwthesis.pdf (124 pages, 1496196 bytes).
 PDF statistics:
- 2835 PDF objects out of 2984 (max. 8388607)
- 2639 compressed objects within 27 object streams
+ 2836 PDF objects out of 2984 (max. 8388607)
+ 2640 compressed objects within 27 object streams
  1358 named destinations out of 1440 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

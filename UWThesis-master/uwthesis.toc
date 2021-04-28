@@ -191,6 +191,8 @@
 \contentsline {paragraph}{Neurosymbolic Programming}{106}{subsection.5.3.2}% 
 \contentsline {subsection}{\numberline {5.3.3}Differencing \& Incremental Computation}{106}{subsection.5.3.3}% 
 \contentsline {subsection}{\numberline {5.3.4}User Studies}{106}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Automated Theorem Proving}{106}{subsection.5.3.5}% 
+\contentsline {paragraph}{E-Graphs}{106}{subsection.5.3.5}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{107}{chapter.6}% 
 \contentsline {paragraph}{More Proof Assistants}{107}{chapter.6}% 
 \contentsline {paragraph}{More Changes}{107}{chapter.6}% 

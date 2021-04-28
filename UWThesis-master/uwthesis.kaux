@@ -344,6 +344,8 @@
 \KAuxNewLinkScopetagInstance {sec:diff-incremental}{document}
 \KAuxDeclaredScopeTag {sec:user-studies}
 \KAuxNewLinkScopetagInstance {sec:user-studies}{document}
+\KAuxDeclaredScopeTag {sec:atp}
+\KAuxNewLinkScopetagInstance {sec:atp}{document}
 \KAuxDeclaredScopeTag {chapt:conclusions}
 \KAuxNewLinkScopetagInstance {chapt:conclusions}{document}
 \KAuxEOF {}

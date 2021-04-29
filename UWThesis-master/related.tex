@@ -129,6 +129,13 @@ Section~\ref{sec:techniques} describes other example-based repair tools.
 
 % TODO explain why here it's not straightforward to just use program repair tools for proof repair, like did in the talk.
 % But then segue into saying the techniques are still useful.
+%\sysname\ uses similar techniques to existing tools, though it is in a different language
+%and so encounters different challenges. Some things are in fact easier for \sysname\ than for other tools;
+%the richness of specifications tells \sysname\ exactly when a patch is successful, for example. 
+%But the proof assistant \sysname\ operates over supports dependent types, and in the world of proof repair,
+%the criteria for a patch being correct is very strict. 
+(Missing paragraph here: not straightforward to just use program repair tools here.)
+Even with these differences, proof repair can learn a lot from other tools that use these techniques.
 
 This section discusses techniques from existing program repair tools that are relevant to proof repair.
 It focuses in particular on what a recent survey~\cite{Monperrus:2018:ASR:3177787.3105906} of program repair calls behavioral repair,
@@ -141,20 +148,6 @@ Regression repair tools target regression bugs, or bugs introduced by changes in
 In some sense, proof repair is a kind of regression repair, as it repairs
 proofs that used to succeed, but after some change, no longer do.
 
-\paragraph{Specification-Based Repair}
-
-\paragraph{Repair by Example}
-
-\paragraph{Human in the Loop}
-Some tools avoid using test suites to judge correctness of candidate patches, and instead
-bring the programmer into the loop. For example, both ReAssert~\cite{daniel2009reassert}
-and QACrashFix~\cite{gao2015fixing} suggest repairs directly to the programmer. % TODO is this true? accurate?
-% TODO more here if they exist
-Opad~\cite{Yang:2017:BTC:3106237.3106274} provides an alternative to expecting the test-based repair tool
-to make use of extra information. Instead, Opad automatically detects overfitted patches and improves existing test suites.
-The evaluation shows that using Opad to improve test suites improves the performance of several test-based program repair tools. % TODO accuracy check
-
-\iffalse
 Test-based regression repair tools repair code that causes a set of tests (the \textit{regressed tests}) that used to pass to no longer pass,
 such that regressed tests pass on the repaired code.
 One such tool is ReAssert~\cite{daniel2009reassert} for Java,
@@ -165,47 +158,64 @@ It loops through strategies until one works or none remain.
 Another such tool is Relifix~\cite{Tan:2015:RAR:2818754.2818813} for C.
 Relifix uses a manual inspection to find code transformations based on regressions, then searches those transformations for 
 patches that make the regressed tests pass without making other tests fail.
+Both ReAssert and Relifix are configurable like \sysnamelong, and may provide interesting examples of configurations
+or ways of inferring new configurations.
 
-% fix up transition or whatever
-While not a regression repair tool, GRAFTER~\cite{Zhang:2017:ATD:3097368.3097448} is a related tool that adapts the tests themselves,
+While not quite a regression repair tool, GRAFTER~\cite{Zhang:2017:ATD:3097368.3097448} is a related tool that adapts the tests themselves,
 rather than the code under test. Its focus is on testing software clones for errors introduced during the
 cloning process. It uses a static analysis to identify variables and methods that correspond between the clones,
 then ensures that the flow is preserved using that mapping. The user can then run the new tests to compare behavior.
 It provides a guarantee about type safety, and it performs reasonably well on some real-world software.
-% accuracy check and clean up and so on
+GRAFTER, like \toolnamec, takes an approach to repair that uses a form of differencing.
+Looking to this to help inform new differencing algorithms for \sysnamelong could be fruitful,
+in spite of foundational differences of the target domains.
 
-\paragraph{Repair by Example} % TODO can we really call them this? Maybe don't categorize like this, just mention technique
-Some program repair tools generalize example changes into patches that repair the broken program.
-\sysname\ is one such tool, since it generalizes example changes in proofs that address some breaking change
-into a patch that can fix other broken proofs. 
+\paragraph{Specification-Based Repair}
+Some tools use specifications as an oracle, like \sysnamelong.
+For example, AutoFix-E~\cite{Wei:2010:AFP:1831708.1831716, pei2014automated} uses contracts to repair Eiffel programs. 
+Specification-Based Program Repair Using SAT~\cite{gopinath2011specification}
+encodes pre and post conditions in combination with other constraints from the code 
+into SAT and then uses Alloy to generate patches.
+Other tools combine test-based program repair with logical specifications and automated solving~\cite{10.1007/978-3-540-24721-0_20, nguyen2013semfix, nguyen2013semfix, Xuan:2017:NAR:3071893.3071964, Mechtaev:2015:DLS:2818754.2818811, Ke:2015:RPS:2916135.2916260}.
+For future proof reuse tools, making better use of existing proof automation in proof assistants to generate
+patches that satisfy specifications may prove fruitful.
 
-Prophet~\cite{Long:2016:APG:2837614.2837617}, a test-based
-repair tool for C,
+Proof-directed repair~\cite{dennis2006proof} presents a methodology
+for repairing programs based on information from incomplete proofs in Isabelle.
+Essentially, the programmer writes a proof, and then uses feedback
+from the attempted proof to debug and fix the code.
+In a sense, since if the repair succeeds the proof should go through,
+it uses proofs as an oracle. The paper presents a few techniques for fixing the broken code,
+then shows some examples using those techniques with existing tools.
+It does not yet automate it in a tool.
+Still, perhaps using partial proofs as in proof-directed repair can help a proof repair tool like \sysnamelong
+better repair functions.
+It also matches the workflow of proof engineers seen in the \textsc{REPLica} user study. % TODO say it's mine somehow 
+
+\paragraph{Repair by Example}
+Some program repair tools work by example, like \sysnamelong.
+Prophet~\cite{Long:2016:APG:2837614.2837617}, a test-based repair tool for C,
 uses human-generated patches from software repositories as examples.
 These examples can come from different applications from the one that is being repaired.
 Prophet uses differencing over ASTs % of the unpatched and patched code 
-to extract \textit{features} that describe the behavior of the example patch abstracted from its particular application. % TODO is this correct, roughly?
+to extract features that describe the behavior of the example patch abstracted from its particular application.
 From these patches, it learns a model of correct code. Then,
 it localizes faults and generates candidates, which it ranks according to the learned model.
 In this way, it produces patches that not only cause the tests to succeed, but also
-are likely according to the learned model to be correct to humans. % TODO how are the results?
+are likely according to the learned model to be correct to humans.
 
-% TODO also note that they change the Oracle to the human instead of tests because of controversy
 The repair tool QACrashFix~\cite{gao2015fixing} uses pairs of buggy and fixed code from Q \& A sites like
 StackOverflow to derive patches for crashing input bugs. These patches are in the form of edit scripts,
 so that they can apply in different contexts. %The idea here is that many bugs recur, so they look for fixes that apply to fix other bugs. 
 It uses a preprocessing step to find the right query for the Q \& A site, then they
 look at answers for buggy and fixed code examples, then from those they derive edit scripts to try to fix the bug.
-It then uses a combination of tests and human validation to determine whether the patches are correct. % TODO is this accurate?
-% TODO results?
-% TODO fix ups
+It then uses a combination of tests and human validation to determine whether the patches are correct.
 
 SearchRepair~\cite{Ke:2015:RPS:2916135.2916260} turns code from repositories into a searchable database.
 To form this database, it uses a static analysis to encode the input-output behavior of the code as constraints for an SMT solver.
 It then localizes the fault in the buggy program,
 encodes the buggy program similarly, performs a semantic code search over that database to identify candidate patches,
-and finally uses the test suite as an oracle to determine whether candidates succeed. % TODO anything else worth mentioning?
-% TODO results?
+and finally uses the test suite as an oracle to determine whether candidates succeed.
 
 Systematic editing~\cite{meng2011systematic} is a technique that could help repair by example tools.
 This technique generalizes an edit to a program into a program transformation that can apply in similar program contexts.
@@ -217,116 +227,29 @@ and also automatically identifying locations to apply transformations.
 Similarly, \lstinline{spdiff}~\cite{andersen2010generic} generalizes patches into semantic patches for Cocinelle~\cite{padioleau2008documenting},
 which can then apply those patches automatically in different contexts. This way, the library designer can write a semantic patch
 himself, or \lstinline{spdiff} can infer one.
-% TODO language? results? guarantees? limitations? for each of these
-
-A natural integration point for a tool like this is at the IDE level. % does this belong here? or whatever?
-CatchUp!~\cite{Henkel:2005:CCR:1062455.1062512} is an IDE plugin (implemented for Eclipse in Java) that automatically adapts library clients to API refactorings.
-It records refactorings that the library developer makes inside of the IDE,
-then replays the refactorings in in client code, reconstructing everything from the recorded trace. % TODO accuracy check
-% TODO results? guarantees? limitations?
-
-\paragraph{Specification-Based Repair} Some tools use specifications as an oracle, like \sysname.
-Sometimes these tools combine this with other oracles like tests. % TODO fix up a lot
-For example, Automated Debugging Using Path-Based Weakest Preconditions~\cite{10.1007/978-3-540-24721-0_20} % TODO does this have a reasonable name of a tool?
-uses pre and post conditions written in FOL to locate buggy statements and generate repairs, 
-then runs tests to verify the repairs. 
-
-AutoFix-E~\cite{Wei:2010:AFP:1831708.1831716, pei2014automated} uses contracts
-to repair Eiffel programs. % TODO also something about repair templates; read in more detail maybe
-Specification-Based Program Repair Using SAT~\cite{gopinath2011specification} % TODO ugh name your tools guys
-encodes pre and post conditions in combination with other constraints from the code % TODO accuracy check
-into SAT and then uses Alloy to generate patches. % TODO accuracy check again
-
-Proof-directed repair~\cite{dennis2006proof} presents a methodology
-for repairing programs based on information from incomplete proofs in Isabelle.
-Essentially, the programmer writes a proof, and then uses feedback
-from the attempted proof to debug and fix the code.
-In a sense, since if the repair succeeds the proof should go through,
-it uses proofs as an oracle. The paper presents a few techniques for fixing the broken code,
-then shows some examples using those techniques with existing tools.
-It does not yet automate it in a tool.
-
-Many test-based program repair tools meet these criteria, some developed before these results came to light,
-and some in response to these results. 
-SemFix~\cite{nguyen2013semfix}, for example,
-generalizes test suites to specifications, which the authors claim improves the performance of search.
-Similarly, NOPOL~\cite{Xuan:2017:NAR:3071893.3071964} repairs a certain class of bugs by generating and solving SMT formulas from a test suite.
-Other tools that augment test-based techniques with constraint problems include
-directFix~\cite{Mechtaev:2015:DLS:2818754.2818811} and SearchRepair~\cite{Ke:2015:RPS:2916135.2916260}. % TODO are there more? If so, add
-
-\subsection{Implications for Proof Repair}
-
-\sysname\ uses similar techniques to existing tools, though it is in a different language
-and so encounters different challenges. Some things are in fact easier for \sysname\ than for other tools;
-the richness of specifications tells \sysname\ exactly when a patch is successful, for example. 
-But the proof assistant \sysname\ operates over supports dependent types, and in the world of proof repair,
-the criteria for a patch being correct is very strict. 
-
-Even with these differences, proof repair tools like \sysname\ can learn a lot from other tools that use these techniques.
-Consider regression repair tools. %While test-based techniques like those used by ReAssert and Relifix
-%don't transfer over in a straightforward way, \sysname\ can learn something from both tools.
-Both ReAssert and Relifix support something similar to a kind of change in the \sysname\ sense:
-strategies for ReAssert, and operators for Relifix. Relifix uses a manual insection of changes made to determine which operators to support;
-when extending \sysname, using the methodology from this inspection may help identify initial kinds of changes for \sysname to support, even though
-in the long term, automating this process is ideal (which the Relifix paper similarly notes).
-ReAssert also suggests repairs to programmers rather than apply them directly; % TODO check accuracy
-supporting this mode of interaction in \sysname\ would integrate
-naturally with the typical ITP workflow.
-
-GRAFTER also contributes lessons for proof repair tools like \sysname.
-For one, it is essentially a differencing tool: It identifies significant differences between clones and uses those differences
-to reuse tests, while ignoring changes that are expected. Interestingly, GRAFTER adapts the tests themselves, rather than adapting code to pass
-those tests; this is akin to how in the world of proof repair, sometimes it makes sense not only to change the proof,
-but also to change the theorem statement itself. Understanding both the differencing technique and how to adapt the oracle for correctness
-along those differences could certainly help future developments.
-Still, GRAFTER uses a much simpler type system than that supported by most ITPs like Coq, and restricts the kinds of changes allowed relative to what
-is desirable in a proof repair tool like \sysname. % TODO implications of simpler type system and so on
 
 Several of the repair by example tools make use of code repositories and libraries to identify examples.
-The long-term vision for \sysname\ discusses using both of these sources, but so far there is little automation
-to do so. Making use of code repositories is especially difficult, since Github commits are typically large.
-While the research plan mostly considers how to work around this, % by looking at the IDE level instead,
-these tools may offer some insights for how to approach this problem.
+One challenge that I faced in my proof repair work was making use of examples changes in code repositories, since Github commits are typically large.
+These tools may offer some insights for how to approach this problem.
+Some of these tools also use machine learning---I discuss some ideas combining proof repair
+with machine learning in Section~\ref{sec:synthesis}.
 
-Many of these tools can also make use of code from different contexts, for example from different libraries. % altogether.
-For this, Prophet uses universal features, QACrashFix generalizes patches identified by a differencing algorithm in one context to another context,
-SearchRepair uses indexes code by its input-output behavior as constraints for an SMT query,
-and \textsc{Lase} makes use of systematic editing to adapt program transformations to different contexts.
-Ideally, a tool like \sysname\ could also handle code from different contexts. % what makes it ``different''? do I mean ``similar''? what is the ``same'' context here?
-Combining these ideas with work on hammers or proof reuse may help solve this problem
-in an ITP context.
+\paragraph{Human in the Loop}
+Some tools avoid using test suites to judge correctness of candidate patches, and instead
+bring the programmer into the loop. For example, both ReAssert~\cite{daniel2009reassert}
+and QACrashFix~\cite{gao2015fixing} suggest repairs directly to the programmer---a workflow
+that partially inspired the tactic suggestion interface in \toolnamec.
+In general, an approach that suggests repairs to proof engineers in the end
+and allows them to vet the specifications and tactics used seems to fit naturally into proof engineering workflows. 
 
-Several repair by example tools can also make use of multiple examples, as opposed to just one.
-While in the proof repair world, one example is often % is it? why?
-enough, perhaps existing techniquess have something to contribute with respect to handling multiple examples. % like machine learning or whatever; but honestly, I doubt it
-
-CatchUp! also provides a useful model for IDE integration for a proof repair tool like \sysname.
-For example, it might be useful to record changes within a project inside of an IDE 
-so that \sysname\ can later on use those changes to find patches in other contexts. % clarify this nonsensical explanation
-Additionally, the \sysname\ paper identifies a need for library designers providing patches for clients,
-so that clients can circumvent the search functionality; something like the trace file CatchUp! 
-uses may provide useful insight on how to accomplish this. % do we need this? sounds weird in our context
-The use of comments at the library developer level is also potentially useful, as is the idea of a simple log for manual replay.
-
-Specification-based repair tools use
-the same kind of oracle \sysname\ uses,
-though there is a lot of diversity
-within these tools. %For example, several tools use
-%pre and post conditions, which are not as relevant
-%for \sysname, which makes use of proofs.
-Some of these tools such as AutoFix-E make
-use of existing automation in the form of constraint
-solvers to identify patches that satisfy specifications;
-making use of Coq's existing automation
-in this way might prove fruitful for a tool like \sysname.
-The most similar technique is the proof-directed repair methodology. 
-\sysname\ focuses
-only on repairing proofs, and not
-on repairing functions; perhaps using partial 
-proofs as in proof-directed repair
-can help a tool like \sysname\
-repair functions as well.
-\fi
+A natural integration point for a repair tool like \sysnamelong is at the IDE level. 
+CatchUp!~\cite{Henkel:2005:CCR:1062455.1062512} is an IDE plugin (implemented for Eclipse in Java) that automatically adapts library clients to API refactorings.
+It records refactorings that the library developer makes inside of the IDE,
+then replays the refactorings in in client code, reconstructing everything from the recorded trace.
+Future proof repair tools may benefit from IDE integration of this kind.
+For example, it may be useful to record changes within a project inside of an IDE 
+so that \sysnamelong can find patches corresponding to incremental changes without the proof engineering needing to deconstruct them manually.
+It may also help to have something like the trace file in CatchUp! so that library developers can easily provide patches for client proof developments.
 
 \section{More Inspiration}
 \label{sec:inspiration}

@@ -10,6 +10,11 @@ Lean theorem prover, 2017.
 User A.
 \newblock Software foundations solution, 2017.
 
+\bibitem{andersen2010generic}
+Jesper Andersen and Julia~L Lawall.
+\newblock Generic patch inference.
+\newblock {\em Automated software engineering}, 17(2):119--148, 2010.
+
 \bibitem{angiuli2020internalizing}
 Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
 \newblock Internalizing representation independence with univalence, 2020.
@@ -92,6 +97,12 @@ Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
   Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
   USA, 1977. ACM.
 
+\bibitem{dennis2006proof}
+Louise~A Dennis, Raul Monroy, and Pablo Nogueira.
+\newblock Proof-directed debugging and repair.
+\newblock In {\em Seventh Symposium on Trends in Functional Programming},
+  volume 2006, pages 131--140. Citeseer, 2006.
+
 \bibitem{Frana2011}
 Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
   Jean Souyris.
@@ -114,11 +125,31 @@ Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
 \newblock In {\em Proceedings of the 40th International Conference on Software
   Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
 
+\bibitem{gopinath2011specification}
+Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
+\newblock Specification-based program repair using sat.
+\newblock In {\em International Conference on Tools and Algorithms for the
+  Construction and Analysis of Systems}, pages 173--188. Springer, 2011.
+
 \bibitem{DBLP:journals/ftpl/GulwaniPS17}
 Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
 \newblock Program synthesis.
 \newblock {\em Foundations and Trends in Programming Languages}, 4(1-2):1--119,
   2017.
+
+\bibitem{10.1007/978-3-540-24721-0_20}
+Haifeng He and Neelam Gupta.
+\newblock Automated debugging using path-based weakest preconditions.
+\newblock In Michel Wermelinger and Tiziana Margaria-Steffen, editors, {\em
+  Fundamental Approaches to Software Engineering}, pages 267--280, Berlin,
+  Heidelberg, 2004. Springer Berlin Heidelberg.
+
+\bibitem{Henkel:2005:CCR:1062455.1062512}
+Johannes Henkel and Amer Diwan.
+\newblock Catchup!: Capturing and replaying refactorings to support api
+  evolution.
+\newblock In {\em Proceedings of the 27th International Conference on Software
+  Engineering}, ICSE '05, pages 274--283, New York, NY, USA, 2005. ACM.
 
 \bibitem{Hofmann97}
 Martin Hofmann.
@@ -148,6 +179,13 @@ Daniel K{\"a}stner, Xavier Leroy, Sandrine Blazy, Bernhard Schommer, Michael
   Developments in System Safety Engineering: Proceedings of the Twenty-fifth
   Safety-critical Systems Symposium, pages 163--180, Bristol, United Kingdom,
   February 2017. {CreateSpace}.
+
+\bibitem{Ke:2015:RPS:2916135.2916260}
+Yalin Ke, Kathryn~T. Stolee, Claire~Le Goues, and Yuriy Brun.
+\newblock Repairing programs with semantic code search (t).
+\newblock In {\em Proceedings of the 2015 30th IEEE/ACM International
+  Conference on Automated Software Engineering (ASE)}, ASE '15, pages 295--306,
+  Washington, DC, USA, 2015. IEEE Computer Society.
 
 \bibitem{Klein2014micro}
 Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
@@ -197,6 +235,13 @@ letouzey.
 \newblock Commit to coq: change definition of divide (compat with znumtheory),
   2011.
 
+\bibitem{Long:2016:APG:2837614.2837617}
+Fan Long and Martin Rinard.
+\newblock Automatic patch generation by learning correct code.
+\newblock In {\em Proceedings of the 43rd Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL '16, pages 298--312, New York,
+  NY, USA, 2016. ACM.
+
 \bibitem{magaud2000changing}
 Nicolas Magaud and Yves Bertot.
 \newblock Changing data structures in type theory: A study of natural numbers.
@@ -214,10 +259,30 @@ Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
 Conor McBride.
 \newblock Ornamental algebras, algebraic ornaments, 2011.
 
+\bibitem{Mechtaev:2015:DLS:2818754.2818811}
+Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
+\newblock Directfix: Looking for simple program repairs.
+\newblock In {\em Proceedings of the 37th International Conference on Software
+  Engineering - Volume 1}, ICSE '15, pages 448--458, Piscataway, NJ, USA, 2015.
+  IEEE Press.
+
 \bibitem{coq87commit}
 Guillaume Melquiond.
 \newblock Commit to coq: Make izr use a compact representation of integers,
   2017.
+
+\bibitem{meng2011systematic}
+Na~Meng, Miryung Kim, and Kathryn~S McKinley.
+\newblock Systematic editing: generating program transformations from an
+  example.
+\newblock {\em ACM SIGPLAN Notices}, 46(6):329--342, 2011.
+
+\bibitem{meng2013lase}
+Na~Meng, Miryung Kim, and Kathryn~S McKinley.
+\newblock Lase: locating and applying systematic edits by learning from
+  examples.
+\newblock In {\em Proceedings of the 2013 International Conference on Software
+  Engineering}, pages 502--511. IEEE Press, 2013.
 
 \bibitem{Monperrus:2018:ASR:3177787.3105906}
 Martin Monperrus.
@@ -229,6 +294,12 @@ Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
 \newblock In {\em IEEE Cybersecurity Development (SecDev)}, pages 1--10, Sep.
   2018.
+
+\bibitem{nguyen2013semfix}
+Hoang Duong~Thien Nguyen, Dawei Qi, Abhik Roychoudhury, and Satish Chandra.
+\newblock Semfix: Program repair via semantic analysis.
+\newblock In {\em Software Engineering (ICSE), 2013 35th International
+  Conference on}, pages 772--781. IEEE, 2013.
 
 \bibitem{nlab:beta-reduction}
 {nLab authors}.
@@ -242,6 +313,19 @@ Toby Murray and P.~C. van Oorschot.
 \newblock \url{http://ncatlab.org/nlab/show/eta-conversion}, July 2020.
 \newblock \href{http://ncatlab.org/nlab/revision/eta-conversion/12}{Revision
   12}.
+
+\bibitem{padioleau2008documenting}
+Yoann Padioleau, Julia Lawall, Ren{\'e}~Rydhof Hansen, and Gilles Muller.
+\newblock Documenting and automating collateral evolutions in linux device
+  drivers.
+\newblock In {\em Acm sigops operating systems review}, volume~42, pages
+  247--260. ACM, 2008.
+
+\bibitem{pei2014automated}
+Yu~Pei, Carlo~A Furia, Martin Nordio, Yi~Wei, Bertrand Meyer, and Andreas
+  Zeller.
+\newblock Automated fixing of programs with contracts.
+\newblock {\em arXiv preprint arXiv:1403.1117}, 2014.
 
 \bibitem{software-foundations}
 Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
@@ -292,6 +376,13 @@ Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
 Nicolas Tabareau, Éric Tanter, and Matthieu Sozeau.
 \newblock The marriage of univalence and parametricity, 2019.
 
+\bibitem{Tan:2015:RAR:2818754.2818813}
+Shin~Hwei Tan and Abhik Roychoudhury.
+\newblock Relifix: Automated repair of software regressions.
+\newblock In {\em Proceedings of the 37th International Conference on Software
+  Engineering - Volume 1}, ICSE '15, pages 471--482, Piscataway, NJ, USA, 2015.
+  IEEE Press.
+
 \bibitem{Timany2015FirstST}
 Amin Timany and Bart Jacobs.
 \newblock First steps towards cumulative inductive types in {CIC}.
@@ -302,18 +393,25 @@ Amin Timany and Bart Jacobs.
 \newblock {\em Homotopy Type Theory: Univalent Foundations of Mathematics}.
 \newblock Institute for Advanced Study, 2013.
 
+\bibitem{Wei:2010:AFP:1831708.1831716}
+Yi~Wei, Yu~Pei, Carlo~A. Furia, Lucas~S. Silva, Stefan Buchholz, Bertrand
+  Meyer, and Andreas Zeller.
+\newblock Automated fixing of programs with contracts.
+\newblock In {\em Proceedings of the 19th International Symposium on Software
+  Testing and Analysis}, ISSTA '10, pages 61--72, New York, NY, USA, 2010. ACM.
+
 \bibitem{wibergh2019}
 Karin Wibergh.
 \newblock Automatic refactoring for agda.
 \newblock Master's thesis, Chalmers University of Technology and University of
   Gothenburg, 2019.
 
-\bibitem{Yang:2017:BTC:3106237.3106274}
-Jinqiu Yang, Alexey Zhikhartsev, Yuefei Liu, and Lin Tan.
-\newblock Better test cases for better automated program repair.
-\newblock In {\em Proceedings of the 2017 11th Joint Meeting on Foundations of
-  Software Engineering}, ESEC/FSE 2017, pages 831--841, New York, NY, USA,
-  2017. ACM.
+\bibitem{Xuan:2017:NAR:3071893.3071964}
+Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas
+  Marcote, Thomas Durieux, Daniel Le~Berre, and Martin Monperrus.
+\newblock Nopol: Automatic repair of conditional statement bugs in java
+  programs.
+\newblock {\em IEEE Trans. Softw. Eng.}, 43(1):34--55, January 2017.
 
 \bibitem{Yang2011}
 Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.
@@ -321,5 +419,12 @@ Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.
 \newblock In {\em Proceedings of the 32nd ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '11, pages 283--294, New York, NY,
   USA, 2011. ACM.
+
+\bibitem{Zhang:2017:ATD:3097368.3097448}
+Tianyi Zhang and Miryung Kim.
+\newblock Automated transplantation and differential testing for clones.
+\newblock In {\em Proceedings of the 39th International Conference on Software
+  Engineering}, ICSE '17, pages 665--676, Piscataway, NJ, USA, 2017. IEEE
+  Press.
 
 \end{thebibliography}

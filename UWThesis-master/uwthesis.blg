@@ -8,46 +8,47 @@ Warning--I didn't find a database entry for "Ringer2019"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
-You've used 56 entries,
+You've used 72 entries,
             2118 wiz_defined-function locations,
-            828 strings with 13592 characters,
-and the built_in function-call counts, 19605 in all, are:
-= -- 1962
-> -- 877
-< -- 24
-+ -- 353
-- -- 292
-* -- 1246
-:= -- 3094
-add.period$ -- 172
-call.type$ -- 56
-change.case$ -- 308
+            928 strings with 17148 characters,
+and the built_in function-call counts, 27200 in all, are:
+= -- 2771
+> -- 1213
+< -- 38
++ -- 483
+- -- 406
+* -- 1767
+:= -- 4236
+add.period$ -- 232
+call.type$ -- 72
+change.case$ -- 412
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 779
-empty$ -- 1597
-format.name$ -- 292
-if$ -- 4277
+cite$ -- 77
+duplicate$ -- 1096
+empty$ -- 2169
+format.name$ -- 406
+if$ -- 5977
 int.to.chr$ -- 0
-int.to.str$ -- 56
-missing$ -- 38
-newline$ -- 269
-num.names$ -- 112
-pop$ -- 417
+int.to.str$ -- 72
+missing$ -- 54
+newline$ -- 349
+num.names$ -- 146
+pop$ -- 529
 preamble$ -- 1
-purify$ -- 256
+purify$ -- 344
 quote$ -- 0
-skip$ -- 627
+skip$ -- 883
 stack$ -- 0
-substring$ -- 1103
-swap$ -- 235
-text.length$ -- 24
+substring$ -- 1628
+swap$ -- 365
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 218
-warning$ -- 4
-while$ -- 186
-width$ -- 58
-write$ -- 612
-(There were 6 warnings)
+type$ -- 282
+warning$ -- 5
+while$ -- 261
+width$ -- 74
+write$ -- 814
+(There were 7 warnings)

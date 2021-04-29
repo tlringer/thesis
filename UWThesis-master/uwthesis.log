@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2289,35 +2289,13 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 
 ]
 chapter 5.
-[105]
-
-LaTeX Warning: Citation `LeGoues:2012:SSA:2337223.2337225' on page 106 undefine
-d on input line 80.
-
-
-LaTeX Warning: Citation `DBLP:journals/corr/abs-1811-02429' on page 106 undefin
-ed on input line 82.
-
-[106]
+[105] [106]
 Overfull \hbox (6.93776pt too wide) in paragraph at lines 116--122
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
 
-[107]
-
-LaTeX Warning: Citation `daniel2009reassert' on page 108 undefined on input lin
-e 150.
-
-
-LaTeX Warning: Citation `gao2015fixing' on page 108 undefined on input line 151
-.
-
-
-LaTeX Warning: Citation `Yang:2017:BTC:3106237.3106274' on page 108 undefined o
-n input line 153.
-
-[108]) (./conclusion.tex [109] [110
+[107] [108]) (./conclusion.tex [109] [110
 
 
 ]
@@ -2355,36 +2333,35 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 11--13
 
 
 
-] [115] [116]
-Underfull \hbox (badness 1852) in paragraph at lines 221--227
+] [115] [116] [117]
+Underfull \hbox (badness 1852) in paragraph at lines 247--253
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 221--227
+Underfull \hbox (badness 1360) in paragraph at lines 247--253
 \OT1/pplj/m/n/10.95 (+20) Cas-ingh-ino, Marco Gaboardi, Michael Green-berg, Cat
 []alin
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 221--227
+Underfull \hbox (badness 4582) in paragraph at lines 247--253
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 221--227
+Underfull \hbox (badness 4805) in paragraph at lines 247--253
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
-[117]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 239.
+(Font)              using `OMS/pplj/m/n' instead on input line 265.
 
-) [118]
+[118]) [119]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2412,11 +2389,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 50020 strings out of 492609
- 1007841 string characters out of 6129033
- 1294614 words of memory out of 5000000
- 50864 multiletter control sequences out of 15000+600000
- 633603 words of font info for 797 fonts, out of 8000000 for 9000
+ 50042 strings out of 492609
+ 1008244 string characters out of 6129033
+ 1294857 words of memory out of 5000000
+ 50870 multiletter control sequences out of 15000+600000
+ 634141 words of font info for 805 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2437,10 +2414,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (128 pages, 1506111 bytes).
+Output written on uwthesis.pdf (129 pages, 1509217 bytes).
 PDF statistics:
- 2872 PDF objects out of 2984 (max. 8388607)
- 2672 compressed objects within 27 object streams
- 1368 named destinations out of 1440 (max. 500000)
+ 2889 PDF objects out of 2984 (max. 8388607)
+ 2688 compressed objects within 27 object streams
+ 1374 named destinations out of 1440 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

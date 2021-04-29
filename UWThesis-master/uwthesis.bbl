@@ -79,6 +79,12 @@ Thierry Coquand and Christine Paulin.
 \newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
   pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
 
+\bibitem{daniel2009reassert}
+Brett Daniel, Vilas Jagannath, Danny Dig, and Darko Marinov.
+\newblock Reassert: Suggesting repairs for broken unit tests.
+\newblock In {\em Automated Software Engineering, 2009. ASE'09. 24th IEEE/ACM
+  International Conference on}, pages 433--444. IEEE, 2009.
+
 \bibitem{DeMillo1977}
 Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock Social processes and proofs of theorems and programs.
@@ -95,6 +101,12 @@ Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
   in Embedded Systems}, volume~18 of {\em OpenAccess Series in Informatics
   (OASIcs)}, pages 59--68, Dagstuhl, Germany, 2011. Schloss
   Dagstuhl--Leibniz-Zentrum fuer Informatik.
+
+\bibitem{gao2015fixing}
+Qing Gao, Hansheng Zhang, Jie Wang, Yingfei Xiong, Lu~Zhang, and Hong Mei.
+\newblock Fixing recurring crash bugs via analyzing q\&a sites (t).
+\newblock In {\em Automated Software Engineering (ASE), 2015 30th IEEE/ACM
+  International Conference on}, pages 307--318. IEEE, 2015.
 
 \bibitem{Gazzola:2018:ASR:3180155.3182526}
 Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
@@ -156,6 +168,13 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 \newblock Programming with ornaments.
 \newblock {\em Journal of Functional Programming}, 27, 2016.
 
+\bibitem{LeGoues:2012:SSA:2337223.2337225}
+Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
+\newblock A systematic study of automated program repair: Fixing 55 out of 105
+  bugs for \$8 each.
+\newblock In {\em Proceedings of the 34th International Conference on Software
+  Engineering}, ICSE '12, pages 3--13, Piscataway, NJ, USA, 2012. IEEE Press.
+
 \bibitem{Leroy:POPL06}
 Xavier Leroy.
 \newblock Formal certification of a compiler back-end or: Programming a
@@ -183,6 +202,13 @@ Nicolas Magaud and Yves Bertot.
 \newblock Changing data structures in type theory: A study of natural numbers.
 \newblock In {\em International Workshop on Types for Proofs and Programs},
   pages 181--196. Springer, 2000.
+
+\bibitem{DBLP:journals/corr/abs-1811-02429}
+Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
+  Monperrus.
+\newblock Automatic repair of real bugs in java: {A} large-scale experiment on
+  the defects4j dataset.
+\newblock {\em CoRR}, abs/1811.02429, 2018.
 
 \bibitem{mcbride}
 Conor McBride.
@@ -281,6 +307,13 @@ Karin Wibergh.
 \newblock Automatic refactoring for agda.
 \newblock Master's thesis, Chalmers University of Technology and University of
   Gothenburg, 2019.
+
+\bibitem{Yang:2017:BTC:3106237.3106274}
+Jinqiu Yang, Alexey Zhikhartsev, Yuefei Liu, and Lin Tan.
+\newblock Better test cases for better automated program repair.
+\newblock In {\em Proceedings of the 2017 11th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2017, pages 831--841, New York, NY, USA,
+  2017. ACM.
 
 \bibitem{Yang2011}
 Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.

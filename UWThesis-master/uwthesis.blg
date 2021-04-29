@@ -5,54 +5,49 @@ The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Ringer2019"
-Warning--I didn't find a database entry for "LeGoues:2012:SSA:2337223.2337225"
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1811-02429"
-Warning--I didn't find a database entry for "daniel2009reassert"
-Warning--I didn't find a database entry for "gao2015fixing"
-Warning--I didn't find a database entry for "Yang:2017:BTC:3106237.3106274"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--empty publisher in univalent2013homotopy
-You've used 51 entries,
+You've used 56 entries,
             2118 wiz_defined-function locations,
-            804 strings with 12459 characters,
-and the built_in function-call counts, 17157 in all, are:
-= -- 1709
-> -- 747
-< -- 20
-+ -- 301
-- -- 246
-* -- 1075
-:= -- 2715
-add.period$ -- 153
-call.type$ -- 51
-change.case$ -- 270
+            828 strings with 13592 characters,
+and the built_in function-call counts, 19605 in all, are:
+= -- 1962
+> -- 877
+< -- 24
++ -- 353
+- -- 292
+* -- 1246
+:= -- 3094
+add.period$ -- 172
+call.type$ -- 56
+change.case$ -- 308
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 681
-empty$ -- 1425
-format.name$ -- 246
-if$ -- 3737
+cite$ -- 60
+duplicate$ -- 779
+empty$ -- 1597
+format.name$ -- 292
+if$ -- 4277
 int.to.chr$ -- 0
-int.to.str$ -- 51
-missing$ -- 33
-newline$ -- 244
-num.names$ -- 102
-pop$ -- 375
+int.to.str$ -- 56
+missing$ -- 38
+newline$ -- 269
+num.names$ -- 112
+pop$ -- 417
 preamble$ -- 1
-purify$ -- 223
+purify$ -- 256
 quote$ -- 0
-skip$ -- 551
+skip$ -- 627
 stack$ -- 0
-substring$ -- 962
-swap$ -- 196
-text.length$ -- 20
+substring$ -- 1103
+swap$ -- 235
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 218
 warning$ -- 4
-while$ -- 164
-width$ -- 53
-write$ -- 549
-(There were 11 warnings)
+while$ -- 186
+width$ -- 58
+write$ -- 612
+(There were 6 warnings)

@@ -65,15 +65,18 @@ I discuss some especially relevant work below. % TODO better segue
 
 % TODO survey paper, and some of the work below
 
-\paragraph{Transfer}
-The widely used Transfer~\cite{Huffman2013} package supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
+\paragraph{Transfer \& Transport}
+\toolnamec transports proofs across equivalences.
+The need to automatically lift functions and proofs across equivalences and other relations is a long-standing challenge for proof 
+engineers~\cite{magaud2000changing, barthe2001type, magaud2003changing}.
+Particular successful is the widely used Transfer~\cite{Huffman2013} package, which supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
 Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
 Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
 Isabelle/HOL-Proofs, apply a transformation based on Transfer, and then (as in \toolname) decompile those terms to automation that does not apply Transfer or refer to the old datatype in any way.
 
-\paragraph{Transport} The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
+The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
 Transport is realizable as a function given univalence~\cite{univalent2013homotopy}---I will discuss this more in Section~\ref{sec:typetheory}.
 UP~\cite{tabareau2017equivalences} approximates it
 in Coq, only sometimes relying on functional extensionality.
@@ -99,6 +102,14 @@ This fits into a \toolnamec configuration,
 and none of these tools suggest tactics in Coq like \toolnamec does.
 The expansion algorithm from Magaud \& Bertot 2000~\cite{magaud2000changing} may help guide the design
 of unification heuristics in \toolnamec.
+
+The refinement framework CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
+and these relations can be more general than \toolnamec's equivalences.
+However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
+due to the problem that \lstinline{Iota} addresses.
+CoqEAL may be most useful to chain with \toolnamec to get faster functions.
+Both CoqEAL and recent ornaments work (Section~\ref{sec:typetheory}) may help with
+better workflow support for changes that do not correspond to equivalences.
 
 \subsection{Proof Design}
 \label{sec:design}
@@ -132,6 +143,12 @@ developments in this style.
 
 \subsection{Proof Automation}
 \label{sec:automation}
+
+% TODO sentences, more stuff
+
+\paragraph{Unification}
+Much of the functionality of \sysnamelong relies on unification, or solves specific instances of unification problems.
+Recent developments to higher-order unification~\cite{Miller:2012:PHL:2331097} may help improve this functionality.
 
 \section{Program Repair}
 \label{sec:repair}
@@ -342,13 +359,22 @@ and user studies (Section~\ref{sec:user-studies}).
 One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments in a higher-order dependently typed language.
 In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
 of formalizations and embedded implementations of ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}.
-\toolnamec is the first tool for ornamentation to operate over a non-embedded dependently typed language.
-It essentially moves the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
+An earlier version of \toolnamec called \textsc{Devoid} was the first tool for ornamentation to operate over a non-embedded dependently typed language.
+It essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
 which operates on non-embedded ML code, into the type theory that forms the basis of theorem provers like Coq. 
-In doing so, it takes advantage of the properties of algebraic ornaments~\cite{mcbride}.
-It also introduces the first search algorithm to identify ornaments, which in the past 
-was identified as a ``gap'' in the literature~\cite{ko2016programming}.
+In doing so, it took advantage of the properties of algebraic ornaments~\cite{mcbride}.
+It also introduced the first search algorithm to identify ornaments, which in the past 
+had been identified as a ``gap'' in the literature~\cite{ko2016programming}.
+
+I later integrated this functionality into an automatic configuration in \toolnamec.
 Other kinds of ornaments may make useful search procedures for future proof repair tools, or for future configurations of \toolnamec.
+A recent thesis~\cite{williamsphd} on ornaments may prove especially useful.
+
+\paragraph{Indexed Types}
+The automatic configuration for algebraic ornaments in \toolnamec focuses on the specific problem of reuse and repair when adding fully-determined indices to types.
+Other approaches to this problem include combinators which definitionally reduce to desirable terms~\cite{DBLP:journals/corr/abs-1803-08150} in the language Cedille,
+and automatic generation of conversion functions in Ghostbuster~\cite{McDonell:2016:GTS:2951913.2951914} for GADTs in Haskell.
+My work focuses on a type theory different from both of these, in which the properties that allow for such combinators in Cedille are not present, and in which dependent types introduce challenges not present in Haskell.
 
 \paragraph{Homotopy Type Theory}
 % TODO including cubical
@@ -397,46 +423,14 @@ All of these may be useful for improving semantic differencing.
 
 \iffalse
 
-\section{Proofs}
+\paragraph{Congruence}
+Lean~\cite{selsam:lean} introduces the first congruence closure algorithm for dependent type theory that
+relies only on the Uniqueness of Identity Proofs (UIP) axiom. While UIP is not fundamental to Coq,
+it is frequently assumed as an axiom; when it is, it may be tractable to use a similar algorithm to improve the tool.
 
-\paragraph{Transport}
-
-\toolnamec transports proofs across equivalences.
-The need to automatically lift functions and proofs
-across equivalences and other relations is a long-standing challenge for proof 
-engineers~\cite{magaud2000changing, barthe2001type, magaud2003changing, huffman2013lifting, zimmermann2015automatic, cohen:hal-01414881}.
+\paragraph{Homotopy Type Theory}
 The univalence axiom from Homotopy Type Theory~\cite{univalent2013homotopy} enables transparent transport of proofs;
 cubical type theory~\cite{cohen2016cubical} gives univalence a constructive interpretation. 
-
-
-\toolnameb focuses on the specific problem of reuse
-when adding fully-determined indices to types.
-Other approaches to this problem include combinators which definitionally reduce to desirable terms~\cite{DBLP:journals/corr/abs-1803-08150} in the language Cedille,
-and automatic generation of conversion functions in Ghostbuster~\cite{McDonell:2016:GTS:2951913.2951914} for GADTs in Haskell.
-Our work focuses on a type theory different from both of these, in which the properties that allow for such combinators in Cedille are not present, and in which dependent types introduce challenges not present in Haskell.
-
-\toolnameb is not the first tool to combine search with reuse. 
-Optician~\cite{miltner2017synthesizing} synthesizes bidirectional string transformations;
-a similar approach may help extend tooling to handle transformations for low-level data.
-\textsc{sysname Patch}~\cite{ringer2018adapting} 
-searches the difference in proofs for patches that can be used to repair proofs broken by changes;
-\toolnameb uses a similar approach to identify functions
-that form an equivalence. The resulting tools are complementary: \toolnameb supports the addition
-of indices and hypotheses, which \textsc{sysname Patch} does not support; \textsc{sysname Patch} supports changes
-in values, which \toolnameb does not support. 
-
-
-\subsection*{Proof Reuse}
-
-% From sysname Pi, unchanged
-
-CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
-and these relations can be more general than \toolnamec's equivalences.
-However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
-due to the problem that \lstinline{Iota} addresses.
-CoqEAL may be most useful to chain with \toolnamec to get faster functions.
-Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
-better workflow support for changes that do not correspond to equivalences.
 
 \subsection*{Proof Refactoring}
 
@@ -563,7 +557,6 @@ The Chick workflow is similar to the \sysname\ workflow:
 Like \sysname, Chick takes a set of example changes (in this case, supplied by the programmer),
 and uses a program differencing algorithm to determine the changes to make elsewhere in the program.
 
-\iffalse
 Chick also has some clear differences from \sysname, aside from operating over the Chick language instead of Gallina itself.
 Unlike early versions of \sysname, Chick also applies the changes it finds to derive the new program.
 However, Chick does this using a syntactic algorithm that handles simple transformations and does
@@ -575,44 +568,7 @@ It may be possible to integrate the techniques from Chick, \sysname, and \devoid
 into the same tool and use them to advance the state of proof repair.
 %use the techniques from Chick when improving \sysname\
 %and handle a larger class of changes, and take advantage of some of the differences between the tool.
-\fi
 
-\subsection*{Proof Automation}
-
-% From sysname PATCH, unchanged:
-
-We address a missed opportunity in proof automation for ITP: searching
-for patches that can fix broken proofs.
-This is complementary to existing automation techniques. Nonetheless, there is a wealth
-of work in proof automation that makes proofs more resilient to change.
-Powerful tactics like \lstinline{crush}~\cite{chlipala:cpdt} can make
-proofs more resilient to changes. 
-Hammers like Isabelle's sledgehammer~\cite{Blanchette2013} can make proofs agnostic to some low-level changes.
-Recent work~\cite{coqhammer} paves the way for a hammer in Coq.
-Even the most powerful tactics cannot address all changes;
-our hope is to open more possibilities for automation.
-
-Powerful project-specific tactics~\cite{chlipala:cpdt, Chlipala2013} can help prevent low-level maintenance tasks.
-Writing these tactics requires good engineering~\cite{Gonthier2011} and domain-specific knowledge,
-and these tactics still sometimes break in the face of change.
-A future patching tool may be able to repair tactics; the debugging process
-for adapting a tactic is not too dissimilar to providing an example to a tool.
-
-Rippling~\cite{rippling} is a technique for automating inductive proofs that uses restricted rewrite rules to
-guide the inductive hypothesis toward the conclusion; this may guide improvements to the
-differencing, abstraction, and specialization components.
-The abstraction and factoring components address specific classes of unification problems;
-recent developments to higher-order unification~\cite{Miller:2012:PHL:2331097} may help
-improve these components.
-Lean~\cite{selsam:lean} introduces the first congruence closure algorithm for dependent type theory that
-relies only on the Uniqueness of Identity Proofs (UIP) axiom. While UIP is not fundamental to Coq,
-it is frequently assumed as an axiom; when it is, it may be tractable to use a similar algorithm to improve the tool.
-
-GALILEO~\cite{bundyreasoning} repairs faulty physics theories
-in the context of a classical higher-order logic (HOL); there is preliminary work extending this
-style of repair to mathematical proofs. 
-Knowledge-sharing methods~\cite{tgck-cicm14} can adapt some proofs across different representations of HOL.
-These complementary approaches may guide extensions to support decidable domains and classical logics.
 \fi
 
 

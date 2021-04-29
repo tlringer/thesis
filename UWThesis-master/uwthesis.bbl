@@ -55,6 +55,12 @@ Henk Barendregt and Freek Wiedijk.
 \newblock {\em Philosophical Transactions of the Royal Society of London A:
   Mathematical, Physical and Engineering Sciences}, 363(1835):2351--2375, 2005.
 
+\bibitem{barthe2001type}
+Gilles Barthe and Olivier Pons.
+\newblock Type isomorphisms and proof reuse in dependent type theory.
+\newblock In {\em International Conference on Foundations of Software Science
+  and Computation Structures}, pages 57--71. Springer, 2001.
+
 \bibitem{Blanchette2016b}
 Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
   K{\"u}hlwein, and Josef Urban.
@@ -193,6 +199,11 @@ Louise~A Dennis, Raul Monroy, and Pablo Nogueira.
 \newblock Proof-directed debugging and repair.
 \newblock In {\em Seventh Symposium on Trends in Functional Programming},
   volume 2006, pages 131--140. Citeseer, 2006.
+
+\bibitem{DBLP:journals/corr/abs-1803-08150}
+Larry Diehl, Denis Firsov, and Aaron Stump.
+\newblock Generic zero-cost reuse for dependent types.
+\newblock {\em CoRR}, abs/1803.08150, 2018.
 
 \bibitem{felty1994generalization}
 Amy Felty and Douglas Howe.
@@ -391,6 +402,12 @@ Fan Long and Martin Rinard.
   on Principles of Programming Languages}, POPL '16, pages 298--312, New York,
   NY, USA, 2016. ACM.
 
+\bibitem{magaud2003changing}
+Nicolas Magaud.
+\newblock Changing data representation within the {Coq} system.
+\newblock In {\em International Conference on Theorem Proving in Higher Order
+  Logics}, pages 87--102. Springer, 2003.
+
 \bibitem{magaud2000changing}
 Nicolas Magaud and Yves Bertot.
 \newblock Changing data structures in type theory: A study of natural numbers.
@@ -407,6 +424,13 @@ Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
 \bibitem{mcbride}
 Conor McBride.
 \newblock Ornamental algebras, algebraic ornaments, 2011.
+
+\bibitem{McDonell:2016:GTS:2951913.2951914}
+Trevor~L. McDonell, Timothy A.~K. Zakian, Matteo Cimini, and Ryan~R. Newton.
+\newblock Ghostbuster: A tool for simplifying and converting {GADTs}.
+\newblock In {\em Proceedings of the 21st ACM SIGPLAN International Conference
+  on Functional Programming}, ICFP 2016, pages 338--350, New York, NY, USA,
+  2016. ACM.
 
 \bibitem{Mechtaev:2015:DLS:2818754.2818811}
 Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
@@ -432,6 +456,11 @@ Na~Meng, Miryung Kim, and Kathryn~S McKinley.
   examples.
 \newblock In {\em Proceedings of the 2013 International Conference on Software
   Engineering}, pages 502--511. IEEE Press, 2013.
+
+\bibitem{Miller:2012:PHL:2331097}
+Dale Miller and Gopalan Nadathur.
+\newblock {\em Programming with Higher-Order Logic}.
+\newblock Cambridge University Press, New York, NY, USA, 1st edition, 2012.
 
 \bibitem{Miraldo:2017:TDS:3122975.3122976}
 Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
@@ -583,6 +612,11 @@ Karin Wibergh.
 \newblock Automatic refactoring for agda.
 \newblock Master's thesis, Chalmers University of Technology and University of
   Gothenburg, 2019.
+
+\bibitem{williamsphd}
+Ambre Williams.
+\newblock {\em Refactoring functional programs with ornaments}.
+\newblock PhD thesis, 2020.
 
 \bibitem{Williams2017}
 Thomas Williams and Didier R{\'e}my.

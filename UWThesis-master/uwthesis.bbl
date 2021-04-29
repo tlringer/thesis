@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
@@ -25,6 +25,21 @@ Serge Autexier, Dieter Hutter, and Till Mossakowski.
 \newblock chapter Change Management for Heterogeneous Development Graphs, pages
   54--80. Springer-Verlag, Berlin, Heidelberg, 2010.
 
+\bibitem{Autexier:2010:SCI:1860559.1860580}
+Serge Autexier and Normen M\"{u}ller.
+\newblock Semantics-based change impact analysis for heterogeneous collections
+  of documents.
+\newblock In {\em Proceedings of the 10th ACM Symposium on Document
+  Engineering}, DocEng '10, pages 97--106, New York, NY, USA, 2010. ACM.
+
+\bibitem{Aydemir2008}
+Brian Aydemir, Arthur Chargu{\'e}raud, Benjamin~C. Pierce, Randy Pollack, and
+  Stephanie Weirich.
+\newblock Engineering formal metatheory.
+\newblock In {\em Proceedings of the 35th Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL '08, pages 3--15, New York, NY,
+  USA, 2008. ACM.
+
 \bibitem{userb}
 User B.
 \newblock Software foundations solution, 2017.
@@ -40,10 +55,30 @@ Henk Barendregt and Freek Wiedijk.
 \newblock {\em Philosophical Transactions of the Royal Society of London A:
   Mathematical, Physical and Engineering Sciences}, 363(1835):2351--2375, 2005.
 
+\bibitem{Blanchette2016b}
+Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
+  K{\"u}hlwein, and Josef Urban.
+\newblock A learning-based fact selector for {Isabelle/HOL}.
+\newblock {\em Journal of Automated Reasoning}, 57(3):219--244, Oct 2016.
+
 \bibitem{boutillier:tel-01054723}
 Pierre Boutillier.
 \newblock {\em {New tool to compute with inductive in Coq}}.
 \newblock Theses, {Universit{\'e} Paris-Diderot - Paris VII}, February 2014.
+
+\bibitem{Cai:2014:TCH:2594291.2594304}
+Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
+\newblock A theory of changes for higher-order languages: Incrementalizing
+  {$\lambda$}-calculi by static differentiation.
+\newblock In {\em Proceedings of the 35th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI '14, pages 145--155, New York, NY,
+  USA, 2014. ACM.
+
+\bibitem{caplan1995logical}
+Joshua~E. Caplan and Mehdi~T. Harandi.
+\newblock A logical framework for software proof reuse.
+\newblock In {\em ACM SIGSOFT Software Engineering Notes}, volume~20, pages
+  106--113. ACM, 1995.
 
 \bibitem{Celik:2017:IRP:3155562.3155588}
 Ahmet Celik, Karl Palmskog, and Milos Gligoric.
@@ -58,6 +93,12 @@ Adam Chlipala.
 \newblock {\em Certified Programming with Dependent Types - {A} Pragmatic
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
+
+\bibitem{Chlipala:2013:CPD:2584504}
+Adam Chlipala.
+\newblock {\em Certified Programming with Dependent Types: A Pragmatic
+  Introduction to the Coq Proof Assistant}.
+\newblock The MIT Press, 2013.
 
 \bibitem{equality}
 Adam Chlipala.
@@ -84,6 +125,11 @@ Thierry Coquand and Christine Paulin.
 \newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
   pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
 
+\bibitem{Czajka2018}
+{\L}ukasz Czajka and Cezary Kaliszyk.
+\newblock Hammer for {Coq}: Automation for dependent type theory.
+\newblock {\em Journal of Automated Reasoning}, 61(1):423--453, June 2018.
+
 \bibitem{dagand2017essence}
 Pierre-{\'E}variste Dagand.
 \newblock The essence of ornaments.
@@ -107,6 +153,34 @@ Brett Daniel, Vilas Jagannath, Danny Dig, and Darko Marinov.
 \newblock In {\em Automated Software Engineering, 2009. ASE'09. 24th IEEE/ACM
   International Conference on}, pages 433--444. IEEE, 2009.
 
+\bibitem{Delaware:2011:PLT:2048066.2048113}
+Benjamin Delaware, William Cook, and Don Batory.
+\newblock Product lines of theorems.
+\newblock In {\em Proceedings of the 2011 ACM International Conference on
+  Object Oriented Programming Systems Languages and Applications}, OOPSLA '11,
+  pages 595--608, New York, NY, USA, 2011. ACM.
+
+\bibitem{Delaware:2013:MLC:2429069.2429094}
+Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
+\newblock Meta-theory \`{a} la carte.
+\newblock In {\em Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL '13, pages 207--218, New York,
+  NY, USA, 2013. ACM.
+
+\bibitem{Delaware2013POPL}
+Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
+\newblock Meta-theory \`{a} la carte.
+\newblock In {\em Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages}, POPL '13, pages 207--218, New York,
+  NY, USA, 2013. ACM.
+
+\bibitem{Delaware2013ICFP}
+Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
+\newblock Modular monadic meta-theory.
+\newblock In {\em Proceedings of the 18th ACM SIGPLAN International Conference
+  on Functional Programming}, ICFP '13, pages 319--330, New York, NY, USA,
+  2013. ACM.
+
 \bibitem{DeMillo1977}
 Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock Social processes and proofs of theorems and programs.
@@ -119,6 +193,12 @@ Louise~A Dennis, Raul Monroy, and Pablo Nogueira.
 \newblock Proof-directed debugging and repair.
 \newblock In {\em Seventh Symposium on Trends in Functional Programming},
   volume 2006, pages 131--140. Citeseer, 2006.
+
+\bibitem{felty1994generalization}
+Amy Felty and Douglas Howe.
+\newblock Generalization and reuse of tactic proofs.
+\newblock In {\em International Conference on Logic for Programming Artificial
+  Intelligence and Reasoning}, pages 1--15. Springer, 1994.
 
 \bibitem{Frana2011}
 Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
@@ -147,6 +227,14 @@ Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
 \newblock Specification-based program repair using sat.
 \newblock In {\em International Conference on Tools and Algorithms for the
   Construction and Analysis of Systems}, pages 173--188. Springer, 2011.
+
+\bibitem{certikos}
+Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
+  Sj{\"o}berg, and David Costanzo.
+\newblock Certikos: An extensible architecture for building certified
+  concurrent {OS} kernels.
+\newblock In {\em 12th {USENIX} Symposium on Operating Systems Design and
+  Implementation ({OSDI} 16)}, pages 653--669, GA, 2016. {USENIX} Association.
 
 \bibitem{DBLP:journals/ftpl/GulwaniPS17}
 Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
@@ -178,6 +266,14 @@ Martin Hofmann.
 {HOL Light Development Team}.
 \newblock {HOL Light}, 1996-2021.
 
+\bibitem{Huffman2013}
+Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
+\newblock Lifting and transfer: A modular design for quotients in
+  {Isabelle/HOL}.
+\newblock In {\em Certified Programs and Proofs: Third International
+  Conference}, CPP 2013, pages 131--146, Cham, 2013. Springer International
+  Publishing.
+
 \bibitem{873647}
 D.~Hutter.
 \newblock Management of change in structured verification.
@@ -187,12 +283,23 @@ D.~Hutter.
 {Isabelle Development Team}.
 \newblock Isabelle, 1994-2021.
 
+\bibitem{johnsen2004theorem}
+Einar~Broch Johnsen and Christoph L{\"u}th.
+\newblock Theorem reuse by proof term transformation.
+\newblock In {\em International Conference on Theorem Proving in Higher Order
+  Logics}, pages 152--167. Springer, 2004.
+
 \bibitem{Johnsen2004}
 Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock Theorem reuse by proof term transformation.
 \newblock In {\em Theorem Proving in Higher Order Logics: 17th International
   Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
   Proceedings}, pages 152--167. Springer, Berlin, Heidelberg, 2004.
+
+\bibitem{Kaliszyk2014}
+Cezary Kaliszyk and Josef Urban.
+\newblock Learning-assisted automated reasoning with {Flyspeck}.
+\newblock {\em Journal of Automated Reasoning}, 53(2):173--213, Aug 2014.
 
 \bibitem{Kaestner2017}
 Daniel K{\"a}stner, Xavier Leroy, Sandrine Blazy, Bernhard Schommer, Michael
@@ -217,6 +324,12 @@ Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
 \newblock Comprehensive formal verification of an {OS} microkernel.
 \newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
 
+\bibitem{Klein:2014:CFV:2584468.2560537}
+Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
+  Rafal Kolanski, and Gernot Heiser.
+\newblock Comprehensive formal verification of an os microkernel.
+\newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
+
 \bibitem{Klein2009}
 Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
   Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael
@@ -235,6 +348,12 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 Hsiang-Shang Ko and Jeremy Gibbons.
 \newblock Programming with ornaments.
 \newblock {\em Journal of Functional Programming}, 27, 2016.
+
+\bibitem{differential-assertion-checking-2}
+Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.
+\newblock Differential assertion checking.
+\newblock In {\em Foundations of Software Engineering (FSE'13)}. ACM, August
+  2013.
 
 \bibitem{LeGoues:2012:SSA:2337223.2337225}
 Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
@@ -314,6 +433,13 @@ Na~Meng, Miryung Kim, and Kathryn~S McKinley.
 \newblock In {\em Proceedings of the 2013 International Conference on Software
   Engineering}, pages 502--511. IEEE Press, 2013.
 
+\bibitem{Miraldo:2017:TDS:3122975.3122976}
+Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
+\newblock Type-directed diffing of structured data.
+\newblock In {\em Proceedings of the 2Nd ACM SIGPLAN International Workshop on
+  Type-Driven Development}, TyDe 2017, pages 2--15, New York, NY, USA, 2017.
+  ACM.
+
 \bibitem{Monperrus:2018:ASR:3177787.3105906}
 Martin Monperrus.
 \newblock Automatic software repair: A bibliography.
@@ -350,6 +476,14 @@ Yoann Padioleau, Julia Lawall, Ren{\'e}~Rydhof Hansen, and Gilles Muller.
   drivers.
 \newblock In {\em Acm sigops operating systems review}, volume~42, pages
   247--260. ACM, 2008.
+
+\bibitem{Blanchette2013}
+Lawrence~C. Paulson and Jasmin~Christian Blanchette.
+\newblock Three years of experience with {Sledgehammer}, a practical link
+  between automatic and interactive theorem provers.
+\newblock In G.~Sutcliffe, S.~Schulz, and E.~Ternovska, editors, {\em
+  International Workshop on the Implementation of Logics (IWIL 2010)}, volume~2
+  of {\em EPiC Series}, pages 1--11. EasyChair, 2012.
 
 \bibitem{pei2014automated}
 Yu~Pei, Carlo~A Furia, Martin Nordio, Yi~Wei, Bertrand Meyer, and Andreas
@@ -389,12 +523,26 @@ Valentin Robert.
   functional programs}.
 \newblock PhD thesis, UC San Diego, 2018.
 
+\bibitem{Saibi:PhD}
+Amokrane Saibi.
+\newblock {\em Outils G\'{e}n\'{e}riques de Mod\'{e}lisation et de
+  D\'{e}monstration pour la Formalisation des Math\'{e}matiques en Th\'{e}orie
+  des Types: application \`{a} la Th\'{e}orie des Cat\'{e}gories}.
+\newblock PhD thesis, Universit\'{e} Paris VI, Paris, France, 1999.
+
 \bibitem{sozeau:equations}
 Matthieu Sozeau.
 \newblock Equations: A dependent pattern-matching compiler.
 \newblock In Matt Kaufmann and Lawrence~C. Paulson, editors, {\em Interactive
   Theorem Proving}, pages 419--434, Berlin, Heidelberg, 2010. Springer Berlin
   Heidelberg.
+
+\bibitem{Sozeau2008}
+Matthieu Sozeau and Nicolas Oury.
+\newblock First-class type classes.
+\newblock In {\em Theorem Proving in Higher Order Logics: 21st International
+  Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
+  pages 278--293, Berlin, Heidelberg, 2008. Springer.
 
 \bibitem{tabareau2017equivalences}
 Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
@@ -440,6 +588,14 @@ Karin Wibergh.
 Thomas Williams and Didier R{\'e}my.
 \newblock A principled approach to ornamentation in {ML}.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
+
+\bibitem{Woos:2016:PCF:2854065.2854081}
+Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
+  Thomas Anderson.
+\newblock Planning for change in a formal verification of the raft consensus
+  protocol.
+\newblock In {\em Proceedings of the 5th ACM SIGPLAN Conference on Certified
+  Programs and Proofs}, CPP 2016, pages 154--165, New York, NY, USA, 2016. ACM.
 
 \bibitem{Xuan:2017:NAR:3071893.3071964}
 Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas

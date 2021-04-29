@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 20:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2289,18 +2289,33 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 
 ]
 chapter 5.
-[105] [106]
-Overfull \hbox (6.93776pt too wide) in paragraph at lines 122--128
+[105]
+
+LaTeX Warning: Citation `pons2000generalization' on page 106 undefined on input
+ line 62.
+
+
+LaTeX Warning: Citation `Chrzaszcz2003' on page 106 undefined on input line 113
+.
+
+[106] [107]
+Overfull \hbox (6.93776pt too wide) in paragraph at lines 190--196
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
 
-[107] [108] [109] [110]) (./conclusion.tex [111] [112
+[108] [109] [110] [111]
+Overfull \hbox (2.80904pt too wide) in paragraph at lines 373--383
+\OT1/pplj/m/n/10.95 (-20) directed diff-ing [[]] finds dif-fer-ences in al-ge-b
+raic data types. Semantics-
+ []
+
+[112]) (./conclusion.tex [113] [114
 
 
 ]
 chapter 6.
-(./next.tex [113]
+(./next.tex [115]
 Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
@@ -2312,7 +2327,7 @@ Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [114]
+)) (./uwthesis.ind [116]
 Overfull \hbox (1.024pt too wide) in paragraph at lines 4--6
 []| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []7[], []95[], []99[],
  []
@@ -2322,47 +2337,46 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 11--13
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []17[], []19[],
  []
 
-[115
+[117
 
 
 
 
 
 
-]) (./uwthesis.bbl [116
+]) (./uwthesis.bbl [118
 
 
 
-] [117] [118] [119] [120]
-Underfull \hbox (badness 1852) in paragraph at lines 361--367
+] [119] [120] [121] [122] [123] [124] [125]
+Underfull \hbox (badness 1163) in paragraph at lines 495--501
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 361--367
-\OT1/pplj/m/n/10.95 (+20) Cas-ingh-ino, Marco Gaboardi, Michael Green-berg, Cat
-[]alin
- []
-
-
-Underfull \hbox (badness 4582) in paragraph at lines 361--367
+Underfull \hbox (badness 3396) in paragraph at lines 495--501
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 361--367
+Underfull \hbox (badness 3657) in paragraph at lines 495--501
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
-[121]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 379.
+(Font)              using `OMS/pplj/m/n' instead on input line 513.
 
-[122]) [123]
+
+Underfull \hbox (badness 1184) in paragraph at lines 527--532
+[]\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
+ G[]en[]eriques de Mod[]elisation et de
+ []
+
+[126] [127]) [128]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2390,10 +2404,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 50111 strings out of 492609
- 1009630 string characters out of 6129033
- 1295863 words of memory out of 5000000
- 50898 multiletter control sequences out of 15000+600000
+ 50168 strings out of 492609
+ 1010836 string characters out of 6129033
+ 1296875 words of memory out of 5000000
+ 50927 multiletter control sequences out of 15000+600000
  634948 words of font info for 817 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2415,10 +2429,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (133 pages, 1529134 bytes).
+Output written on uwthesis.pdf (138 pages, 1546097 bytes).
 PDF statistics:
- 2968 PDF objects out of 2984 (max. 8388607)
- 2762 compressed objects within 28 object streams
- 1400 named destinations out of 1440 (max. 500000)
+ 3047 PDF objects out of 3580 (max. 8388607)
+ 2835 compressed objects within 29 object streams
+ 1428 named destinations out of 1440 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -26,28 +26,69 @@ See my survey paper on proof engineering for a detailed overview of the field~\c
 \subsection{Proof Assistants}
 \label{sec:ass}
 
-Introduction, definition, de bruijn.
+% TODO from survey paper
+%Introduction, definition, de bruijn.
 
-Summary of proof assistants.
+%Summary of proof assistants.
 
-I will discuss how these differ and the implications for proof repair.
+%I will discuss how these differ and the implications for proof repair.
 
-\paragraph{Foundations} Most notably, proof terms.
-But also differences in logics (constructivism, then refer back to it later).
+\paragraph{Foundations} % Most notably, proof terms.
+%But also differences in logics (constructivism, then refer back to it later).
 
 \paragraph{Aesthetics} Like different tactic languages.
 
 \subsection{Proof Evolution}
 \label{sec:refrep}
 
+% TODO from survey paper, and some of the work below
+
 \paragraph{Proof Refactoring}
 
 \paragraph{Proof Repair}
 
 \paragraph{Dependency Management}
+There is a small body of work on change and dependency management for verification,
+both to evaluate impact of potential changes and maximize reuse~\cite{873647, Autexier:2010:CMH:1986659.1986663}
+and to optimize build performance~\cite{Celik:2017:IRP:3155562.3155588}.
+These approaches may help isolate changes, which is necessary to identify future benchmarks, integrate
+with CI systems, and fully support version updates.
 
 \subsection{Proof Reuse}
 \label{sec:reuse}
+
+Proof repair is ultimately a form of \textit{proof reuse}---apply software reuse principles to proof assistants.
+There is a wealth of work in proof reuse, from tactic languages~\cite{felty1994generalization} and logical frameworks~\cite{caplan1995logical},
+to tools for proof abstraction and generalization~\cite{pons2000generalization, johnsen2004theorem},
+to domain-specific methodologies~\cite{Delaware:2011:PLT:2048066.2048113} and frameworks~\cite{Delaware:2013:MLC:2429069.2429094}.
+I discuss some especially relevant work below. % TODO better segue
+
+% TODO survey paper, and some of the work below
+
+\paragraph{Transfer}
+The widely used Transfer~\cite{Huffman2013} package supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
+Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
+Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
+%In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
+One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
+Isabelle/HOL-Proofs, apply a transformation based on Transfer, and then (as in \toolname) decompile those terms to automation that does not apply Transfer or refer to the old datatype in any way.
+
+\paragraph{Transport} The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
+Transport is realizable as a function given univalence~\cite{univalent2013homotopy}---I will discuss this more in Section~\ref{sec:typetheory}.
+UP~\cite{tabareau2017equivalences} approximates it
+in Coq, only sometimes relying on functional extensionality.
+While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
+
+Recent work~\cite{tabareau2019marriage} extends UP with 
+a white-box transformation that may work for repair.
+This imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
+%that establish what is effectively the correctness criteria
+%for the configuration in \toolname, while \toolname needs only that it holds metatheoretically.
+and it includes neither search procedures for equivalences nor tactic script generation.
+It also does not support changes in inductive structure,
+instead relying on its original black-box functionality;
+\lstinline{Iota} solves this in \toolnamec. % and is based on lessons learned from reading that article.
+The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
 
 \paragraph{Proof Transformation}
 A few proof reuse tools work by proof term transformation and so can be used for repair. % TODO: include thesis of the CMU dude!
@@ -61,6 +102,33 @@ of unification heuristics in \toolnamec.
 
 \subsection{Proof Design}
 \label{sec:design}
+
+% TODO sentence up here, and include some work from survey paper
+
+\paragraph{Robust Abstractions}
+Much work focuses on designing proofs
+to be robust to change, rather than fixing broken proofs.
+This can take the form of design principles, like using 
+information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
+or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
+CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
+Design principles for specific domains (like formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
+can also make verification more tractable.
+Design and repair are complementary: design requires foresight, while repair can occur retroactively.
+Repair can help with changes that occur outside of the proof engineer's control,
+or with changes that are difficult to protect against even with informed design.
+
+\paragraph{Robust Automation}
+Another approach to robust design is to use heavy proof automation, for example through
+program-specific proof automation~\cite{Chlipala:2013:CPD:2584504}
+%implementations of decision procedures~\cite{Pugh1991},
+or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
+The degree to which proof engineers rely on automation varies, as seen in the data from the \textsc{REPLica} user study. % TODO make sure named earlier
+Automation-heavy proof engineering styles localize the burden of change to the automation,
+but can result in terms that are large and slow to type check,
+and tactics that can be difficult to debug.
+While these approaches are complementary, more work is needed for proof repair tools to better support 
+developments in this style.
 
 \subsection{Proof Automation}
 \label{sec:automation}
@@ -283,6 +351,7 @@ was identified as a ``gap'' in the literature~\cite{ko2016programming}.
 Other kinds of ornaments may make useful search procedures for future proof repair tools, or for future configurations of \toolnamec.
 
 \paragraph{Homotopy Type Theory}
+% TODO including cubical
 
 %\paragraph{Parametricity?}
 
@@ -301,6 +370,17 @@ but may drive solutions to similar problems in a dependently typed language.
 \subsection{Differencing}
 \label{sec:diff-incremental}
 
+Existing work in differencing and incremental computation may help 
+improve semantic differencing algorithms for proof repair.
+Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
+finds differences in algebraic data types.
+Semantics-based change impact analysis~\cite{Autexier:2010:SCI:1860559.1860580} models semantic differences
+between documents.
+Differential assertion checking~\cite{differential-assertion-checking-2} analyzes different
+versions of a program for relative correctness with respect to a specification.
+Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
+All of these may be useful for improving semantic differencing.
+
 \subsection{Program Transformations}
 \label{sec:rel-transformation}
 
@@ -317,99 +397,17 @@ but may drive solutions to similar problems in a dependently typed language.
 
 \iffalse
 
-TODO somewhere here or elsewhere (if elsewhere, fix references): talk about what lessons carry over to automated theorem provers,
-and which lessons carry over to other ITPs, and what work is needed to reach those tools.
-
-\subsection{Differencing \& Incremental Computation}
-
-% From sysname PATCH, unchanged
-
-Existing work in differencing and incremental computation may help 
-improve our semantic differencing component.
-Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
-finds differences in algebraic data types.
-Semantics-based change impact analysis~\cite{Autexier:2010:SCI:1860559.1860580} models semantic differences
-between documents.
-Differential assertion checking~\cite{differential-assertion-checking-2} analyzes different
-versions of a program for relative correctness with respect to a specification.
-Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
-All of these may be useful for improving semantic differencing.
-
-
 \section{Proofs}
 
-\subsection*{Proof Reuse}
+\paragraph{Transport}
 
-% From sysname PATCH, mostly unchanged
-
-Our approach reimagines the problem of proof reuse in the context of proof automation.
-While we focus on changes that occur over time, traditional proof reuse techniques can help
-improve our approach.
-
-Proof reuse for extended inductive types~\cite{Boite2004} adapts proof obligations
-to structural changes in inductive types. Later work~\cite{Mulhern06proofweaving} proposes a method
-to generate proofs for new constructors. These approaches may be useful when extending the differencing
-component to handle structural changes. Existing work in theorem reuse and proof generalization~\cite{Felty1994, pons00, Johnsen2004} abstracts existing proofs for reusability, and may be useful
-for improving the abstraction component. % TODO much more generalization work should be cited here; see stuff from UIUC interview follow-up email, maybe move into sysname PATCH chapter
-Our work focuses on the components critical to searching for patches; these complementary approaches
-can drive improvements to the components.
-
-% From sysname PATCH, unchanged
-
-Existing work in proof reuse focuses on transferring proofs between isomorphisms,
-either through extending the type system~\cite{Barthe:2001:TIP:646793.704711} or through an automatic method~\cite{Magaud2002}.
-This is later generalized and implemented in Isabelle~\cite{Huffman2013} and Coq~\cite{ZimmermannH15, tabareau:hal-01559073};
-later methods can also handle implications.
-
-% From sysname Pi, unchanged
-
-The widely used Transfer~\cite{Huffman2013} package supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
-Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
-Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
-%In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
-One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
-Isabelle/HOL-Proofs, apply a transformation based on Transfer, and then (as in \toolname) decompile those terms to automation that does not apply Transfer or refer to the old datatype in any way.
-
-CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
-and these relations can be more general than \toolnamec's equivalences.
-However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
-due to the problem that \lstinline{Iota} addresses.
-CoqEAL may be most useful to chain with \toolnamec to get faster functions.
-Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
-better workflow support for changes that do not correspond to equivalences.
-
-The \toolnamec transformation implements transport.
-Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
-UP~\cite{tabareau2017equivalences} approximates it
-in Coq, only sometimes relying on functional extensionality.
-While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
-
-Recent work~\cite{tabareau2019marriage} extends UP with 
-a white-box transformation that may work for repair.
-This imposes proof obligations on the proof engineer beyond those imposed by \toolname,
-%that establish what is effectively the correctness criteria
-%for the configuration in \toolname, while \toolname needs only that it holds metatheoretically.
-and it includes neither search procedures for equivalences nor tactic script generation.
-It also does not support changes in inductive structure,
-instead relying on its original black-box functionality;
-\lstinline{Iota} solves this in \toolname. % and is based on lessons learned from reading that article.
-The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
-
-% From DEVOID, mostly unchanged
-
-\toolnameb identifies and lifts proofs along a specific equivalence 
-similar to that from existing ornaments work~\cite{ko2016programming}.
+\toolnamec transports proofs across equivalences.
 The need to automatically lift functions and proofs
 across equivalences and other relations is a long-standing challenge for proof 
 engineers~\cite{magaud2000changing, barthe2001type, magaud2003changing, huffman2013lifting, zimmermann2015automatic, cohen:hal-01414881}.
 The univalence axiom from Homotopy Type Theory~\cite{univalent2013homotopy} enables transparent transport of proofs;
 cubical type theory~\cite{cohen2016cubical} gives univalence a constructive interpretation. 
 
-The problem that we solve is fundamentally about proof reuse,
-which applies software reuse principles to ITPs. 
-There is a wealth of work in proof reuse, from tactic languages~\cite{felty1994generalization} and logical frameworks~\cite{caplan1995logical},
-to tools for proof abstraction and generalization~\cite{pons2000generalization, johnsen2004theorem},
-to domain-specific methodologies~\cite{Delaware:2011:PLT:2048066.2048113} and frameworks~\cite{Delaware:2013:MLC:2429069.2429094}.
 
 \toolnameb focuses on the specific problem of reuse
 when adding fully-determined indices to types.
@@ -427,15 +425,18 @@ that form an equivalence. The resulting tools are complementary: \toolnameb supp
 of indices and hypotheses, which \textsc{sysname Patch} does not support; \textsc{sysname Patch} supports changes
 in values, which \toolnameb does not support. 
 
-\subsection*{Proof Evolution}
 
-% From sysname PATCH, unchanged
+\subsection*{Proof Reuse}
 
-There is a small body of work on change and dependency management for verification,
-both to evaluate impact of potential changes and maximize reuse~\cite{873647, Autexier:2010:CMH:1986659.1986663}
-and to optimize build performance~\cite{Celik:2017:IRP:3155562.3155588}.
-These approaches may help isolate changes, which is necessary to identify future benchmarks, integrate
-with CI systems, and fully support version updates.
+% From sysname Pi, unchanged
+
+CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
+and these relations can be more general than \toolnamec's equivalences.
+However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
+due to the problem that \lstinline{Iota} addresses.
+CoqEAL may be most useful to chain with \toolnamec to get faster functions.
+Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
+better workflow support for changes that do not correspond to equivalences.
 
 \subsection*{Proof Refactoring}
 
@@ -575,33 +576,6 @@ into the same tool and use them to advance the state of proof repair.
 %use the techniques from Chick when improving \sysname\
 %and handle a larger class of changes, and take advantage of some of the differences between the tool.
 \fi
-
-\subsection*{Proof Design}
-
-% From sysname Pi, with some sysname PATCH related work integrated:
-
-Much work focuses on designing proofs
-to be robust to change, rather than fixing broken proofs.
-This can take the form of design principles, like using 
-information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
-or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
-CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
-Design principles for specific domains (like formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
-can also make verification more tractable.
-Design and repair are complementary: design requires foresight, while repair can occur retroactively.
-Repair can help with changes that occur outside of the proof engineer's control,
-or with changes that are difficult to protect against even with informed design.
-
-Another approach to this is to use heavy proof automation, for example through
-program-specific proof automation~\cite{Chlipala:2013:CPD:2584504}
-%implementations of decision procedures~\cite{Pugh1991},
-or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
-The degree to which proof engineers rely on automation varies, as seen in the data from a user study~\cite{replica}.
-Automation-heavy proof engineering styles localize the burden of change to the automation,
-but can result in terms that are large and slow to type check,
-and tactics that can be difficult to debug.
-While these approaches are complementary, more work is needed for \toolname to better support 
-developments in this style.
 
 \subsection*{Proof Automation}
 

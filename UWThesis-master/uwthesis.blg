@@ -5,50 +5,53 @@ The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Ringer2019"
+Warning--I didn't find a database entry for "pons2000generalization"
+Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
+Warning--can't use both volume and number fields in caplan1995logical
 Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
-You've used 78 entries,
+You've used 101 entries,
             2118 wiz_defined-function locations,
-            959 strings with 18066 characters,
-and the built_in function-call counts, 29474 in all, are:
-= -- 3019
-> -- 1285
-< -- 41
-+ -- 514
-- -- 428
-* -- 1909
-:= -- 4582
-add.period$ -- 253
-call.type$ -- 78
-change.case$ -- 441
+            1107 strings with 23213 characters,
+and the built_in function-call counts, 39725 in all, are:
+= -- 4106
+> -- 1733
+< -- 59
++ -- 691
+- -- 579
+* -- 2618
+:= -- 6151
+add.period$ -- 339
+call.type$ -- 101
+change.case$ -- 582
 chr.to.int$ -- 0
-cite$ -- 83
-duplicate$ -- 1196
-empty$ -- 2361
-format.name$ -- 428
-if$ -- 6485
+cite$ -- 107
+duplicate$ -- 1626
+empty$ -- 3146
+format.name$ -- 579
+if$ -- 8766
 int.to.chr$ -- 0
-int.to.str$ -- 78
-missing$ -- 60
-newline$ -- 379
-num.names$ -- 158
-pop$ -- 557
+int.to.str$ -- 101
+missing$ -- 83
+newline$ -- 494
+num.names$ -- 206
+pop$ -- 709
 preamble$ -- 1
-purify$ -- 367
+purify$ -- 487
 quote$ -- 0
-skip$ -- 962
+skip$ -- 1289
 stack$ -- 0
-substring$ -- 1808
-swap$ -- 397
-text.length$ -- 41
+substring$ -- 2484
+swap$ -- 555
+text.length$ -- 59
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 306
-warning$ -- 5
-while$ -- 286
-width$ -- 80
-write$ -- 886
-(There were 7 warnings)
+type$ -- 396
+warning$ -- 6
+while$ -- 389
+width$ -- 104
+write$ -- 1179
+(There were 10 warnings)

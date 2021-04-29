@@ -184,36 +184,37 @@
 \contentsline {subsection}{\numberline {5.1.4}Proof Design}{106}{subsection.5.1.4}% 
 \contentsline {subsection}{\numberline {5.1.5}Proof Automation}{106}{subsection.5.1.5}% 
 \contentsline {section}{\numberline {5.2}Program Repair}{106}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}An Especially Good Fit}{106}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.1}A Good Fit}{106}{subsection.5.2.1}% 
 \contentsline {paragraph}{Specifications}{106}{subsection.5.2.1}% 
-\contentsline {paragraph}{Examples}{106}{subsection.5.2.1}% 
-\contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{106}{subsection.5.2.2}% 
-\contentsline {paragraph}{Regression Repair}{107}{subsection.5.2.2}% 
-\contentsline {paragraph}{Repair by Example}{107}{subsection.5.2.2}% 
-\contentsline {paragraph}{Specification-Based Repair}{107}{subsection.5.2.2}% 
-\contentsline {section}{\numberline {5.3}More Inspiration}{107}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Type Theory}{107}{subsection.5.3.1}% 
-\contentsline {paragraph}{Ornaments}{107}{subsection.5.3.1}% 
-\contentsline {paragraph}{Transport}{107}{subsection.5.3.1}% 
-\contentsline {paragraph}{Parametricity}{107}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{107}{subsection.5.3.2}% 
-\contentsline {paragraph}{Programming by Example}{107}{subsection.5.3.2}% 
-\contentsline {paragraph}{Neurosymbolic Programming}{107}{subsection.5.3.2}% 
-\contentsline {subsection}{\numberline {5.3.3}Differencing}{107}{subsection.5.3.3}% 
-\contentsline {subsection}{\numberline {5.3.4}Program Transformations}{107}{subsection.5.3.4}% 
-\contentsline {subsection}{\numberline {5.3.5}Automated Theorem Proving}{107}{subsection.5.3.5}% 
-\contentsline {paragraph}{E-Graphs}{107}{subsection.5.3.5}% 
-\contentsline {subsection}{\numberline {5.3.6}User Studies}{107}{subsection.5.3.6}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{109}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{109}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{109}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{109}{chapter.6}% 
-\contentsline {paragraph}{Automation}{110}{chapter.6}% 
-\contentsline {paragraph}{Integration}{110}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{110}{chapter.6}% 
-\contentsline {paragraph}{Gradual Verification}{110}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Proof Development}{110}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{110}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{110}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{110}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{110}{chapter.6}% 
+\contentsline {paragraph}{Examples}{107}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{107}{subsection.5.2.2}% 
+\contentsline {paragraph}{Regression Repair}{108}{subsection.5.2.2}% 
+\contentsline {paragraph}{Specification-Based Repair}{108}{subsection.5.2.2}% 
+\contentsline {paragraph}{Repair by Example}{108}{subsection.5.2.2}% 
+\contentsline {paragraph}{Human in the Loop}{108}{subsection.5.2.2}% 
+\contentsline {section}{\numberline {5.3}More Inspiration}{108}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Type Theory}{108}{subsection.5.3.1}% 
+\contentsline {paragraph}{Ornaments}{108}{subsection.5.3.1}% 
+\contentsline {paragraph}{Transport}{108}{subsection.5.3.1}% 
+\contentsline {paragraph}{Parametricity}{108}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{108}{subsection.5.3.2}% 
+\contentsline {paragraph}{Programming by Example}{108}{subsection.5.3.2}% 
+\contentsline {paragraph}{Neurosymbolic Programming}{108}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Differencing}{109}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Program Transformations}{109}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Automated Theorem Proving}{109}{subsection.5.3.5}% 
+\contentsline {paragraph}{E-Graphs}{109}{subsection.5.3.5}% 
+\contentsline {subsection}{\numberline {5.3.6}User Studies}{109}{subsection.5.3.6}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{111}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{111}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{111}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{111}{chapter.6}% 
+\contentsline {paragraph}{Automation}{112}{chapter.6}% 
+\contentsline {paragraph}{Integration}{112}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{112}{chapter.6}% 
+\contentsline {paragraph}{Gradual Verification}{112}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Proof Development}{112}{chapter.6}% 
+\contentsline {paragraph}{Specification Inference}{112}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{112}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{112}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{112}{chapter.6}% 

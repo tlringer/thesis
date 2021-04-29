@@ -5,14 +5,18 @@ The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
 Warning--I didn't find a database entry for "Ringer2019"
+Warning--I didn't find a database entry for "LeGoues:2012:SSA:2337223.2337225"
 Warning--I didn't find a database entry for "DBLP:journals/corr/abs-1811-02429"
+Warning--I didn't find a database entry for "daniel2009reassert"
+Warning--I didn't find a database entry for "gao2015fixing"
+Warning--I didn't find a database entry for "Yang:2017:BTC:3106237.3106274"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--empty publisher in univalent2013homotopy
 You've used 51 entries,
             2118 wiz_defined-function locations,
-            798 strings with 12306 characters,
+            804 strings with 12459 characters,
 and the built_in function-call counts, 17157 in all, are:
 = -- 1709
 > -- 747
@@ -51,4 +55,4 @@ warning$ -- 4
 while$ -- 164
 width$ -- 53
 write$ -- 549
-(There were 7 warnings)
+(There were 11 warnings)

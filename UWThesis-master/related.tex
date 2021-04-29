@@ -50,6 +50,14 @@ But also differences in logics (constructivism, then refer back to it later).
 \label{sec:reuse}
 
 \paragraph{Proof Transformation}
+A few proof reuse tools work by proof term transformation and so can be used for repair. % TODO: include thesis of the CMU dude!
+Existing work~\cite{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
+Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
+unary and binary numbers. 
+This fits into a \toolnamec configuration,
+and none of these tools suggest tactics in Coq like \toolnamec does.
+The expansion algorithm from Magaud \& Bertot 2000~\cite{magaud2000changing} may help guide the design
+of unification heuristics in \toolnamec.
 
 \subsection{Proof Design}
 \label{sec:design}
@@ -59,8 +67,6 @@ But also differences in logics (constructivism, then refer back to it later).
 
 \section{Program Repair}
 \label{sec:repair}
-
-% From sysname Pi, unchanged
 
 Proof repair can be viewed as a form of \textit{program repair}~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526}
 for proof assistants. % TODO use knowledge package
@@ -265,15 +271,30 @@ and user studies (Section~\ref{sec:user-studies}).
 \label{sec:typetheory}
 
 \paragraph{Ornaments}
+One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments in a higher-order dependently typed language.
+In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
+of formalizations and embedded implementations of ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}.
+\toolnamec is the first tool for ornamentation to operate over a non-embedded dependently typed language.
+It essentially moves the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
+which operates on non-embedded ML code, into the type theory that forms the basis of theorem provers like Coq. 
+In doing so, it takes advantage of the properties of algebraic ornaments~\cite{mcbride}.
+It also introduces the first search algorithm to identify ornaments, which in the past 
+was identified as a ``gap'' in the literature~\cite{ko2016programming}.
+Other kinds of ornaments may make useful search procedures for future proof repair tools, or for future configurations of \toolnamec.
 
-\paragraph{Transport}
+\paragraph{Homotopy Type Theory}
 
-\paragraph{Parametricity}
+%\paragraph{Parametricity?}
 
 \subsection{Program Synthesis}
 \label{sec:synthesis}
 
 \paragraph{Programming by Example}
+My approach to proof repair works by example.
+There is an entire field of program synthesis dedicated to programming by example~\cite{DBLP:journals/ftpl/GulwaniPS17}. 
+This field addresses different challenges in different logics,
+but may drive solutions to similar problems in a dependently typed language.
+% TODO elaborate
 
 \paragraph{Neurosymbolic Programming}
 
@@ -298,45 +319,6 @@ and user studies (Section~\ref{sec:user-studies}).
 
 TODO somewhere here or elsewhere (if elsewhere, fix references): talk about what lessons carry over to automated theorem provers,
 and which lessons carry over to other ITPs, and what work is needed to reach those tools.
-
-\section{Type Theory}
-
-\subsection{Ornaments}
-
-% From DEVOID, unchanged
-
-\toolnameb automates discovery of and lifting across algebraic ornaments in a higher-order dependently typed language.
-In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
-of formalizations and embedded implementations of ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}.
-\toolnameb is the first tool for ornamentation to operate over a non-embedded dependently typed language.
-It essentially moves the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
-which operates on non-embedded ML code, into the type theory that forms the basis of theorem provers like Coq. 
-In doing so, it takes advantage of the properties of algebraic ornaments~\cite{mcbride}.
-It also introduces the first search algorithm to identify ornaments, which in the past 
-was identified as a ``gap'' in the literature~\cite{ko2016programming}.
-
-\subsection{Transport}
-
-The \toolnamec transformation implements transport.
-Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
-UP~\cite{tabareau2017equivalences} approximates it
-in Coq, only sometimes relying on functional extensionality.
-While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
-
-\section{Other Programming Tools}
-
-\subsection{Program Synthesis}
-
-% From sysname PATCH, unchanged
-
-\paragraph{Programming by Example}
-Our approach generalizes an example that the programmer provides.
-This is similar to programming by example, a subfield of 
-program synthesis~\cite{DBLP:journals/ftpl/GulwaniPS17}. 
-This field addresses different challenges in different logics,
-but may drive solutions to similar problems in a dependently typed language.
-
-\paragraph{Neural Synthesis} (Ongoing work is related to this---really promising approach.)
 
 \subsection{Differencing \& Incremental Computation}
 
@@ -372,19 +354,6 @@ for improving the abstraction component. % TODO much more generalization work sh
 Our work focuses on the components critical to searching for patches; these complementary approaches
 can drive improvements to the components.
 
-% From sysname Pi, unchanged
-
-A few proof reuse tools work by proof term transformation and so can be used for repair.
-Existing work~\cite{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
-\toolnamec generalizes the transformation from \textsc{Devoid}~\cite{Ringer2019},
-which transformed proofs along algebraic ornaments~\cite{mcbride}.
-Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
-unary and binary numbers. 
-Both of these fit into \toolnamec configurations,
-and none suggests tactics in Coq like \toolnamec does.
-The expansion algorithm from Magaud \& Bertot 2000~\cite{magaud2000changing} may help guide the design
-of unification heuristics in \toolnamec.
-
 % From sysname PATCH, unchanged
 
 Existing work in proof reuse focuses on transferring proofs between isomorphisms,
@@ -408,6 +377,12 @@ due to the problem that \lstinline{Iota} addresses.
 CoqEAL may be most useful to chain with \toolnamec to get faster functions.
 Both CoqEAL and recent ornaments work~\cite{williamsphd} may help with
 better workflow support for changes that do not correspond to equivalences.
+
+The \toolnamec transformation implements transport.
+Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
+UP~\cite{tabareau2017equivalences} approximates it
+in Coq, only sometimes relying on functional extensionality.
+While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
 
 Recent work~\cite{tabareau2019marriage} extends UP with 
 a white-box transformation that may work for repair.

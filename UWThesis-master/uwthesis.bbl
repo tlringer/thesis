@@ -84,6 +84,23 @@ Thierry Coquand and Christine Paulin.
 \newblock In Per Martin-L{\"o}f and Grigori Mints, editors, {\em COLOG-88},
   pages 50--66, Berlin, Heidelberg, 1990. Springer Berlin Heidelberg.
 
+\bibitem{dagand2017essence}
+Pierre-{\'E}variste Dagand.
+\newblock The essence of ornaments.
+\newblock {\em Journal of Functional Programming}, 27, 2017.
+
+\bibitem{Dagand:2013:CTO:2591370.2591396}
+Pierre-Evariste Dagand and Conor McBride.
+\newblock A categorical treatment of ornaments.
+\newblock In {\em Proceedings of the 2013 28th Annual ACM/IEEE Symposium on
+  Logic in Computer Science}, LICS '13, pages 530--539, Washington, DC, USA,
+  2013. IEEE Computer Society.
+
+\bibitem{dagand2014transporting}
+Pierre-Evariste Dagand and Conor McBride.
+\newblock Transporting functions across ornaments.
+\newblock {\em Journal of functional programming}, 24(2-3):316--383, 2014.
+
 \bibitem{daniel2009reassert}
 Brett Daniel, Vilas Jagannath, Danny Dig, and Darko Marinov.
 \newblock Reassert: Suggesting repairs for broken unit tests.
@@ -170,6 +187,13 @@ D.~Hutter.
 {Isabelle Development Team}.
 \newblock Isabelle, 1994-2021.
 
+\bibitem{Johnsen2004}
+Einar~Broch Johnsen and Christoph L{\"u}th.
+\newblock Theorem reuse by proof term transformation.
+\newblock In {\em Theorem Proving in Higher Order Logics: 17th International
+  Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
+  Proceedings}, pages 152--167. Springer, Berlin, Heidelberg, 2004.
+
 \bibitem{Kaestner2017}
 Daniel K{\"a}stner, Xavier Leroy, Sandrine Blazy, Bernhard Schommer, Michael
   Schmidt, and Christian Ferdinand.
@@ -200,6 +224,12 @@ Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
 \newblock {seL4}: Formal verification of an {OS} kernel.
 \newblock In {\em Proceedings of the ACM SIGOPS 22Nd Symposium on Operating
   Systems Principles}, SOSP '09, pages 207--220, New York, NY, USA, 2009. ACM.
+
+\bibitem{ko2013relational}
+Hsiang-Shang Ko and Jeremy Gibbons.
+\newblock Relational algebraic ornaments.
+\newblock In {\em Proceedings of the 2013 ACM SIGPLAN workshop on
+  Dependently-typed programming}, pages 37--48. ACM, 2013.
 
 \bibitem{ko2016programming}
 Hsiang-Shang Ko and Jeremy Gibbons.
@@ -405,6 +435,11 @@ Karin Wibergh.
 \newblock Automatic refactoring for agda.
 \newblock Master's thesis, Chalmers University of Technology and University of
   Gothenburg, 2019.
+
+\bibitem{Williams2017}
+Thomas Williams and Didier R{\'e}my.
+\newblock A principled approach to ornamentation in {ML}.
+\newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
 
 \bibitem{Xuan:2017:NAR:3071893.3071964}
 Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas

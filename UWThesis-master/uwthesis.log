@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 19:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  28 APR 2021 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2290,7 +2290,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 ]
 chapter 5.
 [105] [106]
-Overfull \hbox (6.93776pt too wide) in paragraph at lines 116--122
+Overfull \hbox (6.93776pt too wide) in paragraph at lines 122--128
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
@@ -2334,34 +2334,35 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 11--13
 
 
 ] [117] [118] [119] [120]
-Underfull \hbox (badness 1852) in paragraph at lines 331--337
+Underfull \hbox (badness 1852) in paragraph at lines 361--367
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 331--337
+Underfull \hbox (badness 1360) in paragraph at lines 361--367
 \OT1/pplj/m/n/10.95 (+20) Cas-ingh-ino, Marco Gaboardi, Michael Green-berg, Cat
 []alin
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 331--337
+Underfull \hbox (badness 4582) in paragraph at lines 361--367
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 331--337
+Underfull \hbox (badness 4805) in paragraph at lines 361--367
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
+[121]
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 349.
+(Font)              using `OMS/pplj/m/n' instead on input line 379.
 
-[121] [122]) [123]
+[122]) [123]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2389,11 +2390,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 50093 strings out of 492609
- 1009312 string characters out of 6129033
- 1295616 words of memory out of 5000000
- 50891 multiletter control sequences out of 15000+600000
- 634679 words of font info for 813 fonts, out of 8000000 for 9000
+ 50111 strings out of 492609
+ 1009630 string characters out of 6129033
+ 1295863 words of memory out of 5000000
+ 50898 multiletter control sequences out of 15000+600000
+ 634948 words of font info for 817 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2414,10 +2415,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (133 pages, 1524388 bytes).
+Output written on uwthesis.pdf (133 pages, 1529134 bytes).
 PDF statistics:
- 2948 PDF objects out of 2984 (max. 8388607)
- 2742 compressed objects within 28 object streams
- 1394 named destinations out of 1440 (max. 500000)
+ 2968 PDF objects out of 2984 (max. 8388607)
+ 2762 compressed objects within 28 object streams
+ 1400 named destinations out of 1440 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

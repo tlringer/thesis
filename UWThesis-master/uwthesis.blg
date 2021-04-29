@@ -10,45 +10,45 @@ Warning--to sort, need author or key in hints
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
-You've used 72 entries,
+You've used 78 entries,
             2118 wiz_defined-function locations,
-            928 strings with 17148 characters,
-and the built_in function-call counts, 27200 in all, are:
-= -- 2771
-> -- 1213
-< -- 38
-+ -- 483
-- -- 406
-* -- 1767
-:= -- 4236
-add.period$ -- 232
-call.type$ -- 72
-change.case$ -- 412
+            959 strings with 18066 characters,
+and the built_in function-call counts, 29474 in all, are:
+= -- 3019
+> -- 1285
+< -- 41
++ -- 514
+- -- 428
+* -- 1909
+:= -- 4582
+add.period$ -- 253
+call.type$ -- 78
+change.case$ -- 441
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 1096
-empty$ -- 2169
-format.name$ -- 406
-if$ -- 5977
+cite$ -- 83
+duplicate$ -- 1196
+empty$ -- 2361
+format.name$ -- 428
+if$ -- 6485
 int.to.chr$ -- 0
-int.to.str$ -- 72
-missing$ -- 54
-newline$ -- 349
-num.names$ -- 146
-pop$ -- 529
+int.to.str$ -- 78
+missing$ -- 60
+newline$ -- 379
+num.names$ -- 158
+pop$ -- 557
 preamble$ -- 1
-purify$ -- 344
+purify$ -- 367
 quote$ -- 0
-skip$ -- 883
+skip$ -- 962
 stack$ -- 0
-substring$ -- 1628
-swap$ -- 365
-text.length$ -- 38
+substring$ -- 1808
+swap$ -- 397
+text.length$ -- 41
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 282
+type$ -- 306
 warning$ -- 5
-while$ -- 261
-width$ -- 74
-write$ -- 814
+while$ -- 286
+width$ -- 80
+write$ -- 886
 (There were 7 warnings)

@@ -1,6 +1,7 @@
 \begin{theindex}
 
   \item Collaborators
+    \subitem Karl Palmskog, \hyperpage{7}, \hyperpage{111}
     \subitem Nathaniel Yazdani, \hyperpage{7}, \hyperpage{95}, 
 		\hyperpage{99, 100}
     \subitem RanDair Porter, \hyperpage{7}, \hyperpage{92}, 
@@ -15,13 +16,13 @@
 
   \item Languages
     \subitem Gallina, \hyperpage{10--12}, \hyperpage{14}, 
-		\hyperpage{18}, \hyperpage{64}
+		\hyperpage{18}, \hyperpage{64}, \hyperpage{106}
     \subitem Ltac, \hyperpage{11, 12}
 
   \indexspace
 
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{14}, 
-		\hyperpage{18}, \hyperpage{71}, \hyperpage{108}
+		\hyperpage{18}, \hyperpage{71}, \hyperpage{110}
 
 \end{theindex}

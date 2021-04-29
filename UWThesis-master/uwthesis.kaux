@@ -75,7 +75,14 @@
 
 \KAuxFileAt {uwthesis.tex}{69}
 
-\KAuxFileAt {uwthesis.tex}{139}
+\KAuxFileAt {uwthesis.tex}{70}
+
+\KAuxFileAt {uwthesis.tex}{71}
+\KAuxAutoref {default}{base}{Karl Palmskog}
+
+\KAuxFileAt {uwthesis.tex}{72}
+
+\KAuxFileAt {uwthesis.tex}{142}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 \KAuxDeclaredScopeTag {fig:workflow}
@@ -84,6 +91,9 @@
 \KAuxFileAt {guide.tex}{13}
 \KAuxAutorefTarget {default}{base}{RanDair Porter}
 \KAuxAutorefTarget {default}{base}{Nathaniel Yazdani}
+
+\KAuxFileAt {guide.tex}{14}
+\KAuxAutorefTarget {default}{base}{Karl Palmskog}
 \KAuxDeclaredScopeTag {sec:mot-dev}
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
 

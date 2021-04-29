@@ -10,6 +10,13 @@ Lean theorem prover, 2017.
 User A.
 \newblock Software foundations solution, 2017.
 
+\bibitem{adams2015}
+Mark Adams.
+\newblock Refactoring proofs with tactician.
+\newblock In Domenico Bianculli, Radu Calinescu, and Bernhard Rumpe, editors,
+  {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
+  Heidelberg, 2015. Springer Berlin Heidelberg.
+
 \bibitem{andersen2010generic}
 Jesper Andersen and Julia~L Lawall.
 \newblock Generic patch inference.
@@ -55,6 +62,23 @@ Henk Barendregt and Freek Wiedijk.
 \newblock {\em Philosophical Transactions of the Royal Society of London A:
   Mathematical, Physical and Engineering Sciences}, 363(1835):2351--2375, 2005.
 
+\bibitem{Barras2013}
+Bruno Barras, Lourdes del Carmen Gonz{\'a}lez~Huesca, Hugo Herbelin, Yann
+  R{\'e}gis-Gianas, Enrico Tassi, Makarius Wenzel, and Burkhart Wolff.
+\newblock Pervasive parallelism in highly-trustable interactive theorem proving
+  systems.
+\newblock In {\em Intelligent Computer Mathematics: MKM, Calculemus, DML, and
+  Systems and Projects 2013, Held as Part of CICM 2013, Bath, UK, July 8-12,
+  2013. Proceedings}, pages 359--363, Berlin, Heidelberg, 2013. Springer.
+
+\bibitem{Barras2015}
+Bruno Barras, Carst Tankink, and Enrico Tassi.
+\newblock Asynchronous processing of {Coq} documents: From the kernel up to the
+  user interface.
+\newblock In {\em Interactive Theorem Proving: 6th International Conference,
+  ITP 2015, Nanjing, China, August 24-27, 2015, Proceedings}, pages 51--66,
+  Cham, 2015. Springer International Publishing.
+
 \bibitem{barthe2001type}
 Gilles Barthe and Olivier Pons.
 \newblock Type isomorphisms and proof reuse in dependent type theory.
@@ -66,6 +90,12 @@ Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
   K{\"u}hlwein, and Josef Urban.
 \newblock A learning-based fact selector for {Isabelle/HOL}.
 \newblock {\em Journal of Automated Reasoning}, 57(3):219--244, Oct 2016.
+
+\bibitem{Bourke12}
+Timothy Bourke, Matthias Daum, Gerwin Klein, and Rafal Kolanski.
+\newblock Challenges and experiences in managing large-scale proofs.
+\newblock In {\em Intelligent Computer Mathematics}, pages 32--48, Berlin,
+  Heidelberg, 2012. Springer.
 
 \bibitem{boutillier:tel-01054723}
 Pierre Boutillier.
@@ -94,6 +124,18 @@ Ahmet Celik, Karl Palmskog, and Milos Gligoric.
   Automated Software Engineering}, ASE 2017, pages 171--182, Piscataway, NJ,
   USA, 2017. IEEE Press.
 
+\bibitem{Celik2017}
+Ahmet Celik, Karl Palmskog, and Milos Gligoric.
+\newblock {iCoq}: Regression proof selection for large-scale verification
+  projects.
+\newblock In {\em 32nd IEEE/ACM International Conference on Automated Software
+  Engineering}, ASE 2017, pages 171--182, 2017.
+
+\bibitem{chan2011galileo}
+Michael Chan, Jos Lehmann, and Alan Bundy.
+\newblock {GALILEO}: A system for automating ontology evolution.
+\newblock {\em ARCOE-11}, page~46, 2011.
+
 \bibitem{chlipala:cpdt}
 Adam Chlipala.
 \newblock {\em Certified Programming with Dependent Types - {A} Pragmatic
@@ -115,6 +157,10 @@ Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
 \newblock {Refinements for Free!}
 \newblock In {\em {Certified Programs and Proofs}}, pages 147 -- 162,
   Melbourne, Australia, December 2013.
+
+\bibitem{leroy-mem-2010}
+{CompCert Development Team}.
+\newblock Merge of the newmem and newextcalls branches, 2010.
 
 \bibitem{coq}
 {Coq Development Team}.
@@ -158,6 +204,14 @@ Brett Daniel, Vilas Jagannath, Danny Dig, and Darko Marinov.
 \newblock Reassert: Suggesting repairs for broken unit tests.
 \newblock In {\em Automated Software Engineering, 2009. ASE'09. 24th IEEE/ACM
   International Conference on}, pages 433--444. IEEE, 2009.
+
+\bibitem{deMoura2015}
+Leonardo de~Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
+  Raumer.
+\newblock The {Lean} theorem prover (system description).
+\newblock In {\em Automated Deduction - CADE-25: 25th International Conference
+  on Automated Deduction, Berlin, Germany, August 1-7, 2015, Proceedings},
+  pages 378--388, Cham, 2015. Springer International Publishing.
 
 \bibitem{Delaware:2011:PLT:2048066.2048113}
 Benjamin Delaware, William Cook, and Don Batory.
@@ -205,6 +259,18 @@ Larry Diehl, Denis Firsov, and Aaron Stump.
 \newblock Generic zero-cost reuse for dependent types.
 \newblock {\em CoRR}, abs/1803.08150, 2018.
 
+\bibitem{Dietrich2013}
+Dominik Dietrich, Iain Whiteside, and David Aspinall.
+\newblock Polar: A framework for proof refactoring.
+\newblock In {\em Logic for Programming, Artificial Intelligence, and
+  Reasoning}, pages 776--791, Berlin, Heidelberg, 2013. Springer.
+
+\bibitem{Elphinstone2013}
+Kevin Elphinstone and Gernot Heiser.
+\newblock From l3 to sel4 what have we learnt in 20 years of l4 microkernels?
+\newblock In {\em Proceedings of the Twenty-Fourth ACM Symposium on Operating
+  Systems Principles}, SOSP '13, pages 133--150, New York, NY, USA, 2013. ACM.
+
 \bibitem{felty1994generalization}
 Amy Felty and Douglas Howe.
 \newblock Generalization and reuse of tactic proofs.
@@ -226,6 +292,26 @@ Qing Gao, Hansheng Zhang, Jie Wang, Yingfei Xiong, Lu~Zhang, and Hong Mei.
 \newblock Fixing recurring crash bugs via analyzing q\&a sites (t).
 \newblock In {\em Automated Software Engineering (ASE), 2015 30th IEEE/ACM
   International Conference on}, pages 307--318. IEEE, 2015.
+
+\bibitem{gauthier2014}
+Thibault Gauthier and Cezary Kaliszyk.
+\newblock Matching concepts across {HOL} libraries.
+\newblock In {\em Intelligent Computer Mathematics}, pages 267--281, Cham,
+  2014. Springer.
+
+\bibitem{Gauthier2015}
+Thibault Gauthier and Cezary Kaliszyk.
+\newblock Sharing {HOL4} and {HOL Light} proof knowledge.
+\newblock In {\em Logic for Programming, Artificial Intelligence, and
+  Reasoning: 20th International Conference, LPAR-20 2015, Suva, Fiji, November
+  24-28, 2015, Proceedings}, pages 372--386, Berlin, Heidelberg, 2015.
+  Springer.
+
+\bibitem{gauthier2017}
+Thibault Gauthier and Cezary Kaliszyk.
+\newblock Aligning concepts across proof assistant libraries.
+\newblock {\em Journal of Symbolic Computation}, 90:89--123, 2019.
+\newblock Symbolic Computation in Software Science.
 
 \bibitem{Gazzola:2018:ASR:3180155.3182526}
 Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
@@ -390,6 +476,11 @@ Xavier Leroy.
 Xavier Leroy.
 \newblock Commit to compcert: lib/integers.v, 2013.
 
+\bibitem{leroy2012}
+Xavier Leroy, Andrew~W. Appel, Sandrine Blazy, and Gordon Stewart.
+\newblock {The CompCert Memory Model, Version 2}.
+\newblock Research Report RR-7987, {INRIA}, June 2012.
+
 \bibitem{coq84commit}
 letouzey.
 \newblock Commit to coq: change definition of divide (compat with znumtheory),
@@ -457,11 +548,6 @@ Na~Meng, Miryung Kim, and Kathryn~S McKinley.
 \newblock In {\em Proceedings of the 2013 International Conference on Software
   Engineering}, pages 502--511. IEEE Press, 2013.
 
-\bibitem{Miller:2012:PHL:2331097}
-Dale Miller and Gopalan Nadathur.
-\newblock {\em Programming with Higher-Order Logic}.
-\newblock Cambridge University Press, New York, NY, USA, 1st edition, 2012.
-
 \bibitem{Miraldo:2017:TDS:3122975.3122976}
 Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
 \newblock Type-directed diffing of structured data.
@@ -499,12 +585,24 @@ Hoang Duong~Thien Nguyen, Dawei Qi, Abhik Roychoudhury, and Satish Chandra.
 \newblock \href{http://ncatlab.org/nlab/revision/eta-conversion/12}{Revision
   12}.
 
+\bibitem{opdyke1992}
+William~F Opdyke.
+\newblock {\em Refactoring: A program restructuring aid in designing
+  object-oriented application frameworks}.
+\newblock PhD thesis, 1992.
+
 \bibitem{padioleau2008documenting}
 Yoann Padioleau, Julia Lawall, Ren{\'e}~Rydhof Hansen, and Gilles Muller.
 \newblock Documenting and automating collateral evolutions in linux device
   drivers.
 \newblock In {\em Acm sigops operating systems review}, volume~42, pages
   247--260. ACM, 2008.
+
+\bibitem{Palmskog2018}
+Karl Palmskog, Ahmet Celik, and Milos Gligoric.
+\newblock {piCoq}: Parallel regression proving for large-scale verification
+  projects.
+\newblock In {\em ISSTA}, pages 344--355, New York, NY, USA, 2018. ACM.
 
 \bibitem{Blanchette2013}
 Lawrence~C. Paulson and Jasmin~Christian Blanchette.
@@ -513,6 +611,11 @@ Lawrence~C. Paulson and Jasmin~Christian Blanchette.
 \newblock In G.~Sutcliffe, S.~Schulz, and E.~Ternovska, editors, {\em
   International Workshop on the Implementation of Logics (IWIL 2010)}, volume~2
   of {\em EPiC Series}, pages 1--11. EasyChair, 2012.
+
+\bibitem{ltac2}
+Pierre-Marie P{\'e}drot.
+\newblock Ltac2: Tactical warfare.
+\newblock In {\em CoqPL 2019}, 2019.
 
 \bibitem{pei2014automated}
 Yu~Pei, Carlo~A Furia, Martin Nordio, Yi~Wei, Bertrand Meyer, and Andreas
@@ -552,12 +655,26 @@ Valentin Robert.
   functional programs}.
 \newblock PhD thesis, UC San Diego, 2018.
 
+\bibitem{Roe2016}
+Kenneth Roe and Scott Smith.
+\newblock {CoqPIE}: An {IDE} aimed at improving proof development productivity.
+\newblock In {\em Interactive Theorem Proving: 7th International Conference,
+  ITP 2016, Nancy, France, August 22-25, 2016, Proceedings}, pages 491--499,
+  Cham, 2016. Springer International Publishing.
+
 \bibitem{Saibi:PhD}
 Amokrane Saibi.
 \newblock {\em Outils G\'{e}n\'{e}riques de Mod\'{e}lisation et de
   D\'{e}monstration pour la Formalisation des Math\'{e}matiques en Th\'{e}orie
   des Types: application \`{a} la Th\'{e}orie des Cat\'{e}gories}.
 \newblock PhD thesis, Universit\'{e} Paris VI, Paris, France, 1999.
+
+\bibitem{selsam:lean}
+Daniel Selsam and Leonardo de~Moura.
+\newblock Congruence closure in intensional type theory.
+\newblock In Nicola Olivetti and Ashish Tiwari, editors, {\em Automated
+  Reasoning: 8th International Joint Conference}, IJCAR 2016, pages 99--115,
+  Cham, 2016. Springer International Publishing.
 
 \bibitem{sozeau:equations}
 Matthieu Sozeau.
@@ -606,6 +723,47 @@ Yi~Wei, Yu~Pei, Carlo~A. Furia, Lucas~S. Silva, Stefan Buchholz, Bertrand
 \newblock Automated fixing of programs with contracts.
 \newblock In {\em Proceedings of the 19th International Symposium on Software
   Testing and Analysis}, ISSTA '10, pages 61--72, New York, NY, USA, 2010. ACM.
+
+\bibitem{Wenzel2007isar}
+Makarius Wenzel.
+\newblock {Isabelle/Isar}--a generic framework for human-readable proof
+  documents.
+\newblock {\em From Insight to Proof--Festschrift in Honour of Andrzej
+  Trybulec}, 10(23):277--298, 2007.
+
+\bibitem{Wenzel2013}
+Makarius Wenzel.
+\newblock {PIDE} as front-end technology for {Coq}.
+\newblock {\em CoRR}, abs/1304.6626, 2013.
+
+\bibitem{Wenzel2013MultiProcessing}
+Makarius Wenzel.
+\newblock Shared-memory multiprocessing for interactive theorem proving.
+\newblock In {\em Interactive Theorem Proving: 4th International Conference,
+  ITP 2013, Rennes, France, July 22-26, 2013. Proceedings}, pages 418--434,
+  Berlin, Heidelberg, 2013. Springer.
+
+\bibitem{Wenzel2014}
+Makarius Wenzel.
+\newblock Asynchronous user interaction and tool integration in
+  {Isabelle/PIDE}.
+\newblock In {\em Interactive Theorem Proving: 5th International Conference,
+  ITP 2014, Held as Part of the Vienna Summer of Logic, VSL 2014, Vienna,
+  Austria, July 14-17, 2014. Proceedings}, pages 515--530, Cham, 2014. Springer
+  International Publishing.
+
+\bibitem{WenzelScalingIsabelle}
+Makarius Wenzel.
+\newblock Scaling {Isabelle} proof document processing, December 2017.
+
+\bibitem{WenzelFurtherScalingIsabelle}
+Makarius Wenzel.
+\newblock Further scaling of isabelle technology, April 2018.
+
+\bibitem{WhitesidePhD}
+Iain~Johnston Whiteside.
+\newblock {\em Refactoring proofs}.
+\newblock PhD thesis, University of Edinburgh, November 2013.
 
 \bibitem{wibergh2019}
 Karin Wibergh.

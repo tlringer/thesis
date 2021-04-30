@@ -8,19 +8,29 @@ Proof repair has made proof engineering easier for experts, and a bit easier for
 But there is a lot more that we as a community can do to bring proof engineering to all: not just experts and practitioners,
 but also software engineers and potential users from in other domains.
 
-I thus conclude with a discussion of 12 future project summaries building up to the next era.
+I conclude with a discussion of 12 future project ideas building up to the next era of proof engineering for all.
 If any of these ideas inspire you, please work with me to bring them to life.
 
 \subsection*{Experts}
 
-With proof repair, I have to some degree tamed the challenges of proof maintenance.
-But there is much more to be done, even for experts.
-The key to better serving experts with proof repair tools is lateral reach:
-building proof repair tools that indespensible for proof engineers experts
-across all proof assistants, that support an extremely broad and practical set of changes,
-and that in the end produce proof scripts that match the styles of proof engineers.
+In the future, maintaining proofs ought to be seamless for expert proof engineers.
+Ideally, this means technologies---like proof repair---that automate everything but the creative parts of maintenance tasks,
+leaving the creativity to the experts.
+But the maintenance technologies of the future ought to be accessible across all proof assistants,
+to support an extremely broad and practical set of changes,
+and to produce proof scripts that in the end match the styles of proof engineers.
 
-\paragraph{Proof Assistants} Thoughts from PUMPKIN Pi on Isabelle/HOL, future work from PUMPKIN PATCH.
+\paragraph{All Proof Assistants} In this thesis, I focused primarily on the proof assistant called Coq.
+The techniques should be straightforward to apply to proof assistants with similar foundations, like Agda,
+and potentially Lean.\footnote{Lean assumes an axiom that is incompatible with univalence.
+It is not quite clear to me what that assumption would mean for implementing the \toolnamec transformation in Lean.
+Everything else should carry over.}
+But some proof assistants are fundamentally different.
+Isabelle/HOL, for example, lacks proof terms, and is based on a classical logic.
+One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
+Isabelle/HOL-Proofs, apply a transformation based on the Transfer~\cite{Huffman2013} package for proof reuse, and then (as in \toolnamec) decompile those terms to automation that does 
+not apply Transfer or refer to the old datatype in any way.
+Similar approaches may work for similar proof assistants.
 
 \paragraph{Changes} Version updates, isolating large changes (PUMPKIN PATCH), relations more general than equivalences (PUMPKIN Pi).
 

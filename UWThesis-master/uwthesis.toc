@@ -1,6 +1,6 @@
 \vspace {-\cftbeforepartskip }
 \contentsline {paragraph}{Beginning}{xi}{chapter*.3}% 
-\contentsline {paragraph}{Mathematics}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Research}{xi}{chapter*.3}% 
 \contentsline {paragraph}{Computer Science}{xi}{chapter*.3}% 
 \contentsline {paragraph}{Unification}{xi}{chapter*.3}% 
 \contentsline {paragraph}{Patience, Wisdom, and Dad Jokes}{xi}{chapter*.3}% 
@@ -189,12 +189,12 @@
 \contentsline {paragraph}{Proof Terms}{106}{subsection.5.1.2}% 
 \contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{107}{subsection.5.1.3}% 
 \contentsline {paragraph}{Transfer \& Transport}{107}{subsection.5.1.3}% 
-\contentsline {paragraph}{Proof Transformation}{108}{subsection.5.1.3}% 
+\contentsline {paragraph}{Proof Transformation}{107}{subsection.5.1.3}% 
 \contentsline {subsection}{\numberline {5.1.4}Proof Design}{108}{subsection.5.1.4}% 
 \contentsline {paragraph}{Robust Abstractions}{108}{subsection.5.1.4}% 
 \contentsline {paragraph}{Robust Automation}{108}{subsection.5.1.4}% 
 \contentsline {subsection}{\numberline {5.1.5}Proof Automation}{108}{subsection.5.1.5}% 
-\contentsline {paragraph}{Ontology Repair}{109}{subsection.5.1.5}% 
+\contentsline {paragraph}{Ontology Repair}{108}{subsection.5.1.5}% 
 \contentsline {paragraph}{Knowledge Sharing Methods}{109}{subsection.5.1.5}% 
 \contentsline {section}{\numberline {5.2}Program Repair}{109}{section.5.2}% 
 \contentsline {subsection}{\numberline {5.2.1}A Good Fit}{109}{subsection.5.2.1}% 
@@ -209,7 +209,7 @@
 \contentsline {subsection}{\numberline {5.3.1}Type Theory}{114}{subsection.5.3.1}% 
 \contentsline {paragraph}{Ornaments}{114}{subsection.5.3.1}% 
 \contentsline {paragraph}{Indexed Types}{114}{subsection.5.3.1}% 
-\contentsline {paragraph}{Homotopy Type Theory}{115}{subsection.5.3.1}% 
+\contentsline {paragraph}{Homotopy Type Theory}{114}{subsection.5.3.1}% 
 \contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{115}{subsection.5.3.2}% 
 \contentsline {paragraph}{Programming by Example}{115}{subsection.5.3.2}% 
 \contentsline {paragraph}{Neurosymbolic Programming}{115}{subsection.5.3.2}% 
@@ -219,12 +219,12 @@
 \contentsline {paragraph}{E-Graphs}{115}{subsection.5.3.5}% 
 \contentsline {subsection}{\numberline {5.3.6}User Studies}{115}{subsection.5.3.6}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{117}{chapter.6}% 
-\contentsline {paragraph}{Proof Assistants}{118}{chapter.6}% 
+\contentsline {paragraph}{All Proof Assistants}{118}{chapter.6}% 
 \contentsline {paragraph}{Changes}{118}{chapter.6}% 
 \contentsline {paragraph}{Styles}{118}{chapter.6}% 
-\contentsline {paragraph}{Automation}{118}{chapter.6}% 
-\contentsline {paragraph}{Integration}{118}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{118}{chapter.6}% 
+\contentsline {paragraph}{Automation}{119}{chapter.6}% 
+\contentsline {paragraph}{Integration}{119}{chapter.6}% 
+\contentsline {paragraph}{Evaluation}{119}{chapter.6}% 
 \contentsline {paragraph}{Gradual Verification}{119}{chapter.6}% 
 \contentsline {paragraph}{Tool-Assisted Proof Development}{119}{chapter.6}% 
 \contentsline {paragraph}{Specification Inference}{119}{chapter.6}% 

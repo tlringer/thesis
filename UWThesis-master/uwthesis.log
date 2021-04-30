@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  29 APR 2021 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2303,29 +2303,29 @@ LaTeX Warning: Citation `pons2000generalization' on page 107 undefined on input
 
 [107]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 108 undefined on input line 166
+LaTeX Warning: Citation `Chrzaszcz2003' on page 108 undefined on input line 165
 .
 
 [108]
-Overfull \hbox (4.452pt too wide) in paragraph at lines 198--210
+Overfull \hbox (4.452pt too wide) in paragraph at lines 197--209
 [] []\OT1/pplj/m/sc/10.95 (-20) k n o w l -e d g e s h a r -i n g m e t h -o d 
 s[] \OT1/pplj/m/n/10.95 (-20) Knowl-edge shar-ing meth-ods [[]]
  []
 
 
-Overfull \hbox (1.78976pt too wide) in paragraph at lines 234--240
+Overfull \hbox (1.78976pt too wide) in paragraph at lines 233--239
 []\OT1/pplj/m/n/10.95 (-20) A re-cent re-view [[]] of a pop-u-lar test-based pr
 o-gram re-pair tool [[]]
  []
 
 [109]
-Overfull \hbox (6.93776pt too wide) in paragraph at lines 270--276
+Overfull \hbox (6.93776pt too wide) in paragraph at lines 269--275
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
 
 [110] [111] [112] [113] [114]
-Overfull \hbox (2.80904pt too wide) in paragraph at lines 464--474
+Overfull \hbox (2.80904pt too wide) in paragraph at lines 463--473
 \OT1/pplj/m/n/10.95 (-20) directed diff-ing [[]] finds dif-fer-ences in al-ge-b
 raic data types. Semantics-
  []
@@ -2335,14 +2335,14 @@ raic data types. Semantics-
 
 ]
 chapter 6.
-(./next.tex [117]
-Overfull \hbox (5.47017pt too wide) in paragraph at lines 42--43
+(./next.tex [117] [118]
+Overfull \hbox (5.47017pt too wide) in paragraph at lines 52--53
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
  []
 
-[118]
-Overfull \hbox (1.41237pt too wide) in paragraph at lines 50--51
+
+Overfull \hbox (1.41237pt too wide) in paragraph at lines 60--61
 [] []\OT1/pplj/m/sc/10.95 (-20) t o o l [] a s -s i s t e d p r o o f d e -v e 
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
@@ -2426,11 +2426,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
  ) 
 Here is how much of TeX's memory you used:
- 50265 strings out of 492609
- 1012358 string characters out of 6129033
+ 50276 strings out of 492609
+ 1012462 string characters out of 6129033
  1298212 words of memory out of 5000000
  50971 multiletter control sequences out of 15000+600000
- 635702 words of font info for 829 fonts, out of 8000000 for 9000
+ 636165 words of font info for 837 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2451,10 +2451,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (145 pages, 1569557 bytes).
+Output written on uwthesis.pdf (145 pages, 1570521 bytes).
 PDF statistics:
- 3159 PDF objects out of 3580 (max. 8388607)
- 2939 compressed objects within 30 object streams
- 1466 named destinations out of 1728 (max. 500000)
+ 3163 PDF objects out of 3580 (max. 8388607)
+ 2943 compressed objects within 30 object streams
+ 1467 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

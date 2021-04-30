@@ -105,6 +105,7 @@ to domain-specific methodologies~\cite{Delaware:2011:PLT:2048066.2048113} and fr
 I discuss some especially relevant work below. % TODO better segue
 
 % TODO survey paper, and some of the work below
+% TODO note the thing about transfer versus transport, and correct thesis (see Twitter)
 
 \paragraph{Transfer \& Transport}
 \toolnamec transports proofs across equivalences.
@@ -113,10 +114,8 @@ engineers~\cite{magaud2000changing, barthe2001type, magaud2003changing}.
 Particular successful is the widely used Transfer~\cite{Huffman2013} package, which supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
 Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
 Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
+Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer to implement a proof repair tool for Isabelle/HOL.
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
-One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
-Isabelle/HOL-Proofs, apply a transformation based on Transfer, and then (as in \toolname) decompile those terms to automation that does 
-not apply Transfer or refer to the old datatype in any way.
 
 The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
 Transport is realizable as a function given univalence~\cite{univalent2013homotopy}---I will discuss this more in Section~\ref{sec:typetheory}.

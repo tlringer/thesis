@@ -222,9 +222,9 @@
 \contentsline {paragraph}{All Proof Assistants}{118}{chapter.6}% 
 \contentsline {paragraph}{More Power}{118}{chapter.6}% 
 \contentsline {paragraph}{Natural Proofs}{118}{chapter.6}% 
-\contentsline {paragraph}{Automation}{119}{chapter.6}% 
-\contentsline {paragraph}{Integration}{119}{chapter.6}% 
-\contentsline {paragraph}{Evaluation}{119}{chapter.6}% 
+\contentsline {paragraph}{More Automation}{119}{chapter.6}% 
+\contentsline {paragraph}{Smooth Integration}{119}{chapter.6}% 
+\contentsline {paragraph}{User Feedback}{119}{chapter.6}% 
 \contentsline {paragraph}{Gradual Verification}{119}{chapter.6}% 
 \contentsline {paragraph}{Tool-Assisted Proof Development}{119}{chapter.6}% 
 \contentsline {paragraph}{Specification Inference}{119}{chapter.6}% 

@@ -1,4 +1,13 @@
 \vspace {-\cftbeforepartskip }
+\contentsline {paragraph}{Beginning}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Mathematics}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Computer Science}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Unification}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Patience, Wisdom, and Dad Jokes}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Home}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Empathy}{xi}{chapter*.3}% 
+\contentsline {paragraph}{Students}{xi}{chapter*.3}% 
+\contentsline {paragraph}{WIP}{xi}{chapter*.3}% 
 \contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {Introduction}}{3}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Thesis}{4}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Approach}{5}{section.1.2}% 

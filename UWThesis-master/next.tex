@@ -17,24 +17,42 @@ In the future, maintaining proofs ought to be seamless for expert proof engineer
 Ideally, this means technologies---like proof repair---that automate everything but the creative parts of maintenance tasks,
 leaving the creativity to the experts.
 But the maintenance technologies of the future ought to be accessible across all proof assistants,
-to support an extremely broad and practical set of changes,
-and to produce proof scripts that in the end match the styles of proof engineers.
+to be much more powerful,
+and to produce natural proof scripts in the end.
 
-\paragraph{All Proof Assistants} In this thesis, I focused primarily on the proof assistant called Coq.
-The techniques should be straightforward to apply to proof assistants with similar foundations, like Agda,
+\paragraph{All Proof Assistants}
+Proof repair ought to be accessible across all proof assistants.
+The techniques from this thesis should be simple to apply to proof assistants with similar foundations to Coq, like Agda,
 and potentially Lean.\footnote{Lean assumes an axiom that is incompatible with univalence.
 It is not quite clear to me what that assumption would mean for implementing the \toolnamec transformation in Lean.
 Everything else should carry over.}
-But some proof assistants are fundamentally different.
-Isabelle/HOL, for example, lacks proof terms, and is based on a classical logic.
-One possible path toward implementing proof repair in Isabelle/HOL may be to reify proof terms using something like
+But Isabelle/HOL, for example, lacks proof terms and is based on a classical logic.
+One path toward proof repair for Isabelle/HOL may be to reify proof terms using
 Isabelle/HOL-Proofs, apply a transformation based on the Transfer~\cite{Huffman2013} package for proof reuse, and then (as in \toolnamec) decompile those terms to automation that does 
-not apply Transfer or refer to the old datatype in any way.
-Similar approaches may work for similar proof assistants.
+not apply Transfer or refer to the old datatype.
+Similar approaches may work for other proof assistants.
 
-\paragraph{Changes} Version updates, isolating large changes (PUMPKIN PATCH), relations more general than equivalences (PUMPKIN Pi).
+\paragraph{More Power} 
+Proof repair ought to be much more powerful than it is right now.
+%For example, the repair tools of the present have only limited support for proof assistant version updates;
+%the repair tools of the future ought to run automatically in response to version updates, and ought to support fundamental changes in the proof term
+%or proof script language.
+The repair tools of the future ought to run automatically in response to proof assistant version updates.
+%, and ought to support
+%fundamental changes in the proof term or proof script language.
+They ought to break down large changes into smaller pieces---perhaps by drawing on work in change and 
+dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes, then use the factoring transformation
+to break those changes into smaller parts.
+And they ought to support an even broader and more practical class of changes than they do now,
+like arbitrary relations.
 
-\paragraph{Styles} ML for decompiler (PUMPKIN Pi, REPLICA) : more for diverse proof styles (PUMPKIN PATCH). Note that this is a WIP, but sketch out project, challenges, future ideas, expectations, evaluation a bit.
+\paragraph{Natural Proofs}
+Proof repair tools ought to produce repaired proof scripts that are natural for expert proof engineers,
+regardless of style.
+Toward this end, I have just begun a promising project with \kl{RanDair} and some collaborators at UMass Amherst
+on integrating the prototype decompiler with the machine learning proof synthesis tool TacTok~\cite{10.1145/3428299} to rank tactic hints.
+Producing more natural proofs than the prototype decompiler using fixed training data seems feasible.
+More difficult---but desirable---is to train the decompiler to produce scripts that match the style of the proof engineer using the tool.
 
 \subsection*{Practitioners}
 

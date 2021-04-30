@@ -220,8 +220,8 @@
 \contentsline {subsection}{\numberline {5.3.6}User Studies}{115}{subsection.5.3.6}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{117}{chapter.6}% 
 \contentsline {paragraph}{All Proof Assistants}{118}{chapter.6}% 
-\contentsline {paragraph}{Changes}{118}{chapter.6}% 
-\contentsline {paragraph}{Styles}{118}{chapter.6}% 
+\contentsline {paragraph}{More Power}{118}{chapter.6}% 
+\contentsline {paragraph}{Natural Proofs}{118}{chapter.6}% 
 \contentsline {paragraph}{Automation}{119}{chapter.6}% 
 \contentsline {paragraph}{Integration}{119}{chapter.6}% 
 \contentsline {paragraph}{Evaluation}{119}{chapter.6}% 
@@ -230,4 +230,4 @@
 \contentsline {paragraph}{Specification Inference}{119}{chapter.6}% 
 \contentsline {paragraph}{Machine Learning}{119}{chapter.6}% 
 \contentsline {paragraph}{Cryptography}{119}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{119}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{120}{chapter.6}% 

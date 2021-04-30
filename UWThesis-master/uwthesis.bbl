@@ -277,6 +277,11 @@ Amy Felty and Douglas Howe.
 \newblock In {\em International Conference on Logic for Programming Artificial
   Intelligence and Reasoning}, pages 1--15. Springer, 1994.
 
+\bibitem{10.1145/3428299}
+Emily First, Yuriy Brun, and Arjun Guha.
+\newblock Tactok: Semantics-aware proof synthesis.
+\newblock {\em Proc. ACM Program. Lang.}, 4(OOPSLA), November 2020.
+
 \bibitem{Frana2011}
 Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
   Jean Souyris.

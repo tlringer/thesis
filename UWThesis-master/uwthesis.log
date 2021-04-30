@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2336,21 +2336,18 @@ raic data types. Semantics-
 ]
 chapter 6.
 (./next.tex [117] [118]
-Overfull \hbox (5.47017pt too wide) in paragraph at lines 52--53
+Overfull \hbox (5.47017pt too wide) in paragraph at lines 70--71
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
  []
 
 
-Overfull \hbox (1.41237pt too wide) in paragraph at lines 60--61
+Overfull \hbox (1.41237pt too wide) in paragraph at lines 78--79
 [] []\OT1/pplj/m/sc/10.95 (-20) t o o l [] a s -s i s t e d p r o o f d e -v e 
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-)) (./uwthesis.ind [119] [120
-
-
-]
+)) (./uwthesis.ind [119] [120]
 Overfull \hbox (1.024pt too wide) in paragraph at lines 5--7
 []| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []7[], []95[], []99[],
  []
@@ -2365,35 +2362,37 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 12--14
 
 
 
+
+
 ]) (./uwthesis.bbl [122
 
 
 
 ] [123] [124] [125] [126] [127] [128] [129] [130]
 [131]
-Underfull \hbox (badness 1163) in paragraph at lines 627--633
+Underfull \hbox (badness 1163) in paragraph at lines 632--638
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 3396) in paragraph at lines 627--633
+Underfull \hbox (badness 3396) in paragraph at lines 632--638
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 627--633
+Underfull \hbox (badness 3657) in paragraph at lines 632--638
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 645.
+(Font)              using `OMS/pplj/m/n' instead on input line 650.
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 666--671
+Underfull \hbox (badness 1184) in paragraph at lines 671--676
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2426,10 +2425,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
  ) 
 Here is how much of TeX's memory you used:
- 50276 strings out of 492609
- 1012462 string characters out of 6129033
- 1298212 words of memory out of 5000000
- 50971 multiletter control sequences out of 15000+600000
+ 50278 strings out of 492609
+ 1012499 string characters out of 6129033
+ 1298251 words of memory out of 5000000
+ 50972 multiletter control sequences out of 15000+600000
  636165 words of font info for 837 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2451,10 +2450,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (145 pages, 1570521 bytes).
+Output written on uwthesis.pdf (145 pages, 1571951 bytes).
 PDF statistics:
- 3163 PDF objects out of 3580 (max. 8388607)
- 2943 compressed objects within 30 object streams
- 1467 named destinations out of 1728 (max. 500000)
+ 3170 PDF objects out of 3580 (max. 8388607)
+ 2950 compressed objects within 30 object streams
+ 1468 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,8 +1,27 @@
 \chapter{Conclusions \& Future Work}
 \label{chapt:conclusions}
 
-Reflect on thesis statement and explain how we got it exactly now that you know everything
+Through a combination of differencing and proof term transformations,
+my proof repair tool suite can extract, generalize, and apply the information that a change carries to fix proofs broken by the same change.
+Proof repair can save and in fact already has saved work for proof engineers relative to reference manual repairs in practical use cases.
+And so proof repair is reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+even when proof engineers do not follow good development processes,
+or when change occurs outside of proof engineers' control.
 
-But I want to spend the resst of this thesis talking about the next era of verification so I can write out a bunch of ideas for students who might want to work with me
+Do not just take my word for it.
+Consider a recent article by a proof engineer saying just this (emphasis mine): % TODO link: https://galois.com/blog/2020/12/proofs-should-repair-themselves/
+
+\begin{quote}
+We have \textit{reason to think} such proof repair is tractable. Rather than trying to synthesize a complete proof from nothing---a problem known to be immensely difficult---we 
+start from a correct proof of fairly similar software. We will be attempting proof reconstruction \textit{within a known neighborhood}.
+\end{quote}
+The proof engineer credited my proof repair work on Twitter, % TODO link to Twitter
+but noted that there ought to be much more work in this space.
+
+I agree.
+Actually, I want to take that a step further:
+proof repair is just a small piece of what will carry us to the next era of proof engineering.
+And that era will be one in which programmers of all skill levels across all domains can develop and maintain verified systems---the era of
+\textit{proof engineering for all}.
 
 \input{next}

@@ -210,15 +210,15 @@
 \contentsline {paragraph}{E-Graphs}{115}{subsection.5.3.5}% 
 \contentsline {subsection}{\numberline {5.3.6}User Studies}{115}{subsection.5.3.6}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{117}{chapter.6}% 
-\contentsline {paragraph}{More Proof Assistants}{117}{chapter.6}% 
-\contentsline {paragraph}{More Changes}{117}{chapter.6}% 
-\contentsline {paragraph}{More Styles}{117}{chapter.6}% 
+\contentsline {paragraph}{More Proof Assistants}{118}{chapter.6}% 
+\contentsline {paragraph}{More Changes}{118}{chapter.6}% 
+\contentsline {paragraph}{More Styles}{118}{chapter.6}% 
 \contentsline {paragraph}{Automation}{118}{chapter.6}% 
 \contentsline {paragraph}{Integration}{118}{chapter.6}% 
 \contentsline {paragraph}{Evaluation}{118}{chapter.6}% 
 \contentsline {paragraph}{Gradual Verification}{118}{chapter.6}% 
 \contentsline {paragraph}{Tool-Assisted Proof Development}{118}{chapter.6}% 
 \contentsline {paragraph}{Specification Inference}{118}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{118}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{118}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{118}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{119}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{119}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{119}{chapter.6}% 

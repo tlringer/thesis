@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  29 APR 2021 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  29 APR 2021 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2335,13 +2335,13 @@ raic data types. Semantics-
 ]
 chapter 6.
 (./next.tex [117]
-Overfull \hbox (5.47017pt too wide) in paragraph at lines 31--32
+Overfull \hbox (5.47017pt too wide) in paragraph at lines 36--37
 [] []\OT1/pplj/m/sc/10.95 (-20) e v a l -u -a -t i o n[] \OT1/pplj/m/n/10.95 (-
 20) re-pair chal-lenge, user stud-ies ideas (PUMP-KIN PATCH,
  []
 
 
-Overfull \hbox (1.41237pt too wide) in paragraph at lines 39--40
+Overfull \hbox (1.41237pt too wide) in paragraph at lines 44--45
 [] []\OT1/pplj/m/sc/10.95 (-20) t o o l [] a s -s i s t e d p r o o f d e -v e 
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
@@ -2450,7 +2450,7 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (144 pages, 1566812 bytes).
+Output written on uwthesis.pdf (144 pages, 1566965 bytes).
 PDF statistics:
  3153 PDF objects out of 3580 (max. 8388607)
  2934 compressed objects within 30 object streams

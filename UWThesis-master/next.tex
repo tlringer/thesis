@@ -63,7 +63,17 @@ The repair tools of the future ought to include much more automation,
 integrate smoothly into IDEs and CI tools,
 and continually improve in response to feeedback from user studies.
 
-\paragraph{More Automation} More search procedures for automatic configuration, e-graphs from PUMPKIN Pi, custom unification heuristics.
+\paragraph{More Automation}
+Proof repair tools ought to include much more automation.
+They ought to elegantly support repair over large libraries when many changes occur at once,
+while imposing little additional effort on the proof engineer.
+They ought to be simple to extend with new optimizations, all while preserving correctness.
+One promising path to these ends is integrating the \toolnamec transformation with \textit{e-graphs}~\cite{egraph1},
+a data structure %that is used in the constraint solver and rewrite system communities 
+for managing equivalences
+built with these kinds of problems in mind.
+E-graphs were recently adapted to express path equality in cubical~\cite{egraph6}---a perfect fit for the \toolnamec transformation.
+E-graphs in other proof assistants, like those in Lean~\cite{selsam:lean}, could help with similar automation for repair tools for other proof assistants.
 
 \paragraph{Smooth Integration} IDE \& CI integration, HCI for repair.
 

@@ -324,6 +324,12 @@ Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
 \newblock In {\em Proceedings of the 40th International Conference on Software
   Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
 
+\bibitem{egraph6}
+Emil~Holm Gj{\o}rup and Bas Spitters.
+\newblock Congruence closure in cubical type theory.
+\newblock In {\em Workshop on Homotopy Type Theory / Univalent Foundations},
+  2020.
+
 \bibitem{gopinath2011specification}
 Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
 \newblock Specification-based program repair using sat.
@@ -570,6 +576,12 @@ Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
 \newblock In {\em IEEE Cybersecurity Development (SecDev)}, pages 1--10, Sep.
   2018.
+
+\bibitem{egraph1}
+Charles~Gregory Nelson.
+\newblock {\em Techniques for Program Verification}.
+\newblock PhD thesis, Stanford, CA, USA, 1980.
+\newblock AAI8011683.
 
 \bibitem{nguyen2013semfix}
 Hoang Duong~Thien Nguyen, Dawei Qi, Abhik Roychoudhury, and Satish Chandra.

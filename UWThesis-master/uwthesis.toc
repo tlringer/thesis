@@ -228,6 +228,6 @@
 \contentsline {paragraph}{Gradual Verification}{119}{chapter.6}% 
 \contentsline {paragraph}{Tool-Assisted Proof Development}{119}{chapter.6}% 
 \contentsline {paragraph}{Specification Inference}{119}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{119}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{119}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{120}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{120}{chapter.6}% 
 \contentsline {paragraph}{Something Else}{120}{chapter.6}% 

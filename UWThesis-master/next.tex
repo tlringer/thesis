@@ -94,13 +94,22 @@ of proof engineers, and can serve as inspiration for the design.
 
 \subsection*{Software Engineers}
 
-Unifying theme: mixed methods verification, or the 2030 vision from Twitter thread. Some examples:
+In the future, proof engineering ought to be accessible to software engineers.
+Even with good proof engineering technologies, it is not always economically feasible or even desirable for software engineers to formally verify 
+an entire system using a proof assistant.
+This makes a strong case for \textit{mixed methods verification}:
+verification using multiple techniques while guaranteeing that their composition preserves correctness.
+I advocated for this in the survey paper~\cite{PGL-045}, and I implemented one case of this at Galois: using
+\sysnamelong to help a proof engineer interoperate between a constraint solver and Coq.
+The repair tools of the future ought to similarly integrate with tools familiar to software engineers,
+help software engineers infer specifications,
+and assist software engineers in redesiging code for verification.
 
-\paragraph{Gradual Verification} A continuum from testing to verification, tools to help with that.
-
-\paragraph{Tool-Assisted Proof Development} Tool-assisted development to follow good design principles for verificattion (James Wilcox conversation, final REPLICA takeaway).
+\paragraph{Familiar Tools} A continuum from testing to verification, tools to help with that.
 
 \paragraph{Specification Inference} Analysis to infer specs (TA1).
+
+\paragraph{Tool-Assisted Redesign} Tool-assisted development to follow good design principles for verificattion (James Wilcox conversation, final REPLICA takeaway).
 
 \subsection*{New Domains}
 

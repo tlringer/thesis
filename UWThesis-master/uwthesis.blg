@@ -9,6 +9,8 @@ Warning--I didn't find a database entry for "pons2000generalization"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
 Warning--to sort, need author or key in hints
+Warning--to sort, need author or key in proofgeneral
+Warning--to sort, need author or key in travis
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
 Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty school in egraph1
@@ -16,45 +18,45 @@ Warning--empty school in opdyke1992
 Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 135 entries,
+You've used 137 entries,
             2118 wiz_defined-function locations,
-            1288 strings with 29109 characters,
-and the built_in function-call counts, 52260 in all, are:
-= -- 5429
-> -- 2215
+            1292 strings with 29149 characters,
+and the built_in function-call counts, 52564 in all, are:
+= -- 5455
+> -- 2217
 < -- 79
-+ -- 881
++ -- 883
 - -- 734
-* -- 3372
-:= -- 8101
-add.period$ -- 457
-call.type$ -- 135
-change.case$ -- 755
+* -- 3384
+:= -- 8131
+add.period$ -- 459
+call.type$ -- 137
+change.case$ -- 761
 chr.to.int$ -- 0
-cite$ -- 144
-duplicate$ -- 2190
-empty$ -- 4159
+cite$ -- 148
+duplicate$ -- 2204
+empty$ -- 4205
 format.name$ -- 734
-if$ -- 11561
+if$ -- 11637
 int.to.chr$ -- 0
-int.to.str$ -- 135
+int.to.str$ -- 137
 missing$ -- 109
-newline$ -- 663
+newline$ -- 669
 num.names$ -- 278
-pop$ -- 926
+pop$ -- 944
 preamble$ -- 1
-purify$ -- 630
+purify$ -- 634
 quote$ -- 0
-skip$ -- 1727
+skip$ -- 1743
 stack$ -- 0
-substring$ -- 3240
-swap$ -- 749
+substring$ -- 3250
+swap$ -- 751
 text.length$ -- 79
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 532
-warning$ -- 9
+type$ -- 540
+warning$ -- 11
 while$ -- 518
-width$ -- 138
-write$ -- 1580
-(There were 13 warnings)
+width$ -- 140
+write$ -- 1592
+(There were 15 warnings)

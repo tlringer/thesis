@@ -6,6 +6,12 @@ Coq reference manual, section 8.9: Controlling automation, 2017.
 \bibitem{lean}
 Lean theorem prover, 2017.
 
+\bibitem{proofgeneral}
+Proof general, 2017.
+
+\bibitem{travis}
+Travis ci, 2017.
+
 \bibitem{usera}
 User A.
 \newblock Software foundations solution, 2017.

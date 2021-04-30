@@ -75,7 +75,14 @@ built with these kinds of problems in mind.
 E-graphs were recently adapted to express path equality in cubical~\cite{egraph6}---a perfect fit for the \toolnamec transformation.
 E-graphs in other proof assistants, like those in Lean~\cite{selsam:lean}, could help with similar automation for repair tools for other proof assistants.
 
-\paragraph{Smooth Integration} IDE \& CI integration, HCI for repair.
+\paragraph{Smooth Integration}
+Proof repair tools ought to integrate smoothly into IDEs like Proof General~\cite{proofgeneral},
+or into continuous integration (CI) systems like Travis~\cite{travis}.
+CI support hinges on the ability to break large changes into smaller pieces.
+At the level of the IDE, recording changes during development may help circumvent this problem.
+The infrastructure from the \textsc{REPLica} user study may be a good start for IDE integration.
+Program repair tools like CatchUp!~\cite{Henkel:2005:CCR:1062455.1062512} with existing IDE integration may provide inspiration
+for both infrastructure and user experience.
 
 \paragraph{User Feedback} repair challenge, user studies ideas (PUMPKIN PATCH, REPLICA, panel w/ Benjamin Pierce, QED at large). (maybe look for more ideas, this can be merged with integration if need be).
 

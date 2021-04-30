@@ -226,8 +226,8 @@
 \contentsline {paragraph}{Smooth Integration}{119}{chapter.6}% 
 \contentsline {paragraph}{User Feedback}{119}{chapter.6}% 
 \contentsline {paragraph}{Familiar Tools}{120}{chapter.6}% 
-\contentsline {paragraph}{Specification Inference}{120}{chapter.6}% 
 \contentsline {paragraph}{Tool-Assisted Redesign}{120}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{120}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{120}{chapter.6}% 
-\contentsline {paragraph}{Something Else}{120}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Robustness}{120}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{121}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{121}{chapter.6}% 
+\contentsline {paragraph}{Something Else}{121}{chapter.6}% 

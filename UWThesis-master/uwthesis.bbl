@@ -469,6 +469,11 @@ Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.
 \newblock In {\em Foundations of Software Engineering (FSE'13)}. ACM, August
   2013.
 
+\bibitem{lampropoulos2017generating}
+Leonidas Lampropoulos, Zoe Paraskevopoulou, and Benjamin~C. Pierce.
+\newblock Generating good generators for inductive relations.
+\newblock {\em Proc. ACM Program. Lang.}, 2(POPL):45:1--45:30, December 2017.
+
 \bibitem{LeGoues:2012:SSA:2337223.2337225}
 Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
 \newblock A systematic study of automated program repair: Fixing 55 out of 105
@@ -626,6 +631,14 @@ Karl Palmskog, Ahmet Celik, and Milos Gligoric.
 \newblock {piCoq}: Parallel regression proving for large-scale verification
   projects.
 \newblock In {\em ISSTA}, pages 344--355, New York, NY, USA, 2018. ACM.
+
+\bibitem{Paraskevopoulou2015}
+Zoe Paraskevopoulou, C{\u{a}}t{\u{a}}lin Hrit{\c{c}}u, Maxime D{\'e}n{\`e}s,
+  Leonidas Lampropoulos, and Benjamin~C. Pierce.
+\newblock Foundational property-based testing.
+\newblock In {\em Interactive Theorem Proving: 6th International Conference,
+  ITP 2015, Nanjing, China, August 24-27, 2015, Proceedings}, pages 325--343,
+  Cham, 2015. Springer International Publishing.
 
 \bibitem{Blanchette2013}
 Lawrence~C. Paulson and Jasmin~Christian Blanchette.

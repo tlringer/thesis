@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 13:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2341,13 +2341,13 @@ Overfull \hbox (12.60742pt too wide) in paragraph at lines 79--86
 j/m/n/10.95 (-20) Proof re-pair tools ought to in-te-grate smoothly
  []
 
-
-Overfull \hbox (1.41237pt too wide) in paragraph at lines 95--96
+[119]
+Overfull \hbox (1.41237pt too wide) in paragraph at lines 101--102
 [] []\OT1/pplj/m/sc/10.95 (-20) t o o l [] a s -s i s t e d p r o o f d e -v e 
 l -o p -m e n t[] \OT1/pplj/m/n/10.95 (-20) Tool-assisted de-vel-op-ment
  []
 
-[119])) (./uwthesis.ind [120]
+)) (./uwthesis.ind [120]
 Overfull \hbox (1.024pt too wide) in paragraph at lines 5--7
 []| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []7[], []95[], []99[],
  []
@@ -2450,7 +2450,7 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (146 pages, 1574819 bytes).
+Output written on uwthesis.pdf (146 pages, 1575057 bytes).
 PDF statistics:
  3185 PDF objects out of 3580 (max. 8388607)
  2964 compressed objects within 30 object streams

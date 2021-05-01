@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 MAY 2021 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2057,7 +2057,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 189.
-<maintenance/fig/patch.png, id=594, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=597, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
@@ -2101,7 +2101,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [30] [31] [32] [33] [34] [35]) (./repair/differencing.tex [36] [37]
-<repair/nat_ind.pdf, id=900, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=903, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2164,7 +2164,7 @@ LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
  26.
 
 [64]
-<often/workflowa.pdf, id=1567, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1570, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2343,7 +2343,7 @@ lj/m/n/10.95 (-20) Proof re-pair will ac-ces-si-ble across all proof
 
 ]
 Overfull \hbox (1.024pt too wide) in paragraph at lines 5--7
-[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []7[], []95[], []99[],
+[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []8[], []95[], []99[],
  []
 
 
@@ -2442,10 +2442,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (149 pages, 1585330 bytes).
+Output written on uwthesis.pdf (149 pages, 1586433 bytes).
 PDF statistics:
- 3225 PDF objects out of 3580 (max. 8388607)
- 3000 compressed objects within 30 object streams
+ 3229 PDF objects out of 3580 (max. 8388607)
+ 3003 compressed objects within 31 object streams
  1483 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

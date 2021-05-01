@@ -82,9 +82,19 @@
 
 \KAuxFileAt {uwthesis.tex}{72}
 
-\KAuxFileAt {uwthesis.tex}{142}
+\KAuxFileAt {uwthesis.tex}{73}
+
+\KAuxFileAt {uwthesis.tex}{74}
+\KAuxAutoref {default}{base}{no reason to believe}
+
+\KAuxFileAt {uwthesis.tex}{75}
+
+\KAuxFileAt {uwthesis.tex}{145}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
+
+\KAuxFileAt {intro.tex}{35}
+\KAuxAutorefTarget {default}{base}{no reason to believe}
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
 
@@ -94,6 +104,8 @@
 
 \KAuxFileAt {guide.tex}{14}
 \KAuxAutorefTarget {default}{base}{Karl Palmskog}
+\KAuxDeclaredScopeTag {chapt:mot}
+\KAuxNewLinkScopetagInstance {chapt:mot}{document}
 \KAuxDeclaredScopeTag {sec:mot-dev}
 \KAuxNewLinkScopetagInstance {sec:mot-dev}{document}
 

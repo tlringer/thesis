@@ -12,8 +12,8 @@
 What would it take to empower programmers of all skill levels across all domains to formally prove
 the absence of costly or dangerous bugs in software systems---that is, to formally \textit{verify} them?
 
-Verification has already come a long way toward this since its inception,
-especially when it comes to the scale of systems that can be verified.
+Verification has already come a long way toward this since its inception.
+This is especially true when it comes to the scale of systems that can be verified.
 The seL4~\cite{Klein2009} verified operating system (OS) microkernel, for example,
 is the effort of a team of proof engineers spanning more than
 a million lines of proof, costing over 20 person-years.
@@ -32,18 +32,18 @@ or researchers have become more fanatical. Unfortunately, not all has changed (e
 \begin{quote}
 But real-life programs need to 
 be maintained and modified. 
-There is \textit{no reason to believe} that verifying a modified program is any 
+There is \intro{no reason to believe} that verifying a modified program is any 
 easier than verifying the original the 
 first time around.
 \end{quote}
-As we will soon see, this remains so difficult that sometimes, even experts give up in the face of change. % TODO cite section
+This remains so difficult that sometimes, even experts give up in the face of change (Section~\ref{sec:irl}).
 
 This thesis aims to change that by taking advantage of a missed opportunity: tools for developing verified systems
 have no understanding of how these systems evolve over time, so they miss out on crucial information.
 This thesis introduces a new class of verification tools called \textit{proof repair} tools.
 Proof repair tools understand how software systems evolve, and use the crucial information that evolution carries
 to automatically evolve proofs about those systems.
-This gives us reason to believe.
+This gives us \kl{reason to believe}.
 
 \section{Thesis}
 
@@ -51,16 +51,16 @@ This gives us reason to believe.
 Proof repair falls under the umbrella of \textit{proof engineering}: the technologies that make it easier
 to develop and maintain verified systems.
 Much like software engineering scales programming to large systems, so proof engineering scales verification to large systems. 
-In recent years, proof engineers have verified OS microkernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{TODO}, distributed systems~\cite{TODO}, constraint solvers~\cite{TODO}, web browser kernels~\cite{TODO}, compilers~\cite{Leroy:POPL06, Leroy2009}, file systems~\cite{TODO}, and even a quantum optimizer~\cite{TODO}.
-As we will soon see, practitioners have found these verified systems to be more robust and secure in deployment. % TODO cite section
+In recent years, proof engineers have verified OS microkernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{pmlr-v70-selsam17a}, distributed systems~\cite{TODO}, constraint solvers~\cite{TODO}, web browser kernels~\cite{TODO}, compilers~\cite{Leroy:POPL06, Leroy2009}, file systems~\cite{TODO}, and even a quantum optimizer~\cite{TODO}.
+Practitioners have found these verified systems to be more robust and secure in deployment (Chapter~\ref{chapt:mot}). % TODO cite section
 % TODO maybe include the Why Proof Engineering Matters from QED at Large in Chapter 2 somewhere. Maybe move this too.
 
 Proof engineering focuses in particular on verified systems that have been
-developed using special tools called \textit{proof assistants} or interactive theorem provers (ITPs).
+developed using special tools called \textit{proof assistants}.
 Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
 HOL Light~\cite{hollight}, and Lean~\cite{lean}.
 The proof assistant that I focus on in this thesis will be the Coq proof assistant.
-A discussion of how this work carries over to other proof assistants is in Section~\ref{sec:related}.
+A discussion of how this work carries over to other proof assistants is in Chapter~\ref{chapt:conclusions}.
 
 To develop a verified system using a proof assistant like Coq, the proof engineer does three things:
 
@@ -177,12 +177,11 @@ Toward that end, five notable features include:
 More details and other features are in the corresponding chapters. % TODO link to those chapters
 
 \paragraph{Case Studies}
-The case studies show that \sysnamelong can save work for proof engineers relative to reference manual repairs in practical use cases. % TODO link to corresponding chapters instead
-(This paragraph is not done yet, but not really needed to understand flow.)
-
-% Dan: It might be good either in 1 or in both 3 and 4 to lay out the key /results/ -- you have _design_ of the transformation, 
-% the highly non-trivial _implementation_ in Coq in a way that doesn't extend the TCB, and you have substantial case studies to _evaluate_.
-% You have a bit of formalism and metatheory, but that is more for exposition than for specific results (am I right?) -- you are 
-% guided by the theory to build tools that actually work in this unforgiving domain -- "hacks won't work".
+The case studies show that \sysnamelong can save work for proof engineers relative to 
+reference manual repairs in practical use cases. % TODO link to corresponding chapters instead
+In particular, the case studies in Chapter~\ref{ch:example} show retroactively that a prototype implementation of proof repair
+by example could have saved work for proof engineers on major proof developments.
+The case studies in Chapter~\ref{chapt:pi} show that proof repair across type equivalences can save
+and in fact has already saved work for proof engineers in practical use cases.
 
 \input{guide}

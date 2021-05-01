@@ -712,6 +712,14 @@ Daniel Selsam and Leonardo de~Moura.
   Reasoning: 8th International Joint Conference}, IJCAR 2016, pages 99--115,
   Cham, 2016. Springer International Publishing.
 
+\bibitem{pmlr-v70-selsam17a}
+Daniel Selsam, Percy Liang, and David~L. Dill.
+\newblock Developing bug-free machine learning systems with formal mathematics.
+\newblock In Doina Precup and Yee~Whye Teh, editors, {\em Proceedings of the
+  34th International Conference on Machine Learning}, volume~70 of {\em
+  Proceedings of Machine Learning Research}, pages 3047--3056. PMLR, 06--11 Aug
+  2017.
+
 \bibitem{sozeau:equations}
 Matthieu Sozeau.
 \newblock Equations: A dependent pattern-matching compiler.

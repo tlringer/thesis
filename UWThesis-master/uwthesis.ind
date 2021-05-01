@@ -1,23 +1,23 @@
 \begin{theindex}
 
   \item Collaborators
-    \subitem Karl Palmskog, \hyperpage{8}, \hyperpage{111}
-    \subitem Nathaniel Yazdani, \hyperpage{8}, \hyperpage{95}, 
-		\hyperpage{99, 100}
-    \subitem RanDair Porter, \hyperpage{8}, \hyperpage{92}, 
-		\hyperpage{94}, \hyperpage{118}
+    \subitem Karl Palmskog, \hyperpage{9}, \hyperpage{113}
+    \subitem Nathaniel Yazdani, \hyperpage{9}, \hyperpage{97}, 
+		\hyperpage{101, 102}
+    \subitem RanDair Porter, \hyperpage{9}, \hyperpage{94}, 
+		\hyperpage{96}, \hyperpage{120}
   \item Concepts
-    \subitem Algebraic Ornaments, \hyperpage{76}, \hyperpage{95}
+    \subitem Algebraic Ornaments, \hyperpage{78}, \hyperpage{97}
   \item Conventions
-    \subitem Primitive Eliminators, \hyperpage{17}, \hyperpage{19, 20}, 
-		\hyperpage{71}, \hyperpage{88, 89}
+    \subitem Primitive Eliminators, \hyperpage{19}, \hyperpage{21, 22}, 
+		\hyperpage{73}, \hyperpage{90, 91}
 
   \indexspace
 
   \item Languages
-    \subitem Gallina, \hyperpage{10--12}, \hyperpage{14}, 
-		\hyperpage{18}, \hyperpage{64}, \hyperpage{106}
-    \subitem Ltac, \hyperpage{11, 12}
+    \subitem Gallina, \hyperpage{12--14}, \hyperpage{16}, 
+		\hyperpage{20}, \hyperpage{66}, \hyperpage{108}
+    \subitem Ltac, \hyperpage{13, 14}
 
   \indexspace
 
@@ -27,7 +27,7 @@
   \indexspace
 
   \item Type Theories
-    \subitem Calculus of Inductive Constructions, \hyperpage{14}, 
-		\hyperpage{18}, \hyperpage{71}, \hyperpage{110}
+    \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
+		\hyperpage{20}, \hyperpage{73}, \hyperpage{112}
 
 \end{theindex}

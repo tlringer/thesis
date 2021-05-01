@@ -7,6 +7,10 @@
 - write abstract
 - dedupe citations
 - thesis refinement or clarification
+- pronoun check
+- space hack removal
+- note about name of DEVOID somewhere
+- paragraph style: add periods
 
 # Chapter 1
 

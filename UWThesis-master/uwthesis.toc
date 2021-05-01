@@ -16,6 +16,11 @@
 \contentsline {paragraph}{Implementation}{6}{Item.6}% 
 \contentsline {paragraph}{Case Studies}{7}{Item.11}% 
 \contentsline {section}{\numberline {1.4}Reading Guide}{7}{section.1.4}% 
+\contentsline {paragraph}{Adapting Proof Automation to Adapt Proofs}{8}{section.1.4}% 
+\contentsline {paragraph}{Proof Repair Across Type Equivalences}{8}{section.1.4}% 
+\contentsline {paragraph}{Ornaments for Proof Reuse in Coq}{8}{section.1.4}% 
+\contentsline {paragraph}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}{8}{section.1.4}% 
+\contentsline {paragraph}{QED at Large: A Survey of Engineering of Formally Verified Software}{8}{section.1.4}% 
 \contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Motivating Proof Repair}}{9}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Proof Development}{10}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}The Workflow}{11}{subsection.2.1.1}% 

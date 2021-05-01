@@ -681,9 +681,37 @@ Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
 
+\bibitem{Ringer2021}
+Talia Ringer, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman.
+\newblock Proof repair across type equivalences.
+\newblock In {\em Proceedings of the 42nd ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI 2021, 2021.
+
+\bibitem{replica}
+Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
+\newblock Replica: Repl instrumentation for coq analysis.
+\newblock In {\em Proceedings of the 9th ACM SIGPLAN International Conference
+  on Certified Programs and Proofs}, CPP 2020, page 99–113, New York, NY,
+  USA, 2020. Association for Computing Machinery.
+
 \bibitem{pumpkin-git}
 Talia Ringer and Nathaniel Yazdani.
 \newblock Pumpkin-git, 2018.
+
+\bibitem{ringer2018adapting}
+Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
+\newblock Adapting proof automation to adapt proofs.
+\newblock In {\em Proceedings of the 7th ACM SIGPLAN International Conference
+  on Certified Programs and Proofs}, CPP 2018, pages 115--129, 2018.
+
+\bibitem{Ringer2019}
+Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
+\newblock {Ornaments for Proof Reuse in Coq}.
+\newblock In John Harrison, John O'Leary, and Andrew Tolmach, editors, {\em
+  10th International Conference on Interactive Theorem Proving (ITP 2019)},
+  volume 141 of {\em Leibniz International Proceedings in Informatics
+  (LIPIcs)}, pages 26:1--26:19, Dagstuhl, Germany, 2019. Schloss
+  Dagstuhl--Leibniz-Zentrum fuer Informatik.
 
 \bibitem{robert2018}
 Valentin Robert.

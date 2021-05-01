@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  30 APR 2021 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1992,12 +1992,18 @@ s in re-sponse to changes
 
 LaTeX Warning: Citation `TODO' on page 6 undefined on input line 164.
 
-[6] (./guide.tex)) (./motivating.tex [7] [8
+[6] (./guide.tex [7]
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[] []\OT1/pplj/m/sc/10.95 (-8) q e d a t l a r g e : a s u r -v e y o f e n -g 
+i -n e e r -i n g o f f o r -m a l l y v e r -
+ []
 
-
-]
+)) (./motivating.tex [8]
 chapter 2.
-[9] (./development.tex [10] (./workflow.tex
+[9
+
+
+] (./development.tex [10] (./workflow.tex
 
 LaTeX Warning: Citation `TODO' on page 11 undefined on input line 20.
 
@@ -2051,7 +2057,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 189.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 189.
-<maintenance/fig/patch.png, id=585, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=594, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
@@ -2095,7 +2101,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [30] [31] [32] [33] [34] [35]) (./repair/differencing.tex [36] [37]
-<repair/nat_ind.pdf, id=891, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=900, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2158,7 +2164,7 @@ LaTeX Warning: Reference `pi-implementation' on page 64 undefined on input line
  26.
 
 [64]
-<often/workflowa.pdf, id=1558, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1567, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2255,12 +2261,6 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 Overfull \hbox (283.1196pt too wide) in paragraph at lines 19--62
 [][]
  []
-
-
-LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 62.
-
-
-LaTeX Warning: Citation `Ringer2019' on page 95 undefined on input line 62.
 
 (./often/replica.tex) (./often/replica.tex)
 
@@ -2384,12 +2384,12 @@ LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 681.
 
 [134]
-Underfull \hbox (badness 1184) in paragraph at lines 702--707
+Underfull \hbox (badness 1184) in paragraph at lines 730--735
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[135] [136]) [137]
+[135] [136] [137]) [138]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2417,10 +2417,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 539.
  ) 
 Here is how much of TeX's memory you used:
- 50307 strings out of 492609
- 1013039 string characters out of 6129033
- 1298819 words of memory out of 5000000
- 50991 multiletter control sequences out of 15000+600000
+ 50317 strings out of 492609
+ 1013180 string characters out of 6129033
+ 1298924 words of memory out of 5000000
+ 50996 multiletter control sequences out of 15000+600000
  636165 words of font info for 837 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2442,10 +2442,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (148 pages, 1581540 bytes).
+Output written on uwthesis.pdf (149 pages, 1585330 bytes).
 PDF statistics:
- 3208 PDF objects out of 3580 (max. 8388607)
- 2985 compressed objects within 30 object streams
- 1478 named destinations out of 1728 (max. 500000)
+ 3225 PDF objects out of 3580 (max. 8388607)
+ 3000 compressed objects within 30 object streams
+ 1483 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

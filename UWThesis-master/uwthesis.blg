@@ -4,7 +4,6 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
-Warning--I didn't find a database entry for "Ringer2019"
 Warning--I didn't find a database entry for "pons2000generalization"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in lean
@@ -18,45 +17,45 @@ Warning--empty school in opdyke1992
 Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 140 entries,
+You've used 144 entries,
             2118 wiz_defined-function locations,
-            1311 strings with 29821 characters,
-and the built_in function-call counts, 54110 in all, are:
-= -- 5615
-> -- 2289
-< -- 82
-+ -- 910
-- -- 758
-* -- 3505
-:= -- 8362
-add.period$ -- 470
-call.type$ -- 140
-change.case$ -- 781
+            1337 strings with 30828 characters,
+and the built_in function-call counts, 56173 in all, are:
+= -- 5821
+> -- 2397
+< -- 86
++ -- 951
+- -- 795
+* -- 3647
+:= -- 8668
+add.period$ -- 484
+call.type$ -- 144
+change.case$ -- 810
 chr.to.int$ -- 0
-cite$ -- 151
-duplicate$ -- 2264
-empty$ -- 4320
-format.name$ -- 758
-if$ -- 11977
+cite$ -- 155
+duplicate$ -- 2358
+empty$ -- 4469
+format.name$ -- 795
+if$ -- 12441
 int.to.chr$ -- 0
-int.to.str$ -- 140
-missing$ -- 112
-newline$ -- 684
-num.names$ -- 286
-pop$ -- 965
+int.to.str$ -- 144
+missing$ -- 116
+newline$ -- 704
+num.names$ -- 296
+pop$ -- 999
 preamble$ -- 1
-purify$ -- 651
+purify$ -- 676
 quote$ -- 0
-skip$ -- 1791
+skip$ -- 1871
 stack$ -- 0
-substring$ -- 3371
-swap$ -- 777
-text.length$ -- 82
+substring$ -- 3482
+swap$ -- 822
+text.length$ -- 86
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 552
+type$ -- 568
 warning$ -- 11
-while$ -- 533
-width$ -- 143
-write$ -- 1629
-(There were 15 warnings)
+while$ -- 549
+width$ -- 147
+write$ -- 1680
+(There were 14 warnings)

@@ -161,6 +161,10 @@
 \KAuxNewLinkScopetagInstance {fig:patch}{document}
 \KAuxDeclaredScopeTag {sec:mot-rep}
 \KAuxNewLinkScopetagInstance {sec:mot-rep}{document}
+\KAuxDeclaredScopeTag {sec:how}
+\KAuxNewLinkScopetagInstance {sec:how}{document}
+\KAuxDeclaredScopeTag {sec:infocert}
+\KAuxNewLinkScopetagInstance {sec:infocert}{document}
 \KAuxDeclaredScopeTag {ch:example}
 \KAuxNewLinkScopetagInstance {ch:example}{document}
 \KAuxDeclaredScopeTag {sec:patch-motivating}

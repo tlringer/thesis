@@ -40,6 +40,8 @@
 \contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{25}{subsection.2.2.2}% 
 \contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{25}{subsection.2.2.3}% 
 \contentsline {section}{\numberline {2.3}Proof Repair}{26}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}How Proof Repair Works}{27}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}The Key to Proof Repair}{27}{subsection.2.3.2}% 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{29}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Motivating Example}{30}{section.3.1}% 
 \contentsline {paragraph}{Without Proof Repair}{30}{section.3.1}% 

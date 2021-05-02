@@ -1,10 +1,16 @@
 \section{Proof Repair}
 \label{sec:mot-rep}
 
-(Still outline text, since I'm getting too antsy and feel like I want to move to the technical chapters again for a bit, but I'm going to explain the parallel structure of the technical
-chapters at the bottom of this section, so that you can understand what I'll be attempting and how this will flow in.)
+\textit{Proof repair} is a new kind of proof automation that automatically fixes broken proofs in response to changes.
+In contrast with traditional proof automation, proof repair views proofs as fluid entities.
+The name of proof repair is inspired by program repair~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526},
+or automatically fixing bugs in programs.
+But my proof repair tools work differently from program repair tools, 
+using a combination of semantic differencing and program transformations (Section~\ref{sec:how}).
+All of this happens over low-level proof terms in \kl{Gallina}---and this is the key to success (Section~\ref{sec:infocert}).
 
-Name inspired by program repair, but quite different as we'll soon see.
+\subsection{How Proof Repair Works}
+\label{sec:how}
 
 Recall thesis: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 
@@ -16,12 +22,26 @@ The transformations then generalize that information to a more general fix for o
 
 The details of applying the fix vary by the kind of fix, as we'll soon see.
 
+\subsection{The Key to Proof Repair}
+\label{sec:infocert}
+
 Crucially, all of this happens over the proof terms in this rich language we saw in the Development section. This is kind of the key insight that makes it all work.
 
 This is great because this language gives us so much information and certainty. This helps us with two of the biggest challenges from 
 program repair. (generals related work---but can just refer to the related work section for more information here)
 
 But it's also challenging because this language is so unforgiving. Plus, in the end, we need these tactic proofs, not just proof terms. So we can't just reuse program repair tools. (generals related work)
+
+The way that proof repair works is quite different from the way that program repair works.
+That is, many program repair tools work by running tests or the programs themselves and looking at the output,
+and many use fitness functions evaluate candidate patches that are almost correct.
+But there are not natural analogues of this in the world of proofs:
+there are often no tests, it is not possible to just run the proof, and there is not a natural 
+fitness function that describes what it means for a patch to a proof to be almost correct.
+
+In addition, proof engineers write proofs in this high-level language of tactics.
+Each of these tactics is really a search procedure for a proof term, so it is not straightforward to apply
+typical program repair techniques to fix a blah blah blah.
 
 So next two chapters will show two tools in my tool suite that work this way, how they handle these challenges, and how they save work.
 They will have parallel organization (informal for now but hopefully gives you a sense of what I'm thinking):

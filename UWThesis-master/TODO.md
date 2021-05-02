@@ -22,6 +22,7 @@
 # Chapter 2
 
 - proof repair section
+- missing parts of other sections
 - revise
 
 # Chapter 3

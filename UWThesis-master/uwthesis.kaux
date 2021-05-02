@@ -239,6 +239,8 @@
 \KAuxNewLinkScopetagInstance {fig:divide}{document}
 \KAuxDeclaredScopeTag {sec:coq}
 \KAuxNewLinkScopetagInstance {sec:coq}{document}
+\KAuxDeclaredScopeTag {sec:pumpkin-concl}
+\KAuxNewLinkScopetagInstance {sec:pumpkin-concl}{document}
 \KAuxDeclaredScopeTag {chapt:pi}
 \KAuxNewLinkScopetagInstance {chapt:pi}{document}
 \KAuxDeclaredScopeTag {sec:overview}
@@ -344,6 +346,8 @@
 \KAuxNewLinkScopetagInstance {tab:size1}{document}
 \KAuxDeclaredScopeTag {tab:size2}
 \KAuxNewLinkScopetagInstance {tab:size2}{document}
+\KAuxDeclaredScopeTag {sec:pi-concl}
+\KAuxNewLinkScopetagInstance {sec:pi-concl}{document}
 \KAuxDeclaredScopeTag {sec:related}
 \KAuxNewLinkScopetagInstance {sec:related}{document}
 \KAuxDeclaredScopeTag {sec:proofeng}

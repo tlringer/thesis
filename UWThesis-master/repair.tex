@@ -12,48 +12,79 @@ All of this happens over low-level proof terms in \kl{Gallina}---and this is the
 \subsection{How Proof Repair Works}
 \label{sec:how}
 
-Recall thesis: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+Recall my thesis:
 
-Proof repair accomplishes this using a combination of differencing and program transformations.
+\begin{quote}
+\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+\end{quote}
+My proof repair tools are the tools that automate this.
+These tools accomplish this using a combination of differencing and program transformations.
+\textit{Differencing} compares the old and new version of the program, specification, or proof that has changed,
+and from that extracts the information carried by the change.
+The \textit{transformations} then generalize that information and, in some cases, apply it to fix other proofs broken by the same change.
+The details of all of this vary by the kind of breaking change,
+as I will show you in Chapters~\ref{ch:example} and~\ref{chapt:pi}.
 
-Differencing extracts the information from the change in program, specification, or proof.
+% TODO an example would be nice here
 
-The transformations then generalize that information to a more general fix for other proofs broken by the same change.
-
-The details of applying the fix vary by the kind of fix, as we'll soon see.
-
-\subsection{The Key to Proof Repair}
-\label{sec:infocert}
-
-Crucially, all of this happens over the proof terms in this rich language we saw in the Development section. This is kind of the key insight that makes it all work.
-
-This is great because this language gives us so much information and certainty. This helps us with two of the biggest challenges from 
-program repair. (generals related work---but can just refer to the related work section for more information here)
-
-But it's also challenging because this language is so unforgiving. Plus, in the end, we need these tactic proofs, not just proof terms. So we can't just reuse program repair tools. (generals related work)
-
-The way that proof repair works is quite different from the way that program repair works.
-That is, many program repair tools work by running tests or the programs themselves and looking at the output,
-and many use fitness functions evaluate candidate patches that are almost correct.
+The way that this works is quite different from the way that program repair tools typically work.
+A number of program repair tools work by running tests or the programs themselves,
+and many use fitness functions to identify candidate patches that 
+are almost correct~\cite{Monperrus:2018:ASR:3177787.3105906}. % TODO check this
 But there are not natural analogues of this in the world of proofs:
 there are often no tests, it is not possible to just run the proof, and there is not a natural 
 fitness function that describes what it means for a patch to a proof to be almost correct.
 
-In addition, proof engineers write proofs in this high-level language of tactics.
+In addition, proof engineers write proofs in this high-level language of tactics, \kl{Ltac}.
 Each of these tactics is really a search procedure for a proof term, so it is not straightforward to apply
-typical program repair techniques to fix a blah blah blah.
+typical program repair techniques to identify the next search procedure when a proof breaks.
+Instead, proof repair tools can look down at the low-level language of proof terms, \kl{Gallina}.
+But this is difficult: the type theory beneath Gallina is so rich that Gallina itself is quite unforgiving.
+That is, even very small changes can produce proof terms that no longer type check.
+But---and this is the key to proof repair---the unforgiving nature of Gallina actually turns out to be \textit{a good thing}.
 
-So next two chapters will show two tools in my tool suite that work this way, how they handle these challenges, and how they save work.
-They will have parallel organization (informal for now but hopefully gives you a sense of what I'm thinking):
+\subsection{The Key to Proof Repair}
+\label{sec:infocert}
 
-\begin{enumerate}
-\item \textbf{Motivating Example}: an example change that motivates the class of repairs the tool supports.
-\item \textbf{Approach}: a specification for the repair tool, including what kind of changes it supports, where it looks to extract \& generalize changes, what the extracted
-\& generalized change actually is, and (for the second tool) how it applies those changes. expected inputs and outputs, plus fit to thesis frame.
-\item \textbf{Differencing}: design of differencing algorithms.
-\item \textbf{Transformation}: design of proof term transformations.
-\item \textbf{Implementation}: how this is actually implemented for Coq.
-\item \textbf{Results}: proof that this can save work relative to reference manual repairs.
-\item \textbf{Conclusion}: conclusion, limitations, lessons.
-\end{enumerate}
+My proof repair tools operate over proof terms in Gallina.
+In terms of the approach, what this means is that differencing operates over Gallina terms,
+and is guided by their semantics to narrow down the search space---in other words,
+it is a kind of \textit{semantic differencing}.
+The program transformations then use that diff to transform some proof term to a more general patch (in Chapter~\ref{ch:example})
+or the patched proof itself (in Chapter~\ref{chapt:pi})---in other words,
+they are \textit{proof term transformations}.
+
+This approach circumvents two of the biggest challenges in program repair:
+gathering enough information to efficiently search for a patch,
+and knowing when that patch is actually correct (Section~\ref{sec:repair}).
+Thanks to the rich type theory beneath Gallina, changes in programs, specifications, and proofs
+carry \textit{so much information} that my tools can use to search for a patch,
+and proofs provide \textit{so much certainty} that the patch my tools find is correct in the end.
+This is why proof repair works.
+
+But this approach presents its own challenges,
+like how to deal with the unforgiving nature of proof terms,
+and how to produce friendly proof scripts in the end.
+So Chapters~\ref{ch:example} and~\ref{chapt:pi} will show two tools that instantiate this approach,
+and describe how these tools tackle these challenges.
+Each chapter will introduce a different tool that supports a different class of changes,
+and will follow a parallel structure:
+
+\begin{itemize}
+\item \textbf{Motivating Example} (Sections~\ref{sec:patch-motivating} and~\ref{sec:overview}):
+an example that motivates the supported class of changes. 
+\item \textbf{Approach} (Sections~\ref{sec:pumpkin-approach} and~\ref{sec:pi-approach}):
+a high-level description of how the approach in Section~\ref{sec:how} is instantiated.
+\item \textbf{Differencing} (Sections~\ref{sec:pumpkin-diff} and~\ref{sec:pi-diff}):
+detailed explanations of the corresponding differencing algorithms.
+\item \textbf{Transformations} (Sections~\ref{sec:pumpkin-trans} and~\ref{sec:pi-trans}):
+detailed explanations of the corresponding proof term transformations.
+\item \textbf{Implementation} (Sections~\ref{sec:pumpkin-impl} and~\ref{sec:pi-implementation}):
+description of the implementation of the approach as a tool for Coq.
+\item \textbf{Results} (Sections~\ref{sec:pumpkin-results} and~\ref{sec:pi-results}):
+results from case studies and experiments that show the tool can save work for proof engineers.
+\item \textbf{Conclusion} (Sections~\ref{sec:pumpkin-concl} and~\ref{sec:pi-concl}):
+conclusion and reflection on how the thesis is validated so far.
+\end{itemize}
+Enjoy.
 

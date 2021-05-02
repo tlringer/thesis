@@ -11,6 +11,8 @@
 - space hack removal
 - note about name of DEVOID somewhere
 - paragraph style: add periods
+- plugin infrastructure somewhere
+- TCB somewhere
 
 # Chapter 1
 
@@ -23,6 +25,7 @@
 
 - proof repair section
 - missing parts of other sections
+- example in proof repair section (nice to have)
 - revise
 
 # Chapter 3

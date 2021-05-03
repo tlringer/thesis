@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 MAY 2021 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  3 MAY 2021 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1992,20 +1992,20 @@ s in re-sponse to changes
 
 LaTeX Warning: Citation `TODO' on page 6 undefined on input line 164.
 
-[6] (./guide.tex [7]
+[6] (./guide.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 29.
+(Font)              scaled to size 9.37807pt on input line 17.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 29.
+(Font)              scaled to size 7.29405pt on input line 17.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 29.
+(Font)              scaled to size 5.21004pt on input line 17.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 29.
+(Font)              scaled to size 9.37807pt on input line 17.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 29.
+(Font)              scaled to size 7.29405pt on input line 17.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 29.
- [8])) (./motivating.tex [9] [10
+(Font)              scaled to size 5.21004pt on input line 17.
+ [7] [8])) (./motivating.tex [9] [10
 
 
 ]
@@ -2052,7 +2052,7 @@ lj/m/n/10.95 (-20) Our spec-i-fi-ca-tion of []
  []
 
 [23] [24]
-<maintenance/fig/patch.png, id=636, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=646, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 192.
@@ -2096,7 +2096,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [32] [33] [34] [35] [36] [37]) (./repair/differencing.tex [38] [39]
-<repair/nat_ind.pdf, id=969, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=979, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2159,7 +2159,7 @@ LaTeX Warning: Reference `pi-implementation' on page 66 undefined on input line
  26.
 
 [66]
-<often/workflowa.pdf, id=1634, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1644, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2437,10 +2437,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (151 pages, 1593529 bytes).
+Output written on uwthesis.pdf (151 pages, 1595105 bytes).
 PDF statistics:
- 3293 PDF objects out of 3580 (max. 8388607)
- 3065 compressed objects within 31 object streams
+ 3303 PDF objects out of 3580 (max. 8388607)
+ 3075 compressed objects within 31 object streams
  1481 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

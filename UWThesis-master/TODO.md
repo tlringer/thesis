@@ -6,7 +6,7 @@
 - finish acknowledgments
 - write abstract
 - dedupe citations
-- thesis refinement or clarification
+- thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
 - pronoun check
 - space hack removal
 - note about name of DEVOID somewhere
@@ -16,14 +16,13 @@
 
 # Chapter 1
 
-- final section
+- autorship statements
 - missing citations
 - missing workflow figure
 - revise
 
 # Chapter 2
 
-- proof repair section
 - missing parts of other sections
 - example in proof repair section (nice to have)
 - revise

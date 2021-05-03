@@ -98,11 +98,11 @@
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
 
-\KAuxFileAt {guide.tex}{68}
+\KAuxFileAt {guide.tex}{77}
 \KAuxAutorefTarget {default}{base}{RanDair Porter}
 \KAuxAutorefTarget {default}{base}{Nathaniel Yazdani}
 
-\KAuxFileAt {guide.tex}{69}
+\KAuxFileAt {guide.tex}{78}
 \KAuxAutorefTarget {default}{base}{Karl Palmskog}
 \KAuxDeclaredScopeTag {chapt:mot}
 \KAuxNewLinkScopetagInstance {chapt:mot}{document}

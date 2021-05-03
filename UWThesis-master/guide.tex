@@ -2,22 +2,31 @@
 
 % Dan: Instead, I strongly advocate an explicit section in Chapter 1 that lays this all out for the reader: what prior publications are being leaned on, where does text from those reappear, and most importantly, where -- in explicit sections of forthcoming chapters -- are expanded explanations and additional data.  Voila, your thesis is now both a self-contained coherent document and a useful 'appendix' for people who have already read large parts of what is to follow.
 
-How to read this thesis.
-Chapters and sections.
+This thesis is divided into six chapters; chapters are further divided into sections.
+After motivating proof repair (Chapter~\ref{chapt:mot}),
+this thesis describes two different kinds of proof repair that validate the thesis (Chapters~\ref{ch:example} and~\ref{chapt:pi}).
+It concludes with a discussion of related work (Chapter~\ref{sec:related}),
+followed by a reflection on the thesis and a description of how proof repair can inform the next era of 
+proof engineering (Chapter~\ref{chapt:conclusions}).
 
-Expected reader background \& where to find more info.
+\subsubsection*{Expected Background}
 
-Segue.
+This thesis assumes some background in type theory and proof engineering.
+I strongly encourage readers of all backgrounds who would like more context to better understand this thesis
+look to my survey paper on proof engineering~\cite{PGL-045}, which includes a detailed list of resources
+and is available for free on my website.\footnote{\url{https://dependenttyp.es}}
+I recommend that readers with less background on proof engineering, dependent type theory, or the Coq proof assistant
+take time to digest Chapter~\ref{chapt:mot} before moving on---though I recommend that even Coq experts read Chapter~\ref{chapt:mot}.
+Chapters~\ref{ch:example} and~\ref{chapt:pi} get rather technical, so it is normal not to understand every detail,
+though you may always contact me with questions.
 
-\subsubsection*{Map}
-
-This thesis centers material from two previously published papers:
+While this thesis is self-contained, it centers material from two previously published papers:
 
 \begin{itemize}
 \item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. Adapting Proof Automation to Adapt Proofs~\cite{ringer2018adapting}. CPP 2018.
 \item \textbf{Talia Ringer}, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman. Proof Repair Across Type Equivalences~\cite{Ringer2021}. PLDI 2021.
 \end{itemize}
-It sprinkles in material from three other papers:
+It also includes material from three other papers:
 
 \begin{itemize}
 \item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. Ornaments for Proof Reuse in Coq~\cite{Ringer2019}. ITP 2019.
@@ -26,7 +35,7 @@ It sprinkles in material from three other papers:
 \end{itemize}
 Below is a map from each of these papers to corresponding parts of the thesis,
 along with an explanation of what is new in this thesis and what is omitted.
-All of these papers can be found for free on my website.\footnote{\url{https://dependenttyp.es}}
+All of these papers can be found for free on my website.
 
 \paragraph{Adapting Proof Automation to Adapt Proofs}
 The bulk of Chapter~\ref{ch:example} comes from this paper,

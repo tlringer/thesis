@@ -85,11 +85,18 @@
 \KAuxFileAt {uwthesis.tex}{73}
 
 \KAuxFileAt {uwthesis.tex}{74}
-\KAuxAutoref {default}{base}{no reason to believe}
+\KAuxAutoref {default}{base}{Alex Sanchez-Stern}
 
 \KAuxFileAt {uwthesis.tex}{75}
 
-\KAuxFileAt {uwthesis.tex}{145}
+\KAuxFileAt {uwthesis.tex}{76}
+
+\KAuxFileAt {uwthesis.tex}{77}
+\KAuxAutoref {default}{base}{no reason to believe}
+
+\KAuxFileAt {uwthesis.tex}{78}
+
+\KAuxFileAt {uwthesis.tex}{148}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 
@@ -98,11 +105,16 @@
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
 
-\KAuxFileAt {guide.tex}{77}
-\KAuxAutorefTarget {default}{base}{RanDair Porter}
+\KAuxFileAt {guide.tex}{81}
 \KAuxAutorefTarget {default}{base}{Nathaniel Yazdani}
 
-\KAuxFileAt {guide.tex}{78}
+\KAuxFileAt {guide.tex}{96}
+\KAuxAutorefTarget {default}{base}{RanDair Porter}
+
+\KAuxFileAt {guide.tex}{103}
+\KAuxAutorefTarget {default}{base}{Alex Sanchez-Stern}
+
+\KAuxFileAt {guide.tex}{110}
 \KAuxAutorefTarget {default}{base}{Karl Palmskog}
 \KAuxDeclaredScopeTag {chapt:mot}
 \KAuxNewLinkScopetagInstance {chapt:mot}{document}

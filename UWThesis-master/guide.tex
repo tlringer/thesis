@@ -6,7 +6,7 @@ This thesis is divided into six chapters; chapters are further divided into sect
 After motivating proof repair (Chapter~\ref{chapt:mot}),
 this thesis describes two different kinds of proof repair that validate the thesis (Chapters~\ref{ch:example} and~\ref{chapt:pi}).
 It concludes with a discussion of related work (Chapter~\ref{sec:related}),
-followed by a reflection on the thesis and a description of how proof repair can inform the next era of 
+followed by a reflection on the thesis and how it can inform the next era of 
 proof engineering (Chapter~\ref{chapt:conclusions}).
 
 \subsubsection*{Expected Background}
@@ -72,10 +72,44 @@ Chapter~\ref{sec:related} includes a large amount of related work from this pape
 
 \subsubsection*{Authorship Statements}
 
-Authorship statements for included paper materials, to credit coauthors. D
-Description of who they are and how we collaborated.
-Indexed for links: \intro{RanDair Porter}, \intro{Nathaniel Yazdani} (Nate),
-\intro{Karl Palmskog}, and so on.
+The material in this thesis draws on work that I did with four student and postdoctoral coauthors.
+Below is a summary of the contributions of each of those coauthors,
+indexed for later reference.
+The contributions of my faculty and professional coauthors were of course also extremely valuable.
+
+\paragraph{Nathaniel Yazdani}
+I worked with \intro{Nate} starting from when he was an undergraduate student.
+Nate contributed conceptually to all three proof repair papers his name appears on,
+helped with a number of the case studies,
+implemented important features on the critical path to success,
+and did some of the writing about his contributions.
+Three of Nate's contributions stand out to me:
+
+\begin{enumerate}
+\item a tool for preprocessing proof developments into a format suitable for repair,
+\item higher-order transformations for applying proof term transformations over entire libraries, and
+\item a key early insight about equality.
+\end{enumerate}
+All three of these were necessary to scale proof repair to help real proof engineers in practical scenarios.
+
+\paragraph{RanDair Porter}
+\intro{RanDair} joined the project as an undergraduate for the final paper that appears in this thesis.
+RanDair implemented a prototype decompiler from proof terms to proof scripts,
+and wrote a description of the behavior of the decompiler that I built on in that paper.
+This decompiler was necessary for integrating proof repair tools with real proof engineering workflows,
+and it continues to inspire exciting work to this day.
+
+\paragraph{Alex Sanchez-Stern}
+\intro{Alex} worked with me as a PhD student on a user study of proof engineers during my visit to another university.
+Alex designed, implemented, deployed, and evaluated one of the two analyses in the user study paper.
+He also helped substantially in building the infrastructure necessary to deploy the user study,
+and wrote large sections of the paper.
+The user study and paper would not have happened without Alex.
+
+\paragraph{Karl Palmskog}
+\intro{Karl} was a postdoctoral researcher when he joined me on the survey paper.
+Karl wrote entire chapters of the survey paper.
+I could not have written that paper without Karl.
 
 \subsubsection*{Pronouns}
 

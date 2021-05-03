@@ -21,6 +21,10 @@
 \contentsline {paragraph}{Ornaments for Proof Reuse in Coq}{9}{section.1.4}% 
 \contentsline {paragraph}{\textsc {REPLica}}{9}{section.1.4}% 
 \contentsline {paragraph}{QED at Large}{9}{section.1.4}% 
+\contentsline {paragraph}{Nathaniel Yazdani}{9}{section.1.4}% 
+\contentsline {paragraph}{RanDair Porter}{9}{Item.14}% 
+\contentsline {paragraph}{Alex Sanchez-Stern}{10}{Item.14}% 
+\contentsline {paragraph}{Karl Palmskog}{10}{Item.14}% 
 \contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Motivating Proof Repair}}{11}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Proof Development}{12}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}The Workflow}{13}{subsection.2.1.1}% 
@@ -35,7 +39,7 @@
 \contentsline {paragraph}{From Gallina back to Coq}{22}{lstnumber.-28.1}% 
 \contentsline {section}{\numberline {2.2}Proof Maintenance}{22}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{23}{subsection.2.2.1}% 
-\contentsline {paragraph}{Changing our Program}{23}{Item.20}% 
+\contentsline {paragraph}{Changing our Program}{23}{Item.23}% 
 \contentsline {paragraph}{Changing our Specification}{24}{lstnumber.-30.10}% 
 \contentsline {subsection}{\numberline {2.2.2}Building Robust Proofs}{25}{subsection.2.2.2}% 
 \contentsline {subsection}{\numberline {2.2.3}Even Experts are Human}{25}{subsection.2.2.3}% 
@@ -94,7 +98,7 @@
 \contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-110.4}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{55}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{55}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{55}{Item.40}% 
+\contentsline {paragraph}{Identifying Changes}{55}{Item.43}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{56}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{56}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{56}{lstnumber.-129.1}% 
@@ -112,9 +116,9 @@
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{60}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{61}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{63}{chapter.4}% 
-\contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{63}{Item.45}% 
-\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{63}{Item.45}% 
-\contentsline {paragraph}{Bringing it Together}{64}{Item.45}% 
+\contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{63}{Item.48}% 
+\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{63}{Item.48}% 
+\contentsline {paragraph}{Bringing it Together}{64}{Item.48}% 
 \contentsline {section}{\numberline {4.1}Motivating Example}{64}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Approach}{66}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{67}{subsection.4.2.1}% 
@@ -182,7 +186,7 @@
 \contentsline {paragraph}{Permute Hypotheses: External Example}{100}{figure.caption.41}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{100}{figure.caption.41}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{101}{subsection.4.6.2}% 
-\contentsline {paragraph}{Setup}{102}{Item.60}% 
+\contentsline {paragraph}{Setup}{102}{Item.63}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{102}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{104}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{104}{section.4.7}% 

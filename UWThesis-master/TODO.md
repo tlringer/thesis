@@ -3,20 +3,20 @@
 # Generally
 
 - knowledge package as much as possible
-- finish acknowledgments
+- finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations
 - thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
 - pronoun check
 - space hack removal
 - note about name of DEVOID somewhere
-- paragraph style: add periods
+- paragraph style: add periods?
 - plugin infrastructure somewhere
 - TCB somewhere
 
 # Chapter 1
 
-- autorship statements
+- authorship statements or detailed acknowledgments for other authors (nice to have)
 - missing citations
 - missing workflow figure
 - revise

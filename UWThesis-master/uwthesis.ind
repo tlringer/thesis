@@ -1,11 +1,5 @@
 \begin{theindex}
 
-  \item Collaborators
-    \subitem Karl Palmskog, \hyperpage{9}, \hyperpage{113}
-    \subitem Nathaniel Yazdani, \hyperpage{9}, \hyperpage{97}, 
-		\hyperpage{101, 102}
-    \subitem RanDair Porter, \hyperpage{9}, \hyperpage{94}, 
-		\hyperpage{96}, \hyperpage{120}
   \item Concepts
     \subitem Algebraic Ornaments, \hyperpage{78}, \hyperpage{97}
   \item Conventions
@@ -22,6 +16,13 @@
 
   \indexspace
 
+  \item People
+    \subitem Alex Sanchez-Stern, \hyperpage{10}
+    \subitem Karl Palmskog, \hyperpage{10}, \hyperpage{113}
+    \subitem Nathaniel Yazdani, \hyperpage{9, 10}, \hyperpage{97}, 
+		\hyperpage{101, 102}
+    \subitem RanDair Porter, \hyperpage{9, 10}, \hyperpage{94}, 
+		\hyperpage{96}, \hyperpage{120}
   \item Phrases
     \subitem Reason to Believe, \hyperpage{3}
 

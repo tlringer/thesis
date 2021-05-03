@@ -6,8 +6,8 @@
 1 autoreference(s) are introduced twice.
 0 autoreference(s) are used but not introduced.
 
-8 autoreference(s) are properly used.
-1 autoreference(s) are defined but not used.
+9 autoreference(s) are properly used.
+0 autoreference(s) are defined but not used.
 
 
 ********
@@ -24,12 +24,5 @@
 
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:191: {Calculus of Inductive Constructions}{default}{base}
-
-
-***********************************
-* Autoref introduced but not used *
-***********************************
-
-uwthesis.tex:74: {Alex Sanchez-Stern}{default}{base}
 
 

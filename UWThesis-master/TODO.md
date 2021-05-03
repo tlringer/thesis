@@ -25,6 +25,7 @@
 
 - missing parts of other sections
 - example in proof repair section (nice to have)
+- REPLICA diagram and a bit more, maybe
 - revise
 
 # Chapter 3
@@ -34,6 +35,9 @@
 # Chapter 5
 
 - finish missing parts, or comment them out
+- work survey paper in more
+- work REPLICA in more
+- revise
 
 # Chapter 6
 

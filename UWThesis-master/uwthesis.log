@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  3 MAY 2021 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  3 MAY 2021 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2343,7 +2343,7 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 6--8
 
 
 Overfull \hbox (1.024pt too wide) in paragraph at lines 22--24
-[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []9[], []10[], []99[],
+[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []9[], []10[], []97[],
  []
 
 [125
@@ -2437,10 +2437,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (151 pages, 1599089 bytes).
+Output written on uwthesis.pdf (151 pages, 1598963 bytes).
 PDF statistics:
- 3315 PDF objects out of 3580 (max. 8388607)
- 3087 compressed objects within 31 object streams
+ 3314 PDF objects out of 3580 (max. 8388607)
+ 3086 compressed objects within 31 object streams
  1483 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -23,7 +23,6 @@
 
 # Chapter 2
 
-- missing parts of other sections
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe
 - revise

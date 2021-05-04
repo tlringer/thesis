@@ -165,8 +165,6 @@
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
 \KAuxDeclaredScopeTag {sec:changes}
 \KAuxNewLinkScopetagInstance {sec:changes}{document}
-\KAuxDeclaredScopeTag {sec:design-robust}
-\KAuxNewLinkScopetagInstance {sec:design-robust}{document}
 \KAuxDeclaredScopeTag {sec:irl}
 \KAuxNewLinkScopetagInstance {sec:irl}{document}
 \KAuxDeclaredScopeTag {fig:patch}

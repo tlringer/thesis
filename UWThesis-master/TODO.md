@@ -36,6 +36,7 @@
 
 - get the motivating example actually working if it doesn't yet, and link to it
 - IZR pattern matching versus eliminators
+- ensure line numbers for figure are adjusted to updated figure
 
 # Chapter 4
 

@@ -73,26 +73,26 @@ If it finds a reusable patch with the goal type, it succeeds and defines it as a
 \begin{figure*}
 \begin{minipage}{0.50\textwidth}
 \lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=1]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=2,lastline=2]{repair/introex.tex}
-\lstinputlisting[firstline=3, lastline=8]{repair/introex.tex}
-\lstinputlisting[firstline=1, lastline=4]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introexterm.tex}
-\lstinputlisting[firstline=6, lastline=9]{repair/introexterm.tex}
+\lstinputlisting[firstline=1, lastline=4]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introex.tex}
+\lstinputlisting[firstline=6, lastline=11]{repair/introex.tex}
+\lstinputlisting[firstline=1, lastline=7]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/introexterm.tex}
+\lstinputlisting[firstline=9, lastline=13]{repair/introexterm.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.50\textwidth}
 \lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=9, lastline=9]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=10,lastline=10]{repair/introex.tex}
-\lstinputlisting[firstline=11, lastline=16]{repair/introex.tex}
-\lstinputlisting[firstline=11, lastline=14]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=15,lastline=15]{repair/introexterm.tex}
-\lstinputlisting[firstline=16, lastline=19]{repair/introexterm.tex}
+\lstinputlisting[firstline=12, lastline=15]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=16]{repair/introex.tex}
+\lstinputlisting[firstline=17, lastline=22]{repair/introex.tex}
+\lstinputlisting[firstline=15, lastline=21]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=22,lastline=22]{repair/introexterm.tex}
+\lstinputlisting[firstline=23, lastline=27]{repair/introexterm.tex}
 \end{minipage}
 \caption{Two proofs with different conclusions (top) and the
-corresponding proof terms (bottom) with relevant type information. We highlight the change in theorem conclusion and
-the difference in terms that corresponds to a patch.}
+corresponding proof terms (bottom). Highlighted lines correspond to
+the change in theorem conclusion (top) and the difference in terms that correspond to a patch (bottom).}
 \label{fig:example}
 \end{figure*}
 
@@ -127,8 +127,7 @@ Here, it infers the following goal:
   (@\ltacforall@) n m p,
     n <= m $\rightarrow$
     m <= p $\rightarrow$
-    (@\diff{n <= p}@) $\rightarrow$
-    (@\diff{n <= p + 1}@)
+    (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
 \end{lstlisting}
 which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
 It then differences the terms \lstinline{old} and \lstinline{new} to identify candidate proof patches (Section~\ref{sec:pumpkin-spec-diff}),

@@ -15,6 +15,9 @@
 - PUMPKIN PATCH plugin suite somewhere to refer back to
 - TCB somewhere
 - code links: consistency and so on
+- color of Proof keyword and other stylistic things
+- Qed vs. defined somewhere
+- definitional vs. propositional equality somewhere early
 
 # Chapter 1
 

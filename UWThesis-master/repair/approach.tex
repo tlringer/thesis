@@ -1,27 +1,30 @@
 \section{Approach}
 \label{sec:pumpkin-approach}
 
-Example-based proof repair takes advantage of the fact that an example patch to a broken proof can carry enough 
+Proof repair by example takes advantage of the fact that an example patch to a broken proof can carry enough 
 information (like the rewrite by \lstinline{INR_IPR}) to fix other proofs broken by the same change (like the broken
 client proofs). \sysname implements a prototype of this.
 
-To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
-\sysname extracts that information into a \textit{patch candidate}---a function that describes the change in the example patched proof,
+To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide 
+an \textit{example patched proof}: an example of how to adapt a proof to a change.
+\sysname extracts the information that example carries into a \textit{patch candidate}: a function that describes the change 
+in the example patched proof,
 but that is localized to the context of the example, and not yet enough to fix other proofs broken by the change.
 \sysname then generalizes that candidate into a \textit{reusable patch}: a function
 that can be used to fix other broken proofs broken by the same change, which \sysname defines as a term in \kl{Gallina}.
 
-In other words, looking back to the thesis statement, the information shows up in the difference between versions 
-of the example patched proof.
-\sysname can extract and generalize that information.
-
 The \sysname prototype focuses on finding reusable patches to proofs in response to certain changes in the content of programs and specifications (Section~\ref{sec:pumpkin-scope}).
 It does this using a combination of semantic differencing and proof term transformations:
-Differencing (Section~\ref{sec:pumpkin-spec-diff} looks at the difference between versions of the example patched proof for this information, and finds the candidate.
-The proof term transformations (Section~\ref{pumpkin-spec-trans}) then modify that candidate to produce the reusable proof patch.
+Differencing (Section~\ref{sec:pumpkin-spec-diff}) looks at the difference between versions of the example patched proof for this information, and finds the candidate.
+The proof term transformations (Section~\ref{sec:pumpkin-spec-trans}) then modify that candidate to produce the reusable proof patch.
 All of this happens over proof terms in Gallina, since tactics may hide necessary information. % as I will soon show.
-\sysname has only preliminary support for proof script integration and patch application (see Section~\ref{sec:pumpkin-impl}),
-though I will address this limitation with the \toolnamec extension in Chapter~\ref{chapt:pi}.
+
+In other words, looking back to the thesis statement, the information corresponding to changes in programs and specifications
+shows up in the difference between versions of the example patched proof.
+\sysname can extract and generalize that information.
+\sysname has only preliminary support for automatically \textit{applying} the extracted
+and generalized information (see Section~\ref{sec:pumpkin-impl}),
+though the later \toolnamec extension addresses this limitation (Chapter~\ref{chapt:pi}).
 
 \subsection{Workflow: Repair by Example}
 \label{sec:pumpkin-workflow}
@@ -44,7 +47,7 @@ All terms that \sysname defines are type checked in the end, so \sysname does no
 \begin{algorithmic}
 \renewcommand{\thealgorithm}{}
 \footnotesize
-\caption{\footnotesize{find\_patch(old\_proof, new\_proof)}}
+\STATE \hspace{-0.5cm} \footnotesize{find\_patch(old\_proof, new\_proof) :=}
     \STATE \diff{\textit{diff} types of old\_proof and new\_proof for goals}
     \STATE \diff{\textit{diff} terms old\_proof and new\_proof for candidates}
     \IF{there are candidates}
@@ -62,10 +65,10 @@ When the proof engineer calls \lstinline{Patch Proof}, this invokes the proof pa
 The search procedure starts by differencing the \textit{types} of \lstinline{old_proof} and \lstinline{new_proof}
 (that is, the theorems they prove).
 The result that it finds is the \textit{goal type}: the type that the reusable proof patch should have.
-It then differences the \textit{terms} \lstinline{old_proof} and \lstinline{new_proof} directly to identify candidate proof patches,
+It then differences the \textit{terms} \lstinline{old_proof} and \lstinline{new_proof} directly to identify patch candidates,
 which are themselves proof terms.
-Finally, it transforms those proof patches directly into a reusable patch.
-If it finds a patch with the goal type, it succeeds and defines it.
+Finally, it transforms those patch candidates directly into a reusable patch.
+If it finds a reusable patch with the goal type, it succeeds and defines it as a term.
 
 \begin{figure*}
 \begin{minipage}{0.50\textwidth}
@@ -93,48 +96,52 @@ the difference in terms that corresponds to a patch.}
 \label{fig:example}
 \end{figure*}
 
-Consider, for example, the change from the theorem \lstinline{old} to the slightly stronger theorem \lstinline{new} in Figure~\ref{fig:example}.
-Changing \lstinline{old} to \lstinline{new} can break proofs that used to successfully apply \lstinline{old}, so that a proof like this:
+To demonstrate this workflow, consider the change from the theorem \lstinline{old} to the slightly stronger theorem \lstinline{new} in Figure~\ref{fig:example}.
+Changing \lstinline{old} to \lstinline{new} can break proofs that used to successfully apply \lstinline{old}:
 
 \begin{lstlisting}[language=coq]
-Proof.
-  $\ldots$
-  (@\succeeds{apply old.}@)(@\vspace{-0.1cm}@)
-  $\ldots$
-Defined.
+  Proof.
+    $\ldots$
+    (@\succeeds{apply old.}@)
+    $\ldots$
+  Defined.
 \end{lstlisting}
-fails after migrating to \lstinline{new}:
+so that they fail after migrating to \lstinline{new}:
 
 \begin{lstlisting}[language=coq]
-Proof.
-  $\ldots$
-  (@\fails{apply new.}@)(@\vspace{-0.1cm}@)
-  $\ldots$
-Defined.
+  Proof.
+    $\ldots$
+    (@\fails{apply new.}@)
+    $\ldots$
+  Defined.
 \end{lstlisting}
 When we call:
 
 \begin{lstlisting}
-Patch Proof old new as patch.
+  Patch Proof old new as patch.
 \end{lstlisting}
 \sysname invokes the search procedure, which differences \lstinline{old} and \lstinline{new} to infer the goal type for the patch.
-In this case, it infers the following goal:
+Here, it infers the following goal:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
+  (@\ltacforall@) n m p,
+    n <= m $\rightarrow$
+    m <= p $\rightarrow$
+    (@\diff{n <= p}@) $\rightarrow$
+    (@\diff{n <= p + 1}@)
 \end{lstlisting}
-which takes us from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old}.
+which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
 It then differences the terms \lstinline{old} and \lstinline{new} to identify candidate proof patches (Section~\ref{sec:pumpkin-spec-diff}),
 then tranforms those candidates to a reusable proof patch with that type (Section~\ref{sec:pumpkin-spec-trans}),
 which it defines as a new constant \lstinline{patch}.
 This is something that we can use to fix other proofs broken by this change, either by applying it with traditional proof automation:
 
 \begin{lstlisting}[language=coq]
-Proof.
-  $\ldots$
-  (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
-  $\ldots$
-Defined.
+  Proof.
+    $\ldots$
+    (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
+    $\ldots$
+  Defined.
 \end{lstlisting}
 or by using the automation in Section~\ref{sec:pumpkin-impl}.
 

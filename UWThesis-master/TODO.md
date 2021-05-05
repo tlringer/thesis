@@ -39,6 +39,7 @@
 - ensure line numbers for figure are adjusted to updated figure
 - configuration to instance, and footnote
 - abstraction to generalization, and footnote
+- check specs of each alg
 
 # Chapter 4
 

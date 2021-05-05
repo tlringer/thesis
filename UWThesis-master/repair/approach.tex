@@ -188,18 +188,26 @@ and Section~\ref{sec:pumpkin-results} demonstrates some of them on real proof de
 \label{sec:pumpkin-spec-diff}
 
 Differencing operates over terms and types. Differencing tactics
-would be insufficient, since tactics and hints may mask patches.
+would be insufficient, since tactics and hints may mask information helpful to finding patches.
 For example, for the change in Figure~\ref{fig:example},
-the tactics are identical, even though the proof term changes.\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
-are additional examples in the repository (\lstinline{Cex.v}).} % TODO what? What did this even mean? lmao
-Differencing instead looks at the change in terms to extract the patch candidates.
+the tactics in the proofs of \lstinline{old} and \lstinline{new} are identical, even 
+though the proof terms they compiled down to are not. %\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
+%are additional examples in the repository (\lstinline{Cex.v}).} % TODO what? What did this even mean? lmao
+This is why differencing looks at the change in terms to extract the patch candidates.
 
 In the end, differencing identifies the semantic difference between the old and new versions of the proof terms for the example patched proof.
-The semantic difference is the difference between two terms that corresponds to the difference between their types.
-I will explain this more in Section~\ref{sec:pumpkin-diff}.
+At a high level, the semantic difference is the difference between two terms that corresponds to the 
+difference between their types (see Section~\ref{sec:pumpkin-diff}).
+The details of the semantic difference and where differencing looks to find it vary by instance of the search procedure.
 
-The details of the semantic difference and where differencing looks to find it vary by instance.
-Consider a simplified version of the example in Figure~\ref{fig:example}, using the instance for changes in conclusions:
+Consider a simplified version of the example in Figure~\ref{fig:example}, 
+looking only at the base case (line 19):
+
+\begin{lstlisting}[language=coq]
+  old_proof := (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@).
+  new_proof := H : (@\diff{n <= m}@).
+\end{lstlisting}
+For this change, \sysname uses the instance for changes in conclusions:
 
 \begin{algorithm}
 \footnotesize
@@ -214,24 +222,26 @@ Consider a simplified version of the example in Figure~\ref{fig:example}, using 
     \STATE \hspace*{1em} \textit{transform} candidates
 \end{algorithmic}
 \end{algorithm}
-Rather than look at the entire example, let us look for now at just the base case (line 13):
+When this instance of the search procedure is invoked,
+semantic differencing first identifies the difference in their types, here the respective motives (line 18):
 
-\begin{lstlisting}[language=coq]
-  old_proof := (@\diff{le\_plus\_trans n m 1}@) H : (@\diff{n <= m + 1}@)(@\vspace{-0.1cm}@)
-  new_proof := H : (@\diff{n <= m}@)
+\begin{lstlisting}
+  (@\diff{(fun p0 => n <= p0 + 1)}@)
+  (@\diff{(fun p0 => n <= p0)}@)
 \end{lstlisting}
-The semantic differencing component first identifies the difference in their types (lines 11 and 12), here:
+applied to the argument \lstinline{m} (line 17).
+This produces the \textit{candidate} goal type:
 
 \begin{lstlisting}
   (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
 \end{lstlisting}
-This is the \textit{candidate} goal type.
-It then finds a difference in terms that has that type (line 13):
+
+Differencing then diffs the terms for a function that has that type, here (line 19):
 
 \begin{lstlisting}[language=coq]
   fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
 \end{lstlisting}
-This is the \emph{candidate} for a reusable patch.
+This is a \textit{patch candidate}.
 This candidate is close, but it is not yet a reusable patch. In particular, this candidate
 maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
 be applied to \lstinline{p}).

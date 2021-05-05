@@ -2,7 +2,7 @@
 
 # Generally
 
-- knowledge package as much as possible
+- knowledge package as much as possible (basically every italic thing)
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations
@@ -37,6 +37,8 @@
 - get the motivating example actually working if it doesn't yet, and link to it
 - IZR pattern matching versus eliminators
 - ensure line numbers for figure are adjusted to updated figure
+- configuration to instance, and footnote
+- abstraction to generalization, and footnote
 
 # Chapter 4
 

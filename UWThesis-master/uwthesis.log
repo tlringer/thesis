@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 MAY 2021 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 MAY 2021 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2120,7 +2120,7 @@ Overfull \hbox (2.38933pt too wide) in paragraph at lines 184--187
 -i-ni-tion of []
  []
 
-[59] (./repair/divide.tex) (./repair/divide.tex) [60] [61])
+[59] [60] (./repair/divide.tex) (./repair/divide.tex) [61])
 (./repair/conclusion.tex [62]
 Overfull \hbox (26.98114pt too wide) in paragraph at lines 16--19
 [][][][][][] 
@@ -2150,7 +2150,7 @@ LaTeX Warning: Reference `pi-implementation' on page 68 undefined on input line
  26.
 
 [68]
-<often/workflowa.pdf, id=1685, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1687, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2403,13 +2403,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
  ) 
 Here is how much of TeX's memory you used:
- 50352 strings out of 492609
- 1013722 string characters out of 6129033
+ 50358 strings out of 492609
+ 1013776 string characters out of 6129033
  1288430 words of memory out of 5000000
  51011 multiletter control sequences out of 15000+600000
- 636165 words of font info for 837 fonts, out of 8000000 for 9000
+ 636423 words of font info for 841 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,83p,9083b,2343s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2428,10 +2428,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1599487 bytes).
+Output written on uwthesis.pdf (153 pages, 1599672 bytes).
 PDF statistics:
- 3349 PDF objects out of 3580 (max. 8388607)
- 3118 compressed objects within 32 object streams
- 1503 named destinations out of 1728 (max. 500000)
+ 3351 PDF objects out of 3580 (max. 8388607)
+ 3120 compressed objects within 32 object streams
+ 1504 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

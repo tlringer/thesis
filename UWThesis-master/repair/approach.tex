@@ -132,7 +132,7 @@ Here, it infers the following goal:
 which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
 It then differences the terms \lstinline{old} and \lstinline{new} to identify candidate proof patches (Section~\ref{sec:pumpkin-spec-diff}),
 then tranforms those candidates to a reusable proof patch with that type (Section~\ref{sec:pumpkin-spec-trans}),
-which it defines as a new constant \lstinline{patch}.
+which it defines as a new term \lstinline{patch}.
 This is something that we can use to fix other proofs broken by this change, either by applying it with traditional proof automation:
 
 \begin{lstlisting}[language=coq]
@@ -148,37 +148,41 @@ or by using the automation in Section~\ref{sec:pumpkin-impl}.
 \label{sec:pumpkin-scope}
 
 The search procedure in Figure~\ref{alg:patching} searches for patches to proofs broken by changes in the \textit{content} of programs and specifications.
-For example, \sysname can support the change in Figure~\ref{fig:example}, since content (the conclusion of the theorem) changes,
-but all else remains identical.
+For example, \sysname can support the change in Figure~\ref{fig:example}, since some of the content (the conclusion of the theorem) changes,
+but the structure remains identical.
 In general, the \sysname prototype does not support any changes that add, remove, or rearrange any hypotheses.
-Chapter~\ref{chapt:pi} introduces an extension to \sysname that supports a broad class of
-changes in datatypes that may change in those ways.
+The \toolnamec extension to \sysnamelong in Chapter~\ref{chapt:pi} supports a broad class of changes
+in datatypes that may change in these ways.
 
-The search procedure can be configured to different classes of change in the content of programs and specifications.
-Thus, before running the search procedure, \sysname infers a \textit{configuration} from the example change.
-This configuration customizes the highlighted lines for an entire class of changes:
+The search procedure can be instantiated to different classes of change in the content of programs and specifications.
+Thus, before running the search procedure, \sysname infers an \textit{instance} of the search 
+procedure from the example change.\footnote{In the original 2018 \sysnamelong paper, I called this a \textit{configuration}.
+In this chapter, I rename configuration to \textit{instance} everywhere to avoid overloading this term,
+since I unfortunately used this word again for something different when developing \toolnamec.}
+This instance customizes the highlighted lines for an entire class of changes:
 it determines what to diff on lines 1 and 2,
 and what transformations to run to achieve what goal on line 4.
 
-Figure~\ref{fig:example} used the configuration for a change in the conclusion of a theorem.
-Given two such proofs:
+Figure~\ref{fig:example} used the instance for a change in the conclusion of a theorem.
+Given two such proofs of theorems:
 
 %We describe one
 %such procedure in this section; we descibe three more
 %in Section~\ref{sec:case}.
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P}@) x(@\vspace{-0.1cm}@)
-  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{Q}@) x
 \end{lstlisting}
+for arbitrary \lstinline{x}, \lstinline{H}, \lstinline{P}, and \lstinline{Q},
 \sysname searches for a patch with this goal type:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P'}@) x $\rightarrow$ (@\diff{P}@) x
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{Q}@) x $\rightarrow$ (@\diff{P}@) x
 \end{lstlisting}
 
-In total, the \sysname prototype currently implements six configurations.
-Section~\ref{sec:pumpkin-impl-procedure} explains these configurations,
-and Section~\ref{sec:pumpkin-results} describes real-world examples that demonstrate more configurations.
+In total, the \sysname prototype currently implements six instances of the search procedure.
+Section~\ref{sec:pumpkin-impl-procedure} explains these instances,
+and Section~\ref{sec:pumpkin-results} demonstrates some of them on real proof developments.
 
 \subsection{Differencing: Candidates from Examples}
 \label{sec:pumpkin-spec-diff}
@@ -194,8 +198,8 @@ In the end, differencing identifies the semantic difference between the old and 
 The semantic difference is the difference between two terms that corresponds to the difference between their types.
 I will explain this more in Section~\ref{sec:pumpkin-diff}.
 
-The details of the semantic difference and where differencing looks to find it vary by configuration.
-Consider a simplified version of the example in Figure~\ref{fig:example}, using the configuration for changes in conclusions:
+The details of the semantic difference and where differencing looks to find it vary by instance.
+Consider a simplified version of the example in Figure~\ref{fig:example}, using the instance for changes in conclusions:
 
 \begin{algorithm}
 \footnotesize
@@ -238,17 +242,17 @@ In summary, differencing has the following specification:
 
 % TODO may need to improve this, just want something here for now
 \begin{itemize}
-\item \textbf{Inputs}: \lstinline{old_proof}, \lstinline{new_proof}, a configuration \lstinline{config}, and a final goal type \lstinline{goal}, assuming:
+\item \textbf{Inputs}: \lstinline{old_proof}, \lstinline{new_proof}, an instance \lstinline{instance}, and a final goal type \lstinline{goal}, assuming:
 \begin{itemize}
-\item the change from \lstinline{old_proof} to \lstinline{new_proof} is in the class of changes supported by \lstinline{config}.
+\item the change from \lstinline{old_proof} to \lstinline{new_proof} is in the class of changes supported by \lstinline{instance}.
 \end{itemize}
 \item \textbf{Outputs}: a list of terms \lstinline{candidates} of patch candidates, and a candidate goal type \lstinline{candidate_goal}, guaranteeing:
 \begin{itemize}
 \item each term in \lstinline{candidates} has type \lstinline{candidate_goal}.
 \end{itemize}
 \end{itemize}
-\sysname infers the configuration type and the final goal from the change itself, so the proof engineer does not have to provide this information.
-\sysname could in theory infer the wrong configuration or the wrong goal type, but this would not sacrifice soundness---it would mean only that
+\sysname infers the instance type and the final goal from the change itself, so the proof engineer does not have to provide this information.
+\sysname could in theory infer the wrong instance or the wrong goal type, but this would not sacrifice soundness---it would mean only that
 the patch procedure would either fail to produce a patch, or produce a patch that is not useful in the end.
 All terms that \sysname produces are well-typed. % TODO hyphen or no hyphen?
 
@@ -276,11 +280,11 @@ The reusable patch that \sysname is looking for, however, should have this type:
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
 \end{lstlisting}
-as this is the goal that \sysname inferred for this configuration.
+as this is the goal that \sysname inferred for this instance.
 The transformations that \sysname runs will attempt to transform the candidate
 into a patch with that type.
 
-The details of which transformations to run vary by configuration.
+The details of which transformations to run vary by instance.
 There are four transformations that turn patch candidates into reusable proof patches:
 
 \begin{enumerate}
@@ -289,9 +293,9 @@ There are four transformations that turn patch candidates into reusable proof pa
 \item \textit{patch inversion} to reverse a patch, and
 \item \textit{lemma factoring} to break a term into parts.
 \end{enumerate}
-Each configuration chooses among these transformations strategically based on the structure of the proof term.
+Each instance chooses among these transformations strategically based on the structure of the proof term.
 
-For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the configuration with two transformations:
+For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the instance with two transformations:
 
 \begin{algorithm}
 \footnotesize
@@ -331,7 +335,7 @@ This simple example uses only two transformations.
 The other transformations help turn candidates into patches in similar ways, all guided by
 the structure of the proof term.
 I will describe these transformations more in Section~\ref{sec:pumpkin-trans},
-and present real-world examples that demonstrate more configurations in Section~\ref{sec:pumpkin-results}.
+and present real-world examples that demonstrate more instances in Section~\ref{sec:pumpkin-results}.
 
 \paragraph{Summary}
 In summary, the transformations together have the following specification:
@@ -349,7 +353,7 @@ In summary, the transformations together have the following specification:
 \end{itemize}
 When these transformations fail, or when the list of candidates that differencing returns is empty,
 \sysname simply fails to return a patch.
-As with differencing, it is possible that a mistake in the implementation of a given configuration
+As with differencing, it is possible that a mistake in the implementation of a given instance
 leads to a final \lstinline{goal} type is not useful to the proof engineer,
 but this cannot soundness:
 every \lstinline{patch} \toolname produces is well-typed.

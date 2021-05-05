@@ -12,6 +12,7 @@
 - note about name of DEVOID somewhere
 - paragraph style: add periods?
 - plugin infrastructure somewhere (chapter 1? 2? 3? ahhh)
+- PUMPKIN PATCH plugin suite somewhere to refer back to
 - TCB somewhere
 - code links: consistency and so on
 

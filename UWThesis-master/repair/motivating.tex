@@ -8,8 +8,9 @@
 % 4. Flow with thesis frame?
 % TODO for real, get this working in vanilla pumpkin patch also
 
+\iffalse
 Traditional proof automation considers only the current state of programs, specifications, and proofs.
-This is a missed opportunity: verified software systems are rarely static.
+Proof repair by example shows that this is a missed opportunity: verified software systems are rarely static.
 Like unverified systems, verified systems evolve over time.
 
 With traditional proof automation, the burden of change largely falls on proof engineers.
@@ -23,6 +24,7 @@ and generalizes that to a \emph{reusable patch} that can fix other proofs broken
 resilient to change. These techniques are useful for large proof developments, but they
 place the burden of change on the proof engineer. This can be problematic
 when change occurs outside of the proof engineers's control.
+\fi
 
 \begin{figure*}
 \begin{minipage}{0.55\textwidth}
@@ -47,12 +49,12 @@ naturals; the new definition applies injection from positives to reals.}
 \label{fig:izr}
 \end{figure*}
 
-Consider a commit from the Coq 8.7 release~\cite{coq87commit}. 
-This commit redefined injection from integers to reals (Figure~\ref{fig:izr}).
-This change broke 18 proofs in the standard library. 
-
+To motivate proof repair by example, consider a commit from the Coq 8.7 release~\cite{coq87commit}.
+This commit redefined injection from integers to reals (Figure~\ref{fig:izr}), or \lstinline{IZR}.
+The change in \lstinline{IZR} broke 18 proofs in the standard library, plus many proofs in developments
+that depended on it.
 The Coq standard library developer who committed the change fixed most of the broken proofs,
-but failed to fix some of them. % TODO how many?
+but failed to fix some of them---so yet again, sometimes, even experts give up in the face of change. % TODO how many?
 The developer then made an additional 12 commits to address the change in \lstinline{coq-contribs},
 a regression suite of projects that the Coq standard library developers maintain as Coq versions change.
 Many of these changes were simple. For example, the developer wrote a lemma that describes the change:
@@ -72,18 +74,23 @@ It succeeded with the lemma:
 \begin{lstlisting}
   rewrite (@\diff{$\leftarrow$ 3!INR\_IPR}@), (@\succeeds{Pos2Nat.inj\_sub by trivial.}@)
 \end{lstlisting}
-
 These changes were outside-facing: proof engineers had to make similar changes to their own proofs when
-they updated their developments from Coq 8.6 to Coq 8.7. The Coq standard library developer could have updated some tactics to account for this, but it 
+they updated client proof developments from Coq 8.6 to Coq 8.7.
+The Coq standard library developer could have updated some tactics to account for this, but it 
 would have been impossible to account for every tactic that proof engineers could use.
-Furthermore, while the library developer responsible for the changes knows about
-the lemma that describes the change, the proof engineer does not. The proof engineer must determine
-how the definition has changed and how to address the change, perhaps by reading documentation or by
-talking to the Coq standard library developers. 
 
-\paragraph{With Proof Repair} When a proof engineer updates the Coq standard library, a proof repair tool can determine
-that the definition has changed, then analyze changes in the standard library and in \lstinline{coq-contribs}
+Furthermore, while the library developer responsible for the changes knew about the lemma \lstinline{INR_IPR}
+describing the change, proof engineers of client proof developments did not. Proof engineers
+had to determine how the definition had changed themselves, and how to address the change in their broken proofs---perhaps 
+by reading documentation or by talking to the Coq standard library developers. 
+
+This problem is what motivated the original vision for proof repair by example.
+The idea was to build a tool that could determine how the definition has changed for the proof engineer.
+It could then analyze changes in the standard library and in \lstinline{coq-contribs}
 that resulted from the change in definition (in this case, rewriting by the lemma).
-It can extract a reusable patch from those changes, which it can automatically apply within broken user proofs.
-The proof engineer never has to consider how the definition has changed.
+It could extract a reusable patch from those changes, which it could automatically apply within broken user proofs. % TODO sometimes
+The proof engineer would never have to consider how the definition had changed.
+The \sysname prototype took the first steps toward this vision---real repairs
+over real proof developments using \sysname can be found in Section~\ref{sec:pumpkin-results}.
+% TODO ughgughgh
 

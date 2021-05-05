@@ -1,8 +1,11 @@
 \section{Proof Repair}
 \label{sec:mot-rep}
 
-\textit{Proof repair} is a new kind of proof automation that automatically fixes broken proofs in response to changes.
-In contrast with traditional proof automation, proof repair views proofs as fluid entities.
+\textit{Proof repair} is a new form of proof automation that automatically fixes broken proofs in response to changes.
+In contrast with traditional proof automation, proof repair views programs, specifications, and proofs as fluid entities.
+When a program or specification changes and this breaks many proofs, proof repair extracts informatiton from those
+changes, generalizes it, and applies it to fix other proofs broken by the same change.
+
 The name of proof repair is inspired by program repair~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526},
 or automatically fixing bugs in programs.
 But my proof repair tools work differently from program repair tools, 

@@ -11,8 +11,9 @@
 - space hack removal
 - note about name of DEVOID somewhere
 - paragraph style: add periods?
-- plugin infrastructure somewhere
+- plugin infrastructure somewhere (chapter 1? 2? 3? ahhh)
 - TCB somewhere
+- code links: consistency and so on
 
 # Chapter 1
 
@@ -28,6 +29,9 @@
 - revise
 
 # Chapter 3
+
+- get the motivating example actually working if it doesn't yet, and link to it
+- IZR pattern matching versus eliminators
 
 # Chapter 4
 

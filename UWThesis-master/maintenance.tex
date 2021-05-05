@@ -190,13 +190,10 @@ Worse, breaking changes may happen outside of the proof engineers' control,
 in libraries upon which their proof developments depend.
 
 In other words, even experts are human.
-And traditional proof automation is not equipped to handle the consequences of this,
-once the proofs are already broken.
-This is because traditional proof automation uses only the context and goals of the current proof.
-That is, it has no way of representing changes in programs, specifications, and proofs over time,
-and so no way of using that information to search for a fix when it breaks in response to change.
-So when traditional proof automation breaks in response to change,
-it cannot help the human fix the proof.
+And with traditional proof automation, the burden of change largely falls on those very humans.
+This is because traditional proof automation considers only the current state of programs, specifications, and proofs.
+It has no way of respresenting changes in programs, specifications, and proofs over time.
+So when traditional proof automation breaks in respose to change, it cannot help the proof engineer fix the broken proof.
 But proof repair---smarter proof automation---can.
 
 % TODO for now, just a copy-paste of analytics original paper, including the bib---will change soon

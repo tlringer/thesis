@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  4 MAY 2021 18:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  4 MAY 2021 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2069,29 +2069,19 @@ nput line 33.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
 [31]
-Overfull \hbox (35.19145pt too wide) in paragraph at lines 66--68
-\OT1/pplj/m/n/10.95 (-20) stan-dard li-brary. For ex-am-ple, the proof of the l
-emma []
- []
-
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
-[32]) (./repair/approach.tex
-Overfull \hbox (10.39867pt too wide) in paragraph at lines 4--9
-\OT1/pplj/m/n/10.95 (-20) The ex-am-ple patch to a sin-gle proof (the proof of 
-[]
- []
-
+ [32]) (./repair/approach.tex
 
 LaTeX Warning: Reference `pumpkin-spec-trans' on page 33 undefined on input lin
-e 22.
+e 21.
 
-[33]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
+[33]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 50.
  (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
@@ -2413,10 +2403,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
  ) 
 Here is how much of TeX's memory you used:
- 50336 strings out of 492609
- 1013500 string characters out of 6129033
- 1312397 words of memory out of 5000000
- 51013 multiletter control sequences out of 15000+600000
+ 50335 strings out of 492609
+ 1013473 string characters out of 6129033
+ 1311397 words of memory out of 5000000
+ 51012 multiletter control sequences out of 15000+600000
  636165 words of font info for 837 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2438,7 +2428,7 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1599164 bytes).
+Output written on uwthesis.pdf (153 pages, 1598913 bytes).
 PDF statistics:
  3324 PDF objects out of 3580 (max. 8388607)
  3094 compressed objects within 31 object streams

@@ -64,7 +64,7 @@ Many of these changes were simple. For example, the developer wrote a lemma that
   Lemma INR_IPR : (@\ltacforall@)p, INR (Pos.to_nat p) = IPR p.
 \end{lstlisting}
 The developer then used this lemma to fix broken proofs within the standard library. 
-For example, the proof of the lemma \lstinline{plus_negative_positive} broke on this line: % TODO check to make sure this is the right theorem name IRL
+For example, the proof of one lemma broke on this line: % TODO check to make sure this is the right theorem name IRL
 
 \begin{lstlisting}
   (@\fails{rewrite Pos2Nat.inj\_sub by trivial.}@)

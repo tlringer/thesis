@@ -1,26 +1,25 @@
 \section{Approach}
 \label{sec:pumpkin-approach}
 
-In the example from Section~\ref{sec:patch-motivating}, the change in \lstinline{IZR} broke many proofs.
-The example patch to a single proof (the proof of \lstinline{plus_negative_positive}) carried enough information (the rewrite by \lstinline{INR_IPR})
-to fix the other broken proofs.
-More generally, example-based proof repair takes advantage of the fact that an example patch to a broken proof can carry enough information to fix other proofs
-broken by the same change.
+Example-based proof repair takes advantage of the fact that an example patch to a broken proof can carry enough 
+information (like the rewrite by \lstinline{INR_IPR}) to fix other proofs broken by the same change (like the broken
+client proofs). \sysname implements a prototype of this.
 
-\sysname implements a prototype of this.
 To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide an \textit{example} of how to adapt a proof to a change.
 \sysname extracts that information into a \textit{patch candidate}---a function that describes the change in the example patched proof,
 but that is localized to the context of the example, and not yet enough to fix other proofs broken by the change.
 \sysname then generalizes that candidate into a \textit{reusable patch}: a function
-that can be used to fix other broken proofs broken by the same change, which \sysname defines as a Coq term.
-In other words, looking back to the thesis statement, the information shows up in the difference between versions of the example patched proof.
-\sysname can extract, generalize, and in some cases apply that information.
+that can be used to fix other broken proofs broken by the same change, which \sysname defines as a term in \kl{Gallina}.
+
+In other words, looking back to the thesis statement, the information shows up in the difference between versions 
+of the example patched proof.
+\sysname can extract and generalize that information.
 
 The \sysname prototype focuses on finding reusable patches to proofs in response to certain changes in the content of programs and specifications (Section~\ref{sec:pumpkin-scope}).
 It does this using a combination of semantic differencing and proof term transformations:
 Differencing (Section~\ref{sec:pumpkin-spec-diff} looks at the difference between versions of the example patched proof for this information, and finds the candidate.
-Then, proof term transformations (Section~\ref{pumpkin-spec-trans}) modify that candidate to produce the reusable proof patch.
-All of this happens over proof terms in Gallina, since tactics may hide necessary information as I will soon show.
+The proof term transformations (Section~\ref{pumpkin-spec-trans}) then modify that candidate to produce the reusable proof patch.
+All of this happens over proof terms in Gallina, since tactics may hide necessary information. % as I will soon show.
 \sysname has only preliminary support for proof script integration and patch application (see Section~\ref{sec:pumpkin-impl}),
 though I will address this limitation with the \toolnamec extension in Chapter~\ref{chapt:pi}.
 

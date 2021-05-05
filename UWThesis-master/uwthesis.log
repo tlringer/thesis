@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 MAY 2021 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  5 MAY 2021 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2070,16 +2070,16 @@ nput line 33.
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
 [31]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
  [32]) (./repair/approach.tex
 
 LaTeX Warning: Reference `pumpkin-spec-trans' on page 33 undefined on input lin
 e 21.
 
+[33]
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
-[33]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 50.
  (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
@@ -2087,7 +2087,7 @@ LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <9> not available
 ) (./repair/introex.tex) (./repair/introex.tex) (./repair/introex.tex)
 (./repair/introexterm.tex) (./repair/introexterm.tex) (./repair/introexterm.tex
 ) [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40]
-<repair/nat_ind.pdf, id=985, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=986, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 118.
@@ -2150,7 +2150,7 @@ LaTeX Warning: Reference `pi-implementation' on page 68 undefined on input line
  26.
 
 [68]
-<often/workflowa.pdf, id=1665, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1666, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2428,10 +2428,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1598892 bytes).
+Output written on uwthesis.pdf (153 pages, 1599148 bytes).
 PDF statistics:
- 3325 PDF objects out of 3580 (max. 8388607)
- 3095 compressed objects within 31 object streams
+ 3326 PDF objects out of 3580 (max. 8388607)
+ 3096 compressed objects within 31 object streams
  1485 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -261,10 +261,10 @@ In summary, differencing has the following specification:
 \item each term in \lstinline{candidates} has type \lstinline{candidate_goal}.
 \end{itemize}
 \end{itemize}
-\sysname infers the instance type and the final goal from the change itself, so the proof engineer does not have to provide this information.
-\sysname could in theory infer the wrong instance or the wrong goal type, but this would not sacrifice soundness---it would mean only that
+\sysname infers the instance of the procedure and the candidate goal type from the change in the example patched proof itself, so the proof engineer does not have to provide this information.
+\sysname could in theory infer the wrong instance or the wrong candidate goal type, but this would not sacrifice soundness---it would mean only that
 the patch procedure would either fail to produce a patch, or produce a patch that is not useful in the end.
-All terms that \sysname produces are well-typed. % TODO hyphen or no hyphen?
+All terms that \sysname produces type check in the end. % TODO hyphen or no hyphen?
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}

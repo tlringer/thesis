@@ -270,20 +270,17 @@ All terms that \sysname produces type check in the end. % TODO hyphen or no hyph
 \label{sec:pumpkin-spec-trans}
 
 Differencing produces patch candidates that are localized to a particular context according to the inferred goal for that change,
-but does not yet generalize to other contexts.
+but do not yet generalize to other contexts.
 The transformations are what take each candidate and tries to modify it to produce a term that \textit{does} generalize to other contexts.
-If it succeeds, it has found a \textit{reusable patch}.
+If they succeed, \sysname has found a \textit{reusable patch}.
 
 Consider once more the example in Figure~\ref{fig:example}.
-The candidate patch that differencing found:
+The candidate patch that differencing found has this type:
 
 \begin{lstlisting}[language=coq]
-  candidate := fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H.
-\end{lstlisting}
-has this type:
-
-\begin{lstlisting}
-  candidate : (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
+  candidate :=
+    fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
+  : (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@).
 \end{lstlisting}
 The reusable patch that \sysname is looking for, however, should have this type:
 
@@ -299,7 +296,7 @@ There are four transformations that turn patch candidates into reusable proof pa
 
 \begin{enumerate}
 \item \textit{patch specialization} to arguments,
-\item \textit{patch generalization} of arguments or functions,
+\item \textit{patch generalization}\footnote{In the original paper, I called this \textit{patch abstraction}. But I later learned that \textit{generalization} has a technical meaning in the automated theorem proving world, and that the technical meaning coincides beautifully with the technical meaning in the world of proof assistants. So I renamed it for this thesis.} of arguments or functions,
 \item \textit{patch inversion} to reverse a patch, and
 \item \textit{lemma factoring} to break a term into parts.
 \end{enumerate}
@@ -323,29 +320,31 @@ For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the insta
 That is, first, \sysname \textit{generalizes} the candidate by \lstinline{m} (line 11), which lifts it out of the base case:
 
 \begin{lstlisting}
-  fun (@\diff{n0}@) n m p H0 H1 =>(@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)(@\vspace{-0.04cm}@)
+  fun (@\diff{n0}@) n m p H0 H1 =>
+    (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)
   : (@\ltacforall@) (@\diff{n0}@) n m p,
       n <= m $\rightarrow$
       m <= p $\rightarrow$
-      n <= (@\diff{n0}@) $\rightarrow$
-      n <= (@\diff{n0}@) + 1.
+      n <= (@\diff{n0}@) $\rightarrow$ n <= (@\diff{n0}@) + 1.
 \end{lstlisting}
 \sysname then \textit{specializes} this generalized candidate to \lstinline{p} (line 16), the argument
 to the conclusion of \lstinline{le_ind}. This produces a patch:
 
 \begin{lstlisting}
-  patch n m p H0 H1 := (@\vspace{-0.04cm}@)
-    (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ n <= (@\diff{p}@) -> n <= (@\diff{p}@) + 1
+  patch n m p H0 H1 :=
+    (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)
+  : (@\ltacforall@) n m p,
+      n <= m $\rightarrow$
+      m <= p $\rightarrow$
+      n <= (@\diff{p}@) $\rightarrow$ n <= (@\diff{p}@) + 1
 \end{lstlisting}
-which has the goal type.
+which has the goal type, so \sysname is done.
 
 This simple example uses only two transformations.
 The other transformations help turn candidates into patches in similar ways, all guided by
 the structure of the proof term.
-I will describe these transformations more in Section~\ref{sec:pumpkin-trans},
-and present real-world examples that demonstrate more instances in Section~\ref{sec:pumpkin-results}.
+I will describe these transformations more in Section~\ref{sec:pumpkin-trans}.
+%and present real-world examples that demonstrate more instances in Section~\ref{sec:pumpkin-results}.
 
 \paragraph{Summary}
 In summary, the transformations together have the following specification:
@@ -365,6 +364,6 @@ When these transformations fail, or when the list of candidates that differencin
 \sysname simply fails to return a patch.
 As with differencing, it is possible that a mistake in the implementation of a given instance
 leads to a final \lstinline{goal} type is not useful to the proof engineer,
-but this cannot soundness:
-every \lstinline{patch} \toolname produces is well-typed.
+but this cannot sacrifice soundness:
+every \lstinline{patch} \sysname produces type checks in the end with the goal type in the end.
 

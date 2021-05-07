@@ -37,9 +37,10 @@
 - get the motivating example actually working if it doesn't yet, and link to it
 - IZR pattern matching versus eliminators
 - ensure line numbers for figure are adjusted to updated figure
-- configuration to instance, and footnote
-- abstraction to generalization, and footnote
+- configuration to instance
+- abstraction to generalization
 - check specs of each alg
+- clean specs of each alg
 
 # Chapter 4
 

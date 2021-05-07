@@ -53,22 +53,22 @@
 \contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{37}{subsection.3.2.3}% 
 \contentsline {paragraph}{Summary}{37}{lstnumber.-66.1}% 
 \contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{38}{subsection.3.2.4}% 
-\contentsline {paragraph}{Summary}{39}{lstnumber.-71.3}% 
-\contentsline {section}{\numberline {3.3}Differencing}{39}{section.3.3}% 
+\contentsline {paragraph}{Summary}{39}{lstnumber.-70.6}% 
+\contentsline {section}{\numberline {3.3}Differencing}{40}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Design}{40}{subsection.3.3.1}% 
 \contentsline {paragraph}{Identity}{41}{subsection.3.3.1}% 
 \contentsline {paragraph}{Application}{41}{subsection.3.3.1}% 
-\contentsline {paragraph}{Functions}{41}{lstnumber.-74.1}% 
-\contentsline {paragraph}{Eliminators}{41}{lstnumber.-78.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Limitations}{42}{subsection.3.3.2}% 
+\contentsline {paragraph}{Functions}{41}{lstnumber.-73.1}% 
+\contentsline {paragraph}{Eliminators}{41}{lstnumber.-77.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Limitations}{43}{subsection.3.3.2}% 
 \contentsline {paragraph}{Heuristics}{43}{subsection.3.3.2}% 
 \contentsline {paragraph}{Isolating Changes}{43}{figure.caption.19}% 
 \contentsline {section}{\numberline {3.4}Transformation}{43}{section.3.4}% 
 \contentsline {subsection}{\numberline {3.4.1}Design}{44}{subsection.3.4.1}% 
 \contentsline {paragraph}{Specialization}{44}{subsection.3.4.1}% 
 \contentsline {paragraph}{Generalization}{44}{subsection.3.4.1}% 
-\contentsline {paragraph}{Inversion}{46}{lstnumber.-90.2}% 
-\contentsline {paragraph}{Factoring}{46}{lstnumber.-95.5}% 
+\contentsline {paragraph}{Inversion}{46}{lstnumber.-89.2}% 
+\contentsline {paragraph}{Factoring}{46}{lstnumber.-94.5}% 
 \contentsline {subsection}{\numberline {3.4.2}Limitations}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Undecidability}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Dependent Factoring}{47}{subsection.3.4.2}% 
@@ -81,35 +81,35 @@
 \contentsline {paragraph}{Specialization}{50}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Generalization}{50}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Inversion}{50}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Factoring}{51}{lstnumber.-101.2}% 
+\contentsline {paragraph}{Factoring}{51}{lstnumber.-100.2}% 
 \contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{52}{subsubsection.3.5.1.4}% 
 \contentsline {subsection}{\numberline {3.5.2}Extensions}{52}{subsection.3.5.2}% 
 \contentsline {paragraph}{Git Integration}{52}{subsection.3.5.2}% 
-\contentsline {paragraph}{Patch Application}{52}{lstnumber.-104.1}% 
-\contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-105.1}% 
+\contentsline {paragraph}{Patch Application}{52}{lstnumber.-103.1}% 
+\contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-104.1}% 
 \contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{53}{subsection.3.5.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{54}{subsubsection.3.5.3.1}% 
 \contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{54}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Differencing}{54}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-108.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{55}{lstnumber.-111.4}% 
-\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{56}{subsubsection.3.5.3.3}% 
+\contentsline {paragraph}{A Challenge for Differencing}{55}{subsubsection.3.5.3.2}% 
+\contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-107.9}% 
+\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-110.4}% 
+\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{57}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{57}{section.3.6}% 
 \contentsline {paragraph}{Identifying Changes}{57}{Item.43}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{58}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{58}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{58}{lstnumber.-130.1}% 
-\contentsline {paragraph}{Apply}{58}{lstnumber.-131.1}% 
+\contentsline {paragraph}{Search}{58}{lstnumber.-129.1}% 
+\contentsline {paragraph}{Apply}{58}{lstnumber.-130.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{59}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{59}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{59}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{59}{lstnumber.-138.2}% 
-\contentsline {paragraph}{Apply}{60}{lstnumber.-139.2}% 
+\contentsline {paragraph}{Search}{60}{lstnumber.-137.2}% 
+\contentsline {paragraph}{Apply}{60}{lstnumber.-138.2}% 
 \contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{60}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{61}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{61}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{61}{lstnumber.-148.2}% 
-\contentsline {paragraph}{Apply}{61}{lstnumber.-149.2}% 
+\contentsline {paragraph}{Search}{62}{lstnumber.-147.2}% 
+\contentsline {paragraph}{Apply}{62}{lstnumber.-148.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{62}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{63}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{65}{chapter.4}% 
@@ -123,9 +123,9 @@
 \contentsline {paragraph}{Factoring out Constructors}{70}{figure.caption.27}% 
 \contentsline {paragraph}{Adding a Dependent Index}{71}{figure.caption.28}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{71}{subsection.4.2.3}% 
-\contentsline {paragraph}{Summary}{72}{lstnumber.-170.1}% 
+\contentsline {paragraph}{Summary}{72}{lstnumber.-169.1}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{72}{subsection.4.2.4}% 
-\contentsline {paragraph}{Summary}{73}{lstnumber.-171.2}% 
+\contentsline {paragraph}{Summary}{73}{lstnumber.-170.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{74}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{75}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{76}{subsection.4.3.2}% 
@@ -135,15 +135,15 @@
 \contentsline {paragraph}{Correctness}{79}{figure.caption.31}% 
 \contentsline {paragraph}{Equivalences from Configurations}{79}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{80}{subsection.4.3.4}% 
-\contentsline {paragraph}{Common Definitions}{81}{lstnumber.-192.1}% 
+\contentsline {paragraph}{Common Definitions}{81}{lstnumber.-191.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{82}{subsubsection.4.3.4.1}% 
 \contentsline {paragraph}{Generating the Motive}{82}{figure.caption.33}% 
-\contentsline {paragraph}{Generating Each Case}{82}{lstnumber.-195.1}% 
-\contentsline {paragraph}{Composing the Result}{84}{lstnumber.-199.1}% 
+\contentsline {paragraph}{Generating Each Case}{82}{lstnumber.-194.1}% 
+\contentsline {paragraph}{Composing the Result}{84}{lstnumber.-198.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{84}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Discovering the Equivalence Parts}{84}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Deriving the Configuration}{85}{figure.caption.34}% 
-\contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-205.1}% 
+\contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-204.1}% 
 \contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{86}{subsection.4.3.5}% 
 \contentsline {paragraph}{Heuristics}{86}{subsection.4.3.5}% 
 \contentsline {paragraph}{Isolating Changes}{87}{subsection.4.3.5}% 

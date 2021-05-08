@@ -44,12 +44,14 @@ When it recurses, it extends $\Gamma$ with common assumptions, then differences 
 In each case, it carries a goal type $G$, and returns a list of patch candidates $\vec{t}$ that each have that goal type.
 That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$,
 where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
+The details of this vary by subterm-configuration combination.
 
-The details of this vary by the structure of the term and the configuration, with different heuristics corresponding to different subterm-configuration combinations.
-For historical reasons, as \sysname was a prototype and differencing of proof terms was novel at the time, these heuristics are not formalized. % TODO formalize if time
-Here I describe the design of some of the heuristics in CIC${_\omega}$.
-Section~\ref{sec:pumpkin-impl-diff} describes additional features needed for implementation in Gallina,
-and the \toolnamec extension in Chapter~\ref{chapt:pi} formalizes a more elegant differencing algorithm building on some of the insights from the \sysname differencing prototype.
+For historical reasons, as \sysname was a prototype, these algorithms are not formalized.
+Instead, I describe them at a high level, as heuristics in CIC$_{\omega}$.
+I still refer to the judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ as the interface,
+even though I do not provide the derivations.
+In Chapter~\ref{chapt:pi} I will formalize a more elegant differencing algorithm for the \toolnamec extension,
+building on some of the insighst from differencing in the \sysname prototype.
 
 \paragraph{Identity}
 The simplest patch is the identity patch.
@@ -68,11 +70,12 @@ That is, it searches for a subterm of $f\ t_a$ that is definitionally equal to $
 This is how differencing can identify the candidate for the base case of Figure~\ref{fig:example} (line 13).
 It is also a core building block that other differencing heuristics rely on.
 
-When both proof terms are function applications, and the above heuristic fails:
+When both proof terms are function applications:
 
 \begin{lstlisting}
   $\Gamma \vdash (f_a\ t_a,\ f_b\ t_b,\ G) \Downarrow_{d} \vec{t}$
 \end{lstlisting}
+and the previous heuristic fails,
 differencing may recurse into both the functions and the arguments, search for patches, and then compose the results.
 How to compose those results varies by configuration.
 
@@ -81,7 +84,7 @@ The treatment of functions depends on whether a hypothesis or a conclusion has c
 When recursing into the body of two functions, each with a hypothesis of the same type:
 
 \begin{lstlisting}
-  $\Gamma \vdash (\lambda (t_a : T) . b_a, \lambda (t_b : T) . b_b,\ G) \Downarrow_{d} \vec{t}$
+  $\Gamma \vdash (\lambda (t_a : T) . b_a,\ \lambda (t_b : T) . b_b,\ G) \Downarrow_{d} \vec{t}$
 \end{lstlisting}
 differencing assumes that the conclusion has changed.
 That is, it assumes that $t_a$ and $t_b$ are the same, adds one of them to a common environment,
@@ -101,7 +104,7 @@ with type $G$.
 When a hypothesis type has changed:
 
 \begin{lstlisting}
-  $\Gamma \vdash (\lambda (t_a : T_a) . b_a, \lambda (t_b : T_b) . b_b,\ G) \Downarrow_{d} \vec{t}$
+  $\Gamma \vdash (\lambda (t_a : T_a) . b_a,\ \lambda (t_b : T_b) . b_b,\ G) \Downarrow_{d} \vec{t}$
 \end{lstlisting}
 differencing acts similarly, but it substitutes the changed hypothesis type in the body in order to recurse into a well-typed environment.
 It also has some additional logic to remove hypothesis that need not show up in the goal type.

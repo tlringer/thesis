@@ -11,7 +11,7 @@
   \item Languages
     \subitem Gallina, \hyperpage{12--14}, \hyperpage{16}, 
 		\hyperpage{20}, \hyperpage{27, 28}, \hyperpage{33}, 
-		\hyperpage{68}, \hyperpage{110}
+		\hyperpage{40}, \hyperpage{68}, \hyperpage{110}
     \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}
 
   \indexspace
@@ -30,6 +30,7 @@
 
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
-		\hyperpage{20}, \hyperpage{75}, \hyperpage{114}
+		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}, 
+		\hyperpage{114}
 
 \end{theindex}

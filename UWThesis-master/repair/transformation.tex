@@ -226,6 +226,7 @@ It first searches as deep as possible for a term of type \lstinline{X} $\rightar
 If it finds such a term, then it recursively searches for a term with type \lstinline{Y} $\rightarrow$ \lstinline{Z}. 
 It maintains all possible 
 paths of factors along the way, and it discards any paths that cannot reach \lstinline{Z}.
+It does not yet support paths where \lstinline{Y} depends on \lstinline{X}.
 
 \subsection{Limitations}
 \label{sec:pumpkin-trans-limitations}
@@ -238,11 +239,6 @@ Limitations that are due to the choice of implementation strategy are in Section
 Not reduced and so on.
 Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
 Inversion will necessarily sometimes fail, since not all terms are invertible.
-(Needs a sentence about SOTA.)
-
-\paragraph{Dependent Factoring} The current factoring algorithm can handle paths
-with more than two factors, but it fails when \lstinline{Y} depends on \lstinline{X}.
-Other components may benefit from dependent factoring; we leave this to future work.
 (Needs a sentence about SOTA.)
 
 \paragraph{Modeling Diverse Proof Styles} (Needs adjustment to current frame.)

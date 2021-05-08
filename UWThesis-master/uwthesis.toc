@@ -71,7 +71,6 @@
 \contentsline {paragraph}{Factoring}{46}{lstnumber.-92.5}% 
 \contentsline {subsection}{\numberline {3.4.2}Limitations}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Undecidability}{47}{subsection.3.4.2}% 
-\contentsline {paragraph}{Dependent Factoring}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Modeling Diverse Proof Styles}{47}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}Implementation}{47}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{48}{subsection.3.5.1}% 
@@ -94,24 +93,24 @@
 \contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-105.9}% 
 \contentsline {paragraph}{A Challenge for Generalization}{55}{lstnumber.-108.4}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{56}{subsubsection.3.5.3.3}% 
-\contentsline {section}{\numberline {3.6}Results}{57}{section.3.6}% 
+\contentsline {section}{\numberline {3.6}Results}{56}{section.3.6}% 
 \contentsline {paragraph}{Identifying Changes}{57}{Item.43}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{57}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{58}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{58}{lstnumber.-127.1}% 
 \contentsline {paragraph}{Apply}{58}{lstnumber.-128.1}% 
-\contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{59}{subsubsection.3.6.1.1}% 
+\contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{58}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{59}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{59}{subsection.3.6.2}% 
 \contentsline {paragraph}{Search}{59}{lstnumber.-135.2}% 
-\contentsline {paragraph}{Apply}{60}{lstnumber.-136.2}% 
+\contentsline {paragraph}{Apply}{59}{lstnumber.-136.2}% 
 \contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{60}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{61}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{61}{subsection.3.6.3}% 
 \contentsline {paragraph}{Search}{61}{lstnumber.-145.2}% 
 \contentsline {paragraph}{Apply}{61}{lstnumber.-146.2}% 
-\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{62}{subsubsection.3.6.3.1}% 
-\contentsline {section}{\numberline {3.7}Conclusion}{63}{section.3.7}% 
+\contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{61}{subsubsection.3.6.3.1}% 
+\contentsline {section}{\numberline {3.7}Conclusion}{62}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{65}{chapter.4}% 
 \contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{65}{Item.48}% 
 \contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{65}{Item.48}% 

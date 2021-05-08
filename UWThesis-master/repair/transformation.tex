@@ -4,7 +4,7 @@
 The proof term transformations together transform a patch candidate into a reusable proof patch.
 At a high level, these transformations adapt the candidate to the context of the goal type that \sysname infers.
 As with differencing, the transformations are aware of and guided by the semantics of Gallina's type theory CIC$_{\omega}$.
-This section describes the design~\ref{sec:pumpkin-trans-design} and limitations~\ref{sec:pumpkin-trans-limitations} of these transformations.
+This section describes the design (Section~\ref{sec:pumpkin-trans-design}) and limitations (Section~\ref{sec:pumpkin-trans-limitations}) of these transformations.
 Section~\ref{sec:pumpkin-impl-trans} describes the implementation in \sysname.
 
 % TODO could write more probably
@@ -18,13 +18,14 @@ and adapt that candidate to some new context in a goal-direct manner.
 In the end, if successful, they produce a reusable proof patch $p$ with type $G$, where $G$ is the inferred goal type.
 That is, we can view the high-level composition of transformations as a single judgment
 $\Gamma\ \vdash\ (\vec{t},\ G)\ \Downarrow_{t} p$, where in the end, $\Gamma \vdash p : G$. 
-
 The details vary by transformation,
 and the details of which transformations run at all and in what order to reach the goal vary by configuration.
+
 For historical reasons, as \sysname was a prototype, these tranformations are not formalized. % TODO formalize if time
-Here I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
-Section~\ref{sec:pumpkin-impl-trans} describes additional features needed for implementation in Gallina,
-and the \toolnamec extension in Chapter~\ref{chapt:pi} formalizes a more elegant proof term transformation building on some of the insights from the \sysname transformation prototypes.
+Instead, I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
+I still refer to the corresponding judgments as the interfaces, even though I do not provide the derivations.
+In Chapter~\ref{chapt:pi}, I will formalize a more elegant proof term transformation for the \toolnamec extension,
+building on some of the insights from the transformations in the \sysname prototype.
 
 % From Motivating the Core and Implementation
 

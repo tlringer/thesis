@@ -110,7 +110,8 @@ differencing acts similarly, but it substitutes the changed hypothesis type in t
 It also has some additional logic to remove hypothesis that need not show up in the goal type.
 
 \paragraph{Eliminators} % From implementation, plus some additional stuff
-The semantic differencing algorithms views inductive types as \emph{trees} that represent their eliminators.
+Recall that inductive types in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.
+The semantic differencing algorithms views inductive types as \emph{trees} that represent these eliminators.
 In these trees, every node is a type context, and every edge is an extension to that type context 
 with a new term.\footnote{These trees are inspired by categorical models of dependent type theory~\cite{Hofmann97}.}
 Correspondingly, type differencing (to identify goal types) compares nodes, 
@@ -129,8 +130,8 @@ that differencing can efficiently identify good candidates.
 Consider, for example, searching for a patch between conclusions of two inductive proofs of theorems about the natural numbers:
 
 \begin{lstlisting}
-  $Elim (nat,\ P)\ \{ f_O,\ f_S \}$
-  $Elim (nat,\ Q)\ \{ g_O,\ g_S \}$ 
+  $\mathrm{Elim} (\mathrm{nat},\ P)\ \{ f_0,\ f_S \}$
+  $\mathrm{Elim} (\mathrm{nat},\ Q)\ \{ g_0,\ g_S \}$ 
 \end{lstlisting}
 with goal type:
 
@@ -143,14 +144,14 @@ In each case, differencing diffs the terms in the dotted edges of the tree for t
 try to find a term that maps between conclusions of that case:
 
 \begin{lstlisting}[language=coq]
-  $\Gamma \vdash (f_O,\ g_O,\ Q\ O \rightarrow P\ O) \Downarrow_{d} \vec{t_O}$
+  $\Gamma \vdash (f_0,\ g_0,\ Q\ 0 \rightarrow P\ 0) \Downarrow_{d} \vec{t_0}$
   $\Gamma \vdash (f_S,\ g_S,\ \Pi (n : nat) . Q\ (S\ n) \rightarrow P\ (S\ n)) \Downarrow_{d} \vec{t_S}$
 \end{lstlisting}
 In the inductive case, differencing also knows that the change in the type of the inductive hypothesis is not semantically relevant (it occurs for any change in the inductive motive).
-Furthermore, it knows that the inductive hypotheis cannot show up in the patch itself, since the goal type does not reference the inductive hypothesis,
+Furthermore, it knows that the inductive hypothesis cannot show up in the patch itself, since the goal type does not reference the inductive hypothesis,
 so it attempts to remove any occurrences of the inductive hypothesis in any candidate.
 
-When differencing finds a candidate, it knows $Q$ and $P$ as well as the arguments $O$ or $S\ n$.
+When differencing finds a candidate, it knows $Q$ and $P$ as well as the arguments $0$ or $S\ n$.
 This makes it simple for \sysname to later query the transformations for the final patch, with type $Q \rightarrow P$.
 
 \subsection{Limitations}
@@ -171,37 +172,14 @@ Still, this is partly historical: for the \sysname prototype, the heuristics wer
 The extension to differencing in \toolnamec not only supports a large class of changes not supported by \sysname,
 but also abstracts many more details of heuristics.
 
-\begin{figure*}[ht]
-\begin{minipage}{0.48\textwidth}
-\begin{lstlisting}[language=coq]
-fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
-  (@\diff{le\_S n p}@) (* ... proof of stronger lemma *)(@\vspace{-0.04cm}@)
-: (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{S p}@)
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-\begin{lstlisting}[language=coq]
-fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
-  (@\diff{le\_plus\_trans n p 1}@) (* ... proof of stronger lemma *)(@\vspace{-0.04cm}@)
-: (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{p + 1}@)
-\end{lstlisting}
-\end{minipage}
-\vspace{-.35cm}
-\caption{Two proof terms \lstinline{old} (left) and \lstinline{new} (right) that contain the same proof of a stronger lemma.}
-\label{fig:stronger}
-\end{figure*}
-
 \paragraph{Isolating Changes} Differencing supports only incremental changes.
-Proof engineers, in contrast, often make multiple changes to a verification project in the same commit. % TODO recall REPLICA somewhere, forward tease about later stuff on this
-The challenge for differencing is to break down large, composite changes into small, isolated changes,
-then use the appropriate heuristics.
-Differencing cannot do this yet, and the later \toolnamec cannot do this either.
-However, the user study made it clear that in real life, this would be very useful during development,
-since proof engineers make much more granular changes in development time, % TODO all draft text
-so this is less of an issue than I had originally expected it to be.
-Still, change isolation would help with extracting repair benchmarks from artifacts, supporting library and version updates, and integrating with CI systems.
+The \toolname user study that I ran with \kl{Alex} showed that, during proof development,
+proof engineers often make incremental changes---so this should be helpful for development already.
+But changes in existing artifacts like Git repositories may capture multiple changes at the same time.
+An outstanding challenge for differencing that neither \sysname nor \toolnamec yet support
+is to break down large, composite changes into small, isolated changes.
+Isolating changes would help with extracting repair benchmarks from artifacts, supporting library and version updates, and integrating with CI systems.
 One idea for this is to draw on work in change and dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes,
-then use the factoring component to break those changes into smaller parts.
+then use the factoring transformation to break those changes into smaller parts.
 
 

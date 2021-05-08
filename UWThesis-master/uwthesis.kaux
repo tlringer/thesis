@@ -203,8 +203,6 @@
 \KAuxNewLinkScopetagInstance {fig:cattree}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-diff-limitations}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-diff-limitations}{document}
-\KAuxDeclaredScopeTag {fig:stronger}
-\KAuxNewLinkScopetagInstance {fig:stronger}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans-design}

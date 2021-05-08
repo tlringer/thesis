@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 MAY 2021 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 MAY 2021 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,12 +1593,6 @@ Package csquotes Info: ... none found.
 LaTeX Warning: Label `autoref-4' multiply defined.
 
 
-LaTeX Warning: Label `fig:stronger' multiply defined.
-
-
-LaTeX Warning: Label `fig:stronger@cref' multiply defined.
-
-
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
 
 
@@ -2087,13 +2081,13 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 74--95
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1026, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1027, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
-Package pdftex.def Info: repair/nat_ind.pdf  used on input line 121.
+Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
  [42 <./repair/nat_ind.pdf>]
-Overfull \hbox (14.13942pt too wide) in paragraph at lines 195--206
+Overfull \hbox (14.13942pt too wide) in paragraph at lines 175--184
 [] []\OT1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \OT1/pplj/m
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
@@ -2110,17 +2104,17 @@ e change in []
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 310.
 
-[53] [54] [55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
+[53] [54] [55]) (./repair/results.tex [56] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[58]
+[57] [58]
 Overfull \hbox (2.38933pt too wide) in paragraph at lines 184--187
 \OT1/pplj/m/n/10.95 (-20) When I ported User A's so-lu-tion to use User B's def
 -i-ni-tion of []
  []
 
-[59] [60] (./repair/divide.tex) (./repair/divide.tex) [61])
+[59] (./repair/divide.tex) (./repair/divide.tex) [60] [61])
 (./repair/conclusion.tex [62]
 Overfull \hbox (26.98114pt too wide) in paragraph at lines 16--19
 [][][][][][] 
@@ -2150,7 +2144,7 @@ LaTeX Warning: Reference `pi-implementation' on page 68 undefined on input line
  26.
 
 [68]
-<often/workflowa.pdf, id=1692, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1685, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2184,7 +2178,7 @@ Overfull \hbox (48.09023pt too wide) in paragraph at lines 264--265
 [78]
 Overfull \hbox (6.1325pt too wide) in paragraph at lines 300--309
 [] []\OT1/pplj/m/sc/10.95 (-20) e q u i v -a -l e n c e[] \OT1/pplj/m/n/10.95 (
--20) To pre-serve the equiv-a-lence (Fig-ure []28[], left), []
+-20) To pre-serve the equiv-a-lence (Fig-ure []27[], left), []
  []
 
 [79] [80] [81]
@@ -2333,7 +2327,7 @@ Overfull \hbox (4.17055pt too wide) in paragraph at lines 6--8
  []
 
 
-Overfull \hbox (1.024pt too wide) in paragraph at lines 22--24
+Overfull \hbox (1.024pt too wide) in paragraph at lines 23--25
 []| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []9[], []10[], []99[],
  []
 
@@ -2403,9 +2397,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
  ) 
 Here is how much of TeX's memory you used:
- 50362 strings out of 492609
- 1013843 string characters out of 6129033
- 1288430 words of memory out of 5000000
+ 50353 strings out of 492609
+ 1013695 string characters out of 6129033
+ 1288419 words of memory out of 5000000
  51010 multiletter control sequences out of 15000+600000
  636423 words of font info for 841 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2428,10 +2422,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1600617 bytes).
+Output written on uwthesis.pdf (153 pages, 1600026 bytes).
 PDF statistics:
- 3359 PDF objects out of 3580 (max. 8388607)
- 3128 compressed objects within 32 object streams
- 1509 named destinations out of 1728 (max. 500000)
+ 3352 PDF objects out of 3580 (max. 8388607)
+ 3121 compressed objects within 32 object streams
+ 1500 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

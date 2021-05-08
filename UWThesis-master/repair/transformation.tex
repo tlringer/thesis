@@ -77,7 +77,7 @@ The first generalizes candidates that map between types that share a common argu
 to abstract the common argument:
 
 \begin{lstlisting}[language=coq]
-  $\Pi (\diff{t0} : T),\ Q\ \diff{t0} \rightarrow P\ \diff{t0}$
+  $\Pi (\diff{t'} : T),\ Q\ \diff{t'} \rightarrow P\ \diff{t'}$
 \end{lstlisting}
 where $T$ is the type of $t$.
 The second generalizes candidates that map between types that share a common function, like:
@@ -88,9 +88,9 @@ The second generalizes candidates that map between types that share a common fun
 to abstract the common function:
 
 \begin{lstlisting}[language=coq]
-  $\Pi (\diff{P0} : T),\ \diff{P0} t' \rightarrow \diff{P0} t$
-\end{lstlisting} 
-where $T$ is the type of $P0$.
+  $\Pi (\diff{Q} : T),\ \diff{Q} t' \rightarrow \diff{Q} t$
+\end{lstlisting}
+where $T$ is the type of $Q$.
 
 Generalization takes a patch candidate, the goal type, and the function arguments or function to abstract.
 It first wraps the candidate inside of a lambda from the type of the term to abstract.
@@ -99,21 +99,21 @@ It continues to do this until there is nothing left to generalize, then filters 
 Consider, for example, abstracting this candidate by \lstinline{m}: % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
-  $\lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S O)\ H$
+  $\lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H$
   $: n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
 where \lstinline{<=} is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
 The first step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : nat) . \lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S O)\ H)$
-  $: \Pi (\diff{n0} : nat), n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
+  $\lambda (\diff{n0} : \mathrm{nat}) . \lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H)$
+  $: \Pi (\diff{n0} : \mathrm{nat}), n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
 \end{lstlisting}
 The second step substitutes \lstinline{n0} for \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : nat) . \lambda (H : n <= \diff{n0}) . \mathrm{le\_plus\_trans}\ n\ \diff{n0}\ (S O)\ H)$
-  $: \Pi (\diff{n0} : nat), n <= \diff{n0} \rightarrow n <= \mathrm{plus}\ \diff{n0}\ 1$
+  $\lambda (\diff{n0} : \mathrm{nat}) . \lambda (H : n <= \diff{n0}) . \mathrm{le\_plus\_trans}\ n\ \diff{n0}\ (S\ O)\ H)$
+  $: \Pi (\diff{n0} : \mathrm{nat}), n <= \diff{n0} \rightarrow n <= \mathrm{plus}\ \diff{n0}\ 1$
 \end{lstlisting}
 
 In general, generalization is a kind of anti-unification problem, % TODO cite and so on

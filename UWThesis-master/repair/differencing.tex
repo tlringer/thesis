@@ -6,9 +6,9 @@
 
 % From Motivating the Core, modified and augmented
 
-Differencing is aware of and guided by the semantics of Coq's rich proof term language Gallina---that is, it is a \textit{semantic differencing} algorithm.
+Differencing is aware of and guided by the semantics of Coq's rich proof term language \kl{Gallina}---that is, it is a \textit{semantic differencing} algorithm.
 This means that differencing can take advantage of the structure and information carried in every proof term,
-thanks to Gallina's rich type theory CIC$_{\omega}$.
+thanks to Gallina's rich type theory \kl{CIC$_{\omega}$}.
 The rich structure of terms helps guide differencing for each configuration,
 while the rich information in their types helps ensure correctness in the end.
 
@@ -24,7 +24,7 @@ The rich type information proof terms carry helps prevent exploration of syntact
 For example, in the inductive case of the proof term from Figure~\ref{fig:example} (line 14), the inductive hypothesis \lstinline{IHle} changes:
 
 \begin{lstlisting}[language=coq]
-  $\ldots$ (IHle : (@\diff{n <= m0 + 1}@)) $\ldots$(@\vspace{-0.08cm}@)
+  $\ldots$ (IHle : (@\diff{n <= m0 + 1}@)) $\ldots$
   $\ldots$ (IHle : (@\diff{n <= m0}@)) $\ldots$
 \end{lstlisting}
 Notably, though, the type of \lstinline{IHle} changes for \emph{any} two inductive proofs over \lstinline{le}

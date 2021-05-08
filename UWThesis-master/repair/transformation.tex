@@ -74,7 +74,7 @@ The first generalizes candidates that map between types that share a common argu
 \begin{lstlisting}[language=coq]
   $Q\ t\ \rightarrow P\ t$
 \end{lstlisting}
-to abstract the common argument:
+by the common argument:
 
 \begin{lstlisting}[language=coq]
   $\Pi (\diff{t'} : T),\ Q\ \diff{t'} \rightarrow P\ \diff{t'}$
@@ -85,18 +85,18 @@ The second generalizes candidates that map between types that share a common fun
 \begin{lstlisting}[language=coq]
   $P\ t'\ \rightarrow P\ t$
 \end{lstlisting}
-to abstract the common function:
+by the common function:
 
 \begin{lstlisting}[language=coq]
   $\Pi (\diff{Q} : T),\ \diff{Q} t' \rightarrow \diff{Q} t$
 \end{lstlisting}
 where $T$ is the type of $Q$.
 
-Generalization takes a patch candidate, the goal type, and the function arguments or function to abstract.
-It first wraps the candidate inside of a lambda from the type of the term to abstract.
-Then, it substitutes terms inside the body with the abstract term.
+Generalization takes a patch candidate, the goal type, and the function arguments or function by which to generalize.
+It first wraps the candidate inside of a lambda from the type of the term by which to generalize.
+Then, it substitutes terms inside the body with the generalized term.
 It continues to do this until there is nothing left to generalize, then filters results by the goal type.
-Consider, for example, abstracting this candidate by \lstinline{m}: % TODO note it's from the thing
+Consider, for example, generalizing this candidate by \lstinline{m}: % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
   $\lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H$
@@ -120,20 +120,21 @@ In general, generalization is a kind of anti-unification problem, % TODO cite an
 as the terms and types may be reduced,
 so that the common function or argument does not appear explicitly.
 This is of course undecidable.
-This poses a challenge for abstraction in the second step---substitution.
+This poses a challenge for generalization in the second step---substitution.
 
-To handle this challenge, generalization uses a list of \textit{abstraction strategies} to determine what subterms to substitute.
+To handle this challenge, generalization uses a list of \textit{substitution strategies}\footnote{I originally called these \textit{abstraction strategies}, but this is more accurate.}
+to determine what subterms to substitute.
 In this case, the simplest strategy works: the tool
-replaces all terms that are convertible to the concrete argument \lstinline{m} with the abstract argument
+replaces all terms that are convertible to the concrete argument \lstinline{m} with the generalized argument
 \lstinline{n0}, which produces a single candidate. Type checking this candidate confirms that it is a patch.
-In some cases, the simplest strategy is not sufficient, even when it is possible to abstract the term.
+In some cases, the simplest strategy is not sufficient, even when it is possible to genearlize the term.
 Section~\ref{sec:pumpkin-impl-trans} describes a sample of other strategies.
 
-It is the job of the patch finding procedure to provide the candidate and the terms to abstract.
+It is the job of the patch finding procedure to provide the candidate and the terms by which to generalize.
 In addition, each configuration includes a list of strategies.
 The configuration for changes in conclusions, for example, starts with the simplest strategy,
 and moves on to more complex strategies only if that strategy fails.
-This design makes abstraction simple to extend with new strategies and simple to call with different strategies
+This design makes generalization simple to extend with new strategies and simple to call with different strategies
 for different configurations, or even as an optimization for the proof engineer.
 
 \paragraph{Inversion} Sometimes, when two types are propositionally equal, % TODO explain this earlier in Coq explanation and so on, too, and refer back; use pi explanation
@@ -194,7 +195,7 @@ For example, equality is symmetric, so the component can invert any application 
 I will explain this more in Section~\ref{sec:pumpkin-impl-diff}.
 
 \paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
-This can break other problems, like abstraction, into smaller subproblems.
+This can break other problems, like generalization, into smaller subproblems.
 It is also necessary to invert certain terms, since the inverse of:
 
 \begin{lstlisting}
@@ -237,14 +238,14 @@ Limitations that are due to the choice of implementation strategy are in Section
 
 \paragraph{Undecidability} (Needs rewording but draft text, whatever.)
 Not reduced and so on.
-Abstracting candidates is not always possible; abstraction will necessarily be a collection of heuristics.
+generalizing candidates is not always possible; generalization will necessarily be a collection of heuristics.
 Inversion will necessarily sometimes fail, since not all terms are invertible.
 (Needs a sentence about SOTA.)
 
 \paragraph{Modeling Diverse Proof Styles} (Needs adjustment to current frame.)
 Coq programmers use diverse proof styles; the ideal tool should support many different styles.
 Proofs about decidable domains that apply the term \lstinline{dec_not_not}
-pose difficulties for abstraction and inversion; the ideal tool should support these. 
+pose difficulties for generalization and inversion; the ideal tool should support these. 
 \sysname has limited support for changes in hypotheses, fixpoints, constructors, 
 pattern matching, and nested induction; the ideal tool should implement these features.
 (Needs a sentence about SOTA.)

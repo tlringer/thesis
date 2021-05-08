@@ -253,7 +253,7 @@ for an isomorphism that corresponds to the change:
 The proof engineer can apply these patches to fix other broken proofs about the fixpoint.
 
 The key feature that differentiates these from the patches we have encountered so far is that
-these patches hold for \emph{all} \lstinline{P}; for changes in fixpoint cases, the procedure abstracts
+these patches hold for \emph{all} \lstinline{P}; for changes in fixpoint cases, the procedure generalizes
 candidates by \lstinline{P}, not by its arguments.
 \sysname uses this configuration for changes in fixpoint cases:
 
@@ -264,7 +264,7 @@ candidates by \lstinline{P}, not by its arguments.
     \STATE \textit{diff} and \textit{transform} to recursively search within an intermediate lemma for a change in conclusions
     \STATE \textbf{if} there are candidates \textbf{then}
     \STATE \hspace*{1em} \textit{specialize} and \textit{factor} the candidate \\
-           \hspace*{1em} \textit{abstract} the factors by functions \\
+           \hspace*{1em} \textit{generalize} the factors by functions \\
            \hspace*{1em} try to \textit{invert} the patch to find an isomorphism 
 \end{algorithmic}
 \end{algorithm}
@@ -387,7 +387,7 @@ This changes the goal type that semantic differencing determines.
     \STATE \textit{diff} constructor arguments for goals
     \STATE \textit{diff} and \textit{transform} to recursively search within those arguments for changes in conclusions
     \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} \textit{abstract} the candidate \\
+    \STATE \hspace*{1em} \textit{generalize} the candidate \\
            \hspace*{1em} \textit{factor} and try to \textit{invert} the patch to find an isomorphism
 \end{algorithmic}
 \end{algorithm}

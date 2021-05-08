@@ -38,7 +38,6 @@
 - IZR pattern matching versus eliminators
 - ensure line numbers for figure are adjusted to updated figure
 - configuration to instance
-- abstraction to generalization
 - check specs of each alg
 - clean specs of each alg
 - explain inductive hypothesis at some point before you get here

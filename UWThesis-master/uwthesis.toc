@@ -71,7 +71,7 @@
 \contentsline {paragraph}{Factoring}{46}{lstnumber.-92.5}% 
 \contentsline {subsection}{\numberline {3.4.2}Limitations}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Undecidability}{47}{subsection.3.4.2}% 
-\contentsline {paragraph}{Modeling Diverse Proof Styles}{48}{subsection.3.4.2}% 
+\contentsline {paragraph}{Modeling Diverse Proof Styles}{47}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}Implementation}{48}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{48}{subsection.3.5.1}% 
 \contentsline {subsubsection}{\numberline {3.5.1.1}The Procedure}{48}{subsubsection.3.5.1.1}% 

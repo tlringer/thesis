@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 MAY 2021 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 MAY 2021 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2092,18 +2092,8 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 175--184
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-) (./repair/transformation.tex [43] [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 250--250
-[][][]\OT1/pplj/m/n/9 (+20) Edward Z. Yang wrote a very cute proof of this
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--250
-[]\OT1/pplj/m/n/9 (+20) https://twitter.com/ezyang/status/1391546552989241346[]
-: Let the func-tion
- []
-
-[47]) (./repair/implementation.tex [48] [49] [50] [51]
+) (./repair/transformation.tex [43] [44] [45] [46] [47])
+(./repair/implementation.tex [48] [49] [50] [51]
 Overfull \hbox (19.65938pt too wide) in paragraph at lines 234--238
 \OT1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to th
 e change in []
@@ -2432,7 +2422,7 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1601799 bytes).
+Output written on uwthesis.pdf (153 pages, 1601791 bytes).
 PDF statistics:
  3357 PDF objects out of 3580 (max. 8388607)
  3126 compressed objects within 32 object streams

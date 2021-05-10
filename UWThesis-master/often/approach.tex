@@ -13,7 +13,7 @@ The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automat
 \toolnamec in particular repairs proofs in response to changes in types that correspond to \textit{type equivalences}~\cite{univalent2013homotopy},
 or pairs of functions that map between two types (possibly with some additional information) and are mutual inverses (Section~\ref{sec:pi-scope}).\footnote{The adjoint follows, and \toolnamec includes machinery to prove it~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}}.}
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the changed datatype.
-With automatic configuration, \toolname can extract and generalize that information to a type equivalence, then apply it to fix other broken proofs.
+With automatic configuration, \toolnamec can extract and generalize that information to a type equivalence, then apply it to fix other broken proofs.
 With manual configuration, the human extracts and generalizes the information corresponding to the change, but \toolnamec can still apply it
 to fix other broken proofs.
 
@@ -23,7 +23,7 @@ When they succeed, the diff that they find is that type equivalence.
 The proof engineer can also pass the type equivalence to \toolnamec directly, effectively doing differencing by hand.
 In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the dataype
 directly to a proof term defined over the new version of the datatype.
-\toolnamec further supports proof script integration and other features for better workflow integration (Section~\ref{pi-implementation}),
+\toolnamec further supports proof script integration and other features for better workflow integration (Section~\ref{sec:pi-implementation}),
 with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
 
 \subsection{Workflow: Configure, Transform, Decompile}

@@ -131,9 +131,9 @@ The proof of the theorem \lstinline{repr_unsigned} then went through:
   ... apply Zmod_small; auto(@\succeeds{.}@)
 \end{lstlisting}
 
-\subsubsection{Configuration}
+\subsubsection{Instance}
 
-This scenario used the configuration for changes in constructors of an inductive type.
+This scenario used the search procedure instance for changes in constructors of an inductive type.
 Given such a change:
 
 \begin{lstlisting}[language=coq]
@@ -154,7 +154,7 @@ for an isomorphism\footnote{If \sysname finds just one implication, it returns t
 \end{lstlisting}
 The proof engineer can apply these patches within the inductive case that corresponds to the constructor \lstinline{C}
 to fix other broken proofs that induct over the changed type. 
-\sysname uses this configuration for changes in constructors:
+\sysname uses this search procedure instance for changes in constructors:
 
 \begin{algorithm}
 \footnotesize
@@ -229,9 +229,9 @@ understanding of the terms.
 My Magic tutorial plugin~\footnote{\url{https://github.com/uwplse/magic}} % TODO static link
 implements a prototype of the functionality needed for this, based on lessons from this case study.
 
-\subsubsection{Configuration}
+\subsubsection{Instance}
 
-This scenario used the configuration for changes in cases of a fixpoint.
+This scenario used the search procedure instance for changes in cases of a fixpoint.
 Given such a change:
 
 \begin{lstlisting}[language=coq]
@@ -255,7 +255,7 @@ The proof engineer can apply these patches to fix other broken proofs about the 
 The key feature that differentiates these from the patches we have encountered so far is that
 these patches hold for \emph{all} \lstinline{P}; for changes in fixpoint cases, the procedure generalizes
 candidates by \lstinline{P}, not by its arguments.
-\sysname uses this configuration for changes in fixpoint cases:
+\sysname uses this search procedure instance for changes in fixpoint cases:
 
 \begin{algorithm}
 \footnotesize
@@ -343,9 +343,9 @@ Adding the patches \sysname found to a hint database made the proof go through:
     ... split; intros (c,Hc); exists c; (@\succeeds{auto.}@)
 \end{lstlisting}
 
-\subsubsection{Configuration}
+\subsubsection{Instance}
 
-This scenario used the configuration for changes in dependent arguments to constructors.
+This scenario used the search procedure instance for changes in dependent arguments to constructors.
 \sysname searches within the difference between two versions of a proof that apply the same constructor
 to different dependent arguments:
 
@@ -379,7 +379,7 @@ However, without using the induction principle for \lstinline{exists}, we can't 
 \end{lstlisting}
 This changes the goal type that semantic differencing determines.
 
-\sysname uses this configuration for changes in constructor arguments:
+\sysname uses this search procedure instance for changes in constructor arguments:
 
 \begin{algorithm}
 \footnotesize

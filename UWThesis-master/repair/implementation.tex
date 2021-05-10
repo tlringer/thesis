@@ -39,7 +39,7 @@ while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directl
 
 The \sysname prototype exposes the patch finding procedure (\lstinline{patcher.ml4}) to users through the Coq command \lstinline{Patch Proof}. 
 After compiling to trees (\lstinline{evaluation.ml},
-\sysname automatically infers which configuration to use for the procedure from the example change. % TODO link to right part of code
+\sysname automatically infers which instance of the search procedure to use from the example change. % TODO link to right part of code
 For example, to find a patch for the case study we will see in Section~\ref{sec:compcert}, I
 used this command: % TODO adapt this text since case studies are no longer before this, maybe move figure and so on here
 
@@ -48,13 +48,13 @@ used this command: % TODO adapt this text since case studies are no longer befor
 \end{lstlisting}
 \sysname analyzed both versions of \lstinline{unsigned_range} and determined 
 that a constructor of the \lstinline{int} type changed (Figure~\ref{fig:int}),
-so it initialized the configuration for changes in constructors.
+so it initialized the search procedure to the instance for changes in constructors.
 
-Internally, \sysname represents configurations as sets of options,
+Internally, \sysname represents search procedure instances as sets of options,
 which it passes to the procedure. The procedure uses these options to determine
 how to compose components (for example, whether to generalize candidates) 
 and how to customize components (for example, whether semantic differencing should look for an intermediate lemma).
-In total, the \sysname prototype currently implements six configurations.
+In total, the \sysname prototype currently implements six instances.
 The first five correspond to changes in:
 
 \begin{enumerate}
@@ -64,11 +64,11 @@ The first five correspond to changes in:
 \item conclusions of constructors of inductive types, and
 \item cases of fixpoints.
 \end{enumerate}
-The final configuration is useful for proof optimization (Section~\ref{sec:workflow}).
+The final instance is useful for proof optimization (Section~\ref{sec:workflow}).
 The support for these changes is limited in expressiveness in power;
 more information on limitations in scope can be found in the repository. % TODO link
-Extending \sysname with new configurations amounts to extending key functions in the implementation
-with a case corresponding to the new configuration.
+Extending \sysname with new instances of the search procedure amounts to extending key functions in the implementation
+with a case corresponding to the new instance.
 
 \subsubsection{Differencing} 
 \label{sec:pumpkin-impl-diff}
@@ -95,9 +95,9 @@ then expands and recursively diffs the bodies \lstinline{b} and \lstinline{b'} i
 \sysname implements the four transformations from Section~\ref{sec:pumpkin-trans}:
 specialization, generalization, inversion, and factoring.
 These transformations operate directly over terms in Gallina.
-The \sysname procedure chooses among them by configuration,
+The \sysname procedure chooses among them by search procedure instance,
 and in the end checks the type of the patch to ensure that is has the goal type.
-\sysname also determines what arguments to pass to each transformation based on the configuration.
+\sysname also determines what arguments to pass to each transformation based on the instance.
 As a bonus, \sysname exposes commands that correspond to each of these transformations (\lstinline{patcher.ml4}),
 so that proof engineers can call them outside of the proof patching procedure.
 
@@ -114,7 +114,7 @@ one that does weak head reduction, one that completely normalizes terms, one tha
 and one that applies $\delta$ reduction.
 There are also higher-order combinators for reducers,
 including chain reduction with errors, chain reduction without errors, and reduction over the types of supplied terms.
-This makes it possible for configurations to highly customize specialization,
+This makes it possible for search procedure instances to highly customize specialization,
 and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
 I expose these reducers and combinators in the Coq plugin library. % TODO link and explain
 
@@ -257,7 +257,7 @@ back to tactics by calling the \lstinline{Decompile} command.
 I will discuss this and more in Chapter~\ref{chapt:pi}.
 
 \paragraph{Proof Optimization}
-Five of the implemented configurations correspond to changes, but the sixth configuration is special:
+Five of the implemented search procedure instances correspond to changes, but the sixth instance is special:
 it corresponds to the absence of change.
 This makes it possible to reuse all of the \sysname infrascture to optimize proofs
 to automatically remove extra calls to induction.
@@ -360,7 +360,7 @@ and \lstinline{new} were propositionally equal.
 
 My goal was to determine what changes to proofs stress the components
 and how to use that information to drive improvements.
-I focused on differences in conclusions, the most supported configuration at the time.
+I focused on differences in conclusions, the most supported instance of the search procedure at the time.
 %The procedure defaults to \lstinline{old} when it cannot find a patch; 
 %we marked each pair a success if \sysname found a direct patch,
 %and a failure if it returned the default.

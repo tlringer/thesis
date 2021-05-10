@@ -19,7 +19,8 @@ In the end, if successful, they produce a reusable proof patch $p$ with type $G$
 That is, we can view the high-level composition of transformations as a single judgment
 $\Gamma\ \vdash\ (\vec{t},\ G)\ \Downarrow_{t} p$, where in the end, $\Gamma \vdash p : G$. 
 The details vary by transformation,
-and the details of which transformations run at all and in what order to reach the goal vary by configuration.
+and the details of which transformations run at all and in what order to reach the goal vary by the instance
+of the search procedure.
 
 For historical reasons, as \sysname was a prototype, these tranformations are not formalized. % TODO formalize if time
 Instead, I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
@@ -42,7 +43,7 @@ The default reducer, for example, uses $\beta\iota$-reduction in Coq~\cite{equal
 Section~\ref{sec:pumpkin-impl-trans} decribes other reducers.
 The only requirement for a reducer is that the end result should be definitionally equal to the original.
 
-Depending on the configuration and the step in the process, the transformed candidate may be the reusable patch,
+Depending on the procedure instance and the step in the process, the transformed candidate may be the reusable patch,
 or it may just be an intermediate candidate.
 It is the job of the patch finding procedure to provide both the candidate and the arguments,
 and to determine which transformation to run next, if applicable.
@@ -131,11 +132,11 @@ In some cases, the simplest strategy is not sufficient, even when it is possible
 Section~\ref{sec:pumpkin-impl-trans} describes a sample of other strategies.
 
 It is the job of the patch finding procedure to provide the candidate and the terms by which to generalize.
-In addition, each configuration includes a list of strategies.
-The configuration for changes in conclusions, for example, starts with the simplest strategy,
+In addition, the implementation of each search procedure instance includes a list of strategies.
+The instance for changes in conclusions, for example, starts with the simplest strategy,
 and moves on to more complex strategies only if that strategy fails.
 This design makes generalization simple to extend with new strategies and simple to call with different strategies
-for different configurations, or even as an optimization for the proof engineer.
+for different instances, or even as an optimization for the proof engineer.
 
 \paragraph{Inversion} Sometimes, when two types are propositionally equal, % TODO explain this earlier in Coq explanation and so on, too, and refer back; use pi explanation
 candidate patches may appear in the wrong direction.

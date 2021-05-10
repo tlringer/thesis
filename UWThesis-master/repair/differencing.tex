@@ -9,7 +9,7 @@
 Differencing is aware of and guided by the semantics of Coq's rich proof term language \kl{Gallina}---that is, it is a \textit{semantic differencing} algorithm.
 This means that differencing can take advantage of the structure and information carried in every proof term,
 thanks to Gallina's rich type theory \kl{CIC$_{\omega}$}.
-The rich structure of terms helps guide differencing for each configuration,
+The rich structure of terms helps guide differencing for each instance of the search procedure,
 while the rich information in their types helps ensure correctness in the end.
 
 Consider once again the example from Figure~\ref{fig:example}, but this time not just the base case.
@@ -18,7 +18,7 @@ Accordingly, differencing knows that there are two places to look for candidates
 and the inductive case (line 14).
 Differencing breaks each inductive proof into these cases, then recursively calls itself for each case.
 In the base case, it finds the candidate from Section~\ref{sec:pumpkin-spec-diff}.
-Since this candidate has the desired type for the configuration specialized to the base case, differencing knows it has successfully found a candidate.
+Since this candidate has the desired type for the instance specialized to the base case, differencing knows it has successfully found a candidate.
 
 The rich type information proof terms carry helps prevent exploration of syntactic differences that are not meaningful.
 For example, in the inductive case of the proof term from Figure~\ref{fig:example} (line 14), the inductive hypothesis \lstinline{IHle} changes:
@@ -44,7 +44,7 @@ When it recurses, it extends $\Gamma$ with common assumptions, then differences 
 In each case, it carries a goal type $G$, and returns a list of patch candidates $\vec{t}$ that each have that goal type.
 That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$,
 where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
-The details of this vary by subterm-configuration combination.
+The details of this vary by subterm-instance combination.
 
 For historical reasons, as \sysname was a prototype, these algorithms are not formalized.
 Instead, I describe them at a high level, as heuristics in CIC$_{\omega}$.
@@ -77,7 +77,7 @@ When both proof terms are function applications:
 \end{lstlisting}
 and the previous heuristic fails,
 differencing may recurse into both the functions and the arguments, search for patches, and then compose the results.
-How to compose those results varies by configuration.
+How to compose those results varies by instance of the search procedure.
 
 \paragraph{Functions} % TODO in Chapter 2, need to mention hypos versus debruijn
 The treatment of functions depends on whether a hypothesis or a conclusion has changed.

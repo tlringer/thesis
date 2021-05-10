@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  8 MAY 2021 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  9 MAY 2021 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2092,38 +2092,45 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 175--184
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-) (./repair/transformation.tex [43] [44] [45] [46])
-(./repair/implementation.tex [47] [48] [49] [50] [51]
+) (./repair/transformation.tex [43] [44] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[][][]\OT1/pplj/m/n/9 (+20) Edward Z. Yang wrote a very cute proof of this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[]\OT1/pplj/m/n/9 (+20) https://twitter.com/ezyang/status/1391546552989241346[]
+: Let the func-tion
+ []
+
+[47]) (./repair/implementation.tex [48] [49] [50] [51]
 Overfull \hbox (19.65938pt too wide) in paragraph at lines 234--238
 \OT1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to th
 e change in []
  []
 
-[52]
+[52] [53]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 (Font)              using `OT1/pplj/bx/n' instead on input line 310.
 
-[53] [54] [55]) (./repair/results.tex [56] (./repair/compcert.tex)
+[54] [55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[57] [58]
+[58] [59]
 Overfull \hbox (2.38933pt too wide) in paragraph at lines 184--187
 \OT1/pplj/m/n/10.95 (-20) When I ported User A's so-lu-tion to use User B's def
 -i-ni-tion of []
  []
 
-[59] [60] (./repair/divide.tex) (./repair/divide.tex) [61])
-(./repair/conclusion.tex [62]
+[60] (./repair/divide.tex) (./repair/divide.tex) [61] [62])
+(./repair/conclusion.tex
 Overfull \hbox (26.98114pt too wide) in paragraph at lines 16--19
 [][][][][][] 
  []
 
-)) (./often.tex [63] [64
-
-
-]
+[63])) (./often.tex [64]
 chapter 4.
 
 Overfull \hbox (3.15834pt too wide) in paragraph at lines 14--16
@@ -2137,14 +2144,17 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--43
 o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
  []
 
-[65] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
+[65
+
+
+] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex
 
 LaTeX Warning: Reference `pi-implementation' on page 68 undefined on input line
  26.
 
 [68]
-<often/workflowa.pdf, id=1686, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1689, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2377,11 +2387,11 @@ Underfull \hbox (badness 1184) in paragraph at lines 730--735
 Package knowledge Warning: Some knowledge is introduced twice. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 542.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 542.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 543.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 543.
 (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 542.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 542.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 543.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 543.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2394,16 +2404,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 543.
  ) 
 Here is how much of TeX's memory you used:
- 50354 strings out of 492609
- 1013707 string characters out of 6129033
+ 50360 strings out of 492609
+ 1013759 string characters out of 6129033
  1288419 words of memory out of 5000000
  51010 multiletter control sequences out of 15000+600000
- 636423 words of font info for 841 fonts, out of 8000000 for 9000
+ 636681 words of font info for 845 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2422,10 +2432,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (153 pages, 1600101 bytes).
+Output written on uwthesis.pdf (153 pages, 1601799 bytes).
 PDF statistics:
- 3354 PDF objects out of 3580 (max. 8388607)
- 3123 compressed objects within 32 object streams
- 1501 named destinations out of 1728 (max. 500000)
+ 3357 PDF objects out of 3580 (max. 8388607)
+ 3126 compressed objects within 32 object streams
+ 1502 named destinations out of 1728 (max. 500000)
  93002 words of extra memory for PDF output out of 106986 (max. 10000000)
 

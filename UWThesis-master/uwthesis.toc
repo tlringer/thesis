@@ -71,44 +71,44 @@
 \contentsline {paragraph}{Factoring}{46}{lstnumber.-92.5}% 
 \contentsline {subsection}{\numberline {3.4.2}Limitations}{47}{subsection.3.4.2}% 
 \contentsline {paragraph}{Undecidability}{47}{subsection.3.4.2}% 
-\contentsline {paragraph}{Modeling Diverse Proof Styles}{47}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Implementation}{47}{section.3.5}% 
+\contentsline {paragraph}{Modeling Diverse Proof Styles}{48}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Implementation}{48}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Tool Details}{48}{subsection.3.5.1}% 
 \contentsline {subsubsection}{\numberline {3.5.1.1}The Procedure}{48}{subsubsection.3.5.1.1}% 
 \contentsline {subsubsection}{\numberline {3.5.1.2}Differencing}{49}{subsubsection.3.5.1.2}% 
-\contentsline {subsubsection}{\numberline {3.5.1.3}Transformation}{49}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Specialization}{49}{subsubsection.3.5.1.3}% 
+\contentsline {subsubsection}{\numberline {3.5.1.3}Transformation}{50}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Specialization}{50}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Generalization}{50}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Inversion}{50}{subsubsection.3.5.1.3}% 
+\contentsline {paragraph}{Inversion}{51}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Factoring}{51}{lstnumber.-98.2}% 
-\contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{51}{subsubsection.3.5.1.4}% 
+\contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{52}{subsubsection.3.5.1.4}% 
 \contentsline {subsection}{\numberline {3.5.2}Extensions}{52}{subsection.3.5.2}% 
 \contentsline {paragraph}{Git Integration}{52}{subsection.3.5.2}% 
 \contentsline {paragraph}{Patch Application}{52}{lstnumber.-101.1}% 
-\contentsline {paragraph}{Proof Optimization}{52}{lstnumber.-102.1}% 
+\contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-102.1}% 
 \contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{53}{subsection.3.5.3}% 
-\contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{53}{subsubsection.3.5.3.1}% 
+\contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{54}{subsubsection.3.5.3.1}% 
 \contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{54}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Differencing}{54}{subsubsection.3.5.3.2}% 
+\contentsline {paragraph}{A Challenge for Differencing}{55}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-105.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{55}{lstnumber.-108.4}% 
-\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{56}{subsubsection.3.5.3.3}% 
+\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-108.4}% 
+\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{57}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{57}{section.3.6}% 
 \contentsline {paragraph}{Identifying Changes}{57}{Item.43}% 
-\contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{57}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{58}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{58}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{58}{lstnumber.-127.1}% 
-\contentsline {paragraph}{Apply}{58}{lstnumber.-128.1}% 
+\contentsline {paragraph}{Search}{59}{lstnumber.-127.1}% 
+\contentsline {paragraph}{Apply}{59}{lstnumber.-128.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{59}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{59}{subsection.3.6.2}% 
-\contentsline {paragraph}{Replay}{59}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{59}{lstnumber.-135.2}% 
+\contentsline {paragraph}{Replay}{60}{subsection.3.6.2}% 
+\contentsline {paragraph}{Search}{60}{lstnumber.-135.2}% 
 \contentsline {paragraph}{Apply}{60}{lstnumber.-136.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{60}{subsubsection.3.6.2.1}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{61}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{61}{subsection.3.6.3}% 
-\contentsline {paragraph}{Replay}{61}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{61}{lstnumber.-145.2}% 
-\contentsline {paragraph}{Apply}{61}{lstnumber.-146.2}% 
+\contentsline {paragraph}{Replay}{62}{subsection.3.6.3}% 
+\contentsline {paragraph}{Search}{62}{lstnumber.-145.2}% 
+\contentsline {paragraph}{Apply}{62}{lstnumber.-146.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Configuration}{62}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{63}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{65}{chapter.4}% 

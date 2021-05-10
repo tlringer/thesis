@@ -236,11 +236,22 @@ This section describes a few fundamental limitations of the transformations in \
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-trans}.
 
-\paragraph{Undecidability} (Needs rewording but draft text, whatever.)
-Not reduced and so on.
-generalizing candidates is not always possible; generalization will necessarily be a collection of heuristics.
-Inversion will necessarily sometimes fail, since not all terms are invertible.
-(Needs a sentence about SOTA.)
+\paragraph{Undecidability}
+Several of the transformations are undecidable.
+For example, generalization will necessarily sometimes fail, since fundamentally it relies on a kind of unification.
+The general problem of finding all possible nontrivial factors of a function is likewise undecidable:
+there are always infinitely many factors if factors can compose to identity.
+Determining all possible \textit{nontrivial} factors---those that contain no subsets of factors
+that compose to identity---reduces to detecting whether an arbitrary function is extensionally equal
+to the identity function at a fixed but arbitrary type,
+which is itself undecidable.\footnote{Edward Z. Yang wrote a very cute proof of this \href{on Twitter}{https://twitter.com/ezyang/status/1391546552989241346}: Let the function be an arbitrary Turing complete program parameterized by fuel, returning
+the number of steps taken to terminate, or otherwise returning zero.
+Then determining whether or not the function is extensionally equal to identity reduces to determining whether or not
+the program terminates.}
+Inversion will also sometimes fail, in part because it depends on factoring,
+and in part because not every term is invertible to begin with.
+The later \toolnamec transformation does not fully circumvent undecidability,
+but it does more cleanly separate the transformation itself from the undecidable pieces.
 
 \paragraph{Modeling Diverse Proof Styles} (Needs adjustment to current frame.)
 Coq programmers use diverse proof styles; the ideal tool should support many different styles.

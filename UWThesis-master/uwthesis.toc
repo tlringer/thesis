@@ -88,24 +88,24 @@
 \contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-102.1}% 
 \contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{53}{subsection.3.5.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{54}{subsubsection.3.5.3.1}% 
-\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{54}{subsubsection.3.5.3.2}% 
+\contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{55}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Differencing}{55}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-105.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-108.4}% 
+\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-108.6}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{57}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{57}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{57}{Item.43}% 
+\contentsline {paragraph}{Identifying Changes}{58}{Item.43}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{58}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{58}{subsection.3.6.1}% 
+\contentsline {paragraph}{Replay}{59}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{59}{lstnumber.-127.1}% 
 \contentsline {paragraph}{Apply}{59}{lstnumber.-128.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Configuration}{59}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{59}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{60}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{60}{subsection.3.6.2}% 
 \contentsline {paragraph}{Search}{60}{lstnumber.-135.2}% 
 \contentsline {paragraph}{Apply}{60}{lstnumber.-136.2}% 
 \contentsline {subsubsection}{\numberline {3.6.2.1}Configuration}{61}{subsubsection.3.6.2.1}% 
-\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{61}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{62}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{62}{subsection.3.6.3}% 
 \contentsline {paragraph}{Search}{62}{lstnumber.-145.2}% 
 \contentsline {paragraph}{Apply}{62}{lstnumber.-146.2}% 

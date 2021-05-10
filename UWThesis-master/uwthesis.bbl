@@ -85,11 +85,12 @@ Bruno Barras, Carst Tankink, and Enrico Tassi.
   ITP 2015, Nanjing, China, August 24-27, 2015, Proceedings}, pages 51--66,
   Cham, 2015. Springer International Publishing.
 
-\bibitem{barthe2001type}
+\bibitem{Barthe2001}
 Gilles Barthe and Olivier Pons.
 \newblock Type isomorphisms and proof reuse in dependent type theory.
-\newblock In {\em International Conference on Foundations of Software Science
-  and Computation Structures}, pages 57--71. Springer, 2001.
+\newblock In {\em Proceedings of the 4th International Conference on
+  Foundations of Software Science and Computation Structures}, FoSSaCS '01,
+  pages 57--71, London, UK, UK, 2001. Springer-Verlag.
 
 \bibitem{Blanchette2016b}
 Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
@@ -147,12 +148,6 @@ Adam Chlipala.
 \newblock {\em Certified Programming with Dependent Types - {A} Pragmatic
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
-
-\bibitem{Chlipala:2013:CPD:2584504}
-Adam Chlipala.
-\newblock {\em Certified Programming with Dependent Types: A Pragmatic
-  Introduction to the Coq Proof Assistant}.
-\newblock The MIT Press, 2013.
 
 \bibitem{equality}
 Adam Chlipala.
@@ -277,11 +272,12 @@ Kevin Elphinstone and Gernot Heiser.
 \newblock In {\em Proceedings of the Twenty-Fourth ACM Symposium on Operating
   Systems Principles}, SOSP '13, pages 133--150, New York, NY, USA, 2013. ACM.
 
-\bibitem{felty1994generalization}
+\bibitem{Felty1994}
 Amy Felty and Douglas Howe.
 \newblock Generalization and reuse of tactic proofs.
-\newblock In {\em International Conference on Logic for Programming Artificial
-  Intelligence and Reasoning}, pages 1--15. Springer, 1994.
+\newblock In Frank Pfenning, editor, {\em Logic Programming and Automated
+  Reasoning: 5th International Conference}, LPAR '94, pages 1--15, Berlin,
+  Heidelberg, 1994. Springer Berlin Heidelberg.
 
 \bibitem{10.1145/3428299}
 Emily First, Yuriy Brun, and Arjun Guha.

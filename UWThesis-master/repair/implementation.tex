@@ -271,7 +271,10 @@ See \lstinline{Optimization.v} for more information.
 \begin{lstlisting}[language=coq]
 fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
   (@\diff{le\_S n p}@) (* ... proof of stronger lemma *)(@\vspace{-0.04cm}@)
-: (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{S p}@)
+: (@\ltacforall@) n m p,
+  n <= m $\rightarrow$
+  m <= p $\rightarrow$
+  n <= (@\diff{S p}@)
 \end{lstlisting}
 \end{minipage}
 \hfill
@@ -279,10 +282,12 @@ fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
 \begin{lstlisting}[language=coq]
 fun n m p (H : n <= m) (H0 : m <= p) =>(@\vspace{-0.04cm}@)
   (@\diff{le\_plus\_trans n p 1}@) (* ... proof of stronger lemma *)(@\vspace{-0.04cm}@)
-: (@\ltacforall@) n m p, n <= m -> m <= p -> n <= (@\diff{p + 1}@)
+: (@\ltacforall@) n m p,
+  n <= m $\rightarrow$
+  m <= p $\rightarrow$
+  n <= (@\diff{p + 1}@)
 \end{lstlisting}
 \end{minipage}
-\vspace{-.35cm}
 \caption{Two proof terms \lstinline{old} (left) and \lstinline{new} (right) that contain the same proof of a stronger lemma.}
 \label{fig:stronger}
 \end{figure*}
@@ -413,7 +418,11 @@ when neither theorem has a conclusion that is as strong as possible.
 \begin{lstlisting}[language=coq]
   fun n m p (_ : n <= m) (_ : m <= p) (H1 : n <= p) =>(@\vspace{-0.04cm}@)
     gt_le_S n (S p) (le_lt_n_Sm n p H1)(@\vspace{-0.04cm}@)
-  : (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ n <= p $\rightarrow$ S n <= S p.
+  : (@\ltacforall@) n m p,
+      n <= m $\rightarrow$
+      m <= p $\rightarrow$
+      n <= p $\rightarrow$
+      S n <= S p.
 \end{lstlisting}
 Inversion was unable to invert this term, even though an inverse does exist.
 To invert this, inversion needs to know to $\delta$-reduce \lstinline{gt_le_S}:
@@ -422,7 +431,9 @@ To invert this, inversion needs to know to $\delta$-reduce \lstinline{gt_le_S}:
   gt_le_S n m :=(@\vspace{-0.04cm}@)
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{n0 < m0}@) -> (@\diff{S n0 <= m0}@)) => H n m) (@\vspace{-0.1cm}@)
     ...(@\vspace{-0.1cm}@)
-  : (@\ltacforall@) n m, (@\diff{n < m}@) $\rightarrow$ (@\diff{S n <= m}@).
+  : (@\ltacforall@) n m,
+      (@\diff{n < m}@) $\rightarrow$
+      (@\diff{S n <= m}@).
 \end{lstlisting}
 It then needs to swap the hypothesis with the conclusion in \lstinline{H} to produce the inverse:
 
@@ -430,7 +441,9 @@ It then needs to swap the hypothesis with the conclusion in \lstinline{H} to pro
   gt_le_S$\inv$ n m :=(@\vspace{-0.04cm}@)
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{S n0 <= m0}@) -> (@\diff{n0 < m0}@)) => H n m)(@\vspace{-0.1cm}@)
     ...(@\vspace{-0.1cm}@)
-   : (@\ltacforall@) n m, (@\diff{S n <= m}@) $\rightarrow$ (@\diff{n < m}@)
+   : (@\ltacforall@) n m,
+       (@\diff{S n <= m}@) $\rightarrow$
+       (@\diff{n < m}@)
 \end{lstlisting}
 
 Inversion currently swaps subterms when it is not
@@ -490,9 +503,9 @@ types:
 Then the candidate type is exactly this:
 
 \begin{lstlisting}
-    (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
-      (fun n1 => n <= n1) (@\diff{(p2 n)}@) ->(@\vspace{-0.04cm}@)
-      (fun n1 => n <= n1) (@\diff{(p1 n)}@)
+  (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
+    (fun n1 => n <= n1) (@\diff{(p2 n)}@) $\rightarrow$(@\vspace{-0.04cm}@)
+    (fun n1 => n <= n1) (@\diff{(p1 n)}@)
 \end{lstlisting}
 Generalization should thus generalize the highlighted subterms and the
 terms that have types constrained by those subterms.

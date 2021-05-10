@@ -245,7 +245,7 @@ Determining all possible \textit{nontrivial} factors---those that contain no sub
 that compose to identity---reduces to detecting whether an arbitrary function is extensionally equal
 to the identity function at a fixed but arbitrary type,
 which is itself undecidable.\footnote{Edward Z. Yang wrote a very cute proof of this \href{https://twitter.com/ezyang/status/1391546552989241346}{on Twitter}: Let the function be an arbitrary Turing complete program parameterized by fuel, returning
-the number of steps taken to terminate, or otherwise returning zero.
+the number of steps taken when it does not terminate within that number of steps, or otherwise returning zero when it does terminate.
 Then determining whether or not the function is extensionally equal to identity reduces to determining whether or not
 the program terminates.}
 Inversion will also sometimes fail, in part because it depends on factoring,
@@ -253,11 +253,10 @@ and in part because not every term is invertible to begin with.
 The later \toolnamec transformation does not fully circumvent undecidability,
 but it does more cleanly separate the transformation itself from the undecidable pieces.
 
-\paragraph{Modeling Diverse Proof Styles} (Needs adjustment to current frame.)
-Coq programmers use diverse proof styles; the ideal tool should support many different styles.
-Proofs about decidable domains that apply the term \lstinline{dec_not_not}
-pose difficulties for generalization and inversion; the ideal tool should support these. 
-\sysname has limited support for changes in hypotheses, fixpoints, constructors, 
-pattern matching, and nested induction; the ideal tool should implement these features.
-(Needs a sentence about SOTA.)
+\paragraph{Modeling Diverse Proof Styles}
+Some of the transformations make assumptions about the proof style.
+For example, proofs about decidable domains that work by provable double negation elimination
+(\lstinline{dec_not_not}) pose difficulties for generalization and inversion.
+The later \toolnamec transformation, in contrast, is generic over the
+proof style.
 

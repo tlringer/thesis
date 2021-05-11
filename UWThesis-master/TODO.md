@@ -55,6 +55,5 @@
 
 # Chapter 6
 
-- finish the last subsection
 - add citations for related work, especially for the domain experts part
 - revise

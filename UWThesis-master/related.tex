@@ -171,18 +171,80 @@ Both Chick and RefactorAgda support primarily syntactic changes and do not have 
 \subsection{Proof Reuse}
 \label{sec:reuse}
 
-Proof repair is ultimately a form of \textit{proof reuse}---applying software reuse principles to proof assistants.
-There is a wealth of work in proof reuse, from tactic languages~\cite{Felty1994} and logical frameworks~\cite{caplan1995logical},
-to tools for proof generalization~\cite{pons2000generalization, johnsen2004theorem},
-to domain-specific methodologies~\cite{Delaware:2011:PLT:2048066.2048113} and frameworks~\cite{Delaware:2013:MLC:2429069.2429094}.
-I discuss some especially relevant work below. % TODO better segue
+Proof repair is ultimately a form of \textit{proof reuse}---applying software reuse principles to proof assistants
+in order to repurpose existing proofs as much as possible.
+Like software reuse, proof reuse leverages design principles and language constructs.
+In addition, the interactive nature of proof assistants naturally leads to a class of proof reuse technologies less explored
+in the software reuse world: automated tooling.
+Proof repair falls into the class of automated tooling for proof reuse.
+This section describes other automated tooling for proof reuse that may be useful to a future proof repair tool.
 
+\paragraph{Extending Inductive Types} 
+\toolnamec is yet to save proof engineers work when it comes to extending inductive types.
+In the future, it may help to draw on early work in proof reuse for extending inductive types.
+For example, a 2004 paper~\cite{Boite2004} describes a tactic to adapt proof obligations
+to changes in inductive types.
+Soon after, a 2006 paper~\cite{Mulhern06proofweaving} provides a high-level
+description of a possible method to synthesize missing proofs for those new obligations using a type reconstruction algorithm,
+though it is not currently implemented.
+
+\iffalse
+\paragraph{Proof Planning}
+Proof repair tools may also benefit from work in \textit{proof planning}~\cite{Bundy1998}, a proof search technique
+that uses plans to guide search for proofs with similar structures.
+Proof planning can involve the use of \textit{critics}~\cite{ireland1996},
+which reuse information from failing proofs to guide search for correct proofs.
+While proof planning was originally designed for use with automated theorem provers, it has also reached
+proof assistants.
+For example, IsaPlanner~\citep{Dixon2003} is a proof planner for Isabelle with support
+for rippling~\citep{shah2005}, a technique for automatic induction.
+Rippling has also been implemented in an induction automation
+tool for Coq~\citep{wilson2010}.
+\fi
+
+\paragraph{Proof Transformation}
+Proof repair in this thesis combiness differencing with proof term transformations, or program transformations over proof terms.
+The idea of applying program transformations over proof terms dates back to at least 1987~\cite{pfenning}.
+Any proof reuse tool that works by proof term transformation can, in theory, be used for repair,
+especially when coupled with something like the \toolnamec decompiler.
+
+One common proof term transformation is \textit{generalization}, which arose in the context of proof assistants
+in the 1990s~\cite{hasker1992generalization, kolbe1998proof, pons1999conception}.
+Coq's \lstinline{generalize} tactic does basic syntactic generalization~\cite{coq-tactics}.
+Both \sysnamelong and a tool~\cite{Johnsen2004} for generalizing theorems in Isabelle/HOL
+implement more complex transformations for generalization.
+
+Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
+unary and binary numbers. 
+This fits into a \toolnamec configuration.
+Still, the expansion algorithm from the paper describing this transformation may help guide the design
+of better unification heuristics for \toolnamec.
+
+The refinement framework CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
+and these relations can be more general than \toolnamec's equivalences.
+However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
+due to the problem that \lstinline{Iota} addresses.
+CoqEAL may be most useful to chain with \toolnamec to get faster functions,
+or to help support better workflows for changes that do not correspond to equivalences.
+
+One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments.
+This automatic configuration formed the basis of the first tool for ornamentation to operate over a non-embedded dependently typed language,
+initially called \textsc{Devoid}---but later generalized all equivalences and renamed \toolnamec.
+This stands in contrast to the many wonderful embedded implementations of 
+ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}
+that had arose since their discovery~\cite{mcbride}.
+It essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
+which operates on non-embedded ML code, into CIC$_{\omega}$.
+It also introduced the first differencing algorithm to identify ornaments, which in the past 
+had been identified as a ``gap'' in the literature~\cite{ko2016programming}.
+Other kinds of ornaments may prove useful for future \toolnamec differencing algorithms and configurations.
+A recent thesis~\cite{williamsphd} on ornaments may prove especially useful.
 % TODO survey paper, and some of the work below
 % TODO note the thing about transfer versus transport, and correct thesis (see Twitter)
 
 \paragraph{Transfer \& Transport}
-\toolnamec transports proofs across equivalences.
-The need to automatically lift functions and proofs across equivalences and other relations is a long-standing challenge for proof 
+\toolnamec automatically transports proofs across equivalences.
+The need to automatically \textit{transfer} functions and proofs across equivalences and other relations is a long-standing challenge for proof 
 engineers~\cite{magaud2000changing, Barthe2001, magaud2003changing}.
 Particular successful is the widely used Transfer~\cite{Huffman2013} package, which supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
 Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
@@ -190,50 +252,44 @@ Transfer is not yet suitable for repair, as it necessitates maintaining referenc
 Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer to implement a proof repair tool for Isabelle/HOL.
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 
-The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
-Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
-(TODO explain more, explain path equality in cubical. Explain limitations.)
+The \toolnamec transformation implements a particular kind of transfer called automatic transport.
+The name here is a bit overloaded and (in my opinion) confusing: \textit{transport} itself refers to a particular form of 
+rewriting along a propositional equality, or inhabitance of the identity type.
+It often (but not always) refers to \textit{univalent transport}, an induction principle derivable
+in homotopy type theory from univalence~\cite{univalent2013homotopy}
+that rewrites along the identity type corresponding to an equivalence~\cite{escardo2018self}.
+\textit{Automatic transport} refers to any automated tooling for rewriting along propositional equalities
+that behaves like transport at the level of either the theory or (as in \toolnamec) the metatheory.
+Automatic transport is a kind of transfer, though transport itself is not,
+and transfer may apply more broadly than across equalities or equivalences.\footnote{I got this wrong in the survey paper.}
 
-UP~\cite{tabareau2017equivalences} approximates univalence
+\toolnamec implements automatic univalent transport without relying on any additional axioms at the level of the theory itself.
+UP~\cite{tabareau2017equivalences} approximates automatic univalent transport
 in Coq, only sometimes relying on functional extensionality.
 While powerful, it does not remove references to the old type, making it poorly suited for repair.
+However, unlike \toolnamec, it supports type-directed search---analogous functionality
+may help improve \toolnamec substantially.
+
 Recent work~\cite{tabareau2019marriage} extends UP with 
-a white-box transformation that may work for repair.
-This imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
+a white-box transformation that may work for repair,
+but that imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
 %that establish what is effectively the correctness criteria
 %for the configuration in \toolname, while \toolname needs only that it holds metatheoretically.
-and it includes neither search procedures for equivalences nor tactic script generation.
+and that includes neither differencing algorithms for equivalences nor proof script generation.
 It also does not support changes in inductive structure,
 instead relying on its original black-box functionality;
-\lstinline{Iota} solves this in \toolnamec. % and is based on lessons learned from reading that article.
+\lstinline{Iota} solves this in \toolnamec, and is based on lessons learned from reading that article.
 The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
-
-\paragraph{Proof Transformation}
-A few proof reuse tools work by proof term transformation and so can be used for repair. % TODO: include thesis of the CMU dude!
-Existing work~\cite{Johnsen2004} describes a transformation that generalizes theorems in Isabelle/HOL.
-Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
-unary and binary numbers. 
-This fits into a \toolnamec configuration,
-and none of these tools suggest tactics in Coq like \toolnamec does.
-The expansion algorithm from Magaud \& Bertot 2000~\cite{magaud2000changing} may help guide the design
-of unification heuristics in \toolnamec.
-
-The refinement framework CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
-and these relations can be more general than \toolnamec's equivalences.
-However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
-due to the problem that \lstinline{Iota} addresses.
-CoqEAL may be most useful to chain with \toolnamec to get faster functions.
-Both CoqEAL and recent ornaments work (Section~\ref{sec:typetheory}) may help with
-better workflow support for changes that do not correspond to equivalences.
 
 \subsection{Proof Design}
 \label{sec:design}
 
-% TODO sentence up here, and include some work from survey paper
-
-\paragraph{Robust Abstractions}
 Much work focuses on designing proofs
 to be robust to change, rather than fixing broken proofs.
+
+% TODO QED
+
+\paragraph{Robust Abstractions}
 This can take the form of design principles, like using 
 information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
 or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
@@ -493,21 +549,6 @@ and user studies (Section~\ref{sec:user-studies}).
 \label{sec:typetheory}
 
 (TODO move this! Because moving HoTT stuff to foundations.)
-
-\paragraph{Ornaments}
-One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments in a higher-order dependently typed language.
-In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
-of formalizations and embedded implementations of ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}.
-An earlier version of \toolnamec called \textsc{Devoid} was the first tool for ornamentation to operate over a non-embedded dependently typed language.
-It essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
-which operates on non-embedded ML code, into the type theory that forms the basis of theorem provers like Coq. 
-In doing so, it took advantage of the properties of algebraic ornaments~\cite{mcbride}.
-It also introduced the first search algorithm to identify ornaments, which in the past 
-had been identified as a ``gap'' in the literature~\cite{ko2016programming}.
-
-I later integrated this functionality into an automatic configuration in \toolnamec.
-Other kinds of ornaments may make useful search procedures for future proof repair tools, or for future configurations of \toolnamec.
-A recent thesis~\cite{williamsphd} on ornaments may prove especially useful.
 
 \paragraph{Indexed Types}
 The automatic configuration for algebraic ornaments in \toolnamec focuses on the specific problem of reuse and repair when adding fully-determined indices to types.

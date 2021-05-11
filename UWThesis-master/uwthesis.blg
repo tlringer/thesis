@@ -4,58 +4,57 @@ The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
 Warning--I didn't find a database entry for "TODO"
-Warning--I didn't find a database entry for "pons2000generalization"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
 Warning--to sort, need author or key in travis
 Warning--empty booktitle in Autexier:2010:CMH:1986659.1986663
-Warning--can't use both volume and number fields in caplan1995logical
 Warning--empty journal in Heyting1956
 Warning--empty school in egraph1
 Warning--empty school in opdyke1992
 Warning--can't use both volume and number fields in padioleau2008documenting
+Warning--empty school in pons1999conception
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 160 entries,
+You've used 163 entries,
             2118 wiz_defined-function locations,
-            1435 strings with 33323 characters,
-and the built_in function-call counts, 61744 in all, are:
-= -- 6399
-> -- 2600
-< -- 95
-+ -- 1035
-- -- 859
-* -- 3972
-:= -- 9533
-add.period$ -- 533
-call.type$ -- 160
-change.case$ -- 889
+            1444 strings with 33590 characters,
+and the built_in function-call counts, 61695 in all, are:
+= -- 6375
+> -- 2589
+< -- 92
++ -- 1033
+- -- 854
+* -- 3937
+:= -- 9561
+add.period$ -- 537
+call.type$ -- 163
+change.case$ -- 893
 chr.to.int$ -- 0
-cite$ -- 171
-duplicate$ -- 2598
-empty$ -- 4935
-format.name$ -- 859
-if$ -- 13675
+cite$ -- 174
+duplicate$ -- 2602
+empty$ -- 4950
+format.name$ -- 854
+if$ -- 13638
 int.to.chr$ -- 0
-int.to.str$ -- 160
-missing$ -- 126
-newline$ -- 780
-num.names$ -- 334
-pop$ -- 1099
+int.to.str$ -- 163
+missing$ -- 127
+newline$ -- 794
+num.names$ -- 338
+pop$ -- 1117
 preamble$ -- 1
-purify$ -- 739
+purify$ -- 743
 quote$ -- 0
-skip$ -- 2079
+skip$ -- 2078
 stack$ -- 0
-substring$ -- 3836
-swap$ -- 906
-text.length$ -- 95
+substring$ -- 3792
+swap$ -- 891
+text.length$ -- 92
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 632
+type$ -- 642
 warning$ -- 11
-while$ -- 610
-width$ -- 163
-write$ -- 1860
-(There were 14 warnings)
+while$ -- 609
+width$ -- 166
+write$ -- 1879
+(There were 13 warnings)

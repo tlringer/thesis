@@ -13,7 +13,8 @@
 		\hyperpage{20}, \hyperpage{27, 28}, \hyperpage{33}, 
 		\hyperpage{40}, \hyperpage{68}, \hyperpage{109, 110}, 
 		\hyperpage{112}
-    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}, \hyperpage{109}
+    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}, \hyperpage{109}, 
+		\hyperpage{111}
 
   \indexspace
 
@@ -21,7 +22,7 @@
     \subitem Alex Sanchez-Stern, \hyperpage{10}, \hyperpage{25}, 
 		\hyperpage{43}
     \subitem Karl Palmskog, \hyperpage{10}, \hyperpage{110}, 
-		\hyperpage{116}
+		\hyperpage{118}
     \subitem Nathaniel Yazdani, \hyperpage{9, 10}, \hyperpage{99}, 
 		\hyperpage{103, 104}
     \subitem RanDair Porter, \hyperpage{9, 10}, \hyperpage{96}, 
@@ -34,6 +35,6 @@
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
 		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}, 
-		\hyperpage{109, 110}, \hyperpage{115}
+		\hyperpage{109, 110}, \hyperpage{117}
 
 \end{theindex}

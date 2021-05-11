@@ -116,6 +116,13 @@ Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
 \newblock A learning-based fact selector for {Isabelle/HOL}.
 \newblock {\em Journal of Automated Reasoning}, 57(3):219--244, Oct 2016.
 
+\bibitem{Boite2004}
+Olivier Boite.
+\newblock Proof reuse with extended inductive types.
+\newblock In {\em Theorem Proving in Higher Order Logics: 17th International
+  Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
+  Proceedings}, pages 50--65, Berlin, Heidelberg, 2004. Springer.
+
 \bibitem{Bourke12}
 Timothy Bourke, Matthias Daum, Gerwin Klein, and Rafal Kolanski.
 \newblock Challenges and experiences in managing large-scale proofs.
@@ -134,12 +141,6 @@ Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
 \newblock In {\em Proceedings of the 35th ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '14, pages 145--155, New York, NY,
   USA, 2014. ACM.
-
-\bibitem{caplan1995logical}
-Joshua~E. Caplan and Mehdi~T. Harandi.
-\newblock A logical framework for software proof reuse.
-\newblock In {\em ACM SIGSOFT Software Engineering Notes}, volume~20, pages
-  106--113. ACM, 1995.
 
 \bibitem{Celik:2017:IRP:3155562.3155588}
 Ahmet Celik, Karl Palmskog, and Milos Gligoric.
@@ -194,6 +195,10 @@ Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
 {Coq Development Team}.
 \newblock The {Coq} proof assistant, 1989-2021.
 
+\bibitem{coq-tactics}
+{Coq Development Team}.
+\newblock Tactics, 1999-2018.
+
 \bibitem{coquand:inria-00076024}
 T.~Coquand and G{\'e}rard Huet.
 \newblock {The calculus of constructions}.
@@ -240,20 +245,6 @@ Leonardo de~Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
 \newblock In {\em Automated Deduction - CADE-25: 25th International Conference
   on Automated Deduction, Berlin, Germany, August 1-7, 2015, Proceedings},
   pages 378--388, Cham, 2015. Springer International Publishing.
-
-\bibitem{Delaware:2011:PLT:2048066.2048113}
-Benjamin Delaware, William Cook, and Don Batory.
-\newblock Product lines of theorems.
-\newblock In {\em Proceedings of the 2011 ACM International Conference on
-  Object Oriented Programming Systems Languages and Applications}, OOPSLA '11,
-  pages 595--608, New York, NY, USA, 2011. ACM.
-
-\bibitem{Delaware:2013:MLC:2429069.2429094}
-Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
-\newblock Meta-theory \`{a} la carte.
-\newblock In {\em Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium
-  on Principles of Programming Languages}, POPL '13, pages 207--218, New York,
-  NY, USA, 2013. ACM.
 
 \bibitem{Delaware2013POPL}
 Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
@@ -306,12 +297,11 @@ Kevin Elphinstone and Gernot Heiser.
 \newblock In {\em Proceedings of the Twenty-Fourth ACM Symposium on Operating
   Systems Principles}, SOSP '13, pages 133--150, New York, NY, USA, 2013. ACM.
 
-\bibitem{Felty1994}
-Amy Felty and Douglas Howe.
-\newblock Generalization and reuse of tactic proofs.
-\newblock In Frank Pfenning, editor, {\em Logic Programming and Automated
-  Reasoning: 5th International Conference}, LPAR '94, pages 1--15, Berlin,
-  Heidelberg, 1994. Springer Berlin Heidelberg.
+\bibitem{escardo2018self}
+Martin~H{\"o}tzel Escard{\'o}.
+\newblock A self-contained, brief and complete formulation of {Voevodsky's}
+  univalence axiom.
+\newblock {\em CoRR}, abs/1803.02294, 2018.
 
 \bibitem{10.1145/3428299}
 Emily First, Yuriy Brun, and Arjun Guha.
@@ -411,6 +401,12 @@ John Harrison.
 \newblock Technical Report CRC-053, SRI Cambridge, Millers Yard, Cambridge, UK,
   1995.
 
+\bibitem{hasker1992generalization}
+Robert~W Hasker and Uday~S Reddy.
+\newblock Generalization at higher types.
+\newblock In {\em Proceedings of the Workshop on the $\lambda$Prolog
+  Programming Language}, pages 257--271, 1992.
+
 \bibitem{10.1007/978-3-540-24721-0_20}
 Haifeng He and Neelam Gupta.
 \newblock Automated debugging using path-based weakest preconditions.
@@ -456,12 +452,6 @@ D.~Hutter.
 \bibitem{isabelle}
 {Isabelle Development Team}.
 \newblock Isabelle, 1994-2021.
-
-\bibitem{johnsen2004theorem}
-Einar~Broch Johnsen and Christoph L{\"u}th.
-\newblock Theorem reuse by proof term transformation.
-\newblock In {\em International Conference on Theorem Proving in Higher Order
-  Logics}, pages 152--167. Springer, 2004.
 
 \bibitem{Johnsen2004}
 Einar~Broch Johnsen and Christoph L{\"u}th.
@@ -522,6 +512,11 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 Hsiang-Shang Ko and Jeremy Gibbons.
 \newblock Programming with ornaments.
 \newblock {\em Journal of Functional Programming}, 27, 2016.
+
+\bibitem{kolbe1998proof}
+Thomas Kolbe and Christoph Walther.
+\newblock {\em Proof Analysis, Generalization and Reuse}, pages 189--219.
+\newblock Springer, Dordrecht, 1998.
 
 \bibitem{differential-assertion-checking-2}
 Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.
@@ -651,6 +646,12 @@ Martin Monperrus.
 \newblock Automatic software repair: A bibliography.
 \newblock {\em ACM Comput. Surv.}, 51(1):17:1--17:24, January 2018.
 
+\bibitem{Mulhern06proofweaving}
+Anne Mulhern.
+\newblock Proof weaving.
+\newblock In {\em In Proceedings of the First Informal ACM SIGPLAN Workshop on
+  Mechanizing Metatheory}, 2006.
+
 \bibitem{murraybp}
 Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
@@ -736,6 +737,11 @@ Yu~Pei, Carlo~A Furia, Martin Nordio, Yi~Wei, Bertrand Meyer, and Andreas
 \newblock Automated fixing of programs with contracts.
 \newblock {\em arXiv preprint arXiv:1403.1117}, 2014.
 
+\bibitem{pfenning}
+Frank Pfenning.
+\newblock {\em Proof Transformations in Higher-Order Logic}.
+\newblock PhD thesis, Carnegie Mellon University, 1987.
+
 \bibitem{software-foundations}
 Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
   Michael Greenberg, Cat\v{a}lin Hri\c{t}cu, Vilhelm Sj\"{o}berg, and Brent
@@ -743,6 +749,13 @@ Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
 \newblock {\em Software Foundations}.
 \newblock Electronic textbook, 2016.
 \newblock Version 4.0. \texttt{http://www.cis.upenn.edu/~bcpierce/sf}.
+
+\bibitem{pons1999conception}
+Olivier Pons.
+\newblock {\em Conception et r{\'E}alisation d'outils d'aide au
+  d{\'E}veloppement de grosses th{\'E}ories dans les syst{\`e}mes de preuves
+  interactifs}.
+\newblock PhD thesis, 1999.
 
 \bibitem{Qi:2015:APP:2771783.2771791}
 Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.

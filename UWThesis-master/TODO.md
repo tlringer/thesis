@@ -18,6 +18,7 @@
 - color of Proof keyword and other stylistic things
 - Qed vs. defined somewhere
 - definitional vs. propositional equality somewhere early
+- finish acks
 
 # Chapter 1
 
@@ -55,4 +56,5 @@
 # Chapter 6
 
 - finish the last subsection
+- add citations for related work, especially for the domain experts part
 - revise

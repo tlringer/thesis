@@ -149,15 +149,28 @@ It means building new abstractions for critical domains like machine learning, c
 % TODO left off here next time
 
 \paragraph{Machine Learning}
-Taking over the world too much.
-Fairification \& other ML correctness properties. Neural net verification and so on (credit UVA).
-Derive program for parts of neural net and verify that? Compiler from part of neural net to program, for the parts that can be described?
-Automated checking is really slow for some properties and fails on large neural nets.
+Proof engineering tools for machine learning experts will bring strong safety, fairness, and robustness guarantees to
+complex systems like autonomous vehicles, or even the social media and advertising algorithms that many of us interact with
+on a daily basis. These tools will also make it possible to build more reliable, understandable, and explainable neural networks.
+Current methods for verifying neural networks are not sufficient for this: 
+automated checking of guarantees is slow for some properties, and fails on large 
+neural networks.\footnote{This whole paragraph---but especially this sentence---is based on a really fun conversation with Matthew Dwyer at Virginia this past spring.}
+One possible approach is to interactively factor neural networks into two parts: a program with strong guarantees,
+and some ``fuzz'' that captures the counterexamples that cannot easily be explained.
+The former can hopefully be verified, with the latter capturing some margin of error.
 
 \paragraph{Cryptography} Lots of stuff here but not thinking broadly enough. What about cryptographic proof systems? ZK and beyond. Recall email thread.
 
-\paragraph{Medical Devices} Pacemaker. Insulin pump (credit UVA). More from Twitter thread.
+\paragraph{Medical Devices} 
+Proof engineering tools for medical experts will bring strong guarantees to the medical devices of tomorrow.
+This will empower medical experts to build safer and more reliable medical devices,
+like pacemakers, insulin pumps, hearing aides, surgical robots, medication pumps, artifical organs,
+genetic arrays, neuromodulation implants, and genetic sequencing hardware and 
+software.\footnote{Most of these suggestions came from many of my wonderful \href{https://twitter.com/TaliaRinger/status/1388282607926857731}{Twitter followers}.
+One also came from Matthew Dwyer at Virginia. All who contributed are acknowledged.}
+
 % https://twitter.com/TaliaRinger/status/1388282607926857731
+% acks: Nathanael from Twitter, Matt Might, UVA folks, Jared Roesch, Quinn Wilton
 
 \subsection*{Proof Engineering for All}
 

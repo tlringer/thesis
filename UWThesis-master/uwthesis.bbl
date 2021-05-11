@@ -20,6 +20,10 @@ Mark Adams.
   {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
   Heidelberg, 2015. Springer Berlin Heidelberg.
 
+\bibitem{cubical-agda}
+{Agda Development Team}.
+\newblock Cubical type theory in agda -- agda 2.6.0 documentation, 2005-2018.
+
 \bibitem{agda}
 {Agda Development Team}.
 \newblock The {Agda} wiki, 2007-2021.
@@ -32,6 +36,13 @@ Jesper Andersen and Julia~L Lawall.
 \bibitem{angiuli2020internalizing}
 Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
 \newblock Internalizing representation independence with univalence, 2020.
+
+\bibitem{angiuli2017cubical}
+Carlo Angiuli, Robert Harper, and Todd Wilson.
+\newblock Computational higher-dimensional type theory.
+\newblock In {\em Proceedings of the 44th ACM SIGPLAN Symposium on Principles
+  of Programming Languages}, POPL 2017, page 680–693, New York, NY, USA,
+  2017. Association for Computing Machinery.
 
 \bibitem{Autexier:2010:CMH:1986659.1986663}
 Serge Autexier, Dieter Hutter, and Till Mossakowski.
@@ -159,6 +170,15 @@ Adam Chlipala.
 \bibitem{equality}
 Adam Chlipala.
 \newblock Library equality, 2017.
+
+\bibitem{cohen2016cubical}
+Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
+\newblock Cubical type theory: A constructive interpretation of the
+  {Univalence} axiom.
+\newblock In Tarmo Uustalu, editor, {\em 21st International Conference on Types
+  for Proofs and Programs (TYPES 2015)}, volume~69 of {\em Leibniz
+  International Proceedings in Informatics (LIPIcs)}, pages 5:1--5:34,
+  Dagstuhl, Germany, 2018. Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
 
 \bibitem{cohen:hal-01113453}
 Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
@@ -372,6 +392,11 @@ Johannes Henkel and Amer Diwan.
   evolution.
 \newblock In {\em Proceedings of the 27th International Conference on Software
   Engineering}, ICSE '05, pages 274--283, New York, NY, USA, 2005. ACM.
+
+\bibitem{Heyting1956}
+Arend Heyting.
+\newblock Intuitionism. an introduction.
+\newblock 1956.
 
 \bibitem{Hofmann97}
 Martin Hofmann.
@@ -689,6 +714,10 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
 \newblock In {\em Proceedings of the 2015 International Symposium on Software
   Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
   ACM.
+
+\bibitem{redprl}
+{RedPRL Development Team}.
+\newblock The redprl proof assistant, 2015-2021.
 
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.

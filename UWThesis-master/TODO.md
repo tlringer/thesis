@@ -3,6 +3,7 @@
 # Generally
 
 - knowledge package as much as possible (basically every italic thing)
+  + axioms
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations

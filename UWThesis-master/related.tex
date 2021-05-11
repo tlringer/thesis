@@ -35,9 +35,41 @@ and different automation built on top of those proof objects (in the case of Coq
 Differences in proof assistants along these dimensions have different implications for proof repair.
 
 \paragraph{Foundations}
+The foundations that make up proof assistants vary by proof assistant.
+The foundations of Coq, for example, build on the type theory \kl{CIC$_{\omega}$}.
+CIC$_{\omega}$ is \textit{intuitionistic}~\cite{Heyting1956} (or \textit{constructive}) in that
+proofs in CIC$_{\omega}$ must be constructed from basic principles.
+For example, CIC$_{\omega}$ does not assume the \textit{Law of the Excluded Middle} (LEM),
+which states that for any proposition, either that proposition is true, or its negation is true.
+CIC$_{\omega}$ also does not assume \textit{Double Negation Elimination} (DNE),
+which states that the negation of the negation is the original proposition or type.
+Because of this, in CIC$_{\omega}$, it is not possible in general to prove existence by proving that 
+nonexistence implies a contradiction.
+Instead, one must supply a witness to the existential.\footnote{Perhaps notably, though, the witness to the existential can be that 
+DNE \emph{provably} holds for a particular instance. This is true for decidable domains in \kl{CIC$_{\omega}$}.} 
+
+The proof assistants Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, and HOL4~\cite{hol4-interact} are built on \textit{classical} foundations
+in that they assume both LEM and DNE.
+The proof assistants Agda and Lean are built on constructive foundations that are similar to Coq, though with some minor differences.
+Lean in particular further assumes an axiom called \textit{Uniqueness of Identity Proofs} (UIP), which states that all proofs of
+equality at a given type are equal.
+As I detail in the survey paper, this axiom is incompatible with the \textit{univalence} axiom from Homotopy Type Theory~\cite{univalent2013homotopy},
+which states that equivalence is equivalent to equality.
+Cubical type theory~\cite{cohen2016cubical, angiuli2017cubical} gives univalence a constructive interpretation,
+so that it is no longer an axiom.\footnote{There are two flavors of cubical type theory.
+Bob Harper noted that I neglected to mention one of these in the proof engineering survey paper; I deeply regret this.
+So I would like to draw extra attention to the paper by Carlo Angiuli, Bob Harper, and Todd Wilson that I have cited here~\cite{angiuli2017cubical}.}
+Implementations of cubical type theory include RedPRL~\cite{redprl} and Cubical Agda~\cite{cubical-agda}.
+
+Proof repair in this thesis assumes constructive rather than classical foundations.
+The core techniques should largely transfer to other proof assistants built on constructive foundations, like Agda and Lean.
+It is possible that the particular transformations may have to account for differences, like the presence of UIP in Lean,
+which may make the correctness statement of the \toolnamec transformation---one that relies on univalence at the level of the metatheory---less meaningful.
+The techniques transfer with a bit more resistance to proof assistants built on classical foundations,
+since classical proofs may omit information helpful for repair.
 
 \paragraph{Proof Objects} 
-In proof assistants that satisfy the de Bruijn criterian, proof objects are the certificates that the kernel can check to make sure it proves a given theorem.
+In proof assistants that satisfy the de Bruijn criterion, proof objects are the certificates that the kernel can check to make sure it proves a given theorem.
 In Coq, proof objects are proof terms in \kl{Gallina}; the kernel verifies these terms by checking their types.
 As \kl{Karl} notes in our survey paper, explicitly producing proof objects and checking them is one of two dominant approaches to satisfying 
 the de Bruijn criterion---an approach followed by Coq, Agda, and Lean.
@@ -48,13 +80,13 @@ Proof repair in this thesis assumes explicit rather than ephemeral proof objects
 One possible way to apply the same techniques to proof assistants with ephemeral proof objects is to follow the following workflow:
 
 \begin{enumerate}
-\item reify ephemeral proof objects to be explicit,
-\item apply differencing and transformations over reified proof objects, and finally
-\item decompile the transformed proof objects to automation independent of the proof object representation.
+\item Reify ephemeral proof objects to be explicit.
+\item Apply differencing and transformations over those objects.
+\item Decompile the transformed proof objects to automation.
 \end{enumerate}
 Chapter~\ref{chapt:conclusions} describes an example of this for Isabelle/HOL.
 
-\paragraph{Proof Scripts} %Like different tactic languages.
+\paragraph{Automation} %Like different tactic languages.
 Better proof script languages can help circumvent some of the difficulties of repairing tactics.
 The Ltac successor Ltac2~\cite{ltac2}, for example, is much more structured than Ltac, and may help ease proof repair in Coq in the future.
 different decompiler.
@@ -137,7 +169,7 @@ Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 
 The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
-Transport is realizable as a function given univalence~\cite{univalent2013homotopy}---I will discuss this more in Section~\ref{sec:typetheory}.
+Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
 UP~\cite{tabareau2017equivalences} approximates it
 in Coq, only sometimes relying on functional extensionality.
 While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
@@ -286,9 +318,8 @@ One possible reason for this is that the tools could not search for the correct 
 Example-based techniques can help navigate a large search space quickly.
 
 \sysnamelong uses examples---in the former of changes to datatypes or proofs---to derive patches.
-The constructive nature of the logic \kl{CIC$_{\omega}$} beneath Coq makes this especially appealing and powerful,
-since it means (by definition) that proofs must be constructed from basic principles.
-So existence proofs, for example, must be accompanied by a witness.\footnote{This is known as the \textit{existence property}.}
+The constructive foundations of Coq makes this especially appealing and powerful,
+since it means that existence proofs, for example, must be accompanied by a witness.
 Each of these witnesses is in effect an example that \sysnamelong can extract and generalize,
 narrowing down the search space of possible repairs.
 
@@ -438,6 +469,8 @@ and user studies (Section~\ref{sec:user-studies}).
 \subsection{Type Theory}
 \label{sec:typetheory}
 
+(TODO move this! Because moving HoTT stuff to foundations.)
+
 \paragraph{Ornaments}
 One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments in a higher-order dependently typed language.
 In the decade since the discovery of ornaments~\cite{mcbride}, there have been a number
@@ -458,11 +491,6 @@ The automatic configuration for algebraic ornaments in \toolnamec focuses on the
 Other approaches to this problem include combinators which definitionally reduce to desirable terms~\cite{DBLP:journals/corr/abs-1803-08150} in the language Cedille,
 and automatic generation of conversion functions in Ghostbuster~\cite{McDonell:2016:GTS:2951913.2951914} for GADTs in Haskell.
 My work focuses on a type theory different from both of these, in which the properties that allow for such combinators in Cedille are not present, and in which dependent types introduce challenges not present in Haskell.
-
-\paragraph{Homotopy Type Theory}
-% TODO including cubical
-
-%\paragraph{Parametricity?}
 
 \subsection{Program Synthesis}
 \label{sec:synthesis}
@@ -500,7 +528,7 @@ All of these may be useful for improving semantic differencing.
 
 \paragraph{E-Graphs} % stuff
 Lean~\cite{selsam:lean} uses e-graphs to implement the first congruence closure algorithm for dependent type theory that
-relies only on the Uniqueness of Identity Proofs (UIP) axiom.
+relies only on the UIP axiom.
 % While UIP is not fundamental to Coq,
 %it is frequently assumed as an axiom; when it is, it may be tractable to use a similar algorithm to improve the tool.
 
@@ -510,10 +538,6 @@ relies only on the Uniqueness of Identity Proofs (UIP) axiom.
 \iffalse
 
 \paragraph{Congruence}
-
-\paragraph{Homotopy Type Theory}
-The univalence axiom from Homotopy Type Theory~\cite{univalent2013homotopy} enables transparent transport of proofs;
-cubical type theory~\cite{cohen2016cubical} gives univalence a constructive interpretation. 
 
 \fi
 

@@ -201,30 +201,20 @@
 \contentsline {paragraph}{Transfer \& Transport}{114}{subsection.5.1.3}% 
 \contentsline {subsection}{\numberline {5.1.4}Proof Design}{115}{subsection.5.1.4}% 
 \contentsline {paragraph}{Robust Abstractions}{115}{subsection.5.1.4}% 
-\contentsline {paragraph}{Robust Automation}{115}{subsection.5.1.4}% 
+\contentsline {paragraph}{Robust Automation}{116}{subsection.5.1.4}% 
 \contentsline {subsection}{\numberline {5.1.5}Proof Automation}{116}{subsection.5.1.5}% 
 \contentsline {paragraph}{Ontology Repair}{116}{subsection.5.1.5}% 
 \contentsline {paragraph}{Knowledge Sharing Methods}{116}{subsection.5.1.5}% 
-\contentsline {section}{\numberline {5.2}Program Repair}{116}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}A Good Fit}{116}{subsection.5.2.1}% 
+\contentsline {paragraph}{E-Graphs}{116}{subsection.5.1.5}% 
+\contentsline {section}{\numberline {5.2}Program Repair}{117}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}A Good Fit}{117}{subsection.5.2.1}% 
 \contentsline {paragraph}{Specifications}{117}{subsection.5.2.1}% 
-\contentsline {paragraph}{Examples}{117}{subsection.5.2.1}% 
+\contentsline {paragraph}{Examples}{118}{subsection.5.2.1}% 
 \contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{118}{subsection.5.2.2}% 
 \contentsline {paragraph}{Regression Repair}{118}{subsection.5.2.2}% 
 \contentsline {paragraph}{Specification-Based Repair}{119}{subsection.5.2.2}% 
-\contentsline {paragraph}{Repair by Example}{119}{subsection.5.2.2}% 
-\contentsline {paragraph}{Human in the Loop}{120}{subsection.5.2.2}% 
-\contentsline {section}{\numberline {5.3}More Inspiration}{121}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Type Theory}{121}{subsection.5.3.1}% 
-\contentsline {paragraph}{Indexed Types}{121}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{121}{subsection.5.3.2}% 
-\contentsline {paragraph}{Programming by Example}{121}{subsection.5.3.2}% 
-\contentsline {paragraph}{Neurosymbolic Programming}{122}{subsection.5.3.2}% 
-\contentsline {subsection}{\numberline {5.3.3}Differencing}{122}{subsection.5.3.3}% 
-\contentsline {subsection}{\numberline {5.3.4}Program Transformations}{122}{subsection.5.3.4}% 
-\contentsline {subsection}{\numberline {5.3.5}Automated Theorem Proving}{122}{subsection.5.3.5}% 
-\contentsline {paragraph}{E-Graphs}{122}{subsection.5.3.5}% 
-\contentsline {subsection}{\numberline {5.3.6}User Studies}{122}{subsection.5.3.6}% 
+\contentsline {paragraph}{Repair by Example}{120}{subsection.5.2.2}% 
+\contentsline {paragraph}{Human in the Loop}{121}{subsection.5.2.2}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{123}{chapter.6}% 
 \contentsline {paragraph}{All Proof Assistants}{124}{chapter.6}% 
 \contentsline {paragraph}{More Power}{124}{chapter.6}% 

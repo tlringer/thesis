@@ -4,6 +4,7 @@
 
 - knowledge package as much as possible (basically every italic thing)
   + axioms
+  + papers, like REPLICA and the survey paper (by name and not by name)
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations
@@ -22,6 +23,8 @@
 - definitional vs. propositional equality somewhere early
 - finish acks
 - author-year?
+- url style
+- TODOs in source
 
 # Chapter 1
 
@@ -51,9 +54,8 @@
 
 # Chapter 5
 
-- finish missing parts, or comment them out
-- work survey paper in more
-- work REPLICA in more
+- work survey paper in more (nice to have)
+- work REPLICA in more (nice to have)
 - revise
 
 # Chapter 6

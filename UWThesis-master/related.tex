@@ -6,8 +6,6 @@
 
 Proof repair can be viewed as program repair (Section~\ref{sec:repair})
 for the domain of proof engineering (Section~\ref{sec:proofeng}).
-Work in type theory, program synthesis, differencing, program transformations, automated theorem proving, and user studies
-has inspired and continues to inspire improvements to proof repair tools and techniques (Section~\ref{sec:inspiration}).
 
 \section{Proof Engineering}
 \label{sec:proofeng}
@@ -286,11 +284,13 @@ The most fruitful progress may come from combining these tools. % to take advant
 
 Much work focuses on designing proofs
 to be robust to change, rather than fixing broken proofs.
+This can take the form of robust abstractions or robust automation.
 
-% TODO QED
+% TODO QED if time
 
 \paragraph{Robust Abstractions}
-This can take the form of design principles, like using 
+Proof engineers often use design principles to make proofs less likely to break to beign with.
+Examples of this include using 
 information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
 or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
 CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
@@ -305,7 +305,7 @@ Another approach to robust design is to use heavy proof automation, for example 
 program-specific proof automation~\cite{chlipala:cpdt}
 %implementations of decision procedures~\cite{Pugh1991},
 or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
-The degree to which proof engineers rely on automation varies, as seen in the data from the \textsc{REPLica} user study. % TODO make sure named earlier
+The degree to which proof engineers rely on automation varies, as seen in the data from the \textsc{REPLica} user study.
 Automation-heavy proof engineering styles localize the burden of change to the automation,
 but can result in terms that are large and slow to type check,
 and tactics that can be difficult to debug.
@@ -315,8 +315,8 @@ developments in this style.
 \subsection{Proof Automation}
 \label{sec:automation}
 
-% TODO sentences, more stuff---repair is a kind of automation yadda yadda
-New automation continues to make proof repair more feasible.
+Proof repair implements a kind of proof automation.
+New proof automation continues to make proof repair more feasible.
 
 \paragraph{Ontology Repair}
 GALILEO~\cite{chan2011galileo} is a tool build on Isabelle for identifying and repairing faulty ontologies in response to contradictory
@@ -337,10 +337,13 @@ adapt proofs between isomorphic types, and may have applications
 when repairing proofs even within the same logic, using information from different 
 libraries, different commits, or different representations of similar types.
 
-%\paragraph{Unification}
-%Much of the functionality of \sysnamelong relies on unification, or solves specific instances of unification problems.
-%Recent developments to higher-order unification~\cite{Miller:2012:PHL:2331097} may help improve this functionality.
-% TODO if time. also anti-unification or whatever
+\paragraph{E-Graphs} % TODO lol this sucks
+The \toolnamec proof term transformation can in some sense be viewed as a rewrite system across equivalences.
+A number of modern rewrite systems use data structures called \textit{e-graphs}~\cite{egraph1} for managing equivalences~\cite{egg}.
+E-graphs have been implemented in Lean~\cite{selsam:lean} (assuming UIP),
+and in Cubical Agda~\cite{egraph6} (implying univalence).
+Similar implementations of e-graphs could help improve \toolnamec and similar tools to support
+type-directed search and more (Chapter~\ref{chapt:conclusions}).
 
 \section{Program Repair}
 \label{sec:repair}
@@ -416,9 +419,8 @@ Section~\ref{sec:techniques} describes other example-based repair tools.
 %the richness of specifications tells \sysname\ exactly when a patch is successful, for example. 
 %But the proof assistant \sysname\ operates over supports dependent types, and in the world of proof repair,
 %the criteria for a patch being correct is very strict. 
-(Missing paragraph here: not straightforward to just use program repair tools here.)
-Even with these differences, proof repair can learn a lot from other tools that use these techniques.
 
+Proof repair can learn a lot from program repair tools, even though the tools do not carry over in a straightforward way (Section~\ref{sec:how}).
 This section discusses techniques from existing program repair tools that are relevant to proof repair.
 It focuses in particular on what a recent survey~\cite{Monperrus:2018:ASR:3177787.3105906} of program repair calls behavioral repair,
 or patching the code, rather than state repair, or patching the dynamic behavior.
@@ -512,6 +514,18 @@ Similarly, \lstinline{spdiff}~\cite{andersen2010generic} generalizes patches int
 which can then apply those patches automatically in different contexts. This way, the library designer can write a semantic patch
 himself, or \lstinline{spdiff} can infer one.
 
+A number of program repair tools above---much like the proof repair tools decribed in this thesis---build on differencing algorithms.
+Existing work in differencing and incremental computation may help 
+improve semantic differencing algorithms for both program and proof repair.
+Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
+finds differences in algebraic data types.
+Semantics-based change impact analysis~\cite{Autexier:2010:SCI:1860559.1860580} models semantic differences
+between documents.
+Differential assertion checking~\cite{differential-assertion-checking-2} analyzes different
+versions of a program for relative correctness with respect to a specification.
+Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
+All of these may be useful for improving semantic differencing.
+
 Several of the repair by example tools make use of code repositories and libraries to identify examples.
 One challenge that I faced in my proof repair work was making use of examples changes in code repositories, since Github commits are typically large.
 These tools may offer some insights for how to approach this problem.
@@ -535,15 +549,14 @@ For example, it may be useful to record changes within a project inside of an ID
 so that \sysnamelong can find patches corresponding to incremental changes without the proof engineering needing to deconstruct them manually.
 It may also help to have something like the trace file in CatchUp! so that library developers can easily provide patches for client proof developments.
 
+\iffalse
 \section{More Inspiration}
 \label{sec:inspiration}
 
 Other inspiration comes from type theory (Section~\ref{sec:typetheory}),
 program synthesis (Section~\ref{sec:synthesis}),
-differencing (Section~\ref{sec:diff-incremental}),
-program transformations (Section~\ref{sec:rel-transformation}),
-automated theorem proving (Section~\ref{sec:atp}),
-and user studies (Section~\ref{sec:user-studies}).
+and differencing (Section~\ref{sec:diff-incremental}).
+
 
 \subsection{Type Theory}
 \label{sec:typetheory}
@@ -567,39 +580,6 @@ but may drive solutions to similar problems in a dependently typed language.
 % TODO elaborate
 
 \paragraph{Neurosymbolic Programming}
-
-\subsection{Differencing}
-\label{sec:diff-incremental}
-
-Existing work in differencing and incremental computation may help 
-improve semantic differencing algorithms for proof repair.
-Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
-finds differences in algebraic data types.
-Semantics-based change impact analysis~\cite{Autexier:2010:SCI:1860559.1860580} models semantic differences
-between documents.
-Differential assertion checking~\cite{differential-assertion-checking-2} analyzes different
-versions of a program for relative correctness with respect to a specification.
-Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
-All of these may be useful for improving semantic differencing.
-
-\subsection{Program Transformations}
-\label{sec:rel-transformation}
-
-\subsection{Automated Theorem Proving}
-\label{sec:atp}
-
-% how stuff caries over to ATP, plus stuff about e-graphs and so ons
-
-\paragraph{E-Graphs} % stuff
-Lean~\cite{selsam:lean} uses e-graphs to implement the first congruence closure algorithm for dependent type theory that
-relies only on the UIP axiom.
-% While UIP is not fundamental to Coq,
-%it is frequently assumed as an axiom; when it is, it may be tractable to use a similar algorithm to improve the tool.
-
-\subsection{User Studies}
-\label{sec:user-studies}
-
-\iffalse
 
 \paragraph{Congruence}
 

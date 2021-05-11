@@ -280,11 +280,6 @@ Louise~A Dennis, Raul Monroy, and Pablo Nogueira.
 \newblock In {\em Seventh Symposium on Trends in Functional Programming},
   volume 2006, pages 131--140. Citeseer, 2006.
 
-\bibitem{DBLP:journals/corr/abs-1803-08150}
-Larry Diehl, Denis Firsov, and Aaron Stump.
-\newblock Generic zero-cost reuse for dependent types.
-\newblock {\em CoRR}, abs/1803.08150, 2018.
-
 \bibitem{Dietrich2013}
 Dominik Dietrich, Iain Whiteside, and David Aspinall.
 \newblock Polar: A framework for proof refactoring.
@@ -388,12 +383,6 @@ Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
   concurrent {OS} kernels.
 \newblock In {\em 12th {USENIX} Symposium on Operating Systems Design and
   Implementation ({OSDI} 16)}, pages 653--669, GA, 2016. {USENIX} Association.
-
-\bibitem{DBLP:journals/ftpl/GulwaniPS17}
-Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
-\newblock Program synthesis.
-\newblock {\em Foundations and Trends in Programming Languages}, 4(1-2):1--119,
-  2017.
 
 \bibitem{harrison-reflection}
 John Harrison.
@@ -601,13 +590,6 @@ Daniel Matichuk, Toby Murray, and Makarius Wenzel.
 \bibitem{mcbride}
 Conor McBride.
 \newblock Ornamental algebras, algebraic ornaments, 2011.
-
-\bibitem{McDonell:2016:GTS:2951913.2951914}
-Trevor~L. McDonell, Timothy A.~K. Zakian, Matteo Cimini, and Ryan~R. Newton.
-\newblock Ghostbuster: A tool for simplifying and converting {GADTs}.
-\newblock In {\em Proceedings of the 21st ACM SIGPLAN International Conference
-  on Functional Programming}, ICFP 2016, pages 338--350, New York, NY, USA,
-  2016. ACM.
 
 \bibitem{Mechtaev:2015:DLS:2818754.2818811}
 Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
@@ -959,6 +941,12 @@ Ambre Williams.
 Thomas Williams and Didier R{\'e}my.
 \newblock A principled approach to ornamentation in {ML}.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
+
+\bibitem{egg}
+Max Willsey, Chandrakana Nandi, Yisu~Remy Wang, Oliver Flatt, Zachary Tatlock,
+  and Pavel Panchekha.
+\newblock Egg: Fast and extensible equality saturation.
+\newblock {\em Proc. ACM Program. Lang.}, 5(POPL), January 2021.
 
 \bibitem{Woos:2016:PCF:2854065.2854081}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and

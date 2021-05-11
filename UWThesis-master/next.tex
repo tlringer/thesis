@@ -69,10 +69,8 @@ Proof repair tools will include much more automation.
 They will elegantly support repair over large libraries when many changes occur at once,
 while imposing little additional effort on the proof engineer.
 They will be simple to extend with new optimizations, all while preserving correctness.
-One promising path to these ends is integrating the \toolnamec transformation with \textit{e-graphs}~\cite{egraph1},
-a data structure %that is used in the constraint solver and rewrite system communities 
-for managing equivalences
-built with these kinds of problems in mind.
+One promising path to these ends is integrating the \toolnamec transformation with e-graphs (Section~\ref{sec:automation}),
+which were build with these kinds of problems in mind.
 E-graphs were recently adapted to express path equality in cubical~\cite{egraph6}---a perfect fit for the \toolnamec transformation.
 E-graphs in other proof assistants, like those in Lean~\cite{selsam:lean}, could help with similar automation for repair tools for other proof assistants.
 

@@ -26,20 +26,38 @@ See my and my coauthors' survey paper on proof engineering for a detailed overvi
 \subsection{Proof Assistants}
 \label{sec:ass}
 
-Proof engineering as defined in the survey paper considers proof assistants that satisfy the \textit{de Bruijn criterion}~\cite{Barendregt2002,Barendregt2351}, which requires that they produce proof objects that a small proof-checking kernel can verify.
+Proof engineering as defined in our survey paper considers proof assistants that satisfy the \textit{de Bruijn criterion}~\cite{Barendregt2002,Barendregt2351}, which requires that they produce proof objects that a small proof-checking kernel can verify.
 This includes Coq~\cite{coq}---the proof assistant that this thesis focuses on---but also other proof assistants like
-Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, Agda~\cite{agda}, Lean~\cite{lean}, and NuPRL~\cite{nuprl}.
-These proof assistants have different notions of proof objects (in the case of Coq, proof terms in \kl{Gallina}),
-and different interfaces (if any) for proof scripts built on top of those proof objects (in the case of Coq, sequences of tactics in \kl{Ltac}).
+Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, HOL4~\cite{hol4-interact}, Agda~\cite{agda}, Lean~\cite{lean}, and NuPRL~\cite{nuprl}.
+These proof assistants have different foundations (in the case of Coq, \kl{CIC$_{\omega}$}),
+different notions of proof objects (in the case of Coq, proof terms in \kl{Gallina}),
+and different automation built on top of those proof objects (in the case of Coq, proof scripts in \kl{Ltac}).
 Differences in proof assistants along these dimensions have different implications for proof repair.
 
+\paragraph{Foundations}
+
 \paragraph{Proof Objects} 
-% Most notably, proof terms.
-%But also differences in logics (constructivism, then refer back to it later).
+In proof assistants that satisfy the de Bruijn criterian, proof objects are the certificates that the kernel can check to make sure it proves a given theorem.
+In Coq, proof objects are proof terms in \kl{Gallina}; the kernel verifies these terms by checking their types.
+As \kl{Karl} notes in our survey paper, explicitly producing proof objects and checking them is one of two dominant approaches to satisfying 
+the de Bruijn criterion---an approach followed by Coq, Agda, and Lean.
+The other is to produce \textit{ephemeral} proof objects that are correct by construction~\cite{Barendregt2013}---an approach followed
+by Isabelle/HOL, HOL Light, and HOL4. % what about NuPRL?
+
+Proof repair in this thesis assumes explicit rather than ephemeral proof objects.
+One possible way to apply the same techniques to proof assistants with ephemeral proof objects is to follow the following workflow:
+
+\begin{enumerate}
+\item reify ephemeral proof objects to be explicit,
+\item apply differencing and transformations over reified proof objects, and finally
+\item decompile the transformed proof objects to automation independent of the proof object representation.
+\end{enumerate}
+Chapter~\ref{chapt:conclusions} describes an example of this for Isabelle/HOL.
 
 \paragraph{Proof Scripts} %Like different tactic languages.
 Better proof script languages can help circumvent some of the difficulties of repairing tactics.
 The Ltac successor Ltac2~\cite{ltac2}, for example, is much more structured than Ltac, and may help ease proof repair in Coq in the future.
+different decompiler.
 
 \subsection{Proof Evolution}
 \label{sec:refrep}

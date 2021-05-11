@@ -58,6 +58,12 @@ Brian Aydemir, Arthur Chargu{\'e}raud, Benjamin~C. Pierce, Randy Pollack, and
 User B.
 \newblock Software foundations solution, 2017.
 
+\bibitem{Barendregt2013}
+Henk Barendregt.
+\newblock {\em Foundations of Mathematics from the Perspective of Computer
+  Verification}, pages 1--49.
+\newblock Springer International Publishing, Cham, 2013.
+
 \bibitem{Barendregt2002}
 Henk Barendregt and Erik Barendsen.
 \newblock Autarkic computations in formal proofs.
@@ -588,6 +594,10 @@ Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
 \newblock In {\em IEEE Cybersecurity Development (SecDev)}, pages 1--10, Sep.
   2018.
+
+\bibitem{hol4-interact}
+Magnus~O. Myreen.
+\newblock Guide to hol4 interaction and basic proofs, 2008-2021.
 
 \bibitem{egraph1}
 Charles~Gregory Nelson.

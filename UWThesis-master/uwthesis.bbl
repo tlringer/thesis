@@ -3,9 +3,6 @@
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
 
-\bibitem{lean}
-Lean theorem prover, 2017.
-
 \bibitem{proofgeneral}
 Proof general, 2017.
 
@@ -22,6 +19,10 @@ Mark Adams.
 \newblock In Domenico Bianculli, Radu Calinescu, and Bernhard Rumpe, editors,
   {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
   Heidelberg, 2015. Springer Berlin Heidelberg.
+
+\bibitem{agda}
+{Agda Development Team}.
+\newblock The {Agda} wiki, 2007-2021.
 
 \bibitem{andersen2010generic}
 Jesper Andersen and Julia~L Lawall.
@@ -477,6 +478,10 @@ Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
 \newblock In {\em Proceedings of the 34th International Conference on Software
   Engineering}, ICSE '12, pages 3--13, Piscataway, NJ, USA, 2012. IEEE Press.
 
+\bibitem{lean}
+{Lean Development Team}.
+\newblock Theorem proving in lean, 2014-2021.
+
 \bibitem{Leroy:POPL06}
 Xavier Leroy.
 \newblock Formal certification of a compiler back-end or: Programming a
@@ -608,6 +613,10 @@ Hoang Duong~Thien Nguyen, Dawei Qi, Abhik Roychoudhury, and Satish Chandra.
 \newblock \url{http://ncatlab.org/nlab/show/eta-conversion}, July 2020.
 \newblock \href{http://ncatlab.org/nlab/revision/eta-conversion/12}{Revision
   12}.
+
+\bibitem{nuprl}
+{NuPRL Development Team}.
+\newblock Nuprl, 1986-2021.
 
 \bibitem{opdyke1992}
 William~F Opdyke.

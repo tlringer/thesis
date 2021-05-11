@@ -189,19 +189,19 @@
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{109}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Proof Engineering}{109}{section.5.1}% 
 \contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{109}{subsection.5.1.1}% 
-\contentsline {paragraph}{Foundations}{109}{subsection.5.1.1}% 
-\contentsline {paragraph}{Aesthetics}{109}{subsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{109}{subsection.5.1.2}% 
+\contentsline {paragraph}{Proof Objects}{109}{subsection.5.1.1}% 
+\contentsline {paragraph}{Proof Scripts}{109}{subsection.5.1.1}% 
+\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{110}{subsection.5.1.2}% 
 \contentsline {paragraph}{Proof Scripts}{110}{subsection.5.1.2}% 
 \contentsline {paragraph}{Proof Terms}{110}{subsection.5.1.2}% 
 \contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{111}{subsection.5.1.3}% 
 \contentsline {paragraph}{Transfer \& Transport}{111}{subsection.5.1.3}% 
-\contentsline {paragraph}{Proof Transformation}{111}{subsection.5.1.3}% 
+\contentsline {paragraph}{Proof Transformation}{112}{subsection.5.1.3}% 
 \contentsline {subsection}{\numberline {5.1.4}Proof Design}{112}{subsection.5.1.4}% 
 \contentsline {paragraph}{Robust Abstractions}{112}{subsection.5.1.4}% 
 \contentsline {paragraph}{Robust Automation}{112}{subsection.5.1.4}% 
-\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{112}{subsection.5.1.5}% 
-\contentsline {paragraph}{Ontology Repair}{112}{subsection.5.1.5}% 
+\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{113}{subsection.5.1.5}% 
+\contentsline {paragraph}{Ontology Repair}{113}{subsection.5.1.5}% 
 \contentsline {paragraph}{Knowledge Sharing Methods}{113}{subsection.5.1.5}% 
 \contentsline {section}{\numberline {5.2}Program Repair}{113}{section.5.2}% 
 \contentsline {subsection}{\numberline {5.2.1}A Good Fit}{113}{subsection.5.2.1}% 
@@ -216,7 +216,7 @@
 \contentsline {subsection}{\numberline {5.3.1}Type Theory}{118}{subsection.5.3.1}% 
 \contentsline {paragraph}{Ornaments}{118}{subsection.5.3.1}% 
 \contentsline {paragraph}{Indexed Types}{118}{subsection.5.3.1}% 
-\contentsline {paragraph}{Homotopy Type Theory}{118}{subsection.5.3.1}% 
+\contentsline {paragraph}{Homotopy Type Theory}{119}{subsection.5.3.1}% 
 \contentsline {subsection}{\numberline {5.3.2}Program Synthesis}{119}{subsection.5.3.2}% 
 \contentsline {paragraph}{Programming by Example}{119}{subsection.5.3.2}% 
 \contentsline {paragraph}{Neurosymbolic Programming}{119}{subsection.5.3.2}% 

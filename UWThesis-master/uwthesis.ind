@@ -11,8 +11,9 @@
   \item Languages
     \subitem Gallina, \hyperpage{12--14}, \hyperpage{16}, 
 		\hyperpage{20}, \hyperpage{27, 28}, \hyperpage{33}, 
-		\hyperpage{40}, \hyperpage{68}, \hyperpage{110}
-    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}
+		\hyperpage{40}, \hyperpage{68}, \hyperpage{109}, 
+		\hyperpage{111}
+    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}, \hyperpage{109}
 
   \indexspace
 

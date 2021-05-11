@@ -21,22 +21,23 @@ other technologies for proof evolution (Section~\ref{sec:refrep}),
 proof reuse (Section~\ref{sec:reuse}),
 proof design (Section~\ref{sec:design}),
 and other kinds of proof automation (Section~\ref{sec:automation}.
-See my survey paper on proof engineering for a detailed overview of the field~\cite{PGL-045}. % TODO credit coauthors
+See my and my coauthors' survey paper on proof engineering for a detailed overview of the field~\cite{PGL-045}. % TODO credit coauthors
 
 \subsection{Proof Assistants}
 \label{sec:ass}
 
-% TODO from survey paper
-%Introduction, definition, de bruijn.
+Proof engineering as defined in the survey paper considers proof assistants that satisfy the \textit{de Bruijn criterion}~\cite{Barendregt2002,Barendregt2351}, which requires that they produce proof objects that a small proof-checking kernel can verify.
+This includes Coq~\cite{coq}---the proof assistant that this thesis focuses on---but also other proof assistants like
+Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, Agda~\cite{agda}, Lean~\cite{lean}, and NuPRL~\cite{nuprl}.
+These proof assistants have different notions of proof objects (in the case of Coq, proof terms in \kl{Gallina}),
+and different interfaces (if any) for proof scripts built on top of those proof objects (in the case of Coq, sequences of tactics in \kl{Ltac}).
+Differences in proof assistants along these dimensions have different implications for proof repair.
 
-%Summary of proof assistants.
-
-%I will discuss how these differ and the implications for proof repair.
-
-\paragraph{Foundations} % Most notably, proof terms.
+\paragraph{Proof Objects} 
+% Most notably, proof terms.
 %But also differences in logics (constructivism, then refer back to it later).
 
-\paragraph{Aesthetics} %Like different tactic languages.
+\paragraph{Proof Scripts} %Like different tactic languages.
 Better proof script languages can help circumvent some of the difficulties of repairing tactics.
 The Ltac successor Ltac2~\cite{ltac2}, for example, is much more structured than Ltac, and may help ease proof repair in Coq in the future.
 

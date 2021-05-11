@@ -17,45 +17,45 @@ Warning--empty school in opdyke1992
 Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 152 entries,
+You've used 160 entries,
             2118 wiz_defined-function locations,
-            1384 strings with 31858 characters,
-and the built_in function-call counts, 58662 in all, are:
-= -- 6068
-> -- 2494
-< -- 90
-+ -- 991
-- -- 825
-* -- 3771
-:= -- 9061
-add.period$ -- 506
-call.type$ -- 152
-change.case$ -- 848
+            1435 strings with 33323 characters,
+and the built_in function-call counts, 61744 in all, are:
+= -- 6399
+> -- 2600
+< -- 95
++ -- 1035
+- -- 859
+* -- 3972
+:= -- 9533
+add.period$ -- 533
+call.type$ -- 160
+change.case$ -- 889
 chr.to.int$ -- 0
-cite$ -- 163
-duplicate$ -- 2466
-empty$ -- 4681
-format.name$ -- 825
-if$ -- 12994
+cite$ -- 171
+duplicate$ -- 2598
+empty$ -- 4935
+format.name$ -- 859
+if$ -- 13675
 int.to.chr$ -- 0
-int.to.str$ -- 152
-missing$ -- 119
-newline$ -- 740
-num.names$ -- 318
-pop$ -- 1059
+int.to.str$ -- 160
+missing$ -- 126
+newline$ -- 780
+num.names$ -- 334
+pop$ -- 1099
 preamble$ -- 1
-purify$ -- 706
+purify$ -- 739
 quote$ -- 0
-skip$ -- 1977
+skip$ -- 2079
 stack$ -- 0
-substring$ -- 3596
-swap$ -- 862
-text.length$ -- 90
+substring$ -- 3836
+swap$ -- 906
+text.length$ -- 95
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 600
+type$ -- 632
 warning$ -- 11
-while$ -- 576
-width$ -- 155
-write$ -- 1765
+while$ -- 610
+width$ -- 163
+write$ -- 1860
 (There were 14 warnings)

@@ -87,9 +87,31 @@ One possible way to apply the same techniques to proof assistants with ephemeral
 Chapter~\ref{chapt:conclusions} describes an example of this for Isabelle/HOL.
 
 \paragraph{Automation} %Like different tactic languages.
-Better proof script languages can help circumvent some of the difficulties of repairing tactics.
+Directly constructing proof objects may be too low-level to provide for a positive user experience for the proof engineer,
+and in some cases the proof object may not be exposed to the proof engineer at all.
+Typically, automation acts as an interface between the proof engineer and the kernel.
+In Coq, for example, proof engineers write proof scripts interactively using tactics.
+Proof engineers can combine existing tactics, or write their own, either in the general-purpose programming language
+OCaml or in the tactic language \kl{Ltac}. 
+
+In contrast, in Isabelle/HOL, proof engineers commonly write proofs in Isabelle/Isar~\cite{wenzel1999isar, Wenzel2007isar}, which is a high-level \textit{proof language}:
+a language for structuring and composing propositions, facts, and proof goals.
+Proof engineers can also mix these styles.
+For example, Coq proof engineers can write proofs using the high-level proof language SSReflect~\cite{Gonthier2010, Gonthier2008},
+or they can even mix SSReflect with Ltac tactics.
+Isabelle/HOL proof engineers can write automation in the general-purpose language Standard ML---which was originally introduced specifically
+for developing proof automation~\cite{Gordon1978}---or with the Ltac-inspired tactic language Eisbach~\cite{Matichuk2015EisbachAP}.
+Agda proof engineers typical rely only on reflection~\cite{Demers95reflectionin, harrison-reflection, van2012engineering} to write proof automation.
+
+The approach to proof repair taken in this thesis is independent of the kind of automation used, or the language used to implement it.
+All that needs to change to transfer this approach to a different tactic or proof language, for example,
+is the implementation of the decompiler.
+Still, some kinds of automation may produce proof terms that are especially difficult to difference and transform,
+or may make decompilation especially difficult.
+
+Better languages for automation can also help circumvent some of the difficulties of repairing tactics directly, rather than relying a decompiler.
+Or, they may help simplify the implementation of the decompiler.
 The Ltac successor Ltac2~\cite{ltac2}, for example, is much more structured than Ltac, and may help ease proof repair in Coq in the future.
-different decompiler.
 
 \subsection{Proof Evolution}
 \label{sec:refrep}
@@ -170,10 +192,11 @@ Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer
 
 The \toolnamec transformation implements a particular kind of transfer called transport from homotopy type theory.
 Transport is realizable as a function given univalence~\cite{univalent2013homotopy}.
-UP~\cite{tabareau2017equivalences} approximates it
-in Coq, only sometimes relying on functional extensionality.
-While powerful, neither approach removes references to the old type. %making them poorly suited for repair.
+(TODO explain more, explain path equality in cubical. Explain limitations.)
 
+UP~\cite{tabareau2017equivalences} approximates univalence
+in Coq, only sometimes relying on functional extensionality.
+While powerful, it does not remove references to the old type, making it poorly suited for repair.
 Recent work~\cite{tabareau2019marriage} extends UP with 
 a white-box transformation that may work for repair.
 This imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,

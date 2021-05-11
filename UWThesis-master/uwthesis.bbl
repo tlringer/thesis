@@ -269,6 +269,13 @@ Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
   on Functional Programming}, ICFP '13, pages 319--330, New York, NY, USA,
   2013. ACM.
 
+\bibitem{Demers95reflectionin}
+Francois-Nicola Demers and Jacques Malenfant.
+\newblock Reflection in logic, functional and object-oriented programming: a
+  short comparative study.
+\newblock In {\em In IJCAI '95 Workshop on Reflection and Metalevel
+  Architectures and their Applications in AI}, pages 29--38, 1995.
+
 \bibitem{DeMillo1977}
 Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock Social processes and proofs of theorems and programs.
@@ -359,11 +366,30 @@ Emil~Holm Gj{\o}rup and Bas Spitters.
 \newblock In {\em Workshop on Homotopy Type Theory / Univalent Foundations},
   2020.
 
+\bibitem{Gonthier2008}
+Georges Gonthier.
+\newblock Formal proof---the four-color theorem.
+\newblock {\em Notices of the American Mathematical Society},
+  55(11):1382--1393, 2008.
+
+\bibitem{Gonthier2010}
+Georges Gonthier and Assia Mahboubi.
+\newblock An introduction to small scale reflection in {Coq}.
+\newblock {\em Journal of Formalized Reasoning}, 3(2):95--152, 2010.
+
 \bibitem{gopinath2011specification}
 Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
 \newblock Specification-based program repair using sat.
 \newblock In {\em International Conference on Tools and Algorithms for the
   Construction and Analysis of Systems}, pages 173--188. Springer, 2011.
+
+\bibitem{Gordon1978}
+Michael J.~C. Gordon, Robin Milner, L.~Morris, Malcolm~C. Newey, and
+  Christopher~P. Wadsworth.
+\newblock A metalanguage for interactive proof in {LCF}.
+\newblock In {\em Proceedings of the 5th ACM SIGACT-SIGPLAN Symposium on
+  Principles of Programming Languages}, POPL '78, pages 119--130, New York, NY,
+  USA, 1978. ACM.
 
 \bibitem{certikos}
 Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
@@ -378,6 +404,12 @@ Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
 \newblock Program synthesis.
 \newblock {\em Foundations and Trends in Programming Languages}, 4(1-2):1--119,
   2017.
+
+\bibitem{harrison-reflection}
+John Harrison.
+\newblock Metatheory and reflection in theorem proving: A survey and critique.
+\newblock Technical Report CRC-053, SRI Cambridge, Millers Yard, Cambridge, UK,
+  1995.
 
 \bibitem{10.1007/978-3-540-24721-0_20}
 Haifeng He and Neelam Gupta.
@@ -565,6 +597,11 @@ Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
 \newblock Automatic repair of real bugs in java: {A} large-scale experiment on
   the defects4j dataset.
 \newblock {\em CoRR}, abs/1811.02429, 2018.
+
+\bibitem{Matichuk2015EisbachAP}
+Daniel Matichuk, Toby Murray, and Makarius Wenzel.
+\newblock Eisbach: A proof method language for {Isabelle}.
+\newblock {\em Journal of Automated Reasoning}, 56(3):261--282, Mar 2016.
 
 \bibitem{mcbride}
 Conor McBride.
@@ -833,6 +870,12 @@ Amin Timany and Bart Jacobs.
 \newblock {\em Homotopy Type Theory: Univalent Foundations of Mathematics}.
 \newblock Institute for Advanced Study, 2013.
 
+\bibitem{van2012engineering}
+Paul Van Der~Walt and Wouter Swierstra.
+\newblock Engineering proof by reflection in {Agda}.
+\newblock In {\em Symposium on Implementation and Application of Functional
+  Languages}, pages 157--173. Springer, 2012.
+
 \bibitem{Wei:2010:AFP:1831708.1831716}
 Yi~Wei, Yu~Pei, Carlo~A. Furia, Lucas~S. Silva, Stefan Buchholz, Bertrand
   Meyer, and Andreas Zeller.
@@ -875,6 +918,13 @@ Makarius Wenzel.
 \bibitem{WenzelFurtherScalingIsabelle}
 Makarius Wenzel.
 \newblock Further scaling of isabelle technology, April 2018.
+
+\bibitem{wenzel1999isar}
+Markus Wenzel.
+\newblock {Isar} --- a generic interpretative approach to readable formal proof
+  documents.
+\newblock In {\em Theorem Proving in Higher Order Logics}, pages 167--183,
+  Berlin, Heidelberg, 1999. Springer.
 
 \bibitem{WhitesidePhD}
 Iain~Johnston Whiteside.

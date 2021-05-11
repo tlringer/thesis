@@ -7,6 +7,7 @@
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations
+- clean citations
 - thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
 - pronoun check
 - space hack removal
@@ -20,6 +21,7 @@
 - Qed vs. defined somewhere
 - definitional vs. propositional equality somewhere early
 - finish acks
+- author-year?
 
 # Chapter 1
 

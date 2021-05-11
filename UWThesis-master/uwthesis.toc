@@ -237,4 +237,4 @@
 \contentsline {paragraph}{Tool-Assisted Robustness}{124}{chapter.6}% 
 \contentsline {paragraph}{Machine Learning}{125}{chapter.6}% 
 \contentsline {paragraph}{Cryptography}{125}{chapter.6}% 
-\contentsline {paragraph}{Medical Devices}{125}{chapter.6}% 
+\contentsline {paragraph}{Medicine}{125}{chapter.6}% 

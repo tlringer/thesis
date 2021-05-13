@@ -128,103 +128,105 @@
 \contentsline {section}{\numberline {4.3}Differencing}{74}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{75}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{76}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Configurations as Initial Algebras}{78}{subsection.4.3.3}% 
-\contentsline {paragraph}{Equivalence}{79}{figure.caption.31}% 
+\contentsline {subsection}{\numberline {4.3.3}Specifying Correct Configurations}{78}{subsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.3.1}Categorical Intuition for Correctness}{78}{subsubsection.4.3.3.1}% 
+\contentsline {subsection}{\numberline {4.3.4}Correctness in CIC$_{\omega }$}{79}{subsection.4.3.4}% 
+\contentsline {paragraph}{Equivalence}{80}{figure.caption.31}% 
 \contentsline {paragraph}{Equality}{80}{figure.caption.31}% 
 \contentsline {paragraph}{Correctness}{80}{figure.caption.31}% 
-\contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.31}% 
-\contentsline {subsection}{\numberline {4.3.4}Search Procedures}{81}{subsection.4.3.4}% 
-\contentsline {paragraph}{Common Definitions}{82}{lstnumber.-189.1}% 
-\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}% 
+\contentsline {paragraph}{Equivalences from Configurations}{81}{figure.caption.31}% 
+\contentsline {subsection}{\numberline {4.3.5}Search Procedures}{81}{subsection.4.3.5}% 
+\contentsline {paragraph}{Common Definitions}{83}{lstnumber.-189.1}% 
+\contentsline {subsubsection}{\numberline {4.3.5.1}Differencing for the Indexer}{83}{subsubsection.4.3.5.1}% 
 \contentsline {paragraph}{Generating the Motive}{83}{figure.caption.33}% 
-\contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-192.1}% 
+\contentsline {paragraph}{Generating Each Case}{85}{lstnumber.-192.1}% 
 \contentsline {paragraph}{Composing the Result}{85}{lstnumber.-196.1}% 
-\contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{85}{subsubsection.4.3.4.2}% 
-\contentsline {paragraph}{Discovering the Equivalence Parts}{85}{subsubsection.4.3.4.2}% 
+\contentsline {subsubsection}{\numberline {4.3.5.2}Differencing for the Configuration}{86}{subsubsection.4.3.5.2}% 
+\contentsline {paragraph}{Discovering the Equivalence Parts}{86}{subsubsection.4.3.5.2}% 
 \contentsline {paragraph}{Deriving the Configuration}{86}{figure.caption.34}% 
 \contentsline {paragraph}{Proving Correctness}{87}{lstnumber.-202.1}% 
-\contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
-\contentsline {paragraph}{Heuristics}{87}{subsection.4.3.5}% 
-\contentsline {paragraph}{Isolating Changes}{88}{subsection.4.3.5}% 
+\contentsline {subsection}{\numberline {4.3.6}Revisiting Limitations}{88}{subsection.4.3.6}% 
+\contentsline {paragraph}{Heuristics}{88}{subsection.4.3.6}% 
+\contentsline {paragraph}{Isolating Changes}{88}{subsection.4.3.6}% 
 \contentsline {section}{\numberline {4.4}Transformation}{88}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Unification Heuristics}{90}{subsection.4.4.1}% 
 \contentsline {subsection}{\numberline {4.4.2}Specifying a Correct Transformation}{91}{subsection.4.4.2}% 
 \contentsline {subsection}{\numberline {4.4.3}Revisiting Limitations}{91}{subsection.4.4.3}% 
-\contentsline {paragraph}{Undecidability}{91}{subsection.4.4.3}% 
-\contentsline {paragraph}{Modeling Diverse Proof Styles}{91}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Implementation}{91}{section.4.5}% 
+\contentsline {paragraph}{Undecidability}{92}{subsection.4.4.3}% 
+\contentsline {paragraph}{Modeling Diverse Proof Styles}{92}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Implementation}{92}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{92}{subsection.4.5.1}% 
 \contentsline {subsubsection}{\numberline {4.5.1.1}The Command}{92}{subsubsection.4.5.1.1}% 
 \contentsline {subsubsection}{\numberline {4.5.1.2}Differencing}{93}{subsubsection.4.5.1.2}% 
 \contentsline {subsubsection}{\numberline {4.5.1.3}Transformation}{94}{subsubsection.4.5.1.3}% 
-\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{94}{subsubsection.4.5.1.3}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Optimizations}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Termination}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Intent}{95}{subsubsection.4.5.1.3}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{95}{subsubsection.4.5.1.4}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{95}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{96}{subsubsection.4.5.1.4}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{96}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{96}{subsubsection.4.5.2.1}% 
-\contentsline {paragraph}{First Pass: Basic Proof Scripts}{97}{figure.caption.38}% 
-\contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.38}% 
-\contentsline {paragraph}{From Qtac to Ltac}{98}{figure.caption.39}% 
-\contentsline {paragraph}{From CIC$_{\omega }$ to Coq}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Forfeiting Soundness}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Pretty Printing}{99}{figure.caption.39}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{99}{subsubsection.4.5.2.2}% 
-\contentsline {section}{\numberline {4.6}Results}{100}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{101}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{101}{table.caption.40}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{101}{figure.caption.41}% 
-\contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Constructors: Modifying a Language}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Add new Constructors: Extending a Language}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{103}{figure.caption.41}% 
-\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
-\contentsline {paragraph}{Setup}{105}{Item.63}% 
-\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{105}{subsubsection.4.6.2.1}% 
-\contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{106}{subsubsection.4.6.2.2}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{107}{section.4.7}% 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{109}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Proof Engineering}{109}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{109}{subsection.5.1.1}% 
-\contentsline {paragraph}{Foundations}{109}{subsection.5.1.1}% 
-\contentsline {paragraph}{Proof Objects}{110}{subsection.5.1.1}% 
-\contentsline {paragraph}{Automation}{111}{Item.66}% 
-\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{112}{subsection.5.1.2}% 
-\contentsline {paragraph}{Proof Scripts}{112}{subsection.5.1.2}% 
-\contentsline {paragraph}{Proof Terms}{112}{subsection.5.1.2}% 
-\contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{113}{subsection.5.1.3}% 
-\contentsline {paragraph}{Extending Inductive Types}{113}{subsection.5.1.3}% 
-\contentsline {paragraph}{Proof Transformation}{113}{subsection.5.1.3}% 
-\contentsline {paragraph}{Transfer \& Transport}{114}{subsection.5.1.3}% 
-\contentsline {subsection}{\numberline {5.1.4}Proof Design}{115}{subsection.5.1.4}% 
-\contentsline {paragraph}{Robust Abstractions}{115}{subsection.5.1.4}% 
-\contentsline {paragraph}{Robust Automation}{116}{subsection.5.1.4}% 
-\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{116}{subsection.5.1.5}% 
-\contentsline {paragraph}{Ontology Repair}{116}{subsection.5.1.5}% 
-\contentsline {paragraph}{Knowledge Sharing Methods}{116}{subsection.5.1.5}% 
-\contentsline {paragraph}{E-Graphs}{116}{subsection.5.1.5}% 
-\contentsline {section}{\numberline {5.2}Program Repair}{117}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}A Good Fit}{117}{subsection.5.2.1}% 
-\contentsline {paragraph}{Specifications}{117}{subsection.5.2.1}% 
-\contentsline {paragraph}{Examples}{118}{subsection.5.2.1}% 
-\contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{118}{subsection.5.2.2}% 
-\contentsline {paragraph}{Regression Repair}{118}{subsection.5.2.2}% 
-\contentsline {paragraph}{Specification-Based Repair}{119}{subsection.5.2.2}% 
-\contentsline {paragraph}{Repair by Example}{120}{subsection.5.2.2}% 
-\contentsline {paragraph}{Human in the Loop}{121}{subsection.5.2.2}% 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{123}{chapter.6}% 
-\contentsline {paragraph}{All Proof Assistants}{124}{chapter.6}% 
-\contentsline {paragraph}{More Power}{124}{chapter.6}% 
-\contentsline {paragraph}{Natural Proofs}{124}{chapter.6}% 
-\contentsline {paragraph}{More Automation}{125}{chapter.6}% 
-\contentsline {paragraph}{Smooth Integration}{125}{chapter.6}% 
-\contentsline {paragraph}{User Feedback}{125}{chapter.6}% 
-\contentsline {paragraph}{Familiar Tools}{126}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Redesign}{126}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Robustness}{126}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{127}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{127}{chapter.6}% 
-\contentsline {paragraph}{Medicine}{127}{chapter.6}% 
+\contentsline {paragraph}{First Pass: Basic Proof Scripts}{98}{figure.caption.38}% 
+\contentsline {paragraph}{Second Pass: Better Proof Scripts}{99}{figure.caption.38}% 
+\contentsline {paragraph}{From Qtac to Ltac}{99}{figure.caption.39}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ to Coq}{100}{figure.caption.39}% 
+\contentsline {paragraph}{Forfeiting Soundness}{100}{figure.caption.39}% 
+\contentsline {paragraph}{Pretty Printing}{100}{figure.caption.39}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{100}{subsubsection.4.5.2.2}% 
+\contentsline {section}{\numberline {4.6}Results}{101}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{102}{subsection.4.6.1}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{102}{table.caption.40}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.41}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{103}{figure.caption.41}% 
+\contentsline {paragraph}{Permute Constructors: Modifying a Language}{103}{figure.caption.41}% 
+\contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.41}% 
+\contentsline {paragraph}{Factor out Constructors: External Example}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Permute Hypotheses: External Example}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.41}% 
+\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{105}{subsection.4.6.2}% 
+\contentsline {paragraph}{Setup}{106}{Item.63}% 
+\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{106}{subsubsection.4.6.2.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{107}{subsubsection.4.6.2.2}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{108}{section.4.7}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{111}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Proof Engineering}{111}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{111}{subsection.5.1.1}% 
+\contentsline {paragraph}{Foundations}{111}{subsection.5.1.1}% 
+\contentsline {paragraph}{Proof Objects}{112}{subsection.5.1.1}% 
+\contentsline {paragraph}{Automation}{113}{Item.66}% 
+\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{114}{subsection.5.1.2}% 
+\contentsline {paragraph}{Proof Scripts}{114}{subsection.5.1.2}% 
+\contentsline {paragraph}{Proof Terms}{114}{subsection.5.1.2}% 
+\contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{115}{subsection.5.1.3}% 
+\contentsline {paragraph}{Extending Inductive Types}{115}{subsection.5.1.3}% 
+\contentsline {paragraph}{Proof Transformation}{115}{subsection.5.1.3}% 
+\contentsline {paragraph}{Transfer \& Transport}{116}{subsection.5.1.3}% 
+\contentsline {subsection}{\numberline {5.1.4}Proof Design}{117}{subsection.5.1.4}% 
+\contentsline {paragraph}{Robust Abstractions}{117}{subsection.5.1.4}% 
+\contentsline {paragraph}{Robust Automation}{118}{subsection.5.1.4}% 
+\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{118}{subsection.5.1.5}% 
+\contentsline {paragraph}{Ontology Repair}{118}{subsection.5.1.5}% 
+\contentsline {paragraph}{Knowledge Sharing Methods}{118}{subsection.5.1.5}% 
+\contentsline {paragraph}{E-Graphs}{118}{subsection.5.1.5}% 
+\contentsline {section}{\numberline {5.2}Program Repair}{119}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}A Good Fit}{119}{subsection.5.2.1}% 
+\contentsline {paragraph}{Specifications}{119}{subsection.5.2.1}% 
+\contentsline {paragraph}{Examples}{120}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{120}{subsection.5.2.2}% 
+\contentsline {paragraph}{Regression Repair}{120}{subsection.5.2.2}% 
+\contentsline {paragraph}{Specification-Based Repair}{121}{subsection.5.2.2}% 
+\contentsline {paragraph}{Repair by Example}{122}{subsection.5.2.2}% 
+\contentsline {paragraph}{Human in the Loop}{123}{subsection.5.2.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{125}{chapter.6}% 
+\contentsline {paragraph}{All Proof Assistants}{126}{chapter.6}% 
+\contentsline {paragraph}{More Power}{126}{chapter.6}% 
+\contentsline {paragraph}{Natural Proofs}{126}{chapter.6}% 
+\contentsline {paragraph}{More Automation}{127}{chapter.6}% 
+\contentsline {paragraph}{Smooth Integration}{127}{chapter.6}% 
+\contentsline {paragraph}{User Feedback}{127}{chapter.6}% 
+\contentsline {paragraph}{Familiar Tools}{128}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Redesign}{128}{chapter.6}% 
+\contentsline {paragraph}{Tool-Assisted Robustness}{128}{chapter.6}% 
+\contentsline {paragraph}{Machine Learning}{129}{chapter.6}% 
+\contentsline {paragraph}{Cryptography}{129}{chapter.6}% 
+\contentsline {paragraph}{Medicine}{129}{chapter.6}% 

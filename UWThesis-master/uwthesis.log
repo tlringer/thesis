@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  12 MAY 2021 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  13 MAY 2021 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2162,78 +2162,95 @@ Overfull \hbox (22.57913pt too wide) in paragraph at lines 152--160
 
 LaTeX Warning: Reference `pi:approach' on page 71 undefined on input line 195.
 
-[71] [72]) (./often/differencing.tex [73] [74] [75] (./often/nattobin.tex)
-(./often/nattobin.tex)
+[71] [72]) (./often/differencing.tex [73]
+Overfull \hbox (0.58055pt too wide) in paragraph at lines 58--64
+\OT1/pplj/m/n/10.95 (-20) what in category theory are known as initial algebras
+, and correctness---
+ []
+
+[74] [75] (./often/nattobin.tex) (./often/nattobin.tex)
 Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
 []\OT1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[76] [77] [78]
-Overfull \hbox (48.09023pt too wide) in paragraph at lines 295--296
+[76] [77]
+<often/Diagram.pdf, id=1946, 706.80057pt x 376.52669pt>
+File: often/Diagram.pdf Graphic file (type pdf)
+<use often/Diagram.pdf>
+Package pdftex.def Info: often/Diagram.pdf  used on input line 250.
+(pdftex.def)             Requested size: 388.7415pt x 207.0903pt.
+
+Overfull \hbox (52.7415pt too wide) in paragraph at lines 250--251
+ [] 
+ []
+
+[78 <./often/Diagram.pdf>]
+Overfull \hbox (48.09023pt too wide) in paragraph at lines 312--313
 [][][][]  
  []
 
 
-Overfull \hbox (6.1325pt too wide) in paragraph at lines 329--338
+Overfull \hbox (6.1325pt too wide) in paragraph at lines 346--355
 [] []\OT1/pplj/m/sc/10.95 (-20) e q u i v -a -l e n c e[] \OT1/pplj/m/n/10.95 (
 -20) To pre-serve the equiv-a-lence (Fig-ure []28[], left), []
  []
 
 [79] [80] [81] [82]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 505.
+LaTeX Font Warning: Command \small invalid in math mode on input line 522.
 
 [83] [84]
-Overfull \hbox (31.1388pt too wide) in paragraph at lines 590--591
+Overfull \hbox (31.1388pt too wide) in paragraph at lines 607--608
 [][][][][][][][][][]  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 599
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 616
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 599.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 616.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 599.
+(Font)              for symbol `textbraceleft' on input line 616.
 
 
-Overfull \hbox (66.33852pt too wide) in paragraph at lines 599--600
+Overfull \hbox (66.33852pt too wide) in paragraph at lines 616--617
 [][][][][][][][][][]  
  []
 
+[85]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 625.
+LaTeX Font Warning: Command \small invalid in math mode on input line 642.
 
-[85] [86] [87]) (./often/transformation.tex
+[86] [87]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
-[88] [89] [90]) (./often/implementation.tex [91]
+[88] [89] [90] [91]) (./often/implementation.tex [92]
 Overfull \hbox (21.62834pt too wide) in paragraph at lines 41--45
 []\OT1/pplj/m/n/10.95 (-20) Once \OT1/pplj/m/sc/10.95 (-20) Pump-kin P\OT1/pplj
 /m/n/10.95 (-20) i has found a con-fig-u-ra-tion, the next step---\OT1/pplj/m/s
 c/10.95 (-20) Transform\OT1/pplj/m/n/10.95 (-20) ---
  []
 
-[92] [93] [94] [95]
+[93] [94] [95]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 214.
 
-[96] [97]
+[96] [97] [98]
 Overfull \hbox (4.37883pt too wide) in paragraph at lines 364--370
 \OT1/pplj/m/n/10.95 (-20) mod-i-fies the sug-gested tac-tics to pro-duce a more
  nat-u-ral proof script [][][].
  []
 
-[98]
+[99]
 Overfull \hbox (6.10782pt too wide) in paragraph at lines 434--443
 [] []\OT1/pplj/m/sc/10.95 (-20) p r e t t y p r i n t -i n g[] \OT1/pplj/m/n/10
 .95 (-20) Af-ter de-com-pil-ing proof terms, \OT1/pplj/b/n/10.95 De-com-pile \O
 T1/pplj/m/n/10.95 (-20) pretty
  []
 
-[99]) (./often/results.tex
+[100]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 21.
 
@@ -2241,9 +2258,9 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 19--62
 [][]
  []
 
-[100] (./often/replica.tex) (./often/replica.tex)
+[101] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 101 undefined on input line 124.
+LaTeX Warning: Reference `sec:key1' on page 102 undefined on input line 124.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 115--125
@@ -2251,89 +2268,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--125
 s o f p a r -t i c -u -l a r l e n g t h s[] \OT1/pplj/m/n/10.95 (-2) In
  []
 
-[101]
+[102]
 Overfull \hbox (5.39363pt too wide) in paragraph at lines 206--213
 [] []\OT1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t 
 e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
  []
 
-[102] [103] [104] [105]
+[103] [104] [105] [106]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
- [106]) (./often/conclusion.tex [107])) (./related.tex
-[108]
-chapter 5.
-[109
+ [107]) (./often/conclusion.tex [108])) (./related.tex
+[109] [110
 
 
 ]
+chapter 5.
+[111]
 Overfull \hbox (16.902pt too wide) in paragraph at lines 49--61
 []\OT1/pplj/m/n/10.95 (-20) The proof as-sis-tants Is-abelle/HOL [[]], HOL Ligh
 t [[]], and HOL4 [[]]
  []
 
-[110] [111] [112] [113] [114]
+[112] [113] [114] [115] [116]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 115 undefined on input line 295
+LaTeX Warning: Citation `Chrzaszcz2003' on page 117 undefined on input line 295
 .
 
-[115]
+[117]
 Overfull \hbox (4.452pt too wide) in paragraph at lines 327--339
 [] []\OT1/pplj/m/sc/10.95 (-20) k n o w l -e d g e s h a r -i n g m e t h -o d 
 s[] \OT1/pplj/m/n/10.95 (-20) Knowl-edge shar-ing meth-ods [[]]
  []
 
-[116]
+[118]
 Overfull \hbox (1.78976pt too wide) in paragraph at lines 366--372
 []\OT1/pplj/m/n/10.95 (-20) A re-cent re-view [[]] of a pop-u-lar test-based pr
 o-gram re-pair tool [[]]
  []
 
-[117]
+[119]
 Overfull \hbox (6.93776pt too wide) in paragraph at lines 402--407
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
 
-[118] [119] [120]
+[120] [121] [122]
 
-LaTeX Warning: Reference `sec:synthesis' on page 121 undefined on input line 53
+LaTeX Warning: Reference `sec:synthesis' on page 123 undefined on input line 53
 3.
 
-) (./conclusion.tex [121] [122
+) (./conclusion.tex [123] [124
 
 
 ]
 chapter 6.
-(./next.tex [123]
+(./next.tex [125]
 Overfull \hbox (1.50386pt too wide) in paragraph at lines 26--36
 [] []\OT1/pplj/m/sc/10.95 (-20) a l l p r o o f a s -s i s -t a n t s[] \OT1/pp
 lj/m/n/10.95 (-20) Proof re-pair will ac-ces-si-ble across all proof
  []
 
-[124] [125] [126] [127])) (./uwthesis.ind [128]
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 6--8
+[126] [127] [128] [129])) (./uwthesis.ind [130]
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--6
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []19[], []21[],
  []
 
-
-Overfull \hbox (1.024pt too wide) in paragraph at lines 26--28
-[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []9[], []10[], []99[],
- []
-
-[129
+[131
 
 
 
 
 
 
-]) (./uwthesis.bbl [130
+]) (./uwthesis.bbl [132
 
 
 
-] [131] [132] [133] [134] [135] [136] [137] [138]
-[139]
+] [133] [134] [135] [136] [137] [138] [139] [140]
+[141]
 Underfull \hbox (badness 10000) in paragraph at lines 673--681
 []\OT1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func
 -tor.
@@ -2345,7 +2357,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 673--681
 ebra % 20of %
  []
 
-[140]
+[142]
 Underfull \hbox (badness 1163) in paragraph at lines 738--744
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2373,13 +2385,13 @@ ion et r[]Ealisation d'outils d'aide au
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 767.
 
-[141]
+[143]
 Underfull \hbox (badness 1184) in paragraph at lines 816--821
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[142] [143] [144]) [145]
+[144] [145] [146]) [147]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2407,10 +2419,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 545.
  ) 
 Here is how much of TeX's memory you used:
- 50414 strings out of 492609
- 1014089 string characters out of 6129033
- 1288214 words of memory out of 5000000
- 51014 multiletter control sequences out of 15000+600000
+ 50433 strings out of 492609
+ 1014466 string characters out of 6129033
+ 1288560 words of memory out of 5000000
+ 51028 multiletter control sequences out of 15000+600000
  640509 words of font info for 860 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2432,10 +2444,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (156 pages, 1622274 bytes).
+Output written on uwthesis.pdf (158 pages, 1636475 bytes).
 PDF statistics:
- 3455 PDF objects out of 3580 (max. 8388607)
- 3220 compressed objects within 33 object streams
- 1538 named destinations out of 1728 (max. 500000)
- 94530 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 3456 PDF objects out of 3580 (max. 8388607)
+ 3216 compressed objects within 33 object streams
+ 1542 named destinations out of 1728 (max. 500000)
+ 94535 words of extra memory for PDF output out of 106986 (max. 10000000)
 

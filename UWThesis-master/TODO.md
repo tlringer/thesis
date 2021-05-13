@@ -51,9 +51,7 @@
 
 # Chapter 4
 
-- missing Carlo diagram
 - explain the universal predicate lifting
-- improve Carlo theory presentation (draw everything explicitly if you can)
 - revise
 
 # Chapter 5

@@ -285,14 +285,18 @@
 \KAuxNewLinkScopetagInstance {fig:nattobin}{document}
 \KAuxDeclaredScopeTag {sec:art}
 \KAuxNewLinkScopetagInstance {sec:art}{document}
+\KAuxDeclaredScopeTag {sec:algebra}
+\KAuxNewLinkScopetagInstance {sec:algebra}{document}
 \KAuxDeclaredScopeTag {fig:lambek}
 \KAuxNewLinkScopetagInstance {fig:lambek}{document}
+\KAuxDeclaredScopeTag {sec:correct-cic}
+\KAuxNewLinkScopetagInstance {sec:correct-cic}{document}
 \KAuxDeclaredScopeTag {fig:spec}
 \KAuxNewLinkScopetagInstance {fig:spec}{document}
 \KAuxDeclaredScopeTag {sec:proc}
 \KAuxNewLinkScopetagInstance {sec:proc}{document}
 
-\KAuxFileAt {differencing.tex}{390}
+\KAuxFileAt {differencing.tex}{407}
 \KAuxAutorefTarget {default}{base}{algebraic ornaments}
 \KAuxDeclaredScopeTag {fig:common}
 \KAuxNewLinkScopetagInstance {fig:common}{document}

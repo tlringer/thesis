@@ -5,6 +5,7 @@
 - knowledge package as much as possible (basically every italic thing)
   + axioms
   + papers, like REPLICA and the survey paper (by name and not by name)
+  + acks
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - write abstract
 - dedupe citations
@@ -50,7 +51,10 @@
 
 # Chapter 4
 
-- finish missing parts (Carlo theory)
+- missing Carlo diagram
+- explain the universal predicate lifting
+- improve Carlo theory presentation (draw everything explicitly if you can)
+- revise
 
 # Chapter 5
 
@@ -61,4 +65,5 @@
 # Chapter 6
 
 - add citations for related work, especially for the domain experts part
+- update crypto thing to include twitter thread: https://twitter.com/TaliaRinger/status/1391943048465055750
 - revise

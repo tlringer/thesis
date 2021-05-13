@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  11 MAY 2021 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  12 MAY 2021 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2169,71 +2169,71 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
  proves the $\OML/zplm/m/it/10.95 ^^S$\OT1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[76] [77]
-Overfull \hbox (48.09023pt too wide) in paragraph at lines 264--265
+[76] [77] [78]
+Overfull \hbox (48.09023pt too wide) in paragraph at lines 295--296
 [][][][]  
  []
 
-[78]
-Overfull \hbox (6.1325pt too wide) in paragraph at lines 300--309
+
+Overfull \hbox (6.1325pt too wide) in paragraph at lines 329--338
 [] []\OT1/pplj/m/sc/10.95 (-20) e q u i v -a -l e n c e[] \OT1/pplj/m/n/10.95 (
--20) To pre-serve the equiv-a-lence (Fig-ure []27[], left), []
+-20) To pre-serve the equiv-a-lence (Fig-ure []28[], left), []
  []
 
-[79] [80] [81]
+[79] [80] [81] [82]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 475.
+LaTeX Font Warning: Command \small invalid in math mode on input line 505.
 
-[82] [83]
-Overfull \hbox (31.1388pt too wide) in paragraph at lines 560--561
+[83] [84]
+Overfull \hbox (31.1388pt too wide) in paragraph at lines 590--591
 [][][][][][][][][][]  
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 569
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 599
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 569.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 599.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 569.
+(Font)              for symbol `textbraceleft' on input line 599.
 
 
-Overfull \hbox (66.33852pt too wide) in paragraph at lines 569--570
+Overfull \hbox (66.33852pt too wide) in paragraph at lines 599--600
 [][][][][][][][][][]  
  []
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 595.
+LaTeX Font Warning: Command \small invalid in math mode on input line 625.
 
-[84] [85] [86]) (./often/transformation.tex
+[85] [86] [87]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
-[87] [88] [89]) (./often/implementation.tex [90]
+[88] [89] [90]) (./often/implementation.tex [91]
 Overfull \hbox (21.62834pt too wide) in paragraph at lines 41--45
 []\OT1/pplj/m/n/10.95 (-20) Once \OT1/pplj/m/sc/10.95 (-20) Pump-kin P\OT1/pplj
 /m/n/10.95 (-20) i has found a con-fig-u-ra-tion, the next step---\OT1/pplj/m/s
 c/10.95 (-20) Transform\OT1/pplj/m/n/10.95 (-20) ---
  []
 
-[91] [92] [93] [94]
+[92] [93] [94] [95]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 214.
 
-[95] [96]
+[96] [97]
 Overfull \hbox (4.37883pt too wide) in paragraph at lines 364--370
 \OT1/pplj/m/n/10.95 (-20) mod-i-fies the sug-gested tac-tics to pro-duce a more
  nat-u-ral proof script [][][].
  []
 
-[97]
+[98]
 Overfull \hbox (6.10782pt too wide) in paragraph at lines 434--443
 [] []\OT1/pplj/m/sc/10.95 (-20) p r e t t y p r i n t -i n g[] \OT1/pplj/m/n/10
 .95 (-20) Af-ter de-com-pil-ing proof terms, \OT1/pplj/b/n/10.95 De-com-pile \O
 T1/pplj/m/n/10.95 (-20) pretty
  []
 
-[98]) (./often/results.tex
+[99]) (./often/results.tex
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 21.
 
@@ -2241,9 +2241,9 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 19--62
 [][]
  []
 
-(./often/replica.tex) (./often/replica.tex)
+[100] (./often/replica.tex) (./often/replica.tex)
 
-LaTeX Warning: Reference `sec:key1' on page 99 undefined on input line 124.
+LaTeX Warning: Reference `sec:key1' on page 101 undefined on input line 124.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 115--125
@@ -2251,22 +2251,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--125
 s o f p a r -t i c -u -l a r l e n g t h s[] \OT1/pplj/m/n/10.95 (-2) In
  []
 
-[99] [100]
+[101]
 Overfull \hbox (5.39363pt too wide) in paragraph at lines 206--213
 [] []\OT1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t 
 e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
  []
 
-[101] [102] [103] [104]
+[102] [103] [104] [105]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
- [105]) (./often/conclusion.tex [106])) (./related.tex
-[107] [108
+ [106]) (./often/conclusion.tex [107])) (./related.tex
+[108]
+chapter 5.
+[109
 
 
 ]
-chapter 5.
-[109]
 Overfull \hbox (16.902pt too wide) in paragraph at lines 49--61
 []\OT1/pplj/m/n/10.95 (-20) The proof as-sis-tants Is-abelle/HOL [[]], HOL Ligh
 t [[]], and HOL4 [[]]
@@ -2333,36 +2333,48 @@ Overfull \hbox (1.024pt too wide) in paragraph at lines 26--28
 
 
 ] [131] [132] [133] [134] [135] [136] [137] [138]
-[139] [140]
-Underfull \hbox (badness 1163) in paragraph at lines 728--734
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 673--681
+[]\OT1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func
+-tor.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--681
+[]$\OT1/cmtt/m/n/10.95 http : / / ncatlab . org / nlab / show / initial % 20alg
+ebra % 20of %
+ []
+
+[140]
+Underfull \hbox (badness 1163) in paragraph at lines 738--744
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 3396) in paragraph at lines 728--734
+Underfull \hbox (badness 3396) in paragraph at lines 738--744
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 728--734
+Underfull \hbox (badness 3657) in paragraph at lines 738--744
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 736--741
+Underfull \hbox (badness 1590) in paragraph at lines 746--751
 []\OT1/pplj/m/n/10.95 (+20) Olivier Pons.  \OT1/pplj/m/it/10.95 (+20) Con-cep-t
 ion et r[]Ealisation d'outils d'aide au
  []
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 757.
+(Font)              using `OMS/pplj/m/n' instead on input line 767.
 
 [141]
-Underfull \hbox (badness 1184) in paragraph at lines 806--811
+Underfull \hbox (badness 1184) in paragraph at lines 816--821
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2395,10 +2407,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 545.
  ) 
 Here is how much of TeX's memory you used:
- 50407 strings out of 492609
- 1013915 string characters out of 6129033
- 1288175 words of memory out of 5000000
- 51009 multiletter control sequences out of 15000+600000
+ 50414 strings out of 492609
+ 1014089 string characters out of 6129033
+ 1288214 words of memory out of 5000000
+ 51014 multiletter control sequences out of 15000+600000
  640509 words of font info for 860 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2420,10 +2432,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (156 pages, 1618524 bytes).
+Output written on uwthesis.pdf (156 pages, 1622274 bytes).
 PDF statistics:
- 3446 PDF objects out of 3580 (max. 8388607)
- 3211 compressed objects within 33 object streams
- 1536 named destinations out of 1728 (max. 500000)
+ 3455 PDF objects out of 3580 (max. 8388607)
+ 3220 compressed objects within 33 object streams
+ 1538 named destinations out of 1728 (max. 500000)
  94530 words of extra memory for PDF output out of 106986 (max. 10000000)
 

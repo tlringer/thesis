@@ -57,8 +57,8 @@ each of which corresponds to one of the two goals:
 
 Formally, every correct configuration corresponds to an initial algebra of an endofunctor,
 and correctness---that every configurations and equivalences are isomorphic---follows by Lambek's theorem (Section~\ref{sec:art}).\footnote{When I met with Michael Shulman over coffee in San Diego a few years ago, he at various points said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
-Anders M\"{o}rtberg and Carlo Angiuli identified this connection, and Carlo explained it to me in great detail.
-It is quite beautiful!}  % TODO
+Carlo Angiuli and Anders M\"{o}rtberg identified this connection, and Carlo explained it to me in great detail.
+It is quite beautiful!}  % TODO kl
 Each search procedure for automatic configuration produces both the configuration and the equivalence that it induces (Section~\ref{sec:proc}).
 Manual configuration takes as input the configuration directly.
 
@@ -238,6 +238,37 @@ then definitional $\iota$ over one would become propositional $\iota$ over the o
 \subsection{Configurations as Initial Algebras}
 \label{sec:art}
 
+The analogy tying the configuration to contructors and eliminators by way of the names \lstinline{DepConstr} and \lstinline{DepElim} is not a coincidence.
+In fact, it has formal meaning: the configuration corresponds to an \textit{initial algebra}~\cite{nlab:initial_algebra_of_an_endofunctor},
+which in homotopy type theory represent inductive types~\cite{univalent2013homotopy}.
+This is why the configuration is most natural when the types \Aa and \B are inductive.
+
+\begin{figure}
+TODO
+\caption{The initial algebra corresponding to a configuration for equivalent types \Aa and \B.}
+\label{fig:lambek}
+\end{figure}
+
+But the configuration is in fact more general than that---it can support any two equivalent types \Aa and \B.
+This is because \textit{any} equivalent \Aa and \B correspond to an initial algebra (by Lambek's theorem).
+Figure~\ref{fig:lambek} shows this initial algebra for an arbitrary configuration for an equivalence between \Aa and \B.
+Here, $F A$ is the shape of \Aa (and similarly for \B).
+\lstinline{DepConstr} shows up explicitly in the diagram;
+\lstinline{DepElim} is the corresponding arrow over the universal predicate lifting (not pictured).
+
+For example, fixing \Aa as \lstinline{nat} and \B as \lstinline{N}, $F A$ is \lstinline{1 + nat}:
+the sum of the unit type and \lstinline{nat} (and similarly for \B).
+Going from $F A \rightarrow A$, the left injection maps to the \lstinline{0} constructor, and the right injection maps to the \lstinline{S} constructor;
+the eliminator for \lstinline{nat} corresponds to the same injections over the universal predicate lifting.
+Going from $F B \rightarrow B$, the corresponding injections map not to constructors of \lstinline{N},
+but to the terms used to define \lstinline{DepConstr} over \lstinline{N};
+the dependent eliminator used to define \lstinline{DepElim} over \lstinline{N} corresponds to the same injections over the universal predicate lifting.
+
+\lstinline{Eta} and \lstinline{Iota} both show up implicitly in the diagram, thanks to the nuances of definitional equality not captured by the categorical representation.
+In particular, the proof that \lstinline{Eta} corresponds to the identity function is used in the proof
+that $f$ is unique up to isomorphism---to see this in the most basic case, let \B be \Aa.
+\lstinline{Iota} is used in the proof that the square commutes---this is most clear over the universal predicate lifting.
+
 \begin{figure*}
 \begin{minipage}{0.43\textwidth}
 \begin{lstlisting}
@@ -278,18 +309,16 @@ of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).}
 \label{fig:spec}
 \end{figure*}
 
-(Carlo theory will be integrated into here when I have time: basically the names aren't coincidences, it's because this corresponds
-to an initial algebra, so it's more natural when you have inductive types but more general than that.
-Draw diagram, explain what each part corresponds to. Explain that correctness is just Lambek's!)
-
-Choosing a configuration necessarily depends in some way on the proof engineer's intentions:
+The categorical definition may help with some of the intuition, but it does not help with validating correct configurations inside of the type theory.
+And this is necessary, since choosing a configuration necessarily depends in some way on the proof engineer's intentions:
 there can be infinitely many equivalences that correspond to a 
 change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \Aa is equivalent to \lstinline{unit} refined by \Aa). % refine_unit.v
 And there can be many configurations that correspond
 to an equivalence, some of which will produce terms that are more useful or efficient than others
 (consider \lstinline{DepElim} converting through several intermediate types).
 
-While we cannot control for intentions, we \textit{can} specify what it means for a chosen configuration to be correct:
+Fortunately, in CIC$_{\omega}$, it is also possible to specify 
+what it means for a chosen configuration to be correct:
 Fix a configuration. Let \lstinline{f} be the function that uses \lstinline{DepElim} to eliminate \Aa and \lstinline{DepConstr} to construct \B,
 and let \lstinline{g} be similar.
 Figure~\ref{fig:spec} specifies the correctness criteria for the configuration.
@@ -319,6 +348,7 @@ avoid applying \lstinline{section} and \lstinline{retraction}.
 \paragraph{Correctness}
 With these correctness criteria for a configuration, we get the completeness result (proven in Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/arbitrary.v}{\circled{8}}) that every equivalence induces a configuration. % arbitrary.v
 We also obtain an algorithm for the soundness result that every configuration induces an equivalence.
+Both of these are what we would expect from Lambek's theorem, which states that the initial algebra and the equivalence are isomorphic to one another.
 
 The algorithm to prove \lstinline{section} is as follows (\lstinline{retraction} is similar):
 replace \lstinline{a} with \lstinline{Eta(A) a} by \lstinline{eta_ok(A)}.

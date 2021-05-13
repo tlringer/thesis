@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  13 MAY 2021 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  13 MAY 2021 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1982,9 +1982,27 @@ Overfull \hbox (0.69795pt too wide) in paragraph at lines 75--79
 s in re-sponse to changes
  []
 
-[4] [5]
+[4]
+<Development.pdf, id=181, 1072.48679pt x 529.7391pt>
+File: Development.pdf Graphic file (type pdf)
+<use Development.pdf>
+Package pdftex.def Info: Development.pdf  used on input line 94.
+(pdftex.def)             Requested size: 343.20279pt x 169.51996pt.
 
-LaTeX Warning: Citation `TODO' on page 6 undefined on input line 164.
+Overfull \hbox (7.20279pt too wide) in paragraph at lines 94--95
+ [] 
+ []
+
+
+Package caption Warning: \label without proper reference on input line 96.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:workflow' on page 5 undefined on input line 114.
+
+[5 <./Development.pdf>]
+
+LaTeX Warning: Citation `TODO' on page 6 undefined on input line 168.
 
 [6] (./guide.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -2046,7 +2064,7 @@ lj/m/n/10.95 (-20) Our spec-i-fi-ca-tion of []
  []
 
 [23] [24]
-<maintenance/fig/patch.png, id=649, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=657, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 152.
@@ -2085,7 +2103,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 74--95
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1023, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1031, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
@@ -2143,7 +2161,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1700, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1708, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2175,7 +2193,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
  []
 
 [76] [77]
-<often/Diagram.pdf, id=1946, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=1954, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 250.
@@ -2419,10 +2437,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 545.
  ) 
 Here is how much of TeX's memory you used:
- 50429 strings out of 492609
- 1014425 string characters out of 6129033
- 1287433 words of memory out of 5000000
- 51026 multiletter control sequences out of 15000+600000
+ 50434 strings out of 492609
+ 1014543 string characters out of 6129033
+ 1287531 words of memory out of 5000000
+ 51030 multiletter control sequences out of 15000+600000
  640509 words of font info for 860 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2444,10 +2462,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (156 pages, 1636401 bytes).
+Output written on uwthesis.pdf (156 pages, 1662666 bytes).
 PDF statistics:
- 3467 PDF objects out of 3580 (max. 8388607)
- 3229 compressed objects within 33 object streams
+ 3474 PDF objects out of 3580 (max. 8388607)
+ 3233 compressed objects within 33 object streams
  1540 named destinations out of 1728 (max. 500000)
- 94535 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 94540 words of extra memory for PDF output out of 106986 (max. 10000000)
 

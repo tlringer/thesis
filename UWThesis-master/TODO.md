@@ -26,6 +26,7 @@
 - author-year?
 - url style
 - TODOs in source
+- user -> proof engineer in diagrams
 
 # Chapter 1
 

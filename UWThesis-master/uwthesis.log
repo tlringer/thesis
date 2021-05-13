@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  13 MAY 2021 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  13 MAY 2021 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2179,13 +2179,8 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 250.
-(pdftex.def)             Requested size: 388.7415pt x 207.0903pt.
-
-Overfull \hbox (52.7415pt too wide) in paragraph at lines 250--251
- [] 
- []
-
-[78 <./often/Diagram.pdf>]
+(pdftex.def)             Requested size: 282.71521pt x 150.608pt.
+ [78 <./often/Diagram.pdf>]
 Overfull \hbox (48.09023pt too wide) in paragraph at lines 312--313
 [][][][]  
  []
@@ -2277,75 +2272,80 @@ e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
 [103] [104] [105] [106]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
- [107]) (./often/conclusion.tex [108])) (./related.tex
-[109] [110
+ [107]) (./often/conclusion.tex)) (./related.tex
+[108]
+chapter 5.
+[109
 
 
 ]
-chapter 5.
-[111]
 Overfull \hbox (16.902pt too wide) in paragraph at lines 49--61
 []\OT1/pplj/m/n/10.95 (-20) The proof as-sis-tants Is-abelle/HOL [[]], HOL Ligh
 t [[]], and HOL4 [[]]
  []
 
-[112] [113] [114] [115] [116]
+[110] [111] [112] [113] [114]
 
-LaTeX Warning: Citation `Chrzaszcz2003' on page 117 undefined on input line 295
+LaTeX Warning: Citation `Chrzaszcz2003' on page 115 undefined on input line 295
 .
 
-[117]
+[115]
 Overfull \hbox (4.452pt too wide) in paragraph at lines 327--339
 [] []\OT1/pplj/m/sc/10.95 (-20) k n o w l -e d g e s h a r -i n g m e t h -o d 
 s[] \OT1/pplj/m/n/10.95 (-20) Knowl-edge shar-ing meth-ods [[]]
  []
 
-[118]
+[116]
 Overfull \hbox (1.78976pt too wide) in paragraph at lines 366--372
 []\OT1/pplj/m/n/10.95 (-20) A re-cent re-view [[]] of a pop-u-lar test-based pr
 o-gram re-pair tool [[]]
  []
 
-[119]
+[117]
 Overfull \hbox (6.93776pt too wide) in paragraph at lines 402--407
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin Patch \OT1/pplj/m/n/10.95 (-20) uses examp
 les---in the for-mer of changes to datatypes
  []
 
-[120] [121] [122]
+[118] [119] [120]
 
-LaTeX Warning: Reference `sec:synthesis' on page 123 undefined on input line 53
+LaTeX Warning: Reference `sec:synthesis' on page 121 undefined on input line 53
 3.
 
-) (./conclusion.tex [123] [124
+) (./conclusion.tex [121] [122
 
 
 ]
 chapter 6.
-(./next.tex [125]
+(./next.tex [123]
 Overfull \hbox (1.50386pt too wide) in paragraph at lines 26--36
 [] []\OT1/pplj/m/sc/10.95 (-20) a l l p r o o f a s -s i s -t a n t s[] \OT1/pp
 lj/m/n/10.95 (-20) Proof re-pair will ac-ces-si-ble across all proof
  []
 
-[126] [127] [128] [129])) (./uwthesis.ind [130]
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 4--6
+[124] [125] [126] [127])) (./uwthesis.ind [128]
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 6--8
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []19[], []21[],
  []
 
-[131
+
+Overfull \hbox (6.3895pt too wide) in paragraph at lines 26--28
+[]| \OT1/pplj/m/n/10.95 (-20) Nathaniel Yaz-dani, []9[], []10[], []101[],
+ []
+
+[129
 
 
 
 
 
 
-]) (./uwthesis.bbl [132
+]) (./uwthesis.bbl [130
 
 
 
-] [133] [134] [135] [136] [137] [138] [139] [140]
-[141]
+] [131] [132] [133] [134] [135] [136] [137] [138]
+[139]
 Underfull \hbox (badness 10000) in paragraph at lines 673--681
 []\OT1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func
 -tor.
@@ -2357,7 +2357,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 673--681
 ebra % 20of %
  []
 
-[142]
+[140]
 Underfull \hbox (badness 1163) in paragraph at lines 738--744
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
@@ -2385,13 +2385,13 @@ ion et r[]Ealisation d'outils d'aide au
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 767.
 
-[143]
+[141]
 Underfull \hbox (badness 1184) in paragraph at lines 816--821
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[144] [145] [146]) [147]
+[142] [143] [144]) [145]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2419,10 +2419,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 545.
  ) 
 Here is how much of TeX's memory you used:
- 50433 strings out of 492609
- 1014466 string characters out of 6129033
- 1288560 words of memory out of 5000000
- 51028 multiletter control sequences out of 15000+600000
+ 50429 strings out of 492609
+ 1014425 string characters out of 6129033
+ 1287433 words of memory out of 5000000
+ 51026 multiletter control sequences out of 15000+600000
  640509 words of font info for 860 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2444,10 +2444,10 @@ e1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on uwthesis.pdf (158 pages, 1636475 bytes).
+Output written on uwthesis.pdf (156 pages, 1636401 bytes).
 PDF statistics:
- 3456 PDF objects out of 3580 (max. 8388607)
- 3216 compressed objects within 33 object streams
- 1542 named destinations out of 1728 (max. 500000)
+ 3467 PDF objects out of 3580 (max. 8388607)
+ 3229 compressed objects within 33 object streams
+ 1540 named destinations out of 1728 (max. 500000)
  94535 words of extra memory for PDF output out of 106986 (max. 10000000)
 

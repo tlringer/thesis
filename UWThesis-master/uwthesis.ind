@@ -1,25 +1,32 @@
 \begin{theindex}
 
+  \item Concepts
+    \subitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{19}, \hyperpage{21, 22}, 
-		\hyperpage{41}, \hyperpage{75}
+		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
 
   \indexspace
 
   \item Languages
     \subitem Gallina, \hyperpage{12--14}, \hyperpage{16}, 
 		\hyperpage{20}, \hyperpage{27, 28}, \hyperpage{33}, 
-		\hyperpage{40}, \hyperpage{68}
-    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}
+		\hyperpage{40}, \hyperpage{68}, \hyperpage{109, 110}, 
+		\hyperpage{112}
+    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}, \hyperpage{109}, 
+		\hyperpage{111}
 
   \indexspace
 
   \item People
     \subitem Alex Sanchez-Stern, \hyperpage{10}, \hyperpage{25}, 
 		\hyperpage{43}
-    \subitem Karl Palmskog, \hyperpage{10}
-    \subitem Nathaniel Yazdani, \hyperpage{9, 10}
-    \subitem RanDair Porter, \hyperpage{9, 10}
+    \subitem Karl Palmskog, \hyperpage{10}, \hyperpage{110}, 
+		\hyperpage{119}
+    \subitem Nathaniel Yazdani, \hyperpage{9, 10}, \hyperpage{101}, 
+		\hyperpage{105, 106}
+    \subitem RanDair Porter, \hyperpage{9, 10}, \hyperpage{98--100}, 
+		\hyperpage{124}
   \item Phrases
     \subitem Reason to Believe, \hyperpage{3}
 
@@ -27,6 +34,7 @@
 
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
-		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}
+		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}, 
+		\hyperpage{109, 110}, \hyperpage{117}
 
 \end{theindex}

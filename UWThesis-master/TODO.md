@@ -7,7 +7,6 @@
   + papers, like REPLICA and the survey paper (by name and not by name)
   + acks
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
-- write abstract
 - dedupe citations
 - clean citations
 - thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
@@ -27,19 +26,18 @@
 - url style
 - TODOs in source
 - user -> proof engineer in diagrams
+- revision passes
 
 # Chapter 1
 
 - authorship statements or detailed acknowledgments for other authors (nice to have)
 - missing citations
 - missing workflow figure
-- revise
 
 # Chapter 2
 
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe
-- revise
 
 # Chapter 3
 
@@ -53,16 +51,14 @@
 # Chapter 4
 
 - explain the universal predicate lifting
-- revise
 
 # Chapter 5
 
 - work survey paper in more (nice to have)
 - work REPLICA in more (nice to have)
-- revise
 
 # Chapter 6
 
 - add citations for related work, especially for the domain experts part
 - update crypto thing to include twitter thread: https://twitter.com/TaliaRinger/status/1391943048465055750
-- revise
+

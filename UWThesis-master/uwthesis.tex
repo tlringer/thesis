@@ -384,7 +384,26 @@
     \bigskip
 \end{center}
 
-Abstract will go here.
+The days of verifying only toy programs are long gone.
+The last two decades have marked a new era of verification at scale, bringing strong guarantees to large and critical systems---an era of \textit{proof engineering}.
+Still, while proof engineering---like software engineering---is about both development and maintenance, most proof engineering technologies so far 
+have focused solely on development.
+When it comes to \textit{maintaining} these systems, proof engineering is decades behind software engineering.
+
+This thesis introduces \textit{proof repair}: a new approach to maintaining verified systems.
+Proof repair reimagines the automation proof engineers typically use to interactively guide tools to
+search for a machine-checked proof.
+When a system changes and this breaks a proof about the system, traditional automation searches for the fixed proof from scratch.
+Proof repair, in contrast, is change-aware automation: it determines how the system has changed, and uses that information to help fix the broken proof.
+
+Proof repair in this thesis works by combining semantic differencing algorithms with program transformations.
+Importantly, both differencing and the transformations operate over low-level representations of proofs called \textit{proof terms}.
+Thanks to the richness of these proof terms, differencing and the transformations can leverage new foundational results in dependent type theory.
+For example, one transformation externalizes univalent transport from homotopy type theory,
+leveraging novel transformations over equalities to make this possible.
+
+This approach is realized inside of a proof repair tool suite for the Coq proof assistant.
+Case studies show both retroactively and by live use that this proof repair tool suite can save work for proof engineers on real proof developments.
 
 % DEDICATION
 \cleardoublepage

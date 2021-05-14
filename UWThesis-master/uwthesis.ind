@@ -1,5 +1,110 @@
 \begin{theindex}
 
+  \item Acknowledgments
+    \subitem Coauthors
+      \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
+		\hyperpage{25}, \hyperpage{43}
+      \subsubitem Karl Palmskog, \hyperpage{10}, \hyperpage{110}, 
+		\hyperpage{119}
+      \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
+		\hyperpage{9, 10}, \hyperpage{101}, 
+		\hyperpage{105, 106}
+      \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
+		\hyperpage{98--100}, \hyperpage{124}
+    \subitem Companies
+      \subsubitem Amazon, \hyperpage{xi}
+      \subsubitem Carr Astronautics, \hyperpage{xi}
+      \subsubitem Google, \hyperpage{xi}
+    \subitem Family
+      \subsubitem Lymor Ringer Barnhard, \hyperpage{xi}
+    \subitem Friends
+      \subsubitem Anna Kornfeld Simpson, \hyperpage{xiii}
+      \subsubitem Anne Spencer Ross, \hyperpage{xiii}
+      \subsubitem Ellie Berry, \hyperpage{xiii}
+      \subsubitem Esther Jang, \hyperpage{xiii}
+      \subsubitem Jasper Tran O'Leary, \hyperpage{xiii}
+      \subsubitem Laura Chick, \hyperpage{xiii}
+      \subsubitem Marcela Mendoza, \hyperpage{xiii}
+      \subsubitem Mark Velednitsky, \hyperpage{xiii}
+      \subsubitem Mer Joyce, \hyperpage{xiii}
+      \subsubitem Misha Kolmogorov, \hyperpage{xiii}
+      \subsubitem Qi Cheng, \hyperpage{xiii}
+      \subsubitem Roy Or-El, \hyperpage{xiii}
+      \subsubitem Vikram Iyer, \hyperpage{xiii}
+      \subsubitem Wade Gordon, \hyperpage{xiii}
+    \subitem Labmates
+      \subsubitem Alex Polozov, \hyperpage{xiii}
+      \subsubitem Ali K\"{o}skal, \hyperpage{xiii}
+      \subsubitem Amanda Swearngin, \hyperpage{xiii}
+      \subsubitem Amy Zhu, \hyperpage{xiii}
+      \subsubitem Audrey Seo, \hyperpage{xiii}
+      \subsubitem Ben Kushigian, \hyperpage{xiii}
+      \subsubitem Bill Zorn, \hyperpage{xiii}
+      \subsubitem Calvin Loncaric, \hyperpage{xiii}
+      \subsubitem Chandrakana Nandi, \hyperpage{xiii}
+      \subsubitem Chenglong Wang, \hyperpage{xiii}
+      \subsubitem Dan Cascaval, \hyperpage{xiii}
+      \subsubitem Daryl Zuniga, \hyperpage{xiii}
+      \subsubitem Doug Woos, \hyperpage{xiii}
+      \subsubitem Eric Mullen, \hyperpage{xiii}
+      \subsubitem Eunice Jun, \hyperpage{xiii}
+      \subsubitem Gus, \hyperpage{xiii}
+      \subsubitem Jacob Van Geffen, \hyperpage{xiii}
+      \subsubitem James Bornholt, \hyperpage{xiii}
+      \subsubitem James Wilcox, \hyperpage{xiii}
+      \subsubitem Jared Roesch, \hyperpage{xiii}
+      \subsubitem Joe Redmond, \hyperpage{xiii}
+      \subsubitem John Toman, \hyperpage{xiii}
+      \subsubitem Josh Pollock, \hyperpage{xiii}
+      \subsubitem Julie Newcomb, \hyperpage{xiii}
+      \subsubitem Konstantin Weitz, \hyperpage{xiii}
+      \subsubitem Krzysztof Drewniak, \hyperpage{xiii}
+      \subsubitem Logan Weber, \hyperpage{xiii}
+      \subsubitem Luis Vega, \hyperpage{xiii}
+      \subsubitem Luke Nelson, \hyperpage{xiii}
+      \subsubitem Maaz Ahmad, \hyperpage{xiii}
+      \subsubitem Mangpo Phitchaya Phothilimthana, \hyperpage{xiii}
+      \subsubitem Marisa Kirisame, \hyperpage{xiii}
+      \subsubitem Martin Kellog, \hyperpage{xiii}
+      \subsubitem Max Ruttenberg, \hyperpage{xiii}
+      \subsubitem Max Willsey, \hyperpage{xiii}
+      \subsubitem Melissa Hovik, \hyperpage{xiii}
+      \subsubitem Michael Flanders, \hyperpage{xiii}
+      \subsubitem Mike He, \hyperpage{xiii}
+      \subsubitem Rashmi Mudduluru, \hyperpage{xiii}
+      \subsubitem Remy Wang, \hyperpage{xiii}
+      \subsubitem Rohin Shah, \hyperpage{xiii}
+      \subsubitem Ryan Doenges, \hyperpage{xiii}
+      \subsubitem Sahil Verma, \hyperpage{xiii}
+      \subsubitem Sam Elliott, \hyperpage{xiii}
+      \subsubitem Sam Kaufman, \hyperpage{xiii}
+      \subsubitem Sarah Chasins, \hyperpage{xiii}
+      \subsubitem Shumo Chu, \hyperpage{xiii}
+      \subsubitem Sorawee Porncharoenwase, \hyperpage{xiii}
+      \subsubitem Spencer Pearson, \hyperpage{xiii}
+      \subsubitem Steven Lyubomirsky, \hyperpage{xiii}
+      \subsubitem Stuart Pernsteiner, \hyperpage{xiii}
+      \subsubitem Thomas Schweizer, \hyperpage{xiii}
+      \subsubitem Zhen Zhang, \hyperpage{xiii}
+    \subitem Labs
+      \subsubitem UCSD ProgSys, \hyperpage{xiii}
+      \subsubitem UW PLSE, \hyperpage{xii}
+    \subitem Mentors \& Advisors
+      \subsubitem Brandi K. Adams, \hyperpage{xi}
+      \subsubitem Dan Grossman, \hyperpage{xii}
+      \subsubitem Ernesto Gonzalez, \hyperpage{xii}
+      \subsubitem Ida Chan, \hyperpage{xi}
+      \subsubitem Jeff Foster, \hyperpage{xii}
+      \subsubitem Kasso Okoudjou, \hyperpage{xi}
+      \subsubitem Larry Washington, \hyperpage{xi}
+      \subsubitem Musachy Barroso, \hyperpage{xii}
+      \subsubitem Zach Tatlock, \hyperpage{xiii}
+    \subitem Students
+      \subsubitem Jasper Hugunin, \hyperpage{xiii}
+      \subsubitem Taylor Blau, \hyperpage{xiii}
+
+  \indexspace
+
   \item Concepts
     \subitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
   \item Conventions
@@ -18,15 +123,6 @@
 
   \indexspace
 
-  \item People
-    \subitem Alex Sanchez-Stern, \hyperpage{10}, \hyperpage{25}, 
-		\hyperpage{43}
-    \subitem Karl Palmskog, \hyperpage{10}, \hyperpage{110}, 
-		\hyperpage{119}
-    \subitem Nathaniel Yazdani, \hyperpage{9, 10}, \hyperpage{101}, 
-		\hyperpage{105, 106}
-    \subitem RanDair Porter, \hyperpage{10}, \hyperpage{98--100}, 
-		\hyperpage{124}
   \item Phrases
     \subitem Reason to Believe, \hyperpage{3}
 

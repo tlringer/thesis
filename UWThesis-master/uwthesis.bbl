@@ -144,18 +144,11 @@ Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
 
 \bibitem{Celik:2017:IRP:3155562.3155588}
 Ahmet Celik, Karl Palmskog, and Milos Gligoric.
-\newblock icoq: Regression proof selection for large-scale verification
-  projects.
-\newblock In {\em Proceedings of the 32Nd IEEE/ACM International Conference on
-  Automated Software Engineering}, ASE 2017, pages 171--182, Piscataway, NJ,
-  USA, 2017. IEEE Press.
-
-\bibitem{Celik2017}
-Ahmet Celik, Karl Palmskog, and Milos Gligoric.
 \newblock {iCoq}: Regression proof selection for large-scale verification
   projects.
-\newblock In {\em 32nd IEEE/ACM International Conference on Automated Software
-  Engineering}, ASE 2017, pages 171--182, 2017.
+\newblock In {\em Proceedings of the 32nd IEEE/ACM International Conference on
+  Automated Software Engineering}, ASE 2017, pages 171--182, Piscataway, NJ,
+  USA, 2017. IEEE Press.
 
 \bibitem{chan2011galileo}
 Michael Chan, Jos Lehmann, and Alan Bundy.
@@ -167,10 +160,6 @@ Adam Chlipala.
 \newblock {\em Certified Programming with Dependent Types - {A} Pragmatic
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
-
-\bibitem{equality}
-Adam Chlipala.
-\newblock Library equality, 2017.
 
 \bibitem{cohen2016cubical}
 Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
@@ -197,10 +186,10 @@ Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
 
 \bibitem{coq-tactics}
 {Coq Development Team}.
-\newblock Tactics, 1999-2018.
+\newblock Tactics, 1999-2021.
 
 \bibitem{coquand:inria-00076024}
-T.~Coquand and G{\'e}rard Huet.
+Thierry Coquand and G{\'e}rard Huet.
 \newblock {The calculus of constructions}.
 \newblock Technical Report RR-0530, {INRIA}, May 1986.
 
@@ -216,9 +205,9 @@ Thierry Coquand and Christine Paulin.
 \newblock {\em Journal of Automated Reasoning}, 61(1):423--453, June 2018.
 
 \bibitem{dagand2017essence}
-Pierre-{\'E}variste Dagand.
+Pierre{-}{\'{E}}variste Dagand.
 \newblock The essence of ornaments.
-\newblock {\em Journal of Functional Programming}, 27, 2017.
+\newblock {\em Journal of Functional Programming}, 27:e9, 2017.
 
 \bibitem{Dagand:2013:CTO:2591370.2591396}
 Pierre-Evariste Dagand and Conor McBride.
@@ -288,7 +277,8 @@ Dominik Dietrich, Iain Whiteside, and David Aspinall.
 
 \bibitem{Elphinstone2013}
 Kevin Elphinstone and Gernot Heiser.
-\newblock From l3 to sel4 what have we learnt in 20 years of l4 microkernels?
+\newblock From {L3} to {seL4} what have we learnt in 20 years of {L4}
+  microkernels?
 \newblock In {\em Proceedings of the Twenty-Fourth ACM Symposium on Operating
   Systems Principles}, SOSP '13, pages 133--150, New York, NY, USA, 2013. ACM.
 
@@ -471,16 +461,17 @@ Yalin Ke, Kathryn~T. Stolee, Claire~Le Goues, and Yuriy Brun.
   Conference on Automated Software Engineering (ASE)}, ASE '15, pages 295--306,
   Washington, DC, USA, 2015. IEEE Computer Society.
 
+\bibitem{Klein2014}
+Gerwin Klein.
+\newblock Proof engineering considered essential.
+\newblock In {\em FM 2014: Formal Methods: 19th International Symposium,
+  Singapore, May 12-16, 2014. Proceedings}, pages 16--21, Cham, 2014. Springer
+  International Publishing.
+
 \bibitem{Klein2014micro}
 Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
   Rafal Kolanski, and Gernot Heiser.
 \newblock Comprehensive formal verification of an {OS} microkernel.
-\newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
-
-\bibitem{Klein:2014:CFV:2584468.2560537}
-Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
-  Rafal Kolanski, and Gernot Heiser.
-\newblock Comprehensive formal verification of an os microkernel.
 \newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
 
 \bibitem{Klein2009}

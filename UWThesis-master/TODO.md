@@ -7,7 +7,6 @@
   + papers, like REPLICA and the survey paper (by name and not by name)
   + acks
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
-- dedupe citations
 - clean citations
 - thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
 - pronoun check
@@ -27,6 +26,7 @@
 - TODOs in source
 - user -> proof engineer in diagrams
 - revision passes
+- make certain future work language speculative instead to avoid "being wrong"
 
 # Chapter 1
 
@@ -56,6 +56,7 @@
 
 - work survey paper in more (nice to have)
 - work REPLICA in more (nice to have)
+- formal metatheory in proof reuse? (nice to have)
 
 # Chapter 6
 

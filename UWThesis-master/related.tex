@@ -291,7 +291,7 @@ This can take the form of robust abstractions or robust automation.
 \paragraph{Robust Abstractions}
 Proof engineers often use design principles to make proofs less likely to break to beign with.
 Examples of this include using 
-information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
+information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein2014}
 or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
 CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
 Design principles for specific domains (like formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
@@ -434,7 +434,7 @@ such that regressed tests pass on the repaired code.
 In some sense, proof repair is a kind of regression repair, as it repairs
 proofs that used to succeed, but after some change, no longer do (the \textit{regressed proofs}).
 A section that \kl{Karl} wrote in our survey paper~\cite{PGL-045} describes the correspondence between regressed proofs and regressed tests in more detail,
-and details existing techniques~\cite{Palmskog2018, Wenzel2013MultiProcessing, Barras2013, Celik2017, Wenzel2013, Barras2015, deMoura2015, Wenzel2014, WenzelScalingIsabelle, WenzelFurtherScalingIsabelle} for rechecking regressed proofs.
+and details existing techniques~\cite{Palmskog2018, Wenzel2013MultiProcessing, Barras2013, Celik:2017:IRP:3155562.3155588, Wenzel2013, Barras2015, deMoura2015, Wenzel2014, WenzelScalingIsabelle, WenzelFurtherScalingIsabelle} for rechecking regressed proofs.
 
 One test-based regression program repair tool is ReAssert~\cite{daniel2009reassert} for Java,
 which focuses on regressions caused by refactoring.

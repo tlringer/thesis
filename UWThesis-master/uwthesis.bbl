@@ -110,6 +110,13 @@ Gilles Barthe and Olivier Pons.
   Foundations of Software Science and Computation Structures}, FoSSaCS '01,
   pages 57--71, London, UK, UK, 2001. Springer-Verlag.
 
+\bibitem{blanchette2018verified}
+Jasmin~Christian Blanchette, Mathias Fleury, Peter Lammich, and Christoph
+  Weidenbach.
+\newblock A verified {SAT} solver framework with learn, forget, restart, and
+  incrementality.
+\newblock {\em Journal of Automated Reasoning}, 61(1):333--365, Jun 2018.
+
 \bibitem{Blanchette2016b}
 Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
   K{\"u}hlwein, and Josef Urban.
@@ -150,10 +157,32 @@ Ahmet Celik, Karl Palmskog, and Milos Gligoric.
   Automated Software Engineering}, ASE 2017, pages 171--182, Piscataway, NJ,
   USA, 2017. IEEE Press.
 
+\bibitem{Chajed2019}
+Tej Chajed, Joseph Tassarotti, M.~Frans Kaashoek, and Nickolai Zeldovich.
+\newblock Argosy: Verifying layered storage systems with recovery refinement.
+\newblock In {\em Proceedings of the 40th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI 2019, pages 1054--1068, New York,
+  NY, USA, 2019. ACM.
+
 \bibitem{chan2011galileo}
 Michael Chan, Jos Lehmann, and Alan Bundy.
 \newblock {GALILEO}: A system for automating ontology evolution.
 \newblock {\em ARCOE-11}, page~46, 2011.
+
+\bibitem{Chajed2017}
+Haogang Chen, Tej Chajed, Alex Konradi, Stephanie Wang, Atalay \.{I}leri, Adam
+  Chlipala, M.~Frans Kaashoek, and Nickolai Zeldovich.
+\newblock Verifying a high-performance crash-safe file system using a tree
+  specification.
+\newblock In {\em Proceedings of the 26th Symposium on Operating Systems
+  Principles}, SOSP '17, pages 270--286, New York, NY, USA, 2017. ACM.
+
+\bibitem{Chen2015}
+Haogang Chen, Daniel Ziegler, Tej Chajed, Adam Chlipala, M.~Frans Kaashoek, and
+  Nickolai Zeldovich.
+\newblock Using crash {Hoare} logic for certifying the {FSCQ} file system.
+\newblock In {\em Proceedings of the 25th Symposium on Operating Systems
+  Principles}, SOSP '15, pages 18--37, New York, NY, USA, 2015. ACM.
 
 \bibitem{chlipala:cpdt}
 Adam Chlipala.
@@ -405,6 +434,12 @@ Arend Heyting.
 \newblock Intuitionism. an introduction.
 \newblock 1956.
 
+\bibitem{hietala2021verified}
+Kesha Hietala, Robert Rand, Shih-Han Hung, Xiaodi Wu, and Michael Hicks.
+\newblock A verified optimizer for quantum circuits.
+\newblock {\em Proceedings of the ACM on Programming Languages}, 5(POPL):1--29,
+  2021.
+
 \bibitem{Hofmann97}
 Martin Hofmann.
 \newblock Syntax and semantics of dependent types.
@@ -431,6 +466,14 @@ D.~Hutter.
 \bibitem{isabelle}
 {Isabelle Development Team}.
 \newblock Isabelle, 1994-2021.
+
+\bibitem{Jang2012}
+Dongseok Jang, Zachary Tatlock, and Sorin Lerner.
+\newblock Establishing browser security guarantees through formal shim
+  verification.
+\newblock In {\em Proceedings of the 21st USENIX Conference on Security
+  Symposium}, Security'12, pages 8--8, Berkeley, CA, USA, 2012. USENIX
+  Association.
 
 \bibitem{Johnsen2004}
 Einar~Broch Johnsen and Christoph L{\"u}th.
@@ -497,6 +540,13 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 Thomas Kolbe and Christoph Walther.
 \newblock {\em Proof Analysis, Generalization and Reuse}, pages 189--219.
 \newblock Springer, Dordrecht, 1998.
+
+\bibitem{Kumar2014}
+Ramana Kumar, Magnus~O. Myreen, Michael Norrish, and Scott Owens.
+\newblock {CakeML}: A verified implementation of {ML}.
+\newblock In {\em Proceedings of the 41st ACM SIGPLAN-SIGACT Symposium on
+  Principles of Programming Languages}, POPL '14, pages 179--191, New York, NY,
+  USA, 2014. ACM.
 
 \bibitem{differential-assertion-checking-2}
 Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.

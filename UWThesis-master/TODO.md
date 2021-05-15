@@ -24,15 +24,13 @@
 - author-year?
 - url style
 - TODOs in source
-- user -> proof engineer in diagrams
+- user -> proof engineer in diagrams (nice to have)
 - revision passes
 - make certain future work language speculative instead to avoid "being wrong"
 
 # Chapter 1
 
 - authorship statements or detailed acknowledgments for other authors (nice to have)
-- missing citations
-- missing workflow figure
 
 # Chapter 2
 

@@ -88,9 +88,10 @@
 \indexentry{Acknowledgments!Friends!Wade Gordon|hyperpage}{xiii}
 \indexentry{Acknowledgments!Friends!Jasper Tran O'Leary|hyperpage}{xiii}
 \indexentry{Acknowledgments!Friends!Misha Kolmogorov|hyperpage}{xiii}
+\indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{xiii}
 \indexentry{Concepts!Verification|hyperpage}{3}
-\indexentry{Phrases!Reason to Believe|hyperpage}{3}
-\indexentry{Phrases!Reason to Believe|hyperpage}{3}
+\indexentry{Thesis!Informal Thesis Statement|hyperpage}{3}
+\indexentry{Thesis!Informal Thesis Statement|hyperpage}{3}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{4}
 \indexentry{Concepts!Verification!Proof Assistants|hyperpage}{4}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{4}
@@ -101,16 +102,48 @@
 \indexentry{Concepts!Verification!Proof Assistants!Lean|hyperpage}{4}
 \indexentry{Concepts!Verification!Proof Assistants!NuPRL|hyperpage}{4}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof|hyperpage}{4}
+\indexentry{Concepts!Verification!Kernel|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{4}
 \indexentry{Concepts!Verification|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof|hyperpage}{4}
+\indexentry{Thesis!Technology!Proof Repair|hyperpage}{4}
+\indexentry{Thesis!Informal Thesis Statement|hyperpage}{4}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{5}
 \indexentry{Concepts!Verification!Proof Assistants|hyperpage}{5}
+\indexentry{Thesis!Formal Thesis Statement|hyperpage}{5}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script!Tactics|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{6}
+\indexentry{Concepts!Verification!Kernel|hyperpage}{6}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{6}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{6}
+\indexentry{Thesis!Results|hyperpage}{6}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{7}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{7}
+\indexentry{Thesis!Technology!Proof Repair!\sysnamelong Plugin Suite|hyperpage}{7}
+\indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{7}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{8}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{8}
 \indexentry{Concepts!Verification!Proof Assistants|hyperpage}{8}
+\indexentry{Previously Published Material!Adapting Proof Automation to Adapt Proofs|hyperpage}{8}
+\indexentry{Previously Published Material!Ornaments for Proof Reuse in Coq|hyperpage}{8}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{8}
+\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{9}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{10}
+\indexentry{Acknowledgments!Labs!UCSD ProgSys|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{10}
@@ -187,5 +220,5 @@
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{112}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{117}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{119}
-\indexentry{Phrases!Reason to Believe|hyperpage}{123}
+\indexentry{Thesis!Informal Thesis Statement|hyperpage}{123}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{124}

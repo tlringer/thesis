@@ -43,7 +43,7 @@ have no understanding of how these systems evolve over time, so they miss out on
 This thesis introduces a new class of verification tools called \textit{proof repair} tools (Section~\ref{sec:thesis})
 that understand how software systems evolve, and use the crucial information that evolution carries
 to automatically evolve proofs about those systems (Section~\ref{sec:intro-approach}).
-Proof repair is \kl{reason to believe} (Section~\ref{sec:intro-results}).
+This gives us \kl{reason to believe} (Section~\ref{sec:intro-results}).
 
 \section{Developing Verified Systems}
 \label{sec:dev-verif}
@@ -60,34 +60,40 @@ developed using special tools called \intro{proof assistants}.
 Examples of proof assistants include \intro{Coq}~\cite{coq}, \intro{Isabelle/HOL}~\cite{isabelle}, \intro{HOL Light}~\cite{hollight}, \intro{HOL4}~\cite{hol4-interact},
 \intro{Agda}~\cite{agda}, \intro{Lean}~\cite{lean}, and \intro{NuPRL}~\cite{nuprl}.
 The proof assistant that I focus on in this thesis will be the \kl{Coq} proof assistant.
-A discussion of how this work carries over to other proof assistants is in Chapter~\ref{chapt:conclusions}.
+A discussion of how this work carries over to other proof assistants is in Chapters~\ref{sec:related} and~\ref{chapt:conclusions}.
 
 To develop a verified system using a proof assistant like Coq, the proof engineer does three things:
 
 \begin{enumerate}
-\item implements a program using a functional programming language,
-\item specifies what it means for the program to be correct, and
-\item proves that the program satisfies the specification.
+\item implements a \intro{program},
+\item \intro{specifies} what it means for the \kl{program} to be correct, and
+\item \intro{proves} that the \kl{program} satisfies the \kl{specification}.
 \end{enumerate}
-This proof assistant then automatically checks this proof with a small trusted part of its system~\cite{Barendregt2002,Barendregt2351}.
-If the proof is correct, then the program satisfies its specification---it is \kl{verified}.
+This proof assistant then automatically checks this \kl{proof} with a small trusted part of its system
+called the \intro{kernel}~\cite{Barendregt2002,Barendregt2351}.
+If the proof is correct, then the \kl{program} satisfies its \kl{specification}---it is \kl{verified}.
 
 \section{Thesis}
 \label{sec:thesis}
 
-Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
-For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
-Changing a verified library, for example, can break proofs about programs that depend on that library---and those breaking changes
-can be outside of the proof engineers' control.
+The challenge this thesis addresses is that \kl{programs} and \kl{specifications}
+change all of the time---and these changes can break many \kl{proofs}.
+For example, a proof engineer who optimizes an algorithm may change the program, but not the specification;
+a proof engineer who adapts an OS to new hardware may change both.
+Even a small change to a program or specification can break many proofs, especially in large systems.
+Changing a verified library, for example, can break proofs about a program that depends on that library---and that breaking change
+can be outside of the proof engineer's control.
 
-Proof repair views these broken proofs as bugs that a tool can patch.
-In doing so, it shows that there \textit{is} reason to believe that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
-even when proof engineers do not follow good development processes,
-or when change occurs outside of proof engineers' control.
+In response to this challenge, this thesis introduces \intro{proof repair}.
+Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
+In other words, proof repair views these broken proofs as bugs that a tool can patch.
+In doing so, it shows that there \textit{is} \kl{reason to believe} that verifying a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+even when the proof engineer does not follow good development processes,
+or when change occurs outside of the proof engineer's control.
 More formally:
 
 \begin{quote}
-\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change in practical use cases. A tool that automates this can save work for proof engineers relative to reference manual repairs.
+\textbf{\intro{Thesis}}: Changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 \end{quote}
 
 \section{Approach}
@@ -102,78 +108,89 @@ represents correctness of the proof, which is communicated back to the proof eng
 \label{fig:workflow}
 \end{figure}
 
-% TODO here, say: we assume Coq in here, see survey paper for more, tactics versus no tactics, de bruijn, where Coq is,
-% many ideas generalize but eh, doesn't adapt exactly as-is.
-% then expand on that in related work or conclusion
+My approach to proof repair operates over a low-level representation of proofs,
+one that carries structure and information useful to proof engineering tools.
+But that very structure can make it challenging for proof engineers to write proofs in that low-level representation
+to begin with, which is why proof engineers typically do not interact with it directly.
+Instead, proof engineers typically write proofs in a high-level representation.
 
-% TODO the amount of background: in reading guide, give resources for learning Coq in more detail, but don't go into too much Coq detail here
+Consider the typical proof engineering workflow in \kl{Coq} (Figure~\ref{fig:workflow}).
+In this workflow, the proof engineer interactively writes a proof in a high-level representation with Coq's help:
+The proof engineer passes Coq high-level search procedures called \intro{tactics} (like \lstinline{induction}), and Coq responds to each tactic
+by refining the current goal to some subgoal (like the goal for the base case). This loop of tactics and goals 
+continues until no goals remain, at which point the proof engineer has constructed a sequence of tactics called a \intro{proof script}---the
+high-level representation.
+To check the proof, Coq compiles that proof script down to a low-level representation called a \intro{proof term},
+then uses its \kl{kernel} to check that the proof term has the expected type.
+If the term has the expected type, Coq lets the proof engineer know in the end.
 
-The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
-The typical proof engineering workflow in \kl{Coq} is interactive: The proof engineer passes Coq high-level
-search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
-by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
-continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
-To check the proof, Coq compiles it down to a low-level representation called a \textit{proof term},
-then checks that the proof term has the expected type.
-Figure~\ref{fig:workflow} illustrates this workflow.
+One major challenge for a proof repair tool is that it is not clear how to extract and generalize changes and apply
+them to fix proofs just by looking at the changes in high-level proof scripts that proof engineers make.
+The high-level language of tactics can abstract away important details of these changes.
+But the low-level language of proof terms can be brittle and challenging to work with.
+Crucially, though, the language is brittle and challenging precisely \textit{because}
+it carries so much structure and gives such strong guarantees---two things that are very useful to a proof repair tool.
 
-The high-level language of tactics can abstract away important details that a proof repair tool needs,
-but the low-level language of proof terms can be brittle and challenging to work with.
-Crucially, though, the low-level language comes with lots of structure and strong guarantees.
-My approach to proof repair works in the low-level language to take advantage of that.
-It then builds back up to the high-level language in the end.
-
-By working at the low-level language, it is able to systematically and with strong guarantees extract and generalize the 
-information that breaking changes carry,
-then apply those changes to fix other proofs broken by the same change.
-But by later building up to the high-level language,
-it can in the end produce proofs that integrate more naturally with proof engineering workflows.
-
-This works using a combination of semantic differencing and program transformations in this low-level language.
-In particular, it uses a semantic differencing algorithm to extract information from a breaking change in a program, specification, or proof.
-It then combines that with program transformations to generalize and, in some cases, apply that information to fix other 
-proofs broken by the same change.
+My approach to proof repair takes advantage of the structure and guarantees of the low-level language of proof terms,
+but produces something in the high-level language of proof scripts for proof engineers in the end.
+In particular, uses \intro{semantic differencing} algorithms over proof terms
+to extract information from a breaking change in a program, specification, or proof.
+It then combines those with program transformations over proof terms---called \intro{proof term transformations}---to
+generalize and, in some cases, apply that information to fix other  proofs broken by the same change.
 In the end, it uses a prototype decompiler to get from the low-level language back up to the high-level language,
 so that proof engineers can continue to work in that language going forward. % TODO lol this sucks but whatever it's a first draft
+
+By working over the low-level language of proof terms,
+my approach to proof repair is able to systematically and with strong guarantees extract and generalize the information that breaking changes carry,
+then apply those changes to fix other proofs broken by the same change.
+But by later building up to the high-level language of proof scripts,
+my approach can in the end produce proofs that integrate more naturally with proof engineering workflows.
 
 \section{Results}
 \label{sec:intro-results}
 
-The technical results of this thesis are threefold:
+This thesis is divided into six chapters; chapters are further divided into sections.
+After motivating proof repair (Chapter~\ref{chapt:mot}),
+this thesis describes two different kinds of proof repair that validate the thesis:
+by example (Chapter~\ref{ch:example}) and across equivalences (Chapter~\ref{chapt:pi}).
+It concludes with a discussion of related work (Chapter~\ref{sec:related}),
+followed by a reflection on the thesis and how it can inform the next era of 
+proof engineering (Chapter~\ref{chapt:conclusions}).
+
+The technical \intro{results} of this thesis are threefold:
 
 \begin{enumerate}
-\item the \textbf{design} of differencing algorithms \& program transformations for proof repair, 
-\item an \textbf{implementation} of a proof repair tool suite, and
-\item \textbf{case studies} to evaluate the tool suite on real proof repair scenarios.
+\item the \textbf{design} of semantic differencing algorithms \& proof term transformations for proof repair (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff},~\ref{sec:pumpkin-trans},~\ref{sec:pi-approach},~\ref{sec:pi-diff},and~\ref{sec:pi-trans}),
+\item an \textbf{implementation} of these algorithms and transformations inside of a proof repair tool suite (Sections~\ref{sec:pumpkin-impl} and~\ref{sec:pi-implementation}), and
+\item \textbf{case studies} to evaluate the tool suite on real proof repair scenarios (Sections~\ref{sec:pumpkin-results} and~\ref{sec:pi-results}).
 \end{enumerate}
 Viewing the thesis statement as a theorem, the proof is as follows: % TODO link to particular sections here
 
 \begin{quote}
-\textbf{Thesis Proof}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (by \textbf{design} and \textbf{implementation}). A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases (by \textbf{case studies}).
+\textbf{Thesis Proof}: Changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (by \textbf{design} and \textbf{implementation}). A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases (by \textbf{case studies}).
 \end{quote}
 
 \paragraph{Design}
 The design describes semantic differencing algorithms to extract information from breaking changes in verified systems,
-along with proof term transformations to generalize and, in some cases, apply the information to fix proofs broken by the change. % TODO redundant but shitty first draft text so whatever
+along with proof term transformations to generalize and apply the information to fix proofs broken by the change.
 The semantic differencing algorithms compare the old and new versions of a changed term or type,
-and from that find a diff that describes that information corresponding to that change;
-the transformations then use that diff to transform some term to a more general fix.
+and from that find a \kl{diff} that describes the change.
+The transformations then use that diff to \kl{transform} some term to a more general fix.
 The details vary by the class of change supported.
-These design is guided heavily by foundational developments in dependent type theory;
-the theory is sprinkle throughout as appropriate. % TODO may want to list or link to sections here
-More details including limitations are in the corresponding chapters. % TODO link to those chapters
+The design of these differencing algorithms and transformations is guided heavily by foundational developments in dependent type theory;
+the theory is sprinkled throughout as appropriate.
 
 \paragraph{Implementation}
 The implementation shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
 and then apply that information to fix other proofs broken by the same change.
-This implementation comes in the form of a proof repair tool suite for Coq called \sysnamelong (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting the Coq Hacker).
-\sysnamelong implements two kinds of proof repair: proof repair by example (Chapter~\ref{ch:example}) % TODO implementation chapters instead
-and proof repair across type equivalences (Chapter~\ref{chapt:pi}). % 8.9.1 
-Notably, since all repairs that \sysnamelong produces are checked Coq in the end, \sysnamelong does not extend \textit{Trusted Computing Base} (TCB):
-the set of unverified components that the correctnes of the proof development depends on~\cite{TODO}. % TODO not just cite by also make this way less shitty of a definition
+This implementation comes in the form of a proof repair tool suite for Coq called \intro{\sysnamelong} (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting the Coq Hacker).
+Notably, since all repairs that \sysnamelong produces are checked Coq in the end, \sysnamelong does not extend the \intro{Trusted Computing Base} (TCB):
+the set of unverified components that the correctness of the proof development depends on~\cite{PGL-045}.
 In total, \sysnamelong is about 15000 lines of code implemented in OCaml.
 These 15000 lines of code consist of three plugins and a library,
 which together bridge the gap between the theory supported by design and the practical proof repair needed for the case studies.
+
+\iffalse
 Toward that end, five notable features include:
 
 \begin{enumerate}
@@ -183,14 +200,14 @@ Toward that end, five notable features include:
 \item meaningful error messages for usability, and
 \item additional automation for applying patches. 
 \end{enumerate}
-More details and other features are in the corresponding chapters. % TODO link to those chapters
+\fi
 
 \paragraph{Case Studies}
 The case studies show that \sysnamelong can save work for proof engineers relative to 
 reference manual repairs in practical use cases. % TODO link to corresponding chapters instead
 In particular, the case studies in Chapter~\ref{ch:example} show retroactively that a prototype implementation of proof repair
-by example could have saved work for proof engineers on major proof developments.
-The case studies in Chapter~\ref{chapt:pi} show that proof repair across type equivalences can save
-and in fact has already saved work for proof engineers in practical use cases.
+by example \textit{could have} saved work for proof engineers on major proof developments.
+The case studies in Chapter~\ref{chapt:pi} show that proof repair across type equivalences \textit{can} save
+and in fact \textit{has already} saved work for proof engineers in practical use cases.
 
 \input{guide}

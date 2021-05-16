@@ -2,45 +2,39 @@
 
 % Dan: Instead, I strongly advocate an explicit section in Chapter 1 that lays this all out for the reader: what prior publications are being leaned on, where does text from those reappear, and most importantly, where -- in explicit sections of forthcoming chapters -- are expanded explanations and additional data.  Voila, your thesis is now both a self-contained coherent document and a useful 'appendix' for people who have already read large parts of what is to follow.
 
-This thesis is divided into six chapters; chapters are further divided into sections.
-After motivating proof repair (Chapter~\ref{chapt:mot}),
-this thesis describes two different kinds of proof repair that validate the thesis (Chapters~\ref{ch:example} and~\ref{chapt:pi}).
-It concludes with a discussion of related work (Chapter~\ref{sec:related}),
-followed by a reflection on the thesis and how it can inform the next era of 
-proof engineering (Chapter~\ref{chapt:conclusions}).
-
-\subsubsection*{Expected Background}
-
-This thesis assumes some background \kl{proof engineering}, type theory, and (to a lesser extent) the \kl{Coq} \kl{proof assistant}. 
+This thesis assumes some background in \kl{proof engineering}, type theory, and (to a lesser extent) the \kl{Coq} \kl{proof assistant}. 
 I strongly encourage readers of all backgrounds who would like more context to better understand this thesis
 look to my survey paper on proof engineering~\cite{PGL-045}, which includes a detailed list of resources
-and is available for free on my website.\footnote{\url{https://dependenttyp.es}}
+and is available for free on my website: \url{https://dependenttyp.es}.
+
 I recommend that readers with less background on proof engineering, dependent type theory, or the Coq proof assistant
-take time to digest Chapter~\ref{chapt:mot} before moving on---though I recommend that even Coq experts read Chapter~\ref{chapt:mot}.
+take time to digest Chapter~\ref{chapt:mot} before moving on---though I recommend that even Coq experts read Chapter~\ref{chapt:mot}!
 Chapters~\ref{ch:example} and~\ref{chapt:pi} get rather technical, so it is normal not to understand every detail,
 though you may always contact me with questions.
+
+\subsection*{Previously Published Material}
 
 While this thesis is self-contained, it centers material from two previously published papers:
 
 \begin{itemize}
-\item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. Adapting Proof Automation to Adapt Proofs~\cite{ringer2018adapting}. CPP 2018.
-\item \textbf{Talia Ringer}, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman. Proof Repair Across Type Equivalences~\cite{Ringer2021}. PLDI 2021.
+\item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Adapting Proof Automation to Adapt Proofs}~\cite{ringer2018adapting}. CPP 2018.
+\item \textbf{Talia Ringer}, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Proof Repair Across Type Equivalences}~\cite{Ringer2021}. PLDI 2021.
 \end{itemize}
 It also includes material from three other papers:
 
 \begin{itemize}
-\item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. Ornaments for Proof Reuse in Coq~\cite{Ringer2019}. ITP 2019.
-\item \textbf{Talia Ringer}, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner. \textsc{REPLica}: REPL Instrumentation for Coq Analysis~\cite{replica}. CPP 2020.
-\item \textbf{Talia Ringer}, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock. QED at Large: A Survey of Engineering of Formally Verified Software~\cite{PGL-045}. Foundations and Trends® in Programming Languages: Vol. 5: No. 2-3, pp 102-281. 2019. 
+\item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Ornaments for Proof Reuse in Coq}~\cite{Ringer2019}. ITP 2019.
+\item \textbf{Talia Ringer}, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner. \intro{\textsc{REPLica}: REPL Instrumentation for Coq Analysis}~\cite{replica}. CPP 2020.
+\item \textbf{Talia Ringer}, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock. \intro{QED at Large: A Survey of Engineering of Formally Verified Software}~\cite{PGL-045}. Foundations and Trends® in Programming Languages: Vol. 5: No. 2-3, pp 102-281. 2019. 
 \end{itemize}
-Below is a map from each of these papers to corresponding parts of the thesis,
+Below is a map from each of these papers to corresponding sections,
 along with an explanation of what is new in this thesis and what is omitted.
 All of these papers can be found for free on my website.
 
 \paragraph{Adapting Proof Automation to Adapt Proofs}
 The bulk of Chapter~\ref{ch:example} comes from this paper,
-though it is significantly reorganized and reframed.
-In addition, the introducton and conclusion of Chapter~\ref{ch:example} are fresh content.
+though the content is significantly reorganized and reframed.
+The introducton and conclusion of Chapter~\ref{ch:example} are fresh content.
 Sections~\ref{sec:pumpkin-approach}, \ref{sec:pumpkin-diff}, \ref{sec:pumpkin-trans}, and~\ref{sec:pumpkin-impl}
 all include additions and elaborations not found in the original paper.
 Chapter~\ref{sec:related} includes some related work from this paper,
@@ -49,8 +43,8 @@ and Chapter~\ref{chapt:conclusions} includes some future work from this paper.
 \paragraph{Proof Repair Across Type Equivalences}
 Parts of the introduction and Section~\ref{sec:mot-theory} come from this paper.
 The bulk of Chapter~\ref{chapt:pi} comes from this paper,
-though it is likewise reorganized and reframed.
-In addition, the conclusion of Chapter~\ref{chapt:pi} is fresh content.
+though the content is likewise reorganized and reframed.
+The conclusion of Chapter~\ref{chapt:pi} is fresh content.
 Sections~\ref{sec:pi-approach}, \ref{sec:pi-diff}, \ref{sec:pi-trans}, and~\ref{sec:pi-implementation}
 all include additions and elaborations not found in the original paper.
 Chapter~\ref{sec:related} includes some related work from this paper,
@@ -60,8 +54,8 @@ and Chapter~\ref{chapt:conclusions} includes some future work from this paper.
 The example from Section~\ref{sec:mot-dev} comes from this paper, though most of the text is new.
 Parts of Section~\ref{sec:mot-theory} also come from this paper.
 Section~\ref{sec:pi-diff} uses a simplified version of the search algorithm from this paper as an example.
-Section~\ref{sec:eval} includes the evaluation from this paper with some additional context.
-Chapter~\ref{sec:related} includes a small amount of related work from this paper.
+Section~\ref{sec:eval} includes the evaluation from this paper with additional context.
+Chapter~\ref{sec:related} includes some related work from this paper.
 
 \paragraph{\textsc{REPLica}}
 Section~\ref{sec:irl} includes a few samples of this paper, as does the abstract.
@@ -83,7 +77,7 @@ Nate contributed conceptually to all three proof repair papers his name appears 
 helped with a number of the case studies,
 implemented important features on the critical path to success,
 and did some of the writing about his contributions.
-Three of Nate's contributions stand out to me:
+Nate's contributions include:
 
 \begin{enumerate}
 \item a tool for preprocessing proof developments into a format suitable for repair,
@@ -93,21 +87,21 @@ Three of Nate's contributions stand out to me:
 All three of these were necessary to scale proof repair to help real proof engineers in practical scenarios.
 
 \paragraph{RanDair Porter}
-\intro{RanDair} joined the project as an undergraduate for the final paper that appears in this thesis.
+\kl{RanDair} joined the project as an undergraduate.
 RanDair implemented a prototype decompiler from proof terms to proof scripts,
-and wrote a description of the behavior of the decompiler that I built on in that paper.
+and wrote a description of the behavior of the decompiler that I built on in the corresponding paper.
 This decompiler was necessary for integrating proof repair tools with real proof engineering workflows,
 and it continues to inspire exciting work to this day.
 
 \paragraph{Alex Sanchez-Stern}
-\kl{Alex} worked with me as a PhD student on a user study of proof engineers during my visit to another university.
+\kl{Alex} worked with me as a PhD student on a user study of proof engineers during my visit \kl{UCSD}.
 Alex designed, implemented, deployed, and evaluated one of the two analyses in the user study paper.
 He also helped substantially in building the infrastructure necessary to deploy the user study,
 and wrote large sections of the paper.
 The user study and paper would not have happened without Alex.
 
 \paragraph{Karl Palmskog}
-\intro{Karl} was a postdoctoral researcher when he joined me on the survey paper.
+\kl{Karl} was a postdoctoral researcher when he joined me on the survey paper.
 Karl wrote entire chapters of the survey paper.
 I could not have written that paper without Karl.
 

@@ -39,6 +39,9 @@
 \usepackage{bbm} % to render N for the natural numbers
 \usepackage[nounderscore]{syntax} % grammar
 
+\newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
+\newcommand{\sysname}{\textsc{Pumpkin}\xspace}
+
 \knowledgestyle*{notion}{color = brown}
 
 \knowledge{notion, index=Conventions!Primitive Eliminators}
@@ -54,10 +57,43 @@
   | verification
   | verify
   | verified
+\knowledge{notion, index=Concepts!Verification!Kernel}
+  | kernel
 \knowledge{notion, index=Concepts!Verification!Proof Engineering}
   | proof engineering
   | proof engineer
   | proof engineers
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development}
+  | proof development
+  | develop
+  | develops
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Program}
+  | program
+  | programs
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Specification}
+  | specification
+  | specifies
+  | specify
+  | specifications
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Proof}
+  | proof
+  | prove
+  | proves
+  | proofs
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script!Tactics}
+  | tactics
+  | tactic
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script}
+  | proof script
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term}
+  | proof term
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Proof Maintenance}
+  | proof maintenance
+  | maintain
+  | maintains
+\knowledge{notion, index=Concepts!Verification!Proof Engineering!Trusted Computing Base}
+  | Trusted Computing Base
+  | TCB
 \knowledge{notion, index=Concepts!Verification!Proof Assistants}
   | proof assistants
   | proof assistant
@@ -91,6 +127,7 @@
 \knowledge{notion, index=Acknowledgments!Labs!UCSD ProgSys}
   | UCSD ProgSys
   | ProgSys
+  | UCSD
 \knowledge{notion, index=Acknowledgments!Coauthors!RanDair Porter}
   | RanDair Porter
   | RanDair
@@ -340,9 +377,45 @@
   | Amazon
 \knowledge{notion, index=Acknowledgments!Companies!Carr Astronautics}
   | Carr Astronautics
-\knowledge{notion, index=Phrases!Reason to Believe}
+\knowledge{notion, index=Thesis!Informal Thesis Statement}
   | no reason to believe
   | reason to believe
+\knowledge{notion, index=Thesis!Formal Thesis Statement}
+  | thesis
+  | Thesis
+\knowledge{notion, index=Thesis!Technology!Proof Repair}
+  | proof repair
+  | repair
+\knowledge{notion, index=Thesis!Technology!Proof Repair!\sysnamelong Plugin Suite}
+  | \sysnamelong
+\knowledge{notion, index=Thesis!Approach!Semantic Differencing}
+  | semantic differencing
+  | differencing
+  | diff
+  | difference
+  | differences
+\knowledge{notion, index=Thesis!Approach!Proof Term Transformations}
+  | proof term transformations
+  | proof term transformation
+  | transformation
+  | transformations
+  | transform
+  | transforms
+\knowledge{notion, index=Thesis!Results}
+  | results
+  | result
+\knowledge{notion, index=Previously Published Material!Adapting Proof Automation to Adapt Proofs}
+  | Adapting Proof Automation to Adapt Proofs
+\knowledge{notion, index=Previously Published Material!Proof Repair across Type Equivalences}
+  | Proof Repair across Type Equivalences
+\knowledge{notion, index=Previously Published Material!Ornaments for Proof Reuse in Coq}
+  | Ornaments for Proof Reuse in Coq
+\knowledge{notion, index=Previously Published Material!\textsc{REPLica}: REPL Instrumentation for Coq Analysis}
+  | \textsc{REPLica}: REPL Instrumentation for Coq Analysis
+  | \textsc{REPLica}
+\knowledge{notion, index=Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software}
+  | QED at Large: A Survey of Engineering of Formally Verified Software
+  | QED at Large
 
 \makeindex
 
@@ -416,9 +489,6 @@
 \raggedbottom
 \pagenumbering{roman}
 \pagestyle{plain}
-
-\newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
-\newcommand{\sysname}{\textsc{Pumpkin}\xspace}
 
 \newcommand{\ltacforall}{$\color{blue}\forall$\hspace{0.05cm}}
 \newcommand{\ltacexists}{$\color{blue}\exists$\hspace{0.05cm}}
@@ -902,6 +972,7 @@ Jasper Hugunin.
 Taylor Blau.
 
 \paragraph{My Coauthors (WIP)}
+\intro{Karl Palmskog}.
 
 \paragraph{My Community (WIP)}
 Cyril Cohen, Tej Chajed, Ben Delaware, Janno,

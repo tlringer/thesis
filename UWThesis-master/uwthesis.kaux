@@ -14,971 +14,1135 @@
 \KAuxCommand \KAuxUseKnowledge {mmm}{Package knowledge: Identifies the use of some knowledge. Arguments {namespace}{instance}{knowledge}.}
 
 
-\KAuxFileAt {uwthesis.tex}{44}
-
-\KAuxFileAt {uwthesis.tex}{45}
-\KAuxAutoref {default}{base}{primitive eliminators}
-
-\KAuxFileAt {uwthesis.tex}{46}
-
 \KAuxFileAt {uwthesis.tex}{47}
-\KAuxAutoref {default}{base}{Gallina}
 
 \KAuxFileAt {uwthesis.tex}{48}
+\KAuxAutoref {default}{base}{primitive eliminators}
 
 \KAuxFileAt {uwthesis.tex}{49}
-\KAuxAutoref {default}{base}{Ltac}
 
 \KAuxFileAt {uwthesis.tex}{50}
+\KAuxAutoref {default}{base}{Gallina}
 
 \KAuxFileAt {uwthesis.tex}{51}
-\KAuxAutoref {default}{base}{Calculus of Inductive Constructions}
 
 \KAuxFileAt {uwthesis.tex}{52}
+\KAuxAutoref {default}{base}{Ltac}
 
 \KAuxFileAt {uwthesis.tex}{53}
 
 \KAuxFileAt {uwthesis.tex}{54}
-\KAuxAutoref {default}{base}{verification}
+\KAuxAutoref {default}{base}{Calculus of Inductive Constructions}
 
 \KAuxFileAt {uwthesis.tex}{55}
 
 \KAuxFileAt {uwthesis.tex}{56}
 
 \KAuxFileAt {uwthesis.tex}{57}
+\KAuxAutoref {default}{base}{verification}
 
 \KAuxFileAt {uwthesis.tex}{58}
-\KAuxAutoref {default}{base}{proof engineering}
 
 \KAuxFileAt {uwthesis.tex}{59}
 
 \KAuxFileAt {uwthesis.tex}{60}
 
 \KAuxFileAt {uwthesis.tex}{61}
+\KAuxAutoref {default}{base}{kernel}
 
 \KAuxFileAt {uwthesis.tex}{62}
-\KAuxAutoref {default}{base}{proof assistants}
 
 \KAuxFileAt {uwthesis.tex}{63}
+\KAuxAutoref {default}{base}{proof engineering}
 
 \KAuxFileAt {uwthesis.tex}{64}
 
 \KAuxFileAt {uwthesis.tex}{65}
-\KAuxAutoref {default}{base}{Coq}
 
 \KAuxFileAt {uwthesis.tex}{66}
 
 \KAuxFileAt {uwthesis.tex}{67}
-\KAuxAutoref {default}{base}{Isabelle/HOL}
+\KAuxAutoref {default}{base}{proof development}
 
 \KAuxFileAt {uwthesis.tex}{68}
 
 \KAuxFileAt {uwthesis.tex}{69}
-\KAuxAutoref {default}{base}{HOL Light}
 
 \KAuxFileAt {uwthesis.tex}{70}
 
 \KAuxFileAt {uwthesis.tex}{71}
-\KAuxAutoref {default}{base}{HOL4}
+\KAuxAutoref {default}{base}{program}
 
 \KAuxFileAt {uwthesis.tex}{72}
 
 \KAuxFileAt {uwthesis.tex}{73}
-\KAuxAutoref {default}{base}{Agda}
 
 \KAuxFileAt {uwthesis.tex}{74}
+\KAuxAutoref {default}{base}{specification}
 
 \KAuxFileAt {uwthesis.tex}{75}
-\KAuxAutoref {default}{base}{Lean}
 
 \KAuxFileAt {uwthesis.tex}{76}
 
 \KAuxFileAt {uwthesis.tex}{77}
-\KAuxAutoref {default}{base}{NuPRL}
 
 \KAuxFileAt {uwthesis.tex}{78}
 
 \KAuxFileAt {uwthesis.tex}{79}
-\KAuxAutoref {default}{base}{algebraic ornaments}
+\KAuxAutoref {default}{base}{proof}
 
 \KAuxFileAt {uwthesis.tex}{80}
 
 \KAuxFileAt {uwthesis.tex}{81}
 
 \KAuxFileAt {uwthesis.tex}{82}
-\KAuxAutoref {default}{base}{type equivalences}
 
 \KAuxFileAt {uwthesis.tex}{83}
 
 \KAuxFileAt {uwthesis.tex}{84}
+\KAuxAutoref {default}{base}{tactics}
 
 \KAuxFileAt {uwthesis.tex}{85}
 
 \KAuxFileAt {uwthesis.tex}{86}
 
 \KAuxFileAt {uwthesis.tex}{87}
-\KAuxAutoref {default}{base}{transport}
+\KAuxAutoref {default}{base}{proof script}
 
 \KAuxFileAt {uwthesis.tex}{88}
 
 \KAuxFileAt {uwthesis.tex}{89}
-\KAuxAutoref {default}{base}{UW PLSE}
+\KAuxAutoref {default}{base}{proof term}
 
 \KAuxFileAt {uwthesis.tex}{90}
 
 \KAuxFileAt {uwthesis.tex}{91}
+\KAuxAutoref {default}{base}{proof maintenance}
 
 \KAuxFileAt {uwthesis.tex}{92}
-\KAuxAutoref {default}{base}{UCSD ProgSys}
 
 \KAuxFileAt {uwthesis.tex}{93}
 
 \KAuxFileAt {uwthesis.tex}{94}
 
 \KAuxFileAt {uwthesis.tex}{95}
-\KAuxAutoref {default}{base}{RanDair Porter}
+\KAuxAutoref {default}{base}{Trusted Computing Base}
 
 \KAuxFileAt {uwthesis.tex}{96}
 
 \KAuxFileAt {uwthesis.tex}{97}
 
 \KAuxFileAt {uwthesis.tex}{98}
-\KAuxAutoref {default}{base}{Nathaniel Yazdani}
+\KAuxAutoref {default}{base}{proof assistants}
 
 \KAuxFileAt {uwthesis.tex}{99}
 
 \KAuxFileAt {uwthesis.tex}{100}
 
 \KAuxFileAt {uwthesis.tex}{101}
+\KAuxAutoref {default}{base}{Coq}
 
 \KAuxFileAt {uwthesis.tex}{102}
-\KAuxAutoref {default}{base}{Karl Palmskog}
 
 \KAuxFileAt {uwthesis.tex}{103}
+\KAuxAutoref {default}{base}{Isabelle/HOL}
 
 \KAuxFileAt {uwthesis.tex}{104}
 
 \KAuxFileAt {uwthesis.tex}{105}
-\KAuxAutoref {default}{base}{Alex Sanchez-Stern}
+\KAuxAutoref {default}{base}{HOL Light}
 
 \KAuxFileAt {uwthesis.tex}{106}
 
 \KAuxFileAt {uwthesis.tex}{107}
+\KAuxAutoref {default}{base}{HOL4}
 
 \KAuxFileAt {uwthesis.tex}{108}
-\KAuxAutoref {default}{base}{Chandrakana Nandi}
 
 \KAuxFileAt {uwthesis.tex}{109}
+\KAuxAutoref {default}{base}{Agda}
 
 \KAuxFileAt {uwthesis.tex}{110}
 
 \KAuxFileAt {uwthesis.tex}{111}
-\KAuxAutoref {default}{base}{Max Willsey}
+\KAuxAutoref {default}{base}{Lean}
 
 \KAuxFileAt {uwthesis.tex}{112}
 
 \KAuxFileAt {uwthesis.tex}{113}
+\KAuxAutoref {default}{base}{NuPRL}
 
 \KAuxFileAt {uwthesis.tex}{114}
-\KAuxAutoref {default}{base}{Martin Kellog}
 
 \KAuxFileAt {uwthesis.tex}{115}
+\KAuxAutoref {default}{base}{algebraic ornaments}
 
 \KAuxFileAt {uwthesis.tex}{116}
 
 \KAuxFileAt {uwthesis.tex}{117}
-\KAuxAutoref {default}{base}{Jared Roesch}
 
 \KAuxFileAt {uwthesis.tex}{118}
+\KAuxAutoref {default}{base}{type equivalences}
 
 \KAuxFileAt {uwthesis.tex}{119}
 
 \KAuxFileAt {uwthesis.tex}{120}
-\KAuxAutoref {default}{base}{Gus Smith}
 
 \KAuxFileAt {uwthesis.tex}{121}
 
 \KAuxFileAt {uwthesis.tex}{122}
 
 \KAuxFileAt {uwthesis.tex}{123}
-\KAuxAutoref {default}{base}{Bill Zorn}
+\KAuxAutoref {default}{base}{transport}
 
 \KAuxFileAt {uwthesis.tex}{124}
 
 \KAuxFileAt {uwthesis.tex}{125}
+\KAuxAutoref {default}{base}{UW PLSE}
 
 \KAuxFileAt {uwthesis.tex}{126}
-\KAuxAutoref {default}{base}{Ben Kushigian}
 
 \KAuxFileAt {uwthesis.tex}{127}
 
 \KAuxFileAt {uwthesis.tex}{128}
+\KAuxAutoref {default}{base}{UCSD ProgSys}
 
 \KAuxFileAt {uwthesis.tex}{129}
-\KAuxAutoref {default}{base}{Steven Lyubomirsky}
 
 \KAuxFileAt {uwthesis.tex}{130}
 
 \KAuxFileAt {uwthesis.tex}{131}
 
 \KAuxFileAt {uwthesis.tex}{132}
-\KAuxAutoref {default}{base}{Jacob Van Geffen}
+\KAuxAutoref {default}{base}{RanDair Porter}
 
 \KAuxFileAt {uwthesis.tex}{133}
 
 \KAuxFileAt {uwthesis.tex}{134}
 
 \KAuxFileAt {uwthesis.tex}{135}
-\KAuxAutoref {default}{base}{Marisa Kirisame}
+\KAuxAutoref {default}{base}{Nathaniel Yazdani}
 
 \KAuxFileAt {uwthesis.tex}{136}
 
 \KAuxFileAt {uwthesis.tex}{137}
 
 \KAuxFileAt {uwthesis.tex}{138}
-\KAuxAutoref {default}{base}{Audrey Seo}
 
 \KAuxFileAt {uwthesis.tex}{139}
+\KAuxAutoref {default}{base}{Karl Palmskog}
 
 \KAuxFileAt {uwthesis.tex}{140}
 
 \KAuxFileAt {uwthesis.tex}{141}
-\KAuxAutoref {default}{base}{James Wilcox}
 
 \KAuxFileAt {uwthesis.tex}{142}
+\KAuxAutoref {default}{base}{Alex Sanchez-Stern}
 
 \KAuxFileAt {uwthesis.tex}{143}
-\KAuxAutoref {default}{base}{Doug Woos}
 
 \KAuxFileAt {uwthesis.tex}{144}
 
 \KAuxFileAt {uwthesis.tex}{145}
+\KAuxAutoref {default}{base}{Chandrakana Nandi}
 
 \KAuxFileAt {uwthesis.tex}{146}
-\KAuxAutoref {default}{base}{Eric Mullen}
 
 \KAuxFileAt {uwthesis.tex}{147}
 
 \KAuxFileAt {uwthesis.tex}{148}
+\KAuxAutoref {default}{base}{Max Willsey}
 
 \KAuxFileAt {uwthesis.tex}{149}
-\KAuxAutoref {default}{base}{Remy Wang}
 
 \KAuxFileAt {uwthesis.tex}{150}
 
 \KAuxFileAt {uwthesis.tex}{151}
+\KAuxAutoref {default}{base}{Martin Kellog}
 
 \KAuxFileAt {uwthesis.tex}{152}
-\KAuxAutoref {default}{base}{Konstantin Weitz}
 
 \KAuxFileAt {uwthesis.tex}{153}
 
 \KAuxFileAt {uwthesis.tex}{154}
+\KAuxAutoref {default}{base}{Jared Roesch}
 
 \KAuxFileAt {uwthesis.tex}{155}
-\KAuxAutoref {default}{base}{Mike He}
 
 \KAuxFileAt {uwthesis.tex}{156}
 
 \KAuxFileAt {uwthesis.tex}{157}
+\KAuxAutoref {default}{base}{Gus Smith}
 
 \KAuxFileAt {uwthesis.tex}{158}
-\KAuxAutoref {default}{base}{Alex Polozov}
 
 \KAuxFileAt {uwthesis.tex}{159}
 
 \KAuxFileAt {uwthesis.tex}{160}
-\KAuxAutoref {default}{base}{Sarah Chasins}
+\KAuxAutoref {default}{base}{Bill Zorn}
 
 \KAuxFileAt {uwthesis.tex}{161}
 
 \KAuxFileAt {uwthesis.tex}{162}
 
 \KAuxFileAt {uwthesis.tex}{163}
-\KAuxAutoref {default}{base}{John Toman}
+\KAuxAutoref {default}{base}{Ben Kushigian}
 
 \KAuxFileAt {uwthesis.tex}{164}
 
 \KAuxFileAt {uwthesis.tex}{165}
 
 \KAuxFileAt {uwthesis.tex}{166}
-\KAuxAutoref {default}{base}{Ryan Doenges}
+\KAuxAutoref {default}{base}{Steven Lyubomirsky}
 
 \KAuxFileAt {uwthesis.tex}{167}
 
 \KAuxFileAt {uwthesis.tex}{168}
 
 \KAuxFileAt {uwthesis.tex}{169}
-\KAuxAutoref {default}{base}{Melissa Hovik}
+\KAuxAutoref {default}{base}{Jacob Van Geffen}
 
 \KAuxFileAt {uwthesis.tex}{170}
 
 \KAuxFileAt {uwthesis.tex}{171}
 
 \KAuxFileAt {uwthesis.tex}{172}
-\KAuxAutoref {default}{base}{Julie Newcomb}
+\KAuxAutoref {default}{base}{Marisa Kirisame}
 
 \KAuxFileAt {uwthesis.tex}{173}
 
 \KAuxFileAt {uwthesis.tex}{174}
 
 \KAuxFileAt {uwthesis.tex}{175}
-\KAuxAutoref {default}{base}{James Bornholt}
+\KAuxAutoref {default}{base}{Audrey Seo}
 
 \KAuxFileAt {uwthesis.tex}{176}
 
 \KAuxFileAt {uwthesis.tex}{177}
-\KAuxAutoref {default}{base}{Daryl Zuniga}
 
 \KAuxFileAt {uwthesis.tex}{178}
+\KAuxAutoref {default}{base}{James Wilcox}
 
 \KAuxFileAt {uwthesis.tex}{179}
 
 \KAuxFileAt {uwthesis.tex}{180}
-\KAuxAutoref {default}{base}{Joe Redmond}
+\KAuxAutoref {default}{base}{Doug Woos}
 
 \KAuxFileAt {uwthesis.tex}{181}
 
 \KAuxFileAt {uwthesis.tex}{182}
 
 \KAuxFileAt {uwthesis.tex}{183}
-\KAuxAutoref {default}{base}{Amanda Swearngin}
+\KAuxAutoref {default}{base}{Eric Mullen}
 
 \KAuxFileAt {uwthesis.tex}{184}
 
 \KAuxFileAt {uwthesis.tex}{185}
 
 \KAuxFileAt {uwthesis.tex}{186}
-\KAuxAutoref {default}{base}{Ali K\"{o}skal}
+\KAuxAutoref {default}{base}{Remy Wang}
 
 \KAuxFileAt {uwthesis.tex}{187}
 
 \KAuxFileAt {uwthesis.tex}{188}
 
 \KAuxFileAt {uwthesis.tex}{189}
-\KAuxAutoref {default}{base}{Calvin Loncaric}
+\KAuxAutoref {default}{base}{Konstantin Weitz}
 
 \KAuxFileAt {uwthesis.tex}{190}
 
 \KAuxFileAt {uwthesis.tex}{191}
 
 \KAuxFileAt {uwthesis.tex}{192}
-\KAuxAutoref {default}{base}{Chenglong Wang}
+\KAuxAutoref {default}{base}{Mike He}
 
 \KAuxFileAt {uwthesis.tex}{193}
 
 \KAuxFileAt {uwthesis.tex}{194}
 
 \KAuxFileAt {uwthesis.tex}{195}
-\KAuxAutoref {default}{base}{Mangpo Phitchaya Phothilimthana}
+\KAuxAutoref {default}{base}{Alex Polozov}
 
 \KAuxFileAt {uwthesis.tex}{196}
 
 \KAuxFileAt {uwthesis.tex}{197}
+\KAuxAutoref {default}{base}{Sarah Chasins}
 
 \KAuxFileAt {uwthesis.tex}{198}
-\KAuxAutoref {default}{base}{Rohin Shah}
 
 \KAuxFileAt {uwthesis.tex}{199}
 
 \KAuxFileAt {uwthesis.tex}{200}
+\KAuxAutoref {default}{base}{John Toman}
 
 \KAuxFileAt {uwthesis.tex}{201}
-\KAuxAutoref {default}{base}{Stuart Pernsteiner}
 
 \KAuxFileAt {uwthesis.tex}{202}
 
 \KAuxFileAt {uwthesis.tex}{203}
+\KAuxAutoref {default}{base}{Ryan Doenges}
 
 \KAuxFileAt {uwthesis.tex}{204}
-\KAuxAutoref {default}{base}{Spencer Pearson}
 
 \KAuxFileAt {uwthesis.tex}{205}
 
 \KAuxFileAt {uwthesis.tex}{206}
+\KAuxAutoref {default}{base}{Melissa Hovik}
 
 \KAuxFileAt {uwthesis.tex}{207}
-\KAuxAutoref {default}{base}{Sam Elliott}
 
 \KAuxFileAt {uwthesis.tex}{208}
 
 \KAuxFileAt {uwthesis.tex}{209}
-\KAuxAutoref {default}{base}{Maaz Ahmad}
+\KAuxAutoref {default}{base}{Julie Newcomb}
 
 \KAuxFileAt {uwthesis.tex}{210}
 
 \KAuxFileAt {uwthesis.tex}{211}
 
 \KAuxFileAt {uwthesis.tex}{212}
-\KAuxAutoref {default}{base}{Dan Cascaval}
+\KAuxAutoref {default}{base}{James Bornholt}
 
 \KAuxFileAt {uwthesis.tex}{213}
 
 \KAuxFileAt {uwthesis.tex}{214}
-\KAuxAutoref {default}{base}{Krzysztof Drewniak}
+\KAuxAutoref {default}{base}{Daryl Zuniga}
 
 \KAuxFileAt {uwthesis.tex}{215}
 
 \KAuxFileAt {uwthesis.tex}{216}
 
 \KAuxFileAt {uwthesis.tex}{217}
-\KAuxAutoref {default}{base}{Michael Flanders}
+\KAuxAutoref {default}{base}{Joe Redmond}
 
 \KAuxFileAt {uwthesis.tex}{218}
 
 \KAuxFileAt {uwthesis.tex}{219}
 
 \KAuxFileAt {uwthesis.tex}{220}
-\KAuxAutoref {default}{base}{Eunice Jun}
+\KAuxAutoref {default}{base}{Amanda Swearngin}
 
 \KAuxFileAt {uwthesis.tex}{221}
 
 \KAuxFileAt {uwthesis.tex}{222}
 
 \KAuxFileAt {uwthesis.tex}{223}
-\KAuxAutoref {default}{base}{Sam Kaufman}
+\KAuxAutoref {default}{base}{Ali K\"{o}skal}
 
 \KAuxFileAt {uwthesis.tex}{224}
 
 \KAuxFileAt {uwthesis.tex}{225}
-\KAuxAutoref {default}{base}{Rashmi Mudduluru}
 
 \KAuxFileAt {uwthesis.tex}{226}
+\KAuxAutoref {default}{base}{Calvin Loncaric}
 
 \KAuxFileAt {uwthesis.tex}{227}
 
 \KAuxFileAt {uwthesis.tex}{228}
-\KAuxAutoref {default}{base}{Sorawee Porncharoenwase}
 
 \KAuxFileAt {uwthesis.tex}{229}
+\KAuxAutoref {default}{base}{Chenglong Wang}
 
 \KAuxFileAt {uwthesis.tex}{230}
 
 \KAuxFileAt {uwthesis.tex}{231}
 
 \KAuxFileAt {uwthesis.tex}{232}
-\KAuxAutoref {default}{base}{Thomas Schweizer}
+\KAuxAutoref {default}{base}{Mangpo Phitchaya Phothilimthana}
 
 \KAuxFileAt {uwthesis.tex}{233}
 
 \KAuxFileAt {uwthesis.tex}{234}
 
 \KAuxFileAt {uwthesis.tex}{235}
-\KAuxAutoref {default}{base}{Luis Vega}
+\KAuxAutoref {default}{base}{Rohin Shah}
 
 \KAuxFileAt {uwthesis.tex}{236}
 
 \KAuxFileAt {uwthesis.tex}{237}
 
 \KAuxFileAt {uwthesis.tex}{238}
-\KAuxAutoref {default}{base}{Sahil Verma}
+\KAuxAutoref {default}{base}{Stuart Pernsteiner}
 
 \KAuxFileAt {uwthesis.tex}{239}
 
 \KAuxFileAt {uwthesis.tex}{240}
 
 \KAuxFileAt {uwthesis.tex}{241}
-\KAuxAutoref {default}{base}{Zhen Zhang}
+\KAuxAutoref {default}{base}{Spencer Pearson}
 
 \KAuxFileAt {uwthesis.tex}{242}
 
 \KAuxFileAt {uwthesis.tex}{243}
 
 \KAuxFileAt {uwthesis.tex}{244}
-\KAuxAutoref {default}{base}{Amy Zhu}
+\KAuxAutoref {default}{base}{Sam Elliott}
 
 \KAuxFileAt {uwthesis.tex}{245}
 
 \KAuxFileAt {uwthesis.tex}{246}
+\KAuxAutoref {default}{base}{Maaz Ahmad}
 
 \KAuxFileAt {uwthesis.tex}{247}
-\KAuxAutoref {default}{base}{Jasper Hugunin}
 
 \KAuxFileAt {uwthesis.tex}{248}
 
 \KAuxFileAt {uwthesis.tex}{249}
+\KAuxAutoref {default}{base}{Dan Cascaval}
 
 \KAuxFileAt {uwthesis.tex}{250}
-\KAuxAutoref {default}{base}{Taylor Blau}
 
 \KAuxFileAt {uwthesis.tex}{251}
+\KAuxAutoref {default}{base}{Krzysztof Drewniak}
 
 \KAuxFileAt {uwthesis.tex}{252}
 
 \KAuxFileAt {uwthesis.tex}{253}
-\KAuxAutoref {default}{base}{Logan Weber}
 
 \KAuxFileAt {uwthesis.tex}{254}
+\KAuxAutoref {default}{base}{Michael Flanders}
 
 \KAuxFileAt {uwthesis.tex}{255}
 
 \KAuxFileAt {uwthesis.tex}{256}
-\KAuxAutoref {default}{base}{Max Ruttenberg}
 
 \KAuxFileAt {uwthesis.tex}{257}
+\KAuxAutoref {default}{base}{Eunice Jun}
 
 \KAuxFileAt {uwthesis.tex}{258}
-\KAuxAutoref {default}{base}{Josh Pollock}
 
 \KAuxFileAt {uwthesis.tex}{259}
 
 \KAuxFileAt {uwthesis.tex}{260}
+\KAuxAutoref {default}{base}{Sam Kaufman}
 
 \KAuxFileAt {uwthesis.tex}{261}
-\KAuxAutoref {default}{base}{Luke Nelson}
 
 \KAuxFileAt {uwthesis.tex}{262}
+\KAuxAutoref {default}{base}{Rashmi Mudduluru}
 
 \KAuxFileAt {uwthesis.tex}{263}
 
 \KAuxFileAt {uwthesis.tex}{264}
-\KAuxAutoref {default}{base}{Shumo Chu}
 
 \KAuxFileAt {uwthesis.tex}{265}
+\KAuxAutoref {default}{base}{Sorawee Porncharoenwase}
 
 \KAuxFileAt {uwthesis.tex}{266}
 
 \KAuxFileAt {uwthesis.tex}{267}
-\KAuxAutoref {default}{base}{Lymor Ringer Barnhard}
 
 \KAuxFileAt {uwthesis.tex}{268}
 
 \KAuxFileAt {uwthesis.tex}{269}
+\KAuxAutoref {default}{base}{Thomas Schweizer}
 
 \KAuxFileAt {uwthesis.tex}{270}
-\KAuxAutoref {default}{base}{Mom}
 
 \KAuxFileAt {uwthesis.tex}{271}
 
 \KAuxFileAt {uwthesis.tex}{272}
-\KAuxAutoref {default}{base}{Dad}
+\KAuxAutoref {default}{base}{Luis Vega}
 
 \KAuxFileAt {uwthesis.tex}{273}
 
 \KAuxFileAt {uwthesis.tex}{274}
-\KAuxAutoref {default}{base}{Kasso Okoudjou}
 
 \KAuxFileAt {uwthesis.tex}{275}
+\KAuxAutoref {default}{base}{Sahil Verma}
 
 \KAuxFileAt {uwthesis.tex}{276}
 
 \KAuxFileAt {uwthesis.tex}{277}
-\KAuxAutoref {default}{base}{Larry Washington}
 
 \KAuxFileAt {uwthesis.tex}{278}
+\KAuxAutoref {default}{base}{Zhen Zhang}
 
 \KAuxFileAt {uwthesis.tex}{279}
 
 \KAuxFileAt {uwthesis.tex}{280}
-\KAuxAutoref {default}{base}{Ida Chan}
 
 \KAuxFileAt {uwthesis.tex}{281}
+\KAuxAutoref {default}{base}{Amy Zhu}
 
 \KAuxFileAt {uwthesis.tex}{282}
-\KAuxAutoref {default}{base}{Brandi K. Adams}
 
 \KAuxFileAt {uwthesis.tex}{283}
 
 \KAuxFileAt {uwthesis.tex}{284}
-\KAuxAutoref {default}{base}{Ernesto}
+\KAuxAutoref {default}{base}{Jasper Hugunin}
 
 \KAuxFileAt {uwthesis.tex}{285}
 
 \KAuxFileAt {uwthesis.tex}{286}
-\KAuxAutoref {default}{base}{Musachy}
 
 \KAuxFileAt {uwthesis.tex}{287}
+\KAuxAutoref {default}{base}{Taylor Blau}
 
 \KAuxFileAt {uwthesis.tex}{288}
-\KAuxAutoref {default}{base}{Jeff Foster}
 
 \KAuxFileAt {uwthesis.tex}{289}
 
 \KAuxFileAt {uwthesis.tex}{290}
-\KAuxAutoref {default}{base}{Dan Grossman}
+\KAuxAutoref {default}{base}{Logan Weber}
 
 \KAuxFileAt {uwthesis.tex}{291}
 
 \KAuxFileAt {uwthesis.tex}{292}
 
 \KAuxFileAt {uwthesis.tex}{293}
-\KAuxAutoref {default}{base}{Zach Tatlock}
+\KAuxAutoref {default}{base}{Max Ruttenberg}
 
 \KAuxFileAt {uwthesis.tex}{294}
 
 \KAuxFileAt {uwthesis.tex}{295}
+\KAuxAutoref {default}{base}{Josh Pollock}
 
 \KAuxFileAt {uwthesis.tex}{296}
-\KAuxAutoref {default}{base}{Roy Or-El}
 
 \KAuxFileAt {uwthesis.tex}{297}
 
 \KAuxFileAt {uwthesis.tex}{298}
+\KAuxAutoref {default}{base}{Luke Nelson}
 
 \KAuxFileAt {uwthesis.tex}{299}
-\KAuxAutoref {default}{base}{Vikram Iyer}
 
 \KAuxFileAt {uwthesis.tex}{300}
 
 \KAuxFileAt {uwthesis.tex}{301}
+\KAuxAutoref {default}{base}{Shumo Chu}
 
 \KAuxFileAt {uwthesis.tex}{302}
-\KAuxAutoref {default}{base}{Esther Jang}
 
 \KAuxFileAt {uwthesis.tex}{303}
 
 \KAuxFileAt {uwthesis.tex}{304}
+\KAuxAutoref {default}{base}{Lymor Ringer Barnhard}
 
 \KAuxFileAt {uwthesis.tex}{305}
-\KAuxAutoref {default}{base}{Ellie Berry}
 
 \KAuxFileAt {uwthesis.tex}{306}
 
 \KAuxFileAt {uwthesis.tex}{307}
+\KAuxAutoref {default}{base}{Mom}
 
 \KAuxFileAt {uwthesis.tex}{308}
-\KAuxAutoref {default}{base}{Mer Joyce}
 
 \KAuxFileAt {uwthesis.tex}{309}
+\KAuxAutoref {default}{base}{Dad}
 
 \KAuxFileAt {uwthesis.tex}{310}
 
 \KAuxFileAt {uwthesis.tex}{311}
-\KAuxAutoref {default}{base}{Jasper Tran O'Leary}
+\KAuxAutoref {default}{base}{Kasso Okoudjou}
 
 \KAuxFileAt {uwthesis.tex}{312}
 
 \KAuxFileAt {uwthesis.tex}{313}
-\KAuxAutoref {default}{base}{Wade Gordon}
 
 \KAuxFileAt {uwthesis.tex}{314}
+\KAuxAutoref {default}{base}{Larry Washington}
 
 \KAuxFileAt {uwthesis.tex}{315}
 
 \KAuxFileAt {uwthesis.tex}{316}
-\KAuxAutoref {default}{base}{Anne Spencer Ross}
 
 \KAuxFileAt {uwthesis.tex}{317}
+\KAuxAutoref {default}{base}{Ida Chan}
 
 \KAuxFileAt {uwthesis.tex}{318}
 
 \KAuxFileAt {uwthesis.tex}{319}
-\KAuxAutoref {default}{base}{Anna Kornfeld Simpson}
+\KAuxAutoref {default}{base}{Brandi K. Adams}
 
 \KAuxFileAt {uwthesis.tex}{320}
 
 \KAuxFileAt {uwthesis.tex}{321}
+\KAuxAutoref {default}{base}{Ernesto}
 
 \KAuxFileAt {uwthesis.tex}{322}
-\KAuxAutoref {default}{base}{Qi Cheng}
 
 \KAuxFileAt {uwthesis.tex}{323}
+\KAuxAutoref {default}{base}{Musachy}
 
 \KAuxFileAt {uwthesis.tex}{324}
 
 \KAuxFileAt {uwthesis.tex}{325}
-\KAuxAutoref {default}{base}{Misha Kolmogorov}
+\KAuxAutoref {default}{base}{Jeff Foster}
 
 \KAuxFileAt {uwthesis.tex}{326}
 
 \KAuxFileAt {uwthesis.tex}{327}
+\KAuxAutoref {default}{base}{Dan Grossman}
 
 \KAuxFileAt {uwthesis.tex}{328}
-\KAuxAutoref {default}{base}{Mark Velednitsky}
 
 \KAuxFileAt {uwthesis.tex}{329}
 
 \KAuxFileAt {uwthesis.tex}{330}
+\KAuxAutoref {default}{base}{Zach Tatlock}
 
 \KAuxFileAt {uwthesis.tex}{331}
-\KAuxAutoref {default}{base}{Marcela Mendoza}
 
 \KAuxFileAt {uwthesis.tex}{332}
 
 \KAuxFileAt {uwthesis.tex}{333}
+\KAuxAutoref {default}{base}{Roy Or-El}
 
 \KAuxFileAt {uwthesis.tex}{334}
-\KAuxAutoref {default}{base}{Laura Chick}
 
 \KAuxFileAt {uwthesis.tex}{335}
 
 \KAuxFileAt {uwthesis.tex}{336}
+\KAuxAutoref {default}{base}{Vikram Iyer}
 
 \KAuxFileAt {uwthesis.tex}{337}
-\KAuxAutoref {default}{base}{Google}
 
 \KAuxFileAt {uwthesis.tex}{338}
 
 \KAuxFileAt {uwthesis.tex}{339}
+\KAuxAutoref {default}{base}{Esther Jang}
 
 \KAuxFileAt {uwthesis.tex}{340}
-\KAuxAutoref {default}{base}{Amazon}
 
 \KAuxFileAt {uwthesis.tex}{341}
 
 \KAuxFileAt {uwthesis.tex}{342}
-\KAuxAutoref {default}{base}{Carr Astronautics}
+\KAuxAutoref {default}{base}{Ellie Berry}
 
 \KAuxFileAt {uwthesis.tex}{343}
 
 \KAuxFileAt {uwthesis.tex}{344}
-\KAuxAutoref {default}{base}{no reason to believe}
 
 \KAuxFileAt {uwthesis.tex}{345}
+\KAuxAutoref {default}{base}{Mer Joyce}
+
+\KAuxFileAt {uwthesis.tex}{346}
+
+\KAuxFileAt {uwthesis.tex}{347}
+
+\KAuxFileAt {uwthesis.tex}{348}
+\KAuxAutoref {default}{base}{Jasper Tran O'Leary}
+
+\KAuxFileAt {uwthesis.tex}{349}
+
+\KAuxFileAt {uwthesis.tex}{350}
+\KAuxAutoref {default}{base}{Wade Gordon}
+
+\KAuxFileAt {uwthesis.tex}{351}
+
+\KAuxFileAt {uwthesis.tex}{352}
+
+\KAuxFileAt {uwthesis.tex}{353}
+\KAuxAutoref {default}{base}{Anne Spencer Ross}
+
+\KAuxFileAt {uwthesis.tex}{354}
+
+\KAuxFileAt {uwthesis.tex}{355}
+
+\KAuxFileAt {uwthesis.tex}{356}
+\KAuxAutoref {default}{base}{Anna Kornfeld Simpson}
+
+\KAuxFileAt {uwthesis.tex}{357}
+
+\KAuxFileAt {uwthesis.tex}{358}
+
+\KAuxFileAt {uwthesis.tex}{359}
+\KAuxAutoref {default}{base}{Qi Cheng}
+
+\KAuxFileAt {uwthesis.tex}{360}
+
+\KAuxFileAt {uwthesis.tex}{361}
+
+\KAuxFileAt {uwthesis.tex}{362}
+\KAuxAutoref {default}{base}{Misha Kolmogorov}
+
+\KAuxFileAt {uwthesis.tex}{363}
+
+\KAuxFileAt {uwthesis.tex}{364}
+
+\KAuxFileAt {uwthesis.tex}{365}
+\KAuxAutoref {default}{base}{Mark Velednitsky}
+
+\KAuxFileAt {uwthesis.tex}{366}
+
+\KAuxFileAt {uwthesis.tex}{367}
+
+\KAuxFileAt {uwthesis.tex}{368}
+\KAuxAutoref {default}{base}{Marcela Mendoza}
+
+\KAuxFileAt {uwthesis.tex}{369}
+
+\KAuxFileAt {uwthesis.tex}{370}
+
+\KAuxFileAt {uwthesis.tex}{371}
+\KAuxAutoref {default}{base}{Laura Chick}
+
+\KAuxFileAt {uwthesis.tex}{372}
+
+\KAuxFileAt {uwthesis.tex}{373}
+
+\KAuxFileAt {uwthesis.tex}{374}
+\KAuxAutoref {default}{base}{Google}
+
+\KAuxFileAt {uwthesis.tex}{375}
+
+\KAuxFileAt {uwthesis.tex}{376}
+
+\KAuxFileAt {uwthesis.tex}{377}
+\KAuxAutoref {default}{base}{Amazon}
+
+\KAuxFileAt {uwthesis.tex}{378}
+
+\KAuxFileAt {uwthesis.tex}{379}
+\KAuxAutoref {default}{base}{Carr Astronautics}
+
+\KAuxFileAt {uwthesis.tex}{380}
+
+\KAuxFileAt {uwthesis.tex}{381}
+\KAuxAutoref {default}{base}{no reason to believe}
+
+\KAuxFileAt {uwthesis.tex}{382}
+
+\KAuxFileAt {uwthesis.tex}{383}
+
+\KAuxFileAt {uwthesis.tex}{384}
+\KAuxAutoref {default}{base}{thesis}
+
+\KAuxFileAt {uwthesis.tex}{385}
+
+\KAuxFileAt {uwthesis.tex}{386}
+
+\KAuxFileAt {uwthesis.tex}{387}
+\KAuxAutoref {default}{base}{proof repair}
+
+\KAuxFileAt {uwthesis.tex}{388}
+
+\KAuxFileAt {uwthesis.tex}{389}
+
+\KAuxFileAt {uwthesis.tex}{390}
+\KAuxAutoref {default}{base}{\sysnamelong }
+
+\KAuxFileAt {uwthesis.tex}{391}
+
+\KAuxFileAt {uwthesis.tex}{392}
+\KAuxAutoref {default}{base}{semantic differencing}
+
+\KAuxFileAt {uwthesis.tex}{393}
+
+\KAuxFileAt {uwthesis.tex}{394}
+
+\KAuxFileAt {uwthesis.tex}{395}
+
+\KAuxFileAt {uwthesis.tex}{396}
+
+\KAuxFileAt {uwthesis.tex}{397}
+
+\KAuxFileAt {uwthesis.tex}{398}
+\KAuxAutoref {default}{base}{proof term transformations}
+
+\KAuxFileAt {uwthesis.tex}{399}
+
+\KAuxFileAt {uwthesis.tex}{400}
+
+\KAuxFileAt {uwthesis.tex}{401}
+
+\KAuxFileAt {uwthesis.tex}{402}
+
+\KAuxFileAt {uwthesis.tex}{403}
+
+\KAuxFileAt {uwthesis.tex}{404}
+
+\KAuxFileAt {uwthesis.tex}{405}
+\KAuxAutoref {default}{base}{results}
+
+\KAuxFileAt {uwthesis.tex}{406}
+
+\KAuxFileAt {uwthesis.tex}{407}
+
+\KAuxFileAt {uwthesis.tex}{408}
+\KAuxAutoref {default}{base}{Adapting Proof Automation to Adapt Proofs}
+
+\KAuxFileAt {uwthesis.tex}{409}
+
+\KAuxFileAt {uwthesis.tex}{410}
+\KAuxAutoref {default}{base}{Proof Repair across Type Equivalences}
+
+\KAuxFileAt {uwthesis.tex}{411}
+
+\KAuxFileAt {uwthesis.tex}{412}
+\KAuxAutoref {default}{base}{Ornaments for Proof Reuse in Coq}
+
+\KAuxFileAt {uwthesis.tex}{413}
+
+\KAuxFileAt {uwthesis.tex}{414}
+\KAuxAutoref {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
 
 \KAuxFileAt {uwthesis.tex}{415}
+
+\KAuxFileAt {uwthesis.tex}{416}
+
+\KAuxFileAt {uwthesis.tex}{417}
+\KAuxAutoref {default}{base}{QED at Large: A Survey of Engineering of Formally Verified Software}
+
+\KAuxFileAt {uwthesis.tex}{418}
+
+\KAuxFileAt {uwthesis.tex}{488}
 \KAuxScopeNewInstance {base}{base}{}
 \KAuxScopeNewInstance {document}{document}{base}
 
-\KAuxFileAt {uwthesis.tex}{736}
+\KAuxFileAt {uwthesis.tex}{806}
 \KAuxAutorefTarget {default}{base}{Lymor Ringer Barnhard}
 
-\KAuxFileAt {uwthesis.tex}{753}
+\KAuxFileAt {uwthesis.tex}{823}
 \KAuxAutorefTarget {default}{base}{Kasso Okoudjou}
 \KAuxAutorefTarget {default}{base}{Larry Washington}
 
-\KAuxFileAt {uwthesis.tex}{760}
+\KAuxFileAt {uwthesis.tex}{830}
 \KAuxAutorefTarget {default}{base}{Ida Chan}
 
-\KAuxFileAt {uwthesis.tex}{761}
+\KAuxFileAt {uwthesis.tex}{831}
 \KAuxAutorefTarget {default}{base}{Google}
 
-\KAuxFileAt {uwthesis.tex}{765}
+\KAuxFileAt {uwthesis.tex}{835}
 \KAuxAutorefTarget {default}{base}{Brandi K. Adams}
 
-\KAuxFileAt {uwthesis.tex}{768}
+\KAuxFileAt {uwthesis.tex}{838}
 \KAuxAutorefTarget {default}{base}{Carr Astronautics}
 \KAuxAutorefTarget {default}{base}{Amazon}
 
-\KAuxFileAt {uwthesis.tex}{773}
+\KAuxFileAt {uwthesis.tex}{843}
 \KAuxAutorefTarget {default}{base}{Musachy}
 \KAuxAutorefTarget {default}{base}{Ernesto}
 
-\KAuxFileAt {uwthesis.tex}{776}
+\KAuxFileAt {uwthesis.tex}{846}
 \KAuxAutorefTarget {default}{base}{Jeff Foster}
 
-\KAuxFileAt {uwthesis.tex}{790}
+\KAuxFileAt {uwthesis.tex}{860}
 \KAuxAutorefTarget {default}{base}{Dan Grossman}
 
-\KAuxFileAt {uwthesis.tex}{804}
+\KAuxFileAt {uwthesis.tex}{874}
 \KAuxAutorefTarget {default}{base}{UW PLSE}
 
-\KAuxFileAt {uwthesis.tex}{816}
+\KAuxFileAt {uwthesis.tex}{886}
 \KAuxAutorefTarget {default}{base}{Chandrakana Nandi}
 
-\KAuxFileAt {uwthesis.tex}{817}
+\KAuxFileAt {uwthesis.tex}{887}
 \KAuxAutorefTarget {default}{base}{Max Willsey}
 
-\KAuxFileAt {uwthesis.tex}{818}
+\KAuxFileAt {uwthesis.tex}{888}
 \KAuxAutorefTarget {default}{base}{Martin Kellog}
 
-\KAuxFileAt {uwthesis.tex}{819}
+\KAuxFileAt {uwthesis.tex}{889}
 \KAuxAutorefTarget {default}{base}{Jared Roesch}
 
-\KAuxFileAt {uwthesis.tex}{820}
+\KAuxFileAt {uwthesis.tex}{890}
 \KAuxAutorefTarget {default}{base}{Gus Smith}
 
-\KAuxFileAt {uwthesis.tex}{821}
+\KAuxFileAt {uwthesis.tex}{891}
 \KAuxAutorefTarget {default}{base}{Bill Zorn}
 
-\KAuxFileAt {uwthesis.tex}{822}
+\KAuxFileAt {uwthesis.tex}{892}
 \KAuxAutorefTarget {default}{base}{Ben Kushigian}
 
-\KAuxFileAt {uwthesis.tex}{823}
+\KAuxFileAt {uwthesis.tex}{893}
 \KAuxAutorefTarget {default}{base}{Steven Lyubomirsky}
 
-\KAuxFileAt {uwthesis.tex}{824}
+\KAuxFileAt {uwthesis.tex}{894}
 \KAuxAutorefTarget {default}{base}{Jacob Van Geffen}
 
-\KAuxFileAt {uwthesis.tex}{825}
+\KAuxFileAt {uwthesis.tex}{895}
 \KAuxAutorefTarget {default}{base}{Marisa Kirisame}
 
-\KAuxFileAt {uwthesis.tex}{826}
+\KAuxFileAt {uwthesis.tex}{896}
 \KAuxAutorefTarget {default}{base}{Audrey Seo}
 
-\KAuxFileAt {uwthesis.tex}{827}
+\KAuxFileAt {uwthesis.tex}{897}
 \KAuxAutorefTarget {default}{base}{James Wilcox}
 
-\KAuxFileAt {uwthesis.tex}{828}
+\KAuxFileAt {uwthesis.tex}{898}
 \KAuxAutorefTarget {default}{base}{Doug Woos}
 
-\KAuxFileAt {uwthesis.tex}{829}
+\KAuxFileAt {uwthesis.tex}{899}
 \KAuxAutorefTarget {default}{base}{Eric Mullen}
 
-\KAuxFileAt {uwthesis.tex}{830}
+\KAuxFileAt {uwthesis.tex}{900}
 \KAuxAutorefTarget {default}{base}{Remy Wang}
 
-\KAuxFileAt {uwthesis.tex}{831}
+\KAuxFileAt {uwthesis.tex}{901}
 \KAuxAutorefTarget {default}{base}{Konstantin Weitz}
 
-\KAuxFileAt {uwthesis.tex}{832}
+\KAuxFileAt {uwthesis.tex}{902}
 \KAuxAutorefTarget {default}{base}{Mike He}
 
-\KAuxFileAt {uwthesis.tex}{833}
+\KAuxFileAt {uwthesis.tex}{903}
 \KAuxAutorefTarget {default}{base}{Alex Polozov}
 
-\KAuxFileAt {uwthesis.tex}{834}
+\KAuxFileAt {uwthesis.tex}{904}
 \KAuxAutorefTarget {default}{base}{Alex Sanchez-Stern}
 
-\KAuxFileAt {uwthesis.tex}{835}
+\KAuxFileAt {uwthesis.tex}{905}
 \KAuxAutorefTarget {default}{base}{Nathaniel Yazdani}
 
-\KAuxFileAt {uwthesis.tex}{836}
+\KAuxFileAt {uwthesis.tex}{906}
 \KAuxAutorefTarget {default}{base}{Sarah Chasins}
 
-\KAuxFileAt {uwthesis.tex}{837}
+\KAuxFileAt {uwthesis.tex}{907}
 \KAuxAutorefTarget {default}{base}{John Toman}
 
-\KAuxFileAt {uwthesis.tex}{838}
+\KAuxFileAt {uwthesis.tex}{908}
 \KAuxAutorefTarget {default}{base}{Ryan Doenges}
 
-\KAuxFileAt {uwthesis.tex}{839}
+\KAuxFileAt {uwthesis.tex}{909}
 \KAuxAutorefTarget {default}{base}{Melissa Hovik}
 
-\KAuxFileAt {uwthesis.tex}{840}
+\KAuxFileAt {uwthesis.tex}{910}
 \KAuxAutorefTarget {default}{base}{Julie Newcomb}
 
-\KAuxFileAt {uwthesis.tex}{841}
+\KAuxFileAt {uwthesis.tex}{911}
 \KAuxAutorefTarget {default}{base}{James Bornholt}
 
-\KAuxFileAt {uwthesis.tex}{842}
+\KAuxFileAt {uwthesis.tex}{912}
 \KAuxAutorefTarget {default}{base}{Daryl Zuniga}
 
-\KAuxFileAt {uwthesis.tex}{843}
+\KAuxFileAt {uwthesis.tex}{913}
 \KAuxAutorefTarget {default}{base}{Joe Redmond}
 
-\KAuxFileAt {uwthesis.tex}{844}
+\KAuxFileAt {uwthesis.tex}{914}
 \KAuxAutorefTarget {default}{base}{Amanda Swearngin}
 
-\KAuxFileAt {uwthesis.tex}{845}
+\KAuxFileAt {uwthesis.tex}{915}
 \KAuxAutorefTarget {default}{base}{Ali K\"{o}skal}
 
-\KAuxFileAt {uwthesis.tex}{846}
+\KAuxFileAt {uwthesis.tex}{916}
 \KAuxAutorefTarget {default}{base}{Calvin Loncaric}
 
-\KAuxFileAt {uwthesis.tex}{847}
+\KAuxFileAt {uwthesis.tex}{917}
 \KAuxAutorefTarget {default}{base}{Chenglong Wang}
 
-\KAuxFileAt {uwthesis.tex}{848}
+\KAuxFileAt {uwthesis.tex}{918}
 \KAuxAutorefTarget {default}{base}{Mangpo Phitchaya Phothilimthana}
 
-\KAuxFileAt {uwthesis.tex}{849}
+\KAuxFileAt {uwthesis.tex}{919}
 \KAuxAutorefTarget {default}{base}{Rohin Shah}
 
-\KAuxFileAt {uwthesis.tex}{850}
+\KAuxFileAt {uwthesis.tex}{920}
 \KAuxAutorefTarget {default}{base}{Stuart Pernsteiner}
 
-\KAuxFileAt {uwthesis.tex}{851}
+\KAuxFileAt {uwthesis.tex}{921}
 \KAuxAutorefTarget {default}{base}{Spencer Pearson}
 
-\KAuxFileAt {uwthesis.tex}{852}
+\KAuxFileAt {uwthesis.tex}{922}
 \KAuxAutorefTarget {default}{base}{Sam Elliott}
 
-\KAuxFileAt {uwthesis.tex}{853}
+\KAuxFileAt {uwthesis.tex}{923}
 \KAuxAutorefTarget {default}{base}{Maaz Ahmad}
 
-\KAuxFileAt {uwthesis.tex}{854}
+\KAuxFileAt {uwthesis.tex}{924}
 \KAuxAutorefTarget {default}{base}{Dan Cascaval}
 
-\KAuxFileAt {uwthesis.tex}{855}
+\KAuxFileAt {uwthesis.tex}{925}
 \KAuxAutorefTarget {default}{base}{Krzysztof Drewniak}
 
-\KAuxFileAt {uwthesis.tex}{856}
+\KAuxFileAt {uwthesis.tex}{926}
 \KAuxAutorefTarget {default}{base}{Michael Flanders}
 
-\KAuxFileAt {uwthesis.tex}{857}
+\KAuxFileAt {uwthesis.tex}{927}
 \KAuxAutorefTarget {default}{base}{Eunice Jun}
 
-\KAuxFileAt {uwthesis.tex}{858}
+\KAuxFileAt {uwthesis.tex}{928}
 \KAuxAutorefTarget {default}{base}{Sam Kaufman}
 
-\KAuxFileAt {uwthesis.tex}{859}
+\KAuxFileAt {uwthesis.tex}{929}
 \KAuxAutorefTarget {default}{base}{Rashmi Mudduluru}
 
-\KAuxFileAt {uwthesis.tex}{860}
+\KAuxFileAt {uwthesis.tex}{930}
 \KAuxAutorefTarget {default}{base}{Sorawee Porncharoenwase}
 
-\KAuxFileAt {uwthesis.tex}{861}
+\KAuxFileAt {uwthesis.tex}{931}
 \KAuxAutorefTarget {default}{base}{Thomas Schweizer}
 
-\KAuxFileAt {uwthesis.tex}{862}
+\KAuxFileAt {uwthesis.tex}{932}
 \KAuxAutorefTarget {default}{base}{Luis Vega}
 
-\KAuxFileAt {uwthesis.tex}{863}
+\KAuxFileAt {uwthesis.tex}{933}
 \KAuxAutorefTarget {default}{base}{Sahil Verma}
 
-\KAuxFileAt {uwthesis.tex}{864}
+\KAuxFileAt {uwthesis.tex}{934}
 \KAuxAutorefTarget {default}{base}{Zhen Zhang}
 
-\KAuxFileAt {uwthesis.tex}{865}
+\KAuxFileAt {uwthesis.tex}{935}
 \KAuxAutorefTarget {default}{base}{Amy Zhu}
 
-\KAuxFileAt {uwthesis.tex}{866}
+\KAuxFileAt {uwthesis.tex}{936}
 \KAuxAutorefTarget {default}{base}{RanDair Porter}
 
-\KAuxFileAt {uwthesis.tex}{867}
+\KAuxFileAt {uwthesis.tex}{937}
 \KAuxAutorefTarget {default}{base}{Jasper Hugunin}
 
-\KAuxFileAt {uwthesis.tex}{868}
+\KAuxFileAt {uwthesis.tex}{938}
 \KAuxAutorefTarget {default}{base}{Logan Weber}
 
-\KAuxFileAt {uwthesis.tex}{869}
+\KAuxFileAt {uwthesis.tex}{939}
 \KAuxAutorefTarget {default}{base}{Max Ruttenberg}
 
-\KAuxFileAt {uwthesis.tex}{870}
+\KAuxFileAt {uwthesis.tex}{940}
 \KAuxAutorefTarget {default}{base}{Taylor Blau}
 
-\KAuxFileAt {uwthesis.tex}{871}
+\KAuxFileAt {uwthesis.tex}{941}
 \KAuxAutorefTarget {default}{base}{Josh Pollock}
 
-\KAuxFileAt {uwthesis.tex}{872}
+\KAuxFileAt {uwthesis.tex}{942}
 \KAuxAutorefTarget {default}{base}{Luke Nelson}
 
-\KAuxFileAt {uwthesis.tex}{873}
+\KAuxFileAt {uwthesis.tex}{943}
 \KAuxAutorefTarget {default}{base}{Shumo Chu}
 
-\KAuxFileAt {uwthesis.tex}{879}
+\KAuxFileAt {uwthesis.tex}{949}
 \KAuxAutorefTarget {default}{base}{Zach Tatlock}
 
-\KAuxFileAt {uwthesis.tex}{880}
+\KAuxFileAt {uwthesis.tex}{950}
 \KAuxAutorefTarget {default}{base}{Roy Or-El}
 
-\KAuxFileAt {uwthesis.tex}{881}
+\KAuxFileAt {uwthesis.tex}{951}
 \KAuxAutorefTarget {default}{base}{Vikram Iyer}
 
-\KAuxFileAt {uwthesis.tex}{882}
+\KAuxFileAt {uwthesis.tex}{952}
 \KAuxAutorefTarget {default}{base}{Esther Jang}
 
-\KAuxFileAt {uwthesis.tex}{883}
+\KAuxFileAt {uwthesis.tex}{953}
 \KAuxAutorefTarget {default}{base}{Anna Kornfeld Simpson}
 
-\KAuxFileAt {uwthesis.tex}{884}
+\KAuxFileAt {uwthesis.tex}{954}
 \KAuxAutorefTarget {default}{base}{Mark Velednitsky}
 
-\KAuxFileAt {uwthesis.tex}{885}
+\KAuxFileAt {uwthesis.tex}{955}
 \KAuxAutorefTarget {default}{base}{Sarah Chasins}
 
-\KAuxFileAt {uwthesis.tex}{886}
+\KAuxFileAt {uwthesis.tex}{956}
 \KAuxAutorefTarget {default}{base}{UCSD ProgSys}
 
-\KAuxFileAt {uwthesis.tex}{887}
+\KAuxFileAt {uwthesis.tex}{957}
 \KAuxAutorefTarget {default}{base}{Marcela Mendoza}
 
-\KAuxFileAt {uwthesis.tex}{888}
+\KAuxFileAt {uwthesis.tex}{958}
 \KAuxAutorefTarget {default}{base}{Anne Spencer Ross}
 
-\KAuxFileAt {uwthesis.tex}{889}
+\KAuxFileAt {uwthesis.tex}{959}
 \KAuxAutorefTarget {default}{base}{Laura Chick}
 
-\KAuxFileAt {uwthesis.tex}{896}
+\KAuxFileAt {uwthesis.tex}{966}
 \KAuxAutorefTarget {default}{base}{Qi Cheng}
 \KAuxAutorefTarget {default}{base}{Ellie Berry}
 \KAuxAutorefTarget {default}{base}{Mer Joyce}
 \KAuxAutorefTarget {default}{base}{Wade Gordon}
 \KAuxAutorefTarget {default}{base}{Jasper Tran O'Leary}
 
-\KAuxFileAt {uwthesis.tex}{897}
+\KAuxFileAt {uwthesis.tex}{967}
 \KAuxAutorefTarget {default}{base}{Misha Kolmogorov}
+
+\KAuxFileAt {uwthesis.tex}{975}
+\KAuxAutorefTarget {default}{base}{Karl Palmskog}
 
 \KAuxFileAt {intro.tex}{13}
 \KAuxAutorefTarget {default}{base}{verification}
@@ -1004,20 +1168,71 @@
 \KAuxAutorefTarget {default}{base}{Agda}
 \KAuxAutorefTarget {default}{base}{Lean}
 \KAuxAutorefTarget {default}{base}{NuPRL}
+
+\KAuxFileAt {intro.tex}{68}
+\KAuxAutorefTarget {default}{base}{program}
+
+\KAuxFileAt {intro.tex}{69}
+\KAuxAutorefTarget {default}{base}{specification}
+
+\KAuxFileAt {intro.tex}{70}
+\KAuxAutorefTarget {default}{base}{proof}
+
+\KAuxFileAt {intro.tex}{73}
+\KAuxAutorefTarget {default}{base}{kernel}
 \KAuxDeclaredScopeTag {sec:thesis}
 \KAuxNewLinkScopetagInstance {sec:thesis}{document}
+
+\KAuxFileAt {intro.tex}{87}
+\KAuxAutorefTarget {default}{base}{proof repair}
+
+\KAuxFileAt {intro.tex}{96}
+\KAuxAutorefTarget {default}{base}{thesis}
 \KAuxDeclaredScopeTag {sec:intro-approach}
 \KAuxNewLinkScopetagInstance {sec:intro-approach}{document}
 \KAuxDeclaredScopeTag {fig:workflow}
 \KAuxNewLinkScopetagInstance {fig:workflow}{document}
+
+\KAuxFileAt {intro.tex}{119}
+\KAuxAutorefTarget {default}{base}{tactics}
+
+\KAuxFileAt {intro.tex}{121}
+\KAuxAutorefTarget {default}{base}{proof script}
+
+\KAuxFileAt {intro.tex}{123}
+\KAuxAutorefTarget {default}{base}{proof term}
+
+\KAuxFileAt {intro.tex}{136}
+\KAuxAutorefTarget {default}{base}{semantic differencing}
+
+\KAuxFileAt {intro.tex}{138}
+\KAuxAutorefTarget {default}{base}{proof term transformations}
 \KAuxDeclaredScopeTag {sec:intro-results}
 \KAuxNewLinkScopetagInstance {sec:intro-results}{document}
 
-\KAuxFileAt {guide.tex}{96}
-\KAuxAutorefTarget {default}{base}{RanDair Porter}
+\KAuxFileAt {intro.tex}{160}
+\KAuxAutorefTarget {default}{base}{results}
 
-\KAuxFileAt {guide.tex}{110}
-\KAuxAutorefTarget {default}{base}{Karl Palmskog}
+\KAuxFileAt {intro.tex}{186}
+\KAuxAutorefTarget {default}{base}{\sysnamelong }
+
+\KAuxFileAt {intro.tex}{187}
+\KAuxAutorefTarget {default}{base}{Trusted Computing Base}
+
+\KAuxFileAt {guide.tex}{20}
+\KAuxAutorefTarget {default}{base}{Adapting Proof Automation to Adapt Proofs}
+
+\KAuxFileAt {guide.tex}{21}
+\KAuxErrorKnowledgeUnknown {default}{}{Proof Repair Across Type Equivalences}{Proof Repair Across Type Equivalences}{\intro }
+
+\KAuxFileAt {guide.tex}{26}
+\KAuxAutorefTarget {default}{base}{Ornaments for Proof Reuse in Coq}
+
+\KAuxFileAt {guide.tex}{27}
+\KAuxAutorefTarget {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
+
+\KAuxFileAt {guide.tex}{28}
+\KAuxAutorefTarget {default}{base}{QED at Large: A Survey of Engineering of Formally Verified Software}
 \KAuxDeclaredScopeTag {chapt:mot}
 \KAuxNewLinkScopetagInstance {chapt:mot}{document}
 

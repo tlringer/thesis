@@ -4,8 +4,8 @@
     \subitem Coauthors
       \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{25}, \hyperpage{43}
-      \subsubitem Karl Palmskog, \hyperpage{10}, \hyperpage{110}, 
-		\hyperpage{119}
+      \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
+		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
 		\hyperpage{9, 10}, \hyperpage{101}, 
 		\hyperpage{105, 106}
@@ -87,7 +87,7 @@
       \subsubitem Thomas Schweizer, \hyperpage{xiii}
       \subsubitem Zhen Zhang, \hyperpage{xiii}
     \subitem Labs
-      \subsubitem UCSD ProgSys, \hyperpage{xiii}
+      \subsubitem UCSD ProgSys, \hyperpage{xiii}, \hyperpage{10}
       \subsubitem UW PLSE, \hyperpage{xii}
     \subitem Mentors \& Advisors
       \subsubitem Brandi K. Adams, \hyperpage{xi}
@@ -106,35 +106,42 @@
   \indexspace
 
   \item Concepts
-    \subitem Proof Engineering, \hyperpage{4--6}, \hyperpage{8}, 
-		\hyperpage{12}, \hyperpage{27}, \hyperpage{31}, 
-		\hyperpage{52}, \hyperpage{66}
     \subitem Type Theory
       \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
-    \subitem Verification, \hyperpage{3, 4}, \hyperpage{6}, 
-		\hyperpage{11, 12}, \hyperpage{22}, 
-		\hyperpage{108, 109}
+    \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
+		\hyperpage{22}, \hyperpage{108, 109}
+      \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}
+      \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
+		\hyperpage{11, 12}, \hyperpage{109}
+      \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 
+		\hyperpage{27}, \hyperpage{31}, \hyperpage{52}, 
+		\hyperpage{66}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{19}, \hyperpage{21, 22}, 
 		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
 
   \indexspace
 
-  \item Languages
-    \subitem Gallina, \hyperpage{12--14}, \hyperpage{16}, 
-		\hyperpage{20}, \hyperpage{27, 28}, \hyperpage{33}, 
-		\hyperpage{40}, \hyperpage{68}, \hyperpage{109, 110}, 
-		\hyperpage{112}
-    \subitem Ltac, \hyperpage{13, 14}, \hyperpage{27}, \hyperpage{109}, 
-		\hyperpage{111}
+  \item Previously Published Material
+    \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
+		\hyperpage{8}
+    \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
+    \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
+    \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
+		\hyperpage{8}
 
   \indexspace
 
-  \item Phrases
-    \subitem Reason to Believe, \hyperpage{3}, \hyperpage{123}
-
-  \indexspace
-
+  \item Thesis
+    \subitem Approach
+      \subsubitem Proof Term Transformations, \hyperpage{6, 7}
+      \subsubitem Semantic Differencing, \hyperpage{6, 7}
+    \subitem Formal Thesis Statement, \hyperpage{5}
+    \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
+		\hyperpage{123}
+    \subitem Results, \hyperpage{6}
+    \subitem Technology
+      \subsubitem Proof Repair, \hyperpage{4}
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
 		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}, 

@@ -10,12 +10,12 @@
 % TODO can say ``see survey paper''
 
 What would it take to empower programmers of all skill levels across all domains to formally prove
-the absence of costly or dangerous bugs in software systems---that is, to formally \textit{verify} them?
+the absence of costly or dangerous bugs in software systems---that is, to formally \intro{verify} them?
 
 Verification has already come a long way toward this since its inception.
 This is especially true when it comes to the scale of systems that can be verified.
 The seL4~\cite{Klein2009} verified operating system (OS) microkernel, for example,
-is the effort of a team of proof engineers spanning more than
+is the result of a team effort spanning more than
 a million lines of proof, costing over 20 person-years.
 Given a famous 1977 critique of verification~\cite{DeMillo1977} (emphasis mine):
 
@@ -38,27 +38,28 @@ first time around.
 \end{quote}
 This remains so difficult that sometimes, even experts give up in the face of change (Section~\ref{sec:irl}).
 
-This thesis aims to change that by taking advantage of a missed opportunity: tools for developing verified systems
+This thesis aims to change that by taking advantage of a missed opportunity: tools for developing verified systems (Section~\ref{sec:dev-verif})
 have no understanding of how these systems evolve over time, so they miss out on crucial information.
-This thesis introduces a new class of verification tools called \textit{proof repair} tools.
-Proof repair tools understand how software systems evolve, and use the crucial information that evolution carries
-to automatically evolve proofs about those systems.
-This gives us \kl{reason to believe}.
+This thesis introduces a new class of verification tools called \textit{proof repair} tools (Section~\ref{sec:thesis})
+that understand how software systems evolve, and use the crucial information that evolution carries
+to automatically evolve proofs about those systems (Section~\ref{sec:intro-approach}).
+Proof repair is \kl{reason to believe} (Section~\ref{sec:intro-results}).
 
-\section{Thesis}
+\section{Developing Verified Systems}
+\label{sec:dev-verif}
 
 % TODO segue sentence
-Proof repair falls under the umbrella of \textit{proof engineering}: the technologies that make it easier
-to develop and maintain verified systems.
+Proof repair falls under the umbrella of \intro{proof engineering}: the technologies that make it easier
+to develop and maintain verified systems (Section~\ref{sec:proofeng}).
 Much like software engineering scales programming to large systems, so proof engineering scales verification to large systems. 
 In recent years, proof engineers have verified OS microkernels~\cite{Klein2009, Klein2014micro}, machine learning systems~\cite{pmlr-v70-selsam17a}, distributed systems~\cite{Woos:2016:PCF:2854065.2854081}, constraint solvers~\cite{blanchette2018verified}, web browser kernels~\cite{Jang2012}, compilers~\cite{Leroy:POPL06, Leroy2009, Kumar2014}, file systems~\cite{Chajed2019, Chen2015, Chajed2017}, and even a quantum optimizer~\cite{hietala2021verified}.
 Practitioners have found verified systems to be more robust and secure in deployment (Chapter~\ref{chapt:mot}).
 
 Proof engineering focuses in particular on verified systems that have been
-developed using special tools called \textit{proof assistants}.
-Examples of proof assistants include Coq~\cite{coq}, Isabelle/HOL~\cite{isabelle}, 
-HOL Light~\cite{hollight}, and Lean~\cite{lean}.
-The proof assistant that I focus on in this thesis will be the Coq proof assistant.
+developed using special tools called \intro{proof assistants}.
+Examples of proof assistants include \intro{Coq}~\cite{coq}, \intro{Isabelle/HOL}~\cite{isabelle}, \intro{HOL Light}~\cite{hollight}, \intro{HOL4}~\cite{hol4-interact},
+\intro{Agda}~\cite{agda}, \intro{Lean}~\cite{lean}, and \intro{NuPRL}~\cite{nuprl}.
+The proof assistant that I focus on in this thesis will be the \kl{Coq} proof assistant.
 A discussion of how this work carries over to other proof assistants is in Chapter~\ref{chapt:conclusions}.
 
 To develop a verified system using a proof assistant like Coq, the proof engineer does three things:
@@ -69,7 +70,10 @@ To develop a verified system using a proof assistant like Coq, the proof enginee
 \item proves that the program satisfies the specification.
 \end{enumerate}
 This proof assistant then automatically checks this proof with a small trusted part of its system~\cite{Barendregt2002,Barendregt2351}.
-If the proof is correct, then the program satisfies its specification---it is \textit{verified}.
+If the proof is correct, then the program satisfies its specification---it is \kl{verified}.
+
+\section{Thesis}
+\label{sec:thesis}
 
 Proof repair automatically fixes broken proofs in response to changes in programs and specifications.
 For example, a proof engineer who optimizes an algorithm may change the program, but not the specification; a proof engineer who adapts an OS to new hardware may change both. Even a small change to a program or specification can break many proofs, especially in large systems.
@@ -87,14 +91,15 @@ More formally:
 \end{quote}
 
 \section{Approach}
+\label{sec:intro-approach}
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.32]{Development}
 \end{center}
-\label{fig:workflow}
-\caption{An illustration of the typical interactive workflow of using Coq to write a proof. The checkmark at the end
+\caption{An illustration of the typical interactive workflow of using the \kl{Coq} \kl{proof assistant} to write a proof. The checkmark at the end
 represents correctness of the proof, which is communicated back to the proof engineer in the end.}
+\label{fig:workflow}
 \end{figure}
 
 % TODO here, say: we assume Coq in here, see survey paper for more, tactics versus no tactics, de bruijn, where Coq is,
@@ -104,11 +109,11 @@ represents correctness of the proof, which is communicated back to the proof eng
 % TODO the amount of background: in reading guide, give resources for learning Coq in more detail, but don't go into too much Coq detail here
 
 The way that proof engineers typically write proofs can obfuscate the information that changes in programs, specifications, and proofs carry.
-The typical proof engineering workflow in Coq is interactive: The proof engineer passes Coq high-level
+The typical proof engineering workflow in \kl{Coq} is interactive: The proof engineer passes Coq high-level
 search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
 by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
 continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
-To check the proof, the proof assistant compiles it down to a low-level representation called a \textit{proof term},
+To check the proof, Coq compiles it down to a low-level representation called a \textit{proof term},
 then checks that the proof term has the expected type.
 Figure~\ref{fig:workflow} illustrates this workflow.
 
@@ -132,6 +137,7 @@ In the end, it uses a prototype decompiler to get from the low-level language ba
 so that proof engineers can continue to work in that language going forward. % TODO lol this sucks but whatever it's a first draft
 
 \section{Results}
+\label{sec:intro-results}
 
 The technical results of this thesis are threefold:
 
@@ -153,7 +159,7 @@ The semantic differencing algorithms compare the old and new versions of a chang
 and from that find a diff that describes that information corresponding to that change;
 the transformations then use that diff to transform some term to a more general fix.
 The details vary by the class of change supported.
-These design is guided heavily by foundational developments in depenedent type theory;
+These design is guided heavily by foundational developments in dependent type theory;
 the theory is sprinkle throughout as appropriate. % TODO may want to list or link to sections here
 More details including limitations are in the corresponding chapters. % TODO link to those chapters
 

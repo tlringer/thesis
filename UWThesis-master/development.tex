@@ -1,8 +1,8 @@
 \section{Proof Development}
 \label{sec:mot-dev}
 
-Before I motivate proof maintenance and repair, it helps to understand proof development in Coq to begin with.
-In the introduction, I briefly explained the workflow for using Coq to develop a verified system:
+Before I motivate proof maintenance and repair, it helps to understand proof development to begin with.
+In the introduction, I briefly explained the workflow for using a \kl{proof assistant} to develop a verified system:
 
 \begin{quote}
 The proof engineer does three things:
@@ -13,7 +13,7 @@ The proof engineer does three things:
 \item proves that the program satisfies the specification.
 \end{enumerate}
 \end{quote}
-That functional programming language is a rich functional programming language called \intro{Gallina}.
+In the \kl{Coq} proof assistnat, that functional programming language is a rich functional programming language called \intro{Gallina}.
 It is possile to use Gallina to write the program, the specification, and the proof---but writing the proof in Gallina can be challenging.
 Instead, proof engineers typically use Gallina to write only the program and specification,
 and write the proof interactively.
@@ -23,7 +23,7 @@ I alluded to this in the introduction as well, when I explained the typical proo
 The proof engineer passes Coq high-level search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
 by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
 continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
-To check the proof, the proof assistant compiles it down to a low-level representation called a \textit{proof term},
+To check the proof, Coq compiles it down to a low-level representation called a \textit{proof term},
 then checks that the proof term has the expected type.
 \end{quote}
 The low-level language of proof terms in Coq is \kl{Gallina}---the same rich functional programming language proof engineers use to write programs and specifications.

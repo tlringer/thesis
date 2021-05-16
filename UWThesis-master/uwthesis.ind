@@ -106,7 +106,14 @@
   \indexspace
 
   \item Concepts
-    \subitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
+    \subitem Proof Engineering, \hyperpage{4--6}, \hyperpage{8}, 
+		\hyperpage{12}, \hyperpage{27}, \hyperpage{31}, 
+		\hyperpage{52}, \hyperpage{66}
+    \subitem Type Theory
+      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
+    \subitem Verification, \hyperpage{3, 4}, \hyperpage{6}, 
+		\hyperpage{11, 12}, \hyperpage{22}, 
+		\hyperpage{108, 109}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{19}, \hyperpage{21, 22}, 
 		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
@@ -124,7 +131,7 @@
   \indexspace
 
   \item Phrases
-    \subitem Reason to Believe, \hyperpage{3}
+    \subitem Reason to Believe, \hyperpage{3}, \hyperpage{123}
 
   \indexspace
 

@@ -6,6 +6,7 @@
   + axioms
   + papers, like REPLICA and the survey paper (by name and not by name)
   + acks
+  + defs
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - clean citations
 - thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
@@ -28,6 +29,7 @@
 - revision passes
 - make certain future work language speculative instead to avoid "being wrong"
 - photo of grandpa
+- knowledge package color change to make reasonable
 
 # Chapter 1
 

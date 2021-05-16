@@ -88,8 +88,26 @@
 \indexentry{Acknowledgments!Friends!Wade Gordon|hyperpage}{xiii}
 \indexentry{Acknowledgments!Friends!Jasper Tran O'Leary|hyperpage}{xiii}
 \indexentry{Acknowledgments!Friends!Misha Kolmogorov|hyperpage}{xiii}
+\indexentry{Concepts!Verification|hyperpage}{3}
 \indexentry{Phrases!Reason to Believe|hyperpage}{3}
 \indexentry{Phrases!Reason to Believe|hyperpage}{3}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Isabelle/HOL|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!HOL Light|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!HOL4|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Agda|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Lean|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!NuPRL|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{4}
+\indexentry{Concepts!Verification|hyperpage}{4}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{5}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{8}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{8}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{9}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{10}
@@ -97,36 +115,46 @@
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{10}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{10}
-\indexentry{Languages!Gallina|hyperpage}{12}
-\indexentry{Languages!Gallina|hyperpage}{13}
-\indexentry{Languages!Ltac|hyperpage}{13}
-\indexentry{Languages!Gallina|hyperpage}{14}
-\indexentry{Languages!Gallina|hyperpage}{14}
-\indexentry{Languages!Ltac|hyperpage}{14}
-\indexentry{Languages!Ltac|hyperpage}{14}
-\indexentry{Languages!Gallina|hyperpage}{16}
-\indexentry{Languages!Gallina|hyperpage}{16}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{11}
+\indexentry{Concepts!Verification|hyperpage}{11}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{12}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{12}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{12}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{12}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{13}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{13}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{14}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{14}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{14}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{14}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{16}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{16}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{16}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{19}
-\indexentry{Languages!Gallina|hyperpage}{20}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{20}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{20}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{20}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{21}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{21}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{22}
+\indexentry{Concepts!Verification|hyperpage}{22}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{25}
-\indexentry{Languages!Gallina|hyperpage}{27}
-\indexentry{Languages!Ltac|hyperpage}{27}
-\indexentry{Languages!Gallina|hyperpage}{28}
-\indexentry{Languages!Gallina|hyperpage}{33}
-\indexentry{Languages!Gallina|hyperpage}{40}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{27}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{27}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{27}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{28}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{31}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{33}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{40}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{40}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{41}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{43}
-\indexentry{Languages!Gallina|hyperpage}{68}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{52}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{66}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{68}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{75}
-\indexentry{Concepts!Algebraic Ornaments|hyperpage}{81}
+\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{81}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{93}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{94}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
@@ -135,18 +163,29 @@
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{100}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
-\indexentry{Concepts!Algebraic Ornaments|hyperpage}{102}
+\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{102}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{106}
+\indexentry{Concepts!Verification|hyperpage}{108}
+\indexentry{Concepts!Verification|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Isabelle/HOL|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!HOL Light|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!HOL4|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Agda|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Lean|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!NuPRL|hyperpage}{109}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{109}
-\indexentry{Languages!Gallina|hyperpage}{109}
-\indexentry{Languages!Ltac|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{109}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{109}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{109}
-\indexentry{Languages!Gallina|hyperpage}{110}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{110}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{110}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{110}
-\indexentry{Languages!Ltac|hyperpage}{111}
-\indexentry{Languages!Gallina|hyperpage}{112}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{112}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{117}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{119}
+\indexentry{Phrases!Reason to Believe|hyperpage}{123}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{124}

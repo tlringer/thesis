@@ -1,8 +1,8 @@
 \chapter{Motivating Proof Repair}
 \label{chapt:mot}
 
-This thesis describes techniques and tools for automatically repairing broken proofs in a proof assistant.
-It focuses in particular on proofs about formally verified programs, though many of the techniques and tools carry over to mathematical proofs as well.
+This thesis describes techniques and tools for automatically repairing broken proofs in a \kl{proof assistant}.
+It focuses in particular on proofs about formally \kl{verified} programs, though many of the techniques and tools carry over to mathematical proofs as well.
 Formal verification of a program can improve actual and perceived reliability. % TODO QED at Large
 It can help the programmer think about the desired and actual behavior of the program,
 perhaps finding and fixing bugs in the process~\cite{murraybp}.
@@ -17,11 +17,11 @@ It has also stood up to rigorous testing: while the test generation tool Csmith~
 79 bugs in GCC and 202 bugs in LLVM, it was unable to find any bugs in the verified parts of CompCert.
 %This demonstrated the empirical reliability of CompCert, which in turn further increased confidence in its reliability.
 
-CompCert, however, was not a simple endeavor: the original development comprised of approximately 35000 lines of Coq code;
+CompCert, however, was not a simple endeavor: the original development comprised of approximately 35000 lines of code;
 functionality accounted for only 13\% of this, while specifications and proofs accounted for the other 87\%.
 This is not unusual for large proof developments. The initial correctness proofs for an OS microkernel,
 for example, consisted of 480000 lines of specifications and proofs~\cite{Klein2014micro}.
-Proof engineering technologies make it possible to develop verified systems at this scale.
+\kl{Proof engineering} technologies make it possible to develop verified systems at this scale.
 See Ringer and friends 2019~\cite{PGL-045} for a comprehensive overview of proof engineering.
 
 Proof repair---the focus of this thesis---is a new proof engineering technology that focuses in particular on minimizing the burden of change as verified systems evolve over time.
@@ -30,7 +30,7 @@ Instead, I motivate it on a simple proof development: a list zip function accomp
 This is a small example, but it is worth noting that large proof developments like compilers and microkernels
 are often made up of many of these small examples built on top of each other.
 
-The proof assistant that I motivate this on is Coq, since this is the proof assistant for which \sysnamelong is implemented.
+The proof assistant that I motivate this on is \kl{Coq}, since this is the proof assistant for which \sysnamelong is implemented.
 I motivate this using the small list zip example in three parts:
 
 \begin{enumerate}

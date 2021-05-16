@@ -27,6 +27,7 @@
 - user -> proof engineer in diagrams (nice to have)
 - revision passes
 - make certain future work language speculative instead to avoid "being wrong"
+- photo of grandpa
 
 # Chapter 1
 

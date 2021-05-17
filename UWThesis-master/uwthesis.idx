@@ -178,14 +178,21 @@
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script|hyperpage}{16}
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{16}
 \indexentry{Concepts!Verification!Kernel|hyperpage}{16}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{18}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{18}
+\indexentry{Concepts!Verification!Kernel|hyperpage}{18}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{18}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{18}
+\indexentry{Concepts!Type Theory!Inductive Types|hyperpage}{18}
+\indexentry{Concepts!Type Theory!Inductive Types!Constructors|hyperpage}{18}
+\indexentry{Concepts!Type Theory!Inductive Types!Eliminators|hyperpage}{18}
+\indexentry{Concepts!Type Theory!Inductive Types!Motive|hyperpage}{19}
+\indexentry{Concepts!Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{19}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{20}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{21}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{21}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{21}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{21}
-\indexentry{Conventions!Primitive Eliminators|hyperpage}{21}
+\indexentry{Conventions!Primitive Eliminators|hyperpage}{22}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{22}
 \indexentry{Concepts!Verification|hyperpage}{23}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{25}

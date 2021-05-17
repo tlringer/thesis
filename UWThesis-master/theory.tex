@@ -2,19 +2,21 @@
 \label{sec:mot-theory}
 
 Now that we have written a small proof development in Coq, let us take a step back and look at the theoretical foundations that make this possible.
-While proof scripts help humans write proofs, it is thanks to the proof terms these compile down to that Coq is able to check our proof in the end.
-These proof terms are in a rich functional programming language called \kl{Gallina} (Section~\ref{sec:gallina}).
+While proof scripts help humans like us write proofs, it is thanks to the proof terms these compile down to that Coq is able to check our proofs for us.
+These proof terms are in the rich functional programming language Gallina (Section~\ref{sec:gallina}).
 Gallina implements a rich type theory called the \intro{Calculus of Inductive Constructions} (Section~\ref{sec:cic}).
 This rich type theory makes it possible to write programs, specifications, and proofs in Coq,
-and have a small part of Coq check those proofs in the end.
+and have a small part of Coq---the \kl{kernel}---check those proofs in the end.
 
 \subsubsection{Gallina}
 \label{sec:gallina}
 
-Gallina is a rich functional programming language with support for writing proofs.
+Coq's \kl{proof term} language \kl{Gallina} is a rich functional programming language with support for writing proofs.
 To see the power of Gallina, let us dissect our proof that \lstinline{zip} preserves its length.
-I mentioned earlier that the \lstinline{nat} and \lstinline{list} datatypes,
-and the \lstinline{length} function itself, can all be found inside of the Coq standard library.
+
+Our proof development about \lstinline{zip} uses the \lstinline{nat} and \lstinline{list} datatypes,
+as well as the \lstinline{length} function.
+I mentioned earlier that all of \lstinline{nat}, \lstinline{list}, and \lstinline{length} can be found inside of the Coq standard library.
 But looking into these datatypes and this function already points to many useful features of Gallina.
 
 \begin{figure}
@@ -29,31 +31,34 @@ Inductive nat :=
 \begin{minipage}{0.68\textwidth}
 \begin{lstlisting}
 nat_rect :
-  $\forall$ (P : nat $\rightarrow$ Type),
+  (@\ltacforall@) (P : nat $\rightarrow$ Type),
     P O $\rightarrow$ (* base case *)
-    ($\forall$ (n : nat),
+    ((@\ltacforall@) (n : nat),
       (* inductive case *)
       P n $\rightarrow$ P (S n)) $\rightarrow$
-    $\forall$ (n : nat), P n.
+    (@\ltacforall@) (n : nat), P n.
 \end{lstlisting}
 \end{minipage}
 \caption{The type of natural numbers \lstinline{nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{nat_rect} that Coq generates (right).}
 \label{fig:nat}
 \end{figure}
 
-Each of \lstinline{nat} and \lstinline{list} in Gallina is an \textit{inductive type}:
-it is defined by its \textit{constructors} (ways of constructing a term with that type).
+Let us start with the datatypes \lstinline{nat} and \lstinline{list}.
+Each of \lstinline{nat} and \lstinline{list} in Gallina is an \intro{inductive type}:
+it is defined by its \intro{constructors} (ways of constructing a term with that type).
 A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
 is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
 these are the two constructors of \lstinline{nat}.
 
-Every inductive type in Gallina comes equipped with an \textit{eliminator} or induction principle
+Every inductive type in Gallina comes equipped with an \intro{eliminator} (also called an induction principle)
 that the proof engineer can use to write functions and proofs about the datatype.
 For example, the eliminator for \lstinline{nat} (Figure~\ref{fig:nat}, right) is the standard induction principle for natural numbers,
-which Coq calls \lstinline{nat_rect}. % TODO footnote about nat_ind, nat_rec, nat_rect
-This eliminator states that a statement \lstinline{P} (called the inductive \textit{motive}) about the natural numbers
+which Coq calls \lstinline{nat_rect}.\footnote{For technical reasons that are not important to this thesis,
+Coq actually defines \textit{three} eliminators: \lstinline{nat_rect}, \lstinline{nat_rec}, and \lstinline{nat_ind}.
+For the sake of this thesis, it is sufficient to imagine that these are all the same.}
+This eliminator states that a statement \lstinline{P} (called the inductive \intro{motive}) about the natural numbers
 holds for every number if it holds for \lstinline{O} in the base case and, in the inductive case,
-assuming it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
+assuming the \intro{inductive hypothesis} that it holds for some \lstinline{n}, it also holds for the successor \lstinline{S n}.
 
 \begin{figure}
 \begin{minipage}{0.44\textwidth}
@@ -65,18 +70,18 @@ Inductive list {T : Type} :=
 \end{lstlisting}
 \end{minipage}
 \hfill
-\begin{minipage}{0.54\textwidth}
+\begin{minipage}{0.55\textwidth}
 \begin{lstlisting}
-list_rect :
-  $\forall$ {T : Type} (P : list T $\rightarrow$ Type),
+list_rect {T : Type} :
+  (@\ltacforall@) (P : list T $\rightarrow$ Type),
     P nil $\rightarrow$ (* base case *)
-    ($\forall$ (t : T) (tl : list T),
+    ((@\ltacforall@) (t : T) (tl : list T),
       (* inductive case *)
       P tl $\rightarrow$ P (cons t tl)) $\rightarrow$
-    $\forall$ (l : list T), P l.
+    (@\ltacforall@) (l : list T), P l.
 \end{lstlisting}
 \end{minipage}
-\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right). The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.}
+\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right).}
 \label{fig:list}
 \end{figure}
 
@@ -92,7 +97,7 @@ but with an argument corresponding to the parameter \lstinline{T} over which \ls
 and with an additional argument corresponding to the new element in the inductive case.
 
 One interesting thing about the types of these eliminators \lstinline{list_rect} and \lstinline{nat_rect}
-include universal quantification over all inputs, written $\forall$.
+include universal quantification over all inputs, written \ltacforall.
 Gallina's type system is expressive enough to include universal quantification over inputs, as we will soon see.
 
 \begin{figure}
@@ -121,8 +126,9 @@ Definition length {T} l :=
 \label{fig:length}
 \end{figure}
 
-We can use these eliminators to write functions and proofs, like the \lstinline{length} function (Figure~\ref{fig:length}, right).
-More standard is to write functions using pattern matching and guarded recursion, like the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
+We can use these eliminators to write not just proofs, but also functions, like the \lstinline{length} function (Figure~\ref{fig:length}, right).
+For functions, though, it is more standard to instead use pattern matching and guarded recursion, like 
+the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
 Both of these two functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
 the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
@@ -192,7 +198,7 @@ The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Ca
 CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
 CoC with an infinite universe hierarchy is called CoC$_{\omega}$. % TODO need to explain or defer
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
-Note that whereas in Gallina we represent universal quantification over terms or types with $\forall$, here we represent it with $\Pi$, as is standard.
+Note that whereas in Gallina we represent universal quantification over terms or types with (@\ltacforall@), here we represent it with $\Pi$, as is standard.
 
 \begin{figure*}
 \small

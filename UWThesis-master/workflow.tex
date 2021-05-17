@@ -17,7 +17,7 @@ zip {T$_1$ T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2
   | cons t$_1$ tl$_1$, cons t$_2$ tl$_2$ => cons (t$_1$, t$_2$) (zip tl$_1$ tl$_2$)
   end.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an existing proof development~\cite{hstocoqv}.} % TODO hs-to-coq cite
+\caption{The list \lstinline{zip} function, taken from an existing proof development~\cite{hstocoqv}. The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.} % TODO hs-to-coq cite
 \label{fig:zip}
 \end{figure}
 

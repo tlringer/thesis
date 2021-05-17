@@ -108,9 +108,11 @@
   \item Concepts
     \subitem Type Theory
       \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
+      \subsubitem Inductive Types, \hyperpage{18}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{108, 109}
-      \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}
+      \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
+		\hyperpage{16}, \hyperpage{18}
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
 		\hyperpage{11, 12}, \hyperpage{109}
       \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 

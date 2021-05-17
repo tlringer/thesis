@@ -115,8 +115,8 @@ to begin with, which is why proof engineers typically do not interact with it di
 Instead, proof engineers typically write proofs in a high-level representation.
 
 Consider the typical proof engineering workflow in \kl{Coq} (Figure~\ref{fig:workflow}).
-In this workflow, the proof engineer interactively writes a proof in a high-level representation with Coq's help:
-The proof engineer passes Coq high-level search procedures called \intro{tactics} (like \lstinline{induction}), and Coq responds to each tactic
+This workflow is interactive:
+To write a proof, the proof engineer passes Coq high-level search procedures called \intro{tactics} (like \lstinline{induction}), and Coq responds to each tactic
 by refining the current goal to some subgoal (like the goal for the base case). This loop of tactics and goals 
 continues until no goals remain, at which point the proof engineer has constructed a sequence of tactics called a \intro{proof script}---the
 high-level representation.

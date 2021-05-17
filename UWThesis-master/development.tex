@@ -8,30 +8,32 @@ In the introduction, I briefly explained the workflow for using a \kl{proof assi
 The proof engineer does three things:
 
 \begin{enumerate}
-\item implements a program using a functional programming language,
-\item specifies what it means for the program to be correct, and
-\item proves that the program satisfies the specification.
+\item implements a \kl{program},
+\item \kl{specifies} what it means for the \kl{program} to be correct, and
+\item \kl{proves} that the \kl{program} satisfies the \kl{specification}.
 \end{enumerate}
 \end{quote}
-In the \kl{Coq} proof assistnat, that functional programming language is a rich functional programming language called \intro{Gallina}.
-It is possile to use Gallina to write the program, the specification, and the proof---but writing the proof in Gallina can be challenging.
+In the \kl{Coq} proof assistant, proof engineers write programs in a rich functional programming language \intro{Gallina}.
+In fact, it is possile to use Gallina to write the program, the specification, \textit{and} the proof---but writing the proof in Gallina can be challenging.
 Instead, proof engineers typically use Gallina to write only the program and specification,
 and write the proof interactively.
 I alluded to this in the introduction as well, when I explained the typical proof development workflow in Coq:
 
 \begin{quote}
-The proof engineer passes Coq high-level search procedures called \textit{tactics} (like \lstinline{induction}), and Coq responds to each tactic
-by refining the current goal to some subgoal (like the proof obligation for the base case). This loop of tactics and goals 
-continues until no goals remain, at which point the proof engineer has constructed a high-level sequence of tactics called a \textit{proof script}.
-To check the proof, Coq compiles it down to a low-level representation called a \textit{proof term},
-then checks that the proof term has the expected type.
+To write a proof, the proof engineer passes Coq high-level search procedures called \kl{tactics} (like \lstinline{induction}), and Coq responds to each tactic
+by refining the current goal to some subgoal (like the goal for the base case). This loop of tactics and goals 
+continues until no goals remain, at which point the proof engineer has constructed a sequence of tactics called a \kl{proof script}---the
+high-level representation.
+To check the proof, Coq compiles that proof script down to a low-level representation called a \kl{proof term},
+then uses its \kl{kernel} to check that the proof term has the expected type.
+If the term has the expected type, Coq lets the proof engineer know in the end.
 \end{quote}
 The low-level language of proof terms in Coq is \kl{Gallina}---the same rich functional programming language proof engineers use to write programs and specifications.
-The high-level language of proof scripts in Coq is a language called \intro{Ltac} that we will soon see.
+The high-level language of proof scripts in Coq is a language called \intro{Ltac} that I will soon describe.
 
-In this thesis, I will not teach you all of Coq.
-Good sources for learning more about Coq include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
-and Software Foundations~\cite{software-foundations}, and the survey paper by Ringer and friends 2019~\cite{PGL-045}.
+In this thesis, I will not teach you all of Coq.\footnote{Good sources 
+for learning more about Coq include the books Certified Programming with Dependent Types~\cite{chlipala:cpdt}
+and Software Foundations~\cite{software-foundations}, and the survey paper \kl{QED at Large}.}
 What I will do is motivate this workflow on an example (Section~\ref{sec:mot-workflow})
 and explain the theory beneath (Section~\ref{sec:mot-theory}).
 

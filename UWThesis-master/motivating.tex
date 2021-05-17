@@ -3,7 +3,8 @@
 
 This thesis describes techniques and tools for automatically repairing broken proofs in a \kl{proof assistant}.
 It focuses in particular on proofs about formally \kl{verified} programs, though many of the techniques and tools carry over to mathematical proofs as well.
-Formal verification of a program can improve actual and perceived reliability. % TODO QED at Large
+
+Formal verification of a program can improve actual and perceived reliability.
 It can help the programmer think about the desired and actual behavior of the program,
 perhaps finding and fixing bugs in the process~\cite{murraybp}.
 It can make explicit which parts of the system are trusted, and further decrease the burden
@@ -19,19 +20,19 @@ It has also stood up to rigorous testing: while the test generation tool Csmith~
 
 CompCert, however, was not a simple endeavor: the original development comprised of approximately 35000 lines of code;
 functionality accounted for only 13\% of this, while specifications and proofs accounted for the other 87\%.
-This is not unusual for large proof developments. The initial correctness proofs for an OS microkernel,
+This is not unusual for large proof developments. The initial correctness proofs for the seL4 OS microkernel,
 for example, consisted of 480000 lines of specifications and proofs~\cite{Klein2014micro}.
 \kl{Proof engineering} technologies make it possible to develop verified systems at this scale.
-See Ringer and friends 2019~\cite{PGL-045} for a comprehensive overview of proof engineering.
+See \kl{QED at Large} for a comprehensive overview of proof engineering.
 
-Proof repair---the focus of this thesis---is a new proof engineering technology that focuses in particular on minimizing the burden of change as verified systems evolve over time.
+\kl{Proof repair}---the focus of this thesis---is a new proof engineering technology that focuses in particular on minimizing the burden of change as verified systems evolve over time.
 But for the sake of this chapter, I motivate proof repair not on a large verified system like a C compiler or an OS microkernel.
 Instead, I motivate it on a simple proof development: a list zip function accompanied by a formal proof that it preserves the lengths of its inputs.
-This is a small example, but it is worth noting that large proof developments like compilers and microkernels
+This is a small example, but it is worth noting that large proof developments like compilers and OS microkernels
 are often made up of many of these small examples built on top of each other.
 
-The proof assistant that I motivate this on is \kl{Coq}, since this is the proof assistant for which \sysnamelong is implemented.
-I motivate this using the small list zip example in three parts:
+The proof assistant that I motivate this on is \kl{Coq}, since this is the proof assistant that this thesis focuses on.
+I motivate proof repair in Coq using the small list zip example in three parts:
 
 \begin{enumerate}
 \item the workflow of and theory beneath \textit{proof development} (Section~\ref{sec:mot-dev}),

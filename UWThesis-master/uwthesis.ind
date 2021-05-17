@@ -2,15 +2,11 @@
 
   \item Acknowledgments
     \subitem Coauthors
-      \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{25}, \hyperpage{43}
-      \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{110}, \hyperpage{119}
+      \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}
+      \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
-		\hyperpage{9, 10}, \hyperpage{101}, 
-		\hyperpage{105, 106}
-      \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{98--100}, \hyperpage{124}
+		\hyperpage{9, 10}
+      \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -106,19 +102,12 @@
   \indexspace
 
   \item Concepts
-    \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
-    \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
-		\hyperpage{22}, \hyperpage{108, 109}
+    \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}
       \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
-		\hyperpage{11, 12}, \hyperpage{109}
+		\hyperpage{11, 12}
       \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 
-		\hyperpage{27}, \hyperpage{31}, \hyperpage{52}, 
-		\hyperpage{66}
-  \item Conventions
-    \subitem Primitive Eliminators, \hyperpage{19}, \hyperpage{21, 22}, 
-		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
+		\hyperpage{11}
 
   \indexspace
 
@@ -128,7 +117,7 @@
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
-		\hyperpage{8}
+		\hyperpage{8}, \hyperpage{11}
 
   \indexspace
 
@@ -137,14 +126,9 @@
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}
     \subitem Formal Thesis Statement, \hyperpage{5}
-    \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
-		\hyperpage{123}
+    \subitem Informal Thesis Statement, \hyperpage{3, 4}
     \subitem Results, \hyperpage{6}
     \subitem Technology
       \subsubitem Proof Repair, \hyperpage{4}
-  \item Type Theories
-    \subitem Calculus of Inductive Constructions, \hyperpage{16}, 
-		\hyperpage{20}, \hyperpage{40}, \hyperpage{75}, 
-		\hyperpage{109, 110}, \hyperpage{117}
 
 \end{theindex}

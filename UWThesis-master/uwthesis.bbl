@@ -190,6 +190,11 @@ Adam Chlipala.
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
 
+\bibitem{jesper}
+Jesper Cockx.
+\newblock {\em Dependent Pattern Matching and Proof-Relevant Unification}.
+\newblock PhD thesis, KU Leuven, 2017.
+
 \bibitem{cohen2016cubical}
 Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
 \newblock Cubical type theory: A constructive interpretation of the
@@ -363,6 +368,13 @@ Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
 \newblock Automatic software repair: A survey.
 \newblock In {\em Proceedings of the 40th International Conference on Software
   Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
+
+\bibitem{recursion-elimination}
+Eduarde Gim{\'e}nez.
+\newblock Codifying guarded definitions with recursive schemes.
+\newblock In Peter Dybjer, Bengt Nordstr{\"o}m, and Jan Smith, editors, {\em
+  Types for Proofs and Programs}, pages 39--59, Berlin, Heidelberg, 1995.
+  Springer Berlin Heidelberg.
 
 \bibitem{egraph6}
 Emil~Holm Gj{\o}rup and Bas Spitters.

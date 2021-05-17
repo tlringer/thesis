@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 MAY 2021 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 MAY 2021 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1995,23 +1995,19 @@ chapter 2.
 
 
 ] (./development.tex [12] (./workflow.tex [13] [14] [15]) (./theory.tex
-[16] [17] [18]
+[16] [17] [18] [19]
 
-LaTeX Warning: Citation `TODO' on page 19 undefined on input line 136.
-
-[19]
-
-LaTeX Warning: Citation `TODO' on page 20 undefined on input line 153.
+LaTeX Warning: Citation `TODO' on page 20 undefined on input line 155.
 
 
-LaTeX Warning: Citation `TODO' on page 20 undefined on input line 153.
+LaTeX Warning: Citation `TODO' on page 20 undefined on input line 155.
 
 [20]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 188.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 190.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [21]
-Overfull \hbox (3.42526pt too wide) in paragraph at lines 277--282
+Overfull \hbox (3.42526pt too wide) in paragraph at lines 279--284
 [] []\OT1/pplj/m/sc/10.95 (-20) f r o m c i c [] b a c k t o g a l -l i n a[] \
 OT1/pplj/m/n/10.95 (-20) Gal-lina im-ple-ments CIC$[]$, but with
  []
@@ -2046,7 +2042,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 149.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 149.
-<maintenance/fig/patch.png, id=754, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=758, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 152.
@@ -2085,7 +2081,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 74--95
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1137, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1143, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
@@ -2160,7 +2156,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1812, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1818, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2192,7 +2188,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2058, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2064, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 250.
@@ -2372,47 +2368,47 @@ Overfull \hbox (2.00206pt too wide) in paragraph at lines 133--136
 
 ] [132] [133] [134] [135] [136] [137] [138] [139]
 [140]
-Underfull \hbox (badness 10000) in paragraph at lines 714--722
+Underfull \hbox (badness 10000) in paragraph at lines 726--734
 []\OT1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func
 -tor.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--722
+Underfull \hbox (badness 10000) in paragraph at lines 726--734
 []$\OT1/cmtt/m/n/10.95 http : / / ncatlab . org / nlab / show / initial % 20alg
 ebra % 20of %
  []
 
 [141]
-Underfull \hbox (badness 1163) in paragraph at lines 779--785
+Underfull \hbox (badness 1163) in paragraph at lines 791--797
 []\OT1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
 
  []
 
 
-Underfull \hbox (badness 3396) in paragraph at lines 779--785
+Underfull \hbox (badness 3396) in paragraph at lines 791--797
 \OT1/pplj/m/n/10.95 (+20) Hri[]cu, Vil-helm Sj[]oberg, and Brent Yorgey.  \OT1/
 pplj/m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 779--785
+Underfull \hbox (badness 3657) in paragraph at lines 791--797
 \OT1/pplj/m/it/10.95 (+20) Foun-da-tions\OT1/pplj/m/n/10.95 (+20) .  Elec-troni
 c text-book, 2016.  Ver-sion 4.0.
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 787--792
+Underfull \hbox (badness 1590) in paragraph at lines 799--804
 []\OT1/pplj/m/n/10.95 (+20) Olivier Pons.  \OT1/pplj/m/it/10.95 (+20) Con-cep-t
 ion et r[]Ealisation d'outils d'aide au
  []
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 808.
+(Font)              using `OMS/pplj/m/n' instead on input line 820.
 
 [142]
-Underfull \hbox (badness 1184) in paragraph at lines 857--862
+Underfull \hbox (badness 1184) in paragraph at lines 869--874
 []\OT1/pplj/m/n/10.95 (+20) Amokrane Saibi.  \OT1/pplj/m/it/10.95 (+20) Out-ils
  G[]en[]eriques de Mod[]elisation et de
  []
@@ -2452,11 +2448,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1051.
  ) 
 Here is how much of TeX's memory you used:
- 50985 strings out of 492609
- 1028154 string characters out of 6129033
- 1307392 words of memory out of 5000000
- 51562 multiletter control sequences out of 15000+600000
- 642868 words of font info for 868 fonts, out of 8000000 for 9000
+ 51000 strings out of 492609
+ 1028319 string characters out of 6129033
+ 1307467 words of memory out of 5000000
+ 51564 multiletter control sequences out of 15000+600000
+ 643395 words of font info for 876 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2478,10 +2474,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1697064 bytes).
+Output written on uwthesis.pdf (159 pages, 1698090 bytes).
 PDF statistics:
- 3716 PDF objects out of 4296 (max. 8388607)
- 3466 compressed objects within 35 object streams
- 1546 named destinations out of 1728 (max. 500000)
+ 3724 PDF objects out of 4296 (max. 8388607)
+ 3474 compressed objects within 35 object streams
+ 1549 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

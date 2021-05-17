@@ -133,7 +133,9 @@ Both of these two functions behave the same way, but the function on the left is
 the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
 is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
 Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and guarded recursion.
-In fact, eliminators are equally expressive to pattern matching and guarded recursion~\cite{TODO}. % the general translation is hard and Coq sucks at eliminator gen though
+In fact, eliminators are equally expressive to pattern matching and 
+guarded recursion~\cite{recursion-elimination, jesper}.\footnote{What may be confusing, though, is that \textit{Coq's} automatically 
+generated eliminators are \textit{not} as expressive Coq's pattern matching and (syntactically) guaraded recursion. This is an artifact of Coq's history.}
 
 \begin{figure}
 \begin{lstlisting}

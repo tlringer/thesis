@@ -1320,14 +1320,14 @@
 \KAuxDeclaredScopeTag {fig:zip-elim}
 \KAuxNewLinkScopetagInstance {fig:zip-elim}{document}
 
-\KAuxFileAt {theory.tex}{157}
+\KAuxFileAt {theory.tex}{159}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 \KAuxDeclaredScopeTag {sec:cic}
 \KAuxNewLinkScopetagInstance {sec:cic}{document}
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
 
-\KAuxFileAt {theory.tex}{197}
+\KAuxFileAt {theory.tex}{199}
 \KAuxAutorefTarget {default}{base}{Calculus of Inductive Constructions}
 \KAuxDeclaredScopeTag {fig:cic-syntax}
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}

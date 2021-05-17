@@ -17,12 +17,8 @@
 - note about name of DEVOID somewhere
 - paragraph style: add periods?
 - plugin infrastructure somewhere (chapter 1? 2? 3? ahhh)
-- PUMPKIN PATCH plugin suite somewhere to refer back to
-- TCB somewhere
 - code links: consistency and so on
 - color of Proof keyword and other stylistic things
-- Qed vs. defined somewhere
-- definitional vs. propositional equality somewhere early
 - finish acks
 - author-year?
 - Coq version
@@ -41,6 +37,8 @@
 
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe
+- guarded recursion word overloading, is it OK?
+- definitional vs. propositional equality somewhere early
 
 # Chapter 3
 

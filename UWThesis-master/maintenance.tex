@@ -1,33 +1,28 @@
 \section{Proof Maintenance}
 \label{sec:mot-mai}
 
-What does it mean to \textit{maintain} a \kl{verified} system?
+What does it mean to \intro{maintain} a \kl{verified} system?
 Like all software systems, verified systems evolve over time.
 The difference is that, for verified systems, the proofs must evolve alongside the rest of the system (Section~\ref{sec:changes}).
-\kl{Proof engineers} typically use development processes to make proofs less likely to break in the face of these changes.
+Proof engineers typically use development processes to make proofs less likely to break in the face of these changes.
 Still, even with good development processes, breaking changes happen all the time, even for experts (Section~\ref{sec:irl}).
-All of this points to a need for change-aware proof automation---that is, proof repair.
+All of this points to a need for change-aware proof automation---that is, \kl{proof repair}.
 
 \subsection{Breaking Changes}
 \label{sec:changes}
 
-At its core, a verified system has three parts, corresponding to the workflow from Section~\ref{sec:mot-dev}:
-
-\begin{enumerate}
-\item programs,
-\item specifications, and
-\item proofs.
-\end{enumerate}
+At its core, a verified system has three parts:
+\kl{programs}, \kl{specifications}, and \kl{proofs}.
 As verified systems evolve over time, both programs and specifications can change.
 Either of these changes can break existing proofs.
 
-Consider the example from Section~\ref{sec:verif}.
+Consider the example from Section~\ref{sec:mot-workflow}.
 We had two choices for the specification of \lstinline{zip_preserves_length}.
-We chose the weaker specification on the left of Figure~\ref{fig:zip-pres}.
-This gives us some freedom in how we implement our \lstinline{zip} function.
-At some point, we may wish to change \lstinline{zip}, and update our proof so that it still holds.
-Alternatively, we may wish to port our development to use the stronger specification on the right of Figure~\ref{fig:zip-pres}
-We may even wish to use a datatype more expressive than \lstinline{list}, as we will see in Section~\ref{TODO}. % TODO
+We chose the weaker specification on the top of Figure~\ref{fig:zip-pres}.
+This gave us some freedom in how we implemented our \lstinline{zip} function.
+At some point, however, we may wish to change \lstinline{zip}, and update our proof so that it still holds.
+Alternatively, we may wish to port our development to use the stronger specification on the bottom of Figure~\ref{fig:zip-pres}
+We may even wish to use a datatype more expressive than \lstinline{list}, I will show you in Chapter~\ref{chapt:pi}. % TODO
 Any of these changes can break proofs in our proof development.
 
 \paragraph{Changing our Program}
@@ -45,7 +40,7 @@ zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$
   sumbool_rect (fun _ => list (T$_1$ * T$_2$))
     (fun (_ : length l$_1$ = length l$_2$) =>
       zip_same_length l$_1$ l$_2$)
-    (fun (_ : length l$_1$ <> length l$_2$) =>
+    (fun (_ : length l$_1$ = length l$_2$ $\implies$ False) =>
       nil)
     (eq_dec (length l$_1$) (length l$_2$)).
 \end{lstlisting}
@@ -58,51 +53,50 @@ Our theorem \lstinline{zip_preserves_length} still holds, but after changing our
 We can fix it by adding the \codediff{highlighted} tactics:
 
 \begin{lstlisting}
-Proof.
-  (@\codediff{intros. unfold zip.}@)
-  (@\codediff{induction (eq\_dec (length l$_1$) (length l$_2$)); try contradiction.}@)
-  (@\codediff{simpl. revert a. revert H. revert l$_2$.}@)
-  induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
-  - auto.
-  - intros l$_2$. induction l$_2$ as [|t$_2$ tl$_2$ IHtl$_2$].
-    + intros H. auto.
-    + intros H. simpl. rewrite IHtl1; auto.
-Defined.
+  Proof.
+    (@\codediff{intros. unfold zip.}@)
+    (@\codediff{induction (eq\_dec (length l$_1$) (length l$_2$)); try contradiction.}@)
+    (@\codediff{simpl. revert a. revert H. revert l$_2$.}@)
+    induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
+    - auto.
+    - intros l$_2$. induction l$_2$ as [|t$_2$ tl$_2$ IHtl$_2$].
+      + intros H. auto.
+      + intros H. simpl. rewrite IHtl1; auto.
+  Defined.
 \end{lstlisting}
 If we have many proofs about \lstinline{zip}, they may break in similar ways, and require similar patchwork.
 
 \paragraph{Changing our Specification}
-Suppose we had instead chosen the stronger specficiation on the right of Figure~\ref{fig:zip-pres},
-and kept our \lstinline{zip} function the same.
-We can update our proof accordingly, but after changing this specification, other proofs may break.
+Suppose we instead wish to switch to use the stronger specficiation on the bottom of Figure~\ref{fig:zip-pres},
+and keep our \lstinline{zip} function the same.
+We can then update our proof accordingly, but after changing this specification, other proofs may break.
 For example, if we had written a lemma for the \lstinline{cons} case:
 
 \begin{lstlisting}
-Lemma zip_preserves_length_cons :
-  $\forall$ {T$_1$ : Type} {T$_2$ : Type} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) (t$_1$ : T$_1$) (t$_2$ : T$_2$),
-    length l$_1$ = length l$_2$ $\rightarrow$
-    length (zip (cons t$_1$ l$_1$) (cons t$_2$ l$_2$)) = S (length l$_1$).
-Proof.
-  intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$ H.
-  simpl. f_equal.
-  rewrite zip_preserves_length; auto.
-Defined.
+  Lemma zip_preserves_length_cons {T$_1$ : Type} {T$_2$ : Type} :
+    (@\ltacforall@) l$_1$ : list T$_1$) (l$_2$ : list T$_2$) (t$_1$ : T$_1$) (t$_2$ : T$_2$),
+      length l$_1$ = length l$_2$ $\rightarrow$
+      length (zip (cons t$_1$ l$_1$) (cons t$_2$ l$_2$)) = S (length l$_1$).
+  Proof.
+    intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$ H.
+    simpl. f_equal.
+    rewrite zip_preserves_length; auto.
+  Defined.
 \end{lstlisting}
 that followed by \lstinline{zip_preserves_length},
 then after the change, this proof would break.
 
 We would have two choices to fix it. Either we could leave our specification alone,
 and fix our proof.
-In that case,
-the proof would look like this instead (with the difference \codediff{highlighted}):
+In that case, we could write this patched proof instead (with the difference \codediff{highlighted}):
 
 \begin{lstlisting}
-Proof.
-  intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$ H.
-  simpl. f_equal.
-  (@\codediff{rewrite $\leftarrow$ min\_id. rewrite H at 2.}@)
-  apply zip_preserves_length; auto.
-Defined.
+  Proof.
+    intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$ H.
+    simpl. f_equal.
+    (@\codediff{rewrite $\leftarrow$ min\_id. rewrite H at 2.}@)
+    apply zip_preserves_length; auto.
+  Defined.
 \end{lstlisting}
 The extra tactics correspond to an extra proof obligation:
 we must now show that \lstinline{length l}$_1$\lstinline{ = min (length l}$_1$\lstinline{) (length l}$_2$\lstinline{)}.
@@ -111,23 +105,24 @@ This holds by the lemma \lstinline{min_id} from the Coq standard library, combin
 Alternatively, we could strengthen the specification of that lemma as well, and leave the proof alone:
 
 \begin{lstlisting}
-Lemma zip_preserves_length_cons :
-  $\forall$ {T$_1$ : Type} {T$_2$ : Type} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) (t$_1$ : T$_1$) (t$_2$ : T$_2$),
-    length (zip (cons t$_1$ l$_1$) (cons t$_2$ l$_2$)) = S (min (length l$_1$) (length l$_2$)).
-Proof.
-  intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$.
-  simpl. f_equal.
-  apply zip_preserves_length_alt; auto.
-Defined.
+  Lemma zip_preserves_length_cons {T$_1$ : Type} {T$_2$ : Type} :
+    (@\ltacforall@) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) (t$_1$ : T$_1$) (t$_2$ : T$_2$),
+      length (zip (cons t$_1$ l$_1$) (cons t$_2$ l$_2$)) = S (min (length l$_1$) (length l$_2$)).
+  Proof.
+    intros T$_1$ T$_2$ l$_1$ l$_2$ t$_1$ t$_2$.
+    simpl. f_equal.
+    apply zip_preserves_length_alt; auto.
+  Defined.
 \end{lstlisting}
 But this could continue to break other downstream proofs that depend on \lstinline{zip_preserves_length_cons},
 causing a cascading effect of change.
+And this sort of cascading effect is precisely why the challenges of change are exacerbated at scale.
 
 \subsection{Even Experts are Human}
 \label{sec:irl}
 
 Proof engineers often use development processes to work around some of the challenges of change to begin with (Section~\ref{sec:design}).
-For example, they might use information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein:2014:CFV:2584468.2560537}
+For example, they might use information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein2014}
 to abstract away the details of \lstinline{zip} or of \lstinline{zip_preserves_length},
 so that the burden of change becomes just showing that the changed program or proof still implements that abstraction.
 Similarly, they may build their own custom tactics that hide the details of
@@ -136,7 +131,8 @@ so that the burden of change becomes just fixing the automation.
  
 But even with good development processes, proof engineers change programs and specifications all the time---and this does break proofs, 
 even for experts.
-To find evidence of this in the real world, \kl{Alex} and I built a Coq plugin called \toolname 
+\kl{Alex} and I found evidence of this in our user study of Coq proof engineers.
+For this user study, Alex and I built a Coq plugin called \kl{\textsc{REPLica}}
 (REPL Instrumentation for Coq Analysis) that listens to the Read Eval Print
 Loop (REPL)---a simple loop that all user interaction with Coq passes through---to collect data that the proof engineer sends to Coq during development.
 %This includes data difficult to obtain from other sources, like failed
@@ -156,7 +152,7 @@ consent.\footnote{\url{http://github.com/uwplse/analytics-data}}
 
 We found that changes to programs and specifications were often formulaic and repetitive.
 For example, Figure~\ref{fig:patch} shows an example change by an expert proof engineer.
-In this change, the proof engineer wraps two arguments into a single application of \lstinline{Val}
+In this change, the proof engineer wrapped two arguments into a single application of \lstinline{Val}
 in three different hypotheses of a lemma.
 This change did not occur in isolation: the proof engineer patched 10 other definitions or lemmas
 in similarly, wrapping arguments into an application of
@@ -175,8 +171,9 @@ For example, for the change in Figure~\ref{fig:patch},
 the expert proof engineer admitted or aborted (that is, gave up on) the proofs of four of the five
 broken lemmas after this change.
 In other words, right now, even experts sometimes just give up in the face of change.
-And this is an big problem for proof developments
-at the scale of CompCert or seL4 (Section~\ref{sec:refrep}).
+This is empirical evidence of a problem reported by proof engineers
+tasked with maintaining large proof developments
+like CompCert or seL4 (Section~\ref{sec:refrep}).
 
 The reason that experts still struggle with change is that
 design principles all rely on proof engineers having the right foresight to choose the 

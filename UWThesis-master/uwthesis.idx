@@ -188,18 +188,37 @@
 \indexentry{Concepts!Type Theory!Inductive Types!Motive|hyperpage}{19}
 \indexentry{Concepts!Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{19}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{20}
-\indexentry{Conventions!Primitive Eliminators|hyperpage}{21}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{21}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{20}
+\indexentry{Concepts!Type Theory!Equality!Intensionality|hyperpage}{20}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{20}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{20}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{21}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{21}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{21}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{22}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{22}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{23}
+\indexentry{Conventions!Primitive Eliminators|hyperpage}{23}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{23}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script!Tactics|hyperpage}{23}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Automation|hyperpage}{23}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Maintenance|hyperpage}{23}
 \indexentry{Concepts!Verification|hyperpage}{23}
-\indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{25}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{27}
-\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{27}
+\indexentry{Thesis!Technology!Proof Repair|hyperpage}{23}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Program|hyperpage}{24}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{24}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof|hyperpage}{24}
+\indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{26}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{26}
+\indexentry{Thesis!Formal Thesis Statement|hyperpage}{28}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{28}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{28}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script!Tactics|hyperpage}{28}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{28}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{28}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{28}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{29}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{29}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{31}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{33}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{40}
@@ -211,6 +230,9 @@
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{68}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{75}
+\indexentry{Concepts!Type Theory!Equality!Intensionality|hyperpage}{76}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{76}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{76}
 \indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{81}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{93}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{94}
@@ -218,11 +240,11 @@
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{100}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
-\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{102}
+\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{101}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{106}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Concepts!Verification|hyperpage}{108}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{109}
 \indexentry{Concepts!Verification|hyperpage}{109}

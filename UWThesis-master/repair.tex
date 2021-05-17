@@ -1,7 +1,7 @@
 \section{Proof Repair}
 \label{sec:mot-rep}
 
-\textit{Proof repair} is a new form of proof automation that automatically fixes broken proofs in response to changes.
+\kl{Proof repair} is a new form of proof automation that automatically fixes broken proofs in response to changes.
 In contrast with traditional proof automation, proof repair views programs, specifications, and proofs as fluid entities.
 When a program or specification changes and this breaks many proofs, proof repair extracts informatiton from those
 changes, generalizes it, and applies it to fix other proofs broken by the same change.
@@ -9,8 +9,8 @@ changes, generalizes it, and applies it to fix other proofs broken by the same c
 The name of proof repair is inspired by program repair~\cite{Monperrus:2018:ASR:3177787.3105906, Gazzola:2018:ASR:3180155.3182526},
 or automatically fixing bugs in programs.
 But my proof repair tools work differently from program repair tools, 
-using a combination of semantic differencing and program transformations (Section~\ref{sec:how}).
-All of this happens over low-level proof terms in \kl{Gallina}---and this is the key to success (Section~\ref{sec:infocert}).
+using a combination of semantic differencing and proof term transformations (Section~\ref{sec:how}).
+All of this happens over low-level proof terms in Gallina---and this is the key to success (Section~\ref{sec:infocert}).
 
 \subsection{How Proof Repair Works}
 \label{sec:how}
@@ -18,15 +18,15 @@ All of this happens over low-level proof terms in \kl{Gallina}---and this is the
 Recall my thesis:
 
 \begin{quote}
-\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change in practical use cases. A tool that automates this can save work for \kl{proof engineers} relative to reference manual repairs.
+\textbf{\kl{Thesis}}: Changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 \end{quote}
 My proof repair tools are the tools that automate this.
-These tools accomplish this using a combination of differencing and program transformations.
-\textit{Differencing} compares the old and new version of the program, specification, or proof that has changed,
-and from that extracts the information carried by the change.
-The \textit{transformations} then generalize that information and, in some cases, apply it to fix other proofs broken by the same change.
+These tools accomplish this using a combination of semantic differencing and proof term transformations.
+The \kl{differencing} algorithms compare the old and new version of the program, specification, or proof that has changed,
+and from that extract the information carried by the change.
+The \kl{transformations} then generalize that information and, in some cases, apply it to fix other proofs broken by the same change.
 The details of all of this vary by the kind of breaking change,
-as I will show you in Chapters~\ref{ch:example} and~\ref{chapt:pi}.
+as I will demonstrate in Chapters~\ref{ch:example} and~\ref{chapt:pi}.
 
 % TODO an example would be nice here
 
@@ -38,8 +38,8 @@ But there are not natural analogues of this in the world of proofs:
 there are often no tests, it is not possible to just run the proof, and there is not a natural 
 fitness function that describes what it means for a patch to a proof to be almost correct.
 
-In addition, proof engineers write proofs in this high-level language of tactics, \kl{Ltac}.
-Each of these tactics is really a search procedure for a proof term, so it is not straightforward to apply
+In addition, proof engineers write proofs in this high-level language of \kl{tactics}, \kl{Ltac}.
+Each of these tactics is really a search procedure for a \kl{proof term}, so it is not straightforward to apply
 typical program repair techniques to identify the next search procedure when a proof breaks.
 Instead, proof repair tools can look down at the low-level language of proof terms, \kl{Gallina}.
 But this is difficult: the type theory beneath Gallina is so rich that Gallina itself is quite unforgiving.
@@ -49,13 +49,13 @@ But---and this is the key to proof repair---the unforgiving nature of Gallina ac
 \subsection{The Key to Proof Repair}
 \label{sec:infocert}
 
-My proof repair tools operate over proof terms in Gallina.
+The key to proof repair in this thesis is using the structure and information carried by the proof terms in Gallina.
 In terms of the approach, what this means is that differencing operates over Gallina terms,
-and is guided by their semantics to narrow down the search space---in other words,
-it is a kind of \textit{semantic differencing}.
-The program transformations then use that diff to transform some proof term to a more general patch (in Chapter~\ref{ch:example})
-or the patched proof itself (in Chapter~\ref{chapt:pi})---in other words,
-they are \textit{proof term transformations}.
+and is guided by their semantics to narrow down the search space---this is what
+makes differencing a kind of \kl{semantic differencing}.
+The transformations then use the result of differencing to transform some proof term to a more general patch (in Chapter~\ref{ch:example})
+or the patched proof itself (in Chapter~\ref{chapt:pi})---this is what
+makes the transformations \kl{proof term transformations}.
 
 This approach circumvents two of the biggest challenges in program repair:
 gathering enough information to efficiently search for a patch,

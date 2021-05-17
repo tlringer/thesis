@@ -128,12 +128,8 @@ discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \Aa 
 
 The other configuration parts \lstinline{Eta} and \lstinline{Iota} deal with producing well-typed terms,
 in particular by transporting equalities.
-CIC$_{\omega}$ distinguishes between two important kinds of equality: those that hold by reduction (\textit{definitional} equality), and those that hold by proof (\textit{propositional} equality).
-That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they reduce to the same normal form,
-and propositionally equal if there is a proof that \lstinline{t = t'} using the inductive
-equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
-the converse is not in general true. % TODO this should probably go into an earlier section
-
+Recall that CIC$_{\omega}$ is an \kl{intensional} type theory,
+and so distinguishes between \kl{definitional} and \kl{propositional} equality.
 When a datatype changes, sometimes, definitional equalities defined over the old version of that type must become propositional.
 A naive proof term transformation may fail to generate well-typed terms if it does not account for this.
 Otherwise, if the transformation transforms a term \lstinline{t : T} to some \lstinline{t' : T'}, it does not necessarily

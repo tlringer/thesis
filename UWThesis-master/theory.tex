@@ -16,8 +16,11 @@ To see the power of Gallina, let us dissect our proof that \lstinline{zip} prese
 
 Our proof development about \lstinline{zip} uses the \lstinline{nat} and \lstinline{list} datatypes,
 as well as the \lstinline{length} function.
-I mentioned earlier that all of \lstinline{nat}, \lstinline{list}, and \lstinline{length} can be found inside of the Coq standard library.
-But looking into these datatypes and this function already points to many useful features of Gallina.
+It also uses the equality type \lstinline{=}.
+All of these can be found inside of the Coq standard library.
+But dissecting them already points to many important features of Gallina:
+inductive types and intensionality.
+All of these arise in our proof development, and will continue to arise throughout this thesis.
 
 \begin{figure}
 \begin{minipage}{0.30\textwidth}
@@ -43,7 +46,8 @@ nat_rect :
 \label{fig:nat}
 \end{figure}
 
-Let us start with the datatypes \lstinline{nat} and \lstinline{list}.
+\paragraph{Inductive Types}
+
 Each of \lstinline{nat} and \lstinline{list} in Gallina is an \intro{inductive type}:
 it is defined by its \intro{constructors} (ways of constructing a term with that type).
 A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
@@ -151,8 +155,7 @@ zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$
     l$_1$
     l$_2$.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an existing tool~\cite{TODO} % TODO hs-to-coq cite
-and translated to use eliminators.}
+\caption{The list \lstinline{zip} function from Figure~\ref{fig:zip}, translated to use eliminators.}
 \label{fig:zip-elim}
 \end{figure}
 
@@ -163,23 +166,43 @@ on the right.
 %I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
 
 To handle practical code that uses pattern matching and guarded recursion,
-I preprocesss the code using a tool by my coauthor Nate Yazdani (more about this later). % TODO make this more formal, can say limitations, can say generates length above, wahtever
-Figure~\ref{fig:zip-elim}, for example, shows the \lstinline{zip} function after running this tool.
-In the rest of the paper, I skip this preprocessing step in examples, but I describe it more in the implementation section later.
+I preprocesss the code using a tool by \kl{Nate}.
+This preprocessing tool that transforms functions that use simple pattern matching and guarded recursion
+to instead use Coq's automatically generated eliminators (Section~\ref{sec:pi-details-trans}).
+Figure~\ref{fig:zip-elim}, for example, shows the \lstinline{zip} function after running the preprocessing tool.
+In the rest of this thesis, I skip the step of running this preprocessing tool in examples,
+though the corresponding code invokes it explicitly.
+
+\paragraph{Intensionality}
+
+Gallina is based on what is called an \intro{intensional} type theory:
+a type theory that distinguishes between equalities that hold by reducton (\intro{definitional equality}), and those that hold by proof (\intro{propositional} equality).
+That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they reduce to the same normal form,
+and propositionally equal if there is a proof that \lstinline{t = t'} using a special inductive
+equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
+the converse is not in general true. % TODO this should probably go into an earlier section
+
+The inductive equality type also shows up inside of our proof development---that is what the \lstinline{=} sign in our theorem statement means.
+The \lstinline{=} type has exactly one constructor, \lstinline{eq_refl}, which can be applied to two terms exactly when those terms are definitionally equal.
+Propositional equality is more general, though, because it comes equipped with an eliminator \lstinline{eq_rect} (or the reverse, \lstinline{eq_rect_r})
+that encodes rewriting: if \lstinline{t = t'}, and some motive \lstinline{P} holds on \lstinline{t}, then the motive must also hold on \lstinline{t'}.
+It is possible to use this eliminator to prove equalities by sequences of rewrites, substituting equal terms for one another until the goal is reached by reflexivity.
+
+\paragraph{Back to our Proof}
 
 With that in mind, we can now look back at the proof script and corresponding proof term in Figure~\ref{fig:zip-proof}.
-There is a correpsondence between the proof script and the proof term, highlighted in the same color:
+There is a correspondence between the proof script and the proof term, highlighted in the same color:
 The proof term is a function from the context to a body that proves the goal type.
 Every call to \lstinline{induction} in the proof script shows up as an application of the \lstinline{list} eliminator 
 \lstinline{list_rect}, with the cases corresponding to the appropriate arguments of the eliminator.
 The first call to \lstinline{auto} compiles down to \lstinline{eq_refl}, the constructor for the inductive equality type.
 The second call to \lstinline{auto} compiles down to \lstinline{eq_sym}, the proof of symmetry of equality in the Coq standard library. % TODO not using absurd then?
-Rewrites compile down to applications of an eliminator over the inductive equality type called \lstinline{eq_ind_r}.
+Rewrites compile down to applications of \lstinline{eq_rect_r}, an eliminator over the inductive equality type.
 
 Still, the proof terms can be difficult for a proof engineer to write and understand.
-In Section~\ref{sec:pi-implementation}, I will introduce a prototype decompiler from proof terms back up to proof scripts
-that makes it possible for \sysnamelong to work over highly structured \kl{Gallina} terms,
-but produce proof scripts that the proof engineer can use going forward.
+In Section~\ref{sec:pi-implementation}, I will introduce a prototype decompiler by \kl{RanDair} from proof terms back up to proof scripts.
+This decompiler will make it possible for \sysnamelong to work over highly structured Gallina terms,
+but produce Ltac proof scripts that the proof engineer can use going forward.
 
 \subsubsection{Calculus of Inductive Constructions}
 \label{sec:cic}
@@ -198,9 +221,10 @@ but produce proof scripts that the proof engineer can use going forward.
 
 The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Calculus of Inductive Constructions}.
 CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
-CoC with an infinite universe hierarchy is called CoC$_{\omega}$. % TODO need to explain or defer
+CoC with an infinite universe hieararchy---basically a trick for consistency---is 
+called CoC$_{\omega}$.\footnote{The need for the infinite universe hiearchy is too confusing for me to explain in detail here, but it is also not important for this thesis.}
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
-Note that whereas in Gallina we represent universal quantification over terms or types with (@\ltacforall@), here we represent it with $\Pi$, as is standard.
+Note that whereas in Gallina we represent universal quantification over terms or types with \ltacforall, here we represent it with $\Pi$, as is standard.
 
 \begin{figure*}
 \small
@@ -212,18 +236,18 @@ Note that whereas in Gallina we represent universal quantification over terms or
 \label{fig:cic-syntax}
 \end{figure*}
 
-The syntax for CIC$_{\omega}$ is in Figure~\ref{fig:cic-syntax}), building on syntax from an existing paper~\cite{Timany2015FirstST};
-the typing rules are standard and omitted. % TODO
-CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive}.
+CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive};
+the syntax for CIC$_{\omega}$ (building on syntax from an existing paper~\cite{Timany2015FirstST}) is in Figure~\ref{fig:cic-syntax},
+and the typing rules are standard and omitted.
 As in Gallina, inductive types are defined by their constructors and eliminators.
 Consider the inductive type \lstinline{nat} of unary natural numbers that we saw in Figure~\ref{fig:nat},
 this time in CIC$_{\omega}$: % TODO explain sorts
 
 \begin{lstlisting}
-Ind (nat : Set) {
-  nat,
-  nat $\rightarrow$ nat
-}
+  Ind (nat : Set) {
+    nat,
+    nat $\rightarrow$ nat
+  }
 \end{lstlisting}
 where the \lstinline{O} constructor type is the zeroth element in the list, and the \lstinline{S} constructor type is the first element.
 Accordingly, the terms:
@@ -246,20 +270,20 @@ Thus, to eliminate over a natural number \lstinline{n} with motive \lstinline{P}
 we write: % TODO check
 
 \begin{lstlisting}
-Elim (n, P) {
-  f$_O$,
-  f$_S$
-}
+  Elim (n, P) {
+    f$_O$,
+    f$_S$
+  }
 \end{lstlisting}
 where functions:
 
 \begin{lstlisting}
-f$_O$ : P O
+  f$_O$ : P O
 \end{lstlisting}
 and:
 
 \begin{lstlisting}
-f$_S$ : $\Pi$ (n : nat) . $\Pi$ (IHn : P n) . P (S n)
+  f$_S$ : $\Pi$ (n : nat) . $\Pi$ (IHn : P n) . P (S n)
 \end{lstlisting}
 prove the base and inductive cases, respectively.
 When \lstinline{n}, \lstinline{P}, \lstinline{f}$_O$, and \lstinline{f}$_S$ are arbitrary,
@@ -268,32 +292,31 @@ this statement has the same type as \lstinline{nat_rect} in Gallina.
 % TODO use knowledge below to index this stuff:
 \paragraph{Conventions}
 Throughout this thesis, I assume an inductive type $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
-and an equality type \lstinline{=} with constructor \lstinline{eq_refl}.
+and a \kl{propositional} equality type \lstinline{=} with constructor \lstinline{eq_refl}.
 I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
 I often present algorithms over CIC$_{\omega}$ relationally, using a set of judgments; % TODO maybe move this up too
 to turn these relations into algorithms, prioritize the rules by running the derivations in
 order, falling back to the original term when no rules match.
-The default rule for a list of terms is to run the derivation on each element of the list individually. 
+The default derivation for a list of terms is to run the derivation on each element of the list individually. 
 
 \paragraph{From CIC$_{\omega}$ back to Gallina}
-Gallina implements CIC$_{\omega}$, but with a few important differences.
-More information is on the website, % https://coq.github.io/doc/v8.9/refman/language/gallina-specification-language.html, noting it's 8.9
-but two differences are relevant to repair:
+Gallina implements CIC$_{\omega}$, but with some important differences.
+Two differences are especially relevant to this thesis:
 The first is that Gallina lacks \kl{primitive eliminators}, as I mentioned earlier.
-The second notable difference is that Gallina has constants that define terms---later on, this will help with building optimizations for repair tools.
+The second notable difference is that Gallina has constants that define terms---later on, this will help with building optimizations for proof repair tools.
 
-Otherwise, a proof repair tool for Gallina can harness the power of CIC$_{\omega}$. This type theory is fairly simple,
-but $\Pi$ makes it possible to quantify over both terms and types,
+Otherwise, a proof repair tool for Gallina can harness the power of CIC$_{\omega}$.
+In particular, $\Pi$ makes it possible to quantify over both terms and types,
 so that we can state powerful theorems and prove that they hold.
 Inductive types make it possible to write proofs by induction.
 Both of these constructs mean that terms in Gallina are extremely structured,
 and as we will soon see, that structure makes a proof repair tool's job much easier.
 
-\paragraph{From Gallina back to Coq}
-But this structure can be difficult for proof engineers to work with,
-which is why proof engineers typically rely on the tactics we saw in Section~\ref{sec:mot-workflow}.
-Tactics more generally are a form of \textit{proof automation}, and this proof automation makes it much
-simpler to develop proofs to begin with.
+\paragraph{From Gallina back to Ltac}
+This very same structure that helps proof repair tools can be difficult for proof engineers to work with,
+which is why proof engineers typically rely on the \kl{Ltac} \kl{tactics} we saw in Section~\ref{sec:mot-workflow}.
+Tactics more generally are a form of \intro{proof automation}, or tools that automatically search for proofs.
+This proof automation makes it much simpler to develop proofs to begin with.
 But it turns out this proof automation is a bit naive when it comes to \textit{maintaining} proofs
 as programs and specifications change over time.
 Proof repair is a new form of proof automation for maintaining proofs: it uses the rich type information carried by proof terms

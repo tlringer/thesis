@@ -3,8 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-Warning--I didn't find a database entry for "TODO"
-Warning--I didn't find a database entry for "Klein:2014:CFV:2584468.2560537"
 Warning--I didn't find a database entry for "equality"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
@@ -20,7 +18,7 @@ Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
 You've used 170 entries,
             2118 wiz_defined-function locations,
-            1497 strings with 35542 characters,
+            1493 strings with 35474 characters,
 and the built_in function-call counts, 64858 in all, are:
 = -- 6707
 > -- 2753
@@ -59,4 +57,4 @@ warning$ -- 11
 while$ -- 640
 width$ -- 173
 write$ -- 1976
-(There were 15 warnings)
+(There were 13 warnings)

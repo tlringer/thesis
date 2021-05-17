@@ -3,14 +3,14 @@
   \item Acknowledgments
     \subitem Coauthors
       \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{25}, \hyperpage{43}
+		\hyperpage{26}, \hyperpage{43}
       \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
-		\hyperpage{9, 10}, \hyperpage{101}, 
-		\hyperpage{105, 106}
+		\hyperpage{9, 10}, \hyperpage{20}, 
+		\hyperpage{100, 101}, \hyperpage{105}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{98--100}, \hyperpage{124}
+		\hyperpage{21}, \hyperpage{98--100}, \hyperpage{124}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -107,7 +107,7 @@
 
   \item Concepts
     \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{102}
+      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{101}
       \subsubitem Inductive Types, \hyperpage{18}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{108, 109}
@@ -116,12 +116,12 @@
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
 		\hyperpage{11, 12}, \hyperpage{109}
       \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 
-		\hyperpage{11}, \hyperpage{27}, \hyperpage{31}, 
+		\hyperpage{11}, \hyperpage{28}, \hyperpage{31}, 
 		\hyperpage{52}, \hyperpage{66}, \hyperpage{109}, 
 		\hyperpage{123}
   \item Conventions
-    \subitem Primitive Eliminators, \hyperpage{20--22}, \hyperpage{41}, 
-		\hyperpage{75}, \hyperpage{93, 94}
+    \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
+		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
 
   \indexspace
 

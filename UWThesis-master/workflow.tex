@@ -201,7 +201,7 @@ fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
       (@\codesimc{list\_rect}@) (fun (l$_2$ : list T$_2$) => $\ldots$)
         (@\codesimd{(fun (H : $\ldots$) => eq\_sym H)}@)
         (fun (t$_2$ : T$_2$) (tl$_2$ : list T$_2$) (IHtl$_2$ : $\ldots$) =>
-          (@\codesime{fun (H : $\ldots$) => eq\_ind\_r $\ldots$ eq\_refl (IHtl$_1$ $\ldots$)}@))
+          (@\codesime{fun (H : $\ldots$) => eq\_rect\_r $\ldots$ eq\_refl (IHtl$_1$ $\ldots$)}@))
         (@\codesimc{l$_2$}@))
     (@\codesimb{l$_1$}@)
     l$_2$.

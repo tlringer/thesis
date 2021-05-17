@@ -38,7 +38,6 @@
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe
 - guarded recursion word overloading, is it OK?
-- definitional vs. propositional equality somewhere early
 
 # Chapter 3
 

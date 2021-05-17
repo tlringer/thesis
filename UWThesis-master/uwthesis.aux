@@ -276,10 +276,10 @@
 \mph@setcol{ii:12}{\mph@nr}
 \citation{chlipala:cpdt}
 \citation{software-foundations}
-\citation{TODO}
-\citation{TODO}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The list \lstinline {zip} function, taken from an existing tool\nobreakspace  {}\cite  {TODO}.\relax }}{13}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:zip}{{2}{13}{The list \lstinline {zip} function, taken from an existing tool~\cite {TODO}.\relax }{figure.caption.5}{}}
+\citation{hstocoqv}
+\citation{hstocoqv}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The list \lstinline {zip} function, taken from an existing proof development\nobreakspace  {}\cite  {hstocoqv}.\relax }}{13}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:zip}{{2}{13}{The list \lstinline {zip} function, taken from an existing proof development~\cite {hstocoqv}.\relax }{figure.caption.5}{}}
 \newlabel{fig:zip@cref}{{[figure][2][]2}{[1][13][]13}}
 \newlabel{autoref-3}{{2.1}{13}{Proof Development}{Item.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}The Workflow}{13}{subsection.2.1.1}\protected@file@percent }
@@ -291,14 +291,9 @@
 \newlabel{fig:zip-pres}{{3}{14}{Two possible specifications of a proof that \lstinline {zip} preserves the length of the input lists.\relax }{figure.caption.6}{}}
 \newlabel{fig:zip-pres@cref}{{[figure][3][]3}{[1][14][]14}}
 \@writefile{toc}{\contentsline {paragraph}{Specification}{14}{figure.caption.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Proof}{14}{figure.caption.6}\protected@file@percent }
 \mph@setcol{ii:14}{\mph@nr}
-\citation{PGL-045}
+\@writefile{toc}{\contentsline {paragraph}{Proof}{15}{figure.caption.6}\protected@file@percent }
 \mph@setcol{ii:15}{\mph@nr}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{16}{subsection.2.1.2}\protected@file@percent }
-\newlabel{sec:mot-theory}{{2.1.2}{16}{The Theory Beneath}{subsection.2.1.2}{}}
-\newlabel{sec:mot-theory@cref}{{[subsection][2][2,1]2.1.2}{[1][16][]16}}
-\newlabel{autoref-4}{{2.1.2}{16}{The Theory Beneath}{subsection.2.1.2}{}}
 \mph@setcol{ii:16}{\mph@nr}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length. Some details of the proof term are omitted for simplicity. Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.\relax }}{17}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:zip-proof}{{4}{17}{A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length. Some details of the proof term are omitted for simplicity. Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.\relax }{figure.caption.7}{}}
@@ -307,12 +302,14 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The type of natural numbers \lstinline {nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline {nat_rect} that Coq generates (right).\relax }}{18}{figure.caption.8}\protected@file@percent }
 \newlabel{fig:nat}{{5}{18}{The type of natural numbers \lstinline {nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline {nat_rect} that Coq generates (right).\relax }{figure.caption.8}{}}
 \newlabel{fig:nat@cref}{{[figure][5][]5}{[1][18][]18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{18}{subsection.2.1.2}\protected@file@percent }
+\newlabel{sec:mot-theory}{{2.1.2}{18}{The Theory Beneath}{subsection.2.1.2}{}}
+\newlabel{sec:mot-theory@cref}{{[subsection][2][2,1]2.1.2}{[1][16][]18}}
+\newlabel{autoref-4}{{2.1.2}{18}{The Theory Beneath}{subsection.2.1.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2.1}Gallina}{18}{subsubsection.2.1.2.1}\protected@file@percent }
 \newlabel{sec:gallina}{{2.1.2.1}{18}{Gallina}{subsubsection.2.1.2.1}{}}
 \newlabel{sec:gallina@cref}{{[subsubsection][1][2,1,2]2.1.2.1}{[1][18][]18}}
 \mph@setcol{ii:18}{\mph@nr}
-\citation{TODO}
-\citation{TODO}
 \citation{TODO}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The type of polymorphic lists \lstinline {list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline {list_rect} that Coq generates (right). The curly brace notation means that the type parameter \lstinline {T} is implicit in applications.\relax }}{19}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:list}{{6}{19}{The type of polymorphic lists \lstinline {list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline {list_rect} that Coq generates (right). The curly brace notation means that the type parameter \lstinline {T} is implicit in applications.\relax }{figure.caption.9}{}}
@@ -320,40 +317,42 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The list \lstinline {length} function, defined both by pattern matching and recursion (left) and using the eliminator \lstinline {list_rect} (right).\relax }}{19}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:length}{{7}{19}{The list \lstinline {length} function, defined both by pattern matching and recursion (left) and using the eliminator \lstinline {list_rect} (right).\relax }{figure.caption.10}{}}
 \newlabel{fig:length@cref}{{[figure][7][]7}{[1][19][]19}}
-\newlabel{autoref-1}{{2.1.2.1}{19}{Gallina}{figure.caption.11}{}}
 \mph@setcol{ii:19}{\mph@nr}
-\citation{coquand:inria-00076024}
+\citation{TODO}
+\citation{TODO}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The list \lstinline {zip} function, taken from an existing tool\nobreakspace  {}\cite  {TODO} and translated to use eliminators.\relax }}{20}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:zip-elim}{{8}{20}{The list \lstinline {zip} function, taken from an existing tool~\cite {TODO} and translated to use eliminators.\relax }{figure.caption.11}{}}
-\newlabel{fig:zip-elim@cref}{{[figure][8][]8}{[1][19][]20}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2.2}Calculus of Inductive Constructions}{20}{subsubsection.2.1.2.2}\protected@file@percent }
-\newlabel{sec:cic}{{2.1.2.2}{20}{Calculus of Inductive Constructions}{subsubsection.2.1.2.2}{}}
-\newlabel{sec:cic@cref}{{[subsubsection][2][2,1,2]2.1.2.2}{[1][20][]20}}
-\newlabel{autoref-4}{{2.1.2.2}{20}{Calculus of Inductive Constructions}{figure.caption.12}{}}
+\newlabel{fig:zip-elim@cref}{{[figure][8][]8}{[1][20][]20}}
+\newlabel{autoref-1}{{2.1.2.1}{20}{Gallina}{figure.caption.11}{}}
 \mph@setcol{ii:20}{\mph@nr}
+\citation{coquand:inria-00076024}
 \citation{Timany2015FirstST}
 \citation{inductive}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Syntax for CoC$_\omega $ with (from left to right) variables, sorts, dependent types, functions, and application.\relax }}{21}{figure.caption.12}\protected@file@percent }
 \newlabel{fig:coc-syntax}{{9}{21}{Syntax for CoC$_\omega $ with (from left to right) variables, sorts, dependent types, functions, and application.\relax }{figure.caption.12}{}}
-\newlabel{fig:coc-syntax@cref}{{[figure][9][]9}{[1][20][]21}}
+\newlabel{fig:coc-syntax@cref}{{[figure][9][]9}{[1][21][]21}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces CIC$_\omega $ is CoC$_\omega $ with inductive types, inductive constructors, and \kl {primitive eliminators}.\relax }}{21}{figure.caption.13}\protected@file@percent }
 \newlabel{fig:cic-syntax}{{10}{21}{CIC$_\omega $ is CoC$_\omega $ with inductive types, inductive constructors, and \kl {primitive eliminators}.\relax }{figure.caption.13}{}}
 \newlabel{fig:cic-syntax@cref}{{[figure][10][]10}{[1][21][]21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2.2}Calculus of Inductive Constructions}{21}{subsubsection.2.1.2.2}\protected@file@percent }
+\newlabel{sec:cic}{{2.1.2.2}{21}{Calculus of Inductive Constructions}{subsubsection.2.1.2.2}{}}
+\newlabel{sec:cic@cref}{{[subsubsection][2][2,1,2]2.1.2.2}{[1][21][]21}}
+\newlabel{autoref-4}{{2.1.2.2}{21}{Calculus of Inductive Constructions}{figure.caption.12}{}}
 \mph@setcol{ii:21}{\mph@nr}
 \BKM@entry{id=13,dest={73656374696F6E2E322E32},srcline={1},srcfile={6D61696E74656E616E63652E746578}}{50726F6F66204D61696E74656E616E6365}
-\@writefile{toc}{\contentsline {paragraph}{Conventions}{22}{lstnumber.-28.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{From CIC$_{\omega }$ back to Gallina}{22}{lstnumber.-28.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{From Gallina back to Coq}{22}{lstnumber.-28.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Proof Maintenance}{22}{section.2.2}\protected@file@percent }
-\newlabel{sec:mot-mai}{{2.2}{22}{Proof Maintenance}{section.2.2}{}}
-\newlabel{sec:mot-mai@cref}{{[section][2][2]2.2}{[1][22][]22}}
+\@writefile{toc}{\contentsline {paragraph}{Conventions}{22}{lstnumber.-27.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{From CIC$_{\omega }$ back to Gallina}{22}{lstnumber.-27.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{From Gallina back to Coq}{22}{lstnumber.-27.1}\protected@file@percent }
 \mph@setcol{ii:22}{\mph@nr}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Proof Maintenance}{23}{section.2.2}\protected@file@percent }
+\newlabel{sec:mot-mai}{{2.2}{23}{Proof Maintenance}{section.2.2}{}}
+\newlabel{sec:mot-mai@cref}{{[section][2][2]2.2}{[1][22][]23}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{23}{subsection.2.2.1}\protected@file@percent }
 \newlabel{sec:changes}{{2.2.1}{23}{Breaking Changes}{subsection.2.2.1}{}}
 \newlabel{sec:changes@cref}{{[subsection][1][2,2]2.2.1}{[1][23][]23}}
 \@writefile{toc}{\contentsline {paragraph}{Changing our Program}{23}{Item.18}\protected@file@percent }
 \mph@setcol{ii:23}{\mph@nr}
-\@writefile{toc}{\contentsline {paragraph}{Changing our Specification}{24}{lstnumber.-30.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Changing our Specification}{24}{lstnumber.-29.10}\protected@file@percent }
 \mph@setcol{ii:24}{\mph@nr}
 \citation{Woos:2016:PCF:2854065.2854081}
 \citation{Klein:2014:CFV:2584468.2560537}
@@ -361,17 +360,17 @@
 \newlabel{sec:irl}{{2.2.2}{25}{Even Experts are Human}{subsection.2.2.2}{}}
 \newlabel{sec:irl@cref}{{[subsection][2][2,2]2.2.2}{[1][25][]25}}
 \mph@setcol{ii:25}{\mph@nr}
-\BKM@entry{id=14,dest={73656374696F6E2E322E33},srcline={1},srcfile={7265706169722E746578}}{50726F6F6620526570616972}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Patches to a lemma by an expert proof engineer.\relax }}{26}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:patch}{{11}{26}{Patches to a lemma by an expert proof engineer.\relax }{figure.caption.14}{}}
 \newlabel{fig:patch@cref}{{[figure][11][]11}{[1][25][]26}}
 \mph@setcol{ii:26}{\mph@nr}
+\BKM@entry{id=14,dest={73656374696F6E2E322E33},srcline={1},srcfile={7265706169722E746578}}{50726F6F6620526570616972}
 \citation{Monperrus:2018:ASR:3177787.3105906}
 \citation{Gazzola:2018:ASR:3180155.3182526}
 \citation{Monperrus:2018:ASR:3177787.3105906}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Proof Repair}{27}{section.2.3}\protected@file@percent }
 \newlabel{sec:mot-rep}{{2.3}{27}{Proof Repair}{section.2.3}{}}
-\newlabel{sec:mot-rep@cref}{{[section][3][2]2.3}{[1][26][]27}}
+\newlabel{sec:mot-rep@cref}{{[section][3][2]2.3}{[1][27][]27}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}How Proof Repair Works}{27}{subsection.2.3.1}\protected@file@percent }
 \newlabel{sec:how}{{2.3.1}{27}{How Proof Repair Works}{subsection.2.3.1}{}}
 \newlabel{sec:how@cref}{{[subsection][1][2,3]2.3.1}{[1][27][]27}}
@@ -396,12 +395,12 @@
 \newlabel{sec:patch-motivating}{{3.1}{31}{Motivating Example}{section.3.1}{}}
 \newlabel{sec:patch-motivating@cref}{{[section][1][3]3.1}{[1][31][]31}}
 \mph@setcol{ii:31}{\mph@nr}
+\@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-33}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-34}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-35}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-36}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-37}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-38}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/izr.tex}{32}{lstlisting.3.-39}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Caption}}{32}{figure.caption.15}\protected@file@percent }
 \newlabel{fig:izr}{{12}{32}{Caption}{figure.caption.15}{}}
 \newlabel{fig:izr@cref}{{[figure][12][]12}{[1][31][]32}}
@@ -418,18 +417,18 @@
 \newlabel{alg:patching}{{13}{34}{Search procedure for a reusable proof patch in \sysname .\relax }{figure.caption.16}{}}
 \newlabel{alg:patching@cref}{{[figure][13][]13}{[1][34][]34}}
 \mph@setcol{ii:34}{\mph@nr}
+\@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-43}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-44}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-45}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-46}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-46}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-47}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-48}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-49}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-49}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-50}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-51}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/introex.tex}{35}{lstlisting.3.-52}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-52}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-53}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-54}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/introexterm.tex}{35}{lstlisting.3.-55}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Two proofs with different conclusions (top) and the corresponding proof terms (bottom). Highlighted lines correspond to the change in theorem conclusion (top) and the difference in terms that correspond to a patch (bottom).\relax }}{35}{figure.caption.17}\protected@file@percent }
 \newlabel{fig:example}{{14}{35}{Two proofs with different conclusions (top) and the corresponding proof terms (bottom). Highlighted lines correspond to the change in theorem conclusion (top) and the difference in terms that correspond to a patch (bottom).\relax }{figure.caption.17}{}}
 \newlabel{fig:example@cref}{{[figure][14][]14}{[1][34][]35}}
@@ -441,14 +440,14 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{37}{subsection.3.2.3}\protected@file@percent }
 \newlabel{sec:pumpkin-spec-diff}{{3.2.3}{37}{Differencing: Candidates from Examples}{subsection.3.2.3}{}}
 \newlabel{sec:pumpkin-spec-diff@cref}{{[subsection][3][3,2]3.2.3}{[1][36][]37}}
-\@writefile{toc}{\contentsline {paragraph}{Summary}{37}{lstnumber.-66.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Summary}{37}{lstnumber.-65.1}\protected@file@percent }
 \mph@setcol{ii:37}{\mph@nr}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{38}{subsection.3.2.4}\protected@file@percent }
 \newlabel{sec:pumpkin-spec-trans}{{3.2.4}{38}{Transformations: Patches from Candidates}{subsection.3.2.4}{}}
 \newlabel{sec:pumpkin-spec-trans@cref}{{[subsection][4][3,2]3.2.4}{[1][38][]38}}
 \mph@setcol{ii:38}{\mph@nr}
 \BKM@entry{id=18,dest={73656374696F6E2E332E33},srcline={1},srcfile={7265706169722F646966666572656E63696E672E746578}}{446966666572656E63696E67}
-\@writefile{toc}{\contentsline {paragraph}{Summary}{39}{lstnumber.-70.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Summary}{39}{lstnumber.-69.6}\protected@file@percent }
 \mph@setcol{ii:39}{\mph@nr}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Differencing}{40}{section.3.3}\protected@file@percent }
 \newlabel{sec:pumpkin-diff}{{3.3}{40}{Differencing}{section.3.3}{}}
@@ -460,8 +459,8 @@
 \citation{Hofmann97}
 \@writefile{toc}{\contentsline {paragraph}{Identity}{41}{subsection.3.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Application}{41}{subsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Functions}{41}{lstnumber.-73.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Eliminators}{41}{lstnumber.-77.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Functions}{41}{lstnumber.-72.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Eliminators}{41}{lstnumber.-76.1}\protected@file@percent }
 \mph@setcol{ii:41}{\mph@nr}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The type of (left) and tree for (right) the eliminator of \lstinline {nat}. The solid edges represent hypotheses, and the dotted edges represent the proof obligations for each case in an inductive proof.\relax }}{42}{figure.caption.18}\protected@file@percent }
 \newlabel{fig:cattree}{{15}{42}{The type of (left) and tree for (right) the eliminator of \lstinline {nat}. The solid edges represent hypotheses, and the dotted edges represent the proof obligations for each case in an inductive proof.\relax }{figure.caption.18}{}}
@@ -489,8 +488,8 @@
 \mph@setcol{ii:44}{\mph@nr}
 \mph@setcol{ii:45}{\mph@nr}
 \citation{hints}
-\@writefile{toc}{\contentsline {paragraph}{Inversion}{46}{lstnumber.-87.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Factoring}{46}{lstnumber.-92.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Inversion}{46}{lstnumber.-86.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Factoring}{46}{lstnumber.-91.5}\protected@file@percent }
 \mph@setcol{ii:46}{\mph@nr}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Limitations}{47}{subsection.3.4.2}\protected@file@percent }
 \newlabel{sec:pumpkin-trans-limitations}{{3.4.2}{47}{Limitations}{subsection.3.4.2}{}}
@@ -521,7 +520,7 @@
 \@writefile{toc}{\contentsline {paragraph}{Generalization}{50}{subsubsection.3.5.1.3}\protected@file@percent }
 \mph@setcol{ii:50}{\mph@nr}
 \@writefile{toc}{\contentsline {paragraph}{Inversion}{51}{subsubsection.3.5.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Factoring}{51}{lstnumber.-98.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Factoring}{51}{lstnumber.-97.2}\protected@file@percent }
 \mph@setcol{ii:51}{\mph@nr}
 \citation{pumpkin-git}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{52}{subsubsection.3.5.1.4}\protected@file@percent }
@@ -531,9 +530,9 @@
 \newlabel{sec:workflow}{{3.5.2}{52}{Extensions}{subsection.3.5.2}{}}
 \newlabel{sec:workflow@cref}{{[subsection][2][3,5]3.5.2}{[1][52][]52}}
 \@writefile{toc}{\contentsline {paragraph}{Git Integration}{52}{subsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Patch Application}{52}{lstnumber.-101.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Patch Application}{52}{lstnumber.-100.1}\protected@file@percent }
 \mph@setcol{ii:52}{\mph@nr}
-\@writefile{toc}{\contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-102.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Proof Optimization}{53}{lstnumber.-101.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{53}{subsection.3.5.3}\protected@file@percent }
 \newlabel{sec:eval}{{3.5.3}{53}{Testing Boundaries}{subsection.3.5.3}{}}
 \newlabel{sec:eval@cref}{{[subsection][3][3,5]3.5.3}{[1][53][]53}}
@@ -550,9 +549,9 @@
 \newlabel{sec:fail}{{3.5.3.2}{55}{Three Challenges}{subsubsection.3.5.3.2}{}}
 \newlabel{sec:fail@cref}{{[subsubsection][2][3,5,3]3.5.3.2}{[1][54][]55}}
 \@writefile{toc}{\contentsline {paragraph}{A Challenge for Differencing}{55}{subsubsection.3.5.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-105.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A Challenge for Inversion}{55}{lstnumber.-104.9}\protected@file@percent }
 \mph@setcol{ii:55}{\mph@nr}
-\@writefile{toc}{\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-108.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A Challenge for Generalization}{56}{lstnumber.-107.6}\protected@file@percent }
 \mph@setcol{ii:56}{\mph@nr}
 \BKM@entry{id=21,dest={73656374696F6E2E332E36},srcline={1},srcfile={7265706169722F726573756C74732E746578}}{526573756C7473}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{57}{subsubsection.3.5.3.3}\protected@file@percent }
@@ -563,19 +562,19 @@
 \newlabel{sec:pumpkin-results@cref}{{[section][6][3]3.6}{[1][57][]57}}
 \mph@setcol{ii:57}{\mph@nr}
 \citation{compcertcommit}
+\@writefile{lol}{\contentsline {lstlisting}{repair/compcert.tex}{58}{lstlisting.3.-115}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/compcert.tex}{58}{lstlisting.3.-116}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/compcert.tex}{58}{lstlisting.3.-117}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/compcert.tex}{58}{lstlisting.3.-118}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/compcert.tex}{58}{lstlisting.3.-119}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Caption for LOF}}{58}{figure.caption.20}\protected@file@percent }
 \newlabel{fig:int}{{17}{58}{Caption for LOF}{figure.caption.20}{}}
 \newlabel{fig:int@cref}{{[figure][17][]17}{[1][58][]58}}
+\@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-119}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-120}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-121}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-122}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-123}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-124}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/bintonat.tex}{58}{lstlisting.3.-125}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Caption for LOF}}{58}{figure.caption.21}\protected@file@percent }
 \newlabel{fig:bintonat}{{18}{58}{Caption for LOF}{figure.caption.21}{}}
 \newlabel{fig:bintonat@cref}{{[figure][18][]18}{[1][58][]58}}
@@ -587,20 +586,20 @@
 \citation{usera}
 \citation{userb}
 \@writefile{toc}{\contentsline {paragraph}{Replay}{59}{subsection.3.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Search}{59}{lstnumber.-127.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Apply}{59}{lstnumber.-128.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Search}{59}{lstnumber.-126.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Apply}{59}{lstnumber.-127.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1.1}Instance}{59}{subsubsection.3.6.1.1}\protected@file@percent }
 \mph@setcol{ii:59}{\mph@nr}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{60}{subsection.3.6.2}\protected@file@percent }
 \newlabel{sec:foundations}{{3.6.2}{60}{Porting Definitions}{subsection.3.6.2}{}}
 \newlabel{sec:foundations@cref}{{[subsection][2][3,6]3.6.2}{[1][59][]60}}
 \@writefile{toc}{\contentsline {paragraph}{Replay}{60}{subsection.3.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Search}{60}{lstnumber.-135.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Apply}{60}{lstnumber.-136.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Search}{60}{lstnumber.-134.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Apply}{60}{lstnumber.-135.2}\protected@file@percent }
 \mph@setcol{ii:60}{\mph@nr}
 \citation{coq84commit}
+\@writefile{lol}{\contentsline {lstlisting}{repair/divide.tex}{61}{lstlisting.3.-141}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{repair/divide.tex}{61}{lstlisting.3.-142}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{repair/divide.tex}{61}{lstlisting.3.-143}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Caption for LOF}}{61}{figure.caption.22}\protected@file@percent }
 \newlabel{fig:divide}{{19}{61}{Caption for LOF}{figure.caption.22}{}}
 \newlabel{fig:divide@cref}{{[figure][19][]19}{[1][61][]61}}
@@ -610,8 +609,8 @@
 \newlabel{sec:coq}{{3.6.3}{62}{Updating Proof Assistant Versions}{subsection.3.6.3}{}}
 \newlabel{sec:coq@cref}{{[subsection][3][3,6]3.6.3}{[1][61][]62}}
 \@writefile{toc}{\contentsline {paragraph}{Replay}{62}{subsection.3.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Search}{62}{lstnumber.-145.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Apply}{62}{lstnumber.-146.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Search}{62}{lstnumber.-144.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Apply}{62}{lstnumber.-145.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.3.1}Instance}{62}{subsubsection.3.6.3.1}\protected@file@percent }
 \mph@setcol{ii:62}{\mph@nr}
 \BKM@entry{id=22,dest={73656374696F6E2E332E37},srcline={1},srcfile={7265706169722F636F6E636C7573696F6E2E746578}}{436F6E636C7573696F6E}
@@ -639,8 +638,8 @@
 \@writefile{toc}{\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{65}{Item.43}\protected@file@percent }
 \mph@setcol{ii:65}{\mph@nr}
 \BKM@entry{id=24,dest={73656374696F6E2E342E31},srcline={1},srcfile={6F6674656E2F6D6F7469766174696E672E746578}}{4D6F7469766174696E67204578616D706C65}
+\@writefile{lol}{\contentsline {lstlisting}{often/listswap.tex}{66}{lstlisting.4.-152}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/listswap.tex}{66}{lstlisting.4.-153}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/listswap.tex}{66}{lstlisting.4.-154}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces A change from the old version of \lstinline {list} (left) to the new version of \lstinline {list} (right). Recall that \lstinline {list} is an inductive datatype that is either empty (the \lstinline {nil} constructor), or the result of placing an element in front of another \lstinline {list} (the \lstinline {cons} constructor). The change swaps these two constructors (\begingroup \setlength  {\fboxsep }{0pt}\color@box {}{orange!25}{\vrule width 0pt height .9\ht \strutbox depth .9\dp \strutbox \relax orange\/}\endgroup ).\relax }}{66}{figure.caption.23}\protected@file@percent }
 \newlabel{fig:listswap}{{20}{66}{A change from the old version of \lstinline {list} (left) to the new version of \lstinline {list} (right). Recall that \lstinline {list} is an inductive datatype that is either empty (the \lstinline {nil} constructor), or the result of placing an element in front of another \lstinline {list} (the \lstinline {cons} constructor). The change swaps these two constructors (\codediff {orange}).\relax }{figure.caption.23}{}}
 \newlabel{fig:listswap@cref}{{[figure][20][]20}{[1][66][]66}}
@@ -664,13 +663,13 @@
 \newlabel{sec:pi-workflow}{{4.2.1}{69}{Workflow: Configure, Transform, Decompile}{subsection.4.2.1}{}}
 \newlabel{sec:pi-workflow@cref}{{[subsection][1][4,2]4.2.1}{[1][69][]69}}
 \mph@setcol{ii:69}{\mph@nr}
+\@writefile{lol}{\contentsline {lstlisting}{often/equivproof.tex}{70}{lstlisting.4.-160}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/equivproof.tex}{70}{lstlisting.4.-161}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/equivproof.tex}{70}{lstlisting.4.-162}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Two functions between \lstinline {Old.list} and \lstinline {New.list} (top) that form an equivalence (bottom).\relax }}{70}{figure.caption.25}\protected@file@percent }
 \newlabel{fig:equivalence}{{22}{70}{Two functions between \lstinline {Old.list} and \lstinline {New.list} (top) that form an equivalence (bottom).\relax }{figure.caption.25}{}}
 \newlabel{fig:equivalence@cref}{{[figure][22][]22}{[1][70][]70}}
+\@writefile{lol}{\contentsline {lstlisting}{often/equiv2.tex}{70}{lstlisting.4.-162}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/equiv2.tex}{70}{lstlisting.4.-163}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/equiv2.tex}{70}{lstlisting.4.-164}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces The old type \lstinline {I} (left) is either \lstinline {A} or \lstinline {B}. The new type \lstinline {J} (right) is \lstinline {I} with \lstinline {A} and \lstinline {B} factored out to \lstinline {bool} (\begingroup \setlength  {\fboxsep }{0pt}\color@box {}{orange!25}{\vrule width 0pt height .9\ht \strutbox depth .9\dp \strutbox \relax orange\/}\endgroup ).\relax }}{70}{figure.caption.26}\protected@file@percent }
 \newlabel{fig:equivalence2}{{23}{70}{The old type \lstinline {I} (left) is either \lstinline {A} or \lstinline {B}. The new type \lstinline {J} (right) is \lstinline {I} with \lstinline {A} and \lstinline {B} factored out to \lstinline {bool} (\codediff {orange}).\relax }{figure.caption.26}{}}
 \newlabel{fig:equivalence2@cref}{{[figure][23][]23}{[1][70][]70}}
@@ -680,8 +679,8 @@
 \@writefile{toc}{\contentsline {paragraph}{Factoring out Constructors}{70}{figure.caption.26}\protected@file@percent }
 \mph@setcol{ii:70}{\mph@nr}
 \citation{angiuli2020internalizing}
+\@writefile{lol}{\contentsline {lstlisting}{often/listtovect.tex}{71}{lstlisting.4.-164}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/listtovect.tex}{71}{lstlisting.4.-165}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/listtovect.tex}{71}{lstlisting.4.-166}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces A vector (bottom) is a list (top) indexed by its length (\begingroup \setlength  {\fboxsep }{0pt}\color@box {}{orange!25}{\vrule width 0pt height .9\ht \strutbox depth .9\dp \strutbox \relax orange\/}\endgroup ). Vectors effectively make it possible to enforce length invariants about lists at compile time.\relax }}{71}{figure.caption.27}\protected@file@percent }
 \newlabel{fig:listtovect}{{24}{71}{A vector (bottom) is a list (top) indexed by its length (\codediff {orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.\relax }{figure.caption.27}{}}
 \newlabel{fig:listtovect@cref}{{[figure][24][]24}{[1][71][]71}}
@@ -691,14 +690,14 @@
 \newlabel{sec:pi-spec-diff@cref}{{[subsection][3][4,2]4.2.3}{[1][71][]71}}
 \mph@setcol{ii:71}{\mph@nr}
 \citation{univalent2013homotopy}
-\@writefile{toc}{\contentsline {paragraph}{Summary}{72}{lstnumber.-167.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Summary}{72}{lstnumber.-166.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{72}{subsection.4.2.4}\protected@file@percent }
 \newlabel{sec:pi-spec-trans}{{4.2.4}{72}{Transformation: Transport with a Twist}{subsection.4.2.4}{}}
 \newlabel{sec:pi-spec-trans@cref}{{[subsection][4][4,2]4.2.4}{[1][72][]72}}
 \mph@setcol{ii:72}{\mph@nr}
 \citation{univalent2013homotopy}
 \citation{tabareau2017equivalences}
-\@writefile{toc}{\contentsline {paragraph}{Summary}{73}{lstnumber.-168.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Summary}{73}{lstnumber.-167.2}\protected@file@percent }
 \mph@setcol{ii:73}{\mph@nr}
 \BKM@entry{id=26,dest={73656374696F6E2E342E33},srcline={1},srcfile={6F6674656E2F646966666572656E63696E672E746578}}{446966666572656E63696E67}
 \@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces The dependent constructors and eliminators for old (left) and new (right) \lstinline {list}, with the difference in \begingroup \setlength  {\fboxsep }{0pt}\color@box {}{orange!25}{\vrule width 0pt height .9\ht \strutbox depth .9\dp \strutbox \relax orange\/}\endgroup .\relax }}{74}{figure.caption.28}\protected@file@percent }
@@ -719,8 +718,8 @@
 \newlabel{sec:pi-diff-equal}{{4.3.2}{76}{Producing Well-Typed Terms}{subsection.4.3.2}{}}
 \newlabel{sec:pi-diff-equal@cref}{{[subsection][2][4,3]4.3.2}{[1][76][]76}}
 \mph@setcol{ii:76}{\mph@nr}
+\@writefile{lol}{\contentsline {lstlisting}{often/nattobin.tex}{77}{lstlisting.4.-175}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/nattobin.tex}{77}{lstlisting.4.-176}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/nattobin.tex}{77}{lstlisting.4.-177}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces A unary natural number \lstinline {nat} (left) is either zero (\lstinline {0}) or the successor of some other natural number (\lstinline {S}). A binary natural number \lstinline {N} (right) is either zero (\lstinline {N0}) or a positive binary number (\lstinline {Npos}), where a positive binary number is either 1 (\lstinline {xH}), or the result of shifting left and adding 1 (\lstinline {xI}) or 0 (\lstinline {xO}). Unary and binary natural numbers are equivalent, but have different inductive structures. Consequentially, definitional equalities over \lstinline {nat} may become propositional over \lstinline {N}.\relax }}{77}{figure.caption.29}\protected@file@percent }
 \newlabel{fig:nattobin}{{26}{77}{A unary natural number \lstinline {nat} (left) is either zero (\lstinline {0}) or the successor of some other natural number (\lstinline {S}). A binary natural number \lstinline {N} (right) is either zero (\lstinline {N0}) or a positive binary number (\lstinline {Npos}), where a positive binary number is either 1 (\lstinline {xH}), or the result of shifting left and adding 1 (\lstinline {xI}) or 0 (\lstinline {xO}). Unary and binary natural numbers are equivalent, but have different inductive structures. Consequentially, definitional equalities over \lstinline {nat} may become propositional over \lstinline {N}.\relax }{figure.caption.29}{}}
 \newlabel{fig:nattobin@cref}{{[figure][26][]26}{[1][76][]77}}
@@ -763,7 +762,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Common definitions.\relax }}{83}{figure.caption.32}\protected@file@percent }
 \newlabel{fig:common}{{29}{83}{Common definitions.\relax }{figure.caption.32}{}}
 \newlabel{fig:common@cref}{{[figure][29][]29}{[1][83][]83}}
-\@writefile{toc}{\contentsline {paragraph}{Common Definitions}{83}{lstnumber.-189.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Common Definitions}{83}{lstnumber.-188.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Generating the Motive}{83}{figure.caption.33}\protected@file@percent }
 \mph@setcol{ii:83}{\mph@nr}
@@ -771,8 +770,8 @@
 \newlabel{fig:searchindexer}{{30}{84}{Differencing for the indexer function.\relax }{figure.caption.33}{}}
 \newlabel{fig:searchindexer@cref}{{[figure][30][]30}{[1][83][]84}}
 \mph@setcol{ii:84}{\mph@nr}
-\@writefile{toc}{\contentsline {paragraph}{Generating Each Case}{85}{lstnumber.-192.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Composing the Result}{85}{lstnumber.-196.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Generating Each Case}{85}{lstnumber.-191.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Composing the Result}{85}{lstnumber.-195.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{85}{subsubsection.4.3.4.2}\protected@file@percent }
 \mph@setcol{ii:85}{\mph@nr}
 \@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Differencing for \lstinline {f}.\relax }}{86}{figure.caption.34}\protected@file@percent }
@@ -781,7 +780,7 @@
 \@writefile{toc}{\contentsline {paragraph}{Discovering the Equivalence Parts}{86}{subsubsection.4.3.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Deriving the Configuration}{86}{figure.caption.34}\protected@file@percent }
 \mph@setcol{ii:86}{\mph@nr}
-\@writefile{toc}{\contentsline {paragraph}{Proving Correctness}{87}{lstnumber.-202.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Proving Correctness}{87}{lstnumber.-201.1}\protected@file@percent }
 \mph@setcol{ii:87}{\mph@nr}
 \BKM@entry{id=27,dest={73656374696F6E2E342E34},srcline={1},srcfile={6F6674656E2F7472616E73666F726D6174696F6E2E746578}}{5472616E73666F726D6174696F6E}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{88}{subsection.4.3.5}\protected@file@percent }
@@ -888,8 +887,8 @@
 \newlabel{sec:results}{{4.6.1}{101}{\toolnamec Eight Ways}{subsection.4.6.1}{}}
 \newlabel{sec:results@cref}{{[subsection][1][4,6]4.6.1}{[1][101][]101}}
 \mph@setcol{ii:101}{\mph@nr}
+\@writefile{lol}{\contentsline {lstlisting}{often/replica.tex}{102}{lstlisting.4.-208}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{often/replica.tex}{102}{lstlisting.4.-209}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{often/replica.tex}{102}{lstlisting.4.-210}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces A simple language (left) and the same language with two swapped constructors and an added constructor (right).\relax }}{102}{figure.caption.41}\protected@file@percent }
 \newlabel{fig:replica}{{37}{102}{A simple language (left) and the same language with two swapped constructors and an added constructor (right).\relax }{figure.caption.41}{}}
 \newlabel{fig:replica@cref}{{[figure][37][]37}{[1][102][]102}}
@@ -1347,30 +1346,32 @@
 \bibcite{sozeau:equations}{143}
 \bibcite{Sozeau2008}{144}
 \mph@setcol{ii:143}{\mph@nr}
-\bibcite{tabareau2017equivalences}{145}
-\bibcite{tabareau2019marriage}{146}
-\bibcite{Tan:2015:RAR:2818754.2818813}{147}
-\bibcite{Timany2015FirstST}{148}
-\bibcite{univalent2013homotopy}{149}
-\bibcite{van2012engineering}{150}
-\bibcite{Wei:2010:AFP:1831708.1831716}{151}
-\bibcite{Wenzel2007isar}{152}
-\bibcite{Wenzel2013}{153}
-\bibcite{Wenzel2013MultiProcessing}{154}
-\bibcite{Wenzel2014}{155}
-\bibcite{WenzelScalingIsabelle}{156}
-\bibcite{WenzelFurtherScalingIsabelle}{157}
+\bibcite{hstocoqv}{145}
+\bibcite{tabareau2017equivalences}{146}
+\bibcite{tabareau2019marriage}{147}
+\bibcite{Tan:2015:RAR:2818754.2818813}{148}
+\bibcite{Timany2015FirstST}{149}
+\bibcite{univalent2013homotopy}{150}
+\bibcite{van2012engineering}{151}
+\bibcite{Wei:2010:AFP:1831708.1831716}{152}
+\bibcite{Wenzel2007isar}{153}
+\bibcite{Wenzel2013}{154}
+\bibcite{Wenzel2013MultiProcessing}{155}
+\bibcite{Wenzel2014}{156}
 \mph@setcol{ii:144}{\mph@nr}
-\bibcite{wenzel1999isar}{158}
-\bibcite{WhitesidePhD}{159}
-\bibcite{wibergh2019}{160}
-\bibcite{williamsphd}{161}
-\bibcite{Williams2017}{162}
-\bibcite{egg}{163}
-\bibcite{Woos:2016:PCF:2854065.2854081}{164}
-\bibcite{Xuan:2017:NAR:3071893.3071964}{165}
-\bibcite{Yang2011}{166}
-\bibcite{Zhang:2017:ATD:3097368.3097448}{167}
+\bibcite{WenzelScalingIsabelle}{157}
+\bibcite{WenzelFurtherScalingIsabelle}{158}
+\bibcite{wenzel1999isar}{159}
+\bibcite{WhitesidePhD}{160}
+\bibcite{wibergh2019}{161}
+\bibcite{williamsphd}{162}
+\bibcite{Williams2017}{163}
+\bibcite{egg}{164}
+\bibcite{Woos:2016:PCF:2854065.2854081}{165}
+\bibcite{Xuan:2017:NAR:3071893.3071964}{166}
+\bibcite{Yang2011}{167}
+\bibcite{Zhang:2017:ATD:3097368.3097448}{168}
 \mph@setcol{ii:145}{\mph@nr}
-\gdef\mph@lastpage{146}
+\mph@setcol{ii:146}{\mph@nr}
+\gdef\mph@lastpage{147}
 \csname mph@do@warn\endcsname

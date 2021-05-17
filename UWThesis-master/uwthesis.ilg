@@ -84,8 +84,78 @@ Scanning input file uwthesis.idx....
    -- Extra `!' at position 39 of first argument.
 !! Input index error (file = uwthesis.idx, line = 165):
    -- Extra `!' at position 40 of first argument.
-done (127 entries accepted, 38 rejected).
-Sorting entries....done (984 comparisons).
-Generating output file uwthesis.ind....done (134 lines written, 0 warnings).
+!! Input index error (file = uwthesis.idx, line = 166):
+   -- Extra `!' at position 40 of first argument.
+!! Input index error (file = uwthesis.idx, line = 167):
+   -- Extra `!' at position 40 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 169):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 170):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 172):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 173):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 174):
+   -- Extra `!' at position 40 of first argument.
+!! Input index error (file = uwthesis.idx, line = 175):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 177):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 178):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 181):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 189):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 191):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 192):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 194):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 195):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 201):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 220):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 221):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 222):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 223):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 224):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 225):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 226):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 228):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 229):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 231):
+   -- Extra `!' at position 39 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 234):
+   -- Extra `!' at position 39 of first argument.
+!! Input index error (file = uwthesis.idx, line = 235):
+   -- Extra `!' at position 39 of first argument.
+done (173 entries accepted, 67 rejected).
+Sorting entries....done (1430 comparisons).
+Generating output file uwthesis.ind....done (152 lines written, 0 warnings).
 Output written in uwthesis.ind.
 Transcript written in uwthesis.ilg.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 MAY 2021 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  16 MAY 2021 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1994,29 +1994,23 @@ chapter 2.
 [11
 
 
-] (./development.tex [12] (./workflow.tex
-
-LaTeX Warning: Citation `TODO' on page 13 undefined on input line 20.
-
-
-LaTeX Warning: Citation `TODO' on page 13 undefined on input line 20.
-
-[13] [14] [15]) (./theory.tex [16] [17] [18]
+] (./development.tex [12] (./workflow.tex [13] [14] [15]) (./theory.tex
+[16] [17] [18]
 
 LaTeX Warning: Citation `TODO' on page 19 undefined on input line 130.
 
-
-LaTeX Warning: Citation `TODO' on page 19 undefined on input line 147.
-
-
-LaTeX Warning: Citation `TODO' on page 19 undefined on input line 147.
-
 [19]
+
+LaTeX Warning: Citation `TODO' on page 20 undefined on input line 147.
+
+
+LaTeX Warning: Citation `TODO' on page 20 undefined on input line 147.
+
+[20]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 182.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [20]
-[21]
+) [21]
 Overfull \hbox (3.42526pt too wide) in paragraph at lines 271--276
 [] []\OT1/pplj/m/sc/10.95 (-20) f r o m c i c [] b a c k t o g a l -l i n a[] \
 OT1/pplj/m/n/10.95 (-20) Gal-lina im-ple-ments CIC$[]$, but with
@@ -2052,12 +2046,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 149.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 149.
-<maintenance/fig/patch.png, id=751, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=755, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 152.
 (pdftex.def)             Requested size: 336.0pt x 202.21732pt.
-[25]) (./repair.tex [26 <./maintenance/fig/patch.png>] [27] [28]))
+[25] [26 <./maintenance/fig/patch.png>]) (./repair.tex [27] [28]))
 (./pumpkinpatch.tex [29] [30
 
 
@@ -2091,7 +2085,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 74--95
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1125, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1133, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
@@ -2166,7 +2160,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1800, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1808, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2198,7 +2192,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 176--187
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2045, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2054, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 250.
@@ -2347,13 +2341,8 @@ lj/m/n/10.95 (-20) Proof re-pair will ac-ces-si-ble across all proof
  []
 
 [124] [125] [126] [127])) (./uwthesis.ind [128]
-Overfull \hbox (45.93929pt too wide) in paragraph at lines 62--63
+Overfull \hbox (45.93929pt too wide) in paragraph at lines 66--67
 []| \OT1/pplj/m/n/10.95 (-20) Mangpo Phitchaya Phothilimthana,
- []
-
-
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 79--80
-[]| \OT1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 [129
@@ -2363,12 +2352,17 @@ Overfull \hbox (7.35196pt too wide) in paragraph at lines 79--80
 
 
 ]
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 117--118
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 83--84
+[]| \OT1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
+ []
+
+
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 129--130
 []| \OT1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 119--121
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 131--134
 \OT1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
@@ -2423,7 +2417,7 @@ Underfull \hbox (badness 1184) in paragraph at lines 857--862
  G[]en[]eriques de Mod[]elisation et de
  []
 
-[143] [144]) [145]
+[143] [144] [145]) [146]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2458,10 +2452,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1037.
  ) 
 Here is how much of TeX's memory you used:
- 50953 strings out of 492609
- 1027497 string characters out of 6129033
- 1306471 words of memory out of 5000000
- 51532 multiletter control sequences out of 15000+600000
+ 50963 strings out of 492609
+ 1027632 string characters out of 6129033
+ 1306566 words of memory out of 5000000
+ 51541 multiletter control sequences out of 15000+600000
  642868 words of font info for 868 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2484,10 +2478,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (158 pages, 1691816 bytes).
+Output written on uwthesis.pdf (159 pages, 1695401 bytes).
 PDF statistics:
- 3656 PDF objects out of 4296 (max. 8388607)
- 3408 compressed objects within 35 object streams
- 1544 named destinations out of 1728 (max. 500000)
+ 3709 PDF objects out of 4296 (max. 8388607)
+ 3459 compressed objects within 35 object streams
+ 1545 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

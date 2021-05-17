@@ -889,6 +889,13 @@ Matthieu Sozeau and Nicolas Oury.
   Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
   pages 278--293, Berlin, Heidelberg, 2008. Springer.
 
+\bibitem{hstocoqv}
+Antal Spector-Zabusky, Joachim Breitner, Christine Rizkallah, and Stephanie
+  Weirich.
+\newblock hs-to-coq.
+\newblock \url{https://github.com/antalsz/hs-to-coq}, 2018-2021.
+\newblock Accessed: 2019-03-12.
+
 \bibitem{tabareau2017equivalences}
 Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
 \newblock Equivalences for free: Univalent parametricity for effective

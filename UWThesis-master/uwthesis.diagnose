@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-15 undefined knowledge(s).
+16 undefined knowledge(s).
 2 autoreference(s) are introduced twice.
 1 autoreference(s) are used but not introduced.
 
-57 autoreference(s) are properly used.
-91 autoreference(s) are defined but not used.
+62 autoreference(s) are properly used.
+92 autoreference(s) are defined but not used.
 
 
 ********
@@ -38,14 +38,15 @@
  | proof scripts
  | proof terms
  | automatic configuration
+ | equivalences
 
 
 ****************************
 * autoref-introduced-twice *
 ****************************
 
-uwthesis.tex:988: {Sarah Chasins}{default}{base}
-uwthesis.tex:1037: {Sarah Chasins}{default}{base}
+uwthesis.tex:1007: {Sarah Chasins}{default}{base}
+uwthesis.tex:1056: {Sarah Chasins}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
@@ -62,95 +63,96 @@ theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 ***********************************
 
 uwthesis.tex:58: {commands}{default}{base}
-uwthesis.tex:102: {proof maintenance}{default}{base}
-uwthesis.tex:129: {type equivalences}{default}{base}
-uwthesis.tex:146: {inductive type}{default}{base}
-uwthesis.tex:149: {constructors}{default}{base}
-uwthesis.tex:162: {UW PLSE}{default}{base}
-uwthesis.tex:185: {Max Willsey}{default}{base}
-uwthesis.tex:188: {Martin Kellog}{default}{base}
-uwthesis.tex:191: {Jared Roesch}{default}{base}
-uwthesis.tex:194: {Gus Smith}{default}{base}
-uwthesis.tex:197: {Bill Zorn}{default}{base}
-uwthesis.tex:200: {Ben Kushigian}{default}{base}
-uwthesis.tex:203: {Steven Lyubomirsky}{default}{base}
-uwthesis.tex:206: {Jacob Van Geffen}{default}{base}
-uwthesis.tex:209: {Marisa Kirisame}{default}{base}
-uwthesis.tex:212: {Audrey Seo}{default}{base}
-uwthesis.tex:215: {James Wilcox}{default}{base}
-uwthesis.tex:217: {Doug Woos}{default}{base}
-uwthesis.tex:220: {Eric Mullen}{default}{base}
-uwthesis.tex:223: {Remy Wang}{default}{base}
-uwthesis.tex:226: {Konstantin Weitz}{default}{base}
-uwthesis.tex:229: {Mike He}{default}{base}
-uwthesis.tex:237: {John Toman}{default}{base}
-uwthesis.tex:240: {Ryan Doenges}{default}{base}
-uwthesis.tex:243: {Melissa Hovik}{default}{base}
-uwthesis.tex:246: {Julie Newcomb}{default}{base}
-uwthesis.tex:249: {James Bornholt}{default}{base}
-uwthesis.tex:251: {Daryl Zuniga}{default}{base}
-uwthesis.tex:254: {Joe Redmond}{default}{base}
-uwthesis.tex:257: {Amanda Swearngin}{default}{base}
-uwthesis.tex:260: {Ali K\"{o}skal}{default}{base}
-uwthesis.tex:263: {Calvin Loncaric}{default}{base}
-uwthesis.tex:266: {Chenglong Wang}{default}{base}
-uwthesis.tex:269: {Mangpo Phitchaya Phothilimthana}{default}{base}
-uwthesis.tex:272: {Rohin Shah}{default}{base}
-uwthesis.tex:275: {Stuart Pernsteiner}{default}{base}
-uwthesis.tex:278: {Spencer Pearson}{default}{base}
-uwthesis.tex:281: {Sam Elliott}{default}{base}
-uwthesis.tex:283: {Maaz Ahmad}{default}{base}
-uwthesis.tex:286: {Dan Cascaval}{default}{base}
-uwthesis.tex:288: {Krzysztof Drewniak}{default}{base}
-uwthesis.tex:291: {Michael Flanders}{default}{base}
-uwthesis.tex:294: {Eunice Jun}{default}{base}
-uwthesis.tex:297: {Sam Kaufman}{default}{base}
-uwthesis.tex:299: {Rashmi Mudduluru}{default}{base}
-uwthesis.tex:302: {Sorawee Porncharoenwase}{default}{base}
-uwthesis.tex:306: {Thomas Schweizer}{default}{base}
-uwthesis.tex:309: {Luis Vega}{default}{base}
-uwthesis.tex:312: {Sahil Verma}{default}{base}
-uwthesis.tex:315: {Zhen Zhang}{default}{base}
-uwthesis.tex:318: {Amy Zhu}{default}{base}
-uwthesis.tex:324: {Taylor Blau}{default}{base}
-uwthesis.tex:327: {Logan Weber}{default}{base}
-uwthesis.tex:330: {Max Ruttenberg}{default}{base}
-uwthesis.tex:332: {Josh Pollock}{default}{base}
-uwthesis.tex:335: {Luke Nelson}{default}{base}
-uwthesis.tex:338: {Shumo Chu}{default}{base}
-uwthesis.tex:341: {Lymor Ringer Barnhard}{default}{base}
-uwthesis.tex:348: {Kasso Okoudjou}{default}{base}
-uwthesis.tex:351: {Larry Washington}{default}{base}
-uwthesis.tex:354: {Ida Chan}{default}{base}
-uwthesis.tex:356: {Brandi K. Adams}{default}{base}
-uwthesis.tex:358: {Ernesto}{default}{base}
-uwthesis.tex:360: {Musachy}{default}{base}
-uwthesis.tex:362: {Jeff Foster}{default}{base}
-uwthesis.tex:364: {Dan Grossman}{default}{base}
-uwthesis.tex:367: {Zach Tatlock}{default}{base}
-uwthesis.tex:370: {Roy Or-El}{default}{base}
-uwthesis.tex:373: {Vikram Iyer}{default}{base}
-uwthesis.tex:376: {Esther Jang}{default}{base}
-uwthesis.tex:379: {Ellie Berry}{default}{base}
-uwthesis.tex:382: {Mer Joyce}{default}{base}
-uwthesis.tex:385: {Jasper Tran O'Leary}{default}{base}
-uwthesis.tex:387: {Wade Gordon}{default}{base}
-uwthesis.tex:390: {Anne Spencer Ross}{default}{base}
-uwthesis.tex:393: {Anna Kornfeld Simpson}{default}{base}
-uwthesis.tex:396: {Qi Cheng}{default}{base}
-uwthesis.tex:399: {Misha Kolmogorov}{default}{base}
-uwthesis.tex:402: {Mark Velednitsky}{default}{base}
-uwthesis.tex:405: {Marcela Mendoza}{default}{base}
-uwthesis.tex:408: {Laura Chick}{default}{base}
-uwthesis.tex:411: {Google}{default}{base}
-uwthesis.tex:414: {Amazon}{default}{base}
-uwthesis.tex:416: {Carr Astronautics}{default}{base}
-uwthesis.tex:427: {proof repair by example}{default}{base}
-uwthesis.tex:430: {exampled patched proof}{default}{base}
-uwthesis.tex:449: {configuration}{default}{base}
-uwthesis.tex:461: {\toolnamec }{default}{base}
-uwthesis.tex:488: {results}{default}{base}
-uwthesis.tex:491: {Adapting Proof Automation to Adapt Proofs}{default}{base}
-uwthesis.tex:495: {Ornaments for Proof Reuse in Coq}{default}{base}
+uwthesis.tex:105: {proof maintenance}{default}{base}
+uwthesis.tex:129: {internal}{default}{base}
+uwthesis.tex:134: {external}{default}{base}
+uwthesis.tex:139: {internal}{default}{base}
+uwthesis.tex:165: {inductive type}{default}{base}
+uwthesis.tex:168: {constructors}{default}{base}
+uwthesis.tex:181: {UW PLSE}{default}{base}
+uwthesis.tex:204: {Max Willsey}{default}{base}
+uwthesis.tex:207: {Martin Kellog}{default}{base}
+uwthesis.tex:210: {Jared Roesch}{default}{base}
+uwthesis.tex:213: {Gus Smith}{default}{base}
+uwthesis.tex:216: {Bill Zorn}{default}{base}
+uwthesis.tex:219: {Ben Kushigian}{default}{base}
+uwthesis.tex:222: {Steven Lyubomirsky}{default}{base}
+uwthesis.tex:225: {Jacob Van Geffen}{default}{base}
+uwthesis.tex:228: {Marisa Kirisame}{default}{base}
+uwthesis.tex:231: {Audrey Seo}{default}{base}
+uwthesis.tex:234: {James Wilcox}{default}{base}
+uwthesis.tex:236: {Doug Woos}{default}{base}
+uwthesis.tex:239: {Eric Mullen}{default}{base}
+uwthesis.tex:242: {Remy Wang}{default}{base}
+uwthesis.tex:245: {Konstantin Weitz}{default}{base}
+uwthesis.tex:248: {Mike He}{default}{base}
+uwthesis.tex:256: {John Toman}{default}{base}
+uwthesis.tex:259: {Ryan Doenges}{default}{base}
+uwthesis.tex:262: {Melissa Hovik}{default}{base}
+uwthesis.tex:265: {Julie Newcomb}{default}{base}
+uwthesis.tex:268: {James Bornholt}{default}{base}
+uwthesis.tex:270: {Daryl Zuniga}{default}{base}
+uwthesis.tex:273: {Joe Redmond}{default}{base}
+uwthesis.tex:276: {Amanda Swearngin}{default}{base}
+uwthesis.tex:279: {Ali K\"{o}skal}{default}{base}
+uwthesis.tex:282: {Calvin Loncaric}{default}{base}
+uwthesis.tex:285: {Chenglong Wang}{default}{base}
+uwthesis.tex:288: {Mangpo Phitchaya Phothilimthana}{default}{base}
+uwthesis.tex:291: {Rohin Shah}{default}{base}
+uwthesis.tex:294: {Stuart Pernsteiner}{default}{base}
+uwthesis.tex:297: {Spencer Pearson}{default}{base}
+uwthesis.tex:300: {Sam Elliott}{default}{base}
+uwthesis.tex:302: {Maaz Ahmad}{default}{base}
+uwthesis.tex:305: {Dan Cascaval}{default}{base}
+uwthesis.tex:307: {Krzysztof Drewniak}{default}{base}
+uwthesis.tex:310: {Michael Flanders}{default}{base}
+uwthesis.tex:313: {Eunice Jun}{default}{base}
+uwthesis.tex:316: {Sam Kaufman}{default}{base}
+uwthesis.tex:318: {Rashmi Mudduluru}{default}{base}
+uwthesis.tex:321: {Sorawee Porncharoenwase}{default}{base}
+uwthesis.tex:325: {Thomas Schweizer}{default}{base}
+uwthesis.tex:328: {Luis Vega}{default}{base}
+uwthesis.tex:331: {Sahil Verma}{default}{base}
+uwthesis.tex:334: {Zhen Zhang}{default}{base}
+uwthesis.tex:337: {Amy Zhu}{default}{base}
+uwthesis.tex:343: {Taylor Blau}{default}{base}
+uwthesis.tex:346: {Logan Weber}{default}{base}
+uwthesis.tex:349: {Max Ruttenberg}{default}{base}
+uwthesis.tex:351: {Josh Pollock}{default}{base}
+uwthesis.tex:354: {Luke Nelson}{default}{base}
+uwthesis.tex:357: {Shumo Chu}{default}{base}
+uwthesis.tex:360: {Lymor Ringer Barnhard}{default}{base}
+uwthesis.tex:367: {Kasso Okoudjou}{default}{base}
+uwthesis.tex:370: {Larry Washington}{default}{base}
+uwthesis.tex:373: {Ida Chan}{default}{base}
+uwthesis.tex:375: {Brandi K. Adams}{default}{base}
+uwthesis.tex:377: {Ernesto}{default}{base}
+uwthesis.tex:379: {Musachy}{default}{base}
+uwthesis.tex:381: {Jeff Foster}{default}{base}
+uwthesis.tex:383: {Dan Grossman}{default}{base}
+uwthesis.tex:386: {Zach Tatlock}{default}{base}
+uwthesis.tex:389: {Roy Or-El}{default}{base}
+uwthesis.tex:392: {Vikram Iyer}{default}{base}
+uwthesis.tex:395: {Esther Jang}{default}{base}
+uwthesis.tex:398: {Ellie Berry}{default}{base}
+uwthesis.tex:401: {Mer Joyce}{default}{base}
+uwthesis.tex:404: {Jasper Tran O'Leary}{default}{base}
+uwthesis.tex:406: {Wade Gordon}{default}{base}
+uwthesis.tex:409: {Anne Spencer Ross}{default}{base}
+uwthesis.tex:412: {Anna Kornfeld Simpson}{default}{base}
+uwthesis.tex:415: {Qi Cheng}{default}{base}
+uwthesis.tex:418: {Misha Kolmogorov}{default}{base}
+uwthesis.tex:421: {Mark Velednitsky}{default}{base}
+uwthesis.tex:424: {Marcela Mendoza}{default}{base}
+uwthesis.tex:427: {Laura Chick}{default}{base}
+uwthesis.tex:430: {Google}{default}{base}
+uwthesis.tex:433: {Amazon}{default}{base}
+uwthesis.tex:435: {Carr Astronautics}{default}{base}
+uwthesis.tex:446: {proof repair by example}{default}{base}
+uwthesis.tex:449: {exampled patched proof}{default}{base}
+uwthesis.tex:480: {\toolnamec }{default}{base}
+uwthesis.tex:507: {results}{default}{base}
+uwthesis.tex:510: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+uwthesis.tex:514: {Ornaments for Proof Reuse in Coq}{default}{base}
 
 

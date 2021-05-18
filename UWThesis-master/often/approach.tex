@@ -12,8 +12,8 @@ since \Aa may be an old version of an updated type.
 The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically patch broken proofs in response to a broad class of changes in datatypes.
 \toolnamec in particular repairs proofs in response to changes in types that correspond to \intro{type equivalences}~\cite{univalent2013homotopy},
 or pairs of functions that map between two types (possibly with some additional information) and are mutual 
-inverses (Section~\ref{sec:pi-scope}).\footnote{Every equivalence induces something called an \textit{adjoint} equivalence,
-and those adjoint equivalences are nicer to work with.
+inverses (Section~\ref{sec:pi-scope}).\footnote{Every equivalence induces something called an \textit{adjoint} equivalence~\cite{univalent2013homotopy},
+and those adjoint equivalences can be nicer to work with.
 \kl{Jasper} proved this fact for me in a way that does not rely on any axioms beyond those assumed by Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}},
 and \kl{Nate} used that proof to build machinery for \toolnamec to derive the adjoint equivalence from the equivalence itself~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}.}
 In other words, looking back to the thesis statement, the information shows up in the difference between versions of the changed datatype.
@@ -93,8 +93,8 @@ In the end, it suggested a proof script to us that we could use going forward.
 \label{fig:equivalence}
 \end{figure*}
 
-\toolnamec automatically repairs proofs in response to changes in types that correspond to type equivalences.
-When a type equivalence between types \Aa and \B exists, those types are \textit{equivalent} (denoted \Aa $\simeq$ \B). % for example:
+\toolnamec automatically repairs proofs in response to changes in types that correspond to \kl{type equivalences}.
+When a type equivalence between types \Aa and \B exists, those types are \kl{equivalent} (denoted \Aa $\simeq$ \B). % for example:
 Figure~\ref{fig:equivalence} shows a type equivalence between the two versions of \lstinline{list}
 from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
 
@@ -109,7 +109,6 @@ See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
 \begin{minipage}{0.48\columnwidth}
 \lstinputlisting[firstline=5, lastline=7]{often/equiv2.tex}
 \end{minipage}
-\vspace{-0.4cm}
 \caption{The old type \lstinline{I} (left) is either \lstinline{A} or \lstinline{B}. The new type \lstinline{J} (right) is \lstinline{I} with \lstinline{A} and \lstinline{B} factored out to \lstinline{bool} (\codediff{orange}).}
 \label{fig:equivalence2}
 \end{figure}
@@ -152,15 +151,14 @@ and repairing proofs of De Morgan's laws. % constr_refactor.v
 %\lstinline{I} and \lstinline{J}---Section~\ref{sec:repair} explains this intuition more formally.
 
 \begin{figure}
-\begin{minipage}{0.48\textwidth}
-   \lstinputlisting[firstline=1, lastline=3]{often/listtovect.tex}
+\begin{minipage}{0.44\textwidth}
+   \lstinputlisting[firstline=1, lastline=7]{often/listtovect.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.58\textwidth}
-   \lstinputlisting[firstline=5, lastline=7]{often/listtovect.tex}
+\begin{minipage}{0.55\textwidth}
+   \lstinputlisting[firstline=8, lastline=14]{often/listtovect.tex}
 \end{minipage}
-\vspace{-0.4cm}
-\caption{A vector (bottom) is a list (top) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
+\caption{A vector (right) is a list (left) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
 \label{fig:listtovect}
 \end{figure}
 
@@ -173,17 +171,20 @@ But equivalences are more powerful than they may seem.
 %roofs about this new information become the proof obligation for the proof engineer,
 %and \toolnamec automates the rest.
 Consider, for example, changing a list to a length-indexed vector (Figure~\ref{fig:listtovect}).
-\toolnamec can repair functions and proofs about lists to functions and proofs about vectors of particular lengths~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, % Example.v
-since $\Sigma$\lstinline{(l:list T).length l = n }$\simeq$\lstinline{ vector T n}.
+Since $\Sigma$\lstinline{(l:list T).length l = n }$\simeq$\lstinline{ vector T n},
+\toolnamec can repair functions and proofs about lists to functions and proofs about vectors of particular lengths~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
 From the proof engineer's perspective, after updating specifications from \lstinline{list} to \lstinline{vector},
 to fix her functions and proofs, she must additionally prove invariants about the lengths of her lists.
 \toolnamec makes it easy to separate out that proof obligation, then automates the rest.
 
-More generally, in homotopy type theory, with the help of quotient types, it is possible to form an equivalence
+A more formal result about the expressiveness of equivalences holds inside of \intro{homotopy type theory}:
+a type theory with \intro{univalence}, which states that \kl{equivalence} is equivalent to \kl{propositional equality}.
+Homotopy type theory makes it possible to construct quotient types;
+with the help of these quotient types, it is possible to form an equivalence
 from a relation, even when the relation is not an equivalence~\cite{angiuli2020internalizing}.
-While Coq lacks quotient types,
+A less general result holds in Coq, which lacks quotient types:
 it is possible to achieve a similar outcome and use \toolnamec for changes that add or remove information
-when those changes can be expressed as equivalences between $\Sigma$ types or sum types.
+whenever those changes can be expressed as equivalences between $\Sigma$ types or sum types.
 
 \subsection{Differencing: Equivalences from Changes}
 \label{sec:pi-spec-diff}
@@ -193,19 +194,19 @@ By default, when the proof engineer invokes the \lstinline{Repair} command, diff
 For example, when we invoked:
 
 \begin{lstlisting}
-  Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
+  Repair Old.list New.list in rev_app_distr.
 \end{lstlisting}
-in Section~\ref{pi:approach}, differencing discovered and proved the equivalence in Figure~\ref{fig:equivalence}.
-In total, \toolnamec currently implements four search procedures for automatic configuration;
+in Section~\ref{sec:overview}, differencing discovered and proved the equivalence in Figure~\ref{fig:equivalence}.
+In total, \toolnamec currently implements four search procedures for \kl{automatic configuration};
 I will explain these more in Sections~\ref{sec:pi-diff} and~\ref{sec:pi-implementation}.
-Each search procedure automates differencing for an entire class of changes that correspond to type equivalences. 
+Each search procedure automates differencing for an entire class of changes that can be described by type equivalences. 
 In the end, it returns a configuration that corresponds to the equivalence (see Section~\ref{sec:pi-diff} for details),
 along with the equivalence itself.
 
-Manual configuration makes it possible for the proof engineer to skip differencing, so that \toolnamec is not limited by the 
-search procedures currently implemented.
+\kl{Manual configuration} makes it possible for the proof engineer to skip differencing, so that \toolnamec is not limited by the 
+search procedures currently implemented, or by the undecidability of differencing arbitrary types for arbitrary equivalences.
 Manual configuration supports any change that can be described by a type equivalence.
-To configure \toolnamec manually, the proof engineer can pass the configuration correspond to the equivalence to \toolnamec's \lstinline{Configure Repair} command before invoking \lstinline{Repair}.
+To configure \toolnamec manually, the proof engineer can pass the configuration corresponding to the equivalence to \toolnamec's \lstinline{Configure Repair} command before invoking \lstinline{Repair}.
 This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.
 
 \paragraph{Summary}
@@ -215,8 +216,8 @@ In summary, differencing has the following specification:
 \begin{itemize}
 \item \textbf{Inputs}: types \Aa\ and \B, assuming:
 \begin{itemize}
-\item there is a type equivalence describing the change from \Aa to \B (possibly with some new information), and
-\item the corresponding change is in a class currently supported by a search procedure for automatic configuration.
+\item there is a \kl{type equivalence} describing the change from \Aa to \B (possibly with some new information), and
+\item the corresponding change is in a class currently supported by a search procedure for \kl{automatic configuration}.
 \end{itemize}
 \item \textbf{Outputs}:
 \begin{itemize}
@@ -226,8 +227,8 @@ In summary, differencing has the following specification:
 \end{itemize}
 guaranteeing:
 \begin{itemize}
-\item \lstinline{f} and \lstinline{g} form an equivalence that describes the change from \Aa to \B (possibly with some new information),
-\item \lstinline{section} and \lstinline{retraction} prove that \lstinline{f} and \lstinline{g} form an equivalence, and
+\item \lstinline{f} and \lstinline{g} form an \kl{equivalence} that describes the change from \Aa to \B (possibly with some new information),
+\item \lstinline{section} and \lstinline{retraction} prove that \lstinline{f} and \lstinline{g} form an \kl{equivalence}, and
 \item $c$ is a decomposition of the equivalence.
 \end{itemize}
 \end{itemize}
@@ -243,16 +244,25 @@ In either case, the transformation uses this configuration to automatically repa
 \subsection{Transformation: Transport with a Twist}
 \label{sec:pi-spec-trans}
 
-\toolnamec repairs proofs in response to these changes by implementing a kind of proof reuse known as \textit{transport}~\cite{univalent2013homotopy},
+\toolnamec repairs proofs in response to these changes by implementing a kind of proof reuse known as \intro{transport} from \kl{homotopy type theory},
 but in a way that is suitable for repair.
-Informally, transport takes a term $t$ and produces a term $t'$ that is the same as $t$ modulo an equivalence $A \simeq B$.
+In homotopy type theory, transport is essentially a specialized \kl{eliminator} for rewriting across \kl{equivalences}.
+In particular, it takes a term $t$ and produces a term $t'$ that is the same as $t$ modulo an equivalence $A \simeq B$.
 If $t$ is a function, then $t'$ behaves the same way modulo the equivalence;
 if $t$ is a proof, then $t'$ proves the same theorem the same way modulo the equivalence.
 
-When transport across $A \simeq B$ takes $t$ to $t'$,
+The details of transport in homotopy type theory can be found in the homotopy type theory book~\cite{univalent2013homotopy}, and in Section~\ref{sec:reuse}.
+Transport is realizable as a function in homotopy type theory---that is, it is \intro{internal}---precisely because of \kl{univalence}.
+But univalence is a property that Coq's type theory \kl{CIC$_{\omega}$} lacks!
+It \text{is} possible to finitely approximate internal transport in Coq using a special framework~\cite{tabareau2017equivalences},
+but this sometimes introduces axioms, thereby extending the \kl{TCB}.
+Instead, the \toolnamec transformation assumes a univalent \textit{metatheory} in which to interpret its specificaton,
+but does not introduce any axioms to Coq---that is, it implements transport \intro{externally}.
+
+In this thesis, when transport across $A \simeq B$ takes $t$ to $t'$,
 I say that $t$ and $t'$ are \textit{equal up to transport}
-across that equivalence (denoted $t \equiv_{A \simeq B} t'$).\footnote{This notation should be interpreted in a metatheory with \textit{univalence}---a property that Coq lacks---or it should be approximated in Coq.
-The details of transport with univalence are in the Homotopy Type Theory book~\cite{univalent2013homotopy}, and an approximation in Coq is in the univalent parametricity framework paper~\cite{tabareau2017equivalences}. For equivalent \Aa and \B, there can be many equivalences $A \simeq B$.
+across that equivalence (denoted $t \equiv_{A \simeq B} t'$).\footnote{This notation should be interpreted in a \kl{univalent} metatheory.
+Note also that, for equivalent \Aa and \B, there can be many equivalences $A \simeq B$.
 Equality up to transport is across a \textit{particular} equivalence, but I erase this in the 
 notation.}
 In Section~\ref{sec:overview}, the original append function \lstinline{++} over \lstinline{Old.list}
@@ -267,10 +277,10 @@ The original \lstinline{rev_app_distr} is equal to the repaired proof up to tran
 since both prove the same thing the same way up to the equivalence, and up to the changes in \lstinline{++}
 and \lstinline{rev}.
 
-Transport typically works by applying the functions that make up the equivalence to convert
+In \kl{univalent} type theories, transport works by applying the functions that make up the equivalence to convert
 inputs and outputs between types.
-This approach would not be suitable for repair, since it does not make it possible to remove the old type \Aa.
-\toolnamec implements transport in a way that allows for removing references to \Aa---by proof term transformation.
+Even if we had univalence, this approach would not be suitable for repair, since it would not make it possible to remove the old type \Aa.
+\toolnamec implements transport externally, in a way that allows for removing references to \Aa---by \kl{proof term transformation}.
 
 \paragraph{Summary}
 
@@ -280,14 +290,14 @@ In summary, the transformation has the following specification:
 \item \textbf{Inputs}:
 \begin{itemize}
 \item types \Aa\ and \B,
-\item the configuration $c$, and
+\item the \kl{configuration} $c$, and
 \item a proof term $t$,
 \end{itemize}
-assuming $c$ corresponds to a type equivalence describing the change from \Aa to \B (possibly with some new information).
+assuming $c$ is a decomposition of a \kl{type equivalence} describing the change from \Aa to \B (possibly with some new information).
 \item \textbf{Outputs}: a proof term $t'$, guaranteeing:
 \begin{itemize}
 \item \smallmath{$t'$} refers to \B in place of \Aa, and
-\item $t$ and $t'$ are equal up to transport along the equivalence formed by $c$.
+\item $t$ and $t'$ are equal up to \kl{transport} along the \kl{equivalence} formed by $c$.
 \end{itemize}
 \end{itemize}
 This specification glazes over a few important issues, most notably that \B may refer to \Aa (so \toolnamec has specialized termination logic),

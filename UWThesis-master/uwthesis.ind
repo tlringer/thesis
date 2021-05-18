@@ -8,7 +8,7 @@
 		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
 		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{68}, 
-		\hyperpage{100, 101}, \hyperpage{105}
+		\hyperpage{101}, \hyperpage{105, 106}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{21}, \hyperpage{98--100}, \hyperpage{124}
     \subitem Companies
@@ -107,8 +107,10 @@
 
   \item Concepts
     \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{101}
+      \subsubitem Algebraic Ornaments, \hyperpage{82}, \hyperpage{102}
+      \subsubitem Externalization, \hyperpage{73}
       \subsubitem Inductive Types, \hyperpage{18}
+      \subsubitem Internal, \hyperpage{73}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{108, 109}
       \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
@@ -140,7 +142,8 @@
   \item Thesis
     \subitem Approach
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
-		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}
+		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}, 
+		\hyperpage{74}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
 		\hyperpage{49}
@@ -153,7 +156,8 @@
       \subsubitem Proof Repair, \hyperpage{4}, \hyperpage{23}
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{18}, 
-		\hyperpage{21}, \hyperpage{40}, \hyperpage{75}, 
-		\hyperpage{109, 110}, \hyperpage{117}
+		\hyperpage{21}, \hyperpage{40}, \hyperpage{73}, 
+		\hyperpage{75}, \hyperpage{109, 110}, \hyperpage{117}
+    \subitem Homotopy Type Theory, \hyperpage{71}, \hyperpage{73}
 
 \end{theindex}

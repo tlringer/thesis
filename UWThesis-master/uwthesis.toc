@@ -124,10 +124,10 @@
 \contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{70}{subsection.4.2.2}% 
 \contentsline {paragraph}{Factoring out Constructors}{70}{figure.caption.26}% 
 \contentsline {paragraph}{Adding a Dependent Index}{71}{figure.caption.27}% 
-\contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{71}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{72}{subsection.4.2.3}% 
 \contentsline {paragraph}{Summary}{72}{lstnumber.-170.1}% 
-\contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{72}{subsection.4.2.4}% 
-\contentsline {paragraph}{Summary}{73}{lstnumber.-171.2}% 
+\contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{73}{subsection.4.2.4}% 
+\contentsline {paragraph}{Summary}{74}{lstnumber.-171.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{74}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{75}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{76}{subsection.4.3.2}% 
@@ -135,20 +135,20 @@
 \contentsline {subsubsection}{\numberline {4.3.3.1}Categorical Intuition for Correctness}{78}{subsubsection.4.3.3.1}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Correctness in CIC$_{\omega }$}{79}{subsubsection.4.3.3.2}% 
 \contentsline {paragraph}{Equivalence}{80}{figure.caption.31}% 
-\contentsline {paragraph}{Equality}{80}{figure.caption.31}% 
-\contentsline {paragraph}{Correctness}{80}{figure.caption.31}% 
+\contentsline {paragraph}{Equality}{81}{figure.caption.31}% 
+\contentsline {paragraph}{Correctness}{81}{figure.caption.31}% 
 \contentsline {paragraph}{Equivalences from Configurations}{81}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{81}{subsection.4.3.4}% 
-\contentsline {paragraph}{Common Definitions}{82}{lstnumber.-192.1}% 
-\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}% 
-\contentsline {paragraph}{Generating the Motive}{83}{figure.caption.33}% 
-\contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-195.1}% 
+\contentsline {paragraph}{Common Definitions}{83}{lstnumber.-192.1}% 
+\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{84}{subsubsection.4.3.4.1}% 
+\contentsline {paragraph}{Generating the Motive}{84}{figure.caption.33}% 
+\contentsline {paragraph}{Generating Each Case}{84}{lstnumber.-195.1}% 
 \contentsline {paragraph}{Composing the Result}{85}{lstnumber.-199.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{85}{subsubsection.4.3.4.2}% 
-\contentsline {paragraph}{Discovering the Equivalence Parts}{85}{subsubsection.4.3.4.2}% 
+\contentsline {paragraph}{Discovering the Equivalence Parts}{86}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Deriving the Configuration}{86}{figure.caption.34}% 
 \contentsline {paragraph}{Proving Correctness}{87}{lstnumber.-205.1}% 
-\contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
+\contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{88}{subsection.4.3.5}% 
 \contentsline {paragraph}{Heuristics}{88}{subsection.4.3.5}% 
 \contentsline {paragraph}{Isolating Changes}{88}{subsection.4.3.5}% 
 \contentsline {section}{\numberline {4.4}Transformation}{88}{section.4.4}% 
@@ -166,28 +166,28 @@
 \contentsline {paragraph}{Optimizations}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Termination}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Intent}{95}{subsubsection.4.5.1.3}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{95}{subsubsection.4.5.1.4}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{96}{subsubsection.4.5.1.4}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{96}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{96}{subsubsection.4.5.2.1}% 
-\contentsline {paragraph}{First Pass: Basic Proof Scripts}{96}{figure.caption.38}% 
-\contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.38}% 
+\contentsline {paragraph}{First Pass: Basic Proof Scripts}{98}{figure.caption.38}% 
+\contentsline {paragraph}{Second Pass: Better Proof Scripts}{99}{figure.caption.38}% 
 \contentsline {paragraph}{From Qtac to Ltac}{99}{figure.caption.39}% 
-\contentsline {paragraph}{From CIC$_{\omega }$ to Coq}{99}{figure.caption.39}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ to Coq}{100}{figure.caption.39}% 
 \contentsline {paragraph}{Forfeiting Soundness}{100}{figure.caption.39}% 
 \contentsline {paragraph}{Pretty Printing}{100}{figure.caption.39}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{100}{subsubsection.4.5.2.2}% 
-\contentsline {section}{\numberline {4.6}Results}{100}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Results}{101}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{101}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{101}{table.caption.40}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{102}{table.caption.40}% 
 \contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.41}% 
 \contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.41}% 
 \contentsline {paragraph}{Permute Constructors: Modifying a Language}{103}{figure.caption.41}% 
 \contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.41}% 
+\contentsline {paragraph}{Factor out Constructors: External Example}{104}{figure.caption.41}% 
 \contentsline {paragraph}{Permute Hypotheses: External Example}{104}{figure.caption.41}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.41}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{105}{subsection.4.6.2}% 
-\contentsline {paragraph}{Setup}{105}{Item.55}% 
+\contentsline {paragraph}{Setup}{106}{Item.55}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{106}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{107}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{108}{section.4.7}% 

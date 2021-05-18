@@ -1,5 +1,11 @@
-  Record int : Type :=(@\vspace{-0.06cm}@)
-    mkint { intval: Z; intrange: 0 <= intval < modulus }.
+Record int : Type :=
+  mkint {
+    val: Z;
+    range: 0 <= val < modulus
+  }.
 
-  Record int : Type :=(@\vspace{-0.06cm}@)
-    mkint { intval: Z; intrange: -1 < intval < modulus }.
+Record int : Type :=
+  mkint {
+    val: Z;
+    range: -1 < val < modulus
+  }.

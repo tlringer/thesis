@@ -45,36 +45,43 @@ so I focused on changes that preserve structure, like modifying constructors.
 Chapter~\ref{chapt:pi} describes an extension to \sysnamelong that supports changes in structure.
 
 \begin{figure*}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=1]{repair/compcert.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=2,lastline=2]{repair/compcert.tex}
+\lstinputlisting[firstline=1, lastline=3]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=4,lastline=4]{repair/compcert.tex}
+\lstinputlisting[firstline=5, lastline=5]{repair/compcert.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt}
-\lstinputlisting[firstline=4, lastline=4]{repair/compcert.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/compcert.tex}
+\lstinputlisting[firstline=7, lastline=9]{repair/compcert.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=10,lastline=10]{repair/compcert.tex}
+\lstinputlisting[firstline=11, lastline=11]{repair/compcert.tex}
 \end{minipage}
 \caption[Caption for LOF]{Old (left) and new (right) definitions of \lstinline{int} in CompCert.}
 \label{fig:int}
 \end{figure*}
 
 \begin{figure*}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt} % blindFS / User A
-\lstinputlisting[firstline=2, lastline=4]{repair/bintonat.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=6]{repair/bintonat.tex}
+\lstinputlisting[firstline=2, lastline=5]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=6,lastline=6]{repair/bintonat.tex}
 \lstinputlisting[firstline=7, lastline=7]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/bintonat.tex}
+\lstinputlisting[firstline=9, lastline=9]{repair/bintonat.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt}  % marshall / user B
-\lstinputlisting[firstline=10, lastline=12]{repair/bintonat.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=13,lastline=14]{repair/bintonat.tex}
-\lstinputlisting[firstline=15, lastline=15]{repair/bintonat.tex}
+\lstinputlisting[firstline=12, lastline=15]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=17]{repair/bintonat.tex}
+\lstinputlisting[firstline=18, lastline=18]{repair/bintonat.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=19,lastline=20]{repair/bintonat.tex}
+\lstinputlisting[firstline=21, lastline=21]{repair/bintonat.tex}
 \end{minipage}
-\caption[Caption for LOF]{Definitions of \lstinline{bin_to_nat} for Users A (left) and B (right).}
+\caption[Caption for LOF]{Definitions of \lstinline{bin_to_nat} for Users A (left) and B (right). Note that \lstinline{bin_to_nat} uses pattern matching and fixpoints
+rather than \kl{primitive eliminators}, unlike most of the terms in this thesis.}
 \label{fig:bintonat}
 \end{figure*}
 
@@ -95,9 +102,9 @@ The proof failed with the new \lstinline{int}:
 
 \lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 \begin{lstlisting}[language=coq]
-  Theorem unsigned_range:(@\vspace{-0.04cm}@)
-    (@\ltacforall@)(i : int), 0 <= unsigned i < modulus.(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
+  Theorem unsigned_range:
+    (@\ltacforall@)(i : int), 0 <= unsigned i < modulus.
+  Proof.
     intros i. induction i using int_ind; auto(@\fails{.}@)
 \end{lstlisting}
 I replayed the change to \lstinline{unsigned_range}:
@@ -110,17 +117,17 @@ I replayed the change to \lstinline{unsigned_range}:
 a patch with this type:
 
 \begin{lstlisting}[language=coq]
-   (@\ltacforall@) z : Z,(@\vspace{-0.04cm}@) (@\diff{-1 < z < modulus}@) -> (@\diff{0 <= z < modulus}@)
+   (@\ltacforall@) z : Z, (@\diff{-1 < z < modulus}@) $\rightarrow$ (@\diff{0 <= z < modulus}@)
 \end{lstlisting}
 
 \paragraph{Apply} After changing the definition of \lstinline{int}, the proof of the
 theorem \lstinline{repr_unsigned} failed on the last tactic:
 
 \begin{lstlisting}[language=coq]
-  Theorem repr_unsigned:(@\vspace{-0.04cm}@)
-    (@\ltacforall@)(i : int), repr (unsigned i) = i.(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
-    ... apply Zmod_small; auto(@\fails{.}@)
+  Theorem repr_unsigned:
+    (@\ltacforall@)(i : int), repr (unsigned i) = i.
+  Proof.
+    $\ldots$ apply Zmod_small; auto(@\fails{.}@)
 \end{lstlisting}
 Manually trying \lstinline{omega}---the tactic which helped us in the proof of \lstinline{unsigned_range}---did not
 succeed.
@@ -128,7 +135,7 @@ I added the patch that \sysname found to a hint database.
 The proof of the theorem \lstinline{repr_unsigned} then went through:
 
 \begin{lstlisting}[language=coq]
-  ... apply Zmod_small; auto(@\succeeds{.}@)
+  $\ldots$ apply Zmod_small; auto(@\succeeds{.}@)
 \end{lstlisting}
 
 \subsubsection{Instance}
@@ -137,20 +144,20 @@ This scenario used the search procedure instance for changes in constructors of 
 Given such a change:
 
 \begin{lstlisting}[language=coq]
-  Inductive (@\diff{T}@) := ... | C : ... $\rightarrow$ (@\diff{H}@) $\rightarrow$ T(@\vspace{-0.08cm}@)
-  Inductive (@\diff{T'}@) := ... | C : ... $\rightarrow$ (@\diff{H'}@) $\rightarrow$ T'
+  Inductive (@\diff{T}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ T
+  Inductive (@\diff{T'}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ T'
 \end{lstlisting}
 \sysname searches in the difference between two inductive proofs of theorems:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) (t : (@\diff{T}@)), P t(@\vspace{-0.08cm}@)
+  (@\ltacforall@) (t : (@\diff{T}@)), P t
   (@\ltacforall@) (t : (@\diff{T'}@)), P t
 \end{lstlisting}
 for an isomorphism\footnote{If \sysname finds just one implication, it returns that.} between the constructors:
 
 \begin{lstlisting}[language=coq]
-  ... $\rightarrow$ (@\diff{H}@) $\rightarrow$ (@\diff{H'}@)(@\vspace{-0.1cm}@)
-  ... $\rightarrow$ (@\diff{H'}@) $\rightarrow$ (@\diff{H}@)
+  $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ (@\diff{H'}@)(@\vspace{-0.1cm}@)
+  $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ (@\diff{H}@)
 \end{lstlisting}
 The proof engineer can apply these patches within the inductive case that corresponds to the constructor \lstinline{C}
 to fix other broken proofs that induct over the changed type. 
@@ -178,16 +185,16 @@ I demonstrate one direction; the opposite was similar.
 User A cut an inline lemma in an inductive case and proved it using a rewrite:
 
 \begin{lstlisting}[language=coq]
-  assert ((@\ltacforall@)a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).(@\vspace{-0.04cm}@)
-  (@\ltacba@) ... (@\diff{rewrite $\leftarrow$ plus\_n\_O.}@) rewrite $\rightarrow$ plus_comm.
+  assert ((@\ltacforall@)a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).
+  (@\ltacba@) $\ldots$ (@\diff{rewrite $\leftarrow$ plus\_n\_O.}@) rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A
 When I ported User A's solution to use User B's definition of \lstinline{bin_to_nat}, 
 the application of this inline lemma failed. I changed the conclusion of the inline lemma 
 and removed the corresponding rewrite:
 
 \begin{lstlisting}[language=coq]
-  assert ((@\ltacforall@)a, S (a + S a) = S (S (a + a))).(@\vspace{-0.04cm}@)
-  (@\ltacba@) ... rewrite $\rightarrow$ plus_comm.
+  assert ((@\ltacforall@)a, S (a + S a) = S (S (a + a))).
+  (@\ltacba@) $\ldots$ rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A, adapted
 
 \paragraph{Search} I used \sysname to search in the difference between the old and new versions of the example
@@ -206,13 +213,13 @@ It found an isomorphism:
   Theorem normalize_correctness:
     (@\ltacforall@)b, nat_to_bin (bin_to_nat b) = normalize b.
   Proof.
-    ... (@\fails{rewrite $\rightarrow$ plus\_0\_r.}@)
+    $\ldots$ (@\fails{rewrite $\rightarrow$ plus\_0\_r.}@)
 \end{lstlisting}
 Attempting the obvious patch from the difference in tactics---rewriting by \lstinline{plus_n_O}---failed.
 Applying the patch that \sysname found fixed the broken proof:
 
 \begin{lstlisting}[language=coq]
-   ... (@\diff{apply patch\_inv.}@) (@\succeeds{rewrite $\rightarrow$ plus\_0\_r.}@)
+   $\ldots$ (@\diff{apply patch\_inv.}@) (@\succeeds{rewrite $\rightarrow$ plus\_0\_r.}@)
 \end{lstlisting}
 
 In this case, since I ported User A's definition to a simpler 
@@ -235,14 +242,14 @@ This scenario used the search procedure instance for changes in cases of a fixpo
 Given such a change:
 
 \begin{lstlisting}[language=coq]
-  Fixpoint (@\diff{f}@) ... := ... | g (@\diff{x}@)(@\vspace{-0.1cm}@)
-  Fixpoint (@\diff{f'}@) ... := ... | g (@\diff{x'}@)
+  Fixpoint (@\diff{f}@) $\ldots$ := $\ldots$ | g (@\diff{x}@)(@\vspace{-0.1cm}@)
+  Fixpoint (@\diff{f'}@) $\ldots$ := $\ldots$ | g (@\diff{x'}@)
 \end{lstlisting}
 \sysname searches in the difference between two versions of proofs of the theorems:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) ..., P ((@\diff{f}@) ...)(@\vspace{-0.1cm}@)
-  (@\ltacforall@) ..., P ((@\diff{f'}@) ...)
+  (@\ltacforall@) $\ldots$, P ((@\diff{f}@) $\ldots$)(@\vspace{-0.1cm}@)
+  (@\ltacforall@) $\ldots$, P ((@\diff{f'}@) $\ldots$)
 \end{lstlisting}
 for an isomorphism that corresponds to the change:
 
@@ -308,15 +315,15 @@ The isomorphism \sysname found fixed broken proofs.
 The proof broke with the new \lstinline{divide}:
 
 \begin{lstlisting}[language=coq]
-  Theorem mod_divide:(@\vspace{-0.04cm}@)
-    (@\ltacforall@) a b, b~=0 $\rightarrow$ (a mod b == 0 $\leftrightarrow$ (divide b a)).(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
-    ... (@\fails{rewrite (div\_mod a b Hb) at 2.}@)
+  Theorem mod_divide:
+    (@\ltacforall@) a b, b~=0 $\rightarrow$ (a mod b == 0 $\leftrightarrow$ (divide b a)).
+  Proof.
+    $\ldots$ (@\fails{rewrite (div\_mod a b Hb) at 2.}@)
 \end{lstlisting}
 I replayed changes to \lstinline{mod_divide}:
 
 \begin{lstlisting}[language=coq]
-    ... (@\diff{rewrite mul\_comm. symmetry.}@)(@\vspace{-0.04cm}@)
+    $\ldots$ (@\diff{rewrite mul\_comm. symmetry.}@)
     (@\succeeds{rewrite (div\_mod a b Hb) at 2.}@)
 \end{lstlisting}
 
@@ -332,15 +339,15 @@ It found an isomorphism:
 \paragraph{Apply} The proof of the theorem \lstinline{Zmod_divides} broke after rewriting by the changed theorem \lstinline{mod_divide}:
 
 \begin{lstlisting}[language=coq]
-  Theorem Zmod_divides:(@\vspace{-0.04cm}@)
-    (@\ltacforall@)a b, b<>0 $\rightarrow$ (a mod b = 0 $\leftrightarrow$ (@\ltacexists@)c, a = b * c).(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
-    ... split; intros (c,Hc); exists c; (@\fails{auto.}@)
+  Theorem Zmod_divides:
+    (@\ltacforall@)a b, b<>0 $\rightarrow$ (a mod b = 0 $\leftrightarrow$ (@\ltacexists@)c, a = b * c).
+  Proof.
+    $\ldots$ split; intros (c,Hc); exists c; (@\fails{auto.}@)
 \end{lstlisting}
 Adding the patches \sysname found to a hint database made the proof go through:
 
 \begin{lstlisting}[language=coq]
-    ... split; intros (c,Hc); exists c; (@\succeeds{auto.}@)
+    $\ldots$ split; intros (c,Hc); exists c; (@\succeeds{auto.}@)
 \end{lstlisting}
 
 \subsubsection{Instance}
@@ -350,8 +357,8 @@ This scenario used the search procedure instance for changes in dependent argume
 to different dependent arguments:
 
 \begin{lstlisting}[language=coq]
-   ... (C ((@\diff{P}@) x)) ...(@\vspace{-0.1cm}@)
-   ... (C ((@\diff{P'}@) x)) ...
+   $\ldots$ (C ((@\diff{P}@) x)) $\ldots$(@\vspace{-0.1cm}@)
+   $\ldots$ (C ((@\diff{P'}@) x)) $\ldots$
 \end{lstlisting}
 for an isomorphism between the arguments:
 

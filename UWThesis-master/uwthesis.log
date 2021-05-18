@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 20:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2102,10 +2102,12 @@ LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
 
 [54] [55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
+(./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
+(./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 [58] [59]
-Overfull \hbox (2.38933pt too wide) in paragraph at lines 184--187
+Overfull \hbox (2.38933pt too wide) in paragraph at lines 191--194
 \OT1/pplj/m/n/10.95 (-20) When I ported User A's so-lu-tion to use User B's def
 -i-ni-tion of []
  []
@@ -2135,7 +2137,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1889, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1909, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2167,7 +2169,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 172--183
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2138, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2158, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 246.
@@ -2432,8 +2434,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1108.
  ) 
 Here is how much of TeX's memory you used:
- 51083 strings out of 492609
- 1031040 string characters out of 6129033
+ 51113 strings out of 492609
+ 1031568 string characters out of 6129033
  1307123 words of memory out of 5000000
  51666 multiletter control sequences out of 15000+600000
  643395 words of font info for 876 fonts, out of 8000000 for 9000
@@ -2458,10 +2460,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1702251 bytes).
+Output written on uwthesis.pdf (159 pages, 1703225 bytes).
 PDF statistics:
- 3805 PDF objects out of 4296 (max. 8388607)
- 3552 compressed objects within 36 object streams
- 1530 named destinations out of 1728 (max. 500000)
+ 3829 PDF objects out of 4296 (max. 8388607)
+ 3575 compressed objects within 36 object streams
+ 1548 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

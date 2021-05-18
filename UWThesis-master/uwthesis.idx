@@ -268,10 +268,30 @@
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{39}
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{39}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{40}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{40}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{40}
-\indexentry{Conventions!Primitive Eliminators|hyperpage}{41}
-\indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{43}
+\indexentry{Concepts!Type Theory!Inductive Types!Eliminators|hyperpage}{40}
+\indexentry{Concepts!Type Theory!Inductive Types!Motive|hyperpage}{40}
+\indexentry{Concepts!Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{40}
+\indexentry{Conventions!Primitive Eliminators|hyperpage}{42}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{43}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{44}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{46}
+\indexentry{Thesis!Approach!Proof Term Transformations!Inversion|hyperpage}{46}
+\indexentry{Thesis!Approach!Proof Term Transformations!Factoring|hyperpage}{47}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite|hyperpage}{48}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\sysname Prototype|hyperpage}{48}
+\indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{49}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{49}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{49}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{50}
+\indexentry{Thesis!Approach!Proof Term Transformations!Specialization|hyperpage}{50}
+\indexentry{Thesis!Approach!Proof Term Transformations!Generalization|hyperpage}{50}
+\indexentry{Thesis!Approach!Proof Term Transformations!Inversion|hyperpage}{50}
+\indexentry{Thesis!Approach!Proof Term Transformations!Factoring|hyperpage}{50}
+\indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{52}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{52}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{54}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{68}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}

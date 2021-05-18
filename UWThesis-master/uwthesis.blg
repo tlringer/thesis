@@ -3,7 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-Warning--I didn't find a database entry for "equality"
 Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
@@ -18,7 +17,7 @@ Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
 You've used 171 entries,
             2118 wiz_defined-function locations,
-            1500 strings with 35660 characters,
+            1499 strings with 35652 characters,
 and the built_in function-call counts, 65204 in all, are:
 = -- 6742
 > -- 2771
@@ -57,4 +56,4 @@ warning$ -- 11
 while$ -- 644
 width$ -- 174
 write$ -- 1987
-(There were 13 warnings)
+(There were 12 warnings)

@@ -38,13 +38,14 @@
 
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe (nice to have)
-- guarded recursion word overloading, is it OK?
+- guarded recursion word overloading, say "syntactic guard" instead
+- de Bruijn versus variables, somewhere
 
 # Chapter 3
 
 - get the motivating example actually working if it doesn't yet, and link to it (nice to have)
-- IZR pattern matching versus eliminators
 - instance -> options
+- knowledge package: reduction strategies, substitution strategies
 
 # Chapter 4
 

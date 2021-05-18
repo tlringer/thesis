@@ -306,7 +306,7 @@ For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the insta
     \STATE \hspace*{1em} \diff{\kl{generalize} and then \kl{specialize}} \kl{candidates}
 \end{algorithmic}
 \end{algorithm}
-That is, first, \sysname \kl{generalizes} the candidate by \lstinline{m} (line 11), which lifts it out of the base case:
+That is, first, \sysname \kl{generalizes} the candidate by \lstinline{m} (line 17), which lifts it out of the base case:
 
 \begin{lstlisting}
   fun (@\diff{n0}@) n m p H0 H1 =>
@@ -316,7 +316,7 @@ That is, first, \sysname \kl{generalizes} the candidate by \lstinline{m} (line 1
       m <= p $\rightarrow$
       n <= (@\diff{n0}@) $\rightarrow$ n <= (@\diff{n0}@) + 1.
 \end{lstlisting}
-\sysname then \kl{specializes} this generalized candidate to \lstinline{p} (line 16), the argument
+\sysname then \kl{specializes} this generalized candidate to \lstinline{p} (line 23), the argument
 to the conclusion of \lstinline{le_ind}. This produces a patch:
 
 \begin{lstlisting}

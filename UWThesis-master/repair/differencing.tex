@@ -6,22 +6,22 @@
 
 % From Motivating the Core, modified and augmented
 
-Differencing is aware of and guided by the semantics of Coq's rich proof term language \kl{Gallina}---that is, it is a \textit{semantic differencing} algorithm.
+Differencing is aware of and guided by the semantics of Coq's rich proof term language \kl{Gallina}---that is what makes it a \kl{semantic differencing} algorithm.
 This means that differencing can take advantage of the structure and information carried in every proof term,
 thanks to Gallina's rich type theory \kl{CIC$_{\omega}$}.
 The rich structure of terms helps guide differencing for each instance of the search procedure,
 while the rich information in their types helps ensure correctness in the end.
 
 Consider once again the example from Figure~\ref{fig:example}, but this time not just the base case.
-Both versions of the proof are inductive proofs using the same induction principle, with slightly different motives.
-Accordingly, differencing knows that there are two places to look for candidates, namely the base case (line 13)
-and the inductive case (line 14).
+Both versions of the proof are inductive proofs using the same \kl{eliminator}, with slightly different \kl{motives}.
+Accordingly, differencing knows that there are two places to look for candidates, namely the base case (line 19)
+and the inductive case (lines 20-22).
 Differencing breaks each inductive proof into these cases, then recursively calls itself for each case.
 In the base case, it finds the candidate from Section~\ref{sec:pumpkin-spec-diff}.
-Since this candidate has the desired type for the instance specialized to the base case, differencing knows it has successfully found a candidate.
+Since this candidate has the candidate goal type (here, the goal type specialized to the base case), differencing knows it has successfully found a candidate.
 
 The rich type information proof terms carry helps prevent exploration of syntactic differences that are not meaningful.
-For example, in the inductive case of the proof term from Figure~\ref{fig:example} (line 14), the inductive hypothesis \lstinline{IHle} changes:
+For example, in the inductive case of the proof term from Figure~\ref{fig:example}, the \kl{inductive hypothesis} \lstinline{IHle} (line 21) changes:
 
 \begin{lstlisting}[language=coq]
   $\ldots$ (IHle : (@\diff{n <= m0 + 1}@)) $\ldots$
@@ -39,27 +39,28 @@ Section~\ref{sec:pumpkin-impl-diff} describes the implementation in \sysname.
 
 % TODO show examples, formalize if time!!!
 
-Differencing recurses over the structure of two terms $t_A$ and $t_B$ in a common environment $\Gamma$.
+Differencing recurses over the structure of two terms $t_a$ and $t_b$ in a common environment $\Gamma$.
 When it recurses, it extends $\Gamma$ with common assumptions, then differences subterms.
 In each case, it carries a goal type $G$, and returns a list of patch candidates $\vec{t}$ that each have that goal type.
 That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$,
 where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
 The details of this vary by subterm-instance combination.
 
+\paragraph{Historical Note}
 For historical reasons, as \sysname was a prototype, these algorithms are not formalized.
 Instead, I describe them at a high level, as heuristics in CIC$_{\omega}$.
-I still refer to the judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ as the interface,
+For the sake of presentation, I still refer to the judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ as the interface,
 even though I do not provide the derivations.
 In Chapter~\ref{chapt:pi}, I will formalize a more elegant differencing algorithm for the \toolnamec extension,
-building on some of the insighst from differencing in the \sysname prototype.
+building on some of the insights from differencing in the \sysname prototype.
 
-\paragraph{Identity}
+\subsubsection*{Identity}
 The simplest patch is the identity patch.
 When two terms are definitionally equal, % TODO need to explain this somewhere, using latest text from PUMPKIN Pi
 differencing infers that the goal is identity,
 and returns a singleton list containing only the identity function instantiated to the appropriate type.
 
-\paragraph{Application}
+\subsubsection*{Application}
 When one proof term is a function application, for example:
 
 \begin{lstlisting}
@@ -67,7 +68,7 @@ When one proof term is a function application, for example:
 \end{lstlisting}
 differencing checks to see if $t_b$ is in $f\ t_a$.
 That is, it searches for a subterm of $f\ t_a$ that is definitionally equal to $t_b$.
-This is how differencing can identify the candidate for the base case of Figure~\ref{fig:example} (line 13).
+This is how differencing can identify the candidate for the base case of Figure~\ref{fig:example} (line 19).
 It is also a core building block that other differencing heuristics rely on.
 
 When both proof terms are function applications:
@@ -79,7 +80,7 @@ and the previous heuristic fails,
 differencing may recurse into both the functions and the arguments, search for patches, and then compose the results.
 How to compose those results varies by instance of the search procedure.
 
-\paragraph{Functions} % TODO in Chapter 2, need to mention hypos versus debruijn
+\subsubsection*{Functions} % TODO in Chapter 2, need to mention hypos versus debruijn
 The treatment of functions depends on whether a hypothesis or a conclusion has changed.
 When recursing into the body of two functions, each with a hypothesis of the same type:
 
@@ -109,7 +110,7 @@ When a hypothesis type has changed:
 differencing acts similarly, but it substitutes the changed hypothesis type in the body in order to recurse into a well-typed environment.
 It also has some additional logic to remove hypothesis that need not show up in the goal type.
 
-\paragraph{Eliminators} % From implementation, plus some additional stuff
+\subsubsection*{Eliminators} % From implementation, plus some additional stuff
 Recall that inductive types in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.
 The semantic differencing algorithms views inductive types as \emph{trees} that represent these eliminators.
 In these trees, every node is a type context, and every edge is an extension to that type context 
@@ -159,21 +160,21 @@ This makes it simple for \sysname to later query the transformations for the fin
 
 % Some from future work, some from us. Needs better framing.
 
-This section describes a few fundamental limitations of differencing in \sysname,
+This section describes two fundamental limitations of differencing in \sysname,
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-diff}.
 
 \paragraph{Heuristics}
 Differencing in \sysname is heuristic-based.
-This is to some degree inevitable, as the space of possible changes is infinite.
-In particular, it is the cartesian product of the space of every possible old term and type,
-combined with every possible new term and type.
-Still, this is partly historical: for the \sysname prototype, the heuristics were designed bottom-up, and were in many cases too narrow or redundant.
+This is to some degree inevitable, as the space of possible changes is infinite.\footnote{In particular, it is the cartesian product of the 
+space of every possible old term and type,
+combined with every possible new term and type.}
+Still, the limitations imposed by this are partly historical: for the \sysname prototype, the heuristics were designed bottom-up, and were in many cases too narrow or redundant.
 The extension to differencing in \toolnamec not only supports a large class of changes not supported by \sysname,
 but also abstracts many more details of heuristics.
 
 \paragraph{Isolating Changes} Differencing supports only incremental changes.
-The \toolname user study that I ran with \kl{Alex} showed that, during proof development,
+The \kl{\textsc{REPLica}} user study showed that, during proof development,
 proof engineers often make incremental changes---so this should be helpful for development already.
 But changes in existing artifacts like Git repositories may capture multiple changes at the same time.
 An outstanding challenge for differencing that neither \sysname nor \toolnamec yet support

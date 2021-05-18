@@ -1579,6 +1579,15 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans-design}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans-design}{document}
+
+\KAuxFileAt {transformation.tex}{36}
+\KAuxErrorKnowledgeUnknown {default}{}{Specialization}{Specialization}{\kl }
+
+\KAuxFileAt {transformation.tex}{68}
+\KAuxErrorKnowledgeUnknown {default}{}{Generalization}{Generalization}{\kl }
+
+\KAuxFileAt {transformation.tex}{194}
+\KAuxErrorKnowledgeUnknown {default}{}{factors}{factors}{\kl }
 \KAuxDeclaredScopeTag {sec:pumpkin-trans-limitations}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl}

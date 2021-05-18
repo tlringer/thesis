@@ -3,7 +3,7 @@
   \item Acknowledgments
     \subitem Coauthors
       \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{26}, \hyperpage{43}
+		\hyperpage{26}
       \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
@@ -120,13 +120,14 @@
 		\hyperpage{109}, \hyperpage{123}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
-		\hyperpage{42}, \hyperpage{75}, \hyperpage{93, 94}
+		\hyperpage{32}, \hyperpage{42}, \hyperpage{75}, 
+		\hyperpage{93, 94}
 
   \indexspace
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
-		\hyperpage{8}, \hyperpage{26}
+		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
@@ -138,9 +139,10 @@
   \item Thesis
     \subitem Approach
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
-		\hyperpage{28, 29}
+		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
-		\hyperpage{28, 29}
+		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
+		\hyperpage{49}
     \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}
     \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
 		\hyperpage{123}

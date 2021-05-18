@@ -14,7 +14,7 @@ Section~\ref{sec:pumpkin-impl-trans} describes the implementation in \sysname.
 
 % TODO honestly this should go in spec then? both of these in each section? and just say we don't show too much here since prototype?
 The transformations together recurse over the structure of each term in the list of candidates $\vec{t}$ in an environment $\Gamma$,
-and adapt that candidate to some new context in a goal-direct manner.
+and adapt that candidate to some new context in a goal-directed manner.
 In the end, if successful, they produce a reusable proof patch $p$ with type $G$, where $G$ is the inferred goal type.
 That is, we can view the high-level composition of transformations as a single judgment
 $\Gamma\ \vdash\ (\vec{t},\ G)\ \Downarrow_{t} p$, where in the end, $\Gamma \vdash p : G$. 
@@ -22,24 +22,25 @@ The details vary by transformation,
 and the details of which transformations run at all and in what order to reach the goal vary by the instance
 of the search procedure.
 
+\paragraph{Historical Note}
 For historical reasons, as \sysname was a prototype, these tranformations are not formalized. % TODO formalize if time
 Instead, I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
-I still refer to the corresponding judgments as the interfaces, even though I do not provide the derivations.
+For the sake of presentation, I still refer to the corresponding judgments as the interfaces, even though I do not provide the derivations.
 In Chapter~\ref{chapt:pi}, I will formalize a more elegant proof term transformation for the \toolnamec extension,
 building on some of the insights from the transformations in the \sysname prototype.
 
 % From Motivating the Core and Implementation
 
-\paragraph{Specialization}
+\subsubsection*{Specialization}
 Sometimes, patch candidates are too general.
-Specialization takes a candidate that is too general,
+\kl{Specialization} takes a candidate that is too general,
 and specializes it to specific arguments as determined by the difference in terms.
 To find a patch for Figure~\ref{fig:example}, for example, \sysname
 specialized the patch candidate to \lstinline{p} to produce the final patch.
 
 Specialization takes a single patch candidate, some arguments, and a reduction strategy, and returns a new candidate.
 It first applies the function to the argument, then applies the reduction strategy on the result.
-The default reducer, for example, uses $\beta\iota$-reduction in Coq~\cite{equality}.
+The default reducer, for example, uses $\beta\iota$-reduction in Coq---two of the \kl{definitional equality} reductions.\footnote{$\iota$-reduction is basically $\beta$-reduction for inductive types. This will come up in Chapter~\ref{chapt:pi}.}
 Section~\ref{sec:pumpkin-impl-trans} decribes other reducers.
 The only requirement for a reducer is that the end result should be definitionally equal to the original.
 
@@ -63,8 +64,8 @@ There is just one super weird thing I do not even know if I am allowed to do her
 the reduction strategy $\Downarrow_{r}$ is itself a transformation that reduces a term in an arbitrary way.
 \fi
 
-\paragraph{Generalization} In other cases, a patch candidate is too specific.
-Generalization takes a candidate that is too specific and generalizes it.
+\subsubsection*{Generalization} In other cases, a patch candidate is too specific.
+\kl{Generalization} takes a candidate that is too specific and generalizes it.
 We saw this for the example in Figure~\ref{fig:example} as well:
 to go from the candidate that \sysname found in the base case to the eventual reusable patch,
 \sysname generalized the candidate by the argument \lstinline{m} (before applying specialization).
@@ -78,7 +79,7 @@ The first generalizes candidates that map between types that share a common argu
 by the common argument:
 
 \begin{lstlisting}[language=coq]
-  $\Pi (\diff{t'} : T),\ Q\ \diff{t'} \rightarrow P\ \diff{t'}$
+  $\Pi (t' : T),\ Q\ t' \rightarrow P\ t'$
 \end{lstlisting}
 where $T$ is the type of $t$.
 The second generalizes candidates that map between types that share a common function, like:
@@ -89,7 +90,7 @@ The second generalizes candidates that map between types that share a common fun
 by the common function:
 
 \begin{lstlisting}[language=coq]
-  $\Pi (\diff{Q} : T),\ \diff{Q} t' \rightarrow \diff{Q} t$
+  $\Pi\ (Q : T),\ Q\ t' \rightarrow Q\ t$
 \end{lstlisting}
 where $T$ is the type of $Q$.
 
@@ -97,30 +98,30 @@ Generalization takes a patch candidate, the goal type, and the function argument
 It first wraps the candidate inside of a lambda from the type of the term by which to generalize.
 Then, it substitutes terms inside the body with the generalized term.
 It continues to do this until there is nothing left to generalize, then filters results by the goal type.
-Consider, for example, generalizing this candidate by \lstinline{m}: % TODO note it's from the thing
+Consider, for example, generalizing the candidate from Figure~\ref{fig:example} by $m$ (represented in CIC$_{\omega}$ this time): % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
-  $\lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H$
-  $: n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
+  $\lambda (H : \le n m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H$
+  $: \le n m \rightarrow \le n (\mathrm{plus}\ m\ (S\ O))$
 \end{lstlisting}
-where \lstinline{<=} is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
-The first step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
+where $\le$ is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
+The first step wraps this in a lambda from some \lstinline{nat}, the type of $m$:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : \mathrm{nat}) . \lambda (H : n <= m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H)$
-  $: \Pi (\diff{n0} : \mathrm{nat}), n <= m \rightarrow n <= \mathrm{plus}\ m\ 1$
+  $\lambda (n_0 : \mathrm{nat}) . \lambda (H : \le n m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H)$
+  $: \Pi (n_0 : \mathrm{nat}), \le n m \rightarrow \le n (\mathrm{plus}\ m\ 1)$
 \end{lstlisting}
-The second step substitutes \lstinline{n0} for \lstinline{m}:
+The second step substitutes $n_0$ for $m$:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (\diff{n0} : \mathrm{nat}) . \lambda (H : n <= \diff{n0}) . \mathrm{le\_plus\_trans}\ n\ \diff{n0}\ (S\ O)\ H)$
-  $: \Pi (\diff{n0} : \mathrm{nat}), n <= \diff{n0} \rightarrow n <= \mathrm{plus}\ \diff{n0}\ 1$
+  $\lambda (n_0 : \mathrm{nat}) . \lambda (H : \le n n_0) . \mathrm{le\_plus\_trans}\ n\ n_0\ (S\ O)\ H)$
+  $: \Pi (n_0 : \mathrm{nat}), \le n n_0 \rightarrow \le n (\mathrm{plus}\ n_O\ 1)$
 \end{lstlisting}
 
-In general, generalization is a kind of anti-unification problem, % TODO cite and so on
+In general, generalization is %a kind of anti-unification problem, % TODO cite and so on
+undecidable,
 as the terms and types may be reduced,
-so that the common function or argument does not appear explicitly.
-This is of course undecidable.
+so that the common function or argument does not appear explicitly.ss
 This poses a challenge for generalization in the second step---substitution.
 
 To handle this challenge, generalization uses a list of \textit{substitution strategies}\footnote{I originally called these \textit{abstraction strategies}, but this is more accurate.}
@@ -138,12 +139,13 @@ and moves on to more complex strategies only if that strategy fails.
 This design makes generalization simple to extend with new strategies and simple to call with different strategies
 for different instances, or even as an optimization for the proof engineer.
 
-\paragraph{Inversion} Sometimes, when two types are propositionally equal, % TODO explain this earlier in Coq explanation and so on, too, and refer back; use pi explanation
+\subsubsection*{Inversion} Sometimes, when two types are \kl{propositionally} equal, explanation
 candidate patches may appear in the wrong direction.
-For example, consider two list lemmas (this example is in Coq rather than CIC$_{\omega}$ for simplicity): % TODO just use CIC here and below 
+For example, consider two list lemmas:\footnote{It is too difficult to port this entire example, including the proof, to CIC$_{\omega}$ for demonstration.
+So I leave it in Gallina and Ltac, but still use it to give intuition for inversion.}
 
 \begin{lstlisting}[language=coq]
-  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l(@\vspace{-0.08cm}@)
+  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l
   new : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length (rev l)
 \end{lstlisting} 
 If \sysname searches the difference in proofs of these lemmas for a patch from the 
@@ -151,15 +153,15 @@ conclusion of \lstinline{new} to the conclusion of \lstinline{old},
 it may find a candidate \emph{backwards}:
 
 \begin{lstlisting}
-  candidate l' l (H : (@\diff{old}@) l' l) :=(@\vspace{-0.04cm}@)
-    eq_rect_r ... (@\diff{(rev\_length l)}@)(@\vspace{-0.04cm}@)
+  candidate l' l (H : (@\diff{old}@) l' l) :=
+    eq_rect_r ... (@\diff{(rev\_length l)}@)
   : (@\ltacforall@) l' l, (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l
 \end{lstlisting}
-The component can invert this to get the patch: %from \lstinline{new} to \lstinline{old}:
+The component can \kl{invert} this to get the patch: %from \lstinline{new} to \lstinline{old}:
 
 \begin{lstlisting}
-  patch l' l (H : (@\diff{new}@) l' l) :=(@\vspace{-0.04cm}@)
-    eq_rect_r ... (@\diff{(eq\_sym (rev\_length l))}@)(@\vspace{-0.04cm}@)
+  patch l' l (H : (@\diff{new}@) l' l) :=
+    eq_rect_r ... (@\diff{(eq\_sym (rev\_length l))}@)
   : (@\ltacforall@) l' l, (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l
 \end{lstlisting}
 We can then use this patch to port proofs.
@@ -167,41 +169,40 @@ For example, if we add this patch to a hint database~\cite{hints},
 we can port this proof:
 
 \begin{lstlisting}
-  Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
-    length (rev (l' ++ l)) = length (rev l) + length (rev l').(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
-    intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)(@\vspace{-0.04cm}@)
+  Theorem app_rev_len : (@\ltacforall@) l l',
+    length (rev (l' ++ l)) = length (rev l) + length (rev l').
+  Proof.
+    intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)
   Defined.
 \end{lstlisting}
 to this proof:
 
 \begin{lstlisting}
-  Theorem app_rev_len : (@\ltacforall@) l l',(@\vspace{-0.04cm}@)
-    length (rev (l' ++ l)) = length (rev l) + length (rev l').(@\vspace{-0.04cm}@)
-  Proof.(@\vspace{-0.04cm}@)
-    intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)(@\vspace{-0.04cm}@)
+  Theorem app_rev_len : (@\ltacforall@) l l',
+    length (rev (l' ++ l)) = length (rev l) + length (rev l').
+  Proof.
+    intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)
   Defined.
 \end{lstlisting}
 
 Rewrites like \lstinline{candidate} are \textit{invertible}:
-We can invert any rewrite in one direction by rewriting in the opposite direction.
+we can invert any rewrite in one direction by rewriting in the opposite direction.
 In contrast, it is not possible to invert the patch \sysname
 found for Figure~\ref{fig:example}.
 
 When a candidate is invertible, patch inversion exploits symmetry to try to reverse the conclusions of a candidate patch.
-It first factors the candidate using the factoring component, then calls the primitive inversion
+It first \kl{factors} the candidate using the factoring component, then calls the primitive inversion
 function on each factor, then finally folds the resulting list in reverse.
 The primitive inversion function exploits symmetry. 
-For example, equality is symmetric, so the component can invert any application of the equality eliminators.
+For example, propositional equality is symmetric, so the component can invert any application of the equality eliminators.
 I will explain this more in Section~\ref{sec:pumpkin-impl-diff}.
 
-\paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
+\subsubsection*{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
 This can break other problems, like generalization, into smaller subproblems.
 It is also necessary to invert certain terms, since the inverse of:
 
 \begin{lstlisting}
-  $g \circ f$
-  : $X \rightarrow Z$
+  $g \circ f$ : $X \rightarrow Z$
 \end{lstlisting}
 where:
 
@@ -213,27 +214,26 @@ for arbitrary non-dependent types $X$, $Y$, and $Z$,
 is of course:
 
 \begin{lstlisting}
-  $f\inv \circ g\inv$
-  : $Z \rightarrow X$ 
+  $f\inv \circ g\inv$ : $Z \rightarrow X$ 
 \end{lstlisting}
 This shows up often for inverting sequences of rewrites, as I will show in Section~\ref{sec:pumpkin-impl-diff}.
 To invert a term like this, \sysname identifies the factors \lstinline{[f; g]}, 
 inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
 then folds and applies the inverse factors in the opposite direction.
 
-The factoring transformation looks within a term for its factors.
+The \kl{factoring} transformation looks within a term for its factors.
 For the term above, it returns both factors: \lstinline{f} and \lstinline{g}.
 In this case, factoring takes the composite term and \lstinline{X} as arguments.
 It first searches as deep as possible for a term of type \lstinline{X} $\rightarrow$ \lstinline{Y} for some \lstinline{Y}.
 If it finds such a term, then it recursively searches for a term with type \lstinline{Y} $\rightarrow$ \lstinline{Z}. 
 It maintains all possible 
-paths of factors along the way, and it discards any paths that cannot reach \lstinline{Z}.
+paths of factors along the way, discarding any paths that cannot reach \lstinline{Z}.
 It does not yet support paths where \lstinline{Y} depends on \lstinline{X}.
 
 \subsection{Limitations}
 \label{sec:pumpkin-trans-limitations}
 
-This section describes a few fundamental limitations of the transformations in \sysname,
+This section describes two fundamental limitations of the transformations in \sysname,
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-trans}.
 
@@ -251,13 +251,12 @@ Then determining whether or not the function is extensionally equal to identity 
 the program terminates.}
 Inversion will also sometimes fail, in part because it depends on factoring,
 and in part because not every term is invertible to begin with.
-The later \toolnamec transformation does not fully circumvent undecidability,
-but it does more cleanly separate the transformation itself from the undecidable pieces.
+The later \toolnamec transformation more cleanly separates its decidable and undecidable pieces.
 
 \paragraph{Modeling Diverse Proof Styles}
 Some of the transformations make assumptions about the proof style.
 For example, proofs about decidable domains that work by provable double negation elimination
-(\lstinline{dec_not_not}) pose difficulties for generalization and inversion.
+(see Section~\ref{sec:ass}) pose difficulties for generalization and inversion.
 The later \toolnamec transformation, in contrast, is generic over the
 proof style.
 

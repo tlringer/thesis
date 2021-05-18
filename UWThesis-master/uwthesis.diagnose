@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-9 undefined knowledge(s).
+12 undefined knowledge(s).
 2 autoreference(s) are introduced twice.
 0 autoreference(s) are used but not introduced.
 
-48 autoreference(s) are properly used.
-95 autoreference(s) are defined but not used.
+54 autoreference(s) are properly used.
+89 autoreference(s) are defined but not used.
 
 
 ********
@@ -31,6 +31,9 @@
  | goals
  | generalizes
  | specializes
+ | Specialization
+ | Generalization
+ | factors
  | verifying
 
 
@@ -52,8 +55,6 @@ uwthesis.tex:57: {commands}{default}{base}
 uwthesis.tex:101: {proof maintenance}{default}{base}
 uwthesis.tex:145: {inductive type}{default}{base}
 uwthesis.tex:148: {constructors}{default}{base}
-uwthesis.tex:151: {eliminators}{default}{base}
-uwthesis.tex:157: {inductive hypothesis}{default}{base}
 uwthesis.tex:161: {UW PLSE}{default}{base}
 uwthesis.tex:184: {Max Willsey}{default}{base}
 uwthesis.tex:187: {Martin Kellog}{default}{base}
@@ -136,10 +137,6 @@ uwthesis.tex:413: {Amazon}{default}{base}
 uwthesis.tex:415: {Carr Astronautics}{default}{base}
 uwthesis.tex:426: {proof repair by example}{default}{base}
 uwthesis.tex:429: {exampled patched proof}{default}{base}
-uwthesis.tex:448: {\sysnamelong }{default}{base}
-uwthesis.tex:450: {\sysname }{default}{base}
-uwthesis.tex:471: {inversion}{default}{base}
-uwthesis.tex:474: {factoring}{default}{base}
 uwthesis.tex:477: {results}{default}{base}
 uwthesis.tex:480: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 uwthesis.tex:484: {Ornaments for Proof Reuse in Coq}{default}{base}

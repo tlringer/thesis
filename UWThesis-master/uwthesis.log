@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2077,33 +2077,20 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 75--96
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1191, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1197, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
-Package pdftex.def Info: repair/nat_ind.pdf  used on input line 122.
+Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
  [42 <./repair/nat_ind.pdf>]
-Overfull \hbox (14.13942pt too wide) in paragraph at lines 175--184
+Overfull \hbox (14.13942pt too wide) in paragraph at lines 176--185
 [] []\OT1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \OT1/pplj/m
 /n/10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-) (./repair/transformation.tex [43]
-
-LaTeX Warning: Citation `equality' on page 44 undefined on input line 42.
-
-[44] [45] [46] [47]) (./repair/implementation.tex [48] [49]
-
-LaTeX Warning: Citation `equality' on page 50 undefined on input line 110.
-
-
-Overfull \hbox (8.97433pt too wide) in paragraph at lines 110--120
-[]\OT1/pplj/m/n/10.95 (-20) The de-fault spe-cial-izer $\OML/zplm/m/it/10.95 ^^
-L^^S^^P$\OT1/pplj/m/n/10.95 (-20) -reduces [[]] the re-sult us-ing Coq's []
- []
-
-[50] [51]
-Overfull \hbox (19.65938pt too wide) in paragraph at lines 234--238
+) (./repair/transformation.tex [43] [44] [45] [46] [47])
+(./repair/implementation.tex [48] [49] [50] [51]
+Overfull \hbox (19.65938pt too wide) in paragraph at lines 235--239
 \OT1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to th
 e change in []
  []
@@ -2111,13 +2098,9 @@ e change in []
 [52] [53]
 
 LaTeX Font Warning: Font shape `OT1/pplj/bx/sc' undefined
-(Font)              using `OT1/pplj/bx/n' instead on input line 315.
+(Font)              using `OT1/pplj/bx/n' instead on input line 309.
 
-[54]
-
-LaTeX Warning: Citation `equality' on page 55 undefined on input line 394.
-
-[55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
+[54] [55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
@@ -2152,7 +2135,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1866, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1889, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2184,7 +2167,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 172--183
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2115, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2138, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 246.
@@ -2349,17 +2332,17 @@ Overfull \hbox (7.35196pt too wide) in paragraph at lines 83--84
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 122--124
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 122--125
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []20[], []22[],
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 130--131
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 131--132
 []| \OT1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 132--135
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 133--136
 \OT1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
@@ -2449,13 +2432,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1108.
  ) 
 Here is how much of TeX's memory you used:
- 51081 strings out of 492609
- 1030894 string characters out of 6129033
- 1306921 words of memory out of 5000000
- 51663 multiletter control sequences out of 15000+600000
- 643137 words of font info for 872 fonts, out of 8000000 for 9000
+ 51083 strings out of 492609
+ 1031040 string characters out of 6129033
+ 1307123 words of memory out of 5000000
+ 51666 multiletter control sequences out of 15000+600000
+ 643395 words of font info for 876 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,83p,9083b,2348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
 er/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -2475,10 +2458,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1702207 bytes).
+Output written on uwthesis.pdf (159 pages, 1702251 bytes).
 PDF statistics:
- 3777 PDF objects out of 4296 (max. 8388607)
- 3524 compressed objects within 36 object streams
- 1536 named destinations out of 1728 (max. 500000)
+ 3805 PDF objects out of 4296 (max. 8388607)
+ 3552 compressed objects within 36 object streams
+ 1530 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

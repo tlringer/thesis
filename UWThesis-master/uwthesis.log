@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2140,24 +2140,24 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1917, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1919, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
-Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
+Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
 
 
-LaTeX Warning: Reference `pi:approach' on page 69 undefined on input line 66.
+LaTeX Warning: Reference `pi:approach' on page 69 undefined on input line 70.
 
 [69 <./often/workflowa.pdf>] (./often/equivproof.tex) (./often/equivproof.tex)
 (./often/equiv2.tex) (./often/equiv2.tex) [70] (./often/listtovect.tex)
 (./often/listtovect.tex)
-Overfull \hbox (22.57913pt too wide) in paragraph at lines 152--160
+Overfull \hbox (22.57913pt too wide) in paragraph at lines 156--164
 []$[]$  $[]$
  []
 
 
-LaTeX Warning: Reference `pi:approach' on page 71 undefined on input line 195.
+LaTeX Warning: Reference `pi:approach' on page 71 undefined on input line 199.
 
 [71] [72]) (./often/differencing.tex [73]
 Overfull \hbox (0.58055pt too wide) in paragraph at lines 58--64
@@ -2172,7 +2172,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 172--183
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2167, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2169, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 246.
@@ -2210,14 +2210,15 @@ Overfull \hbox (66.33852pt too wide) in paragraph at lines 612--613
 [][][][][][][][][][]  
  []
 
+[85]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 638.
 
-[85] [86] [87]) (./often/transformation.tex
+[86] [87]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
-[88] [89] [90]) (./often/implementation.tex [91]
+[88] [89] [90] [91]) (./often/implementation.tex
 Overfull \hbox (21.62834pt too wide) in paragraph at lines 41--45
 []\OT1/pplj/m/n/10.95 (-20) Once \OT1/pplj/m/sc/10.95 (-20) Pump-kin P\OT1/pplj
 /m/n/10.95 (-20) i has found a con-fig-u-ra-tion, the next step---\OT1/pplj/m/s
@@ -2234,14 +2235,14 @@ Overfull \hbox (4.37883pt too wide) in paragraph at lines 364--370
  nat-u-ral proof script [][][].
  []
 
-[98]
+[98] [99]
 Overfull \hbox (6.10782pt too wide) in paragraph at lines 434--443
 [] []\OT1/pplj/m/sc/10.95 (-20) p r e t t y p r i n t -i n g[] \OT1/pplj/m/n/10
 .95 (-20) Af-ter de-com-pil-ing proof terms, \OT1/pplj/b/n/10.95 De-com-pile \O
 T1/pplj/m/n/10.95 (-20) pretty
  []
 
-[99]) (./often/results.tex
+) (./often/results.tex [100]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 21.
 
@@ -2249,9 +2250,9 @@ Overfull \hbox (283.1196pt too wide) in paragraph at lines 19--62
 [][]
  []
 
-(./often/replica.tex) (./often/replica.tex)
+(./often/replica.tex) (./often/replica.tex) [101]
 
-LaTeX Warning: Reference `sec:key1' on page 100 undefined on input line 124.
+LaTeX Warning: Reference `sec:key1' on page 102 undefined on input line 124.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 115--125
@@ -2259,13 +2260,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--125
 s o f p a r -t i c -u -l a r l e n g t h s[] \OT1/pplj/m/n/10.95 (-2) In
  []
 
-[100] [101]
+[102]
 Overfull \hbox (5.39363pt too wide) in paragraph at lines 206--213
 [] []\OT1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t 
 e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
  []
 
-[102] [103] [104] [105]
+[103] [104] [105]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/pplj/b/n' tried instead on input line 394.
  [106]) (./often/conclusion.tex [107])) (./related.tex
@@ -2441,11 +2442,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1118.
  ) 
 Here is how much of TeX's memory you used:
- 51133 strings out of 492609
- 1032155 string characters out of 6129033
- 1309826 words of memory out of 5000000
- 51685 multiletter control sequences out of 15000+600000
- 643395 words of font info for 876 fonts, out of 8000000 for 9000
+ 51157 strings out of 492609
+ 1032426 string characters out of 6129033
+ 1307900 words of memory out of 5000000
+ 51688 multiletter control sequences out of 15000+600000
+ 644385 words of font info for 892 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2467,10 +2468,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1702910 bytes).
+Output written on uwthesis.pdf (159 pages, 1703784 bytes).
 PDF statistics:
- 3840 PDF objects out of 4296 (max. 8388607)
- 3586 compressed objects within 36 object streams
- 1547 named destinations out of 1728 (max. 500000)
+ 3843 PDF objects out of 4296 (max. 8388607)
+ 3589 compressed objects within 36 object streams
+ 1548 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

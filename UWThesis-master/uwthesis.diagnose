@@ -6,7 +6,7 @@
 2 autoreference(s) are introduced twice.
 1 autoreference(s) are used but not introduced.
 
-54 autoreference(s) are properly used.
+55 autoreference(s) are properly used.
 93 autoreference(s) are defined but not used.
 
 
@@ -63,6 +63,7 @@ theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
 uwthesis.tex:58: {commands}{default}{base}
 uwthesis.tex:102: {proof maintenance}{default}{base}
+uwthesis.tex:129: {type equivalences}{default}{base}
 uwthesis.tex:146: {inductive type}{default}{base}
 uwthesis.tex:149: {constructors}{default}{base}
 uwthesis.tex:162: {UW PLSE}{default}{base}
@@ -111,7 +112,6 @@ uwthesis.tex:309: {Luis Vega}{default}{base}
 uwthesis.tex:312: {Sahil Verma}{default}{base}
 uwthesis.tex:315: {Zhen Zhang}{default}{base}
 uwthesis.tex:318: {Amy Zhu}{default}{base}
-uwthesis.tex:321: {Jasper Hugunin}{default}{base}
 uwthesis.tex:324: {Taylor Blau}{default}{base}
 uwthesis.tex:327: {Logan Weber}{default}{base}
 uwthesis.tex:330: {Max Ruttenberg}{default}{base}

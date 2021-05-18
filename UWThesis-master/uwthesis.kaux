@@ -1681,6 +1681,9 @@
 \KAuxNewLinkScopetagInstance {fig:listswap}{document}
 \KAuxDeclaredScopeTag {sec:pi-approach}
 \KAuxNewLinkScopetagInstance {sec:pi-approach}{document}
+
+\KAuxFileAt {approach.tex}{13}
+\KAuxAutorefTarget {default}{base}{type equivalences}
 \KAuxDeclaredScopeTag {sec:pi-workflow}
 \KAuxNewLinkScopetagInstance {sec:pi-workflow}{document}
 \KAuxDeclaredScopeTag {fig:system}

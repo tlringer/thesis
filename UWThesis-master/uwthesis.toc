@@ -137,7 +137,7 @@
 \contentsline {paragraph}{Equivalence}{80}{figure.caption.31}% 
 \contentsline {paragraph}{Equality}{80}{figure.caption.31}% 
 \contentsline {paragraph}{Correctness}{80}{figure.caption.31}% 
-\contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.31}% 
+\contentsline {paragraph}{Equivalences from Configurations}{81}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{81}{subsection.4.3.4}% 
 \contentsline {paragraph}{Common Definitions}{82}{lstnumber.-192.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}% 
@@ -149,14 +149,14 @@
 \contentsline {paragraph}{Deriving the Configuration}{86}{figure.caption.34}% 
 \contentsline {paragraph}{Proving Correctness}{87}{lstnumber.-205.1}% 
 \contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
-\contentsline {paragraph}{Heuristics}{87}{subsection.4.3.5}% 
+\contentsline {paragraph}{Heuristics}{88}{subsection.4.3.5}% 
 \contentsline {paragraph}{Isolating Changes}{88}{subsection.4.3.5}% 
 \contentsline {section}{\numberline {4.4}Transformation}{88}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Unification Heuristics}{90}{subsection.4.4.1}% 
 \contentsline {subsection}{\numberline {4.4.2}Specifying a Correct Transformation}{91}{subsection.4.4.2}% 
 \contentsline {subsection}{\numberline {4.4.3}Revisiting Limitations}{91}{subsection.4.4.3}% 
 \contentsline {paragraph}{Undecidability}{91}{subsection.4.4.3}% 
-\contentsline {paragraph}{Modeling Diverse Proof Styles}{91}{subsection.4.4.3}% 
+\contentsline {paragraph}{Modeling Diverse Proof Styles}{92}{subsection.4.4.3}% 
 \contentsline {section}{\numberline {4.5}Implementation}{92}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}Tool Details}{92}{subsection.4.5.1}% 
 \contentsline {subsubsection}{\numberline {4.5.1.1}The Command}{92}{subsubsection.4.5.1.1}% 
@@ -167,30 +167,30 @@
 \contentsline {paragraph}{Termination}{95}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Intent}{95}{subsubsection.4.5.1.3}% 
 \contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{95}{subsubsection.4.5.1.4}% 
-\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{95}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{96}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{96}{subsubsection.4.5.2.1}% 
-\contentsline {paragraph}{First Pass: Basic Proof Scripts}{97}{figure.caption.38}% 
+\contentsline {paragraph}{First Pass: Basic Proof Scripts}{96}{figure.caption.38}% 
 \contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.38}% 
-\contentsline {paragraph}{From Qtac to Ltac}{98}{figure.caption.39}% 
+\contentsline {paragraph}{From Qtac to Ltac}{99}{figure.caption.39}% 
 \contentsline {paragraph}{From CIC$_{\omega }$ to Coq}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Forfeiting Soundness}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Pretty Printing}{99}{figure.caption.39}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{99}{subsubsection.4.5.2.2}% 
+\contentsline {paragraph}{Forfeiting Soundness}{100}{figure.caption.39}% 
+\contentsline {paragraph}{Pretty Printing}{100}{figure.caption.39}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{100}{subsubsection.4.5.2.2}% 
 \contentsline {section}{\numberline {4.6}Results}{100}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{100}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{100}{table.caption.40}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{100}{figure.caption.41}% 
+\contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{101}{subsection.4.6.1}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{101}{table.caption.40}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.41}% 
 \contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Constructors: Modifying a Language}{102}{figure.caption.41}% 
+\contentsline {paragraph}{Permute Constructors: Modifying a Language}{103}{figure.caption.41}% 
 \contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.41}% 
 \contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{103}{figure.caption.41}% 
-\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
+\contentsline {paragraph}{Permute Hypotheses: External Example}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.41}% 
+\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{105}{subsection.4.6.2}% 
 \contentsline {paragraph}{Setup}{105}{Item.55}% 
-\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{105}{subsubsection.4.6.2.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{106}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{107}{subsubsection.4.6.2.2}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{107}{section.4.7}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{108}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{109}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Proof Engineering}{109}{section.5.1}% 
 \contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{109}{subsection.5.1.1}% 

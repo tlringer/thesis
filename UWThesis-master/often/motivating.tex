@@ -22,7 +22,8 @@ Even such a simple change can cause trouble, as in this proof from the Coq stand
 
 \begin{lstlisting}
   Lemma rev_app_distr {A} :
-    $\forall$ (x y : list A), rev (x ++ y) = rev y ++ rev x.
+    $\forall$ (x y : list A),
+      rev (x ++ y) = rev y ++ rev x.
   Proof. (@\color{gray}{(* by induction over x and y *)}@)
     induction x as [| a l IHl].
     (@\color{gray}{(* x nil: *)}@) induction y as [| a l IHl].

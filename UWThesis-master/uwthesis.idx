@@ -131,7 +131,8 @@
 \indexentry{Thesis!Results|hyperpage}{6}
 \indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{7}
 \indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{7}
-\indexentry{Thesis!Technology!Proof Repair!\sysnamelong Plugin Suite|hyperpage}{7}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite|hyperpage}{7}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Plugins|hyperpage}{7}
 \indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{7}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{8}
 \indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{8}
@@ -209,6 +210,7 @@
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Specification|hyperpage}{24}
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof|hyperpage}{24}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{26}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Plugins|hyperpage}{26}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{26}
 \indexentry{Thesis!Formal Thesis Statement|hyperpage}{28}
 \indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{28}
@@ -219,8 +221,52 @@
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{28}
 \indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{29}
 \indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{29}
-\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{31}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{33}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Plugins|hyperpage}{31}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\sysname Prototype|hyperpage}{31}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example|hyperpage}{31}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Exampled Patched Proof|hyperpage}{31}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{31}
+\indexentry{Conventions!Primitive Eliminators|hyperpage}{32}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{33}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{33}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{33}
+\indexentry{Thesis!Approach!Proof Term Transformations|hyperpage}{33}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Commands|hyperpage}{34}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{34}
+\indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{34}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{34}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{34}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{34}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{36}
+\indexentry{Concepts!Verification!Proof Engineering!Proof Automation|hyperpage}{36}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{36}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{36}
+\indexentry{Concepts!Type Theory!Inductive Types!Motive|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{37}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{38}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{38}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{38}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{38}
+\indexentry{Thesis!Approach!Proof Term Transformations!Specialization|hyperpage}{38}
+\indexentry{Thesis!Approach!Proof Term Transformations!Generalization|hyperpage}{38}
+\indexentry{Thesis!Approach!Proof Term Transformations!Inversion|hyperpage}{38}
+\indexentry{Thesis!Approach!Proof Term Transformations!Generalization|hyperpage}{38}
+\indexentry{Thesis!Approach!Proof Term Transformations!Factoring|hyperpage}{39}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{39}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{39}
+\indexentry{Thesis!Approach!Proof Term Transformations!Generalization|hyperpage}{39}
+\indexentry{Thesis!Approach!Proof Term Transformations!Specialization|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Patch Candidate|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Reusable Patch|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Goal Type|hyperpage}{39}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair By Example!Search Procedure Instance|hyperpage}{39}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{40}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{40}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{41}

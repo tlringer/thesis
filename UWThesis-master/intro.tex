@@ -184,11 +184,11 @@ the theory is sprinkled throughout as appropriate.
 The implementation shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
 and then apply that information to fix other proofs broken by the same change.
 This implementation comes in the form of a proof repair tool suite for Coq called \intro{\sysnamelong} (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting the Coq Hacker).
-Notably, since all repairs that \sysnamelong produces are checked Coq in the end, \sysnamelong does not extend the \intro{Trusted Computing Base} (TCB):
+\sysnamelong is a suite of Coq \intro{plugins}: extensions to Coq implemented in OCaml that can add new automation and syntax, and can define new terms.
+Notably, since all terms that plugins produce are checked by Coq in the end, \sysnamelong does not extend the \intro{Trusted Computing Base} (TCB):
 the set of unverified components that the correctness of the proof development depends on~\cite{PGL-045}.
-In total, \sysnamelong is about 15000 lines of code implemented in OCaml.
-These 15000 lines of code consist of three plugins and a library,
-which together bridge the gap between the theory supported by design and the practical proof repair needed for the case studies.
+In total, \sysnamelong is about 15000 lines of code,
+consisting of three plugins and a library that together bridge the gap between the theory supported by design and the practical proof repair needed for the case studies.
 
 \iffalse
 Toward that end, five notable features include:

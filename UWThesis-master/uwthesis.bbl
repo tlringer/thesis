@@ -415,6 +415,12 @@ Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
 \newblock In {\em 12th {USENIX} Symposium on Operating Systems Design and
   Implementation ({OSDI} 16)}, pages 653--669, GA, 2016. {USENIX} Association.
 
+\bibitem{DBLP:journals/ftpl/GulwaniPS17}
+Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
+\newblock Program synthesis.
+\newblock {\em Foundations and Trends in Programming Languages}, 4(1-2):1--119,
+  2017.
+
 \bibitem{harrison-reflection}
 John Harrison.
 \newblock Metatheory and reflection in theorem proving: A survey and critique.

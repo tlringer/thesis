@@ -7,7 +7,7 @@
   + papers, like REPLICA and the survey paper (by name and not by name)
   + acks
   + defs
-  + be consistent about kl use (when it's significant or confusing)
+  + be consistent about kl use (when it's significant or confusing---make sure you kl differencing & transformations too)
   + knowledge package color change to make reasonable
 - finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
 - clean citations
@@ -28,6 +28,7 @@
 - revision passes
 - make certain future work language speculative instead to avoid "being wrong"
 - photo of grandpa
+- spell check
 
 # Chapter 1
 
@@ -36,17 +37,14 @@
 # Chapter 2
 
 - example in proof repair section (nice to have)
-- REPLICA diagram and a bit more, maybe
+- REPLICA diagram and a bit more, maybe (nice to have)
 - guarded recursion word overloading, is it OK?
 
 # Chapter 3
 
-- get the motivating example actually working if it doesn't yet, and link to it
+- get the motivating example actually working if it doesn't yet, and link to it (nice to have)
 - IZR pattern matching versus eliminators
-- ensure line numbers for figure are adjusted to updated figure
-- check specs of each alg
-- clean specs of each alg
-- explain inductive hypothesis at some point before you get here
+- instance -> options
 
 # Chapter 4
 

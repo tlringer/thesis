@@ -6,15 +6,15 @@ information (like the rewrite by \lstinline{INR_IPR}) to fix other proofs broken
 client proofs). \sysname implements a prototype of this.
 
 To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide 
-an \textit{example patched proof}: an example of how to adapt a proof to a change.
-\sysname extracts the information that example carries into a \textit{patch candidate}: a function that describes the change 
+an \kl{example patched proof}: an example of how to adapt a proof to a change.
+\sysname extracts the information that example carries into a \intro{patch candidate}: a function that describes the change 
 in the example patched proof,
 but that is localized to the context of the example, and not yet enough to fix other proofs broken by the change.
-\sysname then generalizes that candidate into a \textit{reusable patch}: a function
-that can be used to fix other broken proofs broken by the same change, which \sysname defines as a term in \kl{Gallina}.
+\sysname then generalizes that candidate into a \kl{reusable patch}: a function
+that can be used to fix other broken proofs broken by the same change, which \sysname defines as a term in Gallina.
 
 The \sysname prototype focuses on finding reusable patches to proofs in response to certain changes in the content of programs and specifications (Section~\ref{sec:pumpkin-scope}).
-It does this using a combination of semantic differencing and proof term transformations:
+It does this using a combination of \kl{semantic differencing} and \kl{proof term transformations}:
 Differencing (Section~\ref{sec:pumpkin-spec-diff}) looks at the difference between versions of the example patched proof for this information, and finds the candidate.
 The proof term transformations (Section~\ref{sec:pumpkin-spec-trans}) then modify that candidate to produce the reusable proof patch.
 All of this happens over proof terms in Gallina, since tactics may hide necessary information. % as I will soon show.
@@ -29,18 +29,19 @@ though the later \toolnamec extension addresses this limitation (Chapter~\ref{ch
 \subsection{Workflow: Repair by Example}
 \label{sec:pumpkin-workflow}
 
-The interface to \sysname is exposed to the proof engineer as a \textit{command}. % TODO use knowledge package, and maybe move back to Chapter 2
+The interface to \sysname is exposed to the proof engineer as a \intro{command}.
 Commands in Coq are similar to tactics, except that they can occur outside of the context of proofs, and define new terms.
+Plugins like \sysname can extend Coq with new commands.
 In this case, \sysname extends Coq with a new command called \lstinline{Patch Proof}, with the syntax:
 
 \begin{lstlisting}
   Patch Proof old_proof new_proof as patch_name. 
 \end{lstlisting}
-where \lstinline{old_proof} and \lstinline{new_proof} are the old and new versions of the example patched proof,
-and \lstinline{patch_name} is the desired name of the reusable proof patch.\footnote{Section~\ref{sec:pumpkin-impl} describes an alternative interface for \sysname with Git integration.}
+where \lstinline{old_proof} and \lstinline{new_proof} are the old and new versions of the \kl{example patched proof},
+and \lstinline{patch_name} is the desired name of the \kl{reusable proof patch}.\footnote{Section~\ref{sec:pumpkin-impl} describes an alternative interface for \sysname with Git integration.}
 This invokes the \sysname plugin, which searches for a reusable proof patch
 and defines it as a new term if successful.
-All terms that \sysname defines are type checked in the end, so \sysname does not extend the TCB. % TODO use the cool knowledge package here, since introduced a while ago 
+All terms that \sysname defines are type checked in the end, so \sysname does not extend the \kl{TCB}.
 
 \begin{figure}
 %\begin{algorithm}
@@ -64,7 +65,7 @@ All terms that \sysname defines are type checked in the end, so \sysname does no
 When the proof engineer calls \lstinline{Patch Proof}, this invokes the proof patch search procedure in Figure~\ref{alg:patching}.
 The search procedure starts by differencing the \textit{types} of \lstinline{old_proof} and \lstinline{new_proof}
 (that is, the theorems they prove).
-The result that it finds is the \textit{goal type}: the type that the reusable proof patch should have.
+The result that it finds is the \intro{goal type}: the type that the reusable proof patch should have.
 It then differences the \textit{terms} \lstinline{old_proof} and \lstinline{new_proof} directly to identify patch candidates,
 which are themselves proof terms.
 Finally, it transforms those patch candidates directly into a reusable patch.
@@ -100,28 +101,20 @@ To demonstrate this workflow, consider the change from the theorem \lstinline{ol
 Changing \lstinline{old} to \lstinline{new} can break proofs that used to successfully apply \lstinline{old}:
 
 \begin{lstlisting}[language=coq]
-  Proof.
-    $\ldots$
-    (@\succeeds{apply old.}@)
-    $\ldots$
-  Defined.
+  (@\succeeds{apply old.}@)
 \end{lstlisting}
 so that they fail after migrating to \lstinline{new}:
 
 \begin{lstlisting}[language=coq]
-  Proof.
-    $\ldots$
-    (@\fails{apply new.}@)
-    $\ldots$
-  Defined.
+  (@\fails{apply new.}@)
 \end{lstlisting}
 When we call:
 
 \begin{lstlisting}
   Patch Proof old new as patch.
 \end{lstlisting}
-\sysname invokes the search procedure, which differences \lstinline{old} and \lstinline{new} to infer the goal type for the patch.
-Here, it infers the following goal:
+\sysname invokes the search procedure, which differences \lstinline{old} and \lstinline{new} to infer the goal type for the \kl{patch}.
+Here, it infers the following \kl{goal}:
 
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) n m p,
@@ -130,17 +123,13 @@ Here, it infers the following goal:
     (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
 \end{lstlisting}
 which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
-It then differences the terms \lstinline{old} and \lstinline{new} to identify candidate proof patches (Section~\ref{sec:pumpkin-spec-diff}),
-then tranforms those candidates to a reusable proof patch with that type (Section~\ref{sec:pumpkin-spec-trans}),
+It then differences the terms \lstinline{old} and \lstinline{new} to identify \kl{candidate proof patches} (Section~\ref{sec:pumpkin-spec-diff}),
+then tranforms those candidates to a \kl{reusable proof patch} with that type (Section~\ref{sec:pumpkin-spec-trans}),
 which it defines as a new term \lstinline{patch}.
-This is something that we can use to fix other proofs broken by this change, either by applying it with traditional proof automation:
+This is something that we can use to fix other proofs broken by this change, either by applying it with traditional \kl{proof automation}:
 
 \begin{lstlisting}[language=coq]
-  Proof.
-    $\ldots$
-    (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
-    $\ldots$
-  Defined.
+  (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
 \end{lstlisting}
 or by using the automation in Section~\ref{sec:pumpkin-impl}.
 
@@ -155,9 +144,9 @@ The \toolnamec extension to \sysnamelong in Chapter~\ref{chapt:pi} supports a br
 in datatypes that may change in these ways.
 
 The search procedure can be instantiated to different classes of change in the content of programs and specifications.
-Thus, before running the search procedure, \sysname infers an \textit{instance} of the search 
+Thus, before running the search procedure, \sysname infers an \intro{instance} of the search 
 procedure from the example change.\footnote{In the original 2018 \sysnamelong paper, I called this a \textit{configuration}.
-In this chapter, I rename configuration to \textit{instance} everywhere to avoid overloading this term,
+In this chapter, I rename configuration to \kl{instance} everywhere to avoid overloading this term,
 since I unfortunately used this word again for something different when developing \toolnamec.}
 This instance customizes the highlighted lines for an entire class of changes:
 it determines what to diff on lines 1 and 2,
@@ -174,7 +163,7 @@ Given two such proofs of theorems:
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{Q}@) x
 \end{lstlisting}
 for arbitrary \lstinline{x}, \lstinline{H}, \lstinline{P}, and \lstinline{Q},
-\sysname searches for a patch with this goal type:
+\sysname searches for a patch with goal type:
 
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{Q}@) x $\rightarrow$ (@\diff{P}@) x
@@ -191,7 +180,7 @@ Differencing operates over terms and types. Differencing tactics
 would be insufficient, since tactics and hints may mask information helpful to finding patches.
 For example, for the change in Figure~\ref{fig:example},
 the tactics in the proofs of \lstinline{old} and \lstinline{new} are identical, even 
-though the proof terms they compiled down to are not. %\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
+though the proof terms they compile down to are not. %\footnote{Since this is a simple example, replaying an existing tactic happens to work. There
 %are additional examples in the repository (\lstinline{Cex.v}).} % TODO what? What did this even mean? lmao
 This is why differencing looks at the change in terms to extract the patch candidates.
 
@@ -223,14 +212,14 @@ For this change, \sysname uses the instance for changes in conclusions:
 \end{algorithmic}
 \end{algorithm}
 When this instance of the search procedure is invoked,
-semantic differencing first identifies the difference in their types, here the respective motives (line 18):
+semantic differencing first identifies the difference in their types, here the respective \kl{motives} (line 18):
 
 \begin{lstlisting}
   (@\diff{(fun p0 => n <= p0 + 1)}@)
   (@\diff{(fun p0 => n <= p0)}@)
 \end{lstlisting}
 applied to the argument \lstinline{m} (line 17).
-This produces the \textit{candidate} goal type:
+This produces the \kl{candidate} \kl{goal type}:
 
 \begin{lstlisting}
   (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@)
@@ -241,8 +230,8 @@ Differencing then diffs the terms for a function that has that type, here (line 
 \begin{lstlisting}[language=coq]
   fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
 \end{lstlisting}
-This is a \textit{patch candidate}.
-This candidate is close, but it is not yet a reusable patch. In particular, this candidate
+This is a \kl{patch candidate}.
+This candidate is close, but it is not yet a \kl{reusable patch}. In particular, this candidate
 maps base case to base case (it is applied to \lstinline{m}); the patch should map conclusion to conclusion (it should
 be applied to \lstinline{p}).
 This is where the proof term transformations will come in.
@@ -252,11 +241,11 @@ In summary, differencing has the following specification:
 
 % TODO may need to improve this, just want something here for now
 \begin{itemize}
-\item \textbf{Inputs}: \lstinline{old_proof}, \lstinline{new_proof}, an instance \lstinline{instance}, and a final goal type \lstinline{goal}, assuming:
+\item \textbf{Inputs}: the \kl{example patched proof} given by \lstinline{old_proof} and \lstinline{new_proof}, a set of options corresponding to the \kl{instance} of the search procedure \lstinline{instance}, and a final \kl{goal type} \lstinline{goal}, assuming:
 \begin{itemize}
 \item the change from \lstinline{old_proof} to \lstinline{new_proof} is in the class of changes supported by \lstinline{instance}.
 \end{itemize}
-\item \textbf{Outputs}: a list of terms \lstinline{candidates} of patch candidates, and a candidate goal type \lstinline{candidate_goal}, guaranteeing:
+\item \textbf{Outputs}: a list of terms \lstinline{candidates} of \kl{patch candidates}, and a \kl{candidate} \kl{goal type} \lstinline{candidate_goal}, guaranteeing:
 \begin{itemize}
 \item each term in \lstinline{candidates} has type \lstinline{candidate_goal}.
 \end{itemize}
@@ -272,7 +261,7 @@ All terms that \sysname produces type check in the end. % TODO hyphen or no hyph
 Differencing produces patch candidates that are localized to a particular context according to the inferred goal for that change,
 but do not yet generalize to other contexts.
 The transformations are what take each candidate and tries to modify it to produce a term that \textit{does} generalize to other contexts.
-If they succeed, \sysname has found a \textit{reusable patch}.
+If they succeed, \sysname has found a \kl{reusable patch}.
 
 Consider once more the example in Figure~\ref{fig:example}.
 The candidate patch that differencing found has this type:
@@ -287,7 +276,7 @@ The reusable patch that \sysname is looking for, however, should have this type:
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) n m p, n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
 \end{lstlisting}
-as this is the goal that \sysname inferred for this instance.
+as this is the goal that \sysname inferred for this \kl{instance}.
 The transformations that \sysname runs will attempt to transform the candidate
 into a patch with that type.
 
@@ -295,10 +284,10 @@ The details of which transformations to run vary by instance.
 There are four transformations that turn patch candidates into reusable proof patches:
 
 \begin{enumerate}
-\item \textit{patch specialization} to arguments,
-\item \textit{patch generalization}\footnote{In the original paper, I called this \textit{patch abstraction}. But I later learned that \textit{generalization} has a technical meaning in the automated theorem proving world, and that the technical meaning coincides beautifully with the technical meaning in the world of proof assistants. So I renamed it for this thesis.} of arguments or functions,
-\item \textit{patch inversion} to reverse a patch, and
-\item \textit{lemma factoring} to break a term into parts.
+\item \textit{patch} \intro{specialization} to arguments,
+\item \textit{patch} \intro{generalization}\footnote{In the original paper, I called this \textit{patch abstraction}. But I later learned that \kl{generalization} has a technical meaning in the automated theorem proving world, and that the technical meaning coincides beautifully with the technical meaning in the world of proof assistants. So I renamed it for this thesis.} of arguments or functions,
+\item \textit{patch} \intro{inversion} to reverse a patch, and
+\item \textit{lemma} \intro{factoring} to break a term into parts.
 \end{enumerate}
 Each instance chooses among these transformations strategically based on the structure of the proof term.
 
@@ -311,13 +300,13 @@ For Figure~\ref{fig:example}, we can instantiate \textit{transform} in the insta
 %  \STATE Build trees for search
   %\STATE build trees for proofs
   %\REPEAT
-    \STATE \textit{diff} conclusions of the theorems of old\_proof and new\_proof for goals
-    \STATE \textit{diff} bodies of the proof terms for candidates
-    \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} \diff{\textit{generalize} and then \textit{specialize}} candidates
+    \STATE \kl{diff} conclusions of the theorems of old\_proof and new\_proof for \kl{goals}
+    \STATE \kl{diff} bodies of the proof terms for \kl{candidates}
+    \STATE \textbf{if} there are \kl{candidates} \textbf{then}
+    \STATE \hspace*{1em} \diff{\kl{generalize} and then \kl{specialize}} \kl{candidates}
 \end{algorithmic}
 \end{algorithm}
-That is, first, \sysname \textit{generalizes} the candidate by \lstinline{m} (line 11), which lifts it out of the base case:
+That is, first, \sysname \kl{generalizes} the candidate by \lstinline{m} (line 11), which lifts it out of the base case:
 
 \begin{lstlisting}
   fun (@\diff{n0}@) n m p H0 H1 =>
@@ -327,7 +316,7 @@ That is, first, \sysname \textit{generalizes} the candidate by \lstinline{m} (li
       m <= p $\rightarrow$
       n <= (@\diff{n0}@) $\rightarrow$ n <= (@\diff{n0}@) + 1.
 \end{lstlisting}
-\sysname then \textit{specializes} this generalized candidate to \lstinline{p} (line 16), the argument
+\sysname then \kl{specializes} this generalized candidate to \lstinline{p} (line 16), the argument
 to the conclusion of \lstinline{le_ind}. This produces a patch:
 
 \begin{lstlisting}
@@ -355,15 +344,15 @@ In summary, the transformations together have the following specification:
 \begin{itemize}
 \item the assumptions and guarantees from differencing hold.
 \end{itemize}
-\item \textbf{Outputs}: a term \lstinline{patch} that is the reusable proof patch, guaranteeing:
+\item \textbf{Outputs}: a term \lstinline{patch} that is the \kl{reusable proof patch}, guaranteeing:
 \begin{itemize}
-\item \lstinline{patch} has the inferred final \lstinline{goal} type for the change.
+\item \lstinline{patch} has the inferred final \kl{goal type} \lstinline{goal} for the change.
 \end{itemize}
 \end{itemize}
 When these transformations fail, or when the list of candidates that differencing returns is empty,
 \sysname simply fails to return a patch.
-As with differencing, it is possible that a mistake in the implementation of a given instance
+As with differencing, it is possible that a mistake in the implementation of a given \kl{instance}
 leads to a final \lstinline{goal} type is not useful to the proof engineer,
 but this cannot sacrifice soundness:
-every \lstinline{patch} \sysname produces type checks in the end with the goal type in the end.
+every patch \sysname produces type checks with the goal type in the end.
 

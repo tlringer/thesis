@@ -116,18 +116,17 @@
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
 		\hyperpage{11, 12}, \hyperpage{109}
       \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 
-		\hyperpage{11}, \hyperpage{28}, \hyperpage{31}, 
-		\hyperpage{52}, \hyperpage{66}, \hyperpage{109}, 
-		\hyperpage{123}
+		\hyperpage{11}, \hyperpage{52}, \hyperpage{66}, 
+		\hyperpage{109}, \hyperpage{123}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
-		\hyperpage{41}, \hyperpage{75}, \hyperpage{93, 94}
+		\hyperpage{42}, \hyperpage{75}, \hyperpage{93, 94}
 
   \indexspace
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
-		\hyperpage{8}
+		\hyperpage{8}, \hyperpage{26}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
@@ -138,14 +137,16 @@
 
   \item Thesis
     \subitem Approach
-      \subsubitem Proof Term Transformations, \hyperpage{6, 7}
-      \subsubitem Semantic Differencing, \hyperpage{6, 7}
-    \subitem Formal Thesis Statement, \hyperpage{5}
+      \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
+		\hyperpage{28, 29}
+      \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
+		\hyperpage{28, 29}
+    \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}
     \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
 		\hyperpage{123}
     \subitem Results, \hyperpage{6}
     \subitem Technology
-      \subsubitem Proof Repair, \hyperpage{4}
+      \subsubitem Proof Repair, \hyperpage{4}, \hyperpage{23}
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{18}, 
 		\hyperpage{21}, \hyperpage{40}, \hyperpage{75}, 

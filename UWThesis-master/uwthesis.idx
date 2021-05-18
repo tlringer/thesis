@@ -299,9 +299,13 @@
 \indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite|hyperpage}{65}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Plugins|hyperpage}{65}
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences|hyperpage}{65}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{65}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration|hyperpage}{65}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{65}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{65}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{66}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{68}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{67}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{75}
 \indexentry{Concepts!Type Theory!Equality!Intensionality|hyperpage}{76}
@@ -310,14 +314,14 @@
 \indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{81}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{93}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{94}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{97}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{97}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{100}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
-\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{101}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
+\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{100}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{104}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Concepts!Verification|hyperpage}{108}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{109}

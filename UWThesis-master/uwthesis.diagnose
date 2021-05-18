@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-12 undefined knowledge(s).
+15 undefined knowledge(s).
 2 autoreference(s) are introduced twice.
 1 autoreference(s) are used but not introduced.
 
 54 autoreference(s) are properly used.
-90 autoreference(s) are defined but not used.
+93 autoreference(s) are defined but not used.
 
 
 ********
@@ -35,14 +35,17 @@
  | Generalization
  | factors
  | verifying
+ | proof scripts
+ | proof terms
+ | automatic configuration
 
 
 ****************************
 * autoref-introduced-twice *
 ****************************
 
-uwthesis.tex:980: {Sarah Chasins}{default}{base}
-uwthesis.tex:1029: {Sarah Chasins}{default}{base}
+uwthesis.tex:988: {Sarah Chasins}{default}{base}
+uwthesis.tex:1037: {Sarah Chasins}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
@@ -144,9 +147,12 @@ uwthesis.tex:414: {Amazon}{default}{base}
 uwthesis.tex:416: {Carr Astronautics}{default}{base}
 uwthesis.tex:427: {proof repair by example}{default}{base}
 uwthesis.tex:430: {exampled patched proof}{default}{base}
-uwthesis.tex:453: {\toolnamec }{default}{base}
-uwthesis.tex:480: {results}{default}{base}
-uwthesis.tex:483: {Adapting Proof Automation to Adapt Proofs}{default}{base}
-uwthesis.tex:487: {Ornaments for Proof Reuse in Coq}{default}{base}
+uwthesis.tex:449: {configuration}{default}{base}
+uwthesis.tex:451: {manual configuration}{default}{base}
+uwthesis.tex:454: {manual configuration}{default}{base}
+uwthesis.tex:461: {\toolnamec }{default}{base}
+uwthesis.tex:488: {results}{default}{base}
+uwthesis.tex:491: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+uwthesis.tex:495: {Ornaments for Proof Reuse in Coq}{default}{base}
 
 

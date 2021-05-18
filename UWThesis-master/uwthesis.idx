@@ -295,6 +295,11 @@
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{58}
 \indexentry{Thesis!Formal Thesis Statement|hyperpage}{63}
 \indexentry{Thesis!Informal Thesis Statement|hyperpage}{63}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\toolnamec |hyperpage}{65}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite|hyperpage}{65}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Plugins|hyperpage}{65}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences|hyperpage}{65}
+\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{68}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}

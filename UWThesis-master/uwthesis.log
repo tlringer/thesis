@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 23:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  17 MAY 2021 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1582,10 +1582,10 @@ brarydecorations.pathreplacing.code.tex))
 s/tikzlibrarydecorations.shapes.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.shapes.code.tex)))
-Package hyperref Info: Option `colorlinks' set `false' on input line 512.
-Package hyperref Info: Option `linktocpage' set `true' on input line 512.
-Package hyperref Info: Option `breaklinks' set `true' on input line 512.
-Package hyperref Info: Option `hypertexnames' set `true' on input line 512.
+Package hyperref Info: Option `colorlinks' set `false' on input line 515.
+Package hyperref Info: Option `linktocpage' set `true' on input line 515.
+Package hyperref Info: Option `breaklinks' set `true' on input line 515.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 515.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
@@ -1610,27 +1610,27 @@ LaTeX Warning: Label `sec:eval@cref' multiply defined.
 )
 \openout1 = `uwthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 560.
-LaTeX Font Info:    ... okay on input line 560.
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 560
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 563.
+LaTeX Font Info:    ... okay on input line 563.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 563
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
 \AtBeginShipoutBox=\box107
-Package hyperref Info: Link coloring OFF on input line 560.
+Package hyperref Info: Link coloring OFF on input line 563.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1640,9 +1640,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count376
 )
-LaTeX Info: Redefining \ref on input line 560.
-LaTeX Info: Redefining \pageref on input line 560.
-LaTeX Info: Redefining \nameref on input line 560.
+LaTeX Info: Redefining \ref on input line 563.
+LaTeX Info: Redefining \pageref on input line 563.
+LaTeX Info: Redefining \nameref on input line 563.
 
 (./uwthesis.out) (./uwthesis.out)
 \@outlinefile=\write6
@@ -1654,7 +1654,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message with `\usepackage{bookmark}'
-(scrreprt)           before \begin{document} on input line 560.
+(scrreprt)           before \begin{document} on input line 563.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1681,7 +1681,7 @@ e 164.
 \everyMPtoPDFconversion=\toks61
 )
 \c@lstlisting=\count384
-LaTeX Info: Redefining \microtypecontext on input line 560.
+LaTeX Info: Redefining \microtypecontext on input line 563.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1782,50 +1782,50 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 560
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 563
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 560
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 563
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 560
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 563
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 560
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 563
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 560.
+(Font)              scaled to size 11.40997pt on input line 563.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 560.
+(Font)              scaled to size 8.33606pt on input line 563.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 560.
+(Font)              scaled to size 6.25204pt on input line 563.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 560.
+(Font)              scaled to size 11.40997pt on input line 563.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 560.
+(Font)              scaled to size 8.33606pt on input line 563.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 560.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 560
+(Font)              scaled to size 6.25204pt on input line 563.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 563
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1854,13 +1854,13 @@ Package microtype Info: Character `013' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 764
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 766
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 764.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 766.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 764.
+(Font)              using `OMS/cmsy/m/n' instead on input line 766.
 
 [3] [4
 
@@ -1876,32 +1876,32 @@ Package microtype Info: Character `013' is missing
 <family3.jpg, id=37, 593.21625pt x 386.44376pt>
 File: family3.jpg Graphic file (type jpg)
 <use family3.jpg>
-Package pdftex.def Info: family3.jpg  used on input line 831.
+Package pdftex.def Info: family3.jpg  used on input line 833.
 (pdftex.def)             Requested size: 218.38226pt x 142.26378pt.
 <family12.jpg, id=38, 393.47pt x 573.14125pt>
 File: family12.jpg Graphic file (type jpg)
 <use family12.jpg>
-Package pdftex.def Info: family12.jpg  used on input line 832.
+Package pdftex.def Info: family12.jpg  used on input line 834.
 (pdftex.def)             Requested size: 97.6648pt x 142.26378pt.
 <family4.jpg, id=39, 385.44pt x 578.16pt>
 File: family4.jpg Graphic file (type jpg)
 <use family4.jpg>
-Package pdftex.def Info: family4.jpg  used on input line 833.
+Package pdftex.def Info: family4.jpg  used on input line 835.
 (pdftex.def)             Requested size: 94.84238pt x 142.26378pt.
 <family8.jpg, id=40, 602.25pt x 401.5pt>
 File: family8.jpg Graphic file (type jpg)
 <use family8.jpg>
-Package pdftex.def Info: family8.jpg  used on input line 834.
+Package pdftex.def Info: family8.jpg  used on input line 836.
 (pdftex.def)             Requested size: 213.4005pt x 142.26378pt.
 <family11.jpg, id=41, 572.1375pt x 384.43625pt>
 File: family11.jpg Graphic file (type jpg)
 <use family11.jpg>
-Package pdftex.def Info: family11.jpg  used on input line 835.
+Package pdftex.def Info: family11.jpg  used on input line 837.
 (pdftex.def)             Requested size: 211.7312pt x 142.26378pt.
 <family10.jpg, id=42, 1535.7375pt x 2055.68pt>
 File: family10.jpg Graphic file (type jpg)
 <use family10.jpg>
-Package pdftex.def Info: family10.jpg  used on input line 836.
+Package pdftex.def Info: family10.jpg  used on input line 838.
 (pdftex.def)             Requested size: 106.27063pt x 142.26378pt.
  [7 <./family3.jpg> <./family12.jpg> <./family4.jpg> <./family8.jpg> <./family1
 1.jpg> <./family10.jpg>] [8
@@ -1909,19 +1909,19 @@ Package pdftex.def Info: family10.jpg  used on input line 836.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 85
-6.
+8.
  (./uwthesis.toc)
 \tf@toc=\write7
 \openout7 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 863.
+(Font)              scaled to size 10.42007pt on input line 865.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 863.
+(Font)              scaled to size 7.91925pt on input line 865.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 863.
+(Font)              scaled to size 10.42007pt on input line 865.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 863.
+(Font)              scaled to size 7.91925pt on input line 865.
  [9
 
 
@@ -2116,13 +2116,13 @@ Overfull \hbox (2.38933pt too wide) in paragraph at lines 191--194
 (./repair/conclusion.tex [63])) (./often.tex [64]
 chapter 4.
 
-Overfull \hbox (3.15834pt too wide) in paragraph at lines 14--16
+Overfull \hbox (3.15834pt too wide) in paragraph at lines 13--15
 []\OT1/pplj/m/sc/10.95 (-20) Pumpkin \OT1/pplj/m/n/10.95 (-20) sup-ported a ver
 y lim-ited classes of changes in datatypes,
  []
 
 
-Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--43
+Overfull \hbox (5.8084pt too wide) in paragraph at lines 31--41
 [] []\OT1/pplj/m/sc/10.95 (-20) a d -d r e s s -i n g c h a l -l e n g e 2 : w 
 o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
  []
@@ -2132,7 +2132,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1911, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1913, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2164,7 +2164,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 172--183
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2160, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2163, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 246.
@@ -2408,11 +2408,16 @@ Package knowledge Warning: Some knowledge is introduced twice. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
 (./uwthesis.kaux)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1108.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1108.
+
+Package knowledge Warning: Some knowledge is used but not introduced. See the
+(knowledge)                'uwthesis.diagnose' file for more information.
+
+(./uwthesis.kaux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1110.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1108.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1110.
 
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -2426,13 +2431,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1108.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1110.
  ) 
 Here is how much of TeX's memory you used:
- 51114 strings out of 492609
- 1031595 string characters out of 6129033
- 1307123 words of memory out of 5000000
- 51667 multiletter control sequences out of 15000+600000
+ 51121 strings out of 492609
+ 1031754 string characters out of 6129033
+ 1307341 words of memory out of 5000000
+ 51672 multiletter control sequences out of 15000+600000
  643395 words of font info for 876 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2455,10 +2460,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1702936 bytes).
+Output written on uwthesis.pdf (159 pages, 1702984 bytes).
 PDF statistics:
- 3831 PDF objects out of 4296 (max. 8388607)
- 3577 compressed objects within 36 object streams
+ 3835 PDF objects out of 4296 (max. 8388607)
+ 3581 compressed objects within 36 object streams
  1548 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

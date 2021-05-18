@@ -3,12 +3,11 @@
 
 % From PUMPKIN Pi intro, modified
 
-This chapter presents the \toolnamec extension to the \sysnamelong proof repair plugin suite for Coq 8.8 % TODO 8.9.1 etc
-that is available on Github.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}{\lstinline{GUIDE.md}}.} % TODO update links
-\toolnamec is a plugin that adds support for proof repair across a broad class of changes in datatypes called 
+This chapter presents the \intro{\toolnamec} extension to the \kl{\sysnamelong} proof repair plugin suite.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}{\lstinline{GUIDE.md}}.} % TODO update links
+\toolnamec is a \kl{plugin} that adds support for proof repair across a broad class of changes in datatypes called 
 \textit{type equivalences} (Section~\ref{sec:pi-scope}),
 thereby supporting a large class of practical repair scenarios.
-Proof repair across type equivalences with \toolnamec makes progress on two challenges that the \sysname prototype had left open:
+Proof repair \kl{across type equivalences} with \toolnamec makes progress on two challenges that the \sysname prototype had left open:
 
 \begin{enumerate}
 \item \sysname supported a very limited classes of changes in datatypes, namely those that do not change structure.
@@ -32,8 +31,7 @@ configuring \toolnamec to support the change. %from directly within Coq.
 Research on workflow integration for proof repair tools is in its infancy.
 \toolnamec is built with workflow integration in mind.
 For example, \toolnamec is the only proof repair tool I am aware of that produces suggested proof scripts (rather than proof terms) for repaired proofs,
-a challenge highlighted in the previous chapter, in other existing proof repair work~\cite{robert2018}, and in 
-my survey of proof engineering~\cite{PGL-045}.
+a challenge highlighted in the previous chapter, in other existing proof repair work~\cite{robert2018}, and in \kl{QED at Large}.
 In addition, \toolnamec implements search procedures that 
 automatically discover configurations and prove the equivalences they induce for four different classes of 
 changes (\textit{automatic configuration} in Table~\ref{fig:changes}),

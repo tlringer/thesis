@@ -7,10 +7,11 @@
       \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
-		\hyperpage{9, 10}, \hyperpage{20}, 
-		\hyperpage{100, 101}, \hyperpage{105}
+		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{100}, 
+		\hyperpage{104, 105}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{21}, \hyperpage{98--100}, \hyperpage{124}
+		\hyperpage{21}, \hyperpage{97}, \hyperpage{99}, 
+		\hyperpage{124}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -107,7 +108,7 @@
 
   \item Concepts
     \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{101}
+      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{100}
       \subsubitem Inductive Types, \hyperpage{18}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{108, 109}
@@ -127,7 +128,8 @@
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
-		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}
+		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}, 
+		\hyperpage{65}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 

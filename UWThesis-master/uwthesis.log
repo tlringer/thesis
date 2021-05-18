@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2140,7 +2140,7 @@ o r k -f l o w i n -t e -g r a -t i o n[] \OT1/pplj/m/n/10.95 (-20) Re-search
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1915, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1917, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 47.
@@ -2172,7 +2172,7 @@ Overfull \hbox (5.2102pt too wide) in paragraph at lines 172--183
  []
 
 [76] [77]
-<often/Diagram.pdf, id=2166, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2167, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 246.
@@ -2320,7 +2320,7 @@ lj/m/n/10.95 (-20) Proof re-pair will ac-ces-si-ble across all proof
  []
 
 [124] [125] [126] [127])) (./uwthesis.ind [128]
-Overfull \hbox (45.93929pt too wide) in paragraph at lines 66--67
+Overfull \hbox (45.93929pt too wide) in paragraph at lines 67--68
 []| \OT1/pplj/m/n/10.95 (-20) Mangpo Phitchaya Phothilimthana,
  []
 
@@ -2331,22 +2331,22 @@ Overfull \hbox (45.93929pt too wide) in paragraph at lines 66--67
 
 
 ]
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 83--84
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 84--85
 []| \OT1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 122--125
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 123--126
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []20[], []22[],
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 131--132
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 133--134
 []| \OT1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 133--136
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 135--138
 \OT1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
@@ -2441,9 +2441,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1118.
  ) 
 Here is how much of TeX's memory you used:
- 51134 strings out of 492609
- 1032167 string characters out of 6129033
- 1309802 words of memory out of 5000000
+ 51133 strings out of 492609
+ 1032155 string characters out of 6129033
+ 1309826 words of memory out of 5000000
  51685 multiletter control sequences out of 15000+600000
  643395 words of font info for 876 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2467,10 +2467,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (159 pages, 1703110 bytes).
+Output written on uwthesis.pdf (159 pages, 1702910 bytes).
 PDF statistics:
- 3838 PDF objects out of 4296 (max. 8388607)
- 3584 compressed objects within 36 object streams
- 1548 named destinations out of 1728 (max. 500000)
+ 3840 PDF objects out of 4296 (max. 8388607)
+ 3586 compressed objects within 36 object streams
+ 1547 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

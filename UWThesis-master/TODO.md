@@ -29,6 +29,9 @@
 - make certain future work language speculative instead to avoid "being wrong"
 - photo of grandpa
 - spell check
+- check for we/ours/us
+- don't split proofs and so on across pages
+- forall -> ltacforall
 
 # Chapter 1
 
@@ -48,8 +51,6 @@
 - knowledge package: reduction strategies, substitution strategies
 
 # Chapter 4
-
-- explain the universal predicate lifting
 
 # Chapter 5
 

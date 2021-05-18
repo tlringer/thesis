@@ -1,40 +1,37 @@
 \section{Motivating Example}
 \label{sec:overview}
 
-% Unchanged from PUMPKIN Pi, for now
-
 \begin{figure*}
-\begin{minipage}{0.46\textwidth}
+\begin{minipage}{0.50\textwidth}
    \lstinputlisting[firstline=1, lastline=3]{often/listswap.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.46\textwidth}
+\begin{minipage}{0.49\textwidth}
    \lstinputlisting[firstline=5, lastline=7]{often/listswap.tex}
 \end{minipage}
-\vspace{-0.4cm}
-\caption{A change from the old version of \lstinline{list} (left) to the new version of \lstinline{list} (right).
+\caption{A change from the old version (left) to the new version (right) of \lstinline{list}.
 Recall that \lstinline{list} is an inductive datatype that is either empty (the \lstinline{nil} constructor), or the result
 of placing an element in front of another \lstinline{list} (the \lstinline{cons} constructor). The change swaps these
-two constructors (\codediff{orange}).}
+constructors (\codediff{orange}).}
 \label{fig:listswap}
 \end{figure*}
 
 Consider a simple example of using \toolnamec: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
 This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:pi-results}).
-Even such a simple change can cause trouble, as in this proof from the Coq standard library (comments ours for clarity):\footnote{We use induction instead of pattern matching.}
+Even such a simple change can cause trouble, as in this proof from the Coq standard library (comments mine for clarity):
 
 \begin{lstlisting}
-Lemma rev_app_distr {A} :(@\vspace{-0.04cm}@)
-  $\forall$ (x y : list A), rev (x ++ y) = rev y ++ rev x.(@\vspace{-0.04cm}@)
-Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
-  induction x as [| a l IHl].(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* x nil: *)}@) induction y as [| a l IHl].(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* y nil: *)}@) simpl. auto.(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* y cons *)}@) simpl. rewrite app_nil_r; auto.(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* both cons: *)}@) intro y. simpl.(@\vspace{-0.04cm}@)
-  rewrite (IHl y). rewrite app_assoc; trivial.(@\vspace{-0.04cm}@)
-Defined.(@\vspace{-0.05cm}@)
-\end{lstlisting} % TODO note about defined versus Qed earlier on
+  Lemma rev_app_distr {A} :
+    $\forall$ (x y : list A), rev (x ++ y) = rev y ++ rev x.
+  Proof. (@\color{gray}{(* by induction over x and y *)}@)
+    induction x as [| a l IHl].
+    (@\color{gray}{(* x nil: *)}@) induction y as [| a l IHl].
+    (@\color{gray}{(* y nil: *)}@) simpl. auto.
+    (@\color{gray}{(* y cons *)}@) simpl. rewrite app_nil_r; auto.
+    (@\color{gray}{(* both cons: *)}@) intro y. simpl.
+    rewrite (IHl y). rewrite app_assoc; trivial.
+  Defined.
+\end{lstlisting}
 This lemma says that appending (\lstinline{++}) two lists and reversing (\lstinline{rev}) the result behaves the same as appending
 the reverse of the second list onto the reverse of the first list.
 The proof script works by induction over the input lists \lstinline{x} and \lstinline{y}:
@@ -56,13 +53,13 @@ assuming the old and new list types from Figure~\ref{fig:listswap} are in module
 This suggests a proof script that succeeds (in $\codeauto{light blue}$ to denote \toolnamec produces it automatically):
 
 \begin{lstlisting}[backgroundcolor=\color{cyan!30}]
-Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
-  intros x. induction x as [a l IHl| ]; intro y0.(@\vspace{-0.04cm}@)
-  - (@\color{gray}{(* both cons: *)}@) simpl. rewrite IHl. simpl.(@\vspace{-0.04cm}@)
-    rewrite app_assoc. auto.(@\vspace{-0.04cm}@)
-  - (@\color{gray}{(* x nil: *)}@) induction y0 as [a l H| ].(@\vspace{-0.04cm}@)
-    + (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r. auto.(@\vspace{-0.04cm}@)
-    + (@\color{gray}{(* y nil: *)}@) auto.(@\vspace{-0.04cm}@)
+Proof. (@\color{gray}{(* by induction over x and y *)}@)
+  intros x. induction x as [a l IHl| ]; intro y0.
+  - (@\color{gray}{(* both cons: *)}@) simpl. rewrite IHl. simpl.
+    rewrite app_assoc. auto.
+  - (@\color{gray}{(* x nil: *)}@) induction y0 as [a l H| ].
+    + (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r. auto.
+    + (@\color{gray}{(* y nil: *)}@) auto.
 Defined.(@\vspace{-0.05cm}@)
 \end{lstlisting}
 where the dependencies (\lstinline{rev}, \lstinline{++}, \lstinline{app_assoc}, and \lstinline{app_nil_r}) have
@@ -70,21 +67,21 @@ also been updated automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/
 If we would like, we can manually modify this to something that more closely matches the style of the original proof script:
 
 \begin{lstlisting}
-Proof. (@\color{gray}{(* by induction over x and y *)}@)(@\vspace{-0.04cm}@)
-  induction x as [a l IHl|].(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* both cons: *)}@) intro y. simpl.(@\vspace{-0.04cm}@)
-  rewrite (IHl y). rewrite app_assoc; trivial.(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* x nil: *)}@) induction y as [a l IHl|].(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r; auto.(@\vspace{-0.04cm}@)
-  (@\color{gray}{(* y nil: *)}@) simpl. auto.(@\vspace{-0.04cm}@)
-Defined.(@\vspace{-0.04cm}@)
+Proof. (@\color{gray}{(* by induction over x and y *)}@)
+  induction x as [a l IHl|].
+  (@\color{gray}{(* both cons: *)}@) intro y. simpl.
+  rewrite (IHl y). rewrite app_assoc; trivial.
+  (@\color{gray}{(* x nil: *)}@) induction y as [a l IHl|].
+  (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r; auto.
+  (@\color{gray}{(* y nil: *)}@) simpl. auto.
+Defined.
 \end{lstlisting}
 We can even repair the entire list module from the Coq standard library all at once by running the \lstinline{Repair module}
 command~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v
 When we are done, we can get rid of \lstinline{Old.list}. % entirely.
 
 The key to success is taking advantage of Coq's structured proof term language:
-Recall that Coq compiles every proof script to a proof term in the rich functional programming language
+Recall that Coq compiles every \kl{proof script} to a \kl{proof term} in the rich functional programming language
 %Gallina that is based on the calculus of inductive  constructions---\toolnamec repairs that term.
 \kl{Gallina}---\toolnamec repairs that term.
 \toolnamec then decompiles the repaired proof term (with optional hints from the original proof script) back 

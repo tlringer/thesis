@@ -1,23 +1,21 @@
 \section{Conclusion}
 \label{sec:pumpkin-concl}
 
-Recall that this thesis set out to prove that:
+This \kl{thesis} set out to show that:
 
 \begin{quote}
-\textbf{Thesis}: Changes in programs, specifications, and proofs carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
+changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 \end{quote}
-Or, in other words, there \textit{is} reason to believe that \kl{verifying} a modified system should often, in practical use cases, be easier than verifying the original the first time around,
+Or, in other words, that there \textit{is} \kl{reason to believe} that \kl{verifying} a modified system should often, in practical use cases, be easier than verifying the original the first time around,
 even when proof engineers do not follow good development processes,
 or when change occurs outside of proof engineers' control.
 
-With \sysname, it is fair to say:
+With \sysname, so far, it is fair to say that:
 
 \begin{quote}
-\textbf{Thesis \diff{So Far}}: \diff{Some changes in programs and} \\
-\diff{specifications, and the corresponding changes in proofs broken} \\
-\diff{by those changes} carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
+Changes in \diff{the content of} programs, specifications, and proofs can carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change(Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
 \end{quote}
-This is progress, but it is not so satisfying.
+This is progress, but it is not quite there yet.
 As I have shown you throughout this chapter, the \sysname prototype is too limited in both theory and implementation.
 Most notably, the \sysname prototype has limited support for patch application and supports
 a narrow class of changes.

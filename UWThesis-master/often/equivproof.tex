@@ -1,27 +1,39 @@
-swap$\phantom{^{2}}$T (l : Old.list T) : New.list T :=(@\vspace{-0.04cm}@)
-  Old.list_rect T (fun (l : Old.list T) => New.list T)(@\vspace{-0.04cm}@)
-    New.nil(@\vspace{-0.04cm}@)
-    (fun t _ (IHl : New.list T) => New.cons T t IHl)(@\vspace{-0.04cm}@)
-    l.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-Lemma section: $\forall$ T (l : Old.list T),(@\vspace{-0.04cm}@)
-  swap$^{-1}$ T (swap T l) = l.(@\vspace{-0.04cm}@)
-Proof.(@\vspace{-0.04cm}@)
-  intros T l. symmetry. induction l as [ |a l0 H].(@\vspace{-0.04cm}@)
-  - auto.(@\vspace{-0.04cm}@)
-  - simpl. rewrite $\leftarrow$ H. auto.(@\vspace{-0.04cm}@)
-Qed.(@\vspace{-0.04cm}@)
+swap$\phantom{^{2}}$T (l : Old.list T)
+  : New.list T
+:=
+  Old.list_rect T
+    (fun _ => New.list T)
+    New.nil
+    (fun$\hspace{-0.1cm}$ t$\hspace{-0.1cm}$ _$\hspace{-0.1cm}$ (IHl: New.list T)$\hspace{-0.1cm}$ =>
+      New.cons T t IHl)
+    l.
 
-swap$^{-1}$ T (l : New.list T) : Old.list T :=(@\vspace{-0.04cm}@)
-  New.list_rect T (fun (l : New.list T) => Old.list T)(@\vspace{-0.04cm}@)
-    (fun t _ (IHl : Old.list T) => Old.cons T t IHl)(@\vspace{-0.04cm}@)
-    Old.nil(@\vspace{-0.04cm}@)
-    l.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-Lemma retraction: $\forall$ T (l : New.list T),(@\vspace{-0.04cm}@)
-  swap T (swap$^{-1}$ T l) = l.(@\vspace{-0.04cm}@)
-Proof.(@\vspace{-0.04cm}@)
-  intros T l. symmetry. induction l as [t l0 H| ].(@\vspace{-0.04cm}@)
-  - simpl. rewrite $\leftarrow$ H. auto.(@\vspace{-0.04cm}@)
-  - auto.(@\vspace{-0.04cm}@)
-Qed.(@\vspace{-0.04cm}@)
+Lemma section:
+  $\forall$ T (l : Old.list T),
+    swap$^{-1}$ T (swap T l) = l.
+Proof.
+  intros T l. symmetry.
+  induction l as [ |t l0 H].
+  - auto.
+  - simpl. rewrite $\leftarrow$ H. auto.
+Qed.
+
+swap$^{-1}$ T (l : New.list T)
+  : Old.list T
+:=
+  New.list_rect T
+    (fun _ => Old.list T)
+    (fun$\hspace{-0.1cm}$ t$\hspace{-0.1cm}$ _$\hspace{-0.1cm}$ (IHl: Old.list T)$\hspace{-0.1cm}$ =>
+      Old.cons T t IHl)
+    Old.nil
+    l.
+
+Lemma retraction:
+  $\forall$ T (l : New.list T),
+    swap T (swap$^{-1}$ T l) = l.
+Proof.
+  intros T l. symmetry.
+  induction l as [t l0 H| ].
+  - simpl. rewrite $\leftarrow$ H. auto.
+  - auto.
+Qed.

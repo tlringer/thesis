@@ -309,8 +309,11 @@
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{67}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{67}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{68}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{68}
 \indexentry{Acknowledgments!Students!Jasper Hugunin|hyperpage}{68}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{68}
+\indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\sysname Prototype|hyperpage}{69}
+\indexentry{Concepts!Verification!Proof Engineering!Trusted Computing Base|hyperpage}{69}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{75}
 \indexentry{Concepts!Type Theory!Equality!Intensionality|hyperpage}{76}

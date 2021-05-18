@@ -6,8 +6,8 @@
 2 autoreference(s) are introduced twice.
 1 autoreference(s) are used but not introduced.
 
-55 autoreference(s) are properly used.
-93 autoreference(s) are defined but not used.
+57 autoreference(s) are properly used.
+91 autoreference(s) are defined but not used.
 
 
 ********
@@ -148,8 +148,6 @@ uwthesis.tex:416: {Carr Astronautics}{default}{base}
 uwthesis.tex:427: {proof repair by example}{default}{base}
 uwthesis.tex:430: {exampled patched proof}{default}{base}
 uwthesis.tex:449: {configuration}{default}{base}
-uwthesis.tex:451: {manual configuration}{default}{base}
-uwthesis.tex:454: {manual configuration}{default}{base}
 uwthesis.tex:461: {\toolnamec }{default}{base}
 uwthesis.tex:488: {results}{default}{base}
 uwthesis.tex:491: {Adapting Proof Automation to Adapt Proofs}{default}{base}

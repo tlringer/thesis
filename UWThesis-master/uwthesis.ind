@@ -7,11 +7,10 @@
       \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{110}, \hyperpage{119}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
-		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{100}, 
-		\hyperpage{104, 105}
+		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{68}, 
+		\hyperpage{100, 101}, \hyperpage{105}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{21}, \hyperpage{97}, \hyperpage{99}, 
-		\hyperpage{124}
+		\hyperpage{21}, \hyperpage{98--100}, \hyperpage{124}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -101,14 +100,14 @@
       \subsubitem Musachy Barroso, \hyperpage{xii}
       \subsubitem Zach Tatlock, \hyperpage{xiii}
     \subitem Students
-      \subsubitem Jasper Hugunin, \hyperpage{xiii}
+      \subsubitem Jasper Hugunin, \hyperpage{xiii}, \hyperpage{68}
       \subsubitem Taylor Blau, \hyperpage{xiii}
 
   \indexspace
 
   \item Concepts
     \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{100}
+      \subsubitem Algebraic Ornaments, \hyperpage{81}, \hyperpage{101}
       \subsubitem Inductive Types, \hyperpage{18}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{108, 109}

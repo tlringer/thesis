@@ -1,44 +1,14 @@
 \section{Differencing}
 \label{sec:pi-diff}
 
-% TODO explain how this fits into differencing, that differencing can be done by the human or by the tool, and so on
-
-\begin{figure*}
-\begin{minipage}{0.48\textwidth}
-\begin{lstlisting}
-DepConstr(0, list T) : list T := Constr((@\codediff{0}@), list T).(@\vspace{-0.04cm}@)
-DepConstr(1, list T) t l : list T :=(@\vspace{-0.04cm}@)
-  Constr ((@\codediff{1}@), list T) t l.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ } : P l :=(@\vspace{-0.04cm}@)
-  Elim(l, P) { (@\codediff{p$_{\mathtt{nil}}$}@), (@\codediff{p$_{\mathtt{cons}}$}@) }.(@\vspace{-0.04cm}@)
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-\begin{lstlisting}
-DepConstr(0, list T) : list T := Constr((@\codediff{1}@), list T).(@\vspace{-0.04cm}@)
-DepConstr(1, list T) t l : list T :=(@\vspace{-0.04cm}@)
-  Constr((@\codediff{0}@), list T) t l.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ } : P l :=(@\vspace{-0.04cm}@)
-  Elim(l, P) { (@\codediff{p$_{\mathtt{cons}}$}@), (@\codediff{p$_{\mathtt{nil}}$}@) }.(@\vspace{-0.04cm}@)
-\end{lstlisting}
-\end{minipage}
-\vspace{-0.3cm}
-\caption{The dependent constructors and eliminators for old (left) and new (right) \lstinline{list}, with the difference in \codediff{orange}.}
-\vspace{-0.1cm}
-\label{fig:listconfig}
-\end{figure*}
-
-Differencing---whether done by the tool (automatic configuration) or by the proof engineer (manual configuration)---identifies 
-and proves a type equivalence. But differening further decomposes that equivalence into a form called a \textit{configuration}. 
+\kl{Differencing}---whether done by the tool (\kl{automatic configuration}) or by the proof engineer (\kl{manual configuration})---identifies 
+and proves a type equivalence. But differening further decomposes that equivalence into a form called a \kl{configuration}. 
 The configuration is the key to building a proof term transformation that implements transport in a way that is suitable for repair.
 
-Each configuration corresponds to an equivalence \Aa $\simeq$ \B.
-It deconstructs the equivalence into things that talk about \Aa, and things that talk about \B.
+Each configuration is a deconstruction of a particular equivalence \Aa $\simeq$ \B.
+In particular, it deconstructs the equivalence into things that talk about \Aa, and things that talk about \B.
 It does so in a way that hides details
-specific to the equivalence, like the order or number of arguments to an induction principle or type.
+specific to the equivalence, like the order or number of arguments to an \kl{eliminator} or type.
 
 At a high level, the configuration helps the transformation achieve two goals: 
 
@@ -49,16 +19,16 @@ At a high level, the configuration helps the transformation achieve two goals:
 To differencing, this configuration is a pair of pairs of terms:
 
 \begin{lstlisting}
-  ((DepConstr, DepElim), (Eta, Iota))(@\vspace{-0.05cm}@)
+  ((DepConstr, DepElim), (Eta, Iota))
 \end{lstlisting}
 each of which corresponds to one of the two goals:
-\lstinline{DepConstr} and \lstinline{DepElim} define how to transform constructors and eliminators, thereby preserving the equivalence, and 
-\lstinline{Eta} and \lstinline{Iota} define how to transform $\eta$-expansion and $\iota$-reduction of constructors and eliminators, thereby producing well-typed terms.
+\lstinline{DepConstr} and \lstinline{DepElim} define how to transform dependent constructors and eliminators, thereby preserving the equivalence, and 
+\lstinline{Eta} and \lstinline{Iota} define how to transform $\eta$-expansion and $\iota$-reduction of dependent constructors and eliminators, thereby producing well-typed terms.
 
-Intuitively, every correct configuration can be defined in terms of what in category theory are known as initial algebras,
-and correctness---that every configurations and equivalences are isomorphic---follows by Lambek's theorem (Section~\ref{sec:art}).\footnote{When I met with Michael Shulman over coffee in San Diego a few years ago, he at various points said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
-Carlo Angiuli and Anders M\"{o}rtberg identified this connection, and Carlo explained it to me in great detail.
-It is quite beautiful!}  % TODO kl
+The connection between the configuration parts and constructors and eliminators is a bit of an analogy---though one with formal meaning by way of
+category theory (Section~\ref{sec:algebra}).
+Configurations and equivalences are equally expressive: every configuration induces an equivalence, and every equivalence induces a configuration
+(Section~\ref{sec:correct-cic}).
 Each search procedure for automatic configuration produces both the configuration and the equivalence that it induces (Section~\ref{sec:proc}).
 Manual configuration takes as input the configuration directly.
 
@@ -77,11 +47,53 @@ inductive proofs about \Aa with inductive proofs about \B, %, then recursively t
 all without changing the order or number of arguments.
 
 The two configuration parts responsible for this are \lstinline{DepConstr}
-and \lstinline{DepElim} (\textit{dependent constructors} and \textit{eliminators}).
+and \lstinline{DepElim} (\intro{dependent constructors} and \intro{dependent eliminators}).
 These describe how to construct and eliminate \Aa and \B, wrapping the types with a common inductive structure.
 The transformation requires the same number of dependent constructors and cases in dependent eliminators for \Aa and \B,
-even if \Aa and \B are types with different numbers of constructors
+even if \Aa and \B are \kl{inductive types} with different numbers of \kl{constructors}
 (\Aa and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:pi-results}).
+
+\begin{figure*}
+\begin{minipage}{0.49\textwidth}
+\begin{lstlisting}
+(* nil *)
+DepConstr(0, Old.list T)
+  : Old.list T
+:= Constr((@\codediff{0}@), Old.list T).
+
+(* cons *)
+DepConstr(1, Old.list T) t l
+  : Old.list T
+:= Constr ((@\codediff{1}@), Old.list T) t l.
+
+(* induction over lists *)
+DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ }
+  : P l
+:= Elim(l, P) { (@\codediff{p$_{\mathtt{nil}}$}@), (@\codediff{p$_{\mathtt{cons}}$}@) }.
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\begin{lstlisting}
+(* nil *)
+DepConstr(0, New.list T)
+  : New.list T
+:= Constr((@\codediff{1}@), New.list T).
+
+(* cons *)
+DepConstr(1, New.list T) t l
+  : New.list T
+:= Constr((@\codediff{0}@), New.list T) t l.
+
+(* induction over lists *)
+DepElim(l, P) { p$_{\mathtt{nil}}$, p$_{\mathtt{cons}}$ }
+  : P l
+:= Elim(l, P) { (@\codediff{p$_{\mathtt{cons}}$}@), (@\codediff{p$_{\mathtt{nil}}$}@) }.
+\end{lstlisting}
+\end{minipage}
+\caption{The dependent constructors and eliminators for old (left) and new (right) \lstinline{list}, with the difference in \codediff{orange}.}
+\label{fig:listconfig}
+\end{figure*}
 
 For the \lstinline{list} change from Section~\ref{sec:overview},
 the configuration that \toolnamec discovers uses the dependent constructors
@@ -93,26 +105,28 @@ Similarly, the dependent eliminator for \lstinline{Old.list} is the normal elimi
 while the dependent eliminator for \lstinline{New.list} swaps cases.
 
 As the name hints, these constructors and eliminators can be dependent.
-Consider the type of vectors of some length:
+For example, let \B be the type of
+vectors of some arbitrary, unspecified length,
+packed into a $\Sigma$ type:
 
 \begin{lstlisting}
-  $\Sigma$(n : nat).vector T n(@\vspace{-0.05cm}@)
+  $\Sigma$(n : nat).vector T n
 \end{lstlisting}
-\toolnamec can port proofs across the equivalence between this type and \lstinline{list T}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
-The dependent constructors \toolnamec discovers pack the index into an existential, like:
+\toolnamec can port proofs across the equivalence between this choice of \B and \lstinline{list T}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
+The dependent constructors \toolnamec discovers for \B pack the index into an existential, like:
 
 \begin{lstlisting}
-  DepConstr(0, $\Sigma$(n : nat).vector T n) : $\Sigma$(n : nat).vector T n :=(@\vspace{-0.04cm}@)
-    $\exists$ (Constr(0, nat)) (Constr(0, vector T)).(@\vspace{-0.05cm}@)
+  DepConstr(0, B) : B :=
+    $\exists$ (Constr(0, nat)) (Constr(0, vector T)).
 \end{lstlisting}
 and the eliminator it discovers eliminates the projections:
 
 \begin{lstlisting}
-  DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=(@\vspace{-0.04cm}@)
-    Elim($\pi_r$ s, $\lambda$(n : nat)(v : vector T n).P ($\exists$ n v)) {(@\vspace{-0.04cm}@)
-      f$_0$,(@\vspace{-0.04cm}@)
-      ($\lambda$(t : T)(n : nat)(v : vector T n).f$_1$ t ($\exists$ n v))(@\vspace{-0.04cm}@)
-    }.(@\vspace{-0.05cm}@) 
+  DepElim(b, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ b) ($\pi_r$ b)) :=
+    Elim($\pi_r$ b, $\lambda$(n : nat)(v : vector T n).P ($\exists$ n v)) {
+      f$_0$,
+      ($\lambda$(t : T)(n : nat)(v : vector T n).f$_1$ t ($\exists$ n v))
+    }.
 \end{lstlisting}
 
 In both these examples, the interesting work moves into the configuration:
@@ -132,22 +146,22 @@ Recall that CIC$_{\omega}$ is an \kl{intensional} type theory,
 and so distinguishes between \kl{definitional} and \kl{propositional} equality.
 When a datatype changes, sometimes, definitional equalities defined over the old version of that type must become propositional.
 A naive proof term transformation may fail to generate well-typed terms if it does not account for this.
-Otherwise, if the transformation transforms a term \lstinline{t : T} to some \lstinline{t' : T'}, it does not necessarily
-transform \lstinline{T} to \lstinline{T'}~\cite{tabareau2019marriage}.
+Otherwise, if the transformation transforms a term $t : T$ to some $t' : T'$, it does not necessarily
+transform $T$ to $T'$~\cite{tabareau2019marriage}.
 
 \lstinline{Eta} and \lstinline{Iota} describe how to transport equalities.
-More formally, they define $\eta$-expansion and $\iota$-reduction of \Aa and \B,
+More formally, they define \intro{$\eta$}-expansion and \intro{$\iota$}-reduction of \Aa and \B,
 which may be propositional rather than definitional,
 and so must be explicit in the transformation.
 $\eta$-expansion describes how to expand a term to apply a constructor to an eliminator in a way that preserves propositional equality,
 and is important for defining dependent eliminators~\cite{nlab:eta-conversion}.
 $\iota$-reduction ($\beta$-reduction for inductive types) describes how to reduce an elimination of a constructor~\cite{nlab:beta-reduction}.
 
-The configuration for the change from lists to vectors of some length has propositional \lstinline{Eta}.
+The configuration for the change from lists to vectors of some length has propositional \lstinline{Eta} over \B.
 It uses $\eta$-expansion for $\Sigma$:
 
 \begin{lstlisting}
-  Eta($\Sigma$ (n : nat) . vector T n) := $\lambda$(s : $\Sigma$ (n : nat) . vector T n).$\exists$ ($\pi_l$ s) ($\pi_r$ s).(@\vspace{-0.05cm}@)
+  Eta(B) := $\lambda$(b : B).$\exists$ ($\pi_l$ b) ($\pi_r$ b).
 \end{lstlisting}
 which is propositional and not definitional in Coq.
 Thanks to this, we can forego the assumption that our language has primitive projections (definitional $\eta$ for $\Sigma$).
@@ -160,12 +174,10 @@ Thanks to this, we can forego the assumption that our language has primitive pro
 \begin{minipage}{0.54\columnwidth}
    \lstinputlisting[firstline=10, lastline=17]{often/nattobin.tex}
 \end{minipage}
-\vspace{-0.2cm}
 \caption{A unary natural number \lstinline{nat} (left) is either zero (\lstinline{0}) or the successor of some other natural number (\lstinline{S}).
 A binary natural number \lstinline{N} (right) is either zero (\lstinline{N0}) or a positive binary number (\lstinline{Npos}), where a positive binary number is either 1 (\lstinline{xH}), or the result of shifting left and adding 1 (\lstinline{xI}) or
-0 (\lstinline{xO}). Unary and binary natural numbers are equivalent, but have different inductive structures.
-Consequentially, definitional equalities over \lstinline{nat} may become propositional over \lstinline{N}.}
-\vspace{-0.2cm}
+0 (\lstinline{xO}). While \lstinline{nat} and \lstinline{N} are equivalent, they have different inductive structures.
+Consequentially, \kl{definitional} equalities over \lstinline{nat} may become \kl{propositional} over \lstinline{N}.}
 \label{fig:nattobin}
 \end{figure}
 
@@ -181,42 +193,43 @@ For example, in Coq, while \lstinline{S (n + m)  = S n + m} holds by reflexivity
 when we define \lstinline{+} with \lstinline{DepElim} over \lstinline{N},
 the corresponding theorem over \lstinline{N} does not hold by reflexivity.
 
-To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \textit{definitional} $\iota$-reduction over \lstinline{nat} to \textit{propositional} $\iota$-reduction over \lstinline{N}.
+To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \kl{definitional} $\iota$-reduction over \lstinline{nat} to 
+\kl{propositional} $\iota$-reduction over \lstinline{N}.
 For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
 $\iota$-reduction is definitional over \lstinline{nat}, since a proof of:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-    DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat),
+    DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
+    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
 holds by reflexivity.
 \lstinline{Iota} for \lstinline{nat} in the \lstinline{S} case is a rewrite by that proof by reflexivity~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
 with type:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-    Iota(1, nat, Q) :(@\vspace{-0.04cm}@)
-      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
-      Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat) (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),
+    Iota(1, nat, Q) :
+      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
+      Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
 In contrast, $\iota$ for \lstinline{N} is propositional, since the 
 theorem: %over \lstinline{N}:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n,(@\vspace{-0.04cm}@)
-    DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =(@\vspace{-0.04cm}@)
-    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N),
+    DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
+    (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
 no longer holds by reflexivity.
 \lstinline{Iota} for \lstinline{N} is a rewrite by the propositional equality that proves this theorem~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}},
 with type:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ n (Q: P (DepConstr(1, N) n) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-    Iota(1, N, Q) :(@\vspace{-0.04cm}@)
-      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$(@\vspace{-0.04cm}@)
-      Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).(@\vspace{-0.05cm}@)
+  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N) (Q: P (DepConstr(1, N) n) $\rightarrow$ s),
+    Iota(1, N, Q) :
+      Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
+      Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
 By replacing \lstinline{Iota} over \lstinline{nat} with \lstinline{Iota} over \lstinline{N},
 the transformation replaces rewrites by reflexivity over \lstinline{nat} to rewrites by propositional equalities over \lstinline{N}.
@@ -234,9 +247,31 @@ then definitional $\iota$ over one would become propositional $\iota$ over the o
 \subsection{Specifying Correct Configurations}
 \label{sec:art}
 
-The analogy tying the configuration to contructors and eliminators by way of the names \lstinline{DepConstr} and \lstinline{DepElim} is not a coincidence.
-In fact, it has meaning in terms of what in category theory are known as \textit{initial algebras} (Section~\ref{sec:algebra}).
+Choosing a configuration necessarily depends in some way on the proof engineer's intentions:
+there can be infinitely many equivalences that correspond to a 
+change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \Aa is equivalent to \lstinline{unit} refined by \Aa). % refine_unit.v
+And there can be many configurations that correspond
+to an equivalence, some of which will produce terms that are more useful or efficient than others
+(consider \lstinline{DepElim} converting through several intermediate types).
+
+Thankfully, while it is not possible to control for intentions,
+it \textit{is} possible to specify what it means for a chosen configuration to be correct.
+In particular, the analogy tying the \kl{configuration} to \kl{contructors} and \kl{eliminators} by way of the 
+names \lstinline{DepConstr} and \lstinline{DepElim} is not a coincidence.
+In fact, it has meaning in terms of what in category theory are known as \intro{initial algebras of endofunctors},
+and correctness---that configurations and equivalences are isomorphic---follows by Lambek's 
+theorem (Section~\ref{sec:algebra}).
 A more syntactic version of this claim can be used to specify and prove correctness of configurations in CIC$_{\omega}$ (Section~\ref{sec:correct-cic}).
+
+\paragraph{Historical Note}
+When I met with \kl{Michael Shulman} over coffee a few years ago, he said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
+\kl{Carlo Angiuli} and \kl{Anders M\"{o}rtberg} identified this connection, and \kl{Carlo} explained it to me.
+It is quite beautiful!
+
+But it is also quite preliminary. I hope this connection as presented in Section~\ref{sec:algebra} will help 
+communicate some of the categorical intuition behind why all of this works, but I will not be surprised if I get some of the details wrong.
+Please regard this as a bit speculative, unlike the syntactic presentation in Section~\ref{sec:correct-cic},
+which is already published.
 
 \subsubsection{Categorical Intuition for Correctness}
 \label{sec:algebra}
@@ -249,87 +284,80 @@ A more syntactic version of this claim can be used to specify and prove correctn
 \label{fig:lambek}
 \end{figure}
 
-Configurations have meaning in terms of \textit{initial algebras}~\cite{nlab:initial_algebra_of_an_endofunctor},
-which in homotopy type theory represent inductive types~\cite{univalent2013homotopy}.
+Configurations have meaning in terms of \kl{initial algebras}~\cite{nlab:initial_algebra_of_an_endofunctor},
+which in \kl{homotopy type theory} represent inductive types~\cite{univalent2013homotopy}.
 This is why the configuration is most natural when the types \Aa and \B are inductive.
 But the configuration is in fact more general than that---it can support any two equivalent types \Aa and \B (by Lambek's theorem).
 
 Figure~\ref{fig:lambek} shows this for an arbitrary configuration for an equivalence between \Aa and \B.
-Here, $F A$ is the shape of \Aa.
-\lstinline{DepConstr} maps from $F A$ to \Aa, and \lstinline{Eta} maps from \Aa back to $F A$.
+Here, $F\ A$ is the shape of \Aa.
+\lstinline{DepConstr} maps from $F\ A$ to \Aa, and \lstinline{Eta} maps from \Aa back to $F\ A$.
 \lstinline{DepElim} (not pictured explicitly) is the arrow corresponding to \lstinline{DepConstr} defined over the analogous diagram
-lifted to $A \rightarrow$ \lstinline{Type} (also not pictured explicitly);
+lifted to $A \rightarrow$ $s$ for some sort $s$ (also not pictured explicitly);
 by uniqueness of \lstinline{f}, any \lstinline{f} must pass through a function 
 isomorphic to \lstinline{DepElim}.
-\lstinline{Iota} (also not pictured explicitly) is used in the proof that the square commutes.
+\lstinline{Iota} (also not pictured explicitly) is used in the proof that the diagram commutes.
 The configuration parts for \B are similar.
 
-For example, fixing \Aa as \lstinline{nat}, $F A$ is \lstinline{1 + nat}:
+For example, fixing \Aa as \lstinline{nat}, $F\ A$ is \lstinline{1 + nat}:
 the sum of the unit type and \lstinline{nat}.
-Going from $F A \rightarrow A$, the left injection maps to the \lstinline{O} constructor, and the right injection maps to the \lstinline{S} constructor.
-The inverse is essentially (up to differences in the type theory) the identity function.
+Going from $F\ A \rightarrow A$, the left injection maps to the \lstinline{O} constructor, and the right injection maps to the \lstinline{S} constructor.
+The inverse is essentially\footnote{Some differences in the type theory make this not quite perfect.} the identity function.
 Any $f$ must pass through the eliminator for \lstinline{nat}, which would show up explicitly in place of the constructors
-in the diagram lifted to \lstinline{nat} $\rightarrow$ \lstinline{Type}.
+in the diagram lifted to \lstinline{nat} $\rightarrow$ $s$.
 The diagram commutes trivially, since the \lstinline{S} case of the eliminator reduces.
 
 This diagram gives intuition for how the configuration splits up an arbitrary equivalence between \Aa and \B into
-parts that talk about \Aa and \B separately. All the transformation really does later on is follow the arrows
+parts that talk about \Aa and \B separately. All the transformation in Chapter~\ref{sec:pi-trans} does is follow the arrows
 in the diagram to get from \Aa directly to \B.
-But thanks to the type theory of CIC${_\omega}$, in order to do that, it needs to handle the nuances of definitional equality
-and dependent types---for example, by explicitly representing and porting the proof that the diagram commutes.
+But in order to do that, it needs to handle the nuances of \kl{definitional equality} and dependent types in \kl{CIC${_\omega}$}---for example,
+by explicitly representing and porting the proof that the diagram commutes.
 The syntactic presentation in the next section handles those nuances.
 
 \subsubsection{Correctness in CIC$_{\omega}$}
 \label{sec:correct-cic}
 
 \begin{figure*}
-\begin{minipage}{0.43\textwidth}
 \begin{lstlisting}
-section: $\forall$ (a : A), g (f a) = a.(@\vspace{-0.04cm}@)
-retraction: $\forall$ (b : B), f (g b) = b.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-constr_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$, $\vec{x_A}$ $\equiv_{A \simeq B}$ $\vec{x_B}$ $\rightarrow$(@\vspace{-0.04cm}@)
-  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-elim_ok: $\forall$ a b P$_A$ P$_B$ $\vec{f_A}$ $\vec{f_B}$,(@\vspace{-0.04cm}@)
-  a $\equiv_{A \simeq B}$ b $\rightarrow$(@\vspace{-0.04cm}@)
-  P$_A$ $\equiv_{(A \rightarrow s) \simeq (B \rightarrow s)}$ P$_B$ $\rightarrow$(@\vspace{-0.04cm}@)
-  $\forall$ $j$, $\vec{f_A}$[j] $\equiv_{\xi (A, P_A, j) \simeq \xi (B, P_B, j)}$ $\vec{f_B}$[j]$\rightarrow$(@\vspace{-0.04cm}@)
-  DepElim(a, P$_A$) $\vec{f_A}$ $\equiv_{(P a) \simeq (P b)}$ DepElim(b, P$_B$) $\vec{f_A}$.(@\vspace{-0.04cm}@)
+(* -------------------- Equivalence -------------------- *)
+
+section: $\forall$ (a : A) . g (f a) = a.
+retraction: $\forall$ (b : B), f (g b) = b.
+
+constr_ok:
+  $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$,
+    $\vec{x_A}$ $\equiv_{A \simeq B}$ $\vec{x_B}$ $\rightarrow$
+    DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.
+
+elim_ok:
+  $\forall$ a b P$_A$ P$_B$ $\vec{f_A}$ $\vec{f_B}$,
+    a $\equiv_{A \simeq B}$ b $\rightarrow$
+    P$_A$ $\equiv_{(A \rightarrow s) \simeq (B \rightarrow s)}$ P$_B$ $\rightarrow$
+    ($\forall$ $j$, $\vec{f_A}$[j] $\equiv_{\xi (A, P_A, j) \simeq \xi (B, P_B, j)}$ $\vec{f_B}$[j]) $\rightarrow$
+    DepElim(a, P$_A$) $\vec{f_A}$ $\equiv_{(P a) \simeq (P b)}$ DepElim(b, P$_B$) $\vec{f_A}$.
+
+
+(* ---------------------- Equality ---------------------- *)
+
+elim_eta(A): $\forall$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).
+eta_ok(A): $\forall$ (a : A), Eta(A) a = a.
+
+iota_ok(A):
+  $\forall$ $j$ P $\vec{f}$ $\vec{x}$ (Q: P(Eta(A) (DepConstr($j$, A) $\vec{x}$)) $\rightarrow$ s),
+    Iota(A, j, Q) : 
+      Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$ 
+      Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) in 
+        ($\vec{f}$[j]$\ldots$(DepElim(IH$_0$, P) $\vec{f}$)$\ldots$(DepElim(IH$_n$, P) $\vec{f}$)$\ldots$)).
 \end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.56\textwidth}
-\begin{lstlisting}
-elim_eta(A): $\forall$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).(@\vspace{-0.04cm}@)
-eta_ok(A): $\forall$ (a : A), Eta(A) a = a.(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-(@\phantom{constr\_ok: $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$,}@)(@\vspace{-0.04cm}@)
-(@\phantom{  DepConstr($j$, A) $\vec{x_A}$ $\equiv_{A \simeq B}$ DepConstr(j, B) $\vec{x_B}$.}@)(@\vspace{-0.04cm}@)
-(@\vspace{-0.14cm}@)
-iota_ok(A): $\forall$ $j$ P $\vec{f}$ $\vec{x}$ (Q: P(Eta(A) (DepConstr($j$, A) $\vec{x}$)) $\rightarrow$ s),(@\vspace{-0.04cm}@)
-  Iota(A, j, Q) : (@\vspace{-0.04cm}@)
-    Q (DepElim(DepConstr(j, A) $\vec{x}$, P) $\vec{f}$) $\rightarrow$ (@\vspace{-0.04cm}@)
-    Q (rew $\leftarrow$ eta_ok(A) (DepConstr(j, A) $\vec{x}$) in(@\vspace{-0.04cm}@)
-      ($\vec{f}$[j]$\ldots$(DepElim(IH$_0$, P) $\vec{f}$)$\ldots$(DepElim(IH$_n$, P) $\vec{f}$)$\ldots$)).(@\vspace{-0.04cm}@)
-\end{lstlisting}
-\end{minipage}
-\vspace{-0.2cm}
 \caption{Correctness criteria for a configuration to ensure that the transformation
-preserves equivalence (left) coherently with equality (right, shown for \Aa; \B is similar). \lstinline{f} and \lstinline{g} are defined in text. $s$, $\vec{f}$, $\vec{x}$, and $\vec{\mathtt{IH}}$ represent
-sorts, eliminator cases, constructor arguments, and inductive hypotheses. $\xi$ $(A,$ $P,$ $j)$ is the type 
-of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).} %, respectively.}
+preserves equivalence (top) coherently with equality (bottom, shown for \Aa; \B is similar). \lstinline{f} and \lstinline{g} are defined in text. $s$, $\vec{f}$, $\vec{x}$, and $\vec{\mathtt{IH}}$ represent
+sorts, \kl{eliminator} cases, \kl{constructor} arguments, and \kl{inductive hypotheses}. $\xi$ $(A,$ $P,$ $j)$ is the type 
+of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).
+\lstinline{rew} is shorthand for applying the equality eliminator.} %, respectively.}
 \label{fig:spec}
 \end{figure*}
 
 The categorical definition may help with some of the intuition, but it does not help with validating correct configurations inside of the type theory.
-And this is necessary, since choosing a configuration necessarily depends in some way on the proof engineer's intentions:
-there can be infinitely many equivalences that correspond to a 
-change, only some of which are useful (for example~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/refine_unit.v}{\circled{7}}, any \Aa is equivalent to \lstinline{unit} refined by \Aa). % refine_unit.v
-And there can be many configurations that correspond
-to an equivalence, some of which will produce terms that are more useful or efficient than others
-(consider \lstinline{DepElim} converting through several intermediate types).
-
 Fortunately, in CIC$_{\omega}$, it is also possible to specify 
 what it means for a chosen configuration to be correct:
 Fix a configuration. Let \lstinline{f} be the function that uses \lstinline{DepElim} to eliminate \Aa and \lstinline{DepConstr} to construct \B,
@@ -339,7 +367,7 @@ These criteria relate \lstinline{DepConstr}, \lstinline{DepElim}, \lstinline{Eta
 in a way that preserves equivalence coherently with equality.
 
 \paragraph{Equivalence}
-To preserve the equivalence (Figure~\ref{fig:spec}, left), \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
+To preserve the equivalence (Figure~\ref{fig:spec}, top), \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
 (\lstinline{section} and \lstinline{retraction} must hold for \lstinline{f} and \lstinline{g}).
 \lstinline{DepConstr} over \Aa and \B must be equal up to transport across that equivalence (\lstinline{constr_ok}), 
 and similarly for \lstinline{DepElim} (\lstinline{elim_ok}).
@@ -350,7 +378,7 @@ This makes it possible for the transformation
 to avoid applying \lstinline{f} and \lstinline{g}, instead porting terms from \Aa directly to \B.
 
 \paragraph{Equality}
-To ensure coherence with equality (Figure~\ref{fig:spec}, right),
+To ensure coherence with equality (Figure~\ref{fig:spec}, bottom),
 \lstinline{Eta} and \lstinline{Iota} must prove $\eta$ and $\iota$.
 That is, \lstinline{Eta} must have the same definitional behavior as the dependent eliminator (\lstinline{elim_eta}),
 and must behave like identity (\lstinline{eta_ok}).
@@ -487,11 +515,11 @@ $\mathrm{P}_A$ := $\Pi (a : A) . \mathrm{s}_A$
 $\mathrm{P}_{A_I}$ := $\Pi (i : I) (a_i : A_I\ i) . \mathrm{s}_{A_I}$
 
 $\forall 1 \le j \le n,$
-  $\mathrm{E}_{A_j}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ \mathrm{Constr}(j,\ A),\ C_{A_j})$
-  $\mathrm{E}_{B_j}\ (p_{A_I} : \mathrm{P}_{A_I})$ := $\xi(A_I,\ p_{A_I},\ \mathrm{Constr}(j,\ A_I),\ C_{A_{I_j}})$
+  $\mathrm{E}_{A_j}\ (p_A : \mathrm{P}_A)$ := $\xi(A,\ p_A,\ j)$
+  $\mathrm{E}_{B_j}\ (p_{A_I} : \mathrm{P}_{A_I})$ := $\xi(A_I,\ p_{A_I},\ j)$
 \end{lstlisting}
-\vspace{-0.3cm}
-\caption{Common definitions.}
+\caption{Common definitions. Here, $\xi$ $(A,$ $p_A$, $j)$ is the type 
+of \lstinline{Elim(A, p}$_A$\lstinline{)} at \lstinline{Constr(j, A)} (similarly for $A_I$).}
 \label{fig:common}
 \end{figure}
 
@@ -685,7 +713,7 @@ For example, earlier, letting \Aa be lists, \AI be vectors, and \B be vectors of
 I noted that the empty constructor of \B packs the constructor of \AI into an existential:
 
 \begin{lstlisting}
-  DepConstr(0, $\Sigma$(n : nat).vector T n) : $\Sigma$(n : nat).vector T n :=(@\vspace{-0.04cm}@)
+  DepConstr(0, $\Sigma$(n : nat).vector T n) : $\Sigma$(n : nat).vector T n :=
     $\exists$ (Constr(0, nat)) (Constr(0, vector T)).(@\vspace{-0.05cm}@)
 \end{lstlisting}
 This is the same as applying the function \lstinline{f} that \toolnamec derives to the empty list constructor 
@@ -694,7 +722,7 @@ On the other hand, the \lstinline{cons} constructor over \B not just packs the r
 but also takes \B itself as an argument rather than \Aa:
 
 \begin{lstlisting}
-  DepConstr(1, $\Sigma$(n : nat).vector T n) : T $\rightarrow$ $\Sigma$(n : nat).vector T n $\rightarrow$ $\Sigma$(n : nat).vector T n :=(@\vspace{-0.04cm}@)
+  DepConstr(1, $\Sigma$(n : nat).vector T n) : T $\rightarrow$ $\Sigma$(n : nat).vector T n $\rightarrow$ $\Sigma$(n : nat).vector T n :=
     $\lambda$ (t : T) . $\lambda$ (l : $\Sigma$(n : nat).vector T n) .
       $\exists$ ((Constr (1, nat)) ($\pi_l$ l)) ((Constr (1, vector T)) t ($\pi_l$ l) ($\pi_r$ l))).(@\vspace{-0.05cm}@)
 \end{lstlisting}
@@ -712,10 +740,10 @@ also the motive and inductive hypotheses.
 This produces the dependent eliminator I presented earlier:
 
 \begin{lstlisting}
-  DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=(@\vspace{-0.04cm}@)
-    Elim($\pi_r$ s, $\lambda$(n : nat)(v : vector T n).P ($\exists$ n v)) {(@\vspace{-0.04cm}@)
-      f$_0$,(@\vspace{-0.04cm}@)
-      ($\lambda$(t : T)(n : nat)(v : vector T n).f$_1$ t ($\exists$ n v))(@\vspace{-0.04cm}@)
+  DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=
+    Elim($\pi_r$ s, $\lambda$(n : nat)(v : vector T n).P ($\exists$ n v)) {
+      f$_0$,
+      ($\lambda$(t : T)(n : nat)(v : vector T n).f$_1$ t ($\exists$ n v))
     }.(@\vspace{-0.05cm}@) 
 \end{lstlisting}
 

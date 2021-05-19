@@ -36,6 +36,7 @@
 # Chapter 1
 
 - authorship statements or detailed acknowledgments for other authors (nice to have)
+- note in reading guide about the knowledge package
 
 # Chapter 2
 
@@ -43,6 +44,7 @@
 - REPLICA diagram and a bit more, maybe (nice to have)
 - guarded recursion word overloading, say "syntactic guard" instead
 - de Bruijn versus variables, somewhere
+- explain Greek when you explain definitional equality
 
 # Chapter 3
 
@@ -51,6 +53,9 @@
 - knowledge package: reduction strategies, substitution strategies
 
 # Chapter 4
+
+- cite Lambek's and add to knowledge package
+- Pi versus forall (maybe note in earlier chapter)
 
 # Chapter 5
 

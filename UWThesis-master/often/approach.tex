@@ -71,7 +71,7 @@ The breaking change to Figure~\ref{fig:listswap} in Section~\ref{sec:overview}, 
 When we invoked \toolnamec:
 
 \begin{lstlisting}
-  Repair Old.list New.list in rev_app_distr.(@\vspace{-0.05cm}@)
+  Repair Old.list New.list in rev_app_distr.
 \end{lstlisting}
 it invoked a search procedure that differenced \lstinline{Old.list} and \lstinline{New.list},
 then transformed \lstinline{rev_app_distr} to use \lstinline{New.list} in place of \lstinline{Old.list}.
@@ -256,7 +256,7 @@ Transport is realizable as a function in homotopy type theory---that is, it is \
 But univalence is a property that Coq's type theory \kl{CIC$_{\omega}$} lacks!
 It \text{is} possible to finitely approximate internal transport in Coq using a special framework~\cite{tabareau2017equivalences},
 but this sometimes introduces axioms, thereby extending the \kl{TCB}.
-Instead, the \toolnamec transformation assumes a univalent \textit{metatheory} in which to interpret its specificaton,
+Instead, the \toolnamec transformation assumes a univalent \textit{metatheory} in which to interpret its specification,
 but does not introduce any axioms to Coq---that is, it implements transport \intro{externally}.
 
 In this thesis, when transport across $A \simeq B$ takes $t$ to $t'$,
@@ -270,8 +270,8 @@ and the repaired append function \lstinline{++} over \lstinline{New.list} that \
 equal up to transport across the equivalence from Figure~\ref{fig:equivalence}, since (by \lstinline{app_ok}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}):
 
 \begin{lstlisting}
-  $\forall$ T (l1 l2 : Old.list T),(@\vspace{-0.04cm}@)
-    swap T (l1 ++ l2) = (swap T l1) ++ (swap T l2).(@\vspace{-0.05cm}@)
+  $\forall$ T (l1 l2 : Old.list T),
+    swap T (l1 ++ l2) = (swap T l1) ++ (swap T l2).
 \end{lstlisting}
 The original \lstinline{rev_app_distr} is equal to the repaired proof up to transport,
 since both prove the same thing the same way up to the equivalence, and up to the changes in \lstinline{++}

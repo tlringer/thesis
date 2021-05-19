@@ -89,6 +89,8 @@
 \indexentry{Acknowledgments!Friends!Jasper Tran O'Leary|hyperpage}{xiii}
 \indexentry{Acknowledgments!Friends!Misha Kolmogorov|hyperpage}{xiii}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{xiii}
+\indexentry{Acknowledgments!Type Theorists!Michael Shulman|hyperpage}{1}
+\indexentry{Acknowledgments!Type Theorists!Carlo Angiuli|hyperpage}{1}
 \indexentry{Concepts!Verification|hyperpage}{3}
 \indexentry{Thesis!Informal Thesis Statement|hyperpage}{3}
 \indexentry{Thesis!Informal Thesis Statement|hyperpage}{3}
@@ -302,14 +304,16 @@
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{65}
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration|hyperpage}{65}
 \indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{65}
-\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{65}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Manual Configuration|hyperpage}{65}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{66}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Engineering|hyperpage}{66}
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Script|hyperpage}{67}
 \indexentry{Concepts!Verification!Proof Engineering!Proof Development!Proof!Proof Term|hyperpage}{67}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{67}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{68}
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{68}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Manual Configuration|hyperpage}{68}
 \indexentry{Acknowledgments!Students!Jasper Hugunin|hyperpage}{68}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{68}
 \indexentry{Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\sysname Prototype|hyperpage}{69}
@@ -321,7 +325,9 @@
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{71}
 \indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{71}
 \indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{72}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Manual Configuration|hyperpage}{72}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{72}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{72}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{72}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{72}
 \indexentry{Concepts!Type Theory!Equality!Transport|hyperpage}{73}
@@ -339,45 +345,72 @@
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{74}
 \indexentry{Concepts!Type Theory!Equality!Transport|hyperpage}{74}
 \indexentry{Concepts!Type Theory!Equality!Type Equivalences|hyperpage}{74}
+\indexentry{Thesis!Approach!Semantic Differencing|hyperpage}{74}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration|hyperpage}{74}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Manual Configuration|hyperpage}{74}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration|hyperpage}{74}
+\indexentry{Concepts!Type Theory!Inductive Types!Eliminators|hyperpage}{74}
 \indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{75}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Dependent Constructors|hyperpage}{75}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Iota|hyperpage}{75}
+\indexentry{Concepts!Type Theory!Inductive Types|hyperpage}{75}
+\indexentry{Concepts!Type Theory!Inductive Types!Constructors|hyperpage}{75}
 \indexentry{Concepts!Type Theory!Equality!Intensionality|hyperpage}{76}
 \indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{76}
 \indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{76}
-\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{82}
-\indexentry{Conventions!Primitive Eliminators|hyperpage}{93}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{77}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{77}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Eta|hyperpage}{77}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{77}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{77}
+\indexentry{Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration|hyperpage}{78}
+\indexentry{Concepts!Type Theory!Inductive Types!Eliminators|hyperpage}{78}
+\indexentry{Concepts!Category Theory!Initial Algebra|hyperpage}{78}
+\indexentry{Acknowledgments!Type Theorists!Michael Shulman|hyperpage}{79}
+\indexentry{Acknowledgments!Type Theorists!Carlo Angiuli|hyperpage}{79}
+\indexentry{Acknowledgments!Type Theorists!Anders M\"ortberg|hyperpage}{79}
+\indexentry{Acknowledgments!Type Theorists!Carlo Angiuli|hyperpage}{79}
+\indexentry{Concepts!Category Theory!Initial Algebra|hyperpage}{79}
+\indexentry{Type Theories!Homotopy Type Theory|hyperpage}{79}
+\indexentry{Concepts!Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{80}
+\indexentry{Concepts!Type Theory!Inductive Types!Eliminators|hyperpage}{81}
+\indexentry{Concepts!Type Theory!Inductive Types!Constructors|hyperpage}{81}
+\indexentry{Concepts!Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{81}
+\indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{83}
 \indexentry{Conventions!Primitive Eliminators|hyperpage}{94}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
+\indexentry{Conventions!Primitive Eliminators|hyperpage}{95}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{100}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{101}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{101}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{102}
 \indexentry{Concepts!Type Theory!Algebraic Ornaments|hyperpage}{102}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{106}
-\indexentry{Concepts!Verification|hyperpage}{108}
-\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{109}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{106}
 \indexentry{Concepts!Verification|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Isabelle/HOL|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!HOL Light|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!HOL4|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Agda|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Lean|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!NuPRL|hyperpage}{109}
-\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{109}
-\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{109}
-\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{110}
-\indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{110}
-\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{110}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{111}
+\indexentry{Concepts!Verification|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Coq|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Isabelle/HOL|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!HOL Light|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!HOL4|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Agda|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Lean|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!NuPRL|hyperpage}{111}
+\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{111}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{111}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{111}
+\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{111}
 \indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{112}
-\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{117}
-\indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{119}
-\indexentry{Thesis!Informal Thesis Statement|hyperpage}{123}
-\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{123}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{124}
+\indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{112}
+\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{112}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Ltac|hyperpage}{113}
+\indexentry{Concepts!Verification!Proof Assistants!Coq!Gallina|hyperpage}{114}
+\indexentry{Type Theories!Calculus of Inductive Constructions|hyperpage}{119}
+\indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{121}
+\indexentry{Thesis!Informal Thesis Statement|hyperpage}{125}
+\indexentry{Concepts!Verification!Proof Engineering|hyperpage}{125}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{126}

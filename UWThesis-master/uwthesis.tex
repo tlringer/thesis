@@ -43,6 +43,52 @@
 \newcommand{\sysname}{\textsc{Pumpkin}\xspace}
 \newcommand\toolnamec{\textsc{Pumpkin P}i\xspace} % tool name
 
+
+\lstdefinelanguage{coq}{
+    keywords={Repair, module, Module, Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, Type, Prop, Set, fun, fix, forall, Require, Import, Fixpoint, match, end, with, as, return, struct, Qed, Defined, let, Parameter, Axiom, Patch},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=4,
+    stringstyle=\color{brown},
+    escapeinside={(@}{@)},
+}
+
+\lstdefinelanguage{ocaml}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
+\lstdefinelanguage{ml4}{
+    keywords={let, rec, val, if, else, match, with, then, in},
+    basicstyle=\linespread{0.95}\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\rmfamily,
+    showstringspaces=false,
+    columns=flexible,
+    breaklines=true,
+    texcl=true,
+    mathescape=true,
+    tabsize=2,
+    stringstyle=\color{brown},
+}
+
+\lstset{language=coq} % default
+
 \knowledgestyle*{notion}{color = brown}
 
 \knowledge{notion, index=Conventions!Primitive Eliminators}
@@ -125,6 +171,10 @@
   | Lean
 \knowledge{notion, index=Concepts!Verification!Proof Assistants!NuPRL}
   | NuPRL
+\knowledge{notion, index=Concepts!Category Theory!Initial Algebra}
+  | initial algebras of endofunctors
+  | initial algebras
+  | initial algebra
 \knowledge{notion, index=Concepts!Type Theory!Internalization}
   | internal
   | internally
@@ -385,6 +435,15 @@
 \knowledge{notion, index=Acknowledgments!Mentors \& Advisors!Zach Tatlock}
   | Zach Tatlock
   | Zach
+\knowledge{notion, index=Acknowledgments!Type Theorists!Michael Shulman}
+  | Michael Shulman
+  | Michael
+\knowledge{notion, index=Acknowledgments!Type Theorists!Carlo Angiuli}
+  | Carlo Angiuli
+  | Carlo
+\knowledge{notion, index=Acknowledgments!Type Theorists!Anders M\"ortberg}
+  | Anders M\"{o}rtberg
+  | Anders
 \knowledge{notion, index=Acknowledgments!Friends!Roy Or-El}
   | Roy Or-El
   | Roy
@@ -466,12 +525,28 @@
   | across type equivalences
 \knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration}
   | configuration
+\knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Dependent Constructors}
+  | dependent constructors
+  | dependent constructor
+  | \lstinline{DepConstr}
+\knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Dependent Eliminators}
+  | dependent eliminators
+  | dependent eliminator
+  | \lstinline{DepElim}
+\knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Eta}
+  | $\eta$
+  | \lstinline{Eta}
+\knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Iota}
+  | dependent eliminators
+  | dependent eliminator
 \knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Manual Configuration}
   | manual configuration
   | Manual configuration
+  | manually
 \knowledge{notion, index=Thesis!Technology!Proof Repair!Kinds!Proof Repair Across Type Equivalences!Configuration!Automatic Configuration}
-  | manual configuration
-  | Manual configuration
+  | automatic configuration
+  | Automatic configuration
+  | automatically
 \knowledge{notion, index=Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite}
   | \sysnamelong
 \knowledge{notion, index=Thesis!Technology!Proof Repair!Tools!\sysnamelong Plugin Suite!\sysname Prototype}
@@ -484,6 +559,7 @@
   | diff
   | difference
   | differences
+  | Differencing
 \knowledge{notion, index=Thesis!Approach!Proof Term Transformations}
   | proof term transformations
   | proof term transformation
@@ -528,8 +604,8 @@
 \floatname{algorithm}{\footnotesize{Pseudocode:}}
 
 \hypersetup{
-    colorlinks=false,
-    hidelinks,
+ %   colorlinks=false,
+ %   hidelinks,
     linktocpage=true,
     breaklinks=true,
     hypertexnames=true,
@@ -540,51 +616,6 @@
     pdfcreator={pdfLaTeX},
     pdfproducer={LaTeX with hyperref and classicthesis}
 }
-
-\lstdefinelanguage{coq}{
-    keywords={Repair, module, Module, Theorem, Proof, Record, Lemma, Definition, Abort, Qed, forall, Inductive, Type, Prop, Set, fun, fix, forall, Require, Import, Fixpoint, match, end, with, as, return, struct, Qed, Defined, let, Parameter, Axiom, Patch},
-    basicstyle=\linespread{0.95}\small\ttfamily,
-    keywordstyle=\color{blue},
-    commentstyle=\itshape\rmfamily,
-    showstringspaces=false,
-    columns=flexible,
-    breaklines=true,
-    texcl=true,
-    mathescape=true,
-    tabsize=4,
-    stringstyle=\color{brown},
-    escapeinside={(@}{@)},
-}
-
-\lstdefinelanguage{ocaml}{
-    keywords={let, rec, val, if, else, match, with, then, in},
-    basicstyle=\linespread{0.95}\small\ttfamily,
-    keywordstyle=\color{blue},
-    commentstyle=\itshape\rmfamily,
-    showstringspaces=false,
-    columns=flexible,
-    breaklines=true,
-    texcl=true,
-    mathescape=true,
-    tabsize=2,
-    stringstyle=\color{brown},
-}
-
-\lstdefinelanguage{ml4}{
-    keywords={let, rec, val, if, else, match, with, then, in},
-    basicstyle=\linespread{0.95}\small\ttfamily,
-    keywordstyle=\color{blue},
-    commentstyle=\itshape\rmfamily,
-    showstringspaces=false,
-    columns=flexible,
-    breaklines=true,
-    texcl=true,
-    mathescape=true,
-    tabsize=2,
-    stringstyle=\color{brown},
-}
-
-\lstset{language=coq} % default
 
 
 \begin{document}
@@ -1082,9 +1113,9 @@ Derek Dreyer,
 Alexandra Silva,
 the Coq community (Emilio J. Gallego Arias, Enrico Tassi, Ga\"{e}tan Gilbert, Maxime D\'{e}n\`{e}s,
 Matthieu Sozeau, Vincent Laporte, Th\'{e}o Zimmermann, Jason Gross, Nicolas Tabareau, Cyril Cohen, Pierre-Marie P\'{e}drot, Yves Bertot, Tej Chajed, Ben Delaware, Janno),
-Michael Shulman (feels like univalence, like categorical coherence, like an endofunctor).
+\intro{Michael Shulman} (feels like univalence, like categorical coherence, like an endofunctor).
 Valentin Robert.
-Anders M\"ortberg, Conor McBride, Carlo Angiuli, Bas Spitters, Jon Sterling,
+\intro{Anders M\"ortberg}, Conor McBride, \intro{Carlo Angiuli}, Bas Spitters, Jon Sterling,
 PL Twitter, other Twitter friends,
 Edward Z. Yang, Robert Rand.
 Matthew Dwyer at Virginia, Nathanael from Twitter, Matt Might, UVA folks, Quinn Wilton (all for medical device ideas).
@@ -1092,6 +1123,7 @@ Jonathan Aldrich.
 David van Horn.
 Michael Hicks. % TODO probably many more
 Rebecca Turner from Twitter.
+Ymir Vigfusson from Twitter (typo).
 
 \paragraph{My Writing Buddy (WIP)}
 Michelle Lee.

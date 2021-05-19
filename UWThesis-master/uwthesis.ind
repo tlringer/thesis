@@ -5,12 +5,12 @@
       \subsubitem Alex Sanchez-Stern, \hyperpage{xiii}, \hyperpage{10}, 
 		\hyperpage{26}
       \subsubitem Karl Palmskog, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{110}, \hyperpage{119}
+		\hyperpage{112}, \hyperpage{121}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
 		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{68}, 
-		\hyperpage{101}, \hyperpage{105, 106}
+		\hyperpage{101, 102}, \hyperpage{106}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{21}, \hyperpage{98--100}, \hyperpage{124}
+		\hyperpage{21}, \hyperpage{99--101}, \hyperpage{126}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -102,28 +102,34 @@
     \subitem Students
       \subsubitem Jasper Hugunin, \hyperpage{xiii}, \hyperpage{68}
       \subsubitem Taylor Blau, \hyperpage{xiii}
+    \subitem Type Theorists
+      \subsubitem Anders M\"ortberg, \hyperpage{79}
+      \subsubitem Carlo Angiuli, \hyperpage{1}, \hyperpage{79}
+      \subsubitem Michael Shulman, \hyperpage{1}, \hyperpage{79}
 
   \indexspace
 
   \item Concepts
+    \subitem Category Theory
+      \subsubitem Initial Algebra, \hyperpage{78, 79}
     \subitem Type Theory
-      \subsubitem Algebraic Ornaments, \hyperpage{82}, \hyperpage{102}
+      \subsubitem Algebraic Ornaments, \hyperpage{83}, \hyperpage{102}
       \subsubitem Externalization, \hyperpage{73}
-      \subsubitem Inductive Types, \hyperpage{18}
+      \subsubitem Inductive Types, \hyperpage{18}, \hyperpage{75}
       \subsubitem Internal, \hyperpage{73}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
-		\hyperpage{23}, \hyperpage{108, 109}
+		\hyperpage{23}, \hyperpage{109}, \hyperpage{111}
       \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{18}
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
-		\hyperpage{11, 12}, \hyperpage{109}
+		\hyperpage{11, 12}, \hyperpage{111}
       \subsubitem Proof Engineering, \hyperpage{4}, \hyperpage{8}, 
 		\hyperpage{11}, \hyperpage{52}, \hyperpage{66}, 
-		\hyperpage{109}, \hyperpage{123}
+		\hyperpage{111}, \hyperpage{125}
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
 		\hyperpage{32}, \hyperpage{42}, \hyperpage{58}, 
-		\hyperpage{75}, \hyperpage{93, 94}
+		\hyperpage{75}, \hyperpage{94, 95}
 
   \indexspace
 
@@ -146,18 +152,19 @@
 		\hyperpage{74}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
-		\hyperpage{49}
+		\hyperpage{49}, \hyperpage{74}
     \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}, 
 		\hyperpage{63}
     \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
-		\hyperpage{63}, \hyperpage{123}
+		\hyperpage{63}, \hyperpage{125}
     \subitem Results, \hyperpage{6}
     \subitem Technology
       \subsubitem Proof Repair, \hyperpage{4}, \hyperpage{23}
   \item Type Theories
     \subitem Calculus of Inductive Constructions, \hyperpage{18}, 
 		\hyperpage{21}, \hyperpage{40}, \hyperpage{73}, 
-		\hyperpage{75}, \hyperpage{109, 110}, \hyperpage{117}
-    \subitem Homotopy Type Theory, \hyperpage{71}, \hyperpage{73}
+		\hyperpage{75}, \hyperpage{111, 112}, \hyperpage{119}
+    \subitem Homotopy Type Theory, \hyperpage{71}, \hyperpage{73}, 
+		\hyperpage{79}
 
 \end{theindex}

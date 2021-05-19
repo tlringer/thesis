@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 22:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  18 MAY 2021 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2226,26 +2226,22 @@ Overfull \hbox (16.22443pt too wide) in paragraph at lines 19--61
  []
 
 [102] (./often/replica.tex) (./often/replica.tex)
-
-LaTeX Warning: Reference `sec:key1' on page 103 undefined on input line 122.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--123
+Underfull \hbox (badness 10000) in paragraph at lines 111--121
 [] []\OT1/pplj/m/sc/10.95 (-2) u n -p a c k s i g m a t y p e s : v e c -t o r 
 s o f p a r -t i c -u -l a r l e n g t h s[] \OT1/pplj/m/n/10.95 (-2) In
  []
 
 [103]
-Overfull \hbox (5.39363pt too wide) in paragraph at lines 204--211
+Overfull \hbox (5.39363pt too wide) in paragraph at lines 202--209
 [] []\OT1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t 
 e n d -i n g a l a n -g u a g e[] \OT1/pplj/m/n/10.95 (-20) I then used
  []
 
 [104] [105] [106] [107]
 LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 392.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 400.
 LaTeX Font Info:    Font shape `OT1/pplj/bx/sc' in size <10> not available
-(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 392.
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 400.
  [108]) (./often/conclusion.tex)) (./related.tex
 [109] [110
 
@@ -2314,17 +2310,22 @@ Overfull \hbox (7.35196pt too wide) in paragraph at lines 85--86
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 134--137
+Overfull \hbox (0.5488pt too wide) in paragraph at lines 108--110
+[]| \OT1/pplj/m/n/10.95 (-20) An-ders M[]ortberg, []79[], []102[],
+ []
+
+
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 135--138
 []| \OT1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []20[], []22[],
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 144--145
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 145--146
 []| \OT1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 146--149
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 147--150
 \OT1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
@@ -2419,11 +2420,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1185.
  ) 
 Here is how much of TeX's memory you used:
- 51287 strings out of 492609
- 1036147 string characters out of 6129033
- 1314208 words of memory out of 5000000
- 51785 multiletter control sequences out of 15000+600000
- 643459 words of font info for 876 fonts, out of 8000000 for 9000
+ 51276 strings out of 492609
+ 1036005 string characters out of 6129033
+ 1314207 words of memory out of 5000000
+ 51783 multiletter control sequences out of 15000+600000
+ 643098 words of font info for 869 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/tring
@@ -2445,10 +2446,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatin
 o/uplbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on uwthesis.pdf (161 pages, 1712240 bytes).
+Output written on uwthesis.pdf (161 pages, 1712642 bytes).
 PDF statistics:
- 4044 PDF objects out of 4296 (max. 8388607)
- 3782 compressed objects within 38 object streams
- 1603 named destinations out of 1728 (max. 500000)
+ 4054 PDF objects out of 4296 (max. 8388607)
+ 3792 compressed objects within 38 object streams
+ 1602 named destinations out of 1728 (max. 500000)
  95060 words of extra memory for PDF output out of 106986 (max. 10000000)
 

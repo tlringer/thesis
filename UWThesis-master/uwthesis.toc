@@ -188,6 +188,7 @@
 \contentsline {paragraph}{Permute Hypotheses: External Example}{105}{figure.caption.41}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{105}{figure.caption.41}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{106}{subsection.4.6.2}% 
+\contentsline {paragraph}{Historical Note}{106}{Item.55}% 
 \contentsline {paragraph}{Setup}{107}{Item.55}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{107}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{108}{subsubsection.4.6.2.2}% 

@@ -53,7 +53,7 @@ relative to a comparable tool for the class of changes on which \kl{Nate} and I 
     \hline
     \multirow[t]{2}{*}{Change Structure} & \multirow[t]{2}{*}{$\heartsuit$} & Unary to Bin., MB \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}} %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{nonorn.v})
      & \ok & Pi, MB & None \\
-     & & Vect. to Fin., \kl{Anders} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/fin.v}{\circled{21}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/fin.v}{fin.v}) 
+     & & Vec. to Fin., \kl{Anders} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/fin.v}{\circled{21}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/fin.v}{fin.v}) 
      & \good & Pi & None \\
     \hline
   \end{tabular}
@@ -95,16 +95,14 @@ though the suggested tactics did need massaging.
 %Section~\ref{sec:eval} describes benefits for both workflow integration and performance over a comparable tool for this use case.
 
 \begin{figure*}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
    \lstinputlisting[firstline=1, lastline=9]{often/replica.tex}
 \end{minipage}
 \hfill
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.49\textwidth}
    \lstinputlisting[firstline=10, lastline=18]{often/replica.tex}
 \end{minipage}
-\vspace{-0.3cm}
 \caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
-\vspace{0.1cm}
 \label{fig:replica}
 \end{figure*}
 
@@ -119,7 +117,7 @@ with an automatic configuration for unpacking sigma types.
 %This configuration corresponds to the equivalence between sigma types at a particular projection
 %and the same type escaping the sigma type. %, in our example $\Sigma$\lstinline{(s : packed_vect T).}$\pi_l$\lstinline{ s = n }$\simeq$\lstinline
 %{ vector T n}.
-By composition, this transported proofs across the equivalence from Section~\ref{sec:key1}.
+By composition, this transported proofs across the equivalence from Section~\ref{sec:pi-scope}.
 
 Two tricks helped with workflow integration for this change:
 1) have the search procedure view \lstinline{vector T n} as 
@@ -171,7 +169,7 @@ followed by later returns.
 
 \paragraph{Permute Constructors: Modifying a Language}
 The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
-from the \textsc{Replica} user study of proof engineers seen earlier. % TODO link
+from the \kl{\textsc{REPLica}} user study of proof engineers.
 A change from one of the benchmarks is in Figure~\ref{fig:replica}.
 The proof engineer had a simple language represented by an inductive type \lstinline{Term},
 as well as some definitions and proofs about the language.
@@ -228,8 +226,8 @@ Since most of the modest development time went into writing the configuration,
 I expect time savings would increase for a larger development.
 
 \paragraph{Permute Hypotheses: External Example}
-The change in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} came at the request of Anders M\"{o}rtberg,
-a cubical type theory expert. % TODO use knowledge package
+The change in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} came at the request of \kl{Anders},
+a cubical type theory expert.
 It shows how to use \toolnamec to swap two hypotheses of a type, since \lstinline{T1} $\rightarrow$ \lstinline{T2} $\rightarrow$ \lstinline{T3} $\simeq$
 \lstinline{T2} $\rightarrow$ \lstinline{T1} $\rightarrow$ \lstinline{T3}.
 This configuration was manual.
@@ -257,9 +255,9 @@ for \lstinline{DepConstr} and \lstinline{DepElim} that had the desired behavior 
 from the standard library that reduced the successor case of the eliminator that I used for \lstinline{DepElim}:
 
 \begin{lstlisting}
-  N.peano_rect_succ : $\forall$ P pO pS n,(@\vspace{-0.04cm}@)
-    N.peano_rect P pO pS (N.succ n) =(@\vspace{-0.04cm}@)
-    pS n (N.peano_rect P pO pS n).(@\vspace{-0.05cm}@)
+  N.peano_rect_succ : $\forall$ (P : N $\rightarrow$ Type) pO pS (n : N),
+    N.peano_rect P pO pS (N.succ n) =
+    pS n (N.peano_rect P pO pS n).
 \end{lstlisting}
 %
 %\begin{lstlisting}
@@ -295,9 +293,11 @@ Custom unification heuristics would help bring returns on investment for experts
 \subsection{Evaluation: \toolnamec for Transport}
 \label{sec:eval}
 
-\toolnamec implements transport across equivalences in a way that is suitable for repair.
-\kl{Nate} and I compared \toolnamec to another tool for transport across equivalences in Coq,
-using algebraic ornaments as an example.
+\toolnamec implements transport across equivalences \kl{externally}, in a way that is suitable for repair.
+One benefit of external transport is that, for some classes of changes,
+the resulting terms are small and compute efficiently relative to those derived via \kl{internal} transport.
+To evaluate this, \kl{Nate} and I compared \toolnamec to a tool that approximates internal transport across equivalences in Coq,
+using \kl{algebraic ornaments} as an example.
 We used \toolnamec to automatically discover and transport functions and proofs along the equivalences
 corresponding to these ornaments for two scenarios:
 
@@ -307,22 +307,29 @@ corresponding to these ornaments for two scenarios:
 \end{enumerate}
 At the time, the decompiler was not yet implemented, so we focused solely on proof terms.
 For comparison, we also used the ornaments that \toolnamec discovered to transport functions
-and proofs using the UP black-box transformation~\cite{tabareau2017equivalences}.
+and proofs using an internal approximation of transport in Coq from UP~\cite{tabareau2017equivalences}.
 \toolnamec produced faster functions and smaller terms, especially when composing multiple iterations of repair.
 In addition, \toolnamec imposed little burden on the user, and the equivalences \toolnamec discovered proved useful to UP.
 
-We chose UP for comparison because it also implements transport across equivalences in Coq,
-and because doing so demonstrates the benefits of specialized automation for classes of equivalences like ornaments.
-At the time of evaluation, the UP white-box transformation did not exist, so we used the black-box transformation.
-Using the white-box transformation would likely improve the performance of functions and proofs generated by UP when applicable.
-Our experiences suggest that it is possible to use both tools in concert.
+%We chose UP for comparison because it also implements transport across equivalences in Coq,
+%and because doing so demonstrates the benefits of specialized automation for classes of equivalences like ornaments.
+
+\paragraph{Historical Note}
+These days, the authors of UP call the internal approximation of transport used for comparison in this evaluation the \textit{black-box} transformation.
+After this evaluation and several discussions with the authors, UP introduced the external implementation of transport used for comparison in the case studies in Table~\ref{fig:changes},
+though without support for arbitrary equivalences.
+At the time of the evaluation, \toolnamec also did not yet support arbitrary equivalences (though it now does),
+but the UP black-box transformation did (and still does).
+The development of both the UP white-box transformation and the generalized \toolnamec transformation
+happened with frequent conversations between the authors of both papers, and doubtlessly involved mutual influence.
+It was wonderful, and involved multiple trips to France.
 Chapter~\ref{sec:related} discusses UP in more detail.
 
 \paragraph{Setup}
 The code is in the \href{http://github.com/uwplse/ornamental-search/tree/itp+equiv/plugin/eval}{\lstinline{eval}} folder of the repository.
 For each scenario,
-\kl{Nate} ran \toolnamec to search for an ornament,
-and then transported functions and proofs along that ornament using both \toolnamec and UP.
+\kl{Nate} ran \toolnamec to search for the \kl{ornamental promotion isomorphism},
+and then transported functions and proofs along it using both \toolnamec and UP.
 He noted the amount of user interaction (Section~\ref{sec:caseuser}),
 and together we measured the performance of transported terms (Section~\ref{sec:caseperf}).
 To test the performance of transported terms, we tested runtime by 
@@ -346,10 +353,10 @@ and that lifting across these types in \toolnamec produces efficient functions.
 \subsubsection{User Experience}
 \label{sec:caseuser}
 
-For each intermediate type in each scenario, Nate used \toolnamec to discover the equivalence.
+For each intermediate type in each scenario, \kl{Nate} used \toolnamec to discover the equivalence.
 This was enough for \toolnamec to lift functions and proofs 
 with no additional proof burden and no additional axioms.
-To use UP without \toolnamec, Nate would have had to prove the equivalence by hand,
+To use UP without \toolnamec, he would have had to prove the equivalence by hand,
 but instead he was able to use the equivalence generated by \toolnamec.
 In addition, to use UP, he had to prove univalent parametricity of each inductive type;
 these proofs were small, but required specialized knowledge.
@@ -358,12 +365,13 @@ he had to prove the univalent parametric relation between the unlifted and lifte
 functions that the theorem referenced; this pulled in the functional extensionality axiom, which was not necessary 
 using \toolnamec.
 
-In the second scenario, to simulate the incremental workflow \toolnamec requires, Nate transported along each intermediate type, then unpacked the result.
+In the second scenario, to simulate the incremental workflow \toolnamec requires, he transported along each intermediate equivalence to each intermediate type,
+then unpacked the result.
 For example, the ornament from \lstinline{bst} to \lstinline{avl} passed through an intermediate type;
-Nate lifted \lstinline{search} to this type first, unpacked the result, and then repeated this process.
+He transported \lstinline{search} to use this type first, unpacked the result, and then repeated this process.
 In this scenario, using UP differently or using \toolnamec with a manual configuration could have saved some work relative to the workflow chosen,
 since with those workflows, it is possible to skip 
-the intermediate type;\footnote{The performances of the terms that UP produces are sensitive to the equivalence used;
+the intermediate type;\footnote{The performances of the terms that the UP black-box transformation produces are sensitive to the equivalence used;
 for a 100 node tree, this alternate workflow in UP produced a search function
 which is hundreds of times slower and traversal functions which are thousands of times slower
 than the functions that \toolnamec produced. In addition, the lifted proof of \lstinline{pre_permutes} using UP failed to normalize
@@ -419,7 +427,7 @@ plus the original (\lstinline{bst}) and transported (\lstinline{avl}) \lstinline
 \label{tab:size2}
 \end{figure}
 
-Relative to UP, \toolnamec produced faster functions.
+Relative to the UP black-box transformation, \toolnamec produced faster functions.
 Figure~\ref{tab:size1} summarizes
 runtime in the first scenario for \lstinline{preorder},
 and Figure~\ref{tab:size2} summarizes
@@ -438,18 +446,10 @@ In the first scenario, the transported proof of \lstinline{pre_permutes} using \
 the transported proof of \lstinline{pre_permutes} using UP was 1463184 LOC.
 
 I suspect \toolnamec provided these performance benefits because it directly
-transformed induction principles, whereas the UP black-box transformation implemented transport in a standard way,
+transformed \kl{eliminators}, whereas the UP black-box transformation implemented transport in a standard way,
 defining transported functions in terms of the original functions. 
 The multiple iteration case in particular highlights this,
-since UP's black box approach makes lifted terms much slower and larger as the number of iterations increases,
-while \toolnamec's approach does not.\footnote{After this evaluation and several discussions with the authors, UP later introduced the white-box
-transformation, which is similar to the \toolnamec transformation~\cite{tabareau2019marriage},
-though it does not yet support arbitrary equivalences (the black-box transformation of course does).
-At the time of the evaluation, \toolnamec also did not yet support arbitrary equivalences,
-though the UP black-box transformation did.
-The development of both the UP white-box transformation and the generalized \toolnamec transformation
-happened with frequent conversations between the authors of both papers, and doubtlessly involved mutual influence on one another.
-It was wonderful, and involved multiple trips to France.
-I will discuss UP more in Chapter~\ref{sec:related}.}
+since UP's black-box approach makes lifted terms much slower and larger as the number of iterations increases,
+while \toolnamec's approach does not.
 
 

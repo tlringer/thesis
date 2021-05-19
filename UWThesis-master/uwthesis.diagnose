@@ -6,8 +6,8 @@
 2 autoreference(s) are introduced twice.
 2 autoreference(s) are used but not introduced.
 
-71 autoreference(s) are properly used.
-94 autoreference(s) are defined but not used.
+75 autoreference(s) are properly used.
+90 autoreference(s) are defined but not used.
 
 
 ********
@@ -66,10 +66,6 @@ theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 ***********************************
 
 uwthesis.tex:151: {proof maintenance}{default}{base}
-uwthesis.tex:179: {internal}{default}{base}
-uwthesis.tex:184: {external}{default}{base}
-uwthesis.tex:189: {internal}{default}{base}
-uwthesis.tex:197: {ornamental promotion isomorphism}{default}{base}
 uwthesis.tex:241: {UW PLSE}{default}{base}
 uwthesis.tex:264: {Max Willsey}{default}{base}
 uwthesis.tex:267: {Martin Kellog}{default}{base}

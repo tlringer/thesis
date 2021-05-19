@@ -105,7 +105,8 @@
       \subsubitem Jasper Hugunin, \hyperpage{xiii}, \hyperpage{68}
       \subsubitem Taylor Blau, \hyperpage{xiii}
     \subitem Type Theorists
-      \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{102}
+      \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{102}, 
+		\hyperpage{105}
       \subsubitem Carlo Angiuli, \hyperpage{1}, \hyperpage{79}
       \subsubitem Michael Shulman, \hyperpage{1}, \hyperpage{79}
 
@@ -116,11 +117,11 @@
       \subsubitem Initial Algebra, \hyperpage{78, 79}
     \subitem Type Theory
       \subsubitem Algebraic Ornaments, \hyperpage{83, 84}, 
-		\hyperpage{88}, \hyperpage{103}
-      \subsubitem Externalization, \hyperpage{73}
+		\hyperpage{88}, \hyperpage{103}, \hyperpage{106}
+      \subsubitem Externalization, \hyperpage{73}, \hyperpage{106}
       \subsubitem Inductive Types, \hyperpage{18}, \hyperpage{75}, 
 		\hyperpage{83}
-      \subsubitem Internal, \hyperpage{73}
+      \subsubitem Internal, \hyperpage{73}, \hyperpage{106}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
 		\hyperpage{23}, \hyperpage{109}, \hyperpage{111}
       \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
@@ -140,7 +141,7 @@
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}, 
-		\hyperpage{65}, \hyperpage{102}
+		\hyperpage{65}, \hyperpage{102}, \hyperpage{104}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 

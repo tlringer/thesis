@@ -54,28 +54,28 @@ assuming the old and new list types from Figure~\ref{fig:listswap} are in module
 This suggests a proof script that succeeds (in $\codeauto{light blue}$ to denote \toolnamec produces it automatically):
 
 \begin{lstlisting}[backgroundcolor=\color{cyan!30}]
-Proof. (@\color{gray}{(* by induction over x and y *)}@)
-  intros x. induction x as [a l IHl| ]; intro y0.
-  - (@\color{gray}{(* both cons: *)}@) simpl. rewrite IHl. simpl.
-    rewrite app_assoc. auto.
-  - (@\color{gray}{(* x nil: *)}@) induction y0 as [a l H| ].
-    + (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r. auto.
-    + (@\color{gray}{(* y nil: *)}@) auto.
-Defined.(@\vspace{-0.05cm}@)
+  Proof. (@\color{gray}{(* by induction over x and y *)}@)
+    intros x. induction x as [a l IHl| ]; intro y0.
+    - (@\color{gray}{(* both cons: *)}@) simpl. rewrite IHl. simpl.
+      rewrite app_assoc. auto.
+    - (@\color{gray}{(* x nil: *)}@) induction y0 as [a l H| ].
+      + (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r. auto.
+      + (@\color{gray}{(* y nil: *)}@) auto.
+  Defined.
 \end{lstlisting}
 where the dependencies (\lstinline{rev}, \lstinline{++}, \lstinline{app_assoc}, and \lstinline{app_nil_r}) have
 also been updated automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v, TODO update links
 If we would like, we can manually modify this to something that more closely matches the style of the original proof script:
 
 \begin{lstlisting}
-Proof. (@\color{gray}{(* by induction over x and y *)}@)
-  induction x as [a l IHl|].
-  (@\color{gray}{(* both cons: *)}@) intro y. simpl.
-  rewrite (IHl y). rewrite app_assoc; trivial.
-  (@\color{gray}{(* x nil: *)}@) induction y as [a l IHl|].
-  (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r; auto.
-  (@\color{gray}{(* y nil: *)}@) simpl. auto.
-Defined.
+  Proof. (@\color{gray}{(* by induction over x and y *)}@)
+    induction x as [a l IHl|].
+    (@\color{gray}{(* both cons: *)}@) intro y. simpl.
+    rewrite (IHl y). rewrite app_assoc; trivial.
+    (@\color{gray}{(* x nil: *)}@) induction y as [a l IHl|].
+    (@\color{gray}{(* y cons: *)}@) simpl. rewrite app_nil_r; auto.
+    (@\color{gray}{(* y nil: *)}@) simpl. auto.
+  Defined.
 \end{lstlisting}
 We can even repair the entire list module from the Coq standard library all at once by running the \lstinline{Repair module}
 command~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}. % Swap.v

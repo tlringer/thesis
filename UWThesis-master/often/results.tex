@@ -15,52 +15,50 @@ relative to a comparable tool for the class of changes on which \kl{Nate} and I 
 \label{sec:results}
 
 \begin{table*}
-\small
+\footnotesize
   \begin{tabular}{|l|l|l|c|l|l|}
     \hline
-    \textbf{Class} & \textbf{Config.} & \textbf{Examples} & \textbf{Sav.} & \textbf{Repair Tools} & \textbf{Search Tools} \\
+    \textbf{Class} & \textbf{Conf.} & \textbf{Examples} & \textbf{Sav.} & \textbf{Repair} & \textbf{Search} \\
     \hline
-    \multirow[t]{2}{*}{Algebraic Ornaments} & \multirow[t]{2}{*}{Auto} & List to Packed Vector, hs-to-coq \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}} % Example.v
-    & \good & \toolnamec, \textsc{Devoid}, UP & \toolnamec, \textsc{Devoid} \\
-    & & List to Packed Vector, Std. Library \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/ListToVect.v}{\circled{16}} % ListToVect.v
-    & \good & \toolnamec, \textsc{Devoid}, UP & \toolnamec, \textsc{Devoid} \\
+    \multirow[t]{2}{*}{Alg. Ornaments} & \multirow[t]{2}{*}{$\heartsuit \heartsuit \heartsuit$} & List to Vec., hs-to-coq \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}} % Example.v
+    & \good & Pi, UP & Pi \\
+    & & List to Vec., Std. Lib. \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/ListToVect.v}{\circled{16}} % ListToVect.v
+    & \good & Pi, UP & Pi \\
     \hline
-    Unpack Sigma Types & Auto & Vector of Particular Length, hs-to-coq \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}} % Example.v
-    & \good & \toolnamec, UP & \toolnamec \\
+    Unpack Sigma & $\heartsuit \heartsuit \heartsuit$ & Vec., hs-to-coq \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}} % Example.v
+    & \good & Pi, UP & Pi \\
     \hline
-    \multirow[t]{3}{*}{Tuples \& Records} & \multirow[t]{3}{*}{Auto} & Simple Records \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/minimal_records.v}{\circled{13}} % minimal_records.v 
-     & \good & \toolnamec, UP & \toolnamec \\
-    & & Parameterized Records \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/more_records.v}{\circled{17}} % more_records.v
-    & \good & \toolnamec, UP & \toolnamec \\
+    \multirow[t]{3}{*}{Tuples \& Records} & \multirow[t]{3}{*}{$\heartsuit \heartsuit \heartsuit$} & Simple Records \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/minimal_records.v}{\circled{13}} % minimal_records.v 
+     & \good & Pi, UP & Pi \\
+    & & Param. Records \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/more_records.v}{\circled{17}} % more_records.v
+    & \good & Pi, UP & Pi \\
     & & Industrial Use \href{https://github.com/Ptival/saw-core-coq/tree/dump-wip}{\circled{18}} %(\href{https://github.com/Ptival/saw-core-coq/tree/dump-wip}{saw-core-coq})
-    & \good & \toolnamec, UP & \toolnamec \\
+    & \good & Pi, UP & Pi \\
     \hline
-    \multirow[t]{3}{*}{Permute Constructors} & \multirow[t]{3}{*}{Auto} & List, Standard Library \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}
-    & \good & \toolnamec, UP & \toolnamec \\
-     & & Modifying a PL, \textsc{REPLica} Benchmark \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v 
-     & \ok & \toolnamec, UP  & \toolnamec \\
-    & & Large Ambiguous Enum \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v
-    & \ok & \toolnamec, UP & \toolnamec \\
+    \multirow[t]{3}{*}{Perm. Constructors} & \multirow[t]{3}{*}{$\heartsuit \heartsuit \heartsuit$} & List, Std. Lib. \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}
+    & \good & Pi, UP & Pi \\
+     & & Modify PL, \kl{\textsc{REPLica}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v 
+     & \ok & Pi, UP  & Pi \\
+    & & Large Ambig. Enum \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v
+    & \ok & Pi, UP & Pi \\
     \hline
-    Add new Constructors & Mixed & PL Extension, \textsc{REPLica} Benchmark \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v})
-    & \bad & \toolnamec & \toolnamec (partial) \\
+    Add Constructors & $\heartsuit \heartsuit$ & Extend PL, \kl{\textsc{REPLica}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v})
+    & \bad & Pi & Pi (part) \\
     \hline
-    Factor out Constructors & Manual & External Example \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/constr_refactor.v}{constr_refactor.v}) 
-    & \good & \toolnamec, UP & None \\
+    Factor Constructors & $\heartsuit$ & Reviewer \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/constr_refactor.v}{constr_refactor.v}) 
+    & \good & Pi, UP & None \\
     \hline
-    Permute Hypotheses & Manual & External Example \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/flip.v}{flip.v}) 
-    & \bad & \toolnamec, UP & None \\
+    Perm. Hypotheses & $\heartsuit$ & \kl{Anders} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/flip.v}{\circled{20}} %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/flip.v}{flip.v}) 
+    & \bad & Pi, UP & None \\
     \hline
-    \multirow[t]{2}{*}{Change Ind. Structure} & \multirow[t]{2}{*}{Manual} & Unary to Binary, Classic Benchmark \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}} %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{nonorn.v})
-     & \ok & \toolnamec, Magaud & None \\
-     & & Vector to Finite Set, External Example \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/fin.v}{\circled{21}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/fin.v}{fin.v}) 
-     & \good & \toolnamec & None \\
+    \multirow[t]{2}{*}{Change Structure} & \multirow[t]{2}{*}{$\heartsuit$} & Unary to Bin., MB \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}} %(\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/nonorn.v}{nonorn.v})
+     & \ok & Pi, MB & None \\
+     & & Vect. to Fin., \kl{Anders} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/fin.v}{\circled{21}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/fin.v}{fin.v}) 
+     & \good & Pi & None \\
     \hline
   \end{tabular}
-\vspace{0.05cm}
-  \caption{Some changes using \toolnamec (left to right): class of changes, kind of configuration, examples, whether using \toolnamec saved development time relative to reference manual repairs (\good\xspace if yes, \ok\xspace if comparable, \bad\xspace if no), and Coq tools we know of that support repair along (Repair) or automatic proof of (Search) the equivalence corresponding to each example. Tools considered are \textsc{Devoid}~\cite{Ringer2019}, the Univalent Parametricity (UP) white-box transformation~\cite{tabareau2019marriage}, and the tool from Magaud \& Bertot 2000~\cite{magaud2000changing}. \toolnamec is the only one that suggests tactics.
+  \caption{Some changes using \toolnamec (left to right): class of changes, kind of configuration ($\heartsuit \heartsuit \heartsuit$ if automatic, $\heartsuit \heartsuit$ if mixed automatic and manual, and $\heartsuit$ if manual), examples, whether using \toolnamec saved development time relative to reference manual repairs (\good\xspace if yes, \ok\xspace if comparable, \bad\xspace if no), and Coq tools I know of that support repair along (Repair) or automatic proof of (Search) the equivalence corresponding to each example. Besides \toolnamec (Pi), tools considered are the Univalent Parametricity (UP) white-box transformation~\cite{tabareau2019marriage} and the tool from Magaud \& Bertot 2000~\cite{magaud2000changing} (MB). \toolnamec is the only one that suggests tactics.
 More nuanced comparisons to these and more are in Chapter~\ref{sec:related}.}
-\vspace{-0.4cm}
 \label{fig:changes}
 \end{table*}
 

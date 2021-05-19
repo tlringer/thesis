@@ -1,8 +1,8 @@
 \section{Implementation}
 \label{sec:pi-implementation}
 
-The source code of the \toolnamec plugin is on Github.
-It also ships with the \sysnamelong plugin suite by default.
+Like the \kl{\sysname} prototype,
+\toolnamec also ships with the \sysnamelong plugin suite by default.
 As with \sysname, the latest version supports Coq 8.8, with Coq 8.9.1 support in a branch.
 This section decribes the implementation of the core functionality of the \toolnamec plugin (Section~\ref{sec:pi-details}),
 along with important features for workflow integration (Section~\ref{sec:pi-workflow}).
@@ -19,7 +19,7 @@ The implementations of the differencing search procedures for automatic configur
 have freedom over the details of how they are implemented, as long as they return configurations in the end.
 The transformation (Section~\ref{sec:pi-details-trans}) operates directly over proof terms in Gallina, with the cached configuration
 also defined as proof terms in Gallina.
-As with \sysname, the \toolnamec extension to \sysnamelong does not extend the TCB in any way (Section~\ref{sec:pi-tcb}).
+As with \sysname, the \toolnamec extension to \sysnamelong does not extend the \kl{TCB} in any way (Section~\ref{sec:pi-tcb}).
 
 \subsubsection{The Command}
 \label{sec:pi-details-command}
@@ -27,24 +27,25 @@ As with \sysname, the \toolnamec extension to \sysnamelong does not extend the T
 The implementation of \toolnamec exposes the repair workflow
 to proof engineers through the \lstinline{Repair} command. % TODO link to code
 This invokes the workflow from Figure~\ref{fig:system} on page~\pageref{fig:system}.
-When the proof engineer invokes the command:
+When the proof engineer invokes the \kl{command}:
 
 \begin{lstlisting}
   Repair A B in old_proof as new_proof.
 \end{lstlisting}
 The first step---\textsc{Configure}---looks up \Aa and \B in a cache of configurations.
-If it finds one, it uses that; otherwise, it runs the differencing search procedures for automatic configuration.
-If that fails, it prompts the proof engineer to supply a configuration manually.
+If it finds one, it uses that; otherwise, it runs the differencing search procedures for \kl{automatic configuration}.
+If that fails, it prompts the proof engineer to supply a configuration \kl{manually}.
 Proof engineers can supply manual configurations by defining them as Gallina terms and
 providing them to the \lstinline{Configure Repair} command.
 
 Once \toolnamec has found a configuration, the next step---\textsc{Transform}---runs the transformation.
 It transforms \lstinline{old_proof} into some new proof term, then defines the new proof term as \lstinline{new_proof}.
 It is also possile to ask \toolnamec to automatically generate a name. % TODO is it?
-The final step---\textsc{Decompile}---runs in the end to produce a suggested proof script.
+The final step---\textsc{Decompile}---runs in the end to suggest a proof script.
 
 There are a few other useful commands in \toolnamec that are detailed in the repository.
-Notably, the \lstinline{Repair Module} command operates over entire modules at once and defines new modules.
+Notably, the \lstinline{Repair Module} command uses higher-order functions written by \kl{Nate}
+to operate over entire modules at once and define new, repaired versions of those modules.
 The \lstinline{Preprocess} command converts functions to use eliminators, so that the transformation
 can assume \kl{primitive eliminators}.
 The \lstinline{Lift} and \lstinline{Lift Module} commands skip the decompilation step,
@@ -69,12 +70,12 @@ I already detailed the first of these in Section~\ref{sec:proc}.
 The second is often used in combination with the first, to get from equivalences of this form:
 
 \begin{lstlisting}
-  $A \equiv \Sigma (i : I) . A_I i$
+  $A \simeq \Sigma (i : I) . A_I i$
 \end{lstlisting}
 to equivalences of this form:
 
 \begin{lstlisting}
-  $\Sigma (a : A) . \pi a = i \equiv A_I i$
+  $\Sigma (a : A) . \pi a = i \simeq A_I i$
 \end{lstlisting}
 where $\pi$ is the indexer.
 The first two configurations are used in combination, for example,
@@ -94,7 +95,7 @@ to handle nested tuples.
 
 All search procedures have the historical detail of defining the equivalence first, then deriving the configuration from it,
 rather than the other way around.
-For simplicity, the search procedures currently implemented inside of \toolnamec make some syntactic assumptions
+For simplicity, the search procedures currently implemented inside of \toolnamec also make some syntactic assumptions
 about the input and output types.
 The details of these restrictions can be found inside of the repository. % TODO link
 
@@ -127,14 +128,13 @@ on page~\pageref{fig:final}, but with a few differences highlighted below.
 The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}} % lift.ml
 of the transformation handles language differences to scale from CIC$_{\omega}$ to Gallina.
 For example, recall that the transformation assumes \kl{primitive eliminators}, while Gallina implements eliminators in terms of pattern matching and fixpoints. 
-To handle terms that use these features, \toolnamec includes a \lstinline{Preprocess} command that translates  % TODO link to repo
-these terms into corresponding eliminator applications.\footnote{My collaborator Nate Yazdani wrote this command, and it is available as a standalone plugin on Github. % TODO link
-I helped him design and test the command, but did not write any of the code.}
+To handle terms that use these features, \kl{Nate} implemented a \lstinline{Preprocess} command in \toolnamec that 
+translates these terms into corresponding eliminator applications.
 This command can preprocess a definition (like \lstinline{length} from Figure~\ref{fig:length} on page~\pageref{fig:length}) or an entire module
 (like \lstinline{List}, as shown in \href{http://github.com/uwplse/ornamental-search/blob/itp+equiv/plugin/coq/examples/ListToVect.v}{\lstinline{ListToVect.v}}) for lifting. % TODO update links
 It currently supports fixpoints that are structurally recursive on only 
 immediate substructures.\footnote{This is enough to preprocess many practical terms, including the entire \lstinline{List} module.
-But it is not as general as it could be.
+But it is not as general as it could be~\cite{recursion-elimination, jesper}.
 A more general translation may help \toolnamec support more terms, and discussions
 with Coq developers a couple of years ago suggest that the implementation of such a translation
 building on work from the equations~\cite{sozeau:equations} plugin was in progress.
@@ -144,15 +144,15 @@ by partially reducing the function's body under a hypothetical context for the c
 The implementation documents this and other language differences.
 
 \paragraph{Optimizations}
-In addition to cases for the derivations, the implementation of the transformation includes a number of cases
-that correspond to optimizations.
-The code denotes these explicitly~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}
-and explains them in detail in comments~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}.
+The implementation of the transformation includes a number of cases that correspond to optimizations
+not found in the original transformation.
 For example, the transformation assumes that all terms are fully \smallmath{$\eta$}-expanded. Sometimes,
 however, \smallmath{$\eta$}-expansion is not necessary.
 For efficiency, rather than fully \smallmath{$\eta$}-expand ahead of time, \toolnamec \smallmath{$\eta$}-expands lazily, 
 only when it is necessary for correctness.
-The \lstinline{LazyEta} optimization implements this.
+The \lstinline{LazyEta} optimization implements this optimization.
+The code denotes all optimizations explicitly~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}
+and explains them in detail in comments~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}.
 Section~\ref{sec:engineers} describes some other optimizations included for the sake of integration with proof engineering workflows.
 
 \paragraph{Termination}
@@ -177,7 +177,7 @@ with plans for automatic support in the future. % minimal_records.v, but show th
 \label{sec:pi-tcb}
 
 As with \sysname, \toolnamec is implemented as a Coq plugin, and produces terms that Coq type checks in the end.
-\toolnamec does not modify the type checker, and furthermore does not add any axioms, so it does not increase the TCB.
+\toolnamec does not modify the type checker, and furthermore does not add any axioms, so it does not increase the \kl{TCB}.
 This is perhaps even more notable for \toolnamec, since all other implementations of transport across equivalences
 that I am aware of at least sometimes add axioms.
 Since \toolnamec implements transport as a proof term transformation, it is able to circumvent this and not increase the TCB in any way.
@@ -195,70 +195,10 @@ This and other features help \toolnamec reach real proof engineers (Section~\ref
 \subsubsection{Decompiling to Tactics}
 \label{sec:decompiler}
 
-\begin{figure*}
-\small
-\begin{grammar}
-<v> $\in$ Vars, <t> $\in$ CIC$_{\omega}$
-
-<p> ::= intro <v> \hspace{0.05cm} | \hspace{0.05cm} rewrite <t> <t> \hspace{0.05cm} | \hspace{0.05cm} symmetry \hspace{0.05cm} | \hspace{0.05cm} apply <t> \hspace{0.05cm} | \hspace{0.05cm} induction <t> <t> \{ <p>, \ldots, <p> \} \hspace{0.05cm} | \hspace{0.05cm} split \{ <p>, <p> \} \hspace{0.05cm} | \hspace{0.05cm} left \hspace{0.05cm} | \hspace{0.05cm} right \hspace{0.05cm} | \hspace{0.05cm} <p> . <p>
-\end{grammar}
-\vspace{-0.4cm}
-\caption{Qtac syntax.}
-\vspace{-0.4cm}
-\label{fig:ltacsyntax1}
-\end{figure*}
-
-\begin{figure*}
-\begin{mathpar}
-\mprset{flushleft}
-\small
-\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Rightarrow$ $p$}\vspace{-0.5cm}\\
-
-\inferrule[Intro]
-  { \Gamma,\ n : T \vdash b \Rightarrow p }
-  { \Gamma \vdash \lambda (n : T) . b \Rightarrow \mathrm{intro}\ n.\ p }
-
-\inferrule[Symmetry]
-  { \Gamma \vdash H \Rightarrow p }
-  { \Gamma \vdash \mathtt{eq\_sym}\ H \Rightarrow \mathrm{symmetry}.\ p }
-
-\inferrule[Split]
-  { \Gamma \vdash l \Rightarrow p \\ \Gamma \vdash r \Rightarrow q }
-  { \Gamma \vdash \mathrm{Constr}(0,\ \wedge)\ l\ r \Rightarrow \mathrm{split} \{ p, q \}.\ }\\
-
-\inferrule[Left]
-  { \Gamma \vdash H \Rightarrow p }
-  { \Gamma \vdash \mathrm{Constr}(0,\ \vee)\ H \Rightarrow \mathrm{left}.\ p }
-
-\inferrule[Right]
-  { \Gamma \vdash H \Rightarrow p }
-  { \Gamma \vdash \mathrm{Constr}(1,\ \vee)\ H \Rightarrow \mathrm{right}.\ p }
-
-\inferrule[Rewrite]
-  { \Gamma \vdash H_1 : x = y \\ \Gamma \vdash H_2 \Rightarrow p }
-  { \Gamma \vdash \mathrm{Elim}(H_1,\ P) \{ x,\ H_2,\ y \} \Rightarrow \mathrm{symmetry}.\ \mathrm{rewrite}\ P\ H_1.\ p }\\
-
-\inferrule[Induction]
-  { \Gamma \vdash \vec{f} \Rightarrow \vec{p} }
-  { \Gamma \vdash \mathrm{Elim}(t,\ P)\ \vec{f} \Rightarrow \mathrm{induction}\ P\ t\ \vec{p} }
-
-\inferrule[Apply]
-  { \Gamma \vdash t \Rightarrow p }
-  { \Gamma \vdash f t \Rightarrow \mathrm{apply}\ f.\ p }
-
-\inferrule[Base]
-  { \\ }
-  { \Gamma \vdash t \Rightarrow \mathrm{apply}\ t }
-\end{mathpar}
-\vspace{-0.4cm}
-\caption{Qtac decompiler semantics.}
-\label{fig:someantics}
-\end{figure*}
-
-\textbf{Transform} produces a proof term,
-while the proof engineer typically writes and maintains proof scripts made up of tactics.
-\toolnamec improves usability thanks to the realization that, since Coq's proof term language Gallina is very structured,
-it is possible to decompile these Gallina terms to suggested Ltac proof scripts for the proof engineer 
+\textbf{Transform} produces a \kl{proof term},
+while the proof engineer typically writes and maintains \kl{proof scripts} made up of \kl{tactics}.
+\toolnamec improves usability thanks to the realization that, since Coq's proof term language \kl{Gallina} is very structured,
+it is possible to decompile these Gallina terms to suggested \kl{Ltac} proof scripts for the proof engineer 
 to maintain.
 
 %\footnote{I advised \kl{RanDair} on this project. RanDair implemented the decompiler.
@@ -304,6 +244,65 @@ Unlike in Ltac, \lstinline{induction} and \lstinline{rewrite} take a motive expl
 and \lstinline{apply} creates a new subgoal for each function argument.
 %The implementation reasons about Ltac and so does not make these assumptions.
 
+
+\begin{figure*}
+\small
+\begin{grammar}
+<v> $\in$ Vars, <t> $\in$ CIC$_{\omega}$
+
+<p> ::= intro <v> \\ | rewrite <t> <t> \\  |  symmetry \\  |  apply <t> \\  |  induction <t> <t> \{ <p>, \ldots, <p> \} \\  |  split \{ <p>, <p> \} \\ |  left \\  |  right \\  |  <p> . <p>
+\end{grammar}
+\vspace{-0.5cm}
+\caption{Qtac syntax.}
+\label{fig:ltacsyntax1}
+\end{figure*}
+
+\begin{figure*}
+\begin{mathpar}
+\mprset{flushleft}
+\small
+\hfill\fbox{$\Gamma$ $\vdash$ $t$ $\Rightarrow$ $p$}\vspace{-0.5cm}\\
+
+\inferrule[Intro]
+  { \Gamma,\ n : T \vdash b \Rightarrow p }
+  { \Gamma \vdash \lambda (n : T) . b \Rightarrow \mathrm{intro}\ n.\ p }
+
+\inferrule[Symmetry]
+  { \Gamma \vdash H \Rightarrow p }
+  { \Gamma \vdash \mathtt{eq\_sym}\ H \Rightarrow \mathrm{symmetry}.\ p }
+
+\inferrule[Split]
+  { \Gamma \vdash l \Rightarrow p \\ \Gamma \vdash r \Rightarrow q }
+  { \Gamma \vdash \mathrm{Constr}(0,\ \wedge)\ l\ r \Rightarrow \mathrm{split} \{ p, q \}.\ }\\
+
+\inferrule[Left]
+  { \Gamma \vdash H \Rightarrow p }
+  { \Gamma \vdash \mathrm{Constr}(0,\ \vee)\ H \Rightarrow \mathrm{left}.\ p }
+
+\inferrule[Right]
+  { \Gamma \vdash H \Rightarrow p }
+  { \Gamma \vdash \mathrm{Constr}(1,\ \vee)\ H \Rightarrow \mathrm{right}.\ p }
+
+\inferrule[Rewrite]
+  { \Gamma \vdash H_1 : x = y \\ \Gamma \vdash H_2 \Rightarrow p }
+  { \Gamma \vdash \mathrm{Elim}(H_1,\ P) \{ x,\ H_2,\ y \} \Rightarrow \mathrm{symmetry}.\ \mathrm{rewrite}\ P\ H_1.\ p }\\
+
+\inferrule[Induction]
+  { \Gamma \vdash \vec{f} \Rightarrow \vec{p} }
+  { \Gamma \vdash \mathrm{Elim}(t,\ P)\ \vec{f} \Rightarrow \mathrm{induction}\ P\ t\ \vec{p} }
+
+\inferrule[Apply]
+  { \Gamma \vdash t \Rightarrow p }
+  { \Gamma \vdash f t \Rightarrow \mathrm{apply}\ f.\ p }
+
+\inferrule[Base]
+  { \\ }
+  { \Gamma \vdash t \Rightarrow \mathrm{apply}\ t }
+\end{mathpar}
+\caption{Qtac decompiler semantics.}
+\label{fig:someantics}
+\end{figure*}
+
 The semantics for the mini decompiler $\Gamma \vdash t \Rightarrow p$ are in Figure~\ref{fig:someantics} (assuming $=$, \lstinline{eq_sym}, $\wedge$, and $\vee$ are defined as in Coq).
 As with the real decompiler, the mini decompiler defaults to the proof script
 that applies the entire proof term with \lstinline{apply} (\textsc{Base}).
@@ -346,7 +345,7 @@ The remaining applications become apply tactics (\textsc{Apply}).
 In all cases, the decompiler recurses, breaking into cases, until only the \textsc{Base}
 case holds. % at which point we are done.
 
-While the mini decompiler is very simple, only a few small changes are needed for \kl{RanDair}
+While the mini decompiler is very simple, only a few small changes were needed for \kl{RanDair}
 to move this to Coq.
 %The result can already handle some of the example proofs \toolnamec has produced.
 The generated proof term of \lstinline{rev_app_distr} from Section~\ref{sec:overview},
@@ -409,8 +408,8 @@ to unrepresented assumptions.
 Long term, using another tactic like \lstinline{change} or \lstinline{refine} before applying these tactics
 may help with cases for which Coq cannot infer the correct motive.
 
-\paragraph{From CIC$_{\omega}$ to Coq}
-Scaling the decompiler to Coq introduces let bindings, which are generated by 
+\paragraph{From CIC$_{\omega}$ to Gallina}
+Scaling the decompiler to Gallina introduces let bindings, which are generated by 
 tactics like \lstinline{rewrite in}, \lstinline{apply in}, and \lstinline{pose}.
 \textbf{Decompile} implements~\href{https://github.com/uwplse/coq-plugin-lib/blob/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}} % decompiler.ml
 support for \lstinline{rewrite in} and \lstinline{apply in} similarly to how it supports

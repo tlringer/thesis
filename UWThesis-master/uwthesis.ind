@@ -8,9 +8,11 @@
 		\hyperpage{112}, \hyperpage{121}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiii}, 
 		\hyperpage{9, 10}, \hyperpage{20}, \hyperpage{68}, 
-		\hyperpage{102}, \hyperpage{106, 107}
+		\hyperpage{94}, \hyperpage{96}, \hyperpage{102}, 
+		\hyperpage{106, 107}
       \subsubitem RanDair Porter, \hyperpage{xiii}, \hyperpage{10}, 
-		\hyperpage{21}, \hyperpage{99--101}, \hyperpage{126}
+		\hyperpage{21}, \hyperpage{98}, \hyperpage{100, 101}, 
+		\hyperpage{126}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xi}
       \subsubitem Carr Astronautics, \hyperpage{xi}
@@ -103,7 +105,7 @@
       \subsubitem Jasper Hugunin, \hyperpage{xiii}, \hyperpage{68}
       \subsubitem Taylor Blau, \hyperpage{xiii}
     \subitem Type Theorists
-      \subsubitem Anders M\"ortberg, \hyperpage{79}
+      \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{102}
       \subsubitem Carlo Angiuli, \hyperpage{1}, \hyperpage{79}
       \subsubitem Michael Shulman, \hyperpage{1}, \hyperpage{79}
 
@@ -114,13 +116,13 @@
       \subsubitem Initial Algebra, \hyperpage{78, 79}
     \subitem Type Theory
       \subsubitem Algebraic Ornaments, \hyperpage{83, 84}, 
-		\hyperpage{103}
+		\hyperpage{88}, \hyperpage{103}
       \subsubitem Externalization, \hyperpage{73}
       \subsubitem Inductive Types, \hyperpage{18}, \hyperpage{75}, 
 		\hyperpage{83}
       \subsubitem Internal, \hyperpage{73}
     \subitem Verification, \hyperpage{3, 4}, \hyperpage{11}, 
-		\hyperpage{23}, \hyperpage{110, 111}
+		\hyperpage{23}, \hyperpage{109}, \hyperpage{111}
       \subsubitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{18}
       \subsubitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
@@ -131,14 +133,14 @@
   \item Conventions
     \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
 		\hyperpage{32}, \hyperpage{42}, \hyperpage{58}, 
-		\hyperpage{75}, \hyperpage{94}, \hyperpage{96}
+		\hyperpage{75}, \hyperpage{94, 95}
 
   \indexspace
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}, 
-		\hyperpage{65}
+		\hyperpage{65}, \hyperpage{102}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
@@ -151,7 +153,7 @@
     \subitem Approach
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}, 
-		\hyperpage{74}
+		\hyperpage{74}, \hyperpage{89}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
 		\hyperpage{49}, \hyperpage{74}

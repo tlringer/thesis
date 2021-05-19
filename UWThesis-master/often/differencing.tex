@@ -730,24 +730,26 @@ For example, earlier, letting \Aa be lists, \AI be vectors, and \B be vectors of
 I noted that the empty constructor of \B packs the constructor of \AI into an existential:
 
 \begin{lstlisting}
-  DepConstr(0, $\Sigma$(n : nat).vector T n) : $\Sigma$(n : nat).vector T n :=
-    $\exists$ (Constr(0, nat)) (Constr(0, vector T)).(@\vspace{-0.05cm}@)
+  DepConstr(0, B) : B :=
+    $\exists$ (Constr(0, nat)) (Constr(0, vector T)).
 \end{lstlisting}
 This is the same as applying the function \lstinline{f} that \toolnamec derives to the empty list constructor 
-\lstinline{Constr(0, list T)}, and then normalizing the result.
+\lstinline{Constr(0, A)}, and then normalizing the result.
 On the other hand, the \lstinline{cons} constructor over \B not just packs the result into an existential,
 but also takes \B itself as an argument rather than \Aa:
 
 \begin{lstlisting}
-  DepConstr(1, $\Sigma$(n : nat).vector T n) : T $\rightarrow$ $\Sigma$(n : nat).vector T n $\rightarrow$ $\Sigma$(n : nat).vector T n :=
-    $\lambda$ (t : T) . $\lambda$ (l : $\Sigma$(n : nat).vector T n) .
-      $\exists$ ((Constr (1, nat)) ($\pi_l$ l)) ((Constr (1, vector T)) t ($\pi_l$ l) ($\pi_r$ l))).(@\vspace{-0.05cm}@)
+  DepConstr(1, B) : T $\rightarrow$ B $\rightarrow$ B :=
+    $\lambda$ (t : T) (l : B) .
+      $\exists$ ((Constr (1, nat)) ($\pi_l$ l))
+        ((Constr (1, vector T)) t ($\pi_l$ l) ($\pi_r$ l))).
 \end{lstlisting}
 To derive this, differencing applies \lstinline{f} to the conclusion of the constructor of \Aa and normalizes the result:
 
 \begin{lstlisting}
-  $\lambda$ (t : T) . $\lambda$ (l : list T) .
-    $\exists$ ((Constr (1, nat)) ($\pi$ l)) ((Constr (1, vector T)) t ($\pi$ l) (f l))).(@\vspace{-0.05cm}@)
+  $\lambda$ (t : T) (l : A) .
+    $\exists$ ((Constr (1, nat)) ($\pi$ l))
+      ((Constr (1, vector T)) t ($\pi$ l) (f l))).
 \end{lstlisting}
 It then lifts the hypothesis of type \lstinline{list T}, and removes remaining references to the indexer $\pi$ and to \lstinline{f},
 replacing then instead with the projections $\pi_l$ and $\pi_r$.
@@ -758,10 +760,10 @@ This produces the dependent eliminator I presented earlier:
 
 \begin{lstlisting}
   DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=
-    Elim($\pi_r$ s, $\lambda$(n : nat)(v : vector T n).P ($\exists$ n v)) {
+    Elim($\pi_r$ s, $\lambda$(n : nat)(v : vector T n) . P ($\exists$ n v)) {
       f$_0$,
-      ($\lambda$(t : T)(n : nat)(v : vector T n).f$_1$ t ($\exists$ n v))
-    }.(@\vspace{-0.05cm}@) 
+      ($\lambda$ (t : T) (n : nat) (v : vector T n) . f$_1$ t ($\exists$ n v))
+    }.
 \end{lstlisting}
 
 Differencing discovers \lstinline{Eta} and \lstinline{Iota} directly.
@@ -775,11 +777,11 @@ Each \lstinline{Iota} follows by rewriting by reflexivity, since \Aa and \AI hav
 
 \paragraph{Proving Correctness}
 In the end, \toolnamec generates proofs of \lstinline{section} and \lstinline{retraction},
-as well as the coherence theorem \lstinline{coherence} for algebraic ornaments.
+as well as the \kl{coherence} theorem \lstinline{coherence} for \kl{algebraic ornaments}.
 This proves the correctness property that the configuration induces an equivalence, thereby
 increasing confidence in the output of the search procedure.
 The proof of coherence follows by reflexivity, thanks to the construction of \lstinline{f} 
-applying the indexer as the left projection.
+applying the \kl{indexer} as the left projection.
 The proofs of \lstinline{section} and \lstinline{retraction} follow from the algorithm presented earlier.
 
 \iffalse
@@ -911,29 +913,25 @@ This consists of four judgments: one for each configuration part \lstinline{DepC
 
 Differencing in \sysname had a two fundamental limitations: its heuristic-based nature
 and the difficulty of isolating changes.
-With \toolnamec in the \sysnamelong repair suite, these limitations are partially addressed,
-but remain as challenges.
+With \toolnamec in the \sysnamelong repair suite, these limitations are substantially addressed.
 As in the previous chapter, limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pi-details-diff}.
 
 \paragraph{Heuristics}
-The \sysname differencing algorithms were heuristic-based.
-The differencing algorithms here are still heuristic-based, as is fundamental.
-But some progress has been made, as the domain of each search procedure is defined as a large class of type equivalences,
-drawing on inspiration from type theory and from the needs of real proof engineers.
-For example, algebraic ornaments are a flexible class of changes drawing on about a decade of type theory literature. % TODO cite and forward ref to results
+The \toolnamec differencing algorithms---like the \sysname differencing algorithms---are still heuristics, as is fundamental.
+For \toolnamec, these heuristics are much more carefully chosen: the domain of each search procedure for \kl{automatic configuration} is defined as a large class of type equivalences,
+drawing on inspiration from type theory and from the needs of proof engineers.
 In addition, a number of the algorithms presented in this section, like the algorithm the prove an equivalence from a configuration,
 are generic over any possible type equivalence.
-Most notably, that the configuration can describe any possible type equivalence
-means that the heuristics in \toolnamec are now abstracted away from the transformation,
-whereas for \sysname the heuristics leaked into the transformations as well.
+Most notably, the heuristics in \toolnamec---unlike those in \sysname---are abstracted away from the transformation entirely,
+since the transformation is fully general over any configuration.
 
 \paragraph{Isolating Changes}
 While \toolnamec adds support for a large class of changes,
 the challenge of isolating changes from \sysname's differencing algorithms remain.
 Most search procedures allow for only a single change at once,
 and further impose some syntactic restrictions on input types and how they change.
-However, the presence of manual configuration in \toolnamec now makes it possible for proof engineers to describe
-the changes themselves, circumventing this difficulty.
+However, \kl{manual configuration} in \toolnamec now makes it possible for proof engineers to describe
+changes themselves, circumventing this difficulty.
 Some search procedures for automatic configuration, like the one for swapping constructors,
 further prompt the human for input to choose among multiple choices and resolve ambiguities.
 This fits with the typical interactive workflows of proof engineers,

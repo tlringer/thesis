@@ -64,7 +64,6 @@
 %  { \\ }
 %  {\Gamma \vdash s \Uparrow s}
 \end{mathpar}
-\vspace{-0.3cm}
 \caption{Transformation for transporting terms across $A \simeq B$ with configuration \lstinline{((DepConstr, DepElim), (Eta, Iota))}.}
 \label{fig:final}
 \end{figure*}
@@ -72,46 +71,45 @@
 \begin{figure*}
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
-(* 1: original term *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : Old.list T) .(@\vspace{-0.04cm}@)
- Elim(l, $\lambda$(l: Old.list T).Old.list T $\rightarrow$ Old.list T)) {(@\vspace{-0.04cm}@)
-   ($\lambda$ m . m),(@\vspace{-0.04cm}@)
-   ($\lambda$ t _ IHl m . Constr(1, Old.list T) t (IHl m))(@\vspace{-0.04cm}@)
- } m.(@\vspace{-0.04cm}@)
-(@\vspace{-0.10cm}@)
-(* 2: after unifying (@\texttt{with}@) configuration *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : (@\codediff{A}@)) .(@\vspace{-0.04cm}@)
- (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {(@\vspace{-0.04cm}@)
-   ($\lambda$ m . m)(@\vspace{-0.04cm}@)
-   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))(@\vspace{-0.04cm}@)
- } m.(@\vspace{-0.04cm}@)
+(* 1: original *)
+$\lambda$ (T : Type) (l m : Old.list T) .
+ Elim(l, $\lambda$(l: Old.list T).Old.list T $\rightarrow$ Old.list T)) {
+   ($\lambda$ m . m),
+   ($\lambda$ t _ IHl m . Constr(1, Old.list T) t (IHl m))
+ } m.
+
+(* 2: unified*)
+$\lambda$ (T : Type) (l m : (@\codediff{A}@)) .
+ (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {
+   ($\lambda$ m . m)
+   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))
+ } m.
 \end{lstlisting}
 \end{minipage}
 \hfill
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
-(* 4: reduced to final term *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : New.list T) .(@\vspace{-0.04cm}@)
- Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {(@\vspace{-0.04cm}@)
-   ($\lambda$ t _ IHl m . Constr(0, New.list T) t (IHl m)),(@\vspace{-0.04cm}@)
-   ($\lambda$ m . m)(@\vspace{-0.04cm}@)
- } m.(@\vspace{-0.04cm}@)
-(@\vspace{-0.10cm}@)
-(* 3: after transforming *)(@\vspace{-0.04cm}@)
-$\lambda$ (T : Type) (l m : (@\codediff{B}@)) .(@\vspace{-0.04cm}@)
- (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {(@\vspace{-0.04cm}@)
-   ($\lambda$ m . m)(@\vspace{-0.04cm}@)
-   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))(@\vspace{-0.04cm}@)
- } m.(@\vspace{-0.04cm}@)
+(* 4: reduced *)
+$\lambda$ (T : Type) (l m : New.list T) .
+ Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {
+   ($\lambda$ t _ IHl m . Constr(0, New.list T) t (IHl m)),
+   ($\lambda$ m . m)
+ } m.
+
+(* 3: transformed *)
+$\lambda$ (T : Type) (l m : (@\codediff{B}@)) .
+ (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {
+   ($\lambda$ m . m)
+   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))
+ } m.
 \end{lstlisting}
 \end{minipage}
-\vspace{-0.3cm}
 \caption{Swapping cases of the append function, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the updated type, and 4) reduced to the output.}
 \label{fig:appswap1}
 \end{figure*}
 
-At the heart of \toolnamec is a configurable proof term transformation for transporting
-proofs across equivalences~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
+At the heart of \toolnamec is a configurable \kl{proof term transformation} that automatically \kl{transports}
+proofs across \kl{equivalences}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}.
 Figure~\ref{fig:final} shows this proof term transformation.
 The transformation $\Gamma \vdash t \Uparrow t'$ takes some term $t$ defined over the old version of a type
 to a new term $t'$ defined over the new version of the type.
@@ -127,7 +125,7 @@ This configuration either comes from automatic configuration (like the search pr
 or directly from the proof engineer.
 Of course, in both of these cases, typical proof terms in Coq do not apply these configuration
 terms explicitly.
-\toolnamec does some additional work using \textit{unification heuristics} to get real proof terms into this format before 
+\toolnamec does some additional work using \intro{unification heuristics} to get real proof terms into this format before 
 running the transformation (Section~\ref{sec:trans-unification}).
 It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration,
 replacing \Aa with \B (Section~\ref{sec:trans-correctness}).
@@ -155,7 +153,7 @@ In this case, unification is straightforward.
 This can be more challenging when configuration terms are dependent.
 This is especially pronounced with definitional \lstinline{Eta} and \lstinline{Iota},
 which typically are implicit (reduced) in real code.
-To handle this, \toolnamec implements custom \textit{unification heuristics} for each search procedure
+To handle this, \toolnamec implements custom \kl{unification heuristics} for each search procedure
 that unify subterms with applications of configuration terms, and that instantiate parameters and dependent indices in those subterms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}. % liftconfig.ml
 The transformation in turn assumes that all existing parameters and indices are determined and instantiated
 by the time it runs.
@@ -168,7 +166,7 @@ in the form of annotations~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.
 \begin{figure}
 \begin{lstlisting}
 (@\vspace{-0.4cm}@)
-$\uparrow$$\phantom{_{I_{B}}}$(@\hspace{0.06cm}@) {$\vec{i_a}$ : $\vec{\mathrm{X}_A}$} := promote $\vec{i_a}$. $\phantom{separations}$ $\downarrow$$\phantom{_{I_{B}}}$(@\hspace{0.01cm}@) {$\vec{i_b}$ : $\vec{\mathrm{X}_B}$} := forget $\vec{i_b}$.(@\vspace{-0.04cm}@)
+$\uparrow$$\phantom{_{I_{B}}}$(@\hspace{0.06cm}@) {$\vec{i_a}$ : $\vec{\mathrm{X}_A}$} := promote $\vec{i_a}$. $\phantom{separations}$ $\downarrow$$\phantom{_{I_{B}}}$(@\hspace{0.01cm}@) {$\vec{i_b}$ : $\vec{\mathrm{X}_B}$} := forget $\vec{i_b}$.
 $\pi_{I_B}$ {$\vec{i_a}$ : $\vec{\mathrm{X}_A}$} := indexer $\vec{i_a}$. $\phantom{separations}$ $\exists_{I_B}$ {$\vec{i_b}$ : $\vec{\mathrm{X}_B}$} ($b$ : $B$ $\vec{i_b}$) := $\exists$ $\vec{i_b}$[off] b.(@\vspace{-0.02cm}@)
 $\uparrow_{B}$(@\hspace{0.11cm}@) := $\pi_{r}$ $\circ$ $\uparrow$. $\phantom{separationseparationsepara}$(@\hspace{0.02cm}@) $\downarrow_{A}$(@\hspace{0.11cm}@) := $\downarrow$(@\hspace{0.37cm}@) $\circ$ $\exists_{I_B}$.(@\vspace{-0.02cm}@)
 $\uparrow_{I_B}$ := $\pi_{l}$(@\hspace{0.04cm}@)  $\circ$ $\uparrow$. $\phantom{separationseparationsepar}$(@\hspace{0.18cm}@) $\downarrow_{I_B}$ := $\pi_{I_B}$ $\circ$ $\downarrow_{A}$.(@\vspace{-0.02cm}@)
@@ -395,7 +393,7 @@ The remaining derivations recurse predictably.
 \label{sec:trans-correctness}
 
 The implementation of this transformation in \toolnamec produces a term that Coq type checks, and so does not
-add to the TCB.
+add to the \kl{TCB}.
 As \toolnamec is an engineering tool, there is no need to formally prove the transformation correct, though doing so would be satisfying.
 The goal of such a proof would be to show that % the transformation preserves equality up to transport along the equivalence $A \simeq B$,
 %while no longer referring to the old specification.
@@ -421,7 +419,7 @@ As in the previous chapter, limitations that are due to the choice of implementa
 \paragraph{Undecidability}
 \toolnamec cannot totally get rid of undecidability, but what it can do is move
 the burden of undecidability outside of the details of the algorithm.
-This is what the unification heuristics accomplish.
+This is what the \kl{unification heuristics} accomplish.
 Most notably, since unification heuristics are abstracted from the transformation itself,
 this makes it relatively simple to hook in a human-assisted workflow using annotations.
 \toolnamec implements this.
@@ -431,7 +429,7 @@ I decribe this more in Section~\ref{sec:pi-implementation}.
 \paragraph{Modeling Diverse Proof Styles}
 Unlike the procedures from \sysname, the \toolnamec transformation is generic over the proof term structure.
 This benefit again comes from decoupling unification from the transformation,
-and from the fact that the transformation is defined over any possible Gallina term.
+and from the fact that a single transformation is defined over any possible CIC$_{\omega}$ term.
 The only difficulties show up at the level of implementation details,
 which I will describe in Section~\ref{sec:pi-implementation}.
 

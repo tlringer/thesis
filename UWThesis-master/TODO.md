@@ -9,19 +9,17 @@
   + defs
   + be consistent about kl use (when it's significant or confusing---make sure you kl differencing & transformations too)
   + knowledge package color change to make reasonable
-- finish acknowledgments (credit Zach for Coq background and part of initial idea, too)
+  + check the index, make sure everything renders
+- finish acknowledgments
+  + credit Zach for Coq background and part of initial idea, too
+  + emails
 - clean citations
-- thesis refinement or clarification (move the "in practical use cases" into first sentence), globally
 - pronoun check
 - space hack removal
 - note about name of DEVOID somewhere
 - paragraph style: add periods?
-- plugin infrastructure somewhere (chapter 1? 2? 3? ahhh)
 - code links: consistency and so on
 - color of Proof keyword and other stylistic things
-- finish acks
-- author-year?
-- Coq version
 - url style
 - TODOs in source
 - user -> proof engineer in diagrams (nice to have)

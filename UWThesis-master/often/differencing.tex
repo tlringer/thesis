@@ -394,9 +394,9 @@ Both of these are what we would expect from Lambek's theorem, which states that 
 The algorithm to prove \lstinline{section} is as follows (\lstinline{retraction} is similar):
 replace \lstinline{a} with \lstinline{Eta(A) a} by \lstinline{eta_ok(A)}.
 Then, induct using \lstinline{DepElim} over \Aa.
-For each case $i$, the proof obligation is to show that \lstinline{g (f a)} is equal to \lstinline{a},
-where \lstinline{a} is \lstinline{DepConstr(A, i)} applied to the non-inductive arguments (by \lstinline{elim_eta(A)}).
-Expand the right-hand side using \lstinline{Iota(A, i)}, then expand it again using \lstinline{Iota(B, i)}
+For each case $j$, the proof obligation is to show that \lstinline{g (f a)} is equal to \lstinline{a},
+where \lstinline{a} is \lstinline{DepConstr(A, j)} applied to the non-inductive arguments (by \lstinline{elim_eta(A)}).
+Expand the right-hand side using \lstinline{Iota(A, j)}, then expand it again using \lstinline{Iota(B, j)}
 (destructing over each \lstinline{eta_ok} to apply the corresponding \lstinline{Iota}).
 The result follows by definition of \lstinline{g} and \lstinline{f}, and by reflexivity.
 
@@ -413,7 +413,7 @@ but this is not necessary in order to use \toolnamec. %---they simply need to ho
 \subsection{Search Procedures}
 \label{sec:proc}
 
-\toolnamec implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}:
+\toolnamec implements four search procedures for \kl{automatic configuration}~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}:
 
 \begin{enumerate}
 \item algebraic ornaments,
@@ -429,19 +429,19 @@ I will also explain how the search procedures are implemented.
 % DEVOID 3.1 adjusted
 
 The first search procedure discovers equivalences that correspond to \intro{algebraic ornaments}.
-An algebraic ornament relates an inductive type to an indexed version of that type,
-where the new index is fully determined by a unique fold over \Aa. 
+An algebraic ornament relates an \kl{inductive type} to an indexed version of that type,
+where the new index is fully determined by a unique fold over \Aa (I call this fold the \intro{indexer}). 
 For example, \lstinline{vector} is exactly \lstinline{list} with a new index of type \lstinline{nat},
 where the new index is fully determined by the \lstinline{length} function (recall Figure~\ref{fig:listtovect} on page~\pageref{fig:listtovect}).
 The equivalence that we already saw in Section~\ref{sec:pi-scope} follows from this:
 
 \begin{lstlisting}
-  $\Sigma$(l : list T).length l = n $\equiv$ vector T n
+  $\Sigma$(l : list T).length l = n $\simeq$ vector T n
 \end{lstlisting}
 Alternatively, we can say that a list is equivalent to a vector of \textit{some} length:
 
 \begin{lstlisting}
-  list T $\equiv$ $\Sigma$(n : nat).vector T n
+  list T $\simeq$ $\Sigma$(n : nat).vector T n
 \end{lstlisting}
 As usual, this equivalence is made up of two functions \lstinline{f} and \lstinline{g}, along with proofs \lstinline{section} and \lstinline{retraction}.
 In addition, for algebraic ornaments, there is a proof of this theorem:
@@ -449,7 +449,7 @@ In addition, for algebraic ornaments, there is a proof of this theorem:
 \begin{lstlisting}
   $\forall$ (l : list T), length l = $\pi_{l}$ (f l)
 \end{lstlisting}
-which states that the \lstinline{length} function is coherent with this equivalence.
+which states that the \lstinline{length} function is \intro{coherent} with this equivalence.
 
 In Section~\ref{sec:pi-results}, I will show you a case study of porting functions and proofs from lists to length-indexed vectors.
 Nominally this works by porting the functions and proofs along the equivalence from Section~\ref{sec:pi-scope},
@@ -474,17 +474,18 @@ Then there is a type equivalence:
 \begin{lstlisting}
   $A\ \simeq\ \Sigma (i : I).A_I\ i$
 \end{lstlisting}
-In addition, there is an indexer, which is a unique fold:
+In addition, there is an \kl{indexer}, which is a unique fold:
 
 \begin{lstlisting}
   indexer : $A\ \rightarrow\ I$.
 \end{lstlisting}
-which projects the promoted index:
+that projects the lifted index:
+
 \begin{lstlisting}
   coherence : $\forall (a : A),\ $indexer$\ a = \pi_{l}\ ($f$\ a)$.
 \end{lstlisting}
-Following existing work, I call this equivalence the \textit{ornamental promotion isomorphism}~\cite{ko2016programming}; 
-when it holds and the indexer exists, I say that \AI is an algebraic ornament of \Aa.
+Following existing work, I call this equivalence the \intro{ornamental promotion isomorphism}~\cite{ko2016programming}; 
+when it holds and a \kl{coherent} indexer exists, I say that \AI is an \kl{algebraic ornament} of \Aa.
 
 In their original form, ornaments are a programming mechanism: given a type \Aa, an ornament determines
 some new type \AI. Differencing inverts this process for algebraic ornaments: given types \Aa\ and \AI, 
@@ -536,7 +537,7 @@ the derivations for generating \lstinline{g} are omitted.
 \subsubsection{Differencing for the Indexer}
 
 Then differencing algorithm generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
-which consists of three judgments: one to generate the motive, one to generate each case,
+which consists of three judgments: one to generate the \kl{motive}, one to generate each case,
 and one to compose the motive and cases.
 
 \begin{figure}
@@ -575,8 +576,7 @@ and one to compose the motive and cases.
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i_{m}} p \\
     \Gamma,\ p_A : \mathrm{P}_A,\ p_{A_I} : \mathrm{P}_{A_I} \vdash \{ (\mathrm{E}_{A_1}\ p_A,\ \mathrm{E}_{A_{I_1}}\ p_{A_I}),\ldots,(\mathrm{E}_{A_n}\ p_A,\ \mathrm{E}_{A_{I_n}}\ p_{A_I}) \} \Downarrow_{i_{c}} \vec{f} } 
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \lambda (a : A) . \mathrm{Elim}(a, p) \vec{f}}
-\end{mathpar}	
-\vspace{-0.5cm}
+\end{mathpar}
 \caption{Differencing for the indexer function.}
 \label{fig:searchindexer}
 \end{figure}
@@ -586,13 +586,17 @@ The \smallmath{$(T_A,\ T_{A_I}) \Downarrow_{i_{m}} t$} judgment consists of only
 which computes the indexer motive from the types \Aa\ and \AI\ (expanded in Figure~\ref{fig:common}).
 It does this by constructing a function from \Aa to \I.
 Consider \lstinline{list} and \lstinline{vector}:
+
 \begin{lstlisting}
-  list T := Ind (Ty$_A$ : Type) {$\ldots$} $\phantom{sep}$ vector T := Ind (Ty$_B$ : $\Pi$(@\codediff{(n : nat)}@).Type) {$\ldots$}
+  list T := Ind (Ty$_A$ : $s$) {$\ldots$}
+  vector T := Ind (Ty$_B$ : $\Pi$(@\codediff{(n : nat)}@).$s$) {$\ldots$}
 \end{lstlisting}
 For these types, \textsc{Index-Motive} computes the motive:
+
 \begin{lstlisting}
-  (@\codeauto{$\lambda$ (l : list T) . nat}@)
-\end{lstlisting} 
+  $\Gamma$ $\vdash$ (list T, vector T) $\Downarrow_{i_{m}}$ $\lambda$ (l : list T) . nat
+\end{lstlisting}
+which is the motive for the length function.
 
 \paragraph{Generating Each Case}
 The \smallmath{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i_{c}} t$} judgment generates each case of the indexer
@@ -602,59 +606,73 @@ It consists of four derivations:
 while \textsc{Index-Hypothesis}, \textsc{Index-IH}, and \textsc{Index-Prod} recurse into
 products.
 
-\textsc{Index-Hypothesis} handles each new hypothesis that corresponds to a new index in an inductive hypothesis
+\textsc{Index-Hypothesis} handles each new hypothesis that corresponds to a new index in an \kl{inductive hypothesis}
 of an inductive case of the eliminator type for \AI. It adds the new index to the environment, then recurses into the body of only the
-type for which the index already exists. For example, in the inductive case of \lstinline{list} and \lstinline{vector},
+type for which the index already exists. For example, in the inductive case of \lstinline{list} and \lstinline{vector}:
 \lstinline{new} determines that \lstinline{n} is the new hypothesis.
 \textsc{Index-Hypothesis} then recurses into the body of only the \lstinline{vector} case:
+
 \begin{lstlisting}
-  $\Pi$ (t$_l$:T) (l : list T) (IH$_l$ : p$_A$ l), $\ldots$ $\phantom{sep}$ $\Pi$ (t$_v$ : T) (v : vector T n) (IH$_v$ : p$_{A_I}$ (@\codediff{n}@) v), $\ldots$
+  $\Pi$ (l : list T) (IH$_l$ : p$_A$ l), p$_A$ (cons t$_l$ l)
+  $\Pi$ (v : vector T n) (IH$_v$ : p$_{A_I}$ (@\codediff{n}@) v), p$_{A_I}$ (@\codediff{(S n)}@) (cons (@\codediff{n}@) t$_l$ l)
 \end{lstlisting}
 \textsc{Index-Prod} is next. It recurses into product types when the hypothesis is neither a new index nor an inductive hypothesis. Here, it runs twice, recursing into the body and substituting names %appropriately
 until it hits the inductive hypothesis for both types:
+
 \begin{lstlisting}
-  $\Pi$ (IH$_l$ : p$_A$ l), p$_A$ (cons t$_l$ l) $\phantom{separation}$ $\Pi$ (IH$_v$ : p$_{A_I}$ (@\codediff{n}@) l),  p$_{A_I}$ (@\codediff{(S n)}@) (consV (@\codediff{n}@) t$_l$ l)
+  $\Pi$ (IH$_l$ : p$_A$ l), p$_A$ (cons t$_l$ l)
+  $\Pi$ (IH$_v$ : p$_{A_I}$ (@\codediff{n}@) l), p$_{A_I}$ (@\codediff{(S n)}@) (cons (@\codediff{n}@) t$_l$ l)
 \end{lstlisting}
 \textsc{Index-IH} then takes over. It substitutes the new motive in the inductive hypothesis, then recurses into both bodies, 
 substituting the new inductive hypothesis for the index in the eliminator type for \AI.
 Here, it substitutes the new motive
 for \smallmath{$\mathrm{p}_A$} in the type of \lstinline{IH$_l$}, extends the environment with \lstinline{IH$_l$}, then 
 substitutes \lstinline{IH$_l$} for \lstinline{n}, so that it recurses on these types:
+
 \begin{lstlisting}
-  p$_A$ (cons t$_l$ l) $\phantom{separationseparationsepara}$ p$_{A_I}$ (@\codediff{(S IH$_l$)}@) (consV (@\codediff{IH$_l$}@) t$_l$ l)
+  p$_A$ (cons t$_l$ l)
+  p$_{A_I}$ (@\codediff{(S IH$_l$)}@) (cons (@\codediff{IH$_l$}@) t$_l$ l)
 \end{lstlisting}
 Finally, \textsc{Index-Conclusion} computes the conclusion by taking the new index of the application of the motive \smallmath{$p_{A_I}$},
 here \lstinline{S IH$_l$}.
-In total, this produces a function 
-that computes the length of \lstinline{cons t l}:
+In total, this produces a function:
+
 \begin{lstlisting}
-  (@\codeauto{$\lambda$ (t$_l$ : T) (l : list T) (IH$_l$ : ($\lambda$ (l : list T) . nat) l) . S IH$_l$}@)
+  $\Gamma$ $\vdash$ ($\Pi$$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ (IH$_l$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ p$_A$$\hspace{-0.08cm}$ l),$\hspace{-0.08cm}$ p$_A$$\hspace{-0.08cm}$ (cons$\hspace{-0.08cm}$ t$_l$$\hspace{-0.08cm}$ l),$\hspace{-0.08cm}$
+        $\Pi$$\hspace{-0.08cm}$ (v$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ vector$\hspace{-0.08cm}$ T$\hspace{-0.08cm}$ n)$\hspace{-0.08cm}$ (IH$_v$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ p$_{A_I}$$\hspace{-0.08cm}$ n$\hspace{-0.08cm}$ v),$\hspace{-0.08cm}$ p$_{A_I}$$\hspace{-0.08cm}$ (S$\hspace{-0.08cm}$ n)$\hspace{-0.08cm}$ (cons$\hspace{-0.08cm}$ n$\hspace{-0.08cm}$ t$_l$$\hspace{-0.08cm}$ l))
+    $\Downarrow_{i_{c}}$ $\lambda$$\hspace{-0.08cm}$ (t$_l$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ (IH$_l$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ ($\lambda$$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ .$\hspace{-0.08cm}$ nat)$\hspace{-0.08cm}$ l)$\hspace{-0.08cm}$ .$\hspace{-0.08cm}$ S$\hspace{-0.08cm}$ IH$_l$
 \end{lstlisting}
+that computes the length of \lstinline{cons t l}.
 
 \paragraph{Composing the Result}
 The \smallmath{$\Gamma$ $\vdash$ $(T_A,\ T_{A_I}) \Downarrow_{i} t$} judgment consists of only \textsc{Index-Ind}, which 
 identifies the motive and each case using the other two judgments, then composes the result. In the case of \lstinline{list} and \lstinline{vector},
-this produces a function that computes the length of a list:
+this produces a function:
 \begin{lstlisting}
-  (@\codeauto{$\lambda$ (l : list T).}@)(@\codeauto{Elim(l, $\lambda$ (l : list T) . nat)}@) 
-    (@\codeauto{\{0, $\lambda$ (t$_l$ : T) (l : list T) (IH$_l$ : ($\lambda$ (l : list T) . nat) l) . S IH$_l$\}}@)
+  $\Gamma$ $\vdash$ (list$\hspace{-0.08cm}$ T,$\hspace{-0.08cm}$ vector$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$
+    $\Downarrow_{i}$ $\lambda$$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T).
+         Elim(l,$\hspace{-0.08cm}$ $\lambda$$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ .$\hspace{-0.08cm}$ nat)$\hspace{-0.08cm}$ {
+           O, 
+           $\lambda$$\hspace{-0.10cm}$ (t$_l$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.08cm}$ (IH$_l$$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ ($\lambda$$\hspace{-0.10cm}$ (l$\hspace{-0.08cm}$ :$\hspace{-0.08cm}$ list$\hspace{-0.08cm}$ T)$\hspace{-0.10cm}$ .$\hspace{-0.08cm}$ nat)$\hspace{-0.08cm}$ l)$\hspace{-0.10cm}$ .$\hspace{-0.08cm}$ S$\hspace{-0.08cm}$ IH$_l$
+         }
 \end{lstlisting}
+that computes the length of a list.
 
 \subsubsection{Differencing for the Configuration}
 
 As mentioned earlier, for historical reasons, differencing in \toolnamec discovers the equivalence parts \lstinline{f} and \lstinline{g} first, then uses
-those functions to discover the configuration.
+those functions to discover the configuration, rather than the other way around.
 It also proves that these functions form an equivalence, and that the indexer is coherent with the equivalence.
 
 \paragraph{Discovering the Equivalence Parts}
 Figure~\ref{fig:searchpromote} shows the interesting derivations for the judgment \smallmath{$(T_A,\ T_B) \Downarrow_f t$}
 that searches for \lstinline{f}:
-\textsc{f-Motive} identifies the motive 
+\textsc{F-Motive} identifies the motive 
 as \B\ with a new index (which it computes using \lstinline{indexer}, denoted by metavariable \smallmath{$\pi$}).
-When \textsc{f-IH} recurses, it substitutes the inductive hypothesis for the term rather than
+When \textsc{F-IH} recurses, it substitutes the inductive hypothesis for the term rather than
 for its index, and it substitutes the new index (which it also computes using \lstinline{indexer}) inside of that term.
-\textsc{f-Conclusion} returns the entire term, rather than its index.
-Finally, \textsc{f-Ind} not only recurses into each case, but also packs the result.
+\textsc{F-Conclusion} returns the entire term, rather than its index.
+Finally, \textsc{F-Ind} not only recurses into each case, but also packs the result into an existential.
 
 %The differencing algorithm is in Figure~\ref{searchconfig}.
 %It builds on five intermediate steps: one to generate \lstinline{indexer} (Figure~\ref{fig:searchindexer}),
@@ -666,17 +684,17 @@ Finally, \textsc{f-Ind} not only recurses into each case, but also packs the res
 \small
 \hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{f_{m}} t$ }\vspace{-0.55cm}\\
 
-\inferrule[f-Motive]
+\inferrule[F-Motive]
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \pi }
   { \Gamma \vdash (A,\ A_I) \Downarrow_{f_{m}} \lambda (a : A) . A_I\ (\pi\ \vec{i_a}\ a) }\\
 
 \hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{f_{c}} t$ }\vspace{-0.4cm}\\
 
-\inferrule[f-Conclusion]
+\inferrule[F-Conclusion]
   { \\ }
   { \Gamma \vdash (p_A\ a,\ p_{A_I}\ i\ a_i) \Downarrow_{f_{c}} a_i }
 
-\inferrule[f-IH] % inductive hypothesis
+\inferrule[F-IH] % inductive hypothesis
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \pi \\
     \Gamma \vdash (A,\ A_I) \Downarrow_{f_{m}} p \\\\
     \Gamma,\ n_A : p\ a \vdash (b_A,\ b_{A_I} [n_A / a_i] [\pi\ a / i]) \Downarrow_{p_{c}} t }
@@ -685,22 +703,21 @@ Finally, \textsc{f-Ind} not only recurses into each case, but also packs the res
 
 \hfill\phantom{woooooooooooooooooooooooooooooooooooooooooooooooo}\fbox{$\Gamma$ $\vdash$ $(T_A,\ T_B) \Downarrow_{f} t$ }\vspace{-0.5cm}\\
 
-\inferrule[f-Ind] 
+\inferrule[F-Ind] 
   { \Gamma \vdash (A,\ A_I) \Downarrow_{i} \pi \\
     \Gamma \vdash (A,\ A_I) \Downarrow_{f_{m}} p \\\\
     \Gamma,\ p_A : \mathrm{P}_A,\ p_{A_I} : \mathrm{P}_{A_I} \vdash \{ (\mathrm{E}_{A_1}\ p_A,\ \mathrm{E}_{A_{I_1}}\ p_{A_I}),\ldots,(\mathrm{E}_{A_n}\ p_A,\ \mathrm{E}_{A_{I_n}}\ p_{A_I}) \} \Downarrow_{p_{c}} \vec{f} } 
   { \Gamma \vdash (A,\ A_I) \Downarrow_{p} \lambda (a : A) . \exists\ (\pi\ a)\ (\mathrm{Elim}(a, p) \vec{f})}
-\end{mathpar}	
-\vspace{-0.5cm}
+\end{mathpar}
 \caption{Differencing for \lstinline{f}.}
 \label{fig:searchpromote}
 \end{figure} % TODO check this
 
 The omitted derivations to difference for \lstinline{g} are similar,
 except that the domain and range are switched. Consequentially, \lstinline{indexer} is never needed;
-\textsc{g-Motive} removes the index rather than inserting it, and \textsc{g-IH} no longer substitutes the index.
-Additionally, \textsc{g-Hypothesis} adds the hypothesis for the new index
-rather than skipping it, and \textsc{g-Ind} eliminates over the projection rather than packing the result. %of applying the eliminator.
+\textsc{G-Motive} removes the index rather than inserting it, and \textsc{G-IH} no longer substitutes the index.
+Additionally, \textsc{G-Hypothesis} adds the hypothesis for the new index
+rather than skipping it, and \textsc{G-Ind} eliminates over the projection rather than packing the result. %of applying the eliminator.
 
 \paragraph{Deriving the Configuration}
 \textsc{DepConstr} and \textsc{DepElim} over \Aa are just the standard constructors and eliminators for \Aa.

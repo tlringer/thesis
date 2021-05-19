@@ -56,6 +56,7 @@
 
 - cite Lambek's and add to knowledge package
 - Pi versus forall (maybe note in earlier chapter)
+- consistency on constructor names versus indices, or not explicitly when describing differencing stuff
 
 # Chapter 5
 

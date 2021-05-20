@@ -6,8 +6,8 @@
 2 autoreference(s) are introduced twice.
 3 autoreference(s) are used but not introduced.
 
-88 autoreference(s) are properly used.
-89 autoreference(s) are defined but not used.
+89 autoreference(s) are properly used.
+88 autoreference(s) are defined but not used.
 
 
 ********
@@ -55,8 +55,8 @@
 * autoref-introduced-twice *
 ****************************
 
-acks.tex:112: {Sarah Chasins}{default}{base}
-acks.tex:161: {Sarah Chasins}{default}{base}
+acks.tex:110: {Sarah Chasins}{default}{base}
+acks.tex:159: {Sarah Chasins}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
@@ -128,7 +128,6 @@ index.tex:353: {Max Ruttenberg}{default}{base}
 index.tex:355: {Josh Pollock}{default}{base}
 index.tex:358: {Luke Nelson}{default}{base}
 index.tex:361: {Shumo Chu}{default}{base}
-index.tex:364: {Lymor Ringer Barnhard}{default}{base}
 index.tex:371: {Kasso Okoudjou}{default}{base}
 index.tex:374: {Larry Washington}{default}{base}
 index.tex:377: {Ida Chan}{default}{base}

@@ -223,10 +223,10 @@
 \contentsline {paragraph}{Repair by Example}{121}{subsection.5.2.2}% 
 \contentsline {paragraph}{Human in the Loop}{123}{subsection.5.2.2}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{125}{chapter.6}% 
-\contentsline {paragraph}{All Proof Assistants}{126}{chapter.6}% 
-\contentsline {paragraph}{More Power}{126}{chapter.6}% 
-\contentsline {paragraph}{Natural Proofs}{126}{chapter.6}% 
-\contentsline {paragraph}{More Automation}{127}{chapter.6}% 
+\contentsline {paragraph}{Availability}{126}{chapter.6}% 
+\contentsline {paragraph}{Power}{126}{chapter.6}% 
+\contentsline {paragraph}{Natural Use}{126}{chapter.6}% 
+\contentsline {paragraph}{Scalable Automation}{127}{chapter.6}% 
 \contentsline {paragraph}{Smooth Integration}{127}{chapter.6}% 
 \contentsline {paragraph}{User Feedback}{127}{chapter.6}% 
 \contentsline {paragraph}{Familiar Tools}{128}{chapter.6}% 

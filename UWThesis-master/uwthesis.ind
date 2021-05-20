@@ -128,14 +128,14 @@
       \subsubitem Indexer, \hyperpage{83}, \hyperpage{89}
       \subsubitem Ornamental Promotion Isomorphism, \hyperpage{84}, 
 		\hyperpage{107}
-    \subitem Classical Logic, \hyperpage{112}
+    \subitem Classical Logic, \hyperpage{112}, \hyperpage{126}
     \subitem Common Axioms
       \subsubitem Double Negation Elimination, \hyperpage{112}
       \subsubitem Law of the Excluded Middle, \hyperpage{112}
       \subsubitem Uniqueness of Identity Proofs, \hyperpage{112}, 
-		\hyperpage{118}
+		\hyperpage{118}, \hyperpage{126}
       \subsubitem Univalence, \hyperpage{71}, \hyperpage{73}, 
-		\hyperpage{112}, \hyperpage{117, 118}
+		\hyperpage{112}, \hyperpage{117, 118}, \hyperpage{126}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{20}, \hyperpage{76}, 
 		\hyperpage{111}
@@ -224,16 +224,17 @@
     \subitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
 		\hyperpage{11, 12}, \hyperpage{111}
       \subsubitem Agda, \hyperpage{4}, \hyperpage{111--113}, 
-		\hyperpage{115}
+		\hyperpage{115}, \hyperpage{126}
       \subsubitem Coq, \hyperpage{4, 5}, \hyperpage{8}, \hyperpage{12}, 
-		\hyperpage{111, 112}, \hyperpage{119}
+		\hyperpage{111, 112}, \hyperpage{119}, \hyperpage{126}
       \subsubitem Cubical Agda, \hyperpage{112}, \hyperpage{118}
       \subsubitem HOL Light, \hyperpage{4}, \hyperpage{111, 112}
       \subsubitem HOL4, \hyperpage{4}, \hyperpage{111, 112}
       \subsubitem Isabelle/HOL, \hyperpage{4}, \hyperpage{111--113}, 
-		\hyperpage{116}, \hyperpage{118}, \hyperpage{121}
+		\hyperpage{116}, \hyperpage{118}, \hyperpage{121}, 
+		\hyperpage{126}
       \subsubitem Lean, \hyperpage{4}, \hyperpage{111, 112}, 
-		\hyperpage{118}
+		\hyperpage{118}, \hyperpage{126}
       \subsubitem NuPRL, \hyperpage{4}, \hyperpage{111}
       \subsubitem RedPRL, \hyperpage{112}
     \subitem Proof Automation, \hyperpage{23}, \hyperpage{36}, 
@@ -249,7 +250,8 @@
 		\hyperpage{111}
     \subitem Proof Maintenance, \hyperpage{23}
     \subitem Proof Object, \hyperpage{112}
-      \subsubitem Ephemeral Proof Objec, \hyperpage{112}
+      \subsubitem Ephemeral Proof Objec, \hyperpage{112}, 
+		\hyperpage{126}
       \subsubitem Explicit Proof Objec, \hyperpage{112}
     \subitem Proof Script, \hyperpage{5}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{67}, \hyperpage{117}

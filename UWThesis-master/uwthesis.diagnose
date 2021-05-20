@@ -55,8 +55,8 @@
 * autoref-introduced-twice *
 ****************************
 
-uwthesis.tex:1090: {Sarah Chasins}{default}{base}
-uwthesis.tex:1139: {Sarah Chasins}{default}{base}
+acks.tex:112: {Sarah Chasins}{default}{base}
+acks.tex:161: {Sarah Chasins}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 

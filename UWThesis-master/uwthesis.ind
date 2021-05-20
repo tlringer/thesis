@@ -164,7 +164,7 @@
 		\hyperpage{21}, \hyperpage{40}, \hyperpage{73}, 
 		\hyperpage{75}, \hyperpage{111}, \hyperpage{117}, 
 		\hyperpage{119}
-      \subsubitem Cubical Type Theory, \hyperpage{112}
+      \subsubitem Cubical Type Theory, \hyperpage{112}, \hyperpage{127}
       \subsubitem Homotopy Type Theory, \hyperpage{71}, \hyperpage{73}, 
 		\hyperpage{79}, \hyperpage{117}
 
@@ -174,13 +174,13 @@
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}, 
 		\hyperpage{65}, \hyperpage{103, 104}, \hyperpage{114}, 
-		\hyperpage{121}
+		\hyperpage{121}, \hyperpage{127}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
 		\hyperpage{8}, \hyperpage{11}, \hyperpage{13}, 
 		\hyperpage{15}, \hyperpage{66}, \hyperpage{111, 112}, 
-		\hyperpage{117}, \hyperpage{120}
+		\hyperpage{117}, \hyperpage{120}, \hyperpage{128}
   \item Proof Assistants
     \subitem Coq
       \subsubitem Commands, \hyperpage{34}, \hyperpage{93}
@@ -200,11 +200,11 @@
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}, 
 		\hyperpage{74}, \hyperpage{89}, \hyperpage{116}, 
-		\hyperpage{125}
+		\hyperpage{125}, \hyperpage{128}
       \subsubitem Semantic Differencing, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
 		\hyperpage{49}, \hyperpage{74}, \hyperpage{116, 117}, 
-		\hyperpage{121, 122}, \hyperpage{125}
+		\hyperpage{121, 122}, \hyperpage{125}, \hyperpage{128}
     \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}, 
 		\hyperpage{63}
     \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
@@ -221,6 +221,7 @@
     \subitem de Bruijn Criterion, \hyperpage{111, 112}
     \subitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{18}, \hyperpage{111--113}
+    \subitem Mixed Methods Verification, \hyperpage{128, 129}
     \subitem Proof Assistants, \hyperpage{4, 5}, \hyperpage{8}, 
 		\hyperpage{11, 12}, \hyperpage{111}
       \subsubitem Agda, \hyperpage{4}, \hyperpage{111--113}, 

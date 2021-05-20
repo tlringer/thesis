@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 02:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 02:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2310,7 +2310,7 @@ s---in the for-mer of changes to datatypes
 ]
 chapter 6.
 (./next.tex [125] [126]
-Overfull \hbox (5.59465pt too wide) in paragraph at lines 68--75
+Overfull \hbox (5.59465pt too wide) in paragraph at lines 70--77
 [] []\T1/pplj/m/sc/10.95 (-20) s m o o t h i n -t e -g r a -t i o n[] \T1/pplj/
 m/n/10.95 (-20) Proof re-pair tools should in-te-grate smoothly
  []
@@ -2392,12 +2392,17 @@ Overfull \hbox (0.96115pt too wide) in paragraph at lines 221--222
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 226--228
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 224--225
+[]| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
+ []
+
+
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 227--229
 []| \T1/pplj/m/n/10.95 (-20) Agda, []4[], []111[]--[]113[], []115[], []126[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 233--236
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 234--237
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []4[], []111[]--[]113[],
  []
 
@@ -2505,10 +2510,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (163 pages, 1840178 bytes).
+Output written on uwthesis.pdf (163 pages, 1840602 bytes).
 PDF statistics:
- 4378 PDF objects out of 5155 (max. 8388607)
- 4107 compressed objects within 42 object streams
+ 4385 PDF objects out of 5155 (max. 8388607)
+ 4114 compressed objects within 42 object streams
  1605 named destinations out of 1728 (max. 500000)
  105812 words of extra memory for PDF output out of 106986 (max. 10000000)
 

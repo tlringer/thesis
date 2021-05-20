@@ -3,7 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
 The style file: plain.bst
 Database file #1: uwthesis.bib
-Warning--I didn't find a database entry for "Chrzaszcz2003"
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
 Warning--to sort, need author or key in travis
@@ -15,45 +14,45 @@ Warning--can't use both volume and number fields in padioleau2008documenting
 Warning--empty school in pons1999conception
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
-You've used 171 entries,
+You've used 172 entries,
             2118 wiz_defined-function locations,
-            1499 strings with 35652 characters,
-and the built_in function-call counts, 65204 in all, are:
-= -- 6742
-> -- 2771
-< -- 97
-+ -- 1106
-- -- 917
-* -- 4189
-:= -- 10126
-add.period$ -- 570
-call.type$ -- 171
-change.case$ -- 946
+            1501 strings with 35601 characters,
+and the built_in function-call counts, 65454 in all, are:
+= -- 6777
+> -- 2752
+< -- 98
++ -- 1099
+- -- 909
+* -- 4182
+:= -- 10147
+add.period$ -- 573
+call.type$ -- 172
+change.case$ -- 945
 chr.to.int$ -- 0
-cite$ -- 182
-duplicate$ -- 2737
-empty$ -- 5196
-format.name$ -- 917
-if$ -- 14400
+cite$ -- 183
+duplicate$ -- 2757
+empty$ -- 5239
+format.name$ -- 909
+if$ -- 14476
 int.to.chr$ -- 0
-int.to.str$ -- 171
+int.to.str$ -- 172
 missing$ -- 133
-newline$ -- 837
-num.names$ -- 356
-pop$ -- 1174
+newline$ -- 841
+num.names$ -- 358
+pop$ -- 1182
 preamble$ -- 1
-purify$ -- 789
+purify$ -- 787
 quote$ -- 0
-skip$ -- 2173
+skip$ -- 2191
 stack$ -- 0
-substring$ -- 3981
-swap$ -- 935
-text.length$ -- 97
+substring$ -- 4018
+swap$ -- 945
+text.length$ -- 98
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 674
+type$ -- 678
 warning$ -- 11
-while$ -- 644
-width$ -- 174
-write$ -- 1987
-(There were 12 warnings)
+while$ -- 649
+width$ -- 175
+write$ -- 1997
+(There were 11 warnings)

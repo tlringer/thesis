@@ -190,6 +190,12 @@ Adam Chlipala.
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
 
+\bibitem{Chrzaszcz2004}
+Jacek Chrz{\k{a}}szcz.
+\newblock Modules in {Coq} are and will be correct.
+\newblock In {\em Types for Proofs and Programs}, pages 130--146, Berlin,
+  Heidelberg, 2004. Springer.
+
 \bibitem{jesper}
 Jesper Cockx.
 \newblock {\em Dependent Pattern Matching and Proof-Relevant Unification}.
@@ -308,6 +314,10 @@ Dominik Dietrich, Iain Whiteside, and David Aspinall.
 \newblock Polar: A framework for proof refactoring.
 \newblock In {\em Logic for Programming, Artificial Intelligence, and
   Reasoning}, pages 776--791, Berlin, Heidelberg, 2013. Springer.
+
+\bibitem{article}
+Mike Dodds.
+\newblock Proofs should repair themselves, 2020.
 
 \bibitem{Elphinstone2013}
 Kevin Elphinstone and Gernot Heiser.
@@ -1017,12 +1027,6 @@ Ambre Williams.
 Thomas Williams and Didier R{\'e}my.
 \newblock A principled approach to ornamentation in {ML}.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
-
-\bibitem{egg}
-Max Willsey, Chandrakana Nandi, Yisu~Remy Wang, Oliver Flatt, Zachary Tatlock,
-  and Pavel Panchekha.
-\newblock Egg: Fast and extensible equality saturation.
-\newblock {\em Proc. ACM Program. Lang.}, 5(POPL), January 2021.
 
 \bibitem{Woos:2016:PCF:2854065.2854081}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and

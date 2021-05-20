@@ -40,7 +40,6 @@
 
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe (nice to have)
-- guarded recursion word overloading, say "syntactic guard" instead
 - de Bruijn versus variables, somewhere
 - explain Greek when you explain definitional equality
 
@@ -66,4 +65,5 @@
 
 - add citations for related work, especially for the domain experts part
 - update crypto thing to include twitter thread: https://twitter.com/TaliaRinger/status/1391943048465055750
+- change tense
 

@@ -167,7 +167,7 @@
 \contentsline {paragraph}{Optimizations}{96}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Termination}{96}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Intent}{96}{subsubsection.4.5.1.3}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{96}{subsubsection.4.5.1.4}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{97}{subsubsection.4.5.1.4}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{97}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{97}{subsubsection.4.5.2.1}% 
 \contentsline {paragraph}{First Pass: Basic Proof Scripts}{97}{subsubsection.4.5.2.1}% 
@@ -179,18 +179,18 @@
 \contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{101}{subsubsection.4.5.2.2}% 
 \contentsline {section}{\numberline {4.6}Results}{102}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{102}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{103}{table.caption.40}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Tuples \& Records: Industrial Use}{103}{figure.caption.41}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{102}{table.caption.40}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{104}{figure.caption.41}% 
 \contentsline {paragraph}{Permute Constructors: Modifying a Language}{104}{figure.caption.41}% 
-\contentsline {paragraph}{Add new Constructors: Extending a Language}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Add new Constructors: Extending a Language}{105}{figure.caption.41}% 
 \contentsline {paragraph}{Factor out Constructors: External Example}{105}{figure.caption.41}% 
 \contentsline {paragraph}{Permute Hypotheses: External Example}{105}{figure.caption.41}% 
-\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{105}{figure.caption.41}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{106}{figure.caption.41}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{106}{subsection.4.6.2}% 
-\contentsline {paragraph}{Historical Note}{106}{Item.55}% 
+\contentsline {paragraph}{Historical Note}{107}{Item.55}% 
 \contentsline {paragraph}{Setup}{107}{Item.55}% 
-\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{107}{subsubsection.4.6.2.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{108}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{108}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{109}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{111}{chapter.5}% 
@@ -199,28 +199,28 @@
 \contentsline {paragraph}{Foundations}{111}{subsection.5.1.1}% 
 \contentsline {paragraph}{Proof Objects}{112}{subsection.5.1.1}% 
 \contentsline {paragraph}{Automation}{113}{Item.58}% 
-\contentsline {subsection}{\numberline {5.1.2}Proof Evolution}{114}{subsection.5.1.2}% 
-\contentsline {paragraph}{Proof Scripts}{114}{subsection.5.1.2}% 
-\contentsline {paragraph}{Proof Terms}{114}{subsection.5.1.2}% 
-\contentsline {subsection}{\numberline {5.1.3}Proof Reuse}{115}{subsection.5.1.3}% 
-\contentsline {paragraph}{Extending Inductive Types}{115}{subsection.5.1.3}% 
-\contentsline {paragraph}{Proof Transformation}{115}{subsection.5.1.3}% 
-\contentsline {paragraph}{Transfer \& Transport}{116}{subsection.5.1.3}% 
-\contentsline {subsection}{\numberline {5.1.4}Proof Design}{117}{subsection.5.1.4}% 
-\contentsline {paragraph}{Robust Abstractions}{117}{subsection.5.1.4}% 
-\contentsline {paragraph}{Robust Automation}{118}{subsection.5.1.4}% 
-\contentsline {subsection}{\numberline {5.1.5}Proof Automation}{118}{subsection.5.1.5}% 
+\contentsline {subsection}{\numberline {5.1.2}Proof Design}{113}{subsection.5.1.2}% 
+\contentsline {paragraph}{Robust Abstractions}{114}{subsection.5.1.2}% 
+\contentsline {paragraph}{Robust Automation}{114}{subsection.5.1.2}% 
+\contentsline {subsection}{\numberline {5.1.3}Proof Evolution}{114}{subsection.5.1.3}% 
+\contentsline {paragraph}{Proof Scripts}{115}{subsection.5.1.3}% 
+\contentsline {paragraph}{Proof Terms}{115}{subsection.5.1.3}% 
+\contentsline {subsection}{\numberline {5.1.4}Proof Reuse}{115}{subsection.5.1.4}% 
+\contentsline {paragraph}{Extending Inductive Types}{116}{subsection.5.1.4}% 
+\contentsline {paragraph}{Proof Transformation}{116}{subsection.5.1.4}% 
+\contentsline {paragraph}{Transfer \& Transport}{117}{subsection.5.1.4}% 
+\contentsline {subsection}{\numberline {5.1.5}Other Proof Automation}{118}{subsection.5.1.5}% 
 \contentsline {paragraph}{Ontology Repair}{118}{subsection.5.1.5}% 
 \contentsline {paragraph}{Knowledge Sharing Methods}{118}{subsection.5.1.5}% 
 \contentsline {paragraph}{E-Graphs}{118}{subsection.5.1.5}% 
-\contentsline {section}{\numberline {5.2}Program Repair}{119}{section.5.2}% 
+\contentsline {section}{\numberline {5.2}Program Repair}{118}{section.5.2}% 
 \contentsline {subsection}{\numberline {5.2.1}A Good Fit}{119}{subsection.5.2.1}% 
 \contentsline {paragraph}{Specifications}{119}{subsection.5.2.1}% 
 \contentsline {paragraph}{Examples}{120}{subsection.5.2.1}% 
 \contentsline {subsection}{\numberline {5.2.2}Techniques for Inspiration}{120}{subsection.5.2.2}% 
 \contentsline {paragraph}{Regression Repair}{120}{subsection.5.2.2}% 
 \contentsline {paragraph}{Specification-Based Repair}{121}{subsection.5.2.2}% 
-\contentsline {paragraph}{Repair by Example}{122}{subsection.5.2.2}% 
+\contentsline {paragraph}{Repair by Example}{121}{subsection.5.2.2}% 
 \contentsline {paragraph}{Human in the Loop}{123}{subsection.5.2.2}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{125}{chapter.6}% 
 \contentsline {paragraph}{All Proof Assistants}{126}{chapter.6}% 

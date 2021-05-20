@@ -10,71 +10,73 @@ for the domain of proof engineering (Section~\ref{sec:proofeng}).
 \section{Proof Engineering}
 \label{sec:proofeng}
 
-\kl{Proof engineering} refers to the technologies that make it easier to develop and maintain
+Proof repair falls into the domain of \kl{proof engineering},
+or the technologies that make it easier to develop and maintain
 systems \kl{verified} using \kl{proof assistants}.
-Proof repair falls into the domain of proof engineering.
-This section briefly describes work in proof engineering relevant to my work on proof repair:
-proof assistants other than Coq (Section~\ref{sec:ass}),
-other technologies for proof evolution (Section~\ref{sec:refrep}),
+Proof repair in this thesis is implemented for Coq, but there are
+many other proof assistants to choose from, some with different implications
+for proof repair (Section~\ref{sec:ass}).
+In contrast with proof repair,
+most work on proof maintenance focuses on
+designing proofs to be robust to change to begin with (Section~\ref{sec:design}).
+While proof repair is new, it builds on work in proof evolution (Section~\ref{sec:refrep}),
 proof reuse (Section~\ref{sec:reuse}),
-proof design (Section~\ref{sec:design}),
-and other kinds of proof automation (Section~\ref{sec:automation}.
-See my and my coauthors' survey paper on proof engineering for a detailed overview of the field~\cite{PGL-045}. % TODO credit coauthors
+and other kinds of proof automation (Section~\ref{sec:automation}).
+\kl{QED at Large} contains a detailed overview of all of these proof engineering technologies and more.
 
 \subsection{Proof Assistants}
 \label{sec:ass}
 
-Proof engineering as defined in our survey paper considers proof assistants that satisfy the \textit{de Bruijn criterion}~\cite{Barendregt2002,Barendregt2351}, which requires that they produce proof objects that a small proof-checking kernel can verify.
+Proof engineering as defined in \kl{QED at Large} considers proof assistants that satisfy the \intro{de Bruijn criterion}~\cite{Barendregt2002,Barendregt2351}, which requires that they produce proof objects that a small proof-checking \kl{kernel} can check.
 This includes \kl{Coq}~\cite{coq}---the proof assistant that this thesis focuses on---but also other proof assistants like
 \kl{Isabelle/HOL}~\cite{isabelle}, \kl{HOL Light}~\cite{hollight}, \kl{HOL4}~\cite{hol4-interact}, \kl{Agda}~\cite{agda}, \kl{Lean}~\cite{lean}, and \kl{NuPRL}~\cite{nuprl}.
 These proof assistants have different foundations (in the case of Coq, \kl{CIC$_{\omega}$}),
-different notions of proof objects (in the case of Coq, proof terms in \kl{Gallina}),
-and different automation built on top of those proof objects (in the case of Coq, proof scripts in \kl{Ltac}).
+different notions of proof objects (in the case of Coq, \kl{proof terms} in \kl{Gallina}),
+and different automation built on top of those proof objects (in the case of Coq, \kl{proof scripts} made up of \kl{Ltac} \kl{tactics}).
 Differences in proof assistants along these dimensions have different implications for proof repair.
 
 \paragraph{Foundations}
 The foundations that make up proof assistants vary by proof assistant.
-The foundations of Coq, for example, build on the type theory \kl{CIC$_{\omega}$}.
-CIC$_{\omega}$ is \textit{intuitionistic}~\cite{Heyting1956} (or \textit{constructive}) in that
+The foundations of Coq, for example, build on the \kl{intensional} type theory \kl{CIC$_{\omega}$}.
+CIC$_{\omega}$ is \intro{intuitionistic}~\cite{Heyting1956} (or \kl{constructive}) in that
 proofs in CIC$_{\omega}$ must be constructed from basic principles.
-For example, CIC$_{\omega}$ does not assume the \textit{Law of the Excluded Middle} (LEM),
+For example, CIC$_{\omega}$ does not assume the \intro{law of the excluded middle} (\kl{LEM}),
 which states that for any proposition, either that proposition is true, or its negation is true.
-CIC$_{\omega}$ also does not assume \textit{Double Negation Elimination} (DNE),
+CIC$_{\omega}$ also does not assume \intro{double negation elimination} (\kl{DNE}),
 which states that the negation of the negation is the original proposition or type.
 Because of this, in CIC$_{\omega}$, it is not possible in general to prove existence by proving that 
 nonexistence implies a contradiction.
 Instead, one must supply a witness to the existential.\footnote{Perhaps notably, though, the witness to the existential can be that 
-DNE \emph{provably} holds for a particular instance. This is true for decidable domains in \kl{CIC$_{\omega}$}.} 
+\kl{DNE} \emph{provably} holds for a particular instance. This is true for decidable domains in CIC$_{\omega}$.} 
 
-The proof assistants Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, and HOL4~\cite{hol4-interact} are built on \textit{classical} foundations
-in that they assume both LEM and DNE.
-The proof assistants Agda and Lean are built on constructive foundations that are similar to Coq, though with some minor differences.
-Lean in particular further assumes an axiom called \textit{Uniqueness of Identity Proofs} (UIP), which states that all proofs of
-equality at a given type are equal.
-As I detail in the survey paper, this axiom is incompatible with the \textit{univalence} axiom from homotopy type theory~\cite{univalent2013homotopy},
-which states that equivalence is equivalent to equality.
-Cubical type theory~\cite{cohen2016cubical, angiuli2017cubical} gives univalence a constructive interpretation,
-so that it is no longer an axiom.\footnote{There are two flavors of cubical type theory.
-Bob Harper noted that I neglected to mention one of these in the proof engineering survey paper; I deeply regret this.
-So I would like to draw extra attention to the paper by Carlo Angiuli, Bob Harper, and Todd Wilson that I have cited here~\cite{angiuli2017cubical}.}
-Implementations of cubical type theory include RedPRL~\cite{redprl} and Cubical Agda~\cite{cubical-agda}.
+The proof assistants Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, and HOL4~\cite{hol4-interact} are built on \intro{classical} foundations
+in that they assume both \kl{LEM} and \kl{DNE}.
+The proof assistants Agda and Lean are built on \kl{constructive} foundations that are similar to Coq, though with some minor differences.
+Lean in particular further assumes an axiom called \intro{uniqueness of identity proofs} (\kl{UIP}), which states that all proofs of
+\kl{propositional equality} at a given type are equal.
+As I detail in \kl{QED at Large}, this axiom is incompatible with the \kl{univalence} axiom from homotopy type theory~\cite{univalent2013homotopy},
+which states that \kl{equivalence} is equivalent to propositional equality.
+\intro{Cubical type theory}---of which there are two flavors~\cite{cohen2016cubical, angiuli2017cubical}---gives univalence a constructive interpretation,
+so that it is no longer an axiom.
+Implementations of cubical type theory include \intro{RedPRL}~\cite{redprl} and \intro{Cubical Agda}~\cite{cubical-agda}.
 
-Proof repair in this thesis assumes constructive rather than classical foundations.
+Proof repair in this thesis assumes \kl{constructive} rather than \kl{classical} foundations.
 The core techniques should largely transfer to other proof assistants built on constructive foundations, like Agda and Lean.
-It is possible that the particular transformations may have to account for differences, like the presence of UIP in Lean,
-which may make the correctness statement of the \toolnamec transformation---one that relies on univalence at the level of the metatheory---less meaningful.
+It is possible that the particular transformations may have to account for differences, like the presence of \kl{UIP} in Lean,
+which may make the general correctness statement of the \toolnamec transformation---one that relies on \kl{univalence} at the level of the metatheory---less meaningful.
 The techniques transfer with a bit more resistance to proof assistants built on classical foundations,
 since classical proofs may omit information helpful for repair.
 
 \paragraph{Proof Objects} 
-In proof assistants that satisfy the de Bruijn criterion, proof objects are the certificates that the kernel can check to make sure it proves a given theorem.
-In Coq, proof objects are proof terms in \kl{Gallina}; the kernel verifies these terms by checking their types.
-As \kl{Karl} notes in our survey paper, explicitly producing proof objects and checking them is one of two dominant approaches to satisfying 
-the de Bruijn criterion---an approach followed by Coq, Agda, and Lean.
-The other is to produce \textit{ephemeral} proof objects that are correct by construction~\cite{Barendregt2013}---an approach followed
-by Isabelle/HOL, HOL Light, and HOL4. % what about NuPRL?
+In proof assistants that satisfy the \kl{de Bruijn criterion}, the \kl{proof object} is the certificate that the \kl{kernel} can check for
+a given proof to make sure that it proves a given theorem.
+In Coq, proof objects are \kl{proof terms} in \kl{Gallina}; the kernel verifies these terms by checking their types.
+As \kl{Karl} notes in \kl{QED at Large}, producing \intro{explicit proof objects} and checking them is just one of the two dominant approaches to satisfying 
+the de Bruijn criterion---the approach followed by \kl{Coq}, \kl{Agda}, and \kl{Lean}.
+The other dapproach is to produce \intro{ephemeral proof objects} that are correct by construction~\cite{Barendregt2013}---an approach followed
+by \kl{Isabelle/HOL}, \kl{HOL Light}, and \kl{HOL4}. % what about NuPRL?
 
-Proof repair in this thesis assumes explicit rather than ephemeral proof objects.
+Proof repair in this thesis assumes \kl{explicit} rather than \kl{ephemeral} proof objects.
 One possible way to apply the same techniques to proof assistants with ephemeral proof objects is to follow the following workflow:
 
 \begin{enumerate}
@@ -82,42 +84,75 @@ One possible way to apply the same techniques to proof assistants with ephemeral
 \item Apply differencing and transformations over those objects.
 \item Decompile the transformed proof objects to automation.
 \end{enumerate}
-Chapter~\ref{chapt:conclusions} describes an example of this for Isabelle/HOL.
+Chapter~\ref{chapt:conclusions} describes a potential specific instance of this workflow for \kl{Isabelle/HOL}.
 
 \paragraph{Automation} %Like different tactic languages.
-Directly constructing proof objects may be too low-level to provide for a positive user experience for the proof engineer,
-and in some cases the proof object may not be exposed to the proof engineer at all.
-Typically, automation acts as an interface between the proof engineer and the kernel.
-In Coq, for example, proof engineers write proof scripts interactively using tactics.
+Typically, layers of \kl{proof automation} act as an interface between the proof engineer and the \kl{kernel}.
+In Coq, for example, proof engineers write \kl{proof scripts} interactively using \kl{tactics}.
 Proof engineers can combine existing tactics, or write their own, either in the general-purpose programming language
 OCaml or in the tactic language \kl{Ltac}. 
 
-In contrast, in Isabelle/HOL, proof engineers commonly write proofs in Isabelle/Isar~\cite{wenzel1999isar, Wenzel2007isar}, which is a high-level \textit{proof language}:
-a language for structuring and composing propositions, facts, and proof goals.
-Proof engineers can also mix these styles.
+In contrast, in \kl{Isabelle/HOL}, proof engineers commonly write proofs in Isabelle/Isar~\cite{wenzel1999isar, Wenzel2007isar}, a high-level
+language for structuring and composing propositions, facts, and proof goals.
+Proof engineers can also sometimes mix languages for automation.
 For example, Coq proof engineers can write proofs using the high-level proof language SSReflect~\cite{Gonthier2010, Gonthier2008},
 or they can even mix SSReflect with Ltac tactics.
 Isabelle/HOL proof engineers can write automation in the general-purpose language Standard ML---which was originally introduced specifically
 for developing proof automation~\cite{Gordon1978}---or with the Ltac-inspired tactic language Eisbach~\cite{Matichuk2015EisbachAP}.
-Agda proof engineers typical rely only on reflection~\cite{Demers95reflectionin, harrison-reflection, van2012engineering} to write proof automation.
+\kl{Agda} proof engineers typically rely only on reflection~\cite{Demers95reflectionin, harrison-reflection, van2012engineering} and not
+on any additional language to automate their proofs.
 
 The approach to proof repair taken in this thesis is independent of the kind of automation used, or the language used to implement it.
 All that needs to change to transfer this approach to a different tactic or proof language, for example,
 is the implementation of the decompiler.
-Still, some kinds of automation may produce proof terms that are especially difficult to difference and transform,
+Still, some kinds of automation may produce proof terms that are larger or more difficult to manipulate,
 or may make decompilation especially difficult.
 
-Better languages for automation can also help circumvent some of the difficulties of repairing tactics directly, rather than relying a decompiler.
+Better languages for automation may help circumvent some of the difficulties of repairing tactics directly, without relying a decompiler.
 Or, they may help simplify the implementation of the decompiler.
 The Ltac successor Ltac2~\cite{ltac2}, for example, is much more structured than Ltac, and may help ease proof repair in Coq in the future.
+
+\subsection{Proof Design}
+\label{sec:design}
+
+Much work focuses on designing proofs
+to be robust to change, rather than fixing broken proofs.
+This can take the form of robust abstractions or robust automation.
+
+% TODO QED if time
+
+\paragraph{Robust Abstractions}
+Proof engineers often use abstractions to make proofs less likely to break to beign with.
+Examples of this include using 
+information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein2014}
+or any of the structures~\cite{Chrzaszcz2004, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
+CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
+Design principles for specific domains (like formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
+can also make verification more tractable.
+Design and repair are complementary: design requires foresight, while repair can occur retroactively.
+Repair can help with changes that occur outside of the proof engineer's control,
+or with changes that are difficult to protect against even with informed design.
+
+\paragraph{Robust Automation}
+Another approach to robust design is to use heavy \kl{proof automation}, for example through
+custom program-specific \kl{tactics}~\cite{chlipala:cpdt}
+%implementations of decision procedures~\cite{Pugh1991},
+or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
+The degree to which proof engineers rely on automation varies, as seen in the data from the \kl{\textsc{REPLica}} user study.
+Automation-heavy proof engineering styles localize the burden of change to the automation,
+but can result in \kl{proof terms} that are large and slow to type check,
+and tactics that can be difficult to debug.
+While these approaches are complementary, more work is needed for proof repair tools to better support 
+developments in this style.
 
 \subsection{Proof Evolution}
 \label{sec:refrep}
 
 % TODO some of this may move into Chapter 2
 
-The need to evolve proofs to changes was raised as a barrier for verification of real software systems as far back as 1977, in my favorite critique of program verification~\cite{DeMillo1977}.
-This barrier has been realized in real developments; a review~\cite{Elphinstone2013} of the evolution of the seL4 verified 
+The need to evolve proofs to changes was raised as a barrier for verification of real software systems as far back as 1977~\cite{DeMillo1977}.
+This barrier impacted real developments.
+A review~\cite{Elphinstone2013} of the evolution of the seL4 verified 
 OS microkernel~\cite{Klein2009}, for example, notes that while
 customizing the kernel to different environments may be desirable, 
 ``the formal verification of seL4 creates a powerful disincentive to changing the kernel.''
@@ -125,17 +160,16 @@ Leroy and friends 2012~\cite{leroy2012} motivates and describes updates to the i
 that include changes in specifications, automation, and proofs~\cite{leroy-mem-2010}.
 
 As I have shown in this thesis, breaking changes are not always in the proof engineer's control.
-\textit{Proof refactoring}~\cite{WhitesidePhD} tools---meant to help proof engineers redesign proof developments---can also help proof engineers
+\intro{Proof refactoring}~\cite{WhitesidePhD} tools---meant to help proof engineers redesign proof developments---can also help proof engineers
 repair proofs in response to breaking changes.
-These tools are the proof engineering equivalent of \textit{program refactoring} tools, or tools
+These tools are the proof engineering equivalent of \intro{program refactoring} tools, or tools
 that restructure code in a way that preserves semantics~\cite{opdyke1992}.
-While proof repair is a concept that I introduced with the work in this thesis,
-some proof refactoring tools developed in parallel with my work can be viewed as proof repair tools.
-This section describes refactoring tools that work at the level of proof scripts and proof terms;
-\toolnamec is the only tool for proof evolution I am aware of that supports both proof scripts and proof terms.
+Some proof refactoring tools developed in parallel with my thesis work can be viewed as \kl{proof repair} tools.
+This section describes refactoring tools that work at the level of \kl{proof scripts} and \kl{proof terms};
+\sysnamelong is the only tool suite for proof evolution I am aware of that supports both.
 
 \paragraph{Proof Scripts}
-A few proof refactoring tools operate directly over tactics:
+A few proof refactoring tools operate directly over proof scripts:
 \textsc{POLAR}~\cite{Dietrich2013} refactors proof scripts in languages based on Isabelle/Isar~\cite{Wenzel2007isar},
 CoqPIE~\cite{Roe2016} is an IDE with support for simple refactorings of Ltac scripts, and
 Tactician~\cite{adams2015} is a refactoring tool for proof scripts in HOL Light
@@ -155,21 +189,21 @@ Chick was developed in parallel to the \sysname prototype, and both tools influe
 Consequentially, Chick and \sysnamelong have similar workflows:
 both take example changes supplied by the proof engineer,
 use differencing algorithms to determine the changes to make elsewhere,
-and then (in Chick and \toolnamec, but only sometimes in \sysname) apply the changes they find. 
+and then apply the changes they find. 
 Chick supports insertion, deletion, modification, and permutation of subterms.
 Chick does this using a syntactic algorithm that handles only simple transformations,
 and so presents itself primarily as a proof refactoring tool.
 
-Another term-based refactoring tool is the refactoring tool RefactorAgda~\cite{wibergh2019} for a subset of Agda terms.
+Another term-based refactoring tool is the refactoring tool RefactorAgda~\cite{wibergh2019} for a subset of \kl{Agda} terms.
 RefactorAgda supports many changes, including changing indentation, renaming terms, moving terms, converting between implicit and
 explicit arguments, reordering subterms, and adding or removing constructors to or from types; 
 it also documents ideas for supporting other refactorings, such as adding and removing arguments and indicies to and from types.
-Both Chick and RefactorAgda support primarily syntactic changes and do not have tactic support.
+Both Chick and RefactorAgda support primarily syntactic changes and operate solely over \kl{proof terms}.
 
 \subsection{Proof Reuse}
 \label{sec:reuse}
 
-Proof repair is ultimately a form of \textit{proof reuse}---applying software reuse principles to proof assistants
+Proof repair is ultimately a form of \intro{proof reuse}---applying software reuse principles to proof assistants
 in order to repurpose existing proofs as much as possible.
 Like software reuse, proof reuse leverages design principles and language constructs.
 In addition, the interactive nature of proof assistants naturally leads to a class of proof reuse technologies less explored
@@ -178,7 +212,7 @@ Proof repair falls into the class of automated tooling for proof reuse.
 This section describes other automated tooling for proof reuse that may be useful to a future proof repair tool.
 
 \paragraph{Extending Inductive Types} 
-\toolnamec is yet to save proof engineers work when it comes to extending inductive types.
+\sysnamelong is yet to save proof engineers work when it comes to extending \kl{inductive types} with new \kl{constructors}.
 In the future, it may help to draw on early work in proof reuse for extending inductive types.
 For example, a 2004 paper~\cite{Boite2004} describes a tactic to adapt proof obligations
 to changes in inductive types.
@@ -201,38 +235,39 @@ tool for Coq~\citep{wilson2010}.
 \fi
 
 \paragraph{Proof Transformation}
-Proof repair in this thesis combiness differencing with proof term transformations, or program transformations over proof terms.
-The idea of applying program transformations over proof terms dates back to at least 1987~\cite{pfenning}.
-Any proof reuse tool that works by proof term transformation can, in theory, be used for repair,
-especially when coupled with something like the \toolnamec decompiler.
+Proof repair in this thesis combiness \kl{differencing} with \kl{proof term transformations}.
+The idea of proof term transformations dates back to at least 1987~\cite{pfenning}.
+Any proof reuse tool that works by proof term transformation can, in theory, be used for repair, especially when coupled with something like the \toolnamec decompiler.
 
-One common proof term transformation is \textit{generalization}, which arose in the context of proof assistants
+The \sysname prototype implements a kind of proof \kl{generalizaton}.
+This is a common kind of proof term transformation that arose in the context of proof assistants
 in the 1990s~\cite{hasker1992generalization, kolbe1998proof, pons1999conception}.
 Coq's \lstinline{generalize} tactic does basic syntactic generalization~\cite{coq-tactics}.
-Both \sysnamelong and a tool~\cite{Johnsen2004} for generalizing theorems in Isabelle/HOL
+Both \sysname and a tool~\cite{Johnsen2004} for generalizing theorems in \kl{Isabelle/HOL}
 implement more complex transformations for generalization.
 
 Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
-unary and binary numbers. 
-This fits into a \toolnamec configuration.
-Still, the expansion algorithm from the paper describing this transformation may help guide the design
-of better unification heuristics for \toolnamec.
+unary and binary numbers that fits into a \toolnamec configuration.
+The expansion algorithm from the paper describing this transformation may help guide the design
+of better unification heuristics for \toolnamec, in particular when identifying applications of \kl{definitional} \kl{\lstinline{Eta}}
+and \kl{\lstinline{Iota}}.
 
 The refinement framework CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
 and these relations can be more general than \toolnamec's equivalences.
 However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
-due to the problem that \lstinline{Iota} addresses.
+due to the problem with \kl{definitional equality} that \kl{\lstinline{Iota}} addresses.
 CoqEAL may be most useful to chain with \toolnamec to get faster functions,
 or to help support better workflows for changes that do not correspond to equivalences.
 
-One of the automatic configurations in \toolnamec automates discovery of and transport across algebraic ornaments.
+One of the automatic configurations in \toolnamec automates discovery of and transport across equivalences
+that correspond to \kl{algebraic ornaments}.
 This automatic configuration formed the basis of the first tool for ornamentation to operate over a non-embedded dependently typed language,
-initially called \textsc{Devoid}---but later generalized all equivalences and renamed \toolnamec.
-This stands in contrast to the many wonderful embedded implementations of 
+initially called \textsc{Devoid}---but later generalized to arbitrary equivalences and renamed to \toolnamec.
+This stands in contrast to the many existing embedded implementations of 
 ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}
 that had arose since their discovery~\cite{mcbride}.
-It essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
-which operates on non-embedded ML code, into CIC$_{\omega}$.
+\textsc{Devoid} essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
+which operates on non-embedded ML code, into \kl{CIC$_{\omega}$}.
 It also introduced the first differencing algorithm to identify ornaments, which in the past 
 had been identified as a ``gap'' in the literature~\cite{ko2016programming}.
 Other kinds of ornaments may prove useful for future \toolnamec differencing algorithms and configurations.
@@ -241,8 +276,8 @@ A recent thesis~\cite{williamsphd} on ornaments may prove especially useful.
 % TODO note the thing about transfer versus transport, and correct thesis (see Twitter)
 
 \paragraph{Transfer \& Transport}
-\toolnamec automatically transports proofs across equivalences.
-The need to automatically \textit{transfer} functions and proofs across equivalences and other relations is a long-standing challenge for proof 
+%\toolnamec automatically transports proofs across equivalences.
+The need to automatically transfer functions and proofs across equivalences and other relations is a long-standing challenge for proof 
 engineers~\cite{magaud2000changing, Barthe2001, magaud2003changing}.
 Particular successful is the widely used Transfer~\cite{Huffman2013} package, which supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
 Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
@@ -250,77 +285,44 @@ Transfer is not yet suitable for repair, as it necessitates maintaining referenc
 Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer to implement a proof repair tool for Isabelle/HOL.
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 
-The \toolnamec transformation implements a particular kind of transfer called automatic transport.
-The name here is a bit overloaded and (in my opinion) confusing: \textit{transport} itself refers to a particular form of 
-rewriting along a propositional equality, or inhabitance of the identity type.
-It often (but not always) refers to \textit{univalent transport}, an induction principle derivable
-in homotopy type theory from univalence~\cite{univalent2013homotopy}
-that rewrites along the identity type corresponding to an equivalence~\cite{escardo2018self}.
+The \toolnamec transformation implements a particular kind of transfer called automatic \kl{transport}.
+The name here is a potentially confusing: \kl{transport} itself refers to a particular form of 
+rewriting along a \kl{propositional equality}, or inhabitance of the identity type.
+It often (but not always) refers to \kl{univalent} \kl{transport}, an application of an \kl{eliminator} derivable
+in \kl{homotopy type theory} from \kl{univalence}~\cite{univalent2013homotopy}
+that rewrites along the identity type corresponding to an \kl{equivalence}~\cite{escardo2018self}.
 \textit{Automatic transport} refers to any automated tooling for rewriting along propositional equalities
-that behaves like transport at the level of either the theory or (as in \toolnamec) the metatheory.
-Automatic transport is a kind of transfer, though transport itself is not,
-and transfer may apply more broadly than across equalities or equivalences.\footnote{I got this wrong in the survey paper.}
+that behaves like transport at the level of either \kl{internally} to the theory or (as in \toolnamec) \kl{externally} in the metatheory.
+Automatic transport is a kind of transfer, but by virtue of it being automatic, not by virtue of it applying transport.\footnote{I got this wrong in \kl{QED at Large}.}
+Transfer may apply more broadly than across equalities or equivalences.
 
-\toolnamec implements automatic univalent transport without relying on any additional axioms at the level of the theory itself.
-UP~\cite{tabareau2017equivalences} approximates automatic univalent transport
-in Coq, only sometimes relying on functional extensionality.
-While powerful, it does not remove references to the old type, making it poorly suited for repair.
+\toolnamec implements automatic univalent transport \kl{externally}, without relying on any additional axioms at the level of the theory itself.
+The UP black-box transformation~\cite{tabareau2017equivalences} approximates automatic univalent transport \kl{internally}
+in Coq, only sometimes relying on additional axioms.
+The UP black-box transformation does not remove references to the old type, making it poorly suited for repair.
 However, unlike \toolnamec, it supports type-directed search---analogous functionality
 may help improve \toolnamec substantially.
 
 Recent work~\cite{tabareau2019marriage} extends UP with 
-a white-box transformation that may work for repair,
-but that imposes proof obligations on the proof engineer beyond those imposed by \toolnamec,
+a white-box transformation that may work for repair.
+However, the white-box transformation imposes proof obligations on the proof engineer beyond those imposed by \toolnamec.
 %that establish what is effectively the correctness criteria
 %for the configuration in \toolname, while \toolname needs only that it holds metatheoretically.
-and that includes neither differencing algorithms for equivalences nor proof script generation.
+In addition, it comes with neither \kl{differencing} algorithms for equivalences nor \kl{proof script} generation.
 It also does not support changes in inductive structure,
 instead relying on its original black-box functionality;
-\lstinline{Iota} solves this in \toolnamec, and is based on lessons learned from reading that article.
+\kl{\lstinline{Iota}} solves this in \toolnamec, and is based on lessons learned from reading that article.
 The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
 
-\subsection{Proof Design}
-\label{sec:design}
-
-Much work focuses on designing proofs
-to be robust to change, rather than fixing broken proofs.
-This can take the form of robust abstractions or robust automation.
-
-% TODO QED if time
-
-\paragraph{Robust Abstractions}
-Proof engineers often use design principles to make proofs less likely to break to beign with.
-Examples of this include using 
-information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein2014}
-or any of the structures~\cite{Chrzaszcz2003, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
-CertiKOS~\cite{certikos} introduces the idea of a deep specification to ease verification of large systems.
-Design principles for specific domains (like formal metatheory~\cite{Aydemir2008, Delaware2013POPL, Delaware2013ICFP})
-can also make verification more tractable.
-Design and repair are complementary: design requires foresight, while repair can occur retroactively.
-Repair can help with changes that occur outside of the proof engineer's control,
-or with changes that are difficult to protect against even with informed design.
-
-\paragraph{Robust Automation}
-Another approach to robust design is to use heavy proof automation, for example through
-program-specific proof automation~\cite{chlipala:cpdt}
-%implementations of decision procedures~\cite{Pugh1991},
-or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
-The degree to which proof engineers rely on automation varies, as seen in the data from the \textsc{REPLica} user study.
-Automation-heavy proof engineering styles localize the burden of change to the automation,
-but can result in terms that are large and slow to type check,
-and tactics that can be difficult to debug.
-While these approaches are complementary, more work is needed for proof repair tools to better support 
-developments in this style.
-
-\subsection{Proof Automation}
+\subsection{Other Proof Automation}
 \label{sec:automation}
 
 Proof repair implements a kind of proof automation.
 New proof automation continues to make proof repair more feasible.
 
 \paragraph{Ontology Repair}
-GALILEO~\cite{chan2011galileo} is a tool build on Isabelle for identifying and repairing faulty ontologies in response to contradictory
-evidence; it has been applied to repair faulty physics ontologies, and may have applications more generally for mathematical proofs.
+GALILEO~\cite{chan2011galileo} is a tool built on \kl{Isabelle/HOL} for identifying and repairing faulty ontologies in response to contradictory
+evidence; it has been applied to repair faulty physics ontologies, and may have applications for proof repair.
 GALILEO uses repair plans to determine when to trigger a repair, as well as how to repair the ontology.
 
 \paragraph{Knowledge Sharing Methods}
@@ -332,18 +334,17 @@ reprove parts of the standard library of HOL4 and HOL Light using combined knowl
 from the two proof assistants~\cite{Gauthier2015}. 
 More recently, this approach has been used to identify similar concepts
 across libraries in proof assistants with different logics~\cite{gauthier2017}.
-These methods combined with automation like hammers may help the proof engineer 
-adapt proofs between isomorphic types, and may have applications
+These methods may have applications
 when repairing proofs even within the same logic, using information from different 
 libraries, different commits, or different representations of similar types.
 
 \paragraph{E-Graphs} % TODO lol this sucks
 The \toolnamec proof term transformation can in some sense be viewed as a rewrite system across equivalences.
-A number of modern rewrite systems use data structures called \textit{e-graphs}~\cite{egraph1} for managing equivalences~\cite{egg}.
-E-graphs have been implemented in Lean~\cite{selsam:lean} (assuming UIP),
-and in Cubical Agda~\cite{egraph6} (implying univalence).
+A number of modern rewrite systems use data structures called \textit{e-graphs}~\cite{egraph1} for managing equivalences.
+E-graphs have been implemented in \kl{Lean}~\cite{selsam:lean} (assuming \kl{UIP}),
+and in \kl{Cubical Agda}~\cite{egraph6} (implying \kl{univalence}).
 Similar implementations of e-graphs could help improve \toolnamec and similar tools to support
-type-directed search and more (Chapter~\ref{chapt:conclusions}).
+type-directed search and more (see Chapter~\ref{chapt:conclusions}).
 
 \section{Program Repair}
 \label{sec:repair}
@@ -367,8 +368,8 @@ A recent review~\cite{Qi:2015:APP:2771783.2771791} of a popular test-based progr
 shows that most of the reported patches generated by the tool are not correct.
 These observations are later reaffirmed in a different setting~\cite{DBLP:journals/corr/abs-1811-02429}.
 In response, the paper recommends that program repair tools draw on extra information, like specifications or example patches.
-In Coq, specifications and examples are rich and widely available: specifications thanks to dependent types,
-and examples thanks to constructivism. This shows why proof repair in Coq is an especially good fit for program repair.
+In \kl{Coq}, specifications and examples are rich and widely available: specifications thanks to dependent types,
+and examples thanks to \kl{constructivism}. This shows why proof repair in Coq is an especially good fit for program repair.
  
 \paragraph{Specifications}
 One limitation of test-based program repair tools is that tests in evaluation suites are often underspecified,
@@ -387,9 +388,9 @@ The richness of the type theory further makes it possible for \sysnamelong to ch
 Still, there is always a chance that the specification itself must change in order for proof repair to work,
 as I showed with \toolnamec.
 In those cases, it is helpful to have some assurance that the specifications the tool produces are meaningful---in the case of
-\toolnamec, that the old and new specifications are equal up to transport along the change in the datatype.
+\toolnamec, that the old and new specifications are equal up to \kl{transport} along the change in the datatype.
 It is also useful to have a human in the loop to check specifications in the end,
-as \toolnamec does.
+as all of the plugins in \sysnamelong do.
 Section~\ref{sec:techniques} discusses other specification-based repair tools,
 as well as other repair tools that bring a human into the loop.
 
@@ -400,8 +401,8 @@ One possible reason for this is that the tools could not search for the correct 
 Example-based techniques can help navigate a large search space quickly.
 
 \sysnamelong uses examples---in the former of changes to datatypes or proofs---to derive patches.
-The constructive foundations of Coq makes this especially appealing and powerful,
-since it means that existence proofs, for example, must be accompanied by a witness.
+The \kl{constructive} foundations of Coq make this especially appealing and powerful.
+For example, existence proofs in Coq must be accompanied by a witness.
 Each of these witnesses is in effect an example that \sysnamelong can extract and generalize,
 narrowing down the search space of possible repairs.
 
@@ -420,7 +421,8 @@ Section~\ref{sec:techniques} describes other example-based repair tools.
 %But the proof assistant \sysname\ operates over supports dependent types, and in the world of proof repair,
 %the criteria for a patch being correct is very strict. 
 
-Proof repair can learn a lot from program repair tools, even though the tools do not carry over in a straightforward way (Section~\ref{sec:how}).
+Proof repair can in the future draw on many of the techniques that program repair tools use,
+even though the tools themselves do not carry over in a straightforward way (recall Section~\ref{sec:how}).
 This section discusses techniques from existing program repair tools that are relevant to proof repair.
 It focuses in particular on what a recent survey~\cite{Monperrus:2018:ASR:3177787.3105906} of program repair calls behavioral repair,
 or patching the code, rather than state repair, or patching the dynamic behavior.
@@ -433,7 +435,7 @@ Test-based regression repair tools repair code that causes a set of tests (the \
 such that regressed tests pass on the repaired code.
 In some sense, proof repair is a kind of regression repair, as it repairs
 proofs that used to succeed, but after some change, no longer do (the \textit{regressed proofs}).
-A section that \kl{Karl} wrote in our survey paper~\cite{PGL-045} describes the correspondence between regressed proofs and regressed tests in more detail,
+A section by \kl{Karl} in \kl{QED at Large} describes the correspondence between regressed proofs and regressed tests in more detail,
 and details existing techniques~\cite{Palmskog2018, Wenzel2013MultiProcessing, Barras2013, Celik:2017:IRP:3155562.3155588, Wenzel2013, Barras2015, deMoura2015, Wenzel2014, WenzelScalingIsabelle, WenzelFurtherScalingIsabelle} for rechecking regressed proofs.
 
 One test-based regression program repair tool is ReAssert~\cite{daniel2009reassert} for Java,
@@ -444,7 +446,7 @@ It loops through strategies until one works or none remain.
 Another such tool is Relifix~\cite{Tan:2015:RAR:2818754.2818813} for C.
 Relifix uses a manual inspection to find code transformations based on regressions, then searches those transformations for 
 patches that make the regressed tests pass without making other tests fail.
-Both ReAssert and Relifix are configurable like \sysnamelong, and may provide interesting examples of configurations
+Both ReAssert and Relifix are configurable like \toolnamec, and may provide interesting examples of configurations
 or ways of inferring new configurations.
 
 While not quite a regression repair tool, GRAFTER~\cite{Zhang:2017:ATD:3097368.3097448} is a related tool that adapts the tests themselves,
@@ -452,7 +454,7 @@ rather than the code under test. Its focus is on testing software clones for err
 cloning process. It uses a static analysis to identify variables and methods that correspond between the clones,
 then ensures that the flow is preserved using that mapping. The user can then run the new tests to compare behavior.
 It provides a guarantee about type safety, and it performs reasonably well on some real-world software.
-GRAFTER, like \toolnamec, takes an approach to repair that uses a form of differencing.
+GRAFTER, like \sysnamelong, takes an approach to repair that uses a form of \kl{differencing}.
 Looking to this to help inform new differencing algorithms for \sysnamelong could be fruitful,
 in spite of foundational differences of the target domains.
 
@@ -467,7 +469,7 @@ For future proof reuse tools, making better use of existing proof automation in 
 patches that satisfy specifications may prove fruitful.
 
 Proof-directed repair~\cite{dennis2006proof} presents a methodology
-for repairing programs based on information from incomplete proofs in Isabelle.
+for repairing programs based on information from incomplete proofs in \kl{Isabelle/HOL}.
 Essentially, the programmer writes a proof, and then uses feedback
 from the attempted proof to debug and fix the code.
 In a sense, since if the repair succeeds the proof should go through,
@@ -476,10 +478,10 @@ then shows some examples using those techniques with existing tools.
 It does not yet automate it in a tool.
 Still, perhaps using partial proofs as in proof-directed repair can help a proof repair tool like \sysnamelong
 better repair functions.
-It also matches the workflow of proof engineers seen in the \textsc{REPLica} user study. % TODO say it's mine somehow 
+It also matches the workflow of proof engineers seen in the \kl{\textsc{REPLica}} user study. % TODO say it's mine somehow 
 
 \paragraph{Repair by Example}
-Some program repair tools work by example, like \sysnamelong.
+Some program repair tools work \kl{by example}, like \sysname.
 Prophet~\cite{Long:2016:APG:2837614.2837617}, a test-based repair tool for C,
 uses human-generated patches from software repositories as examples.
 These examples can come from different applications from the one that is being repaired.
@@ -514,7 +516,7 @@ Similarly, \lstinline{spdiff}~\cite{andersen2010generic} generalizes patches int
 which can then apply those patches automatically in different contexts. This way, the library designer can write a semantic patch
 himself, or \lstinline{spdiff} can infer one.
 
-A number of program repair tools above---much like the proof repair tools decribed in this thesis---build on differencing algorithms.
+A number of program repair tools above---much like the proof repair tools decribed in this thesis---build on \kl{differencing} algorithms.
 Existing work in differencing and incremental computation may help 
 improve semantic differencing algorithms for both program and proof repair.
 Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}
@@ -527,10 +529,10 @@ Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a 
 All of these may be useful for improving semantic differencing.
 
 Several of the repair by example tools make use of code repositories and libraries to identify examples.
-One challenge that I faced in my proof repair work was making use of examples changes in code repositories, since Github commits are typically large.
+One challenge that I faced in my proof repair work was isolating the large composite changes typically found in static artifacts or in code repositories.
 These tools may offer some insights for how to approach this problem.
-Some of these tools also use machine learning---I discuss some ideas combining proof repair
-with machine learning in Section~\ref{sec:synthesis}.
+Some of the program repair tools above also use machine learning---I discuss some ideas combining proof repair
+with machine learning in Chapter~\ref{chapt:conclusions}.
 
 \paragraph{Human in the Loop}
 Some tools avoid using test suites to judge correctness of candidate patches, and instead

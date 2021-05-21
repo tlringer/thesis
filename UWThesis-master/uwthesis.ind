@@ -2,9 +2,9 @@
 
   \item Acknowledgments
     \subitem Coauthors
-      \subsubitem Alex Sanchez-Stern, \hyperpage{xiv}, \hyperpage{10}, 
-		\hyperpage{26}
-      \subsubitem Karl Palmskog, \hyperpage{xiv}, \hyperpage{10}, 
+      \subsubitem Alex Sanchez-Stern, \hyperpage{xiv}, \hyperpage{1}, 
+		\hyperpage{10}, \hyperpage{26}
+      \subsubitem Karl Palmskog, \hyperpage{1}, \hyperpage{10}, 
 		\hyperpage{112}, \hyperpage{120}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiv}, \hyperpage{9, 10}, 
 		\hyperpage{20}, \hyperpage{68}, \hyperpage{94}, 
@@ -19,77 +19,50 @@
     \subitem Family
       \subsubitem Lymor Ringer Barnhard, \hyperpage{xi}
     \subitem Friends
-      \subsubitem Anna Kornfeld Simpson, \hyperpage{xiv}
-      \subsubitem Anne Spencer Ross, \hyperpage{xiv}
-      \subsubitem Ellie Berry, \hyperpage{xiv}
-      \subsubitem Esther Jang, \hyperpage{xiv}
-      \subsubitem Jasper Tran O'Leary, \hyperpage{xiv}
-      \subsubitem Laura Chick, \hyperpage{xiv}
-      \subsubitem Marcela Mendoza, \hyperpage{xiv}
-      \subsubitem Mark Velednitsky, \hyperpage{xiv}
-      \subsubitem Mer Joyce, \hyperpage{xiv}
-      \subsubitem Misha Kolmogorov, \hyperpage{xiv}
-      \subsubitem Qi Cheng, \hyperpage{xiv}
-      \subsubitem Roy Or-El, \hyperpage{xiv}
-      \subsubitem Vikram Iyer, \hyperpage{xiv}
-      \subsubitem Wade Gordon, \hyperpage{xiv}
+      \subsubitem Anna Kornfeld Simpson, \hyperpage{1}
+      \subsubitem Anne Spencer Ross, \hyperpage{1}
+      \subsubitem Ellie Berry, \hyperpage{1}
+      \subsubitem Esther Jang, \hyperpage{1}
+      \subsubitem Jasper Tran O'Leary, \hyperpage{1}
+      \subsubitem Laura Chick, \hyperpage{1}
+      \subsubitem Marcela Mendoza, \hyperpage{1}
+      \subsubitem Mark Velednitsky, \hyperpage{1}
+      \subsubitem Mer Joyce, \hyperpage{1}
+      \subsubitem Misha Kolmogorov, \hyperpage{1}
+      \subsubitem Qi Cheng, \hyperpage{1}
+      \subsubitem Roy Or-El, \hyperpage{1}
+      \subsubitem Vikram Iyer, \hyperpage{1}
+      \subsubitem Wade Gordon, \hyperpage{1}
     \subitem Labmates
       \subsubitem Alex Polozov, \hyperpage{xiv}
-      \subsubitem Ali K\"{o}skal, \hyperpage{xiv}
       \subsubitem Amanda Swearngin, \hyperpage{xiv}
-      \subsubitem Amy Zhu, \hyperpage{xiv}
-      \subsubitem Audrey Seo, \hyperpage{xiv}
       \subsubitem Ben Kushigian, \hyperpage{xiv}
       \subsubitem Bill Zorn, \hyperpage{xiv}
-      \subsubitem Calvin Loncaric, \hyperpage{xiv}
-      \subsubitem Chandrakana Nandi, \hyperpage{xiv}
+      \subsubitem Chandrakana Nandi, \hyperpage{xiii, xiv}
       \subsubitem Chenglong Wang, \hyperpage{xiv}
-      \subsubitem Dan Cascaval, \hyperpage{xiv}
-      \subsubitem Daryl Zuniga, \hyperpage{xiv}
       \subsubitem Doug Woos, \hyperpage{xiv}
-      \subsubitem Eric Mullen, \hyperpage{xiv}
-      \subsubitem Eunice Jun, \hyperpage{xiv}
       \subsubitem Gus, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
-      \subsubitem James Bornholt, \hyperpage{xiv}
       \subsubitem James Wilcox, \hyperpage{xiv}
       \subsubitem Jared Roesch, \hyperpage{xiv}
       \subsubitem Joe Redmond, \hyperpage{xiv}
       \subsubitem John Toman, \hyperpage{xiv}
-      \subsubitem Josh Pollock, \hyperpage{xiv}
-      \subsubitem Julie Newcomb, \hyperpage{xiv}
       \subsubitem Konstantin Weitz, \hyperpage{xiv}
       \subsubitem Krzysztof Drewniak, \hyperpage{xiv}
-      \subsubitem Logan Weber, \hyperpage{xiv}
-      \subsubitem Luis Vega, \hyperpage{xiv}
-      \subsubitem Luke Nelson, \hyperpage{xiv}
-      \subsubitem Maaz Ahmad, \hyperpage{xiv}
-      \subsubitem Mangpo Phitchaya Phothilimthana, \hyperpage{xiv}
       \subsubitem Marisa Kirisame, \hyperpage{xiv}
       \subsubitem Martin Kellog, \hyperpage{xiv}
-      \subsubitem Max Ruttenberg, \hyperpage{xiv}
       \subsubitem Max Willsey, \hyperpage{xiv}
       \subsubitem Melissa Hovik, \hyperpage{xiv}
-      \subsubitem Michael Flanders, \hyperpage{xiv}
-      \subsubitem Mike He, \hyperpage{xiv}
       \subsubitem Rashmi Mudduluru, \hyperpage{xiv}
       \subsubitem Remy Wang, \hyperpage{xiv}
-      \subsubitem Rohin Shah, \hyperpage{xiv}
-      \subsubitem Ryan Doenges, \hyperpage{xiv}
-      \subsubitem Sahil Verma, \hyperpage{xiv}
       \subsubitem Sam Elliott, \hyperpage{xiv}
-      \subsubitem Sam Kaufman, \hyperpage{xiv}
-      \subsubitem Sarah Chasins, \hyperpage{xiv}
-      \subsubitem Shumo Chu, \hyperpage{xiv}
+      \subsubitem Sarah Chasins, \hyperpage{xiv}, \hyperpage{1}
       \subsubitem Sorawee Porncharoenwase, \hyperpage{xiv}
-      \subsubitem Spencer Pearson, \hyperpage{xiv}
       \subsubitem Steven Lyubomirsky, \hyperpage{xiv}
       \subsubitem Stuart Pernsteiner, \hyperpage{xiv}
-      \subsubitem Thomas Schweizer, \hyperpage{xiv}
-      \subsubitem Zhen Zhang, \hyperpage{xiv}
     \subitem Labs
-      \subsubitem UCSD ProgSys, \hyperpage{xiv}, \hyperpage{10}
-      \subsubitem UW PLSE, \hyperpage{xiii}
+      \subsubitem UCSD ProgSys, \hyperpage{1}, \hyperpage{10}
+      \subsubitem UW PLSE, \hyperpage{xiii, xiv}
     \subitem Mentors \& Advisors
       \subsubitem Brandi K. Adams, \hyperpage{xi}
       \subsubitem Dan Grossman, \hyperpage{xii, xiii}
@@ -109,7 +82,7 @@
       \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{103}, 
 		\hyperpage{105}
       \subsubitem Carlo Angiuli, \hyperpage{1}, \hyperpage{79}
-      \subsubitem Michael Shulman, \hyperpage{xiv}, \hyperpage{79}
+      \subsubitem Michael Shulman, \hyperpage{1}, \hyperpage{79}
 
   \indexspace
 

@@ -4,11 +4,10 @@
 \contentsline {paragraph}{Jeff}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Industry Mentors \& Managers}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Dan}{xii}{chapter*.3}% 
-\contentsline {paragraph}{My Lab}{xiii}{Item.3}% 
-\contentsline {paragraph}{My Friends (WIP)}{xiv}{Item.3}% 
-\contentsline {paragraph}{My Students (WIP)}{xiv}{Item.3}% 
-\contentsline {paragraph}{My Coauthors (WIP)}{xiv}{Item.3}% 
-\contentsline {paragraph}{My Community (WIP)}{xiv}{Item.3}% 
+\contentsline {paragraph}{PLSE}{xiii}{Item.3}% 
+\contentsline {paragraph}{My Friends (WIP)}{1}{Item.3}% 
+\contentsline {paragraph}{My Coauthors (WIP)}{1}{Item.3}% 
+\contentsline {paragraph}{My Community (WIP)}{1}{Item.3}% 
 \contentsline {paragraph}{My Writing Buddy (WIP)}{1}{Item.3}% 
 \contentsline {paragraph}{My Running Buddies (WIP)}{1}{Item.3}% 
 \contentsline {paragraph}{My Puppy (WIP)}{1}{Item.3}% 

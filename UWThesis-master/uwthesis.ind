@@ -150,15 +150,6 @@
 
   \indexspace
 
-  \item Category Theory
-    \subitem Initial Algebra, \hyperpage{78, 79}
-  \item Conventions
-    \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
-		\hyperpage{32}, \hyperpage{42}, \hyperpage{58}, 
-		\hyperpage{75}, \hyperpage{94, 95}
-
-  \indexspace
-
   \item Logic \& Type Theory
     \subitem Algebraic Ornaments, \hyperpage{83, 84}, \hyperpage{88}, 
 		\hyperpage{102}, \hyperpage{107}, \hyperpage{116}
@@ -181,8 +172,7 @@
 		\hyperpage{117}, \hyperpage{119}
       \subsubitem Type Equivalences, \hyperpage{68}, \hyperpage{70--74}, 
 		\hyperpage{89}, \hyperpage{112}, \hyperpage{117}
-    \subitem Externalization, \hyperpage{73}, \hyperpage{106}, 
-		\hyperpage{117}
+    \subitem External, \hyperpage{73}, \hyperpage{106}, \hyperpage{117}
     \subitem Inductive Types, \hyperpage{18}, \hyperpage{75}, 
 		\hyperpage{83}, \hyperpage{116}
       \subsubitem Constructors, \hyperpage{18}, \hyperpage{75}, 
@@ -194,9 +184,13 @@
 		\hyperpage{81}, \hyperpage{86}
       \subsubitem Motive, \hyperpage{19}, \hyperpage{37}, 
 		\hyperpage{40}, \hyperpage{85}
+    \subitem Initial Algebra, \hyperpage{78, 79}
     \subitem Internal, \hyperpage{73}, \hyperpage{107}, \hyperpage{117}
     \subitem Intuitionistic Logic, \hyperpage{111, 112}, 
 		\hyperpage{119, 120}
+    \subitem Primitive Eliminators, \hyperpage{20}, \hyperpage{22, 23}, 
+		\hyperpage{32}, \hyperpage{42}, \hyperpage{58}, 
+		\hyperpage{75}, \hyperpage{94, 95}
     \subitem Type Theories
       \subsubitem Calculus of Inductive Constructions, \hyperpage{18}, 
 		\hyperpage{21}, \hyperpage{40}, \hyperpage{73}, 
@@ -219,21 +213,15 @@
 		\hyperpage{8}, \hyperpage{11}, \hyperpage{13}, 
 		\hyperpage{15}, \hyperpage{66}, \hyperpage{111, 112}, 
 		\hyperpage{117}, \hyperpage{120}, \hyperpage{128}
-  \item Proof Assistants
-    \subitem Coq
-      \subsubitem Commands, \hyperpage{34}, \hyperpage{93}
-      \subsubitem Gallina, \hyperpage{12--15}, \hyperpage{18}, 
-		\hyperpage{28}, \hyperpage{40}, \hyperpage{67}, 
-		\hyperpage{97}, \hyperpage{111, 112}, \hyperpage{115}
-      \subsubitem Ltac, \hyperpage{13}, \hyperpage{15}, \hyperpage{23}, 
-		\hyperpage{28}, \hyperpage{97}, \hyperpage{111}, 
-		\hyperpage{113}
-      \subsubitem Plugins, \hyperpage{7}, \hyperpage{26}, 
-		\hyperpage{31}, \hyperpage{65}
 
   \indexspace
 
   \item Thesis
+    \subitem \sysnamelong Plugin Suite, \hyperpage{7}, \hyperpage{48}, 
+		\hyperpage{65}
+      \subsubitem \sysname Prototype, \hyperpage{31}, \hyperpage{48}, 
+		\hyperpage{69}, \hyperpage{93}
+      \subsubitem \toolnamec , \hyperpage{65}
     \subitem Approach
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}, 
@@ -244,18 +232,42 @@
 		\hyperpage{49}, \hyperpage{74}, \hyperpage{116, 117}, 
 		\hyperpage{121, 122}, \hyperpage{125}, \hyperpage{128}
     \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}, 
-		\hyperpage{63}
+		\hyperpage{63}, \hyperpage{110}
     \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
 		\hyperpage{63}, \hyperpage{110}, \hyperpage{125}
-    \subitem Results, \hyperpage{6}
-    \subitem Technology
-      \subsubitem Proof Repair, \hyperpage{4}, \hyperpage{24}, 
+    \subitem Proof Repair, \hyperpage{4}, \hyperpage{24}, 
 		\hyperpage{114}, \hyperpage{125}
+      \subsubitem Automatic Configuration, \hyperpage{66}, 
+		\hyperpage{68}, \hyperpage{72}, \hyperpage{74}, 
+		\hyperpage{82}, \hyperpage{89}, \hyperpage{94}
+      \subsubitem Configuration, \hyperpage{65}, \hyperpage{74}, 
+		\hyperpage{78}
+      \subsubitem Dependent Constructors, \hyperpage{75}
+      \subsubitem Eta, \hyperpage{77}, \hyperpage{116}
+      \subsubitem eusable Patch, \hyperpage{31}, \hyperpage{33, 34}, 
+		\hyperpage{36--39}
+      \subsubitem Exampled Patched Proof, \hyperpage{31}
+      \subsubitem Goal Type, \hyperpage{34}, \hyperpage{37--39}
+      \subsubitem Iota, \hyperpage{75}
+      \subsubitem Manual Configuration, \hyperpage{65}, \hyperpage{68}, 
+		\hyperpage{72}, \hyperpage{74}, \hyperpage{89}, 
+		\hyperpage{94}
+      \subsubitem Patch Candidate, \hyperpage{33}, \hyperpage{37--39}
+      \subsubitem Proof Repair Across Type Equivalences, \hyperpage{65}
+      \subsubitem Proof Repair By Example, \hyperpage{31}, 
+		\hyperpage{121}
+      \subsubitem Search Procedure Instance, \hyperpage{36--39}, 
+		\hyperpage{49}, \hyperpage{54}
+      \subsubitem Unification Heuristics, \hyperpage{91, 92}
+    \subitem Results, \hyperpage{6}, \hyperpage{57}
 
   \indexspace
 
   \item Verification, \hyperpage{3, 4}, \hyperpage{11}, \hyperpage{23}, 
 		\hyperpage{111}, \hyperpage{125}
+    \subitem Coq Commands, \hyperpage{34}, \hyperpage{93}
+    \subitem Coq Plugins, \hyperpage{7}, \hyperpage{26}, \hyperpage{31}, 
+		\hyperpage{65}
     \subitem de Bruijn Criterion, \hyperpage{111, 112}
     \subitem Kernel, \hyperpage{4}, \hyperpage{6}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{18}, \hyperpage{111--113}
@@ -289,14 +301,23 @@
 		\hyperpage{111}
     \subitem Proof Maintenance, \hyperpage{23}
     \subitem Proof Object, \hyperpage{112}
-      \subsubitem Ephemeral Proof Objec, \hyperpage{112}, 
+      \subsubitem Ephemeral Proof Object, \hyperpage{112}, 
 		\hyperpage{126}
-      \subsubitem Explicit Proof Objec, \hyperpage{112}
+      \subsubitem Explicit Proof Object, \hyperpage{112}
     \subitem Proof Script, \hyperpage{5}, \hyperpage{13}, 
 		\hyperpage{16}, \hyperpage{67}, \hyperpage{117}
+      \subsubitem Ltac, \hyperpage{13}, \hyperpage{15}, \hyperpage{23}, 
+		\hyperpage{28}, \hyperpage{97}, \hyperpage{111}, 
+		\hyperpage{113}
+      \subsubitem Tactics, \hyperpage{5}, \hyperpage{12}, 
+		\hyperpage{15}, \hyperpage{23}, \hyperpage{28}, 
+		\hyperpage{97}, \hyperpage{111}, \hyperpage{113, 114}
     \subitem Proof Term, \hyperpage{6}, \hyperpage{13}, \hyperpage{16}, 
 		\hyperpage{18}, \hyperpage{28}, \hyperpage{67}, 
 		\hyperpage{97}
+      \subsubitem Gallina, \hyperpage{12--15}, \hyperpage{18}, 
+		\hyperpage{28}, \hyperpage{40}, \hyperpage{67}, 
+		\hyperpage{97}, \hyperpage{111, 112}, \hyperpage{115}
     \subitem Trusted Computing Base, \hyperpage{7}, \hyperpage{34}, 
 		\hyperpage{49}, \hyperpage{52}, \hyperpage{69}, 
 		\hyperpage{73}, \hyperpage{92, 93}, \hyperpage{97}

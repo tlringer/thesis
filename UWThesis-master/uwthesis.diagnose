@@ -7,7 +7,7 @@
 5 autoreference(s) are used but not introduced.
 
 117 autoreference(s) are properly used.
-99 autoreference(s) are defined but not used.
+100 autoreference(s) are defined but not used.
 
 
 ********
@@ -132,6 +132,7 @@ index.tex:494: {Anne Spencer Ross}{default}{base}
 index.tex:497: {Anna Kornfeld Simpson}{default}{base}
 index.tex:500: {Qi Cheng}{default}{base}
 index.tex:503: {Misha Kolmogorov}{default}{base}
+index.tex:506: {Grace Uchida}{default}{base}
 index.tex:509: {Marcela Mendoza}{default}{base}
 index.tex:512: {Laura Chick}{default}{base}
 index.tex:515: {Ezgi Akg\"{u}l}{default}{base}

@@ -1197,7 +1197,7 @@
 \KAuxFileAt {index.tex}{505}
 
 \KAuxFileAt {index.tex}{506}
-\KAuxAutoref {default}{base}{Mark Velednitsky}
+\KAuxAutoref {default}{base}{Grace Uchida}
 
 \KAuxFileAt {index.tex}{507}
 
@@ -1862,6 +1862,7 @@
 \KAuxFileAt {acks.tex}{180}
 \KAuxAutorefTarget {default}{base}{Marcela Mendoza}
 \KAuxAutorefTarget {default}{base}{Misha Kolmogorov}
+\KAuxAutorefTarget {default}{base}{Grace Uchida}
 
 \KAuxFileAt {acks.tex}{183}
 \KAuxAutorefTarget {default}{base}{Laura Chick}

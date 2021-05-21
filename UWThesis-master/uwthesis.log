@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 00:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2322,7 +2322,7 @@ m/n/10.95 (-20) Proof re-pair tools should in-te-grate smoothly
  []
 
 [127] [128] [129])) (./uwthesis.ind [130]
-Overfull \hbox (10.04045pt too wide) in paragraph at lines 73--74
+Overfull \hbox (10.04045pt too wide) in paragraph at lines 74--75
 []| \T1/pplj/m/n/10.95 (-20) Daniel Schwartz-Narbonne,
  []
 
@@ -2333,103 +2333,103 @@ Overfull \hbox (10.04045pt too wide) in paragraph at lines 73--74
 
 
 ]
-Overfull \hbox (0.5488pt too wide) in paragraph at lines 85--87
+Overfull \hbox (0.5488pt too wide) in paragraph at lines 86--88
 []| \T1/pplj/m/n/10.95 (-20) An-ders Mört-berg, []79[], []103[],
  []
 
 
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 147--148
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 148--149
 []| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 
-Overfull \hbox (7.97986pt too wide) in paragraph at lines 158--160
+Overfull \hbox (7.97986pt too wide) in paragraph at lines 159--161
 []| \T1/pplj/m/n/10.95 (-20) Or-na-men-tal Pro-mo-tion Iso-
  []
 
 
-Overfull \hbox (0.26569pt too wide) in paragraph at lines 163--164
+Overfull \hbox (0.26569pt too wide) in paragraph at lines 164--165
 []| \T1/pplj/m/n/10.95 (-20) Law of the Ex-cluded Mid-
  []
 
 
-Overfull \hbox (21.43654pt too wide) in paragraph at lines 164--166
+Overfull \hbox (21.43654pt too wide) in paragraph at lines 165--167
 []| \T1/pplj/m/n/10.95 (-20) Unique-ness of Iden-tity Proofs,
  []
 
 [132]
-Overfull \hbox (2.9659pt too wide) in paragraph at lines 173--175
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 174--176
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []68[], []70[]--
  []
 
 
-Overfull \hbox (2.94571pt too wide) in paragraph at lines 189--191
+Overfull \hbox (2.94571pt too wide) in paragraph at lines 190--192
 []| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []111[], []112[],
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 191--194
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 192--195
 []| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []20[], []22[],
  []
 
 
-Overfull \hbox (4.15424pt too wide) in paragraph at lines 195--199
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 196--200
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 210--211
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 211--212
 []| \T1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 212--216
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 213--217
 \T1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
 
-Overfull \hbox (6.91394pt too wide) in paragraph at lines 220--222
+Overfull \hbox (6.91394pt too wide) in paragraph at lines 221--223
 []| \T1/pplj/m/sc/10.95 (-20) Pump-kin Patch \T1/pplj/m/n/10.95 (-20) Plu-gin S
 uite,
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 240--243
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 241--244
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 252--255
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 253--256
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []65[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 259--261
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 260--262
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 261--262
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 262--263
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []91[],
  []
 
 
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 271--272
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 272--273
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []111[], []112[] 
  []
 
 [133]
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 274--275
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 275--276
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 277--279
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 278--280
 []| \T1/pplj/m/n/10.95 (-20) Agda, []4[], []111[]--[]113[], []115[], []126[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 284--287
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 285--288
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []4[], []111[]--[]113[],
  []
 
@@ -2509,10 +2509,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 51824 strings out of 492609
- 1048570 string characters out of 6129033
- 1324779 words of memory out of 5000000
- 52288 multiletter control sequences out of 15000+600000
+ 51826 strings out of 492609
+ 1048613 string characters out of 6129033
+ 1324808 words of memory out of 5000000
+ 52290 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2538,10 +2538,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1859931 bytes).
+Output written on uwthesis.pdf (165 pages, 1860194 bytes).
 PDF statistics:
- 4557 PDF objects out of 5155 (max. 8388607)
- 4281 compressed objects within 43 object streams
+ 4558 PDF objects out of 5155 (max. 8388607)
+ 4282 compressed objects within 43 object streams
  1610 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

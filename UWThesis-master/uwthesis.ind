@@ -2,38 +2,111 @@
 
   \item Acknowledgments
     \subitem Coauthors
-      \subsubitem Alex Sanchez-Stern, \hyperpage{xiv}, \hyperpage{1}, 
-		\hyperpage{10}, \hyperpage{26}
-      \subsubitem Karl Palmskog, \hyperpage{1}, \hyperpage{10}, 
-		\hyperpage{112}, \hyperpage{120}
+      \subsubitem Alex Sanchez-Stern, \hyperpage{xiv}, 
+		\hyperpage{9, 10}, \hyperpage{26}
+      \subsubitem Ilya Sergey, \hyperpage{9}
+      \subsubitem John Leo, \hyperpage{9}
+      \subsubitem Karl Palmskog, \hyperpage{9, 10}, \hyperpage{112}, 
+		\hyperpage{120}
+      \subsubitem Milos Gligoric, \hyperpage{9}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiv}, \hyperpage{9, 10}, 
 		\hyperpage{20}, \hyperpage{68}, \hyperpage{94}, 
 		\hyperpage{96}, \hyperpage{102}, \hyperpage{107, 108}
-      \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{10}, 
+      \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{9, 10}, 
 		\hyperpage{21}, \hyperpage{98}, \hyperpage{100, 101}, 
 		\hyperpage{126}
+      \subsubitem Sorin Lerner, \hyperpage{9}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xii}
       \subsubitem Carr Astronautics, \hyperpage{xii}
       \subsubitem Google, \hyperpage{xi}
+    \subitem Coq Community, \hyperpage{xv}, \hyperpage{1}
+      \subsubitem Ben Delaware, \hyperpage{xv}
+      \subsubitem Cyril Cohen, \hyperpage{xv}
+      \subsubitem Emilio J. Gallego Arias, \hyperpage{xv}
+      \subsubitem Enrico Tassi, \hyperpage{xv}
+      \subsubitem Ga\"{e}tan Gilbert, \hyperpage{xv}
+      \subsubitem Janno, \hyperpage{xv}
+      \subsubitem Jason Gross, \hyperpage{xv}
+      \subsubitem Matthieu Sozeau, \hyperpage{xv}
+      \subsubitem Maxime D\'{e}n\`{e}s, \hyperpage{xv}
+      \subsubitem Nicolas Tabareau, \hyperpage{xv}
+      \subsubitem Pierre-Marie P\'{e}drot, \hyperpage{xv}
+      \subsubitem Robert Rand, \hyperpage{xv}
+      \subsubitem Tej Chajed, \hyperpage{xv}
+      \subsubitem Th\'{e}o Zimmermann, \hyperpage{xv}
+      \subsubitem Valentin Robert, \hyperpage{xv}
+      \subsubitem Vincent Laporte, \hyperpage{xv}
+      \subsubitem Yves Bertot, \hyperpage{xv}
     \subitem Family
-      \subsubitem Lymor Ringer Barnhard, \hyperpage{xi}
+      \subsubitem David Lasky, \hyperpage{xv}
+      \subsubitem Lymor, \hyperpage{xi}
+      \subsubitem Mom \& Dad, \hyperpage{1}
     \subitem Friends
-      \subsubitem Anna Kornfeld Simpson, \hyperpage{1}
-      \subsubitem Anne Spencer Ross, \hyperpage{1}
-      \subsubitem Ellie Berry, \hyperpage{1}
-      \subsubitem Esther Jang, \hyperpage{1}
-      \subsubitem Jasper Tran O'Leary, \hyperpage{1}
-      \subsubitem Laura Chick, \hyperpage{1}
-      \subsubitem Marcela Mendoza, \hyperpage{1}
-      \subsubitem Mark Velednitsky, \hyperpage{1}
-      \subsubitem Mer Joyce, \hyperpage{1}
-      \subsubitem Misha Kolmogorov, \hyperpage{1}
-      \subsubitem Qi Cheng, \hyperpage{1}
-      \subsubitem Roy Or-El, \hyperpage{1}
-      \subsubitem Vikram Iyer, \hyperpage{1}
-      \subsubitem Wade Gordon, \hyperpage{1}
-    \subitem Labmates
+      \subsubitem Anna Kornfeld Simpson, \hyperpage{xv}
+      \subsubitem Anne Spencer Ross, \hyperpage{xv}
+      \subsubitem Chris Maines, \hyperpage{xv}
+      \subsubitem Danielle Antosh, \hyperpage{xv}
+      \subsubitem Ellie Berry, \hyperpage{xv}
+      \subsubitem Erica Iantuono, \hyperpage{xv}
+      \subsubitem Esther Jang, \hyperpage{xiv, xv}
+      \subsubitem Ezgi Akg\"{u}l, \hyperpage{xv}
+      \subsubitem Jasper Tran O'Leary, \hyperpage{xv}
+      \subsubitem Laura Chick, \hyperpage{xv}
+      \subsubitem Marcela Mendoza, \hyperpage{xv}
+      \subsubitem Melanie Walker, \hyperpage{xv}
+      \subsubitem Mer Joyce, \hyperpage{xv}
+      \subsubitem Misha Kolmogorov, \hyperpage{xv}
+      \subsubitem Qi Cheng, \hyperpage{xv}
+      \subsubitem Roy Or-El, \hyperpage{xiv}
+      \subsubitem Vikram Iyer, \hyperpage{xiv}
+      \subsubitem Wade Gordon, \hyperpage{xv}
+    \subitem Jewish Community
+      \subsubitem Chabad of Queen Anne, \hyperpage{xv}
+    \subitem Mentors \& Advisors
+      \subsubitem Brandi K. Adams, \hyperpage{xi}
+      \subsubitem Dan Grossman, \hyperpage{xii, xiii}, \hyperpage{9}
+      \subsubitem Daniel Schwartz-Narbonne, \hyperpage{xii}
+      \subsubitem Derek Dreyer, \hyperpage{xv}
+      \subsubitem Ernesto Gonzalez, \hyperpage{xii}
+      \subsubitem Ida Chan, \hyperpage{xi}
+      \subsubitem Jeff Foster, \hyperpage{xii}
+      \subsubitem Kasso Okoudjou, \hyperpage{xi}
+      \subsubitem Larry Washington, \hyperpage{xi}
+      \subsubitem Musachy Barroso, \hyperpage{xii}
+      \subsubitem Serdar Tasiran, \hyperpage{xii}
+      \subsubitem Zach Tatlock, \hyperpage{xiv}, \hyperpage{9}
+    \subitem PL Community, \hyperpage{xv}, \hyperpage{1}
+      \subsubitem Alexandra Silva, \hyperpage{xv}
+      \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{103}, 
+		\hyperpage{105}
+      \subsubitem Bas Spitters, \hyperpage{xv}
+      \subsubitem Bob Harper, \hyperpage{xv}
+      \subsubitem Carlo Angiuli, \hyperpage{xv}, \hyperpage{79}
+      \subsubitem Conor McBride, \hyperpage{xv}
+      \subsubitem David van Horn, \hyperpage{xv}
+      \subsubitem Edward Z. Yang, \hyperpage{xv}
+      \subsubitem Emery Berger, \hyperpage{xv}
+      \subsubitem Gerwin Klein, \hyperpage{xv}
+      \subsubitem James Decker, \hyperpage{xv}
+      \subsubitem Jon Sterling, \hyperpage{xv}
+      \subsubitem Jonathan Aldrich, \hyperpage{xv}
+      \subsubitem Kenny Foner, \hyperpage{xv}
+      \subsubitem Lindsey Kuper, \hyperpage{xv}
+      \subsubitem Matt Might, \hyperpage{xv}
+      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{129}
+      \subsubitem Michael Hicks, \hyperpage{xv}
+      \subsubitem Michael Shulman, \hyperpage{79}
+      \subsubitem Nate Foster, \hyperpage{xv}
+      \subsubitem Stephanie Weirich, \hyperpage{xv}
+    \subitem Running Community
+      \subsubitem Club Northwest, \hyperpage{xv}
+      \subsubitem Tom Cotner, \hyperpage{xv}
+    \subitem Students
+      \subsubitem Jasper Hugunin, \hyperpage{xiv}, \hyperpage{68}
+      \subsubitem Taylor Blau, \hyperpage{xiv}
+    \subitem UCSD ProgSys, \hyperpage{xv}, \hyperpage{10}
+    \subitem UW PLSE, \hyperpage{xiii, xiv}
       \subsubitem Alex Polozov, \hyperpage{xiv}
       \subsubitem Amanda Swearngin, \hyperpage{xiv}
       \subsubitem Ben Kushigian, \hyperpage{xiv}
@@ -41,7 +114,7 @@
       \subsubitem Chandrakana Nandi, \hyperpage{xiii, xiv}
       \subsubitem Chenglong Wang, \hyperpage{xiv}
       \subsubitem Doug Woos, \hyperpage{xiv}
-      \subsubitem Gus, \hyperpage{xiv}
+      \subsubitem Gus Smith, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
       \subsubitem James Wilcox, \hyperpage{xiv}
       \subsubitem Jared Roesch, \hyperpage{xiv}
@@ -56,33 +129,10 @@
       \subsubitem Rashmi Mudduluru, \hyperpage{xiv}
       \subsubitem Remy Wang, \hyperpage{xiv}
       \subsubitem Sam Elliott, \hyperpage{xiv}
-      \subsubitem Sarah Chasins, \hyperpage{xiv}, \hyperpage{1}
+      \subsubitem Sarah Chasins, \hyperpage{xiv}
       \subsubitem Sorawee Porncharoenwase, \hyperpage{xiv}
       \subsubitem Steven Lyubomirsky, \hyperpage{xiv}
       \subsubitem Stuart Pernsteiner, \hyperpage{xiv}
-    \subitem Labs
-      \subsubitem UCSD ProgSys, \hyperpage{1}, \hyperpage{10}
-      \subsubitem UW PLSE, \hyperpage{xiii, xiv}
-    \subitem Mentors \& Advisors
-      \subsubitem Brandi K. Adams, \hyperpage{xi}
-      \subsubitem Dan Grossman, \hyperpage{xii, xiii}
-      \subsubitem Daniel Schwartz-Narbonne, \hyperpage{xii}
-      \subsubitem Ernesto Gonzalez, \hyperpage{xii}
-      \subsubitem Ida Chan, \hyperpage{xi}
-      \subsubitem Jeff Foster, \hyperpage{xii}
-      \subsubitem Kasso Okoudjou, \hyperpage{xi}
-      \subsubitem Larry Washington, \hyperpage{xi}
-      \subsubitem Musachy Barroso, \hyperpage{xii}
-      \subsubitem Serdar Tasiran, \hyperpage{xii}
-      \subsubitem Zach Tatlock, \hyperpage{xiv}
-    \subitem Students
-      \subsubitem Jasper Hugunin, \hyperpage{xiv}, \hyperpage{68}
-      \subsubitem Taylor Blau, \hyperpage{xiv}
-    \subitem Type Theorists
-      \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{103}, 
-		\hyperpage{105}
-      \subsubitem Carlo Angiuli, \hyperpage{1}, \hyperpage{79}
-      \subsubitem Michael Shulman, \hyperpage{1}, \hyperpage{79}
 
   \indexspace
 

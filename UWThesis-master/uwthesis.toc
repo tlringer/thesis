@@ -4,10 +4,9 @@
 \contentsline {paragraph}{Jeff}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Industry Mentors \& Managers}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Dan}{xii}{chapter*.3}% 
-\contentsline {paragraph}{PLSE}{xiii}{Item.3}% 
-\contentsline {paragraph}{Friends}{xv}{Item.3}% 
-\contentsline {paragraph}{Coauthors}{xv}{Item.3}% 
-\contentsline {paragraph}{Community (WIP)}{xv}{Item.3}% 
+\contentsline {paragraph}{UW PLSE}{xiii}{Item.3}% 
+\contentsline {paragraph}{Friends}{xiv}{Item.3}% 
+\contentsline {paragraph}{Community}{xv}{Item.3}% 
 \contentsline {paragraph}{Belle}{1}{Item.3}% 
 \contentsline {paragraph}{Grandpa, Saba, \& Savta}{1}{Item.3}% 
 \contentsline {paragraph}{Mom \& Dad}{1}{Item.3}% 

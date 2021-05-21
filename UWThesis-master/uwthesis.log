@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1999,13 +1999,13 @@ Class scrreprt Warning: \float@addtolists detected!
 ] [4]
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/it' tried instead on input line 96.
-<Development.pdf, id=282, 1072.48679pt x 529.7391pt>
+<Development.pdf, id=282, 1055.14195pt x 529.01637pt>
 File: Development.pdf Graphic file (type pdf)
 <use Development.pdf>
 Package pdftex.def Info: Development.pdf  used on input line 104.
-(pdftex.def)             Requested size: 343.20279pt x 169.51996pt.
+(pdftex.def)             Requested size: 337.65233pt x 169.2887pt.
 
-Overfull \hbox (7.20279pt too wide) in paragraph at lines 104--105
+Overfull \hbox (1.65233pt too wide) in paragraph at lines 104--105
  [] 
  []
 
@@ -2511,7 +2511,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
 Here is how much of TeX's memory you used:
  51826 strings out of 492609
  1048613 string characters out of 6129033
- 1324808 words of memory out of 5000000
+ 1324809 words of memory out of 5000000
  52290 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2538,7 +2538,7 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1860194 bytes).
+Output written on uwthesis.pdf (165 pages, 1860511 bytes).
 PDF statistics:
  4558 PDF objects out of 5155 (max. 8388607)
  4282 compressed objects within 43 object streams

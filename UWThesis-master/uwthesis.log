@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1943,18 +1943,17 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 41
 \openout7 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 421.
+(Font)              scaled to size 10.42007pt on input line 416.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 421.
+(Font)              scaled to size 7.91925pt on input line 416.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 421.
+(Font)              scaled to size 10.42007pt on input line 416.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 421.
+(Font)              scaled to size 7.91925pt on input line 416.
  [9
 
 
 ] [10
-
 
 
 ]
@@ -1982,10 +1981,7 @@ File: savta.png Graphic file (type png)
 <use savta.png>
 Package pdftex.def Info: savta.png  used on input line 253.
 (pdftex.def)             Requested size: 160.04807pt x 17.07164pt.
-) [1 <./savta.png>] [2
-
-
-] (./intro.tex
+) [16 <./savta.png>] (./intro.tex
 chapter 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -2002,13 +1998,15 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-[3
+[1
 
 
-] [4]
+
+
+] [2]
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/it' tried instead on input line 96.
-<Development.pdf, id=282, 1055.14195pt x 529.01637pt>
+<Development.pdf, id=277, 1055.14195pt x 529.01637pt>
 File: Development.pdf Graphic file (type pdf)
 <use Development.pdf>
 Package pdftex.def Info: Development.pdf  used on input line 104.
@@ -2027,30 +2025,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5 <./Development.pdf>] [6] (./guide.tex [7] [8]
+ [3 <./Development.pdf>] [4] (./guide.tex [5] [6]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 64.
-[9]
+[7]
 Overfull \hbox (2.75047pt too wide) in paragraph at lines 110--113
 [] []\T1/pplj/m/sc/10.95 (-20) k a r l p a l m -s k o g[] [][]\T1/pplj/b/n/10.9
 5 Karl[][] \T1/pplj/m/n/10.95 (-20) was a post-doc-toral re-searcher when he jo
 ined
  []
 
-)) (./motivating.tex [10]
+)) (./motivating.tex [8]
 chapter 2.
-[11
+[9
 
 
-] (./development.tex [12]
+] (./development.tex [10]
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <9> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 36.
- (./workflow.tex [13] [14] [15]) (./theory.tex
-[16] [17] [18] [19] [20]
+ (./workflow.tex [11] [12] [13]) (./theory.tex
+[14] [15] [16] [17] [18]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 213.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [21] [22]
+) [19] [20]
 Overfull \hbox (3.42526pt too wide) in paragraph at lines 303--307
 [] []\T1/pplj/m/sc/10.95 (-20) f r o m c i c [] b a c k t o g a l -l i n a[] \T
 1/pplj/m/n/10.95 (-20) Gal-lina im-ple-ments CIC$[]$, but with
@@ -2062,7 +2060,7 @@ Overfull \hbox (1.89203pt too wide) in paragraph at lines 316--324
 /pplj/m/n/10.95 (-20) This very same struc-ture that helps
  []
 
-)) (./maintenance.tex [23]
+)) (./maintenance.tex [21]
 Overfull \hbox (14.84494pt too wide) in paragraph at lines 30--37
 [] []\T1/pplj/m/sc/10.95 (-20) c h a n g -i n g o u r p r o -g r a m[] \T1/pplj
 /m/n/10.95 (-20) Our spec-i-fi-ca-tion of []
@@ -2073,13 +2071,13 @@ Overfull \hbox (2.7442pt too wide) in paragraph at lines 58--59
 [][][][][][][][][][]  
  []
 
-[24]
+[22]
 Overfull \hbox (7.31798pt too wide) in paragraph at lines 70--74
 [] []\T1/pplj/m/sc/10.95 (-20) c h a n g -i n g o u r s p e c -i -f i -c a -t i
  o n[] \T1/pplj/m/n/10.95 (-20) Sup-pose we in-stead wish to switch
  []
 
-[25]
+[23]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 145.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -2092,13 +2090,13 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 145.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 145.
-<maintenance/fig/patch.png, id=867, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=863, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 148.
 (pdftex.def)             Requested size: 336.0pt x 202.21732pt.
- [26 <./maintenance/fig/patch.png>]) (./repair.tex [27] [28]))
-(./pumpkinpatch.tex [29] [30
+ [24 <./maintenance/fig/patch.png>]) (./repair.tex [25] [26]))
+(./pumpkinpatch.tex [27] [28
 
 
 ]
@@ -2108,7 +2106,7 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 33.
  (./repair/izr.tex) (./repair/izr.tex)
 (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex) (./repair/izr.tex)
-[31]
+[29]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 73.
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 73.
@@ -2119,8 +2117,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [32])
-(./repair/approach.tex [33]
+ [30])
+(./repair/approach.tex [31]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2133,19 +2131,19 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 75--96
 []$[]$  $[]$ 
  []
 
-[34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1269, 391.4625pt x 200.75pt>
+[32] [33] [34] [35] [36]) (./repair/differencing.tex [37] [38] [39]
+<repair/nat_ind.pdf, id=1265, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
- [42 <./repair/nat_ind.pdf>]
+ [40 <./repair/nat_ind.pdf>]
 Overfull \hbox (14.13942pt too wide) in paragraph at lines 176--185
 [] []\T1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \T1/pplj/m/n
 /10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
-) (./repair/transformation.tex [43] [44] [45] [46] [47])
+) (./repair/transformation.tex [41] [42] [43] [44] [45])
 (./repair/implementation.tex
 
 LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
@@ -2153,26 +2151,26 @@ LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 7.
-[48] [49] [50] [51]
+[46] [47] [48] [49]
 Overfull \hbox (19.64331pt too wide) in paragraph at lines 235--239
 \T1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to the
  change in []
  []
 
-[52] [53] [54] [55] [56]) (./repair/results.tex [57] (./repair/compcert.tex)
+[50] [51] [52] [53] [54]) (./repair/results.tex [55] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
-[58] [59]
+[56] [57]
 Overfull \hbox (2.37697pt too wide) in paragraph at lines 190--193
 \T1/pplj/m/n/10.95 (-20) When I ported User A's so-lu-tion to use User B's def-
 i-ni-tion of []
  []
 
-[60] (./repair/divide.tex) (./repair/divide.tex) [61] [62])
-(./repair/conclusion.tex [63])) (./often.tex [64]
+[58] (./repair/divide.tex) (./repair/divide.tex) [59] [60])
+(./repair/conclusion.tex [61])) (./often.tex [62]
 chapter 4.
 
 Overfull \hbox (3.15834pt too wide) in paragraph at lines 13--16
@@ -2186,81 +2184,81 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
  r k -f l o w i n -t e -g r a -t i o n[] \T1/pplj/m/n/10.95 (-20) Re-search
  []
 
-[65
+[63
 
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
-[66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1999, 799.98875pt x 348.30125pt>
+[64] [65]) (./often/approach.tex [66]
+<often/workflowa.pdf, id=1995, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- [69 <./often/workflowa.pdf>]
+ [67 <./often/workflowa.pdf>]
 (./often/equivproof.tex) (./often/equivproof.tex) (./often/equiv2.tex)
-(./often/equiv2.tex) [70] (./often/listtovect.tex) (./often/listtovect.tex)
-[71] [72] [73]) (./often/differencing.tex [74] [75] [76] (./often/nattobin.tex)
+(./often/equiv2.tex) [68] (./often/listtovect.tex) (./often/listtovect.tex)
+[69] [70] [71]) (./often/differencing.tex [72] [73] [74] (./often/nattobin.tex)
 (./often/nattobin.tex)
 Overfull \hbox (5.20526pt too wide) in paragraph at lines 184--195
 []\T1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and 
 proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
-[77] [78]
-<often/Diagram.pdf, id=2341, 706.80057pt x 376.52669pt>
+[75] [76]
+<often/Diagram.pdf, id=2337, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
 (pdftex.def)             Requested size: 282.71521pt x 150.608pt.
- [79 <./often/Diagram.pdf>]
+ [77 <./often/Diagram.pdf>]
 Overfull \hbox (6.5936pt too wide) in paragraph at lines 370--379
 [] []\T1/pplj/m/sc/10.95 (-20) e q u i v -a -l e n c e[] \T1/pplj/m/n/10.95 (-2
 0) To pre-serve the equiv-a-lence (Fig-ure []28[], top), []
  []
 
-[80] [81] [82] [83] [84]
+[78] [79] [80] [81] [82]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 547.
 
-[85] [86]
+[83] [84]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 684.
 
-[87] [88]) (./often/transformation.tex
+[85] [86]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
-[89] [90] [91] [92]) (./often/implementation.tex [93]
+[87] [88] [89] [90]) (./often/implementation.tex [91]
 Overfull \hbox (21.62834pt too wide) in paragraph at lines 41--45
 []\T1/pplj/m/n/10.95 (-20) Once \T1/pplj/m/sc/10.95 (-20) Pump-kin P\T1/pplj/m/
 n/10.95 (-20) i has found a con-fig-u-ra-tion, the next step---\T1/pplj/m/sc/10
 .95 (-20) Transform\T1/pplj/m/n/10.95 (-20) ---
  []
 
-[94] [95]
+[92] [93]
 Overfull \hbox (1.2878pt too wide) in paragraph at lines 147--157
 [] []\T1/pplj/m/sc/10.95 (-20) o p -t i -m i z a -t i o n s[] \T1/pplj/m/n/10.9
 5 (-20) The im-ple-men-ta-tion of the trans-for-ma-tion in-cludes
  []
 
-[96] [97]
+[94] [95]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 263.
 
-[98] [99]
+[96] [97]
 Overfull \hbox (4.31926pt too wide) in paragraph at lines 363--369
 \T1/pplj/m/n/10.95 (-20) mod-i-fies the sug-gested tac-tics to pro-duce a more 
 nat-u-ral proof script [][][].
  []
 
-[100]
+[98]
 Overfull \hbox (6.10782pt too wide) in paragraph at lines 433--442
 [] []\T1/pplj/m/sc/10.95 (-20) p r e t t y p r i n t -i n g[] \T1/pplj/m/n/10.9
 5 (-20) Af-ter de-com-pil-ing proof terms, \T1/pplj/b/n/10.95 De-com-pile \T1/p
 plj/m/n/10.95 (-20) pretty
  []
 
-[101]) (./often/results.tex
+[99]) (./often/results.tex
 Overfull \hbox (16.10333pt too wide) in paragraph at lines 19--61
 [][] 
  []
@@ -2271,21 +2269,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--121
  o f p a r -t i c -u -l a r l e n g t h s[] \T1/pplj/m/n/10.95 (-2) In
  []
 
-[102] [103] [104]
+[100] [101] [102]
 Overfull \hbox (5.39363pt too wide) in paragraph at lines 202--209
 [] []\T1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t e
  n d -i n g a l a n -g u a g e[] \T1/pplj/m/n/10.95 (-20) I then used
  []
 
-[105] [106] [107]
+[103] [104] [105]
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 400.
 LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 400.
- [108]) (./often/conclusion.tex [109])) (./related.tex
-[110]
+ [106]) (./often/conclusion.tex [107])) (./related.tex
+[108]
 chapter 5.
-[111
+[109
 
 
 ]
@@ -2294,41 +2292,41 @@ Overfull \hbox (16.902pt too wide) in paragraph at lines 52--62
  [[]], and HOL4 [[]]
  []
 
-[112] [113] [114] [115] [116] [117]
+[110] [111] [112] [113] [114] [115]
 Overfull \hbox (4.452pt too wide) in paragraph at lines 329--340
 [] []\T1/pplj/m/sc/10.95 (-20) k n o w l -e d g e s h a r -i n g m e t h -o d s
 [] \T1/pplj/m/n/10.95 (-20) Knowl-edge shar-ing meth-ods [[]]
  []
 
-[118]
+[116]
 Overfull \hbox (1.78976pt too wide) in paragraph at lines 367--373
 []\T1/pplj/m/n/10.95 (-20) A re-cent re-view [[]] of a pop-u-lar test-based pro
 -gram re-pair tool [[]]
  []
 
-[119]
+[117]
 Overfull \hbox (6.93776pt too wide) in paragraph at lines 403--408
 []\T1/pplj/m/sc/10.95 (-20) Pumpkin Patch \T1/pplj/m/n/10.95 (-20) uses example
 s---in the for-mer of changes to datatypes
  []
 
-[120] [121] [122]) (./conclusion.tex [123] [124
+[118] [119] [120]) (./conclusion.tex [121] [122
 
 
 ]
 chapter 6.
-(./next.tex [125] [126]
+(./next.tex [123] [124]
 Overfull \hbox (5.59465pt too wide) in paragraph at lines 70--77
 [] []\T1/pplj/m/sc/10.95 (-20) s m o o t h i n -t e -g r a -t i o n[] \T1/pplj/
 m/n/10.95 (-20) Proof re-pair tools should in-te-grate smoothly
  []
 
-[127] [128] [129])) (./uwthesis.ind [130]
+[125] [126] [127])) (./uwthesis.ind [128]
 Overfull \hbox (10.04045pt too wide) in paragraph at lines 74--75
 []| \T1/pplj/m/n/10.95 (-20) Daniel Schwartz-Narbonne,
  []
 
-[131
+[129
 
 
 
@@ -2359,7 +2357,7 @@ Overfull \hbox (21.43654pt too wide) in paragraph at lines 165--167
 []| \T1/pplj/m/n/10.95 (-20) Unique-ness of Iden-tity Proofs,
  []
 
-[132]
+[130]
 Overfull \hbox (2.9659pt too wide) in paragraph at lines 174--176
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []68[], []70[]--
  []
@@ -2425,7 +2423,7 @@ Overfull \hbox (5.36897pt too wide) in paragraph at lines 247--249
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
-[133]
+[131]
 Overfull \hbox (0.96115pt too wide) in paragraph at lines 287--288
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []111[], []112[] 
  []
@@ -2445,12 +2443,12 @@ Overfull \hbox (0.51068pt too wide) in paragraph at lines 300--303
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []4[], []111[]--[]113[],
  []
 
-[134]) (./uwthesis.bbl [135
+[132]) (./uwthesis.bbl [133
 
 
 
-] [136] [137] [138] [139] [140] [141] [142] [143]
-[144]
+] [134] [135] [136] [137] [138] [139] [140] [141]
+[142]
 Underfull \hbox (badness 10000) in paragraph at lines 742--750
 []\T1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func-
 tor.
@@ -2462,7 +2460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 742--750
 bra % 20of %
  []
 
-[145]
+[143]
 Underfull \hbox (badness 1163) in paragraph at lines 807--813
 []\T1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
  []
@@ -2483,7 +2481,7 @@ text-book, 2016.  Ver-sion 4.0.
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 836.
 
-[146] [147] [148] [149]) [150]
+[144] [145] [146] [147]) [148]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2502,11 +2500,11 @@ Package knowledge Warning: Some knowledge is used but not introduced. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
 (./uwthesis.kaux)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2516,13 +2514,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 51887 strings out of 492609
- 1050014 string characters out of 6129033
- 1326068 words of memory out of 5000000
- 52342 multiletter control sequences out of 15000+600000
+ 51885 strings out of 492609
+ 1049991 string characters out of 6129033
+ 1326087 words of memory out of 5000000
+ 52341 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2548,10 +2546,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1863421 bytes).
+Output written on uwthesis.pdf (164 pages, 1862814 bytes).
 PDF statistics:
- 4613 PDF objects out of 5155 (max. 8388607)
- 4336 compressed objects within 44 object streams
- 1610 named destinations out of 1728 (max. 500000)
+ 4609 PDF objects out of 5155 (max. 8388607)
+ 4333 compressed objects within 44 object streams
+ 1609 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

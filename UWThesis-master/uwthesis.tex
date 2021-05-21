@@ -413,19 +413,24 @@ I love all of you.\\
 
 \tableofcontents
 
-
-% Resturn to ordinary header marks.
-\automark[section]{chapter}
-\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
-\clearpage
-
 \cleardoublepage
+
+\renewcommand{\contentsname}{Acknowledgments}
+\pagestyle{scrheadings}
+\setcounter{tocdepth}{1} % <-- 2 includes up to subsections in the ToC
+\setcounter{secnumdepth}{3} % <-- 3 numbers up to subsubsections
+\manualmark
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
 
 \input{acks}
 
-\pagenumbering{arabic}
 \cleardoublepage
+
+% Return to ordinary header marks.
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\pagenumbering{arabic}
 
 \input{intro}
 

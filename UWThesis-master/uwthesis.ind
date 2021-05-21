@@ -20,7 +20,7 @@
       \subsubitem Amazon, \hyperpage{xii}
       \subsubitem Carr Astronautics, \hyperpage{xii}
       \subsubitem Google, \hyperpage{xi}
-    \subitem Coq Community, \hyperpage{xv}, \hyperpage{1}
+    \subitem Coq Community, \hyperpage{xv, xvi}
       \subsubitem Ben Delaware, \hyperpage{xv}
       \subsubitem Cyril Cohen, \hyperpage{xv}
       \subsubitem Emilio J. Gallego Arias, \hyperpage{xv}
@@ -39,13 +39,13 @@
       \subsubitem Vincent Laporte, \hyperpage{xv}
       \subsubitem Yves Bertot, \hyperpage{xv}
     \subitem Family
-      \subsubitem Belle, \hyperpage{1}
+      \subsubitem Belle, \hyperpage{xvi}
       \subsubitem David Lasky, \hyperpage{xv}
-      \subsubitem Grandpa, \hyperpage{1}
+      \subsubitem Grandpa, \hyperpage{xvi}
       \subsubitem Lymor, \hyperpage{xi}
-      \subsubitem Mom \& Dad, \hyperpage{1}
-      \subsubitem Saba, \hyperpage{1}
-      \subsubitem Savta, \hyperpage{1}
+      \subsubitem Mom \& Dad, \hyperpage{xvi}
+      \subsubitem Saba, \hyperpage{xvi}
+      \subsubitem Savta, \hyperpage{xvi}
     \subitem Friends, \hyperpage{xiv, xv}
       \subsubitem Anna Kornfeld Simpson, \hyperpage{xv}
       \subsubitem Anne Spencer Ross, \hyperpage{xv}
@@ -81,7 +81,7 @@
       \subsubitem Musachy Barroso, \hyperpage{xii}
       \subsubitem Serdar Tasiran, \hyperpage{xii}
       \subsubitem Zach Tatlock, \hyperpage{xiv}, \hyperpage{9}
-    \subitem PL Community, \hyperpage{1}
+    \subitem PL Community, \hyperpage{xvi}
       \subsubitem Alexandra Silva, \hyperpage{xv}
       \subsubitem Anders M\"ortberg, \hyperpage{79}, \hyperpage{103}, 
 		\hyperpage{105}
@@ -110,16 +110,16 @@
     \subitem Students
       \subsubitem Jasper Hugunin, \hyperpage{xiv}, \hyperpage{68}
       \subsubitem Taylor Blau, \hyperpage{xiv}
-    \subitem Twitter Community, \hyperpage{xv}, \hyperpage{1}
-      \subsubitem Benjamin Lipp, \hyperpage{1}
-      \subsubitem Daniel-Nikpayuk, \hyperpage{1}
-      \subsubitem Hillel Wayne, \hyperpage{1}
-      \subsubitem Michelle Lee, \hyperpage{1}
-      \subsubitem Nathanael, \hyperpage{1}
-      \subsubitem PL Twitter, \hyperpage{xv}, \hyperpage{1}
-      \subsubitem Quinn Wilton, \hyperpage{1}
-      \subsubitem Rebecca Turner, \hyperpage{1}
-      \subsubitem Ymir Vigfusson, \hyperpage{1}
+    \subitem Twitter Community, \hyperpage{xv, xvi}
+      \subsubitem Benjamin Lipp, \hyperpage{xvi}
+      \subsubitem Daniel-Nikpayuk, \hyperpage{xvi}
+      \subsubitem Hillel Wayne, \hyperpage{xvi}
+      \subsubitem Michelle Lee, \hyperpage{xvi}
+      \subsubitem Nathanael, \hyperpage{xvi}
+      \subsubitem PL Twitter, \hyperpage{xv, xvi}
+      \subsubitem Quinn Wilton, \hyperpage{xvi}
+      \subsubitem Rebecca Turner, \hyperpage{xvi}
+      \subsubitem Ymir Vigfusson, \hyperpage{xvi}
     \subitem UCSD ProgSys, \hyperpage{xv}, \hyperpage{10}
     \subitem UW PLSE, \hyperpage{xiii--xv}
       \subsubitem Alex Polozov, \hyperpage{xiv}

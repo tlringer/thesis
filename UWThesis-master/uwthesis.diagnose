@@ -3,11 +3,11 @@
 ***********
 
 27 undefined knowledge(s).
-3 autoreference(s) are introduced twice.
+2 autoreference(s) are introduced twice.
 4 autoreference(s) are used but not introduced.
 
-125 autoreference(s) are properly used.
-25 autoreference(s) are defined but not used.
+151 autoreference(s) are properly used.
+12 autoreference(s) are defined but not used.
 
 
 ********
@@ -56,10 +56,8 @@
 * autoref-introduced-twice *
 ****************************
 
-acks.tex:144: {Sarah Chasins}{default}{base}
-acks.tex:150: {Alex Sanchez-Stern}{default}{base}
-acks.tex:183: {Sarah Chasins}{default}{base}
-acks.tex:202: {Alex Sanchez-Stern}{default}{base}
+acks.tex:179: {Jasper Tran O'Leary}{default}{base}
+acks.tex:193: {Jasper Tran O'Leary}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
@@ -80,28 +78,15 @@ theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 
 index.tex:76: {proof maintenance}{default}{base}
 index.tex:98: {RedPRL}{default}{base}
-index.tex:220: {Bill Zorn}{default}{base}
-index.tex:415: {Roy Or-El}{default}{base}
-index.tex:418: {Vikram Iyer}{default}{base}
-index.tex:421: {Esther Jang}{default}{base}
-index.tex:424: {Ellie Berry}{default}{base}
-index.tex:427: {Mer Joyce}{default}{base}
-index.tex:430: {Jasper Tran O'Leary}{default}{base}
-index.tex:432: {Wade Gordon}{default}{base}
-index.tex:435: {Anne Spencer Ross}{default}{base}
-index.tex:438: {Anna Kornfeld Simpson}{default}{base}
-index.tex:441: {Qi Cheng}{default}{base}
-index.tex:444: {Misha Kolmogorov}{default}{base}
-index.tex:447: {Mark Velednitsky}{default}{base}
-index.tex:450: {Marcela Mendoza}{default}{base}
-index.tex:453: {Laura Chick}{default}{base}
-index.tex:475: {exampled patched proof}{default}{base}
-index.tex:496: {dependent constructors}{default}{base}
-index.tex:500: {dependent eliminators}{default}{base}
-index.tex:507: {dependent eliminators}{default}{base}
-index.tex:528: {\toolnamec }{default}{base}
-index.tex:556: {results}{default}{base}
-index.tex:559: {Adapting Proof Automation to Adapt Proofs}{default}{base}
-index.tex:563: {Ornaments for Proof Reuse in Coq}{default}{base}
+index.tex:205: {John Leo}{default}{base}
+index.tex:232: {Bill Zorn}{default}{base}
+index.tex:513: {exampled patched proof}{default}{base}
+index.tex:534: {dependent constructors}{default}{base}
+index.tex:538: {dependent eliminators}{default}{base}
+index.tex:545: {dependent eliminators}{default}{base}
+index.tex:566: {\toolnamec }{default}{base}
+index.tex:594: {results}{default}{base}
+index.tex:597: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:601: {Ornaments for Proof Reuse in Coq}{default}{base}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1476,6 +1476,10 @@ Package knowledge Warning: knowledge 'internally' (namespace=default,
 (knowledge)                scope=base) is redefined.
 
 
+Package knowledge Warning: knowledge 'John' (namespace=default, scope=base) is
+(knowledge)                redefined.
+
+
 Package knowledge Warning: knowledge 'Michael' (namespace=default, scope=base)
 (knowledge)                is redefined.
 
@@ -1616,10 +1620,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `autoref-85' multiply defined.
-
-
-LaTeX Warning: Label `autoref-66' multiply defined.
+LaTeX Warning: Label `autoref-148' multiply defined.
 
 
 LaTeX Warning: Label `autoref-6' multiply defined.
@@ -1977,7 +1978,7 @@ Overfull \hbox (8.02022pt too wide) in paragraph at lines 162--165
 s---[][]\T1/pplj/m/it/10.95 (-20) Jasper Hugunin\T1/pplj/m/n/10.95 (-20) ,
  []
 
-[14]) [1] [2
+[14] [15]) [1] [2
 
 
 ] (./intro.tex
@@ -2003,7 +2004,7 @@ Class scrreprt Warning: \float@addtolists detected!
 ] [4]
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/it' tried instead on input line 96.
-<Development.pdf, id=291, 1072.48679pt x 529.7391pt>
+<Development.pdf, id=339, 1072.48679pt x 529.7391pt>
 File: Development.pdf Graphic file (type pdf)
 <use Development.pdf>
 Package pdftex.def Info: Development.pdf  used on input line 104.
@@ -2029,7 +2030,7 @@ Overfull \hbox (19.11134pt too wide) in paragraph at lines 163--164
  []
 
 [6] [7] (./guide.tex [8] [9]
-Overfull \hbox (2.75047pt too wide) in paragraph at lines 106--109
+Overfull \hbox (2.75047pt too wide) in paragraph at lines 107--110
 [] []\T1/pplj/m/sc/10.95 (-20) k a r l p a l m -s k o g[] [][]\T1/pplj/b/n/10.9
 5 Karl[][] \T1/pplj/m/n/10.95 (-20) was a post-doc-toral re-searcher when he jo
 ined
@@ -2095,7 +2096,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 145.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 145.
-<maintenance/fig/patch.png, id=849, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=896, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 148.
@@ -2137,7 +2138,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 75--96
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1253, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1300, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
@@ -2190,7 +2191,7 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1981, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=2027, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2206,7 +2207,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [77] [78]
-<often/Diagram.pdf, id=2324, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2370, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2492,11 +2493,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 51598 strings out of 492609
- 1042648 string characters out of 6129033
- 1316671 words of memory out of 5000000
- 52058 multiletter control sequences out of 15000+600000
- 679770 words of font info for 885 fonts, out of 8000000 for 9000
+ 51669 strings out of 492609
+ 1044464 string characters out of 6129033
+ 1318476 words of memory out of 5000000
+ 52134 multiletter control sequences out of 15000+600000
+ 679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -2521,10 +2522,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1846396 bytes).
+Output written on uwthesis.pdf (165 pages, 1850583 bytes).
 PDF statistics:
- 4420 PDF objects out of 5155 (max. 8388607)
- 4148 compressed objects within 42 object streams
+ 4466 PDF objects out of 5155 (max. 8388607)
+ 4193 compressed objects within 42 object streams
  1610 named destinations out of 1728 (max. 500000)
  105812 words of extra memory for PDF output out of 106986 (max. 10000000)
 

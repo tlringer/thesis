@@ -218,7 +218,7 @@
 
   \item Thesis
     \subitem \sysnamelong Plugin Suite, \hyperpage{7}, \hyperpage{48}, 
-		\hyperpage{65}
+		\hyperpage{65}, \hyperpage{125}
       \subsubitem \sysname Prototype, \hyperpage{31}, \hyperpage{48}, 
 		\hyperpage{69}, \hyperpage{93}
       \subsubitem \toolnamec , \hyperpage{65}
@@ -259,7 +259,7 @@
       \subsubitem Search Procedure Instance, \hyperpage{36--39}, 
 		\hyperpage{49}, \hyperpage{54}
       \subsubitem Unification Heuristics, \hyperpage{91, 92}
-    \subitem Results, \hyperpage{6}, \hyperpage{57}
+    \subitem Results, \hyperpage{6}, \hyperpage{57}, \hyperpage{125}
 
   \indexspace
 

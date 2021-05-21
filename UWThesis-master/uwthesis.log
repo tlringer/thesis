@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 00:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2511,7 +2511,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
 Here is how much of TeX's memory you used:
  51824 strings out of 492609
  1048570 string characters out of 6129033
- 1324778 words of memory out of 5000000
+ 1324779 words of memory out of 5000000
  52288 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2538,10 +2538,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1859856 bytes).
+Output written on uwthesis.pdf (165 pages, 1859931 bytes).
 PDF statistics:
- 4555 PDF objects out of 5155 (max. 8388607)
- 4279 compressed objects within 43 object streams
+ 4557 PDF objects out of 5155 (max. 8388607)
+ 4281 compressed objects within 43 object streams
  1610 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1461,8 +1461,19 @@ Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) (./index.tex
-(./uwthesis.kaux)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/contour/contour.sty
+Package: contour 2004/11/18 v2.14 Print contoured text (HH, MH)
+\con@length=\skip150
+
+Loading configuration file `contour.cfg'.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/contour/contour.cfg
+File: contour.cfg 2004/11/18 v2.14 Print contoured text (HH, MH)
+)
+contour: Using driver file `pdftex.cnt'.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/contour/pdftex.cnt
+File: pdftex.cnt 2004/11/18 v2.14 Print contoured text (HH, MH)
+)) (./index.tex (./uwthesis.kaux)
 \knowledge_kaux_iow=\write4
 \openout4 = `uwthesis.kaux'.
 
@@ -1474,14 +1485,6 @@ Package knowledge Warning: knowledge 'John' (namespace=default, scope=base) is
 
 Package knowledge Warning: knowledge 'Michael' (namespace=default, scope=base)
 (knowledge)                is redefined.
-
-
-Package knowledge Warning: knowledge 'dependent eliminators'
-(knowledge)                (namespace=default, scope=base) is redefined.
-
-
-Package knowledge Warning: knowledge 'dependent eliminator'
-(knowledge)                (namespace=default, scope=base) is redefined.
 
 \@indexfile=\write5
 \openout5 = `uwthesis.idx'.
@@ -1605,14 +1608,20 @@ brarydecorations.pathreplacing.code.tex))
 s/tikzlibrarydecorations.shapes.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.shapes.code.tex)))
-Package hyperref Info: Option `linktocpage' set `true' on input line 114.
-Package hyperref Info: Option `breaklinks' set `true' on input line 114.
-Package hyperref Info: Option `hypertexnames' set `true' on input line 114.
+Package hyperref Info: Option `linktocpage' set `true' on input line 119.
+Package hyperref Info: Option `breaklinks' set `true' on input line 119.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 119.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `autoref-2' multiply defined.
+LaTeX Warning: Label `autoref-252' multiply defined.
+
+
+LaTeX Warning: Label `autoref-4' multiply defined.
+
+
+LaTeX Warning: Label `autoref-225' multiply defined.
 
 
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
@@ -1629,27 +1638,27 @@ LaTeX Warning: Label `sec:eval@cref' multiply defined.
 )
 \openout1 = `uwthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Try loading font information for T1+pplj on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 122.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
 \AtBeginShipoutBox=\box107
-Package hyperref Info: Link coloring OFF on input line 117.
+Package hyperref Info: Link coloring OFF on input line 122.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1659,9 +1668,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count376
 )
-LaTeX Info: Redefining \ref on input line 117.
-LaTeX Info: Redefining \pageref on input line 117.
-LaTeX Info: Redefining \nameref on input line 117.
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
 
 (./uwthesis.out) (./uwthesis.out)
 \@outlinefile=\write6
@@ -1673,7 +1682,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message with `\usepackage{bookmark}'
-(scrreprt)           before \begin{document} on input line 117.
+(scrreprt)           before \begin{document} on input line 122.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1700,7 +1709,7 @@ e 164.
 \everyMPtoPDFconversion=\toks61
 )
 \c@lstlisting=\count384
-LaTeX Info: Redefining \microtypecontext on input line 117.
+LaTeX Info: Redefining \microtypecontext on input line 122.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1801,50 +1810,50 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 117
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 122
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 117
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 122
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 117
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 122
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 117
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 122
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 117.
+(Font)              scaled to size 11.40997pt on input line 122.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 117.
+(Font)              scaled to size 8.33606pt on input line 122.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 117.
+(Font)              scaled to size 6.25204pt on input line 122.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 117.
+(Font)              scaled to size 11.40997pt on input line 122.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 117.
+(Font)              scaled to size 8.33606pt on input line 122.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 117.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 117
+(Font)              scaled to size 6.25204pt on input line 122.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 122
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1873,13 +1882,13 @@ Package microtype Info: Character `029' is missing
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 320
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 322
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 320.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 322.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 320.
+(Font)              using `OMS/cmsy/m/n' instead on input line 322.
 
 [3] [4
 
@@ -1895,32 +1904,32 @@ Package microtype Info: Character `029' is missing
 <family3.jpg, id=37, 593.21625pt x 386.44376pt>
 File: family3.jpg Graphic file (type jpg)
 <use family3.jpg>
-Package pdftex.def Info: family3.jpg  used on input line 387.
+Package pdftex.def Info: family3.jpg  used on input line 389.
 (pdftex.def)             Requested size: 218.38226pt x 142.26378pt.
 <family12.jpg, id=38, 393.47pt x 573.14125pt>
 File: family12.jpg Graphic file (type jpg)
 <use family12.jpg>
-Package pdftex.def Info: family12.jpg  used on input line 388.
+Package pdftex.def Info: family12.jpg  used on input line 390.
 (pdftex.def)             Requested size: 97.6648pt x 142.26378pt.
 <family4.jpg, id=39, 385.44pt x 578.16pt>
 File: family4.jpg Graphic file (type jpg)
 <use family4.jpg>
-Package pdftex.def Info: family4.jpg  used on input line 389.
+Package pdftex.def Info: family4.jpg  used on input line 391.
 (pdftex.def)             Requested size: 94.84238pt x 142.26378pt.
 <family8.jpg, id=40, 602.25pt x 401.5pt>
 File: family8.jpg Graphic file (type jpg)
 <use family8.jpg>
-Package pdftex.def Info: family8.jpg  used on input line 390.
+Package pdftex.def Info: family8.jpg  used on input line 392.
 (pdftex.def)             Requested size: 213.4005pt x 142.26378pt.
 <family11.jpg, id=41, 572.1375pt x 384.43625pt>
 File: family11.jpg Graphic file (type jpg)
 <use family11.jpg>
-Package pdftex.def Info: family11.jpg  used on input line 391.
+Package pdftex.def Info: family11.jpg  used on input line 393.
 (pdftex.def)             Requested size: 211.7312pt x 142.26378pt.
 <family10.jpg, id=42, 1535.7375pt x 2055.68pt>
 File: family10.jpg Graphic file (type jpg)
 <use family10.jpg>
-Package pdftex.def Info: family10.jpg  used on input line 392.
+Package pdftex.def Info: family10.jpg  used on input line 394.
 (pdftex.def)             Requested size: 106.27063pt x 142.26378pt.
  [7 <./family3.jpg> <./family12.jpg> <./family4.jpg> <./family8.jpg> <./family1
 1.jpg> <./family10.jpg>] [8
@@ -1928,19 +1937,19 @@ Package pdftex.def Info: family10.jpg  used on input line 392.
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 41
-2.
+4.
  (./uwthesis.toc)
 \tf@toc=\write7
 \openout7 = `uwthesis.toc'.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 419.
+(Font)              scaled to size 10.42007pt on input line 421.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 419.
+(Font)              scaled to size 7.91925pt on input line 421.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 419.
+(Font)              scaled to size 10.42007pt on input line 421.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 419.
+(Font)              scaled to size 7.91925pt on input line 421.
  [9
 
 
@@ -2018,13 +2027,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5 <./Development.pdf>]
-Overfull \hbox (19.11134pt too wide) in paragraph at lines 163--164
-\T1/pplj/m/n/10.95 (-20) trans-for-ma-tions for proof re-pair (Sec-tions []3.2[
-], []3.3[], []3.4[], []4.2[], []4.3[],and []4.4[]), 
- []
-
-[6] [7] (./guide.tex [8] [9]
+ [5 <./Development.pdf>] [6] (./guide.tex [7] [8]
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 64.
+[9]
 Overfull \hbox (2.75047pt too wide) in paragraph at lines 110--113
 [] []\T1/pplj/m/sc/10.95 (-20) k a r l p a l m -s k o g[] [][]\T1/pplj/b/n/10.9
 5 Karl[][] \T1/pplj/m/n/10.95 (-20) was a post-doc-toral re-searcher when he jo
@@ -2075,10 +2080,6 @@ Overfull \hbox (7.31798pt too wide) in paragraph at lines 70--74
  []
 
 [25]
-
-LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
-(Font)              using `T1/pplj/bx/n' instead on input line 135.
-
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 145.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -2091,12 +2092,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 145.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 145.
-<maintenance/fig/patch.png, id=844, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=867, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 148.
 (pdftex.def)             Requested size: 336.0pt x 202.21732pt.
-[26 <./maintenance/fig/patch.png>]) (./repair.tex [27] [28]))
+ [26 <./maintenance/fig/patch.png>]) (./repair.tex [27] [28]))
 (./pumpkinpatch.tex [29] [30
 
 
@@ -2133,22 +2134,26 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 75--96
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1247, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1269, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
 (pdftex.def)             Requested size: 215.30502pt x 110.41283pt.
  [42 <./repair/nat_ind.pdf>]
-LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10.95> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 177.
-
 Overfull \hbox (14.13942pt too wide) in paragraph at lines 176--185
 [] []\T1/pplj/m/sc/10.95 (-20) i s o -l a t -i n g c h a n g e s[] \T1/pplj/m/n
 /10.95 (-20) Dif-fer-enc-ing sup-ports only in-cre-men-tal changes.
  []
 
 ) (./repair/transformation.tex [43] [44] [45] [46] [47])
-(./repair/implementation.tex [48] [49] [50] [51]
+(./repair/implementation.tex
+
+LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
+(Font)              using `T1/pplj/bx/n' instead on input line 6.
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10.95> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 7.
+[48] [49] [50] [51]
 Overfull \hbox (19.64331pt too wide) in paragraph at lines 235--239
 \T1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to the
  change in []
@@ -2186,7 +2191,7 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1977, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1999, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2202,7 +2207,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [77] [78]
-<often/Diagram.pdf, id=2319, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2341, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2256,9 +2261,6 @@ plj/m/n/10.95 (-20) pretty
  []
 
 [101]) (./often/results.tex
-LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <9> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 40.
-
 Overfull \hbox (16.10333pt too wide) in paragraph at lines 19--61
 [][] 
  []
@@ -2383,59 +2385,67 @@ Overfull \hbox (3.15547pt too wide) in paragraph at lines 211--212
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 213--217
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 214--218
 \T1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
 
-Overfull \hbox (6.91394pt too wide) in paragraph at lines 221--223
-[]| \T1/pplj/m/sc/10.95 (-20) Pump-kin Patch \T1/pplj/m/n/10.95 (-20) Plu-gin S
-uite,
+Overfull \hbox (2.94188pt too wide) in paragraph at lines 214--218
+[]\T1/pplj/m/n/10.95 (-20) 8[]--[]11[], []13[], []15[], []66[], []111[], []112[
+],
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 241--244
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 221--224
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 253--256
+Overfull \hbox (5.7855pt too wide) in paragraph at lines 227--228
+[]| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []75[] 
+ []
+
+
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 231--234
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []65[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 260--262
-[]| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
- []
-
-
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 262--263
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 234--235
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []91[],
  []
 
 
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 272--273
-[]| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []111[], []112[] 
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 245--247
+[]| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []31[], []33[], []34[],
+ []
+
+
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 247--249
+[]| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 [133]
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 275--276
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 287--288
+[]| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []111[], []112[] 
+ []
+
+
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 290--291
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 278--280
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 293--295
 []| \T1/pplj/m/n/10.95 (-20) Agda, []4[], []111[]--[]113[], []115[], []126[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 285--288
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 300--303
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []4[], []111[]--[]113[],
  []
 
-[134
-
-]) (./uwthesis.bbl [135
+[134]) (./uwthesis.bbl [135
 
 
 
@@ -2492,11 +2502,11 @@ Package knowledge Warning: Some knowledge is used but not introduced. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
 (./uwthesis.kaux)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 448.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2506,13 +2516,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  ) 
 Here is how much of TeX's memory you used:
- 51826 strings out of 492609
- 1048613 string characters out of 6129033
- 1324809 words of memory out of 5000000
- 52290 multiletter control sequences out of 15000+600000
+ 51887 strings out of 492609
+ 1050014 string characters out of 6129033
+ 1326068 words of memory out of 5000000
+ 52342 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2538,10 +2548,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1860511 bytes).
+Output written on uwthesis.pdf (165 pages, 1863421 bytes).
 PDF statistics:
- 4558 PDF objects out of 5155 (max. 8388607)
- 4282 compressed objects within 43 object streams
+ 4613 PDF objects out of 5155 (max. 8388607)
+ 4336 compressed objects within 44 object streams
  1610 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

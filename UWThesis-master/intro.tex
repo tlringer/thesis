@@ -109,7 +109,7 @@ represents correctness of the proof, which is communicated back to the proof eng
 \end{figure}
 
 My approach to proof repair operates over a low-level representation of proofs,
-one that carries structure and information useful to proof engineering tools.
+one that carries useful structure and information.
 But that very structure can make it challenging for proof engineers to write proofs in that low-level representation
 to begin with, which is why proof engineers typically do not interact with it directly.
 Instead, proof engineers typically write proofs in a high-level representation.
@@ -151,28 +151,28 @@ my approach can in the end produce proofs that integrate more naturally with pro
 
 This thesis is divided into six chapters; chapters are further divided into sections.
 After motivating proof repair (Chapter~\ref{chapt:mot}),
-this thesis describes two different kinds of proof repair that validate the thesis:
-by example (Chapter~\ref{ch:example}) and across equivalences (Chapter~\ref{chapt:pi}).
+this thesis describes two different kinds of \kl{proof repair} that validate the thesis:
+\intro{by example} (Chapter~\ref{ch:example}) and \intro{across equivalences} (Chapter~\ref{chapt:pi}).
 It concludes with a discussion of related work (Chapter~\ref{sec:related}),
-followed by a reflection on the thesis and how it can inform the next era of 
+followed by a reflection on the thesis and how the results can inform the next era of 
 proof engineering (Chapter~\ref{chapt:conclusions}).
 
 The technical \intro{results} of this thesis are threefold:
 
 \begin{enumerate}
-\item the \textbf{design} of semantic differencing algorithms \& proof term transformations for proof repair (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff},~\ref{sec:pumpkin-trans},~\ref{sec:pi-approach},~\ref{sec:pi-diff},and~\ref{sec:pi-trans}),
-\item an \textbf{implementation} of these algorithms and transformations inside of a proof repair tool suite (Sections~\ref{sec:pumpkin-impl} and~\ref{sec:pi-implementation}), and
-\item \textbf{case studies} to evaluate the tool suite on real proof repair scenarios (Sections~\ref{sec:pumpkin-results} and~\ref{sec:pi-results}).
+\item the \intro{design} of semantic differencing algorithms \& proof term transformations for proof repair (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff},~\ref{sec:pumpkin-trans},~\ref{sec:pi-approach},~\ref{sec:pi-diff},and~\ref{sec:pi-trans}),
+\item an \intro{implementation} of these algorithms and transformations inside of a proof repair tool suite (Sections~\ref{sec:pumpkin-impl} and~\ref{sec:pi-implementation}), and
+\item \intro{case studies} to evaluate the tool suite on real proof repair scenarios (Sections~\ref{sec:pumpkin-results} and~\ref{sec:pi-results}).
 \end{enumerate}
 Viewing the thesis statement as a theorem, the proof is as follows: % TODO link to particular sections here
 
 \begin{quote}
-\textbf{Thesis Proof}: Changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (by \textbf{design} and \textbf{implementation}). A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases (by \textbf{case studies}).
+Changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change (by \kl{design} and \kl{implementation}). A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases (by \kl{case studies}).
 \end{quote}
 
 \paragraph{Design}
-The design describes semantic differencing algorithms to extract information from breaking changes in verified systems,
-along with proof term transformations to generalize and apply the information to fix proofs broken by the change.
+The \kl{design} describes \kl{semantic differencing} algorithms to extract information from breaking changes in verified systems,
+along with \kl{proof term transformations} to generalize and apply the information to fix proofs broken by the change.
 The semantic differencing algorithms compare the old and new versions of a changed term or type,
 and from that find a \kl{diff} that describes the change.
 The transformations then use that diff to \kl{transform} some term to a more general fix.
@@ -181,7 +181,7 @@ The design of these differencing algorithms and transformations is guided heavil
 the theory is sprinkled throughout as appropriate.
 
 \paragraph{Implementation}
-The implementation shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
+The \kl{implementation} shows that in fact \textit{a tool} can extract and generalize the information that changes carry,
 and then apply that information to fix other proofs broken by the same change.
 This implementation comes in the form of a proof repair tool suite for Coq called \intro{\sysnamelong} (Proof Updater Mechanically Passing Knowledge Into New Proofs, Assisting the Coq Hacker).
 \sysnamelong is a suite of Coq \intro{plugins}: extensions to Coq implemented in OCaml that can add new automation and syntax, and can define new terms.
@@ -203,11 +203,11 @@ Toward that end, five notable features include:
 \fi
 
 \paragraph{Case Studies}
-The case studies show that \sysnamelong can save work for proof engineers relative to 
+The \intro{case studies} show that \sysnamelong can save work for proof engineers relative to 
 reference manual repairs in practical use cases. % TODO link to corresponding chapters instead
 In particular, the case studies in Chapter~\ref{ch:example} show retroactively that a prototype implementation of proof repair
-by example \textit{could have} saved work for proof engineers on major proof developments.
-The case studies in Chapter~\ref{chapt:pi} show that proof repair across type equivalences \textit{can} save
+\kl{by example} \textit{could have} saved work for proof engineers on major proof developments.
+The case studies in Chapter~\ref{chapt:pi} show that proof repair \kl{across type equivalences} \textit{can} save
 and in fact \textit{has already} saved work for proof engineers in practical use cases.
 
 \input{guide}

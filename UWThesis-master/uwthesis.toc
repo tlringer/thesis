@@ -19,8 +19,8 @@
 \contentsline {paragraph}{Implementation}{7}{Item.9}% 
 \contentsline {paragraph}{Case Studies}{7}{Item.9}% 
 \contentsline {section}{\numberline {1.5}Reading Guide}{8}{section.1.5}% 
-\contentsline {paragraph}{Adapting Proof Automation to Adapt Proofs}{9}{section.1.5}% 
-\contentsline {paragraph}{Proof Repair Across Type Equivalences}{9}{section.1.5}% 
+\contentsline {paragraph}{Adapting Proof Automation to Adapt Proofs}{8}{section.1.5}% 
+\contentsline {paragraph}{Proof Repair across Type Equivalences}{9}{section.1.5}% 
 \contentsline {paragraph}{Ornaments for Proof Reuse in Coq}{9}{section.1.5}% 
 \contentsline {paragraph}{\textsc {REPLica}}{9}{section.1.5}% 
 \contentsline {paragraph}{QED at Large}{9}{section.1.5}% 

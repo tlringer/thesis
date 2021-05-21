@@ -3,7 +3,7 @@
 
 % Dan: Instead, I strongly advocate an explicit section in Chapter 1 that lays this all out for the reader: what prior publications are being leaned on, where does text from those reappear, and most importantly, where -- in explicit sections of forthcoming chapters -- are expanded explanations and additional data.  Voila, your thesis is now both a self-contained coherent document and a useful 'appendix' for people who have already read large parts of what is to follow.
 
-This thesis assumes some background in \kl{proof engineering}, type theory, and (to a lesser extent) the \kl{Coq} \kl{proof assistant}. 
+This thesis assumes some background in \kl{proof engineering}, \intro{type theory}, and (to a lesser extent) the \kl{Coq} \kl{proof assistant}. 
 I strongly encourage readers of all backgrounds who would like more context to better understand this thesis
 look to my survey paper on proof engineering~\cite{PGL-045}, which includes a detailed list of resources
 and is available for free on my website: \url{https://dependenttyp.es}.
@@ -19,13 +19,13 @@ While this thesis is self-contained, it centers material from two previously pub
 
 \begin{itemize}
 \item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Adapting Proof Automation to Adapt Proofs}~\cite{ringer2018adapting}. CPP 2018.
-\item \textbf{Talia Ringer}, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Proof Repair Across Type Equivalences}~\cite{Ringer2021}. PLDI 2021.
+\item \textbf{Talia Ringer}, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Proof Repair across Type Equivalences}~\cite{Ringer2021}. PLDI 2021.
 \end{itemize}
 It also includes material from three other papers:
 
 \begin{itemize}
 \item \textbf{Talia Ringer}, Nathaniel Yazdani, John Leo, and Dan Grossman. \intro{Ornaments for Proof Reuse in Coq}~\cite{Ringer2019}. ITP 2019.
-\item \textbf{Talia Ringer}, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner. \intro{\textsc{REPLica}: REPL Instrumentation for Coq Analysis}~\cite{replica}. CPP 2020.
+\item \textbf{Talia Ringer}, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner. \intro{\toolname: REPL Instrumentation for Coq Analysis}~\cite{replica}. CPP 2020.
 \item \textbf{Talia Ringer}, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock. \intro{QED at Large: A Survey of Engineering of Formally Verified Software}~\cite{PGL-045}. Foundations and Trends® in Programming Languages: Vol. 5: No. 2-3, pp 102-281. 2019. 
 \end{itemize}
 Below is a map from each of these papers to corresponding sections,
@@ -41,8 +41,8 @@ all include additions and elaborations not found in the original paper.
 Chapter~\ref{sec:related} includes some related work from this paper,
 and Chapter~\ref{chapt:conclusions} includes some future work from this paper.
 
-\paragraph{Proof Repair Across Type Equivalences}
-Parts of the introduction and Section~\ref{sec:mot-theory} come from this paper.
+\paragraph{Proof Repair across Type Equivalences}
+Parts of the introduction and Section~\ref{sec:mot-theory} come from \kl{Proof Repair across Type Equivalences}.
 The bulk of Chapter~\ref{chapt:pi} comes from this paper,
 though the content is likewise reorganized and reframed.
 The conclusion of Chapter~\ref{chapt:pi} is fresh content.
@@ -52,19 +52,19 @@ Chapter~\ref{sec:related} includes some related work from this paper,
 and Chapter~\ref{chapt:conclusions} includes some future work from this paper.
 
 \paragraph{Ornaments for Proof Reuse in Coq}
-The example from Section~\ref{sec:mot-dev} comes from this paper, though most of the text is new.
+The example from Section~\ref{sec:mot-dev} comes from \kl{Ornaments for Proof Reuse in Coq}, though most of the text is new.
 Parts of Section~\ref{sec:mot-theory} also come from this paper.
-Section~\ref{sec:pi-diff} uses a simplified version of the search algorithm from this paper as an example.
+Section~\ref{sec:pi-diff} uses a simplified version of the differencing algorithm (originally called the search algorithm) from this paper as an example.
 Section~\ref{sec:eval} includes the evaluation from this paper with additional context.
 Chapter~\ref{sec:related} includes some related work from this paper.
 This thesis retires the name of the tool from this paper (\textsc{Devoid})
-and uses the name of the generalized version of the tool from \kl{Proof Repair Across Type Equivalences} (\toolnamec) in its place.
+and uses the name of the generalized version of the tool from \kl{Proof Repair across Type Equivalences} (\toolnamec) in its place.
 
 \paragraph{\textsc{REPLica}}
-Section~\ref{sec:irl} includes a few samples of this paper, as does the abstract.
+Section~\ref{sec:irl} includes a few samples of the \contour[2]{violet}{\kl{\textsc{REPLica}}} paper, as does the abstract.
 
 \paragraph{QED at Large}
-Chapter~\ref{chapt:mot} includes a few samples of this paper.
+Chapter~\ref{chapt:mot} includes a few samples of the \kl{QED at Large} survey paper.
 Chapter~\ref{sec:related} includes a large amount of related work from this paper.
 
 \subsubsection*{Authorship Statements}
@@ -100,14 +100,14 @@ This decompiler was necessary for integrating proof repair tools with real proof
 and it continues to inspire exciting work to this day.
 
 \paragraph{Alex Sanchez-Stern}
-\kl{Alex} worked with me as a PhD student on a user study of proof engineers during my visit \kl{UCSD}.
+\kl{Alex} worked with me as a PhD student on the \kl{\toolname} user study of proof engineers during my visit \kl{UCSD}.
 Alex designed, implemented, deployed, and evaluated one of the two analyses in the user study paper.
 He also helped substantially in building the infrastructure necessary to deploy the user study,
 and wrote large sections of the paper.
 The user study and paper would not have happened without Alex.
 
 \paragraph{Karl Palmskog}
-\kl{Karl} was a postdoctoral researcher when he joined me on the survey paper.
+\kl{Karl} was a postdoctoral researcher when he joined me on the \kl{QED at Large}.
 Karl wrote entire chapters of the survey paper.
 I could not have written that paper without Karl.
 
@@ -125,7 +125,7 @@ When I discuss a rhetorical proof engineer who does not actually exist,
 like ``the proof engineer,'' I always use ``she''---this is a small attempt
 to seed the world with data that counteracts stereotypes. 
 When preserving anonymity of a particular person, I always use singular ``they.''
-Otherwise, I use the pronouns that the person prefers.
+Otherwise, I use the person's pronouns.
 
 
 

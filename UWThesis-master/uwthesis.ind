@@ -151,7 +151,7 @@
 
   \indexspace
 
-  \item Logic \& Type Theory
+  \item Logic \& Type Theory, \hyperpage{8}
     \subitem Algebraic Ornaments, \hyperpage{83, 84}, \hyperpage{88}, 
 		\hyperpage{102}, \hyperpage{107}, \hyperpage{116}
       \subsubitem Coherence, \hyperpage{83, 84}, \hyperpage{88}
@@ -205,25 +205,55 @@
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
-		\hyperpage{8}, \hyperpage{26}, \hyperpage{43}, 
+		\hyperpage{8--10}, \hyperpage{26}, \hyperpage{43}, 
 		\hyperpage{65}, \hyperpage{103, 104}, \hyperpage{114}, 
 		\hyperpage{121}, \hyperpage{127}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{8}
-    \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8}
+    \subitem Ornaments for Proof Reuse in Coq, \hyperpage{8, 9}
+    \subitem Proof Repair across Type Equivalences, \hyperpage{8, 9}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
-		\hyperpage{8}, \hyperpage{11}, \hyperpage{13}, 
-		\hyperpage{15}, \hyperpage{66}, \hyperpage{111, 112}, 
-		\hyperpage{117}, \hyperpage{120}, \hyperpage{128}
+		\hyperpage{8--11}, \hyperpage{13}, \hyperpage{15}, 
+		\hyperpage{66}, \hyperpage{111, 112}, \hyperpage{117}, 
+		\hyperpage{120}, \hyperpage{128}
+  \item Proof Repair, \hyperpage{4}, \hyperpage{6}, \hyperpage{24}, 
+		\hyperpage{114}, \hyperpage{125}
+    \subitem Across Type Equivalences, \hyperpage{7}, \hyperpage{65}
+      \subsubitem Automatic Configuration, \hyperpage{66}, 
+		\hyperpage{68}, \hyperpage{72}, \hyperpage{74}, 
+		\hyperpage{82}, \hyperpage{89}, \hyperpage{94}
+      \subsubitem Configuration, \hyperpage{65}, \hyperpage{74}, 
+		\hyperpage{78}
+      \subsubitem Dependent Constructors, \hyperpage{75}
+      \subsubitem Dependent Eliminators, \hyperpage{75}
+      \subsubitem Eta, \hyperpage{77}, \hyperpage{116}
+      \subsubitem Iota, \hyperpage{77}, \hyperpage{116}, 
+		\hyperpage{118}
+      \subsubitem Manual Configuration, \hyperpage{65}, \hyperpage{68}, 
+		\hyperpage{72}, \hyperpage{74}, \hyperpage{89}, 
+		\hyperpage{94}
+      \subsubitem Unification Heuristics, \hyperpage{91, 92}
+    \subitem By Example, \hyperpage{6, 7}, \hyperpage{31}, 
+		\hyperpage{121}
+      \subsubitem Exampled Patched Proof, \hyperpage{31}
+      \subsubitem Factoring, \hyperpage{39}, \hyperpage{47}, 
+		\hyperpage{50}
+      \subsubitem Generalization, \hyperpage{38, 39}, \hyperpage{50}
+      \subsubitem Goal Type, \hyperpage{34}, \hyperpage{37--39}
+      \subsubitem Inversion, \hyperpage{38}, \hyperpage{46}, 
+		\hyperpage{50}
+      \subsubitem Patch Candidate, \hyperpage{33}, \hyperpage{37--39}
+      \subsubitem Reusable Patch, \hyperpage{31}, \hyperpage{33, 34}, 
+		\hyperpage{36--39}
+      \subsubitem Search Procedure Instance, \hyperpage{36--39}, 
+		\hyperpage{49}, \hyperpage{54}
+      \subsubitem Specialization, \hyperpage{38, 39}, \hyperpage{50}
 
   \indexspace
 
-  \item Thesis
-    \subitem \sysnamelong Plugin Suite, \hyperpage{7}, \hyperpage{48}, 
-		\hyperpage{65}, \hyperpage{125}
-      \subsubitem \sysname Prototype, \hyperpage{31}, \hyperpage{48}, 
-		\hyperpage{69}, \hyperpage{93}
-      \subsubitem \toolnamec , \hyperpage{65}
-    \subitem Approach
+  \item Results, \hyperpage{6}
+    \subitem Case Studies, \hyperpage{7}, \hyperpage{57}, 
+		\hyperpage{125}
+    \subitem Design, \hyperpage{6, 7}
       \subsubitem Proof Term Transformations, \hyperpage{6, 7}, 
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{50}, 
 		\hyperpage{74}, \hyperpage{89}, \hyperpage{116}, 
@@ -232,35 +262,20 @@
 		\hyperpage{28, 29}, \hyperpage{33}, \hyperpage{39, 40}, 
 		\hyperpage{49}, \hyperpage{74}, \hyperpage{116, 117}, 
 		\hyperpage{121, 122}, \hyperpage{125}, \hyperpage{128}
-    \subitem Formal Thesis Statement, \hyperpage{5}, \hyperpage{28}, 
-		\hyperpage{63}, \hyperpage{110}
-    \subitem Informal Thesis Statement, \hyperpage{3, 4}, 
-		\hyperpage{63}, \hyperpage{110}, \hyperpage{125}
-    \subitem Proof Repair, \hyperpage{4}, \hyperpage{24}, 
-		\hyperpage{114}, \hyperpage{125}
-      \subsubitem Automatic Configuration, \hyperpage{66}, 
-		\hyperpage{68}, \hyperpage{72}, \hyperpage{74}, 
-		\hyperpage{82}, \hyperpage{89}, \hyperpage{94}
-      \subsubitem Configuration, \hyperpage{65}, \hyperpage{74}, 
-		\hyperpage{78}
-      \subsubitem Dependent Constructors, \hyperpage{75}
-      \subsubitem Eta, \hyperpage{77}, \hyperpage{116}
-      \subsubitem eusable Patch, \hyperpage{31}, \hyperpage{33, 34}, 
-		\hyperpage{36--39}
-      \subsubitem Exampled Patched Proof, \hyperpage{31}
-      \subsubitem Goal Type, \hyperpage{34}, \hyperpage{37--39}
-      \subsubitem Iota, \hyperpage{75}
-      \subsubitem Manual Configuration, \hyperpage{65}, \hyperpage{68}, 
-		\hyperpage{72}, \hyperpage{74}, \hyperpage{89}, 
-		\hyperpage{94}
-      \subsubitem Patch Candidate, \hyperpage{33}, \hyperpage{37--39}
-      \subsubitem Proof Repair Across Type Equivalences, \hyperpage{65}
-      \subsubitem Proof Repair By Example, \hyperpage{31}, 
-		\hyperpage{121}
-      \subsubitem Search Procedure Instance, \hyperpage{36--39}, 
-		\hyperpage{49}, \hyperpage{54}
-      \subsubitem Unification Heuristics, \hyperpage{91, 92}
-    \subitem Results, \hyperpage{6}, \hyperpage{57}, \hyperpage{125}
+    \subitem Implementation, \hyperpage{6, 7}
+      \subsubitem \sysname Prototype, \hyperpage{31}, \hyperpage{48}, 
+		\hyperpage{69}, \hyperpage{93}
+      \subsubitem \sysnamelong Plugin Suite, \hyperpage{7}, 
+		\hyperpage{48}, \hyperpage{65}, \hyperpage{125}
+      \subsubitem \toolnamec Plugin, \hyperpage{65}
+
+  \indexspace
+
+  \item Thesis Statement
+    \subitem Formal, \hyperpage{5}, \hyperpage{28}, \hyperpage{63}, 
+		\hyperpage{110}
+    \subitem Informal, \hyperpage{3, 4}, \hyperpage{63}, 
+		\hyperpage{110}, \hyperpage{125}
 
   \indexspace
 
@@ -313,7 +328,7 @@
       \subsubitem Tactics, \hyperpage{5}, \hyperpage{12}, 
 		\hyperpage{15}, \hyperpage{23}, \hyperpage{28}, 
 		\hyperpage{97}, \hyperpage{111}, \hyperpage{113, 114}
-    \subitem Proof Term, \hyperpage{6}, \hyperpage{13}, \hyperpage{16}, 
+    \subitem Proof Term, \hyperpage{5}, \hyperpage{13}, \hyperpage{16}, 
 		\hyperpage{18}, \hyperpage{28}, \hyperpage{67}, 
 		\hyperpage{97}
       \subsubitem Gallina, \hyperpage{12--15}, \hyperpage{18}, 

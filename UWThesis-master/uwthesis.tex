@@ -39,10 +39,15 @@
 \usepackage{bbm} % to render N for the natural numbers
 \usepackage[nounderscore]{syntax} % grammar
 \usepackage[T1]{fontenc}
+\usepackage{contour}% http://ctan.org/pkg/contour
 
+\contourlength{0.00000001em}
+
+% acronyms
 \newcommand{\sysnamelong}{\textsc{Pumpkin Patch}\xspace}
 \newcommand{\sysname}{\textsc{Pumpkin}\xspace}
-\newcommand\toolnamec{\textsc{Pumpkin P}i\xspace} % tool name
+\newcommand\toolnamec{\textsc{Pumpkin P}i\xspace}
+\newcommand\toolname{\textsc{REPLica}\xspace}
 
 
 \lstdefinelanguage{coq}{
@@ -139,9 +144,6 @@
 \newcommand{\RETURNIFELSE}[3]{\IF {#1} \THEN \STATE \textbf{return} {#2} \ELSE \STATE \textbf{return} {#3}}
 
 % TODO color consistency etc
-
-% acronyms
-\newcommand\toolname{\textsc{REPLica}\xspace}
 
 % highlighting with boxes
 \newcommand{\indpatt}[1]{%

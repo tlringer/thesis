@@ -2,11 +2,11 @@
 * Summary *
 ***********
 
-28 undefined knowledge(s).
+26 undefined knowledge(s).
 1 autoreference(s) are introduced twice.
-6 autoreference(s) are used but not introduced.
+5 autoreference(s) are used but not introduced.
 
-115 autoreference(s) are properly used.
+117 autoreference(s) are properly used.
 100 autoreference(s) are defined but not used.
 
 
@@ -23,8 +23,6 @@
 ************************
 
 \knowledge{ignore}
- | Ernesto Gonzales
- | friends
  | programming languages
  | Anders M\"ortberg
  | Proof Repair Across Type Equivalences
@@ -66,7 +64,6 @@ theory.tex:222: {Calculus of Inductive Constructions}{default}{base}
 ******************************
 
 \nointro{default}{base}{proof object}
-\nointro{default}{base}{Ernesto}
 \nointro{default}{base}{programming languages community}
 \nointro{default}{base}{Michael Shulman}
 \nointro{default}{base}{Anders M\"{o}rtberg}
@@ -125,57 +122,57 @@ index.tex:467: {Lindsey Kuper}{default}{base}
 index.tex:469: {Nate Foster}{default}{base}
 index.tex:471: {Stephanie Weirich}{default}{base}
 index.tex:473: {Derek Dreyer}{default}{base}
-index.tex:475: {Roy Or-El}{default}{base}
-index.tex:478: {Vikram Iyer}{default}{base}
-index.tex:484: {Ellie Berry}{default}{base}
-index.tex:487: {Mer Joyce}{default}{base}
-index.tex:490: {Jasper Tran O'Leary}{default}{base}
-index.tex:492: {Wade Gordon}{default}{base}
-index.tex:495: {Anne Spencer Ross}{default}{base}
-index.tex:498: {Anna Kornfeld Simpson}{default}{base}
-index.tex:501: {Qi Cheng}{default}{base}
-index.tex:504: {Misha Kolmogorov}{default}{base}
-index.tex:510: {Marcela Mendoza}{default}{base}
-index.tex:513: {Laura Chick}{default}{base}
-index.tex:516: {Ezgi Akg\"{u}l}{default}{base}
-index.tex:519: {Chris Maines}{default}{base}
-index.tex:522: {Melanie Walker}{default}{base}
-index.tex:528: {Chabad of Queen Anne}{default}{base}
-index.tex:531: {Tom Cotner}{default}{base}
-index.tex:534: {David Lasky}{default}{base}
-index.tex:537: {Danielle Antosh}{default}{base}
-index.tex:540: {Erica Iantuono}{default}{base}
-index.tex:543: {Cyril Cohen}{default}{base}
-index.tex:548: {Tej Chajed}{default}{base}
-index.tex:551: {Emilio J. Gallego Arias}{default}{base}
-index.tex:554: {Enrico Tassi}{default}{base}
-index.tex:557: {Ga\"{e}tan Gilbert}{default}{base}
-index.tex:560: {Maxime D\'{e}n\`{e}s}{default}{base}
-index.tex:563: {Matthieu Sozeau}{default}{base}
-index.tex:566: {Vincent Laporte}{default}{base}
-index.tex:569: {Th\'{e}o Zimmermann}{default}{base}
-index.tex:572: {Jason Gross}{default}{base}
-index.tex:575: {Nicolas Tabareau}{default}{base}
-index.tex:578: {Pierre-Marie P\'{e}drot}{default}{base}
-index.tex:581: {Yves Bertot}{default}{base}
-index.tex:584: {Ben Delaware}{default}{base}
-index.tex:586: {Janno}{default}{base}
-index.tex:588: {Valentin Robert}{default}{base}
-index.tex:591: {Robert Rand}{default}{base}
-index.tex:600: {Hillel Wayne}{default}{base}
-index.tex:605: {Ymir Vigfusson}{default}{base}
-index.tex:607: {Benjamin Lipp}{default}{base}
-index.tex:609: {Nathanael}{default}{base}
-index.tex:611: {Daniel-Nikpayuk}{default}{base}
-index.tex:613: {Michelle Lee}{default}{base}
-index.tex:615: {Quinn Wilton}{default}{base}
-index.tex:636: {exampled patched proof}{default}{base}
-index.tex:657: {dependent constructors}{default}{base}
-index.tex:661: {dependent eliminators}{default}{base}
-index.tex:668: {dependent eliminators}{default}{base}
-index.tex:689: {\toolnamec }{default}{base}
-index.tex:717: {results}{default}{base}
-index.tex:720: {Adapting Proof Automation to Adapt Proofs}{default}{base}
-index.tex:724: {Ornaments for Proof Reuse in Coq}{default}{base}
+index.tex:477: {Roy Or-El}{default}{base}
+index.tex:480: {Vikram Iyer}{default}{base}
+index.tex:486: {Ellie Berry}{default}{base}
+index.tex:489: {Mer Joyce}{default}{base}
+index.tex:492: {Jasper Tran O'Leary}{default}{base}
+index.tex:494: {Wade Gordon}{default}{base}
+index.tex:497: {Anne Spencer Ross}{default}{base}
+index.tex:500: {Anna Kornfeld Simpson}{default}{base}
+index.tex:503: {Qi Cheng}{default}{base}
+index.tex:506: {Misha Kolmogorov}{default}{base}
+index.tex:512: {Marcela Mendoza}{default}{base}
+index.tex:515: {Laura Chick}{default}{base}
+index.tex:518: {Ezgi Akg\"{u}l}{default}{base}
+index.tex:521: {Chris Maines}{default}{base}
+index.tex:524: {Melanie Walker}{default}{base}
+index.tex:530: {Chabad of Queen Anne}{default}{base}
+index.tex:533: {Tom Cotner}{default}{base}
+index.tex:536: {David Lasky}{default}{base}
+index.tex:539: {Danielle Antosh}{default}{base}
+index.tex:542: {Erica Iantuono}{default}{base}
+index.tex:545: {Cyril Cohen}{default}{base}
+index.tex:550: {Tej Chajed}{default}{base}
+index.tex:553: {Emilio J. Gallego Arias}{default}{base}
+index.tex:556: {Enrico Tassi}{default}{base}
+index.tex:559: {Ga\"{e}tan Gilbert}{default}{base}
+index.tex:562: {Maxime D\'{e}n\`{e}s}{default}{base}
+index.tex:565: {Matthieu Sozeau}{default}{base}
+index.tex:568: {Vincent Laporte}{default}{base}
+index.tex:571: {Th\'{e}o Zimmermann}{default}{base}
+index.tex:574: {Jason Gross}{default}{base}
+index.tex:577: {Nicolas Tabareau}{default}{base}
+index.tex:580: {Pierre-Marie P\'{e}drot}{default}{base}
+index.tex:583: {Yves Bertot}{default}{base}
+index.tex:586: {Ben Delaware}{default}{base}
+index.tex:588: {Janno}{default}{base}
+index.tex:590: {Valentin Robert}{default}{base}
+index.tex:593: {Robert Rand}{default}{base}
+index.tex:602: {Hillel Wayne}{default}{base}
+index.tex:607: {Ymir Vigfusson}{default}{base}
+index.tex:609: {Benjamin Lipp}{default}{base}
+index.tex:611: {Nathanael}{default}{base}
+index.tex:613: {Daniel-Nikpayuk}{default}{base}
+index.tex:615: {Michelle Lee}{default}{base}
+index.tex:617: {Quinn Wilton}{default}{base}
+index.tex:638: {exampled patched proof}{default}{base}
+index.tex:659: {dependent constructors}{default}{base}
+index.tex:663: {dependent eliminators}{default}{base}
+index.tex:670: {dependent eliminators}{default}{base}
+index.tex:691: {\toolnamec }{default}{base}
+index.tex:719: {results}{default}{base}
+index.tex:722: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:726: {Ornaments for Proof Reuse in Coq}{default}{base}
 
 

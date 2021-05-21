@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  20 MAY 2021 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1976,7 +1976,7 @@ s---[][]\T1/pplj/m/it/10.95 (-20) Jasper Hugunin\T1/pplj/m/n/10.95 (-20) ,
  []
 
 [14] [15]
-<savta.png, id=182, 376.40625pt x 40.15pt>
+<savta.png, id=185, 376.40625pt x 40.15pt>
 File: savta.png Graphic file (type png)
 <use savta.png>
 Package pdftex.def Info: savta.png  used on input line 253.
@@ -2007,7 +2007,7 @@ Class scrreprt Warning: \float@addtolists detected!
 ] [4]
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/pplj/b/it' tried instead on input line 96.
-<Development.pdf, id=279, 1072.48679pt x 529.7391pt>
+<Development.pdf, id=282, 1072.48679pt x 529.7391pt>
 File: Development.pdf Graphic file (type pdf)
 <use Development.pdf>
 Package pdftex.def Info: Development.pdf  used on input line 104.
@@ -2099,7 +2099,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 145.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 145.
-<maintenance/fig/patch.png, id=841, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=844, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 148.
@@ -2141,7 +2141,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 75--96
  []
 
 [34] [35] [36] [37] [38]) (./repair/differencing.tex [39] [40] [41]
-<repair/nat_ind.pdf, id=1244, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1247, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
@@ -2194,7 +2194,7 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [66] [67]) (./often/approach.tex [68]
-<often/workflowa.pdf, id=1972, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=1975, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2210,7 +2210,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [77] [78]
-<often/Diagram.pdf, id=2314, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2317, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2497,8 +2497,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
  51817 strings out of 492609
- 1048191 string characters out of 6129033
- 1325309 words of memory out of 5000000
+ 1048171 string characters out of 6129033
+ 1325460 words of memory out of 5000000
  52281 multiletter control sequences out of 15000+600000
  679484 words of font info for 881 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2525,10 +2525,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (165 pages, 1857132 bytes).
+Output written on uwthesis.pdf (165 pages, 1857274 bytes).
 PDF statistics:
- 4484 PDF objects out of 5155 (max. 8388607)
- 4208 compressed objects within 43 object streams
+ 4489 PDF objects out of 5155 (max. 8388607)
+ 4213 compressed objects within 43 object streams
  1610 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

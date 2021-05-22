@@ -97,22 +97,19 @@
 \contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-107.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{55}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{55}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{55}{Item.40}% 
+\contentsline {paragraph}{Identifying Changes}{56}{Item.40}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{56}{subsection.3.6.1}% 
-\contentsline {paragraph}{Replay}{57}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{57}{lstnumber.-132.1}% 
-\contentsline {paragraph}{Apply}{57}{lstnumber.-133.1}% 
-\contentsline {subsubsection}{\numberline {3.6.1.1}Instance}{57}{subsubsection.3.6.1.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{58}{subsection.3.6.2}% 
-\contentsline {paragraph}{Replay}{58}{subsection.3.6.2}% 
+\contentsline {paragraph}{Replay}{56}{subsection.3.6.1}% 
+\contentsline {paragraph}{Search}{56}{lstnumber.-122.1}% 
+\contentsline {paragraph}{Apply}{57}{lstnumber.-123.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{57}{subsection.3.6.2}% 
+\contentsline {paragraph}{Replay}{58}{figure.caption.21}% 
 \contentsline {paragraph}{Search}{58}{lstnumber.-140.2}% 
 \contentsline {paragraph}{Apply}{58}{lstnumber.-141.2}% 
-\contentsline {subsubsection}{\numberline {3.6.2.1}Instance}{59}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{60}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{60}{subsection.3.6.3}% 
 \contentsline {paragraph}{Search}{60}{lstnumber.-150.2}% 
 \contentsline {paragraph}{Apply}{60}{lstnumber.-151.2}% 
-\contentsline {subsubsection}{\numberline {3.6.3.1}Instance}{60}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{61}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{63}{chapter.4}% 
 \contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{63}{Item.45}% 

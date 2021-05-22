@@ -193,7 +193,7 @@
 		\hyperpage{117, 118}
     \subitem Polymorphism, \hyperpage{20}
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
-		\hyperpage{30}, \hyperpage{40}, \hyperpage{56}, 
+		\hyperpage{30}, \hyperpage{40}, \hyperpage{58}, 
 		\hyperpage{73}, \hyperpage{92, 93}
     \subitem Sigma Types, \hyperpage{21}
     \subitem Type Theories
@@ -244,20 +244,25 @@
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{45}, 
-		\hyperpage{48, 49}
+		\hyperpage{48, 49}, \hyperpage{59}, \hyperpage{61}
       \subsubitem Generalization, \hyperpage{36, 37}, \hyperpage{42}, 
-		\hyperpage{48}, \hyperpage{54}
-      \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}
+		\hyperpage{48}, \hyperpage{54}, \hyperpage{59}, 
+		\hyperpage{61}
+      \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}, 
+		\hyperpage{57}, \hyperpage{61}
       \subsubitem Inversion, \hyperpage{36}, \hyperpage{44}, 
-		\hyperpage{48, 49}, \hyperpage{53}
+		\hyperpage{48, 49}, \hyperpage{53}, \hyperpage{57}, 
+		\hyperpage{59}, \hyperpage{61}
       \subsubitem Patch Candidate, \hyperpage{31, 32}, 
-		\hyperpage{34--37}, \hyperpage{41}
+		\hyperpage{34--37}, \hyperpage{41}, \hyperpage{57}, 
+		\hyperpage{59}, \hyperpage{61}
       \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31, 32}, 
-		\hyperpage{34--37}, \hyperpage{41}
+		\hyperpage{34--37}, \hyperpage{41}, \hyperpage{57}, 
+		\hyperpage{59}, \hyperpage{61}
       \subsubitem Search Procedure Instance, \hyperpage{34--36}, 
 		\hyperpage{47}, \hyperpage{52}
       \subsubitem Specialization, \hyperpage{36, 37}, 
-		\hyperpage{42, 43}, \hyperpage{48}
+		\hyperpage{42, 43}, \hyperpage{48}, \hyperpage{59}
 
   \indexspace
 
@@ -268,12 +273,14 @@
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{41}, 
-		\hyperpage{48}, \hyperpage{72}, \hyperpage{87}, 
-		\hyperpage{114}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{48}, \hyperpage{57}, \hyperpage{59}, 
+		\hyperpage{72}, \hyperpage{87}, \hyperpage{114}, 
+		\hyperpage{123}, \hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34, 35}, 
 		\hyperpage{37, 38}, \hyperpage{47}, \hyperpage{53}, 
+		\hyperpage{57}, \hyperpage{59}, \hyperpage{61}, 
 		\hyperpage{72}, \hyperpage{114, 115}, 
 		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}
@@ -288,7 +295,7 @@
 
   \item Thesis Statement
     \subitem Formal, \hyperpage{3}, \hyperpage{61}, \hyperpage{108}
-    \subitem Informal, \hyperpage{1, 2}, \hyperpage{61}, 
+    \subitem Informal, \hyperpage{1, 2}, \hyperpage{62}, 
 		\hyperpage{108}, \hyperpage{123}
 
   \indexspace

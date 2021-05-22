@@ -1,13 +1,13 @@
-IZR (z:Z) : R := (@\vspace{-0.05cm}@)
-  match z with  (@\vspace{-0.05cm}@)
-  | Z0 => 0 (@\vspace{-0.05cm}@)
-  | Zpos n => INR (Pos.to_nat n) (@\vspace{-0.05cm}@)
-  | Zneg n => - INR (Pos.to_nat n) (@\vspace{-0.05cm}@)
+IZR (z:Z) : R :=
+  match z with
+  | Z0 => 0
+  | Zpos n => INR (Pos.to_nat n)
+  | Zneg n => - INR (Pos.to_nat n)
   end.
 
-IZR (z:Z) : R := (@\vspace{-0.05cm}@)
-  match z with (@\vspace{-0.05cm}@)
-  | Z0 => 0 (@\vspace{-0.05cm}@)
-  | Zpos n => IPR n (@\vspace{-0.05cm}@)
-  | Zneg n => - IPR n (@\vspace{-0.05cm}@)
+IZR (z:Z) : R :=
+  match z with
+  | Z0 => 0
+  | Zpos n => IPR n
+  | Zneg n => - IPR n
   end.

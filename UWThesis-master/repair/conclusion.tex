@@ -6,21 +6,20 @@ This \kl{thesis} set out to show that:
 \begin{quote}
 changes in programs, specifications, and proofs can carry information that a tool can extract, generalize, and apply to fix other proofs broken by the same change. A tool that automates this can save work for proof engineers relative to reference manual repairs in practical use cases.
 \end{quote}
-Or, in other words, that there \textit{is} \kl{reason to believe} that \kl{verifying} a modified system should often, in practical use cases, be easier than verifying the original the first time around,
-even when proof engineers do not follow good development processes,
-or when change occurs outside of proof engineers' control.
-
 With \sysname, so far, it is fair to say that:
 
 \begin{quote}
-Changes in \diff{the content of} programs, specifications, and proofs can carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change(Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
+Changes in \diff{the content of} programs, specifications, and proofs can carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
 \end{quote}
+Or, informally, there is \textit{some} \kl{reason to believe} that verifying a modified system \textit{could have} been easier than verifying the original the first time around,
+in \textit{a few} practical use cases.
+
 This is progress, but it is not quite there yet.
 As I have shown you throughout this chapter, the \sysname prototype is too limited in both theory and implementation.
 Most notably, the \sysname prototype has limited support for patch application and supports
-a narrow class of changes.
+a narrow class of changes in an ad hoc manner.
 And as I mentioned earlier, without considering the extension from the next chapter, 
-the \sysname prototype does not include any support for tactics beyond the use of hints.
+the \sysname prototype includes very little support for tactics.
 
 The next chapter will address these limitations.
 In doing so, it will show how the thesis holds on a broad class of changes,

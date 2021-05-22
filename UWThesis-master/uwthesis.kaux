@@ -2405,21 +2405,18 @@
 \KAuxNewLinkScopetagInstance {sec:pumpkin-results}{document}
 \KAuxDeclaredScopeTag {fig:int}
 \KAuxNewLinkScopetagInstance {fig:int}{document}
-\KAuxDeclaredScopeTag {fig:bintonat}
-\KAuxNewLinkScopetagInstance {fig:bintonat}{document}
 \KAuxDeclaredScopeTag {sec:compcert}
 \KAuxNewLinkScopetagInstance {sec:compcert}{document}
 \KAuxDeclaredScopeTag {sec:foundations}
 \KAuxNewLinkScopetagInstance {sec:foundations}{document}
+\KAuxDeclaredScopeTag {fig:bintonat}
+\KAuxNewLinkScopetagInstance {fig:bintonat}{document}
 \KAuxDeclaredScopeTag {fig:divide}
 \KAuxNewLinkScopetagInstance {fig:divide}{document}
 \KAuxDeclaredScopeTag {sec:coq}
 \KAuxNewLinkScopetagInstance {sec:coq}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-concl}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-concl}{document}
-
-\KAuxFileAt {conclusion.tex}{9}
-\KAuxErrorKnowledgeUnknown {default}{}{verifying}{verifying}{\kl }
 \KAuxDeclaredScopeTag {chapt:pi}
 \KAuxNewLinkScopetagInstance {chapt:pi}{document}
 

@@ -5,7 +5,7 @@
 
 % below: case studies
 
-To show how \sysname could \kl{save work for proof engineers on real proof developments}, I used the \sysname prototype to emulate three motivating scenarios from real-world code:
+To show how \sysname could save work for proof engineers on real proof developments, I used the \sysname prototype on three \kl{case studies} to emulate three motivating scenarios from real-world proof developments:
 
 \begin{enumerate}
 \item \textbf{Updating definitions} within a project \\
@@ -20,9 +20,8 @@ For each case, I describe how \sysname configures the procedure to use differenc
 My experiences with these scenarios suggest that patches are useful and that both differencing and the transformations 
 are effective and flexible.
 
-\paragraph{Identifying Changes} I identified Git commits from popular Coq projects that
+\paragraph{Identifying Changes} I identified commits from popular projects that
 demonstrated each scenario.
-These commits updated proofs in response to breaking changes.
 I emulated each scenario as follows:
 
 \begin{enumerate}
@@ -61,6 +60,95 @@ Chapter~\ref{chapt:pi} describes an extension to \sysnamelong that supports chan
 \label{fig:int}
 \end{figure*}
 
+\subsection{Updating Definitions}
+\label{sec:compcert}
+
+Coq programmers sometimes make changes to definitions that break proofs
+within the same project. To emulate this use case, 
+I identified a CompCert commit~\cite{compcertcommit}
+with a breaking change to \lstinline{int} (Figure~\ref{fig:int}). %The commit message notes that the new representation is more efficient.
+I used \sysname to find a patch that corresponds to the change in \lstinline{int}.
+The patch \sysname found fixed broken inductive proofs.
+
+\paragraph{Replay} I used the proof of \lstinline{unsigned_range} as the example for \sysname.
+The proof failed with the new \lstinline{int}:
+
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
+\begin{lstlisting}[language=coq]
+  Theorem unsigned_range:
+    (@\ltacforall@) (i : int), 0 <= unsigned i < modulus.
+  Proof.
+    intros i. induction i using int_ind; auto(@\fails{.}@)
+\end{lstlisting}
+I replayed the change to \lstinline{unsigned_range}:
+
+\begin{lstlisting}[language=coq]
+    intros i. induction i using int_ind. (@\diff{simpl. omega}@)(@\succeeds{.}@)
+\end{lstlisting}
+
+\paragraph{Search} I used \sysname to search the example for a patch that corresponds to the change in \lstinline{int}. It found
+a patch with this type:
+
+\begin{lstlisting}[language=coq]
+   (@\ltacforall@) (z : Z), (@\diff{-1 < z < modulus}@) $\rightarrow$ (@\diff{0 <= z < modulus}@)
+\end{lstlisting}
+
+\paragraph{Apply} After changing the definition of \lstinline{int}, the proof of the
+theorem \lstinline{repr_unsigned} failed on the last tactic:
+
+\begin{lstlisting}[language=coq]
+  Theorem repr_unsigned:
+    (@\ltacforall@) (i : int), repr (unsigned i) = i.
+  Proof.
+    $\ldots$ apply Zmod_small; auto(@\fails{.}@)
+\end{lstlisting}
+Manually trying \lstinline{omega}---the tactic which helped us in the proof of \lstinline{unsigned_range}---did not
+succeed.
+I added the patch that \sysname found to a hint database.
+The proof of the theorem \lstinline{repr_unsigned} then went through:
+
+\begin{lstlisting}[language=coq]
+  $\ldots$ apply Zmod_small; auto(@\succeeds{.}@)
+\end{lstlisting}
+
+\subsubsection*{Instance}
+
+This scenario used the search procedure instance for changes in constructors of an inductive type.
+Given such a change:
+
+\begin{lstlisting}[language=coq]
+  Inductive (@\diff{T}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ T
+  Inductive (@\diff{T'}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ T'
+\end{lstlisting}
+\sysname searches in the difference between two inductive proofs of theorems:
+
+\begin{lstlisting}[language=coq]
+  (@\ltacforall@) (t : (@\diff{T}@)), P t
+  (@\ltacforall@) (t : (@\diff{T'}@)), P t
+\end{lstlisting}
+for an isomorphism\footnote{If \sysname finds just one implication, it returns that.} between the constructors:
+
+\begin{lstlisting}[language=coq]
+  $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ (@\diff{H'}@)
+  $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ (@\diff{H}@)
+\end{lstlisting}
+The proof engineer can apply these patches within the inductive case that corresponds to the constructor \lstinline{C}
+to fix other broken proofs that induct over the changed type. 
+\sysname uses this search procedure instance for changes in constructors:
+
+\begin{algorithm}
+\footnotesize
+\begin{algorithmic}[1]
+    \STATE \kl{diff} inductive constructors for \kl{goals}
+    \STATE \kl{diff} and \kl{transform} to recursively search for changes in conclusions of the corresponding case of the proof
+    \STATE \textbf{if} there are \kl{candidates} \textbf{then}
+    \STATE \hspace*{1em} try to \kl{invert} the \kl{patch} to find an isomorphism 
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Porting Definitions}
+\label{sec:foundations}
+
 \begin{figure*}
 \begin{minipage}{0.49\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt} % blindFS / User A
@@ -86,95 +174,6 @@ rather than \kl{primitive eliminators}, unlike most of the terms in this thesis.
 
 \lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 
-\subsection{Updating Definitions}
-\label{sec:compcert}
-
-Coq programmers sometimes make changes to definitions that break proofs
-within the same project. To emulate this use case, 
-I identified a CompCert commit~\cite{compcertcommit}
-with a breaking change to \lstinline{int} (Figure~\ref{fig:int}). %The commit message notes that the new representation is more efficient.
-I used \sysname to find a patch that corresponds to the change in \lstinline{int}.
-The patch \sysname found fixed broken inductive proofs.
-
-\paragraph{Replay} I used the proof of \lstinline{unsigned_range} as the example for \sysname.
-The proof failed with the new \lstinline{int}:
-
-\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
-\begin{lstlisting}[language=coq]
-  Theorem unsigned_range:
-    (@\ltacforall@)(i : int), 0 <= unsigned i < modulus.
-  Proof.
-    intros i. induction i using int_ind; auto(@\fails{.}@)
-\end{lstlisting}
-I replayed the change to \lstinline{unsigned_range}:
-
-\begin{lstlisting}[language=coq]
-    intros i. induction i using int_ind. (@\diff{simpl. omega}@)(@\succeeds{.}@)
-\end{lstlisting}
-
-\paragraph{Search} I used \sysname to search the example for a patch that corresponds to the change in \lstinline{int}. It found
-a patch with this type:
-
-\begin{lstlisting}[language=coq]
-   (@\ltacforall@) z : Z, (@\diff{-1 < z < modulus}@) $\rightarrow$ (@\diff{0 <= z < modulus}@)
-\end{lstlisting}
-
-\paragraph{Apply} After changing the definition of \lstinline{int}, the proof of the
-theorem \lstinline{repr_unsigned} failed on the last tactic:
-
-\begin{lstlisting}[language=coq]
-  Theorem repr_unsigned:
-    (@\ltacforall@)(i : int), repr (unsigned i) = i.
-  Proof.
-    $\ldots$ apply Zmod_small; auto(@\fails{.}@)
-\end{lstlisting}
-Manually trying \lstinline{omega}---the tactic which helped us in the proof of \lstinline{unsigned_range}---did not
-succeed.
-I added the patch that \sysname found to a hint database.
-The proof of the theorem \lstinline{repr_unsigned} then went through:
-
-\begin{lstlisting}[language=coq]
-  $\ldots$ apply Zmod_small; auto(@\succeeds{.}@)
-\end{lstlisting}
-
-\subsubsection{Instance}
-
-This scenario used the search procedure instance for changes in constructors of an inductive type.
-Given such a change:
-
-\begin{lstlisting}[language=coq]
-  Inductive (@\diff{T}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ T
-  Inductive (@\diff{T'}@) := $\ldots$ | C : $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ T'
-\end{lstlisting}
-\sysname searches in the difference between two inductive proofs of theorems:
-
-\begin{lstlisting}[language=coq]
-  (@\ltacforall@) (t : (@\diff{T}@)), P t
-  (@\ltacforall@) (t : (@\diff{T'}@)), P t
-\end{lstlisting}
-for an isomorphism\footnote{If \sysname finds just one implication, it returns that.} between the constructors:
-
-\begin{lstlisting}[language=coq]
-  $\ldots$ $\rightarrow$ (@\diff{H}@) $\rightarrow$ (@\diff{H'}@)(@\vspace{-0.1cm}@)
-  $\ldots$ $\rightarrow$ (@\diff{H'}@) $\rightarrow$ (@\diff{H}@)
-\end{lstlisting}
-The proof engineer can apply these patches within the inductive case that corresponds to the constructor \lstinline{C}
-to fix other broken proofs that induct over the changed type. 
-\sysname uses this search procedure instance for changes in constructors:
-
-\begin{algorithm}
-\footnotesize
-\begin{algorithmic}[1]
-    \STATE \textit{diff} inductive constructors for goals
-    \STATE \textit{diff} and \textit{transform} to recursively search for changes in conclusions of the corresponding case of the proof
-    \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} try to \textit{invert} the patch to find an isomorphism 
-\end{algorithmic}
-\end{algorithm}
-
-\subsection{Porting Definitions}
-\label{sec:foundations}
-
 Proof engineers sometimes port theorems and proofs to use definitions from different libraries.
 To simulate this, I used \sysname to port two solutions~\cite{usera, userb}
 to an exercise in Software Foundations to each use the other solution's definition of the fixpoint \lstinline{bin_to_nat} (Figure~\ref{fig:bintonat}).
@@ -183,17 +182,18 @@ I demonstrate one direction; the opposite was similar.
 \paragraph{Replay} I used the proof of \lstinline{bin_to_nat_pres_incr} from User A as the example for \sysname.
 User A cut an inline lemma in an inductive case and proved it using a rewrite:
 
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 \begin{lstlisting}[language=coq]
-  assert ((@\ltacforall@)a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).
-  (@\ltacba@) $\ldots$ (@\diff{rewrite $\leftarrow$ plus\_n\_O.}@) rewrite $\rightarrow$ plus_comm.
+  assert ((@\ltacforall@) a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).
+  - $\ldots$ (@\diff{rewrite $\leftarrow$ plus\_n\_O.}@) rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A
 When I ported User A's solution to use User B's definition of \lstinline{bin_to_nat}, 
 the application of this inline lemma failed. I changed the conclusion of the inline lemma 
 and removed the corresponding rewrite:
 
 \begin{lstlisting}[language=coq]
-  assert ((@\ltacforall@)a, S (a + S a) = S (S (a + a))).
-  (@\ltacba@) $\ldots$ rewrite $\rightarrow$ plus_comm.
+  assert ((@\ltacforall@) a, S (a + S a) = S (S (a + a))).
+  - $\ldots$ rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A, adapted
 
 \paragraph{Search} I used \sysname to search in the difference between the old and new versions of the example
@@ -201,8 +201,8 @@ patched proof for a patch that corresponds to the change in \lstinline{bin_to_na
 It found an isomorphism:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@)P b, P (@\diff{(bin\_to\_nat b)}@) $\rightarrow$ P (@\diff{(bin\_to\_nat b + 0)}@)(@\vspace{-0.08cm}@)
-  (@\ltacforall@)P b, P (@\diff{(bin\_to\_nat b + 0)}@) $\rightarrow$ P (@\diff{(bin\_to\_nat b)}@)
+  (@\ltacforall@) P b, P (@\diff{(bin\_to\_nat b)}@) $\rightarrow$ P (@\diff{(bin\_to\_nat b + 0)}@)
+  (@\ltacforall@) P b, P (@\diff{(bin\_to\_nat b + 0)}@) $\rightarrow$ P (@\diff{(bin\_to\_nat b)}@)
 \end{lstlisting}
 
 \paragraph{Apply} After porting to User B's definition, a rewrite in the proof of the theorem
@@ -227,34 +227,34 @@ For arbitrary \lstinline{n}, the term \lstinline{2 * n} reduces to \lstinline{n 
 \sysname found a patch that was not the most natural patch.
 The natural patch would be to remove the rewrite, just as I removed a different rewrite from the example proof.
 This did not occur when I ported User B's definition,
-which suggests that in the future, a patch finding tool may help inform novice users which definition is simpler:
+which suggests that in the future, a proof repair tool may help inform novice users which definition is simpler:
 It can factor the proof,  
 then inform the user if two factors are inverses.
 Tactic-level changes do not provide enough information to determine this; the tool must have a semantic
 understanding of the terms.
-My Magic tutorial plugin~\footnote{\url{https://github.com/uwplse/magic}} % TODO static link
+My Magic tutorial plugin\footnote{\url{https://github.com/uwplse/magic}} % TODO static link
 implements a prototype of the functionality needed for this, based on lessons from this case study.
 
-\subsubsection{Instance}
+\subsubsection*{Instance}
 
 This scenario used the search procedure instance for changes in cases of a fixpoint.
 Given such a change:
 
 \begin{lstlisting}[language=coq]
-  Fixpoint (@\diff{f}@) $\ldots$ := $\ldots$ | g (@\diff{x}@)(@\vspace{-0.1cm}@)
+  Fixpoint (@\diff{f}@) $\ldots$ := $\ldots$ | g (@\diff{x}@)
   Fixpoint (@\diff{f'}@) $\ldots$ := $\ldots$ | g (@\diff{x'}@)
 \end{lstlisting}
 \sysname searches in the difference between two versions of proofs of the theorems:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) $\ldots$, P ((@\diff{f}@) $\ldots$)(@\vspace{-0.1cm}@)
+  (@\ltacforall@) $\ldots$, P ((@\diff{f}@) $\ldots$)
   (@\ltacforall@) $\ldots$, P ((@\diff{f'}@) $\ldots$)
 \end{lstlisting}
 for an isomorphism that corresponds to the change:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@)P, P (@\diff{x}@) $\rightarrow$ P (@\diff{x'}@)(@\vspace{-0.1cm}@)
-  (@\ltacforall@)P, P (@\diff{x'}@) $\rightarrow$ P (@\diff{x}@)
+  (@\ltacforall@) P, P (@\diff{x}@) $\rightarrow$ P (@\diff{x'}@)
+  (@\ltacforall@) P, P (@\diff{x'}@) $\rightarrow$ P (@\diff{x}@)
 \end{lstlisting}
 The proof engineer can apply these patches to fix other broken proofs about the fixpoint.
 
@@ -266,12 +266,12 @@ candidates by \lstinline{P}, not by its arguments.
 \begin{algorithm}
 \footnotesize
 \begin{algorithmic}[1]
-    \STATE \textit{diff} fixpoint cases for goals
-    \STATE \textit{diff} and \textit{transform} to recursively search within an intermediate lemma for a change in conclusions
-    \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} \textit{specialize} and \textit{factor} the candidate \\
-           \hspace*{1em} \textit{generalize} the factors by functions \\
-           \hspace*{1em} try to \textit{invert} the patch to find an isomorphism 
+    \STATE \kl{diff} fixpoint cases for goals
+    \STATE \kl{diff} and \kl{transform} to recursively search within an intermediate lemma for a change in conclusions
+    \STATE \textbf{if} there are \kl{candidates} \textbf{then}
+    \STATE \hspace*{1em} \kl{specialize} and \kl{factor} the \kl{candidate} \\
+           \hspace*{1em} \kl{generalize} the factors by functions \\
+           \hspace*{1em} try to \kl{invert} the \kl{patch} to find an isomorphism 
 \end{algorithmic}
 \end{algorithm}
 
@@ -285,12 +285,12 @@ to the fixpoint.
 \begin{figure*}
 \begin{minipage}{0.48\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=1]{repair/divide.tex}
+\lstinputlisting[firstline=1, lastline=2]{repair/divide.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
 \lstset{language=coq, aboveskip=0pt,belowskip=0pt}
-\lstinputlisting[firstline=3, lastline=3]{repair/divide.tex}
+\lstinputlisting[firstline=4, lastline=5]{repair/divide.tex}
 \end{minipage}
 \caption[Caption for LOF]{Old (left) and new (right) definitions of \lstinline{divide} in Coq.}
 \label{fig:divide}
@@ -313,6 +313,7 @@ The isomorphism \sysname found fixed broken proofs.
 \paragraph{Replay} I used the proof of \lstinline{mod_divide} as the example for \sysname.
 The proof broke with the new \lstinline{divide}:
 
+\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 \begin{lstlisting}[language=coq]
   Theorem mod_divide:
     (@\ltacforall@) a b, b~=0 $\rightarrow$ (a mod b == 0 $\leftrightarrow$ (divide b a)).
@@ -331,15 +332,15 @@ that corresponds to the change in \lstinline{divide}.
 It found an isomorphism:
 
 \begin{lstlisting}[language=coq]
-   (@\ltacforall@)r p q, (@\diff{p * r = q}@) $\rightarrow$ (@\diff{q = r * p}@)(@\vspace{-0.08cm}@)
-   (@\ltacforall@)r p q, (@\diff{q = r * p}@) $\rightarrow$ (@\diff{p * r = q}@)
+   (@\ltacforall@) r p q, (@\diff{p * r = q}@) $\rightarrow$ (@\diff{q = r * p}@)
+   (@\ltacforall@) r p q, (@\diff{q = r * p}@) $\rightarrow$ (@\diff{p * r = q}@)
 \end{lstlisting}
 
 \paragraph{Apply} The proof of the theorem \lstinline{Zmod_divides} broke after rewriting by the changed theorem \lstinline{mod_divide}:
 
 \begin{lstlisting}[language=coq]
   Theorem Zmod_divides:
-    (@\ltacforall@)a b, b<>0 $\rightarrow$ (a mod b = 0 $\leftrightarrow$ (@\ltacexists@)c, a = b * c).
+    (@\ltacforall@)a b, b<>0 $\rightarrow$ (a mod b = 0 $\leftrightarrow$ $\exists$ c, a = b * c).
   Proof.
     $\ldots$ split; intros (c,Hc); exists c; (@\fails{auto.}@)
 \end{lstlisting}
@@ -349,21 +350,21 @@ Adding the patches \sysname found to a hint database made the proof go through:
     $\ldots$ split; intros (c,Hc); exists c; (@\succeeds{auto.}@)
 \end{lstlisting}
 
-\subsubsection{Instance}
+\subsubsection*{Instance}
 
 This scenario used the search procedure instance for changes in dependent arguments to constructors.
 \sysname searches within the difference between two versions of a proof that apply the same constructor
 to different dependent arguments:
 
 \begin{lstlisting}[language=coq]
-   $\ldots$ (C ((@\diff{P}@) x)) $\ldots$(@\vspace{-0.1cm}@)
+   $\ldots$ (C ((@\diff{P}@) x)) $\ldots$
    $\ldots$ (C ((@\diff{P'}@) x)) $\ldots$
 \end{lstlisting}
 for an isomorphism between the arguments:
 
 \begin{lstlisting}[language=coq]
-   (@\ltacforall@) x, (@\diff{P}@) x -> (@\diff{P'}@) x(@\vspace{-0.1cm}@)
-   (@\ltacforall@) x, (@\diff{P'}@) x -> (@\diff{P}@) x
+   (@\ltacforall@) x, (@\diff{P}@) x $\rightarrow$ (@\diff{P'}@) x
+   (@\ltacforall@) x, (@\diff{P'}@) x $\rightarrow$ (@\diff{P}@) x
 \end{lstlisting}
 The proof engineer can apply these patches to patch proofs that apply the constructor (in this case study,
 to fix broken proofs that instantiate \lstinline{divide} with some specific \lstinline{r}).
@@ -381,7 +382,7 @@ For example, for \lstinline{divide}, we can find a patch with this form:
 However, without using the induction principle for \lstinline{exists}, we can't use that patch to prove this:
 
 \begin{lstlisting}[language=coq]
-   ((@\ltacexists@)x, (@\diff{P}@) x) $\rightarrow$ ((@\ltacexists@) x, (@\diff{P'}@) x)
+   ($\exists$ x, (@\diff{P}@) x) $\rightarrow$ ($\exists$ x, (@\diff{P'}@) x)
 \end{lstlisting}
 This changes the goal type that semantic differencing determines.
 
@@ -390,11 +391,11 @@ This changes the goal type that semantic differencing determines.
 \begin{algorithm}
 \footnotesize
 \begin{algorithmic}[1]
-    \STATE \textit{diff} constructor arguments for goals
-    \STATE \textit{diff} and \textit{transform} to recursively search within those arguments for changes in conclusions
+    \STATE \kl{diff} constructor arguments for \kl{goals}
+    \STATE \kl{diff} and \textit{transform} to recursively search within those arguments for changes in conclusions
     \STATE \textbf{if} there are candidates \textbf{then}
-    \STATE \hspace*{1em} \textit{generalize} the candidate \\
-           \hspace*{1em} \textit{factor} and try to \textit{invert} the patch to find an isomorphism
+    \STATE \hspace*{1em} \kl{generalize} the \kl{candidate} \\
+           \hspace*{1em} \kl{factor} and try to \kl{invert} the \kl{patch} to find an isomorphism
 \end{algorithmic}
 \end{algorithm}
 For the prototype, the model of constructors for the semantic differencing component is limited,

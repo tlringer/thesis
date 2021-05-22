@@ -503,9 +503,34 @@
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{53}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{54}
 \indexentry{Results!Case Studies|hyperpage}{55}
-\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{56}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{57}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{57}
+\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{58}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{59}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{59}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{59}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{61}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{61}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{61}
 \indexentry{Thesis Statement!Formal|hyperpage}{61}
-\indexentry{Thesis Statement!Informal|hyperpage}{61}
+\indexentry{Thesis Statement!Informal|hyperpage}{62}
 \indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{63}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{63}
 \indexentry{Verification!Coq Plugins|hyperpage}{63}

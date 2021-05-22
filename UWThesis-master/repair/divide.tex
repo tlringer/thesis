@@ -1,3 +1,5 @@
-  Definition divide p q := (@\ltacexists@)r, (@\diff{p * r = q}@).
+  Definition divide p q :=
+    $\exists$ r, (@\diff{p * r = q}@).
 
-  Definition divide p q := (@\ltacexists@)r, (@\diff{q = r * p}@).
+  Definition divide p q :=
+    $\exists$ r, (@\diff{q = r * p}@).

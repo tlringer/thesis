@@ -23,7 +23,7 @@ and the details of which transformations run at all and in what order to reach t
 of the search procedure.
 
 \paragraph{Historical Note}
-For historical reasons, as \sysname was a prototype, these tranformations are not formalized. % TODO formalize if time
+For historical reasons, as \sysname was a prototype, these transformations are not formalized. % TODO formalize if time
 Instead, I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
 For the sake of presentation, I still refer to the corresponding judgments as the interfaces, even though I do not provide the derivations.
 In Chapter~\ref{chapt:pi}, I will formalize a more elegant proof term transformation for the \toolnamec extension,
@@ -41,7 +41,7 @@ specialized the candidate to \lstinline{p}.
 Specialization takes a single patch candidate, some arguments, and a reduction strategy, and returns a new candidate.
 It first applies the function to the argument, then applies the reduction strategy on the result.
 The default reducer, for example, uses $\beta\iota$-reduction in Coq---two of the \kl{definitional equality} reductions.\footnote{$\iota$-reduction is basically $\beta$-reduction for inductive types.}
-Section~\ref{sec:pumpkin-impl-trans} decribes other reducers.
+Section~\ref{sec:pumpkin-impl-trans} describes other reducers.
 The only requirement for a reducer is that the end result should be definitionally equal to the original.
 
 Depending on the procedure instance and the step in the process, the transformed candidate may be the reusable patch,
@@ -136,7 +136,7 @@ to determine what subterms to substitute.
 In this case, the simplest strategy works: the tool
 replaces all terms that are convertible to the concrete argument \lstinline{m} with the generalized argument
 \lstinline{n0}, which produces a single candidate. Type checking this candidate confirms that it is a patch.
-In some cases, the simplest strategy is not sufficient, even when it is possible to genearlize the term.
+In some cases, the simplest strategy is not sufficient, even when it is possible to generalize the term.
 Section~\ref{sec:pumpkin-impl-trans} describes a sample of other strategies.
 
 It is the job of the patch finding procedure to provide the candidate and the terms by which to generalize.

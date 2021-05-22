@@ -4,7 +4,7 @@
 Like the \contour[2]{violet}{\kl{\sysname}} prototype,
 \contour[2]{violet}{\kl{\toolnamec}} is also included in the \contour[2]{violet}{\kl{\sysnamelong}} \kl{plugin} suite by default.
 As with \sysname, the latest version supports Coq 8.8, with Coq 8.9.1 support in a branch.
-This section decribes the implementation of the core functionality of the \toolnamec plugin (Section~\ref{sec:pi-details}),
+This section describes the implementation of the core functionality of the \toolnamec plugin (Section~\ref{sec:pi-details}),
 along with important features for workflow integration (Section~\ref{sec:pi-workflow}).
 The interested reader can follow along in the repository.
 
@@ -40,7 +40,7 @@ providing them to the \lstinline{Configure Repair} command.
 
 Once \toolnamec has found a configuration, the next step---\textsc{Transform}---runs the transformation.
 It transforms \lstinline{old_proof} into some new proof term, then defines the new proof term as \lstinline{new_proof}.
-It is also possile to ask \toolnamec to automatically generate a name. % TODO is it?
+It is also possible to ask \toolnamec to automatically generate a name. % TODO is it?
 The final step---\textsc{Decompile}---runs in the end to suggest a proof script.
 
 There are a few other useful commands in \toolnamec that are detailed in the repository.

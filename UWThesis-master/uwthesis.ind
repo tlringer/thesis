@@ -185,7 +185,7 @@
 		\hyperpage{114}
       \subsubitem Constructors, \hyperpage{16, 17}, \hyperpage{20}, 
 		\hyperpage{76}, \hyperpage{79}, \hyperpage{114}
-      \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{20}, 
+      \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{21}, 
 		\hyperpage{38}, \hyperpage{71, 72}, \hyperpage{76}, 
 		\hyperpage{79}, \hyperpage{101}, \hyperpage{107}, 
 		\hyperpage{115}
@@ -260,7 +260,7 @@
 		\hyperpage{48, 49}, \hyperpage{59}, \hyperpage{61}
       \subsubitem Generalization, \hyperpage{36, 37}, \hyperpage{42}, 
 		\hyperpage{48}, \hyperpage{54}, \hyperpage{59}, 
-		\hyperpage{61}
+		\hyperpage{61}, \hyperpage{114}
       \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}, 
 		\hyperpage{57}, \hyperpage{61}
       \subsubitem Inversion, \hyperpage{36}, \hyperpage{44}, 
@@ -362,10 +362,10 @@
     \subitem Proof Script, \hyperpage{3}, \hyperpage{10}, 
 		\hyperpage{14, 15}, \hyperpage{66}, \hyperpage{115}
       \subsubitem Ltac, \hyperpage{11}, \hyperpage{13}, \hyperpage{15}, 
-		\hyperpage{21, 22}, \hyperpage{27}, \hyperpage{95}, 
+		\hyperpage{22}, \hyperpage{27}, \hyperpage{95}, 
 		\hyperpage{109}, \hyperpage{111}
       \subsubitem Tactics, \hyperpage{3}, \hyperpage{10}, 
-		\hyperpage{13}, \hyperpage{21}, \hyperpage{27}, 
+		\hyperpage{13}, \hyperpage{22}, \hyperpage{27}, 
 		\hyperpage{32}, \hyperpage{95}, \hyperpage{109}, 
 		\hyperpage{111, 112}
     \subitem Proof Term, \hyperpage{3}, \hyperpage{11}, 

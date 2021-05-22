@@ -121,7 +121,7 @@ Here, it infers the following goal:
 \end{lstlisting}
 which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
 It then differences the terms \lstinline{old} and \lstinline{new} to identify \kl{candidate proof patches} (Section~\ref{sec:pumpkin-spec-diff}),
-then tranforms those candidates to a \kl{reusable proof patch} with that type (Section~\ref{sec:pumpkin-spec-trans}),
+then transforms those candidates to a \kl{reusable proof patch} with that type (Section~\ref{sec:pumpkin-spec-trans}),
 which it defines as a new term \lstinline{patch}.
 This is something that we can use to fix other proofs broken by this change, either by applying it with traditional \kl{proof automation}:
 

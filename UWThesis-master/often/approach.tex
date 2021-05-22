@@ -25,7 +25,7 @@ Like the original \contour[2]{violet}{\kl{\sysname}} prototype, \toolnamec also 
 The corresponding differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.
 When they succeed, the diff that they find is that type equivalence.
 The proof engineer can also pass the type equivalence to \toolnamec directly, effectively doing differencing by hand.
-In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the dataype
+In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the datatype
 directly to a proof term defined over the new version of the datatype.
 \toolnamec further supports proof script integration and other features for better workflow integration (Section~\ref{sec:pi-implementation}),
 with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
@@ -41,7 +41,7 @@ with the syntax:
   Repair old_type new_type in old_proof.
 \end{lstlisting}
 where \lstinline{old_type} and \lstinline{new_type} are the old and new 
-versions of the changed dataype, and \lstinline{old_proof} is the old version
+versions of the changed datatype, and \lstinline{old_proof} is the old version
 of the proof broken by that change in datatype.
 This invokes the \toolnamec plugin, which updates the old version of the proof to some new version of the proof
 defined over the new version of the datatype, then defines it as a new proof term and suggests a corresponding new proof script if successful.
@@ -73,7 +73,7 @@ When we invoked \toolnamec:
 \begin{lstlisting}
   Repair Old.list New.list in rev_app_distr.
 \end{lstlisting}
-it invoked a search procedure that differenced \lstinline{Old.list} and \lstinline{New.list},
+it invoked a search procedure that differences \lstinline{Old.list} and \lstinline{New.list},
 then transformed \lstinline{rev_app_distr} to use \lstinline{New.list} in place of \lstinline{Old.list}.
 In the end, it suggested a proof script that we could use going forward.
 

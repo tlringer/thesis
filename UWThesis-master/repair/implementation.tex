@@ -8,7 +8,7 @@ It includes the source code of the \contour[2]{violet}{\kl{\sysname}} prototype 
 including the more advanced \toolnamec plugin that I will present in Chapter~\ref{chapt:pi}.
 The thesis release supports Coq 8.8, with Coq 8.9.1 support in a branch.
 
-This section decribes the implementation of the \sysname prototype (Section~\ref{sec:tool}),
+This section describes the implementation of the \sysname prototype (Section~\ref{sec:tool}),
 along with some new features that go beyond the original prototype and help with workflow integration (Section~\ref{sec:workflow}),
 plus an evaluation of the boundaries of the \sysname prototype that still stand (Section~\ref{sec:eval}).
 The interested reader can follow along in the repository.
@@ -109,7 +109,7 @@ It applies the candidate function to the arguments, then reduces the result usin
 
 The default specializer reduces the result using Coq's
 \lstinline{Reduction.nf_betaiotazeta} function.
-Other reducers include one that does not reduce at all, one that removes unecessary applications of the identity function, 
+Other reducers include one that does not reduce at all, one that removes unnecessary applications of the identity function, 
 one that does weak head reduction, one that completely normalizes terms, % one that removes unused hypotheses,
 and one that $\delta$-reduces to unwrap constants.
 There are also higher-order combinators for reducers,
@@ -219,7 +219,7 @@ and so does not increase the TCB. % ugh whatever. I think there's better text on
 Since releasing the \sysname prototype, I have extended it with many features
 for better integration into \kl{proof engineering} workflows.
 This section summarizes three: Git integration, support for applying patches,
-and proof optmization.
+and proof optimization.
 I detail tactic generation and more when I discuss the \toolnamec extension
 in Chapter~\ref{chapt:pi}.
 
@@ -260,7 +260,7 @@ I will discuss this decompiler and more in Chapter~\ref{chapt:pi}.
 \paragraph{Proof Optimization}
 Five of the implemented search procedure instances correspond to changes, but the sixth instance is special:
 it corresponds to the absence of change.
-This makes it possible to reuse all of the \sysname infrascture to optimize proofs
+This makes it possible to reuse all of the \sysname infrastructure to optimize proofs
 to automatically remove extra calls to induction.
 See \lstinline{Optimization.v} for more information.
 

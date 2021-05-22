@@ -112,6 +112,7 @@
 \indexentry{Acknowledgments!Coq Community!Valentin Robert|hyperpage}{xv}
 \indexentry{Acknowledgments!Coq Community!Robert Rand|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Carlo Angiuli|hyperpage}{xv}
+\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Conor McBride|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Michael Shulman|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Matthew Dwyer|hyperpage}{xv}
@@ -642,23 +643,34 @@
 \indexentry{Logic \& Type Theory!Initial Algebra|hyperpage}{77}
 \indexentry{Logic \& Type Theory!Type Theories!Homotopy Type Theory|hyperpage}{77}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{78}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{78}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{79}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{80}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{81}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{80}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{81}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{81}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{81}
+\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{81}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{81}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{81}
+\indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{81}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{81}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Ornamental Promotion Isomorphism|hyperpage}{82}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{82}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{82}
 \indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{83}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{84}
+\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{85}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{86}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{86}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{86}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{86}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{86}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{86}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{86}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{87}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{86}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{87}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{87}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{87}
@@ -671,40 +683,40 @@
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{91}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{91}
 \indexentry{Verification!Coq Commands|hyperpage}{91}
-\indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{92}
-\indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{92}
+\indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{91}
+\indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{91}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{92}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{92}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{93}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{94}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{95}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{93}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{94}
 \indexentry{Verification!Proof Term|hyperpage}{95}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{95}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{95}
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{95}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{95}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{99}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
+\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{100}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{101}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{101}
-\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{101}
-\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{101}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{101}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{102}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{103}
 \indexentry{Logic \& Type Theory!External|hyperpage}{104}
-\indexentry{Logic \& Type Theory!Internal|hyperpage}{105}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{105}
+\indexentry{Logic \& Type Theory!Internal|hyperpage}{104}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{104}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{104}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Ornamental Promotion Isomorphism|hyperpage}{105}
-\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{106}
+\indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{105}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{107}
-\indexentry{Thesis Statement!Formal|hyperpage}{108}
-\indexentry{Thesis Statement!Informal|hyperpage}{108}
+\indexentry{Thesis Statement!Formal|hyperpage}{107}
+\indexentry{Thesis Statement!Informal|hyperpage}{107}
 \indexentry{Verification!Proof Engineering|hyperpage}{109}
 \indexentry{Verification|hyperpage}{109}
 \indexentry{Verification!Proof Assistants|hyperpage}{109}

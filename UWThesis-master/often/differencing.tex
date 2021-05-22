@@ -199,7 +199,7 @@ For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
 $\iota$-reduction is definitional over \lstinline{nat}, since a proof of:
 
 \begin{lstlisting}
-  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat),
+  $\Pi$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat),
     DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
     (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
@@ -208,7 +208,7 @@ holds by reflexivity.
 with type:
 
 \begin{lstlisting}
-  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat) (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),
+  $\Pi$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat) (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),
     Iota(1, nat, Q) :
       Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
       Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
@@ -217,7 +217,7 @@ In contrast, $\iota$ for \lstinline{N} is propositional, since the
 theorem: %over \lstinline{N}:
 
 \begin{lstlisting}
-  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : N),
+  $\Pi$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N),
     DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
     (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
@@ -226,7 +226,7 @@ no longer holds by reflexivity.
 with type:
 
 \begin{lstlisting}
-  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : N) (Q: P (DepConstr(1, N) n) $\rightarrow$ s),
+  $\Pi$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N) (Q: P (DepConstr(1, N) n) $\rightarrow$ s),
     Iota(1, N, Q) :
       Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
       Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
@@ -310,19 +310,19 @@ The diagram commutes trivially, since the \lstinline{S} case of the eliminator r
 This diagram gives intuition for how the configuration splits up an arbitrary equivalence between \Aa and \B into
 parts that talk about \Aa and \B separately. All the transformation in Chapter~\ref{sec:pi-trans} does is follow the arrows
 in the diagram to get from \Aa directly to \B.
-But in order to do that, it needs to handle the nuances of \kl{definitional equality} and dependent types in \kl{CIC${_\omega}$}---for example,
+But in order to do that, it needs to handle the nuances of \kl{definitional equality} and \kl{dependent types} in \kl{CIC${_\omega}$}---for example,
 by explicitly representing and porting the proof that the diagram commutes.
 The syntactic presentation in the next section handles those nuances.
 
-\subsubsection{Correctness in CIC$_{\omega}$}
+\subsubsection{Correctness, Syntactically}
 \label{sec:correct-cic}
 
 \begin{figure*}
 \begin{lstlisting}
 (* -------------------- Equivalence -------------------- *)
 
-section: $\forall$ (a : A) . g (f a) = a.
-retraction: $\forall$ (b : B), f (g b) = b.
+section: $\Pi$ (a : A) . g (f a) = a.
+retraction: $\Pi$ (b : B), f (g b) = b.
 
 constr_ok:
   $\forall$ $j$ $\vec{x_A}$ $\vec{x_B}$,
@@ -339,8 +339,8 @@ elim_ok:
 
 (* ---------------------- Equality ---------------------- *)
 
-elim_eta(A): $\forall$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).
-eta_ok(A): $\forall$ (a : A), Eta(A) a = a.
+elim_eta(A): $\Pi$ a P $\vec{f}$, DepElim(a, P) $\vec{f}$ : P (Eta(A) a).
+eta_ok(A): $\Pi$ (a : A), Eta(A) a = a.
 
 iota_ok(A):
   $\forall$ $j$ P $\vec{f}$ $\vec{x}$ (Q: P(Eta(A) (DepConstr($j$, A) $\vec{x}$)) $\rightarrow$ s),
@@ -357,8 +357,8 @@ of \lstinline{DepElim(A, P)} at \lstinline{DepConstr(j, A)} (similarly for \B).
 \label{fig:spec}
 \end{figure*}
 
-The categorical definition may help with some of the intuition, but it does not help with validating correct configurations inside of the type theory.
-Fortunately, in CIC$_{\omega}$, it is also possible to specify 
+The categorical definition may help with some of the intuition, but it does not help with validating correct configurations.
+Fortunately, it is also possible to specify syntactically
 what it means for a chosen configuration to be correct:
 Fix a configuration. Let \lstinline{f} be the function that uses \lstinline{DepElim} to eliminate \Aa and \lstinline{DepConstr} to construct \B,
 and let \lstinline{g} be similar.
@@ -428,6 +428,7 @@ I will also explain how the search procedures are implemented.
 
 % DEVOID 3.1 adjusted
 
+\paragraph{Algebraic Ornaments}
 The first search procedure discovers equivalences that correspond to \intro{algebraic ornaments}.
 An algebraic ornament relates an \kl{inductive type} to an indexed version of that type,
 where the new index is fully determined by a unique fold over \Aa (I call this fold the \intro{indexer}). 
@@ -438,7 +439,7 @@ The equivalence that we already saw in Section~\ref{sec:pi-scope} follows from t
 \begin{lstlisting}
   $\Sigma$(l : list T).length l = n $\simeq$ vector T n
 \end{lstlisting}
-Alternatively, we can say that a list is equivalent to a vector of \textit{some} length:
+Alternatively, a list is equivalent to a vector of \textit{some} length:
 
 \begin{lstlisting}
   list T $\simeq$ $\Sigma$(n : nat).vector T n
@@ -447,7 +448,7 @@ As usual, this equivalence is made up of two functions \lstinline{f} and \lstinl
 In addition, for algebraic ornaments, there is a proof of this theorem:
 
 \begin{lstlisting}
-  $\forall$ (l : list T), length l = $\pi_{l}$ (f l)
+  $\Pi$ (l : list T), length l = $\pi_{l}$ (f l)
 \end{lstlisting}
 which states that the \lstinline{length} function is \intro{coherent} with this equivalence.
 
@@ -457,11 +458,12 @@ but in practice this works by chaining two different automatic configurations wi
 The first configuration uses a search procedure that discovers the equivalence between lists and vectors of some length above,
 as well as the proof of coherence.
 The second configuration uses a search procedure that discovers how to unpack vectors of some length to vectors of a \textit{particular} length.
-
 The first configuration nicely demonstrates how differencing works, so let us look at this in detail.
-Assume the existence of inductive types \Aa and \AI, related by an algebraic ornament with the index of type \I.
-In the scope of this thesis, further assume that \Aa and \I are not indexed types.\footnote{The original paper that this is from lets all of \Aa,
-\AI, and \I be \textit{indexed} inductive types, with the new index of type \I appearing anywhere within the list of indices of \AI;
+
+\paragraph{Differencing for Algebraic Ornaments}
+Assume the existence of \kl{inductive types} \Aa and \AI, related by an \kl{algebraic ornament} with the index of type \I.
+In the scope of this thesis, further assume that \Aa and \I are not indexed (\kl{dependent}) types.\footnote{The original paper that this is from lets all of \Aa,
+\AI, and \I be indexed inductive types, with the new index of type \I appearing anywhere within the list of indices of \AI;
 the implementation makes the same decision.
 I felt that this was very important to show in detail when I wrote that paper, since indices are often omitted,
 even though handling them is one of the trickiest parts of implementing an algorithm like this.
@@ -469,7 +471,7 @@ In this thesis, however, I decided to simplify the presentation and assume the t
 and so the new index is the only index of \AI.
 I do recommend checking out the original paper if you would really like to implement something like this over indexed types---it is formalized
 those who are \textit{sufficiently fanatical}.}
-Then there is a type equivalence:
+Then there is a \kl{type equivalence}:
 
 \begin{lstlisting}
   $A\ \simeq\ \Sigma (i : I).A_I\ i$
@@ -482,7 +484,7 @@ In addition, there is an \kl{indexer}, which is a unique fold:
 that projects the lifted index:
 
 \begin{lstlisting}
-  coherence : $\forall (a : A),\ $indexer$\ a = \pi_{l}\ ($f$\ a)$.
+  coherence : $\Pi$ $(a : A),\ $indexer$\ a = \pi_{l}\ ($f$\ a)$.
 \end{lstlisting}
 Following existing work, I call this equivalence the \intro{ornamental promotion isomorphism}~\cite{ko2016programming}; 
 when it holds and a \kl{coherent} indexer exists, I say that \AI is an \kl{algebraic ornament} of \Aa.
@@ -672,7 +674,7 @@ as \B\ with a new index (which it computes using \lstinline{indexer}, denoted by
 When \textsc{F-IH} recurses, it substitutes the inductive hypothesis for the term rather than
 for its index, and it substitutes the new index (which it also computes using \lstinline{indexer}) inside of that term.
 \textsc{F-Conclusion} returns the entire term, rather than its index.
-Finally, \textsc{F-Ind} not only recurses into each case, but also packs the result into an existential.
+Finally, \textsc{F-Ind} not only recurses into each case, but also packs the result into an \kl{existential}.
 
 %The differencing algorithm is in Figure~\ref{searchconfig}.
 %It builds on five intermediate steps: one to generate \lstinline{indexer} (Figure~\ref{fig:searchindexer}),
@@ -720,8 +722,8 @@ Additionally, \textsc{G-Hypothesis} adds the hypothesis for the new index
 rather than skipping it, and \textsc{G-Ind} eliminates over the projection rather than packing the result. %of applying the eliminator.
 
 \paragraph{Deriving the Configuration}
-\textsc{DepConstr} and \textsc{DepElim} over \Aa are just the standard constructors and eliminators for \Aa.
-To derive \textsc{DepConstr} over \B, differencing takes each constructor of \Aa,
+\lstinline{DepConstr} and \lstinline{DepElim} over \Aa are just the standard constructors and eliminators for \Aa.
+To derive \kl{\lstinline{DepConstr}} over \B, differencing takes each constructor of \Aa,
 applies \lstinline{f} to the conclusion of that constructor, and normalizes the result. % TODO refolding
 It then ports the hypotheses of the resulting constructor to use \B in place of \Aa, and drops the remaining applications of \lstinline{f}
 and the indexer in the body, replacing them instead with the projections $\pi_r$ and $\pi_l$, respectively.
@@ -730,11 +732,10 @@ For example, earlier, letting \Aa be lists, \AI be vectors, and \B be vectors of
 I noted that the empty constructor of \B packs the constructor of \AI into an existential:
 
 \begin{lstlisting}
-  DepConstr(0, B) : B :=
-    $\exists$ (Constr(0, nat)) (Constr(0, vector T)).
+  DepConstr(0, B): B := $\exists$(Constr(0, nat)) (Constr(0, vector T)).
 \end{lstlisting}
-This is the same as applying the function \lstinline{f} that \toolnamec derives to the empty list constructor 
-\lstinline{Constr(0, A)}, and then normalizing the result.
+This is the same as applying the function \lstinline{f} that \toolnamec derives to 
+\lstinline{DepConstr(0, A)}, and then normalizing the result.
 On the other hand, the \lstinline{cons} constructor over \B not just packs the result into an existential,
 but also takes \B itself as an argument rather than \Aa:
 
@@ -754,9 +755,9 @@ To derive this, differencing applies \lstinline{f} to the conclusion of the cons
 It then lifts the hypothesis of type \lstinline{list T}, and removes remaining references to the indexer $\pi$ and to \lstinline{f},
 replacing then instead with the projections $\pi_l$ and $\pi_r$.
 
-Deriving \lstinline{DepElim} over \B works similarly, except that it lifts not just the hypotheses of types \Aa, but 
+Deriving \kl{\lstinline{DepElim}} over \B works similarly, except that it lifts not just the hypotheses of types \Aa, but 
 also the motive and inductive hypotheses.
-This produces the dependent eliminator I presented earlier:
+This produces the dependent eliminator from earlier:
 
 \begin{lstlisting}
   DepElim(s, P) { f$_0$ f$_1$ } : P ($\exists$ ($\pi_l$ s) ($\pi_r$ s)) :=
@@ -766,11 +767,11 @@ This produces the dependent eliminator I presented earlier:
     }.
 \end{lstlisting}
 
-Differencing discovers \lstinline{Eta} and \lstinline{Iota} directly.
-For any algebraic ornament, \lstinline{Eta} is the standard \lstinline{Eta} expansion for $\Sigma$ types:
+Differencing discovers \kl{\lstinline{Eta}} and \kl{\lstinline{Iota}} directly.
+For any \kl{algebraic ornament}, \lstinline{Eta} is the standard $\eta$-expansion for $\Sigma$ types:
 
 \begin{lstlisting}
-  Eta(B) := $\lambda$(b : B).$\exists$ ($\pi_l$ b) ($\pi_r$ b).(@\vspace{-0.05cm}@)
+  Eta(B) := $\lambda$(b : B).$\exists$ ($\pi_l$ b) ($\pi_r$ b).
 \end{lstlisting}
 Each \lstinline{Iota} follows by rewriting by reflexivity, since \Aa and \AI have the same inductive structure.
 % TODO show example if time to do so

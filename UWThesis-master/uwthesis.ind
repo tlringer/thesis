@@ -10,10 +10,10 @@
 		\hyperpage{118}
       \subsubitem Milos Gligoric, \hyperpage{7}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiv}, \hyperpage{7, 8}, 
-		\hyperpage{18}, \hyperpage{66}, \hyperpage{92}, 
-		\hyperpage{94}, \hyperpage{100}, \hyperpage{105, 106}
+		\hyperpage{18}, \hyperpage{66}, \hyperpage{92, 93}, 
+		\hyperpage{99, 100}, \hyperpage{104, 105}
       \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{7, 8}, 
-		\hyperpage{19}, \hyperpage{22}, \hyperpage{96}, 
+		\hyperpage{19}, \hyperpage{22}, \hyperpage{95, 96}, 
 		\hyperpage{98, 99}, \hyperpage{124}
       \subsubitem Sorin Lerner, \hyperpage{7}
     \subitem Companies
@@ -83,8 +83,8 @@
       \subsubitem Zach Tatlock, \hyperpage{xiv}, \hyperpage{7}
     \subitem PL Community, \hyperpage{xvi}
       \subsubitem Alexandra Silva, \hyperpage{xv}
-      \subsubitem Anders M\"ortberg, \hyperpage{77}, \hyperpage{101}, 
-		\hyperpage{103}
+      \subsubitem Anders M\"ortberg, \hyperpage{xv}, \hyperpage{77}, 
+		\hyperpage{100}, \hyperpage{103}
       \subsubitem Bas Spitters, \hyperpage{xv}
       \subsubitem Bob Harper, \hyperpage{xv}
       \subsubitem Carlo Angiuli, \hyperpage{xv}, \hyperpage{77}
@@ -101,7 +101,7 @@
       \subsubitem Matt Might, \hyperpage{xv}
       \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{127}
       \subsubitem Michael Hicks, \hyperpage{xv}
-      \subsubitem Michael Shulman, \hyperpage{77}
+      \subsubitem Michael Shulman, \hyperpage{xv}, \hyperpage{77}
       \subsubitem Nate Foster, \hyperpage{xv}
       \subsubitem Stephanie Weirich, \hyperpage{xv}
     \subitem Running Community
@@ -152,10 +152,10 @@
   \indexspace
 
   \item Logic \& Type Theory, \hyperpage{6}
-    \subitem Algebraic Ornaments, \hyperpage{81, 82}, \hyperpage{86}, 
-		\hyperpage{100}, \hyperpage{105}, \hyperpage{114}
+    \subitem Algebraic Ornaments, \hyperpage{80--82}, \hyperpage{86}, 
+		\hyperpage{101}, \hyperpage{104}, \hyperpage{114}
       \subsubitem Coherence, \hyperpage{81, 82}, \hyperpage{86}
-      \subsubitem Indexer, \hyperpage{81}, \hyperpage{87}
+      \subsubitem Indexer, \hyperpage{81}, \hyperpage{86}
       \subsubitem Ornamental Promotion Isomorphism, \hyperpage{82}, 
 		\hyperpage{105}
     \subitem Classical Logic, \hyperpage{110}, \hyperpage{124}
@@ -167,14 +167,16 @@
       \subsubitem Univalence, \hyperpage{69}, \hyperpage{71}, 
 		\hyperpage{77}, \hyperpage{110}, \hyperpage{115, 116}, 
 		\hyperpage{124}
-    \subitem Dependent Types, \hyperpage{20}
+    \subitem Dependent Types, \hyperpage{20}, \hyperpage{78}, 
+		\hyperpage{81}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{74}, 
 		\hyperpage{109}
       \subsubitem Transport, \hyperpage{71, 72}, \hyperpage{74}, 
 		\hyperpage{87}, \hyperpage{115}, \hyperpage{117}
       \subsubitem Type Equivalences, \hyperpage{66}, \hyperpage{68--72}, 
-		\hyperpage{87}, \hyperpage{110}, \hyperpage{115}
+		\hyperpage{81}, \hyperpage{87}, \hyperpage{110}, 
+		\hyperpage{115}
     \subitem External, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
     \subitem Inductive Types, \hyperpage{16}, \hyperpage{20}, 
 		\hyperpage{40}, \hyperpage{73}, \hyperpage{81}, 
@@ -189,14 +191,15 @@
       \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
 		\hyperpage{38}, \hyperpage{40}, \hyperpage{83}
     \subitem Initial Algebra, \hyperpage{76, 77}
-    \subitem Internal, \hyperpage{71}, \hyperpage{105}, \hyperpage{115}
+    \subitem Internal, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
     \subitem Intuitionistic Logic, \hyperpage{109, 110}, 
 		\hyperpage{117, 118}
     \subitem Polymorphism, \hyperpage{20}
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
 		\hyperpage{30}, \hyperpage{40}, \hyperpage{58}, 
 		\hyperpage{73}, \hyperpage{92, 93}
-    \subitem Sigma Types, \hyperpage{21}, \hyperpage{73}
+    \subitem Sigma Types, \hyperpage{21}, \hyperpage{73}, 
+		\hyperpage{85}
     \subitem Type Theories
       \subsubitem Calculus of Constructions, \hyperpage{19, 20}
       \subsubitem Calculus of Inductive Constructions, \hyperpage{16}, 
@@ -212,8 +215,8 @@
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{6--8}, \hyperpage{24}, \hyperpage{41}, 
-		\hyperpage{63}, \hyperpage{101, 102}, \hyperpage{112}, 
-		\hyperpage{119}, \hyperpage{125}
+		\hyperpage{63}, \hyperpage{100}, \hyperpage{102}, 
+		\hyperpage{112}, \hyperpage{119}, \hyperpage{125}
     \subitem Adapting Proof Automation to Adapt Proofs, \hyperpage{6}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{6, 7}
     \subitem Proof Repair across Type Equivalences, \hyperpage{6, 7}
@@ -229,7 +232,7 @@
       \subsubitem Automatic Configuration, \hyperpage{64}, 
 		\hyperpage{66}, \hyperpage{68}, \hyperpage{70}, 
 		\hyperpage{72}, \hyperpage{74}, \hyperpage{80}, 
-		\hyperpage{87}, \hyperpage{92}
+		\hyperpage{87}, \hyperpage{91}
       \subsubitem Configuration, \hyperpage{63}, \hyperpage{72}, 
 		\hyperpage{76}
       \subsubitem Dependent Constructors, \hyperpage{73}
@@ -239,7 +242,7 @@
 		\hyperpage{116}
       \subsubitem Manual Configuration, \hyperpage{63}, \hyperpage{66}, 
 		\hyperpage{68}, \hyperpage{70}, \hyperpage{72}, 
-		\hyperpage{87}, \hyperpage{92}
+		\hyperpage{87}, \hyperpage{91}
       \subsubitem Unification Heuristics, \hyperpage{89, 90}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
 		\hyperpage{119}
@@ -297,9 +300,9 @@
   \indexspace
 
   \item Thesis Statement
-    \subitem Formal, \hyperpage{3}, \hyperpage{61}, \hyperpage{108}
+    \subitem Formal, \hyperpage{3}, \hyperpage{61}, \hyperpage{107}
     \subitem Informal, \hyperpage{1, 2}, \hyperpage{62}, 
-		\hyperpage{108}, \hyperpage{123}
+		\hyperpage{107}, \hyperpage{123}
 
   \indexspace
 
@@ -365,6 +368,6 @@
 		\hyperpage{113}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{32}, 
 		\hyperpage{47}, \hyperpage{50}, \hyperpage{67}, 
-		\hyperpage{71}, \hyperpage{90, 91}, \hyperpage{95}
+		\hyperpage{71}, \hyperpage{90, 91}, \hyperpage{94}
 
 \end{theindex}

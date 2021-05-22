@@ -131,12 +131,14 @@
 \contentsline {subsection}{\numberline {4.3.3}Specifying Correct Configurations}{76}{subsection.4.3.3}% 
 \contentsline {paragraph}{Historical Note}{77}{subsection.4.3.3}% 
 \contentsline {subsubsection}{\numberline {4.3.3.1}Categorical Intuition for Correctness}{77}{subsubsection.4.3.3.1}% 
-\contentsline {subsubsection}{\numberline {4.3.3.2}Correctness in CIC$_{\omega }$}{78}{subsubsection.4.3.3.2}% 
+\contentsline {subsubsection}{\numberline {4.3.3.2}Correctness, Syntactically}{78}{subsubsection.4.3.3.2}% 
 \contentsline {paragraph}{Equivalence}{78}{figure.caption.32}% 
 \contentsline {paragraph}{Equality}{78}{figure.caption.32}% 
 \contentsline {paragraph}{Correctness}{80}{figure.caption.32}% 
 \contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.32}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{80}{subsection.4.3.4}% 
+\contentsline {paragraph}{Algebraic Ornaments}{80}{Item.54}% 
+\contentsline {paragraph}{Differencing for Algebraic Ornaments}{81}{lstnumber.-190.1}% 
 \contentsline {paragraph}{Common Definitions}{82}{lstnumber.-193.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{82}{subsubsection.4.3.4.1}% 
 \contentsline {paragraph}{Generating the Motive}{83}{figure.caption.34}% 
@@ -164,30 +166,30 @@
 \contentsline {paragraph}{Optimizations}{94}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Termination}{94}{subsubsection.4.5.1.3}% 
 \contentsline {paragraph}{Intent}{94}{subsubsection.4.5.1.3}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{95}{subsubsection.4.5.1.4}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Trusted Computing Base}{94}{subsubsection.4.5.1.4}% 
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{95}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{95}{subsubsection.4.5.2.1}% 
 \contentsline {paragraph}{First Pass: Basic Proof Scripts}{95}{subsubsection.4.5.2.1}% 
 \contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.39}% 
 \contentsline {paragraph}{From Qtac to Ltac}{98}{figure.caption.40}% 
-\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{99}{figure.caption.40}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{98}{figure.caption.40}% 
 \contentsline {paragraph}{Forfeiting Soundness}{99}{figure.caption.40}% 
 \contentsline {paragraph}{Pretty Printing}{99}{figure.caption.40}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{99}{subsubsection.4.5.2.2}% 
 \contentsline {section}{\numberline {4.6}Results}{100}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{100}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{100}{table.caption.41}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.42}% 
-\contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.42}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{101}{table.caption.41}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{101}{figure.caption.42}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{101}{figure.caption.42}% 
 \contentsline {paragraph}{Permute Constructors: Modifying a Language}{102}{figure.caption.42}% 
-\contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.42}% 
+\contentsline {paragraph}{Add new Constructors: Extending a Language}{102}{figure.caption.42}% 
 \contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.42}% 
 \contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.42}% 
-\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.42}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{103}{figure.caption.42}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
-\contentsline {paragraph}{Historical Note}{105}{Item.60}% 
+\contentsline {paragraph}{Historical Note}{104}{Item.60}% 
 \contentsline {paragraph}{Setup}{105}{Item.60}% 
-\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{106}{subsubsection.4.6.2.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{105}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{106}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{107}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{109}{chapter.5}% 

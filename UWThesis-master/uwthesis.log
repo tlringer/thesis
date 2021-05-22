@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 00:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 00:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2236,7 +2236,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [75] [76]
-<often/Diagram.pdf, id=2530, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2531, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2247,14 +2247,22 @@ Overfull \hbox (6.5936pt too wide) in paragraph at lines 370--379
 0) To pre-serve the equiv-a-lence (Fig-ure []29[], top), []
  []
 
-[78] [79] [80] [81] [82]
+[78] [79]
+Overfull \hbox (4.8041pt too wide) in paragraph at lines 432--438
+[] []\T1/pplj/m/sc/10.95 (-20) a l -g e -b r a i c o r -n a -m e n t s[] \T1/pp
+lj/m/n/10.95 (-20) The first search pro-ce-dure dis-cov-ers equiv-
+ []
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 547.
+[80] [81] [82]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 549.
 
 [83] [84]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 684.
+LaTeX Font Warning: Command \small invalid in math mode on input line 686.
 
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 726.
 [85] [86]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
@@ -2289,39 +2297,36 @@ Overfull \hbox (6.10782pt too wide) in paragraph at lines 433--442
 plj/m/n/10.95 (-20) pretty
  []
 
-[99]) (./often/results.tex
+) (./often/results.tex [99]
 Overfull \hbox (16.10333pt too wide) in paragraph at lines 19--61
 [][] 
  []
 
-(./often/replica.tex) (./often/replica.tex)
+[100] (./often/replica.tex) (./often/replica.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 111--121
 [] []\T1/pplj/m/sc/10.95 (-2) u n -p a c k s i g m a t y p e s : v e c -t o r s
  o f p a r -t i c -u -l a r l e n g t h s[] \T1/pplj/m/n/10.95 (-2) In
  []
 
-[100] [101] [102]
+[101]
 Overfull \hbox (5.39363pt too wide) in paragraph at lines 202--209
 [] []\T1/pplj/m/sc/10.95 (-20) a d d n e w c o n -s t r u c -t o r s : e x -t e
  n d -i n g a l a n -g u a g e[] \T1/pplj/m/n/10.95 (-20) I then used
  []
 
-[103] [104] [105]
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 400.
-
+[102] [103] [104] [105]
 
 LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
 (Font)              using `T1/pplj/bx/n' instead on input line 400.
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 421.
-[106]) (./often/conclusion.tex [107])) (./related.tex [108]
-chapter 5.
-[109
+[106]) (./often/conclusion.tex)) (./related.tex [107] [108
 
 
 ]
+chapter 5.
+[109]
 Overfull \hbox (16.902pt too wide) in paragraph at lines 52--62
 []\T1/pplj/m/n/10.95 (-20) The proof as-sis-tants Is-abelle/HOL [[]], HOL Light
  [[]], and HOL4 [[]]
@@ -2368,11 +2373,6 @@ Overfull \hbox (10.04045pt too wide) in paragraph at lines 74--75
 
 
 ]
-Overfull \hbox (0.5488pt too wide) in paragraph at lines 86--88
-[]| \T1/pplj/m/n/10.95 (-20) An-ders Mört-berg, []77[], []101[],
- []
-
-
 Overfull \hbox (7.35196pt too wide) in paragraph at lines 148--149
 []| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
@@ -2398,87 +2398,87 @@ Overfull \hbox (3.33537pt too wide) in paragraph at lines 167--170
  []
 
 [130]
-Overfull \hbox (2.9659pt too wide) in paragraph at lines 176--178
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 177--180
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []66[], []68[]--
  []
 
 
-Overfull \hbox (2.94571pt too wide) in paragraph at lines 193--195
+Overfull \hbox (2.94571pt too wide) in paragraph at lines 195--197
 []| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []109[], []110[],
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 196--199
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 198--201
 []| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []18[], []20[],
  []
 
 
-Overfull \hbox (3.07237pt too wide) in paragraph at lines 201--202
+Overfull \hbox (3.07237pt too wide) in paragraph at lines 204--205
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of Con-struc-tions,
  []
 
 
-Overfull \hbox (4.15424pt too wide) in paragraph at lines 202--206
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 205--209
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 217--218
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 220--221
 []| \T1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 220--224
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 223--227
 \T1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 229--233
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 232--236
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (5.7855pt too wide) in paragraph at lines 236--237
+Overfull \hbox (5.7855pt too wide) in paragraph at lines 239--240
 []| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []73[] 
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 240--243
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 243--246
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []63[],
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 243--244
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 246--247
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []89[],
  []
 
 
-Overfull \hbox (0.44196pt too wide) in paragraph at lines 261--264
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 264--267
 []| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 264--266
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 267--269
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 [131]
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 312--313
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 315--316
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []109[], []110[] 
  []
 
 
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 315--316
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 318--319
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 318--320
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 321--323
 []| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []109[]--[]111[], []113[], []124[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 326--329
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 329--332
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []109[]--[]111[],
  []
 
@@ -2556,10 +2556,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51933 strings out of 492609
- 1051114 string characters out of 6129033
- 1328718 words of memory out of 5000000
- 52371 multiletter control sequences out of 15000+600000
+ 51936 strings out of 492609
+ 1051244 string characters out of 6129033
+ 1327463 words of memory out of 5000000
+ 52375 multiletter control sequences out of 15000+600000
  680184 words of font info for 890 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2585,10 +2585,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1879454 bytes).
+Output written on uwthesis.pdf (164 pages, 1879673 bytes).
 PDF statistics:
- 4906 PDF objects out of 5155 (max. 8388607)
- 4616 compressed objects within 47 object streams
- 1615 named destinations out of 1728 (max. 500000)
+ 4928 PDF objects out of 5155 (max. 8388607)
+ 4638 compressed objects within 47 object streams
+ 1614 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

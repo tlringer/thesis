@@ -1753,7 +1753,7 @@
 \KAuxFileAt {index.tex}{745}
 
 \KAuxFileAt {index.tex}{746}
-\KAuxAutoref {default}{base}{case studies}
+\KAuxAutoref {default}{base}{Case studies}
 
 \KAuxFileAt {index.tex}{747}
 
@@ -1764,24 +1764,24 @@
 \KAuxFileAt {index.tex}{750}
 
 \KAuxFileAt {index.tex}{751}
-\KAuxAutoref {default}{base}{Adapting Proof Automation to Adapt Proofs}
 
 \KAuxFileAt {index.tex}{752}
+\KAuxAutoref {default}{base}{Adapting Proof Automation to Adapt Proofs}
 
 \KAuxFileAt {index.tex}{753}
-\KAuxAutoref {default}{base}{Proof Repair across Type Equivalences}
 
 \KAuxFileAt {index.tex}{754}
+\KAuxAutoref {default}{base}{Proof Repair across Type Equivalences}
 
 \KAuxFileAt {index.tex}{755}
-\KAuxAutoref {default}{base}{Ornaments for Proof Reuse in Coq}
 
 \KAuxFileAt {index.tex}{756}
+\KAuxAutoref {default}{base}{Ornaments for Proof Reuse in Coq}
 
 \KAuxFileAt {index.tex}{757}
-\KAuxAutoref {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
 
 \KAuxFileAt {index.tex}{758}
+\KAuxAutoref {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
 
 \KAuxFileAt {index.tex}{759}
 
@@ -1790,9 +1790,11 @@
 \KAuxFileAt {index.tex}{761}
 
 \KAuxFileAt {index.tex}{762}
-\KAuxAutoref {default}{base}{QED at Large}
 
 \KAuxFileAt {index.tex}{763}
+\KAuxAutoref {default}{base}{QED at Large}
+
+\KAuxFileAt {index.tex}{764}
 
 \KAuxFileAt {uwthesis.tex}{122}
 \KAuxScopeNewInstance {base}{base}{}
@@ -2131,7 +2133,7 @@
 \KAuxAutorefTarget {default}{base}{implementation}
 
 \KAuxFileAt {intro.tex}{165}
-\KAuxAutorefTarget {default}{base}{case studies}
+\KAuxAutorefTarget {default}{base}{Case studies}
 
 \KAuxFileAt {intro.tex}{186}
 \KAuxAutorefTarget {default}{base}{\sysnamelong }
@@ -2143,7 +2145,7 @@
 \KAuxAutorefTarget {default}{base}{Trusted Computing Base}
 
 \KAuxFileAt {intro.tex}{206}
-\KAuxAutorefTarget {default}{base}{case studies}
+\KAuxAutorefTarget {default}{base}{Case studies}
 \KAuxDeclaredScopeTag {sec:guide}
 \KAuxNewLinkScopetagInstance {sec:guide}{document}
 
@@ -2280,9 +2282,6 @@
 
 \KAuxFileAt {pumpkinpatch.tex}{5}
 \KAuxAutorefTarget {default}{base}{\sysname }
-
-\KAuxFileAt {pumpkinpatch.tex}{8}
-\KAuxAutorefTarget {default}{base}{proof repair by example}
 
 \KAuxFileAt {pumpkinpatch.tex}{9}
 \KAuxAutorefTarget {default}{base}{exampled patched proof}

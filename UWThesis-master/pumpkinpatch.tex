@@ -1,23 +1,23 @@
 \chapter{Proof Repair by Example}
 \label{ch:example}
 
-The first tool in the \sysnamelong proof repair \kl{plugin} suite is the namesake \sysnamelong plugin.
-To prevent confusion, when I refer to the \sysnamelong plugin and not to the plugin suite as a whole, I will abbreviate it as \intro{\sysname}.
+The first tool in the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite is the namesake \sysnamelong plugin.
+To prevent confusion, when I refer to the \sysnamelong plugin and not to the tool suite as a whole, I will abbreviate it as \intro{\sysname}.
 
 % From PUMPKIN PATCH intro:
-\sysname implements \intro{proof repair by example}---so called because of its resemblence to programming by example~\cite{DBLP:journals/ftpl/GulwaniPS17}.
+\sysname implements \kl{proof repair by example}---so called because of its resemblence to programming by example~\cite{DBLP:journals/ftpl/GulwaniPS17}.
 In this approach to proof repair, the proof engineer provides an \intro{example} of how to patch a proof in response to a breaking change.
 A tool then generalizes the example patched proof into a \intro{reusable patch} that the proof engineer can use to fix other proofs broken by that change.
-In this way, proof repair by example is a new form of proof automation that accounts for how 
+In this way, proof repair by example is a new form of \kl{proof automation} that accounts for how 
 breaking changes in programs and specifications are sometimes reflected in the patches to the proofs they break.
 
 In other words, in the frame of the thesis, proof repair by example extracts information from changes in proofs,
 then generalizes it to information corresponding to changes in the programs and specifications that broke those proofs to begin with (Section~\ref{sec:pumpkin-approach}).
-This extraction and generalization works at the level of proof terms, through a combination of semantic differencing algorithms 
+This extraction and generalization works at the level of proof terms, through a combination of \kl{semantic differencing} algorithms 
 over proof terms (Section~\ref{sec:pumpkin-diff}) and 
-semantics-aware proof term transformations (Section~\ref{sec:pumpkin-trans}).
-\sysname automates this process (Section~\ref{sec:pumpkin-impl}).
-Case studies show retroactively that \sysname could have saved work for proof engineers
+semantics-aware \kl{proof term transformations} (Section~\ref{sec:pumpkin-trans}).
+\contour[2]{violet}{\kl{\sysname}} automates this process (Section~\ref{sec:pumpkin-impl}).
+\kl{Case studies} show retroactively that \sysname could have saved work for proof engineers
 on major proof developments (Section~\ref{sec:pumpkin-results}).
 
 \paragraph{Historical Note}

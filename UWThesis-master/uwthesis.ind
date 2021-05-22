@@ -220,9 +220,10 @@
 		\hyperpage{18}, \hyperpage{64}, \hyperpage{109, 110}, 
 		\hyperpage{115}, \hyperpage{118}, \hyperpage{126}
   \item Proof Repair, \hyperpage{2}, \hyperpage{4}, \hyperpage{9}, 
-		\hyperpage{22}, \hyperpage{26}, \hyperpage{112}, 
-		\hyperpage{123}
-    \subitem Across Type Equivalences, \hyperpage{5}, \hyperpage{63}
+		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
+		\hyperpage{112}, \hyperpage{123}
+    \subitem Across Type Equivalences, \hyperpage{4, 5}, \hyperpage{28}, 
+		\hyperpage{63}
       \subsubitem Automatic Configuration, \hyperpage{64}, 
 		\hyperpage{66}, \hyperpage{70}, \hyperpage{72}, 
 		\hyperpage{80}, \hyperpage{87}, \hyperpage{92}
@@ -256,23 +257,25 @@
   \indexspace
 
   \item Results, \hyperpage{4}
-    \subitem Case Studies, \hyperpage{5}, \hyperpage{55}, 
-		\hyperpage{123}
+    \subitem Case Studies, \hyperpage{5}, \hyperpage{29}, 
+		\hyperpage{55}, \hyperpage{123}
     \subitem Design, \hyperpage{4, 5}
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
-		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{31}, 
-		\hyperpage{48}, \hyperpage{72}, \hyperpage{87}, 
-		\hyperpage{114}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
+		\hyperpage{31}, \hyperpage{48}, \hyperpage{72}, 
+		\hyperpage{87}, \hyperpage{114}, \hyperpage{123}, 
+		\hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
-		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{31}, 
-		\hyperpage{37, 38}, \hyperpage{47}, \hyperpage{72}, 
-		\hyperpage{114, 115}, \hyperpage{119, 120}, 
-		\hyperpage{123}, \hyperpage{126}
+		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
+		\hyperpage{31}, \hyperpage{37, 38}, \hyperpage{47}, 
+		\hyperpage{72}, \hyperpage{114, 115}, 
+		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{46}, 
 		\hyperpage{67}, \hyperpage{91}
       \subsubitem \sysnamelong Plugin Suite, \hyperpage{5}, 
-		\hyperpage{46}, \hyperpage{63}, \hyperpage{123}
+		\hyperpage{29}, \hyperpage{46}, \hyperpage{63}, 
+		\hyperpage{123}
       \subsubitem \toolnamec Plugin, \hyperpage{63}
 
   \indexspace
@@ -311,7 +314,7 @@
       \subsubitem NuPRL, \hyperpage{2}, \hyperpage{109}
       \subsubitem RedPRL, \hyperpage{110}
     \subitem Proof Automation, \hyperpage{22}, \hyperpage{26}, 
-		\hyperpage{34}, \hyperpage{111, 112}
+		\hyperpage{29}, \hyperpage{34}, \hyperpage{111, 112}
     \subitem Proof Development, \hyperpage{10}
       \subsubitem Program, \hyperpage{2}, \hyperpage{9--11}, 
 		\hyperpage{22}

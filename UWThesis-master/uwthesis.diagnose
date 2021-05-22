@@ -3,10 +3,10 @@
 ***********
 
 25 undefined knowledge(s).
-3 autoreference(s) are introduced twice.
+2 autoreference(s) are introduced twice.
 5 autoreference(s) are used but not introduced.
 
-121 autoreference(s) are properly used.
+122 autoreference(s) are properly used.
 104 autoreference(s) are defined but not used.
 
 
@@ -54,12 +54,10 @@
 * autoref-introduced-twice *
 ****************************
 
-intro.tex:155: {proof repair by example}{default}{base}
-intro.tex:165: {case studies}{default}{base}
-intro.tex:206: {case studies}{default}{base}
+intro.tex:165: {Case studies}{default}{base}
+intro.tex:206: {Case studies}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:226: {Calculus of Inductive Constructions}{default}{base}
-pumpkinpatch.tex:8: {proof repair by example}{default}{base}
 
 
 ******************************
@@ -180,6 +178,6 @@ index.tex:690: {dependent constructors}{default}{base}
 index.tex:694: {dependent eliminators}{default}{base}
 index.tex:725: {\toolnamec }{default}{base}
 index.tex:743: {results}{default}{base}
-index.tex:751: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:752: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 
 

@@ -1,57 +1,57 @@
 This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
 Scanning input file uwthesis.idx....
-!! Input index error (file = uwthesis.idx, line = 317):
-   -- Extra `!' at position 45 of first argument.
 !! Input index error (file = uwthesis.idx, line = 318):
    -- Extra `!' at position 45 of first argument.
-
-!! Input index error (file = uwthesis.idx, line = 323):
+!! Input index error (file = uwthesis.idx, line = 319):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 333):
+!! Input index error (file = uwthesis.idx, line = 324):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 424):
-   -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 425):
+!! Input index error (file = uwthesis.idx, line = 334):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 451):
+!! Input index error (file = uwthesis.idx, line = 435):
+   -- Extra `!' at position 45 of first argument.
+!! Input index error (file = uwthesis.idx, line = 436):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 471):
+!! Input index error (file = uwthesis.idx, line = 462):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 506):
-   -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 507):
-   -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 508):
-   -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 509):
+!! Input index error (file = uwthesis.idx, line = 482):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 512):
+!! Input index error (file = uwthesis.idx, line = 517):
    -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 513):
+!! Input index error (file = uwthesis.idx, line = 518):
+   -- Extra `!' at position 45 of first argument.
+!! Input index error (file = uwthesis.idx, line = 519):
+   -- Extra `!' at position 45 of first argument.
+!! Input index error (file = uwthesis.idx, line = 520):
    -- Extra `!' at position 45 of first argument.
 
 !! Input index error (file = uwthesis.idx, line = 523):
    -- Extra `!' at position 45 of first argument.
-
-!! Input index error (file = uwthesis.idx, line = 619):
+!! Input index error (file = uwthesis.idx, line = 524):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 665):
+!! Input index error (file = uwthesis.idx, line = 534):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 668):
+!! Input index error (file = uwthesis.idx, line = 630):
    -- Extra `!' at position 45 of first argument.
 
-!! Input index error (file = uwthesis.idx, line = 674):
+!! Input index error (file = uwthesis.idx, line = 676):
    -- Extra `!' at position 45 of first argument.
-done (713 entries accepted, 19 rejected).
-Sorting entries........done (7337 comparisons).
-Generating output file uwthesis.ind....done (349 lines written, 0 warnings).
+
+!! Input index error (file = uwthesis.idx, line = 679):
+   -- Extra `!' at position 45 of first argument.
+
+!! Input index error (file = uwthesis.idx, line = 685):
+   -- Extra `!' at position 45 of first argument.
+done (724 entries accepted, 19 rejected).
+Sorting entries.........done (7777 comparisons).
+Generating output file uwthesis.ind....done (352 lines written, 0 warnings).
 Output written in uwthesis.ind.
 Transcript written in uwthesis.ilg.

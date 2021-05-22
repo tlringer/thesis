@@ -1,14 +1,11 @@
 Inductive list T : Type :=
 | nil : list T
-| cons :
-    T $\rightarrow$
+| cons : T $\rightarrow$
     list T $\rightarrow$
     list T.
-$\hspace{0.4cm}$
+
 Inductive vector T : (@\codediff{nat}@) $\rightarrow$ Type :=
 | nil : vector T (@\codediff{O}@)
-| cons :
-    T $\rightarrow$
-    $\forall$ (@\codediff{(n : nat)}@),
-      vector T (@\codediff{n}@) $\rightarrow$
-      vector T (@\codediff{(S n)}@).
+| cons : T $\rightarrow$ $\forall$ (@\codediff{(n : nat)}@),
+    vector T (@\codediff{n}@) $\rightarrow$
+    vector T (@\codediff{(S n)}@).

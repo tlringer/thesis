@@ -226,8 +226,9 @@
     \subitem Across Type Equivalences, \hyperpage{4, 5}, \hyperpage{28}, 
 		\hyperpage{63}
       \subsubitem Automatic Configuration, \hyperpage{64}, 
-		\hyperpage{66}, \hyperpage{70}, \hyperpage{72}, 
-		\hyperpage{80}, \hyperpage{87}, \hyperpage{92}
+		\hyperpage{66}, \hyperpage{68}, \hyperpage{70}, 
+		\hyperpage{72}, \hyperpage{80}, \hyperpage{87}, 
+		\hyperpage{92}
       \subsubitem Configuration, \hyperpage{63}, \hyperpage{72}, 
 		\hyperpage{76}
       \subsubitem Dependent Constructors, \hyperpage{73}
@@ -236,8 +237,8 @@
       \subsubitem Iota, \hyperpage{75}, \hyperpage{114}, 
 		\hyperpage{116}
       \subsubitem Manual Configuration, \hyperpage{63}, \hyperpage{66}, 
-		\hyperpage{70}, \hyperpage{72}, \hyperpage{87}, 
-		\hyperpage{92}
+		\hyperpage{68}, \hyperpage{70}, \hyperpage{72}, 
+		\hyperpage{87}, \hyperpage{92}
       \subsubitem Unification Heuristics, \hyperpage{89, 90}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
 		\hyperpage{119}
@@ -274,18 +275,19 @@
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{41}, 
 		\hyperpage{48}, \hyperpage{57}, \hyperpage{59}, 
-		\hyperpage{72}, \hyperpage{87}, \hyperpage{114}, 
-		\hyperpage{123}, \hyperpage{126}
+		\hyperpage{66}, \hyperpage{72}, \hyperpage{87}, 
+		\hyperpage{114}, \hyperpage{123}, \hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34, 35}, 
 		\hyperpage{37, 38}, \hyperpage{47}, \hyperpage{53}, 
 		\hyperpage{57}, \hyperpage{59}, \hyperpage{61}, 
-		\hyperpage{72}, \hyperpage{114, 115}, 
-		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{66}, \hyperpage{70}, \hyperpage{72}, 
+		\hyperpage{114, 115}, \hyperpage{119, 120}, 
+		\hyperpage{123}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{46}, 
-		\hyperpage{63}, \hyperpage{67}, \hyperpage{91}
+		\hyperpage{63}, \hyperpage{66}, \hyperpage{91}
       \subsubitem \sysnamelong Plugin Suite, \hyperpage{5}, 
 		\hyperpage{29}, \hyperpage{46}, \hyperpage{63}, 
 		\hyperpage{123}
@@ -302,7 +304,8 @@
 
   \item Verification, \hyperpage{1, 2}, \hyperpage{9}, \hyperpage{22}, 
 		\hyperpage{109}, \hyperpage{123}
-    \subitem Coq Commands, \hyperpage{32}, \hyperpage{91}
+    \subitem Coq Commands, \hyperpage{32}, \hyperpage{67}, 
+		\hyperpage{91}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
 		\hyperpage{50}, \hyperpage{63}
     \subitem de Bruijn Criterion, \hyperpage{109, 110}
@@ -344,7 +347,7 @@
 		\hyperpage{124}
       \subsubitem Explicit Proof Object, \hyperpage{110}
     \subitem Proof Script, \hyperpage{3}, \hyperpage{10}, 
-		\hyperpage{14, 15}, \hyperpage{65}, \hyperpage{115}
+		\hyperpage{14, 15}, \hyperpage{66}, \hyperpage{115}
       \subsubitem Ltac, \hyperpage{11}, \hyperpage{13}, \hyperpage{15}, 
 		\hyperpage{21, 22}, \hyperpage{27}, \hyperpage{95}, 
 		\hyperpage{109}, \hyperpage{111}
@@ -353,11 +356,11 @@
 		\hyperpage{32}, \hyperpage{95}, \hyperpage{109}, 
 		\hyperpage{111, 112}
     \subitem Proof Term, \hyperpage{3}, \hyperpage{11}, 
-		\hyperpage{14--16}, \hyperpage{27}, \hyperpage{65}, 
+		\hyperpage{14--16}, \hyperpage{27}, \hyperpage{66}, 
 		\hyperpage{95}
       \subsubitem Gallina, \hyperpage{10--13}, \hyperpage{15, 16}, 
 		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{38}, 
-		\hyperpage{65}, \hyperpage{95}, \hyperpage{109, 110}, 
+		\hyperpage{66}, \hyperpage{95}, \hyperpage{109, 110}, 
 		\hyperpage{113}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{32}, 
 		\hyperpage{47}, \hyperpage{50}, \hyperpage{67}, 

@@ -138,7 +138,7 @@
 \contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.32}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{80}{subsection.4.3.4}% 
 \contentsline {paragraph}{Common Definitions}{82}{lstnumber.-193.1}% 
-\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}% 
+\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{82}{subsubsection.4.3.4.1}% 
 \contentsline {paragraph}{Generating the Motive}{83}{figure.caption.34}% 
 \contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-196.1}% 
 \contentsline {paragraph}{Composing the Result}{84}{lstnumber.-200.3}% 

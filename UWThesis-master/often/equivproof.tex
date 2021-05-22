@@ -9,7 +9,7 @@ swap$\phantom{^{2}}$T (l : Old.list T)
     l.
 
 Lemma section:
-  $\forall$ T (l : Old.list T),
+  (@\ltacforall@) T (l : Old.list T),
     swap$^{-1}$ T (swap T l) = l.
 Proof.
   intros T l. symmetry.
@@ -29,7 +29,7 @@ swap$^{-1}$ T (l : New.list T)
     l.
 
 Lemma retraction:
-  $\forall$ T (l : New.list T),
+  (@\ltacforall@) T (l : New.list T),
     swap T (swap$^{-1}$ T l) = l.
 Proof.
   intros T l. symmetry.

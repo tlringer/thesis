@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 23:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2028,6 +2028,8 @@ Package microtype Info: Loading generic protrusion settings for font family
  [3 <./Development.pdf>] [4] (./guide.tex [5] [6]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 64.
 [7]
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 103.
+
 Overfull \hbox (2.75047pt too wide) in paragraph at lines 110--113
 [] []\T1/pplj/m/sc/10.95 (-20) k a r l p a l m -s k o g[] [][]\T1/pplj/b/n/10.9
 5 Karl[][] \T1/pplj/m/n/10.95 (-20) was a post-doc-toral re-searcher when he jo
@@ -2106,7 +2108,7 @@ Overfull \hbox (7.31798pt too wide) in paragraph at lines 69--73
 [23]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 147.
 [24]
-<maintenance/fig/patch.png, id=925, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=927, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 160.
@@ -2152,7 +2154,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 74--95
  []
 
 [32] [33] [34] [35] [36]) (./repair/differencing.tex [37] [38] [39]
-<repair/nat_ind.pdf, id=1375, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1377, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 123.
@@ -2214,16 +2216,19 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
 
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
-[64] [65]) (./often/approach.tex [66]
-<often/workflowa.pdf, id=2163, 799.98875pt x 348.30125pt>
+[64] [65]) (./often/approach.tex
+contour: Using 2 copies for `\kl {\textsc {Pumpkin}\xspace }' on input line 24.
+
+[66]
+<often/workflowa.pdf, id=2170, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
 (pdftex.def)             Requested size: 336.0pt x 146.29083pt.
- [67 <./often/workflowa.pdf>]
-(./often/equivproof.tex) (./often/equivproof.tex) (./often/equiv2.tex)
-(./often/equiv2.tex) [68] (./often/listtovect.tex) (./often/listtovect.tex)
-[69] [70] [71]) (./often/differencing.tex [72] [73] [74] (./often/nattobin.tex)
+ [67 <./often/workflowa.pdf>] (./often/equivproof.tex)
+(./often/equivproof.tex) (./often/equiv2.tex) (./often/equiv2.tex) [68]
+(./often/listtovect.tex) (./often/listtovect.tex) [69] [70] [71])
+(./often/differencing.tex [72] [73] [74] (./often/nattobin.tex)
 (./often/nattobin.tex)
 Overfull \hbox (5.20526pt too wide) in paragraph at lines 184--195
 []\T1/pplj/m/n/10.95 (-20) Each [][][][]---one per constructor---describes and 
@@ -2231,7 +2236,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [75] [76]
-<often/Diagram.pdf, id=2505, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2515, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2310,7 +2315,7 @@ LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
 (Font)              using `T1/pplj/bx/n' instead on input line 400.
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 422.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 421.
 [106]) (./often/conclusion.tex [107])) (./related.tex [108]
 chapter 5.
 [109
@@ -2423,52 +2428,52 @@ Overfull \hbox (2.00206pt too wide) in paragraph at lines 219--223
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 228--231
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 228--232
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (5.7855pt too wide) in paragraph at lines 234--235
+Overfull \hbox (5.7855pt too wide) in paragraph at lines 235--236
 []| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []73[] 
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 238--241
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 239--242
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []63[],
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 241--242
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 242--243
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []89[],
  []
 
 
-Overfull \hbox (0.44196pt too wide) in paragraph at lines 259--262
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 260--263
 []| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 262--264
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 263--265
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 [131]
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 308--309
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 311--312
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []109[], []110[] 
  []
 
 
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 311--312
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 314--315
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 314--316
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 317--319
 []| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []109[]--[]111[], []113[], []124[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 322--325
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 325--328
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []109[]--[]111[],
  []
 
@@ -2546,10 +2551,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51935 strings out of 492609
- 1051202 string characters out of 6129033
- 1328524 words of memory out of 5000000
- 52374 multiletter control sequences out of 15000+600000
+ 51930 strings out of 492609
+ 1051107 string characters out of 6129033
+ 1328678 words of memory out of 5000000
+ 52373 multiletter control sequences out of 15000+600000
  679898 words of font info for 886 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2575,10 +2580,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1877537 bytes).
+Output written on uwthesis.pdf (164 pages, 1878527 bytes).
 PDF statistics:
- 4867 PDF objects out of 5155 (max. 8388607)
- 4578 compressed objects within 46 object streams
- 1619 named destinations out of 1728 (max. 500000)
+ 4883 PDF objects out of 5155 (max. 8388607)
+ 4594 compressed objects within 46 object streams
+ 1615 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -677,7 +677,13 @@
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{87}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{87}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{89}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{89}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{89}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{90}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{90}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{90}
+\indexentry{Logic \& Type Theory!Polymorphism|hyperpage}{90}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{90}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{90}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{90}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{91}

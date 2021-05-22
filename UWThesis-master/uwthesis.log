@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 00:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 01:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1624,6 +1624,9 @@ LaTeX Warning: Label `autoref-4' multiply defined.
 LaTeX Warning: Label `autoref-229' multiply defined.
 
 
+LaTeX Warning: Label `autoref-246' multiply defined.
+
+
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
 
 
@@ -2438,47 +2441,47 @@ Overfull \hbox (0.21524pt too wide) in paragraph at lines 232--236
  []
 
 
-Overfull \hbox (5.7855pt too wide) in paragraph at lines 239--240
-[]| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []73[] 
+Overfull \hbox (7.0995pt too wide) in paragraph at lines 240--242
+[]| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []73[],
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 243--246
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 246--249
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []63[],
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 246--247
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 249--250
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []89[],
  []
 
 
-Overfull \hbox (0.44196pt too wide) in paragraph at lines 264--267
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 267--270
 []| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 267--269
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 270--272
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 [131]
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 315--316
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 318--319
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []109[], []110[] 
  []
 
 
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 318--319
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 321--322
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 321--323
+Overfull \hbox (1.87816pt too wide) in paragraph at lines 324--326
 []| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []109[]--[]111[], []113[], []124[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 329--332
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 332--335
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []109[]--[]111[],
  []
 
@@ -2556,10 +2559,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51936 strings out of 492609
- 1051244 string characters out of 6129033
- 1327463 words of memory out of 5000000
- 52375 multiletter control sequences out of 15000+600000
+ 51942 strings out of 492609
+ 1051370 string characters out of 6129033
+ 1327512 words of memory out of 5000000
+ 52377 multiletter control sequences out of 15000+600000
  680184 words of font info for 890 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2585,10 +2588,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1879673 bytes).
+Output written on uwthesis.pdf (164 pages, 1880348 bytes).
 PDF statistics:
- 4928 PDF objects out of 5155 (max. 8388607)
- 4638 compressed objects within 47 object streams
- 1614 named destinations out of 1728 (max. 500000)
+ 4948 PDF objects out of 5155 (max. 8388607)
+ 4658 compressed objects within 47 object streams
+ 1618 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

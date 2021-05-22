@@ -168,7 +168,7 @@
 		\hyperpage{77}, \hyperpage{110}, \hyperpage{115, 116}, 
 		\hyperpage{124}
     \subitem Dependent Types, \hyperpage{20}, \hyperpage{78}, 
-		\hyperpage{81}
+		\hyperpage{81}, \hyperpage{90}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{74}, 
 		\hyperpage{109}
@@ -194,7 +194,7 @@
     \subitem Internal, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
     \subitem Intuitionistic Logic, \hyperpage{109, 110}, 
 		\hyperpage{117, 118}
-    \subitem Polymorphism, \hyperpage{20}
+    \subitem Polymorphism, \hyperpage{20}, \hyperpage{90}
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
 		\hyperpage{30}, \hyperpage{40}, \hyperpage{58}, 
 		\hyperpage{73}, \hyperpage{92, 93}
@@ -235,11 +235,14 @@
 		\hyperpage{87}, \hyperpage{91}
       \subsubitem Configuration, \hyperpage{63}, \hyperpage{72}, 
 		\hyperpage{76}
-      \subsubitem Dependent Constructors, \hyperpage{73}
-      \subsubitem Dependent Eliminators, \hyperpage{73}
-      \subsubitem Eta, \hyperpage{73}, \hyperpage{75}, \hyperpage{114}
-      \subsubitem Iota, \hyperpage{73}, \hyperpage{75}, \hyperpage{114}, 
-		\hyperpage{116}
+      \subsubitem Dependent Constructors, \hyperpage{73}, 
+		\hyperpage{86}, \hyperpage{89}
+      \subsubitem Dependent Eliminators, \hyperpage{73}, \hyperpage{86}, 
+		\hyperpage{89}
+      \subsubitem Eta, \hyperpage{73}, \hyperpage{75}, \hyperpage{86}, 
+		\hyperpage{90}, \hyperpage{114}
+      \subsubitem Iota, \hyperpage{73}, \hyperpage{75}, \hyperpage{86}, 
+		\hyperpage{90}, \hyperpage{114}, \hyperpage{116}
       \subsubitem Manual Configuration, \hyperpage{63}, \hyperpage{66}, 
 		\hyperpage{68}, \hyperpage{70}, \hyperpage{72}, 
 		\hyperpage{87}, \hyperpage{91}

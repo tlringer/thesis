@@ -72,17 +72,19 @@
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
 (* 1: original *)
-$\lambda$ (T : Type) (l m : Old.list T) .
+$\lambda$ (T: Type) (l m: Old.list T) .
  Elim(l, $\lambda$(l: Old.list T).Old.list T $\rightarrow$ Old.list T)) {
    ($\lambda$ m . m),
-   ($\lambda$ t _ IHl m . Constr(1, Old.list T) t (IHl m))
+   ($\lambda$ t _ IHl m .
+     Constr(1, Old.list T) t (IHl m))
  } m.
 
-(* 2: unified*)
-$\lambda$ (T : Type) (l m : (@\codediff{A}@)) .
+(* 2: unified *)
+$\lambda$ (T: Type) (l m: (@\codediff{A}@)) .
  (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {
    ($\lambda$ m . m)
-   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))
+   ($\lambda$ t _ IHl m .
+     (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))
  } m.
 \end{lstlisting}
 \end{minipage}
@@ -90,21 +92,23 @@ $\lambda$ (T : Type) (l m : (@\codediff{A}@)) .
 \begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
 (* 4: reduced *)
-$\lambda$ (T : Type) (l m : New.list T) .
+$\lambda$ (T: Type) (l m: New.list T) .
  Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {
-   ($\lambda$ t _ IHl m . Constr(0, New.list T) t (IHl m)),
+   ($\lambda$ t _ IHl m .
+     Constr(0, New.list T) t (IHl m)),
    ($\lambda$ m . m)
  } m.
 
 (* 3: transformed *)
-$\lambda$ (T : Type) (l m : (@\codediff{B}@)) .
+$\lambda$ (T: Type) (l m: (@\codediff{B}@)) .
  (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {
    ($\lambda$ m . m)
-   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))
+   ($\lambda$ t _ IHl m .
+     (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))
  } m.
 \end{lstlisting}
 \end{minipage}
-\caption{Swapping cases of the append function, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the updated type, and 4) reduced to the output.}
+\caption{Swapping cases of the append function, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the new version of the type, and 4) reduced to the output.}
 \label{fig:appswap1}
 \end{figure*}
 
@@ -135,7 +139,7 @@ In doing so, it addresses several of the limitations from the \sysname transform
 \label{sec:trans-unification}
 
 The transformation does not fully describe the search procedure for transforming terms that \toolnamec implements.
-Before running the transformation, \toolnamec \textit{unifies} subterms with particular \Aa (fixing parameters and indices),
+Before running the transformation, \toolnamec unifies subterms with particular \Aa (fixing parameters and indices),
 and with applications of configuration terms over \Aa. 
 The transformation then transforms configuration terms over \Aa
 to configuration terms over \B.
@@ -143,7 +147,7 @@ Reducing the result produces the output term defined over \B.
 
 Figure~\ref{fig:appswap1} shows this with the list append function \lstinline{++} from Section~\ref{sec:overview}.
 To update \lstinline{++} (top left), \toolnamec unifies \lstinline{Old.list T} with \Aa, and \lstinline{Constr} and \lstinline{Elim}
-with \lstinline{DepConstr} and \lstinline{DepElim} (bottom left).
+with \kl{\lstinline{DepConstr}} and \kl{\lstinline{DepElim}} (bottom left).
 After unification, the transformation recursively substitutes \B
 for \Aa, which moves \lstinline{DepConstr} and \lstinline{DepElim}
 to construct and eliminate over the updated type (bottom right).
@@ -151,10 +155,10 @@ This reduces to a term with swapped constructors and cases over \lstinline{New.l
 
 In this case, unification is straightforward.
 This can be more challenging when configuration terms are dependent.
-This is especially pronounced with definitional \lstinline{Eta} and \lstinline{Iota},
+This is especially pronounced with definitional \kl{\lstinline{Eta}} and \kl{\lstinline{Iota}},
 which typically are implicit (reduced) in real code.
-To handle this, \toolnamec implements custom \kl{unification heuristics} for each search procedure
-that unify subterms with applications of configuration terms, and that instantiate parameters and dependent indices in those subterms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}. % liftconfig.ml
+To handle this, \toolnamec implements custom \intro{unification heuristics} for each search procedure
+that unify subterms with applications of configuration terms, and that instantiate \kl{parameters} and \kl{dependent} indices in those subterms~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}. % liftconfig.ml
 The transformation in turn assumes that all existing parameters and indices are determined and instantiated
 by the time it runs.
 
@@ -427,9 +431,9 @@ Still, the \toolnamec transformation does struggle sometimes with termination.
 I decribe this more in Section~\ref{sec:pi-implementation}.
 
 \paragraph{Modeling Diverse Proof Styles}
-Unlike the procedures from \sysname, the \toolnamec transformation is generic over the proof term structure.
+Unlike the transformations from \sysname, the \toolnamec transformation is generic over the proof term structure.
 This benefit again comes from decoupling unification from the transformation,
 and from the fact that a single transformation is defined over any possible CIC$_{\omega}$ term.
-The only difficulties show up at the level of implementation details,
+The only difficulties show up at the level of the implementation,
 which I will describe in Section~\ref{sec:pi-implementation}.
 

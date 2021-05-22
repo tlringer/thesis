@@ -56,13 +56,13 @@ then sticks that in front of (using \lstinline{cons}) the result of recursively 
 \begin{figure}
 \begin{lstlisting}
 (* Weaker version of theorem *)
-Theorem zip_preseserves_length {T$_1$ T$_2$} :
+Theorem zip_preserves_length {T$_1$ T$_2$} :
   (@\ltacforall@) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
     length l$_1$ = length l$_2$ $\rightarrow$
     length (zip l$_1$ l$_2$) = length l$_1$.
 
 (* Stronger version of theorem *)
-Theorem zip_presserves_length {T$_1$ T$_2$} :
+Theorem zip_preserves_length {T$_1$ T$_2$} :
   (@\ltacforall@) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
     length (zip l$_1$ l$_2$) = min (length l$_1$) (length l$_2$).
 \end{lstlisting}
@@ -90,7 +90,7 @@ Each tactic in Ltac is effectively a search procedure for a proof term, given th
 The way that this works is, after we state the theorem that we want to prove, say:
 
 \begin{lstlisting}
-  Theorem zip_preseserves_length {T$_1$ T$_2$} :
+  Theorem zip_preserves_length {T$_1$ T$_2$} :
     (@\ltacforall@) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$),
       length l$_1$ = length l$_2$ $\rightarrow$
       length (zip l$_1$ l$_2$) = length l$_1$.

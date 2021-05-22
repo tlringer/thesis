@@ -73,7 +73,7 @@ a given proof to make sure that it proves a given theorem.
 In Coq, proof objects are \kl{proof terms} in \kl{Gallina}; the kernel verifies these terms by checking their types.
 As \kl{Karl} notes in \kl{QED at Large}, producing \intro{explicit proof objects} and checking them is just one of the two dominant approaches to satisfying 
 the de Bruijn criterion---the approach followed by \kl{Coq}, \kl{Agda}, and \kl{Lean}.
-The other dapproach is to produce \intro{ephemeral proof objects} that are correct by construction~\cite{Barendregt2013}---an approach followed
+The other approach is to produce \intro{ephemeral proof objects} that are correct by construction~\cite{Barendregt2013}---an approach followed
 by \kl{Isabelle/HOL}, \kl{HOL Light}, and \kl{HOL4}. % what about NuPRL?
 
 Proof repair in this thesis assumes \kl{explicit} rather than \kl{ephemeral} proof objects.
@@ -122,7 +122,7 @@ This can take the form of robust abstractions or robust automation.
 % TODO QED if time
 
 \paragraph{Robust Abstractions}
-Proof engineers often use abstractions to make proofs less likely to break to beign with.
+Proof engineers often use abstractions to make proofs less likely to break to begin with.
 Examples of this include using 
 information hiding techniques~\cite{Woos:2016:PCF:2854065.2854081, Klein2014}
 or any of the structures~\cite{Chrzaszcz2004, Sozeau2008, Saibi:PhD} for encoding interfaces in Coq.
@@ -197,7 +197,7 @@ and so presents itself primarily as a proof refactoring tool.
 Another term-based refactoring tool is the refactoring tool RefactorAgda~\cite{wibergh2019} for a subset of \kl{Agda} terms.
 RefactorAgda supports many changes, including changing indentation, renaming terms, moving terms, converting between implicit and
 explicit arguments, reordering subterms, and adding or removing constructors to or from types; 
-it also documents ideas for supporting other refactorings, such as adding and removing arguments and indicies to and from types.
+it also documents ideas for supporting other refactorings, such as adding and removing arguments and indices to and from types.
 Both Chick and RefactorAgda support primarily syntactic changes and operate solely over \kl{proof terms}.
 
 \subsection{Proof Reuse}
@@ -235,11 +235,11 @@ tool for Coq~\citep{wilson2010}.
 \fi
 
 \paragraph{Proof Transformation}
-Proof repair in this thesis combiness \kl{differencing} with \kl{proof term transformations}.
+Proof repair in this thesis combines \kl{differencing} with \kl{proof term transformations}.
 The idea of proof term transformations dates back to at least 1987~\cite{pfenning}.
 Any proof reuse tool that works by proof term transformation can, in theory, be used for repair, especially when coupled with something like the \toolnamec decompiler.
 
-The \sysname prototype implements a kind of proof \kl{generalizaton}.
+The \sysname prototype implements a kind of proof \kl{generalization}.
 This is a common kind of proof term transformation that arose in the context of proof assistants
 in the 1990s~\cite{hasker1992generalization, kolbe1998proof, pons1999conception}.
 Coq's \lstinline{generalize} tactic does basic syntactic generalization~\cite{coq-tactics}.
@@ -381,7 +381,7 @@ In fact, some patches are outright harmful, as they introduce new problems which
 
 In contrast, in the world of proof repair, there is always a specification to work with---the theorem being proven---so
 a proof repair tool does not need to rely on tests.
-Furthermore, the scope of properties that can be specified in proof assistants like Coq is especially large thanks to its experessive type system \kl{CIC$_{\omega}$},
+Furthermore, the scope of properties that can be specified in proof assistants like Coq is especially large thanks to its expressive type system \kl{CIC$_{\omega}$},
 with polymorphism and dependent types.
 The richness of the type theory further makes it possible for \sysnamelong to check itself along the way and make sure it is on the right track.
 
@@ -396,7 +396,7 @@ as well as other repair tools that bring a human into the loop.
 
 \paragraph{Examples}
 Another challenge for test-based program repair tools is defining the correct search space and searching efficiently within it.
-For example, the review found that running the same tool on strengthened versions of the test suites produced no patches at all in the time alloted.
+For example, the review found that running the same tool on strengthened versions of the test suites produced no patches at all in the time allotted.
 One possible reason for this is that the tools could not search for the correct patches efficiently enough.
 Example-based techniques can help navigate a large search space quickly.
 
@@ -516,7 +516,7 @@ Similarly, \lstinline{spdiff}~\cite{andersen2010generic} generalizes patches int
 which can then apply those patches automatically in different contexts. This way, the library designer can write a semantic patch
 himself, or \lstinline{spdiff} can infer one.
 
-A number of program repair tools above---much like the proof repair tools decribed in this thesis---build on \kl{differencing} algorithms.
+A number of program repair tools above---much like the proof repair tools described in this thesis---build on \kl{differencing} algorithms.
 Existing work in differencing and incremental computation may help 
 improve semantic differencing algorithms for both program and proof repair.
 Type-directed diffing~\cite{Miraldo:2017:TDS:3122975.3122976}

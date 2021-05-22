@@ -174,9 +174,9 @@ though the corresponding code invokes it explicitly.
 \paragraph{Intensionality}
 
 Gallina is based on what is called an \kl{intensional} type theory:
-a type theory that distinguishes between equalities that hold by reducton (\intro{definitional equality}), and those that hold by proof (\intro{propositional} equality).
+a type theory that distinguishes between equalities that hold by reduction (\intro{definitional equality}), and those that hold by proof (\intro{propositional} equality).
 That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they
-reduce\footnote{Reduction uses a sequence of predefined reduction rules, which are described by various Greek letters. $\beta$-reducton, for example,
+reduce\footnote{Reduction uses a sequence of predefined reduction rules, which are described by various Greek letters. $\beta$-reduction, for example,
 has the standard meaning. $\delta$-reduction unfolds constants. Chapter 10 of Certified Programming with Dependent Types~\cite{chlipala:cpdt} includes a nice summary of reduction and its relationship to \kl{definitional equality}.} 
 to the same normal form,
 and propositionally equal if there is a proof that \lstinline{t = t'} using the inductive
@@ -225,8 +225,8 @@ but produce Ltac proof scripts that the proof engineer can use going forward.
 
 The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Calculus of Inductive Constructions}.
 CIC$_{\omega}$ is based on the \intro{Calculus of Constructions} (CoC), a variant of the lambda calculus with two kinds of universally quantified function types: \intro{polymorphism} (types that dependent on types) and \intro{dependent types} (types that depend on terms)~\cite{coquand:inria-00076024}.
-CoC with an infinite universe hieararchy---basically a trick for consistency---is 
-called CoC$_{\omega}$.\footnote{The need for the infinite universe hiearchy is too distracting for me to explain in detail here, but it is also not important for this thesis.}
+CoC with an infinite universe hierarchy---basically a trick for consistency---is 
+called CoC$_{\omega}$.\footnote{The need for the infinite universe hierarchy is too distracting for me to explain in detail here, but it is also not important for this thesis.}
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 Note that whereas in Gallina we represent universal quantification over terms or types with \ltacforall, here we represent it with $\Pi$, as is standard.
 

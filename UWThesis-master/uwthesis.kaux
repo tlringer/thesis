@@ -2671,9 +2671,6 @@
 
 \KAuxFileAt {related.tex}{206}
 \KAuxErrorKnowledgeUnknown {default}{}{proof reuse}{proof reuse}{\intro }
-
-\KAuxFileAt {related.tex}{242}
-\KAuxErrorKnowledgeUnknown {default}{}{generalizaton}{generalizaton}{\kl }
 \KAuxDeclaredScopeTag {sec:automation}
 \KAuxNewLinkScopetagInstance {sec:automation}{document}
 \KAuxDeclaredScopeTag {sec:repair}

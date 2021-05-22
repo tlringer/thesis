@@ -3,10 +3,10 @@
 
 % TODO somewhere, something about plugins, either here or earlier. LOC and so on.
 
-The source code of the \kl{\sysnamelong} proof repair plugin suite is on Github.\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH}} % TODO thesis release
-It includes the source code of the \kl{\sysname} prototype plugin, extended with a number of new features,
+The source code of the \contour[2]{violet}{\kl{\sysnamelong}} proof repair plugin suite is on Github.\footnote{Latest version: \url{http://github.com/uwplse/PUMPKIN-PATCH}. Stable thesis release: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/v1.0}. Coq 8.9.1 branch: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/8.9.1}. Original 2018 prototype release: \url{https://github.com/uwplse/PUMPKIN-PATCH/releases/tag/cpp18}.}
+It includes the source code of the \contour[2]{violet}{\kl{\sysname}} prototype plugin, extended with a number of new features,
 including the more advanced \toolnamec plugin that I will present in Chapter~\ref{chapt:pi}.
-The latest version supports Coq 8.8, with Coq 8.9.1 support in a branch. % TODO link
+The thesis release supports Coq 8.8, with Coq 8.9.1 support in a branch.
 
 This section decribes the implementation of the \sysname prototype (Section~\ref{sec:tool}),
 along with some new features that go beyond the original prototype and help with workflow integration (Section~\ref{sec:workflow}),
@@ -27,12 +27,12 @@ The implementation (Section~\ref{sec:pumpkin-impl-procedure}) of the procedure f
 starts with a preprocessing step which compiles the proof terms to 
 trees (like the tree in Figure~\ref{fig:cattree}).\footnote{Representing proof terms directly as trees in the implementation rather
 than just in the theory is one of my biggest regrets three years later.
-This representation is useful for understanding how differencing works over inductive types, but it implementing it adds clutter that makes \sysname difficult to maintain.
+This representation is useful for understanding how differencing works over inductive types, but implementing it adds clutter that makes \sysname difficult to maintain.
 \toolnamec represents proof terms as terms, and avoids this representation.}
 The implementation always maintains pointers to easily switch between the tree and AST representations of the terms.
 Differencing (Section~\ref{sec:pumpkin-impl-diff} operates over trees, 
 while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directly over the terms those trees represent.
-\sysname has no impact on the \kl{TCB}. (Section~\ref{sec:tcb}).
+\sysname has no impact on the \kl{TCB} (Section~\ref{sec:tcb}).
 
 \subsubsection{The Procedure}
 \label{sec:pumpkin-impl-procedure}
@@ -101,7 +101,7 @@ and in the end checks the type of the patch to ensure that is has the goal type.
 As a bonus, \sysname exposes commands that correspond to each of these transformations (\lstinline{patcher.ml4}),
 so that proof engineers can call them outside of the proof patching procedure.
 
-\paragraph{Specialization} Specialization (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
+\paragraph{Specialization} \kl{Specialization} (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
 all of which are Gallina terms.
 It also takes a custom reducer (\lstinline{reducers.ml}) % in coq-plugin-lib
 as a higher-order function that reducers a Coq term.
@@ -111,14 +111,14 @@ The default specializer reduces the result using Coq's
 \lstinline{Reduction.nf_betaiotazeta} function.
 Other reducers include one that does not reduce at all, one that removes unecessary applications of the identity function, 
 one that does weak head reduction, one that completely normalizes terms, % one that removes unused hypotheses,
-and one that applies $\delta$ reduction to unwrap constants.
+and one that $\delta$-reduces to unwrap constants.
 There are also higher-order combinators for reducers,
 including chain reduction with errors, chain reduction without errors, and reduction over the types of supplied terms.
 This makes it possible for search procedure instances to highly customize specialization,
 and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
 I expose these reducers and combinators in the Coq plugin library. % TODO link and explain
 
-\paragraph{Generalization} Generalization (\lstinline{abstraction.ml}) % TODO rename
+\paragraph{Generalization} \kl{Generalization} (\lstinline{abstraction.ml}) % TODO rename
 takes a patch candidate, the goal type, and the arguments or function by which to generalize,
 all as Gallina terms.
 It also takes a list of substitution strategies to determine what subterms to substitute, and how.
@@ -139,7 +139,7 @@ with a term that corresponds to that pattern.
 Some strategies reduce before generalizing, and some do not.
 I expose these strategies in the \sysname OCaml API (\lstinline{abstracters.mli}). % TODO missing earlier section on OCaml/Coq plugins
 
-\paragraph{Inversion} Inversion (\lstinline{inverting.ml}) takes as input a patch candidate as a Gallina proof term,
+\paragraph{Inversion} \kl{Inversion} (\lstinline{inverting.ml}) takes as input a patch candidate as a Gallina proof term,
 and tries to reverse the conclusion of its type.
 It works by first factoring the candidate,
 then exploiting symmetry properties to invert those factors,
@@ -154,15 +154,15 @@ related to \lstinline{eq_rect} by symmetry of equality:
   (@\diff{eq\_rect\_r}@) A x P (H : P x) y (H0 : y = x) :=(@\vspace{-0.04cm}@)
     (@\diff{eq\_rect}@) x (fun y0 : A => P y0) H y ((@\diff{eq\_sym}@) H0)	
 \end{lstlisting} % TODO types
-When inversion encounters a single application of \lstinline{eq_rect} in one of its factors,
+When inversion encounters an \lstinline{eq_rect} in one of its factors,
 it reverses it by applying symmetry of equality, effectively producing an application of \lstinline{eq_rect_r}.
 The opposite direction works similarly.
 
 If inversion does not recognize any type symmetry properties it can exploit in a factor, it
 strategically swaps subterms in the factor and type checks the result to see if it is an inverse.
-This essentially amounts to an ad hoc attempt to discover symmetry properties in the factor.
+This essentially amounts to an ad hoc attempt to discover symmetry properties.
 
-\paragraph{Factoring} Factoring (\lstinline{factoring.ml}) takes as input a proof term in Gallina,
+\paragraph{Factoring} \kl{Factoring} (\lstinline{factoring.ml}) takes as input a Gallina term,
 and attempts to break it into factors.
 When it succeeds, it returns the factors as a list of terms;
 otherwise, it returns the empty list.
@@ -207,7 +207,7 @@ A common concern for proof developments is an increase in the \kl{TCB}.
 %While \sysname does not yet support Coq 8.7, it only calls the internal Coq functions that the 
 %developers plan to expose in the safe API~\cite{coqPR}.
 \sysname takes this into consideration.
-In particular, \sysname is implemented as a Coq plugin,
+In particular, \sysname is implemented as a Coq \kl{plugin},
 and Coq type checks all terms that plugins produce.
 Since \sysname does not modify the type checker, it cannot produce an ill typed term.
 \sysname also does not add any axioms,
@@ -216,11 +216,11 @@ and so does not increase the TCB. % ugh whatever. I think there's better text on
 \subsection{Extensions}
 \label{sec:workflow}
 
-Since releasing the \sysname prototype, I have extended \sysname with many features
+Since releasing the \sysname prototype, I have extended it with many features
 for better integration into \kl{proof engineering} workflows.
 This section summarizes three: Git integration, support for applying patches,
 and proof optmization.
-I detail tactic generation and more when I discuss the \toolnamec extension to \sysnamelong
+I detail tactic generation and more when I discuss the \toolnamec extension
 in Chapter~\ref{chapt:pi}.
 
 % new, from Git repo though
@@ -251,7 +251,7 @@ Coq applies hints in its hint databases automatically, in some cases taking care
 that the proof engineer would have to make to use these patches.
 
 Since the \sysname prototype, I have also extended \sysnamelong with the \toolnamec plugin.
-The \toolnamec plugin does applies the changes that it finds in all cases.
+The \toolnamec plugin does apply the changes that it finds in all cases.
 Furthermore, it exposes a decompiler from proof terms back up to tactic scripts---this
 decompiler is exposed to the \sysname plugin as well, so that proof engineers can decompile patches
 back to tactics by calling the \lstinline{Decompile} command.
@@ -266,28 +266,6 @@ See \lstinline{Optimization.v} for more information.
 
 \subsection{Testing Boundaries}
 \label{sec:eval}
-
-\begin{figure*}
-\begin{lstlisting}[language=coq]
-fun n m p (H : n <= m) (H0 : m <= p) =>
-  (@\diff{le\_S n p}@) (* ... proof of stronger lemma *)
-: (@\ltacforall@) n m p,
-    n <= m $\rightarrow$
-    m <= p $\rightarrow$
-    n <= (@\diff{S p}@)
-
-fun n m p (H : n <= m) (H0 : m <= p) =>
-  (@\diff{le\_plus\_trans n p 1}@) (* ... proof of stronger lemma *)
-: (@\ltacforall@) n m p,
-    n <= m $\rightarrow$
-    m <= p $\rightarrow$
-    n <= (@\diff{p + 1}@)
-\end{lstlisting}
-\caption{Two proof terms \lstinline{old} (top) and \lstinline{new} (bottom) that contain the same proof of a stronger lemma.}
-\label{fig:stronger}
-\end{figure*}
-
-\lstset{language=coq, aboveskip=3pt,belowskip=3pt}
 
 In this section, I explore the boundary between what the semantic differencing
 and transformation implementations in the \sysname prototype can and cannot handle.
@@ -306,7 +284,7 @@ that tested \sysname's limitations:
 \item \textbf{The pairs reveal potential generalization strategies.} \\
 \sysname produced an exponential number of candidates in 5 of 50 pairs.
 New generalization strategies would dramatically reduce the number of candidates. (Section~\ref{sec:fail})
-\item \textbf{\sysname was fast, but it could be even faster.} \\
+\item \contour[2]{violet}{\sysname} \textbf{was fast, but it could be even faster.} \\
 The slowest successful patch took \SI{48}{\ms}. The slowest failure took \SI{7}{\ms}.
 Simple changes could make \sysname more efficient. (Section~\ref{sec:perf})
 \end{enumerate}
@@ -352,6 +330,26 @@ since the conclusions of \lstinline{old}
 and \lstinline{new} were propositionally equal.
 \fi
 
+\begin{figure*}
+\begin{lstlisting}[language=coq]
+fun n m p (H : n <= m) (H0 : m <= p) =>
+  (@\diff{le\_S n p}@) (* ... proof of stronger lemma *)
+: (@\ltacforall@) n m p,
+    n <= m $\rightarrow$
+    m <= p $\rightarrow$
+    n <= (@\diff{S p}@).
+
+fun n m p (H : n <= m) (H0 : m <= p) =>
+  (@\diff{le\_plus\_trans n p 1}@) (* ... proof of stronger lemma *)
+: (@\ltacforall@) n m p,
+    n <= m $\rightarrow$
+    m <= p $\rightarrow$
+    n <= (@\diff{p + 1}@).
+\end{lstlisting}
+\caption{Two proof terms \lstinline{old} (top) and \lstinline{new} (bottom) that contain the same proof of a stronger lemma.}
+\label{fig:stronger}
+\end{figure*}
+
 My goal was to determine what changes to proofs stress the components
 and how to use that information to drive improvements.
 I focused on differences in conclusions, the most supported \kl{instance} of the search procedure at the time.
@@ -378,8 +376,8 @@ I walk through three examples below.
 Future tools can use these as challenge problems to improve upon \sysname.
 
 \paragraph{A Challenge for Differencing} For one pair of proofs of theorems 
-with propositionally equal conclusions (Figure~\ref{fig:stronger}),
-differencing failed to find candidates in either direction.
+with \kl{propositionally equal} conclusions (Figure~\ref{fig:stronger}),
+\kl{differencing} failed to find candidates in either direction.
 These proofs both contain the same proof of a stronger lemma;
 \sysname found patches from this lemma to
 both \lstinline{old} and \lstinline{new},
@@ -388,14 +386,14 @@ A patch may show up deep in the difference between \lstinline{le_plus_trans}
 and \lstinline{le_S}, but even if we $\delta$-reduce (unfold the definition of) \lstinline{le_plus_trans}, this is not obvious:
 
 \begin{lstlisting}
-  le_plus_trans n m p (H : n <= m) :=(@\vspace{-0.04cm}@)
-    (fun lemma : m <= m + p =>(@\vspace{-0.04cm}@)
-      trans_contra_inv_impl_morphism(@\vspace{-0.04cm}@)
-        PreOrder_Transitive(@\vspace{-0.04cm}@)
-        (m + p)(@\vspace{-0.04cm}@)
-        m(@\vspace{-0.04cm}@)
-        lemma)(@\vspace{-0.04cm}@)
-    (le_add_r m p)(@\vspace{-0.04cm}@)
+  le_plus_trans n m p (H : n <= m) :=
+    (fun lemma : m <= m + p =>
+      trans_contra_inv_impl_morphism
+        PreOrder_Transitive
+        (m + p)
+        m
+        lemma)
+    (le_add_r m p)
     H.
 \end{lstlisting}
 This points to two difficulties in finding patches: Knowing when to $\delta$-reduce terms 
@@ -406,8 +404,8 @@ building on this insight).
 Furthermore, finding patches is more challenging
 when neither theorem has a conclusion that is as strong as possible.
 
-\paragraph{A Challenge for Inversion} For one pair of proofs with propositionally equal conclusions,
-\sysname found a patch in one direction, but failed to invert it:
+\paragraph{A Challenge for Inversion} For one pair of proofs with \kl{propositionally equal} conclusions,
+\sysname found a patch in one direction, but failed to \kl{invert} it:
 
 \begin{lstlisting}[language=coq]
   fun n m p (_ : n <= m) (_ : m <= p) (H1 : n <= p) =>
@@ -415,24 +413,23 @@ when neither theorem has a conclusion that is as strong as possible.
   : (@\ltacforall@) n m p,
       n <= m $\rightarrow$
       m <= p $\rightarrow$
-      n <= p $\rightarrow$ S n <= S p.
+      n <= p $\rightarrow$
+      S n <= S p.
 \end{lstlisting}
 Inversion was unable to invert this term, even though an inverse does exist.
 To invert this, inversion needs to know to $\delta$-reduce \lstinline{gt_le_S}:
 
 \begin{lstlisting}[language=coq]
   gt_le_S n m :=
-    (fun (H : (@\ltacforall@) n0 m0, (@\diff{n0 < m0}@) -> (@\diff{S n0 <= m0}@)) => H n m)
-    $\ldots$
+    (fun (H : (@\ltacforall@) n0 m0, (@\diff{n0 < m0}@) $\rightarrow$ (@\diff{S n0 <= m0}@)) => H n m) $\ldots$
   : (@\ltacforall@) n m, (@\diff{n < m}@) $\rightarrow$ (@\diff{S n <= m}@).
 \end{lstlisting}
 It then needs to swap the hypothesis with the conclusion in \lstinline{H} to produce the inverse:
 
 \begin{lstlisting}[language=coq]
   gt_le_S$\inv$ n m :=
-    (fun (H : (@\ltacforall@) n0 m0, (@\diff{S n0 <= m0}@) -> (@\diff{n0 < m0}@)) => H n m)
-    $\ldots$
-   : (@\ltacforall@) n m, (@\diff{S n <= m}@) $\rightarrow$ (@\diff{n < m}@)
+    (fun (H : (@\ltacforall@) n0 m0, (@\diff{S n0 <= m0}@) $\rightarrow$ (@\diff{n0 < m0}@)) => H n m) $\ldots$
+   : (@\ltacforall@) n m, (@\diff{S n <= m}@) $\rightarrow$ (@\diff{n < m}@).
 \end{lstlisting}
 
 Inversion currently swaps subterms when it is not
@@ -442,59 +439,58 @@ there are many possible subterms to swap;
 for inversion to know to only swap the subterms of \lstinline{H}, it must have a better
 understanding of the structure of the term. Both of these are ways to improve inversion.
 
-\paragraph{A Challenge for Generalization} Generalization produced an exponential number of candidates when generalizing a patch candidate with this type:
+\paragraph{A Challenge for Generalization} \kl{Generalization} produced an exponential number of candidates when generalizing a patch candidate with this type:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
-    (fun m => n <= max m n0) n $\rightarrow$(@\vspace{-0.04cm}@)
+  (@\ltacforall@) n n0,
+    (fun m => n <= max m n0) n $\rightarrow$
     (fun m => n <= max n0 m) n
 \end{lstlisting}
 The goal was to generalize by \lstinline{n} and produce a patch with this type:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) (@\diff{m0}@) n n0,(@\vspace{-0.04cm}@)
-    n <= max (@\diff{m0}@) n0 $\rightarrow$(@\vspace{-0.04cm}@)
-    n <= max n0 (@\diff{m0}@)
+  (@\ltacforall@) (@\diff{m0}@) n n0,
+    n <= max (@\diff{m0}@) n0 $\rightarrow$
+    n <= max n0 (@\diff{m0}@).
 \end{lstlisting}
 The difficulty was in determining which occurrences of \lstinline{n} to generalize.
 The component needed to generalize only the highlighted occurrences:
 
 \begin{lstlisting}
-  fun n n0 (H0 : n <= max n0 (@\diff{n}@)) =>(@\vspace{-0.04cm}@)
-    @eq_rect_r (@\vspace{-0.04cm}@)
-      nat (@\vspace{-0.04cm}@)
-      (max n0 (@\diff{n}@))(@\vspace{-0.04cm}@)
-      (fun n1 => n <= n1)(@\vspace{-0.04cm}@)
-      H0(@\vspace{-0.04cm}@)
-      (max (@\diff{n}@) n0)(@\vspace{-0.04cm}@)
+  fun n n0 (H0 : n <= max n0 (@\diff{n}@)) =>
+    @eq_rect_r
+      nat
+      (max n0 (@\diff{n}@))
+      (fun n1 => n <= n1)
+      H0
+      (max (@\diff{n}@) n0)
       (max_comm (@\diff{n}@) n0)
 \end{lstlisting}
 The simplest substitution strategy failed, and a more
 complex strategy
 succeeded only after producing exponentially many candidates.
 While this did not have a significant impact on time,
-this makes a good case for substitution strategies that are semantics-aware.
+this makes a good case for semantics-aware substitution strategies.
 In this case, we know from the type of the candidate
 and the type of \lstinline{eq_ind_r} that these two hypothesis types 
-are equivalent (similarly for the conclusion types):
+are equivalent (similarly for the conclusions):
 
 \begin{lstlisting}
-  (fun m => n <= max m n0) n(@\vspace{-0.04cm}@)
+  (fun m => n <= max m n0) n
   (fun n1 => n <= n1) (max n0 n)
 \end{lstlisting}
 The tool could search recursively for patches to find two patches that bridge the two equivalent
 types:
 
 \begin{lstlisting}
-  p1 := fun n => max n0 n(@\vspace{-0.04cm}@)
+  p1 := fun n => max n0 n
   p2 := fun n => max n n0
 \end{lstlisting}
 Then the candidate type is exactly this:
 
 \begin{lstlisting}
-  (@\ltacforall@) n n0,(@\vspace{-0.04cm}@)
-    (fun n1 => n <= n1) (@\diff{(p2 n)}@) $\rightarrow$(@\vspace{-0.04cm}@)
-    (fun n1 => n <= n1) (@\diff{(p1 n)}@)
+  (@\ltacforall@) n n0,
+    (fun n1 => n <= n1) (@\diff{(p2 n)}@) $\rightarrow$ (fun n1 => n <= n1) (@\diff{(p1 n)}@)
 \end{lstlisting}
 Generalization should thus generalize the highlighted subterms and the
 terms that have types constrained by those subterms.
@@ -502,16 +498,16 @@ terms that have types constrained by those subterms.
 This would produce a patch in one candidate:
 
 \begin{lstlisting}
-  fun (@\diff{m0}@) n n0 (H0 : n <= max n0 (@\diff{m0}@)) =>(@\vspace{-0.04cm}@)
-    @eq_ind_r (@\vspace{-0.04cm}@)
-      nat (@\vspace{-0.04cm}@)
-      (max n0 (@\diff{m0}@))           (* p1 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
-      (fun n1 => n <= n1) (* P *)(@\vspace{-0.04cm}@)
-      H0                    (* : P (p1 (@\diff{m0}@)) *)(@\vspace{-0.04cm}@)
-      (max (@\diff{m0}@) n0)           (* p2 (@\diff{m0}@) *)(@\vspace{-0.04cm}@)
+  fun (@\diff{m0}@) n n0 (H0 : n <= max n0 (@\diff{m0}@)) =>
+    @eq_ind_r
+      nat
+      (max n0 (@\diff{m0}@))           (* p1 (@\diff{m0}@) *)
+      (fun n1 => n <= n1) (* P *)
+      H0                    (* : P (p1 (@\diff{m0}@)) *)
+      (max (@\diff{m0}@) n0)           (* p2 (@\diff{m0}@) *)
       (max_comm (@\diff{m0}@) n0)      (* : p1 (@\diff{m0}@) = p2 (@\diff{m0}@) *)
 \end{lstlisting}
-This same strategy would find a patch for one of the pairs that \sysname failed to generalize.
+This strategy would find a patch for one of the pairs that \sysname failed to generalize.
 This is a natural future direction for generalization.
 
 \subsubsection{Performance}
@@ -520,7 +516,7 @@ This is a natural future direction for generalization.
 \sysname performed well for all pairs. The slowest success took \SI{48}{\ms}.\footnote{i7-4790K, at 4.00 GHz, 32 GB RAM}
 When \sysname failed, it failed fast. The slowest failure took \SI{7}{\ms}.
 While I found this promising, proof terms were very small ($\le$ 67 LOC);
-the later \toolnamec extension in Chapter~\ref{chapt:pi} can support large proof developments in an order of seconds.
+the later \toolnamec extension in Chapter~\ref{chapt:pi} can support larger proof developments (about 10000 LOC) in an order of seconds.
 
 %\sysname was slowest %at finding patches 
 %when the patch showed up inverted in the difference of proofs,

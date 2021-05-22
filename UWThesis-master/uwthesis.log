@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  21 MAY 2021 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2166,18 +2166,19 @@ Overfull \hbox (14.13942pt too wide) in paragraph at lines 178--186
  []
 
 ) (./repair/transformation.tex [41] [42] [43] [44] [45])
-(./repair/implementation.tex [46] [47] [48] [49]
+(./repair/implementation.tex
+contour: Using 2 copies for `\kl {\textsc {Pumpkin Patch}\xspace }' on input li
+ne 6.
+contour: Using 2 copies for `\kl {\textsc {Pumpkin}\xspace }' on input line 7.
+[46] [47] [48] [49]
 Overfull \hbox (19.64331pt too wide) in paragraph at lines 235--239
 \T1/pplj/m/n/10.95 (-20) This will search for a patch that cor-re-sponds to the
  change in []
  []
 
-[50] [51]
-
-LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
-(Font)              using `T1/pplj/bx/n' instead on input line 309.
-
-[52] [53] [54]) (./repair/results.tex [55] (./repair/compcert.tex)
+[50]
+contour: Using 2 copies for `\textsc {Pumpkin}\xspace ' on input line 287.
+[51] [52] [53] [54]) (./repair/results.tex [55] (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/compcert.tex)
 (./repair/compcert.tex) (./repair/compcert.tex) (./repair/bintonat.tex)
 (./repair/bintonat.tex) (./repair/bintonat.tex) (./repair/bintonat.tex)
@@ -2209,7 +2210,7 @@ Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
 
 ] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [64] [65]) (./often/approach.tex [66]
-<often/workflowa.pdf, id=2114, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=2128, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2225,7 +2226,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [75] [76]
-<often/Diagram.pdf, id=2455, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2469, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 281.
@@ -2298,10 +2299,14 @@ Overfull \hbox (5.39363pt too wide) in paragraph at lines 202--209
 [103] [104] [105]
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 400.
+
+
+LaTeX Font Warning: Font shape `T1/pplj/bx/sc' undefined
+(Font)              using `T1/pplj/bx/n' instead on input line 400.
+
 LaTeX Font Info:    Font shape `T1/pplj/bx/sc' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 400.
- [106]) (./often/conclusion.tex [107])) (./related.tex
-[108]
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 422.
+[106]) (./often/conclusion.tex [107])) (./related.tex [108]
 chapter 5.
 [109
 
@@ -2536,11 +2541,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51924 strings out of 492609
- 1051065 string characters out of 6129033
- 1328343 words of memory out of 5000000
- 52371 multiletter control sequences out of 15000+600000
- 679332 words of font info for 878 fonts, out of 8000000 for 9000
+ 51935 strings out of 492609
+ 1051237 string characters out of 6129033
+ 1328366 words of memory out of 5000000
+ 52374 multiletter control sequences out of 15000+600000
+ 679898 words of font info for 886 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -2565,10 +2570,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1872671 bytes).
+Output written on uwthesis.pdf (164 pages, 1875351 bytes).
 PDF statistics:
- 4791 PDF objects out of 5155 (max. 8388607)
- 4502 compressed objects within 46 object streams
- 1621 named destinations out of 1728 (max. 500000)
+ 4809 PDF objects out of 5155 (max. 8388607)
+ 4520 compressed objects within 46 object streams
+ 1619 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

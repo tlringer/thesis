@@ -477,6 +477,10 @@
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{44}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{45}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{46}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{46}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{46}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{46}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{46}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{46}
 \indexentry{Acknowledgments!PL Community!Edward Z. Yang|hyperpage}{46}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{47}
@@ -487,9 +491,17 @@
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{48}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{48}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{48}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{48}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{48}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{49}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{49}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{50}
+\indexentry{Verification!Coq Plugins|hyperpage}{50}
 \indexentry{Verification!Proof Engineering|hyperpage}{50}
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{52}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{53}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{53}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{54}
 \indexentry{Results!Case Studies|hyperpage}{55}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{56}
 \indexentry{Thesis Statement!Formal|hyperpage}{61}

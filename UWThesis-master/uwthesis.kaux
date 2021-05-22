@@ -2390,12 +2390,15 @@
 \KAuxNewLinkScopetagInstance {sec:workflow}{document}
 \KAuxDeclaredScopeTag {sec:eval}
 \KAuxNewLinkScopetagInstance {sec:eval}{document}
-\KAuxDeclaredScopeTag {fig:stronger}
-\KAuxNewLinkScopetagInstance {fig:stronger}{document}
 \KAuxDeclaredScopeTag {sec:suite}
 \KAuxNewLinkScopetagInstance {sec:suite}{document}
+\KAuxDeclaredScopeTag {fig:stronger}
+\KAuxNewLinkScopetagInstance {fig:stronger}{document}
 \KAuxDeclaredScopeTag {sec:fail}
 \KAuxNewLinkScopetagInstance {sec:fail}{document}
+
+\KAuxFileAt {implementation.tex}{379}
+\KAuxErrorKnowledgeUnknown {default}{}{propositionally equal}{propositionally equal}{\kl }
 \KAuxDeclaredScopeTag {sec:perf}
 \KAuxNewLinkScopetagInstance {sec:perf}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-results}

@@ -94,10 +94,10 @@
 \contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{53}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Differencing}{53}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Inversion}{53}{lstnumber.-104.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-107.4}% 
+\contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-107.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{55}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{55}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{56}{Item.40}% 
+\contentsline {paragraph}{Identifying Changes}{55}{Item.40}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{56}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{57}{subsection.3.6.1}% 
 \contentsline {paragraph}{Search}{57}{lstnumber.-132.1}% 

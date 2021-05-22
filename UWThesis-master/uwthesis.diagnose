@@ -2,7 +2,7 @@
 * Summary *
 ***********
 
-19 undefined knowledge(s).
+20 undefined knowledge(s).
 3 autoreference(s) are introduced twice.
 5 autoreference(s) are used but not introduced.
 
@@ -31,6 +31,7 @@
  | generalizes
  | specializes
  | factors
+ | propositionally equal
  | verifying
  | proof scripts
  | proof terms

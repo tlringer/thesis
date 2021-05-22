@@ -687,12 +687,23 @@
 \indexentry{Verification!Trusted Computing Base|hyperpage}{90}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{90}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{91}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{91}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{91}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{91}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{91}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{91}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{91}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{91}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{91}
+\indexentry{Verification!Coq Plugins|hyperpage}{91}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{91}
 \indexentry{Verification!Coq Commands|hyperpage}{91}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{91}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{91}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{92}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{92}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{92}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{93}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{93}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{93}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{94}
@@ -702,15 +713,27 @@
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{95}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{95}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
+\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{98}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{98}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{99}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{99}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{100}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{100}
+\indexentry{Results!Case Studies|hyperpage}{100}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{101}
+\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{101}
+\indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{101}
+\indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{101}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{101}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{102}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{102}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{102}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{103}
 \indexentry{Logic \& Type Theory!External|hyperpage}{104}

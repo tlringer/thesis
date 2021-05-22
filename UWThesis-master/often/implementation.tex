@@ -1,8 +1,8 @@
 \section{Implementation}
 \label{sec:pi-implementation}
 
-Like the \kl{\sysname} prototype,
-\toolnamec also ships with the \sysnamelong plugin suite by default.
+Like the \contour[2]{violet}{\kl{\sysname}} prototype,
+\contour[2]{violet}{\kl{\toolnamec}} is also included in the \contour[2]{violet}{\kl{\sysnamelong}} \kl{plugin} suite by default.
 As with \sysname, the latest version supports Coq 8.8, with Coq 8.9.1 support in a branch.
 This section decribes the implementation of the core functionality of the \toolnamec plugin (Section~\ref{sec:pi-details}),
 along with important features for workflow integration (Section~\ref{sec:pi-workflow}).
@@ -57,7 +57,7 @@ The repository includes more information on all of these.
 \subsubsection{Differencing}
 \label{sec:pi-details-diff}
 
-As mentioned in Section~\ref{sec:proc}, differencing inside of
+As mentioned in Section~\ref{sec:proc}, \kl{differencing} inside of
 \toolnamec implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}:
 
 \begin{enumerate}
@@ -67,15 +67,15 @@ As mentioned in Section~\ref{sec:proc}, differencing inside of
 \item moving between nested pairs and records.
 \end{enumerate}
 I already detailed the first of these in Section~\ref{sec:proc}.
-The second is often used in combination with the first, to get from equivalences of this form:
+The second is often used in combination with the first, to get from equivalences like:
 
 \begin{lstlisting}
-  $A \simeq \Sigma (i : I) . A_I i$
+  $A \simeq \Sigma (i : I) . A_I\ i$
 \end{lstlisting}
-to equivalences of this form:
+to equivalences like:
 
 \begin{lstlisting}
-  $\Sigma (a : A) . \pi a = i \simeq A_I i$
+  $\Sigma (a : A) . \pi\ a = i \simeq A_I\ i$
 \end{lstlisting}
 where $\pi$ is the indexer.
 The first two configurations are used in combination, for example,
@@ -112,7 +112,7 @@ and so worth implementing for useful classes of equivalences.
 \label{sec:pi-details-trans}
 
 The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}}
-of the transformation from Section~\ref{sec:pi-trans} operates over terms in Gallina.
+of the \kl{transformation} from Section~\ref{sec:pi-trans} operates over terms in Gallina.
 It takes as input two types \Aa and \B, along with a configuration that induces an equivalence between them.
 \Aa and \B may not necessarily be the inputs to differencing---in the case of algebraic ornaments, for example,
 differencing takes \Aa and \AI as inputs, but the transformation takes \Aa and \B as inputs,
@@ -166,7 +166,7 @@ over and over again, forever.
 \toolnamec thus includes some simple termination checks in the code~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftrules.ml}{\circled{12}}. % liftrules.ml
 
 \paragraph{Intent}
-Even when termination is guaranteed, whether to transform a subterm depends on intent.
+Even when termination is guaranteed, whether to transform a subterm depends on the proof engineer's intent.
 That is, \toolnamec automates the case of porting \textit{every} \Aa to \B,
 but proof engineers sometimes wish to port only \textit{some} $A$s to $B$s.
 \toolnamec has some support for this using an interactive workflow~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/minimal_records.v}{\circled{13}},
@@ -392,7 +392,7 @@ than those in Coq. \textbf{Decompile} includes additional logic to reason about 
 For example, Qtac assumes that there is only one \lstinline{rewrite} direction. Ltac has two rewrite directions,
 and so the decompiler infers the direction from the motive.
 
-Qtac also assumes that both tactics take the inductive motive explicitly,
+Qtac also assumes that both tactics take the \kl{motive} explicitly,
 while in Coq, both tactics infer the motive automatically.
 Consequentially, Coq sometimes fails to infer the correct motive.
 % infers the wrong motive, % without manipulation of goals and hypotheses,
@@ -420,7 +420,7 @@ In all other cases, it uses \lstinline{pose}, a catch-all for let bindings.
 \paragraph{Forfeiting Soundness}
 While there is a way to always produce a correct proof script,
 by default, \textbf{Decompile} deliberately forfeits soundness to suggest more useful tactics.
-For example, it may suggest the \lstinline{induction} tactic, but leave the step of motive inference to the proof engineer.
+For example, it may suggest the \lstinline{induction} tactic, but leave motive inference to the proof engineer.
 I have found these suggested tactics easier to work with (Section~\ref{sec:pi-results}).
 Note that in the case the suggested proof script is not quite correct,
 it is still possible to use the generated proof term directly.
@@ -443,7 +443,7 @@ Once the proof engineer has the new proof, she can remove the old one.
 \subsubsection{Reaching Real Proof Engineers}
 \label{sec:engineers}
 
-In the end, the goal of workflow integration is to reach real proof engineers.
+The goal of workflow integration is to reach real proof engineers.
 Many of my design decisions in implementing \toolnamec were informed by my partnership with
 an industrial proof engineer (Section~\ref{sec:pi-results}).
 For example, the proof engineer rarely had the patience to wait more than ten seconds

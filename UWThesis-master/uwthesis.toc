@@ -186,7 +186,7 @@
 \contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.42}% 
 \contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.42}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{103}{figure.caption.42}% 
-\contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.2}Evaluation: External Transport}{104}{subsection.4.6.2}% 
 \contentsline {paragraph}{Historical Note}{104}{Item.60}% 
 \contentsline {paragraph}{Setup}{105}{Item.60}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{105}{subsubsection.4.6.2.1}% 

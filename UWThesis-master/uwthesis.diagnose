@@ -6,8 +6,8 @@
 4 autoreference(s) are introduced twice.
 3 autoreference(s) are used but not introduced.
 
-129 autoreference(s) are properly used.
-97 autoreference(s) are defined but not used.
+130 autoreference(s) are properly used.
+96 autoreference(s) are defined but not used.
 
 
 ********
@@ -163,7 +163,6 @@ index.tex:630: {Nathanael}{default}{base}
 index.tex:632: {Daniel-Nikpayuk}{default}{base}
 index.tex:634: {Michelle Lee}{default}{base}
 index.tex:636: {Quinn Wilton}{default}{base}
-index.tex:736: {\toolnamec }{default}{base}
 index.tex:754: {results}{default}{base}
 index.tex:763: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 

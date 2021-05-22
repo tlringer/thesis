@@ -168,7 +168,7 @@
 		\hyperpage{77}, \hyperpage{110}, \hyperpage{115, 116}, 
 		\hyperpage{124}
     \subitem Dependent Types, \hyperpage{20}, \hyperpage{78}, 
-		\hyperpage{81}, \hyperpage{90}
+		\hyperpage{81}, \hyperpage{90}, \hyperpage{101}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{74}, 
 		\hyperpage{109}
@@ -185,11 +185,13 @@
 		\hyperpage{76}, \hyperpage{79}, \hyperpage{114}
       \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{20}, 
 		\hyperpage{38}, \hyperpage{71, 72}, \hyperpage{76}, 
-		\hyperpage{79}, \hyperpage{107}, \hyperpage{115}
+		\hyperpage{79}, \hyperpage{101}, \hyperpage{107}, 
+		\hyperpage{115}
       \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{38}, 
 		\hyperpage{40}, \hyperpage{79}, \hyperpage{84}
       \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
-		\hyperpage{38}, \hyperpage{40}, \hyperpage{83}
+		\hyperpage{38}, \hyperpage{40}, \hyperpage{83}, 
+		\hyperpage{98}
     \subitem Initial Algebra, \hyperpage{76, 77}
     \subitem Internal, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
     \subitem Intuitionistic Logic, \hyperpage{109, 110}, 
@@ -199,7 +201,7 @@
 		\hyperpage{30}, \hyperpage{40}, \hyperpage{58}, 
 		\hyperpage{73}, \hyperpage{92, 93}
     \subitem Sigma Types, \hyperpage{21}, \hyperpage{73}, 
-		\hyperpage{85}
+		\hyperpage{85}, \hyperpage{101}
     \subitem Type Theories
       \subsubitem Calculus of Constructions, \hyperpage{19, 20}
       \subsubitem Calculus of Inductive Constructions, \hyperpage{16}, 
@@ -246,7 +248,8 @@
       \subsubitem Manual Configuration, \hyperpage{63}, \hyperpage{66}, 
 		\hyperpage{68}, \hyperpage{70}, \hyperpage{72}, 
 		\hyperpage{87}, \hyperpage{91}
-      \subsubitem Unification Heuristics, \hyperpage{89, 90}
+      \subsubitem Unification Heuristics, \hyperpage{89, 90}, 
+		\hyperpage{101}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
 		\hyperpage{119}
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
@@ -276,29 +279,30 @@
 
   \item Results, \hyperpage{4}
     \subitem Case Studies, \hyperpage{5}, \hyperpage{29}, 
-		\hyperpage{55}, \hyperpage{123}
+		\hyperpage{55}, \hyperpage{100}, \hyperpage{123}
     \subitem Design, \hyperpage{4, 5}
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{41}, 
 		\hyperpage{48}, \hyperpage{57}, \hyperpage{59}, 
 		\hyperpage{66}, \hyperpage{72}, \hyperpage{87}, 
-		\hyperpage{114}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{93}, \hyperpage{114}, \hyperpage{123}, 
+		\hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34, 35}, 
 		\hyperpage{37, 38}, \hyperpage{47}, \hyperpage{53}, 
 		\hyperpage{57}, \hyperpage{59}, \hyperpage{61}, 
 		\hyperpage{66}, \hyperpage{70}, \hyperpage{72}, 
-		\hyperpage{114, 115}, \hyperpage{119, 120}, 
-		\hyperpage{123}, \hyperpage{126}
+		\hyperpage{92}, \hyperpage{114, 115}, 
+		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{46}, 
 		\hyperpage{63}, \hyperpage{66}, \hyperpage{91}
       \subsubitem \sysnamelong Plugin Suite, \hyperpage{5}, 
 		\hyperpage{29}, \hyperpage{46}, \hyperpage{63}, 
-		\hyperpage{123}
-      \subsubitem \toolnamec Plugin, \hyperpage{63}
+		\hyperpage{91}, \hyperpage{123}
+      \subsubitem \toolnamec Plugin, \hyperpage{63}, \hyperpage{91}
 
   \indexspace
 
@@ -314,7 +318,7 @@
     \subitem Coq Commands, \hyperpage{32}, \hyperpage{67}, 
 		\hyperpage{91}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
-		\hyperpage{50}, \hyperpage{63}
+		\hyperpage{50}, \hyperpage{63}, \hyperpage{91}
     \subitem de Bruijn Criterion, \hyperpage{109, 110}
     \subitem Kernel, \hyperpage{2}, \hyperpage{4}, \hyperpage{11}, 
 		\hyperpage{14}, \hyperpage{16}, \hyperpage{109--111}

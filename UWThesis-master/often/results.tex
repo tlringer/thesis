@@ -7,7 +7,7 @@
 % Below is PUMPKIN Pi Case Studies unchanged
 
 \toolnamec is flexible and useful.
-It can help and in fact has helped proof engineers {save work on a variety of real proof repair scenarios} (Section~\ref{sec:results}).
+It can help and in fact has helped proof engineers save work on a variety of real proof repair scenarios (Section~\ref{sec:results}).
 In addition, the approach taken has measurable benefits in terms of both work savings and performance
 relative to a comparable tool for the class of changes on which \kl{Nate} and I have done an extended evaluation (Section~\ref{sec:eval}).
 
@@ -37,12 +37,12 @@ relative to a comparable tool for the class of changes on which \kl{Nate} and I 
     \hline
     \multirow[t]{3}{*}{Perm. Constructors} & \multirow[t]{3}{*}{$\heartsuit \heartsuit \heartsuit$} & List, Std. Lib. \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}
     & \good & Pi, UP & Pi \\
-     & & Modify PL, \kl{\textsc{REPLica}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v 
+     & & Modify PL, \contour[2]{violet}{\kl{\textsc{REPLica}}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v 
      & \ok & Pi, UP  & Pi \\
     & & Large Ambig. Enum \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}} % Swap.v
     & \ok & Pi, UP & Pi \\
     \hline
-    Add Constructors & $\heartsuit \heartsuit$ & Extend PL, \kl{\textsc{REPLica}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v})
+    Add Constructors & $\heartsuit \heartsuit$ & Extend PL, \contour[2]{violet}{\kl{\textsc{REPLica}}} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/add_constr.v}{\circled{19}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/add_constr.v}{add_constr.v})
     & \bad & Pi & Pi (part) \\
     \hline
     Factor Constructors & $\heartsuit$ & Reviewer \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}} % (\href{https://github.com/uwplse/pumpkin-pi/blob/master/plugin/coq/playground/constr_refactor.v}{constr_refactor.v}) 
@@ -65,7 +65,7 @@ More nuanced comparisons to these and more are in Chapter~\ref{sec:related}.}
 This section summarizes eight case studies using \toolnamec,
 corresponding to the eight rows in Table~\ref{fig:changes}.
 %For each case study, we explain the configuration used, walk through an example, and describe lessons learned.
-These case studies highlight \toolnamec's flexibility in handling diverse scenarios,
+These \kl{case studies} highlight \toolnamec's flexibility in handling diverse scenarios,
 %including in one case for an industrial user with unanticipated workflow.
 the success of automatic configuration for better workflow integration, % for supported changes,
 the preliminary success of the prototype decompiler,
@@ -112,7 +112,7 @@ In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/c
 vectors of a \textit{particular} length, like \lstinline{vector T n}.
 %\textsc{Devoid} had left this step to the proof engineer.
 I supported this in \toolnamec by chaining the previous change
-with an automatic configuration for unpacking sigma types.
+with an automatic configuration for unpacking \kl{$\Sigma$} types.
 %To support this, we used one additional automatic configuration for unpacking sigma types.
 %This configuration corresponds to the equivalence between sigma types at a particular projection
 %and the same type escaping the sigma type. %, in our example $\Sigma$\lstinline{(s : packed_vect T).}$\pi_l$\lstinline{ s = n }$\simeq$\lstinline
@@ -122,15 +122,15 @@ By composition, this transported proofs across the equivalence from Section~\ref
 Two tricks helped with workflow integration for this change:
 1) have the search procedure view \lstinline{vector T n} as 
 $\Sigma$\lstinline{(v : vector T m).n = m} for some \lstinline{m},
-then let \toolnamec instantiate those equalities via unification heuristics, %before transforming,
-and 2) generate a custom eliminator for combining
+then let \toolnamec instantiate those equalities via \kl{unification heuristics}, %before transforming,
+and 2) generate a custom \kl{eliminator} for combining
 list terms with length invariants.
 %This gave us a proof of this lemma (with \lstinline{zip_with} and \lstinline{zip} operating over lists at given lengths):
 The resulting workflow works not just for lists and vectors, but for any algebraic ornament,
 automating otherwise manual effort.
 The suggested tactics were helpful for writing proofs in the order of hours
 that I had struggled with manually over the course of days, but only after massaging.
-More effort is needed to improve tactic suggestions for dependent types.
+More effort is needed to improve tactic suggestions for \kl{dependent types}.
 
 \paragraph{Tuples \& Records: Industrial Use}
 An industrial proof engineer at the company \company has been using \toolnamec in proving
@@ -169,7 +169,7 @@ followed by later returns.
 
 \paragraph{Permute Constructors: Modifying a Language}
 The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
-from the \kl{\textsc{REPLica}} user study of proof engineers.
+from the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study of proof engineers.
 A change from one of the benchmarks is in Figure~\ref{fig:replica}.
 The proof engineer had a simple language represented by an inductive type \lstinline{Term},
 as well as some definitions and proofs about the language.
@@ -255,7 +255,7 @@ for \lstinline{DepConstr} and \lstinline{DepElim} that had the desired behavior 
 from the standard library that reduced the successor case of the eliminator that I used for \lstinline{DepElim}:
 
 \begin{lstlisting}
-  N.peano_rect_succ : $\forall$ (P : N $\rightarrow$ Type) pO pS (n : N),
+  N.peano_rect_succ : (@\ltacforall@) (P : N $\rightarrow$ Type) pO pS (n : N),
     N.peano_rect P pO pS (N.succ n) =
     pS n (N.peano_rect P pO pS n).
 \end{lstlisting}
@@ -290,11 +290,11 @@ tactics for applications of \lstinline{Iota}; both of these are clear paths to m
 The development time for this proof with \toolnamec was comparable to reference manual repairs by external proof engineers.
 Custom unification heuristics would help bring returns on investment for experts in this use case.
 
-\subsection{Evaluation: \toolnamec for Transport}
+\subsection{Evaluation: External Transport}
 \label{sec:eval}
 
 \toolnamec implements transport across equivalences \kl{externally}, in a way that is suitable for repair.
-One benefit of external transport is that, for some classes of changes,
+A bonus benefit of external transport is that, for some classes of changes,
 the resulting terms are small and compute efficiently relative to those derived via \kl{internal} transport.
 To evaluate this, \kl{Nate} and I compared \toolnamec to a tool that approximates internal transport across equivalences in Coq,
 using \kl{algebraic ornaments} as an example.
@@ -392,7 +392,7 @@ with a timeout of one hour.}
 \hline
  \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{523}(1.00\mathrm{x})$ \\
 \cline{2-7}
- & \textbf{\toolnamec} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
+ & \textbf{Pi} & $\phantom{2}0.0$ & $\phantom{6}0.0$ & $\phantom{33}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{222}3.0\ \phantom{12}(1.00\mathrm{x})$ & $\phantom{513}35.0\ \phantom{522}(0.95\mathrm{x})$ \\
 \cline{2-7}
  & \textbf{UP} & $\phantom{2}0.0$ & $\phantom{6}1.0$ & $\phantom{3}27.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{2}486.5\ (162.17\mathrm{x})$ & $\phantom{5}8078.5\ \phantom{5}(218.33\mathrm{x})$ \\
 \hline
@@ -411,10 +411,10 @@ with a timeout of one hour.}
    & & \textbf{10} & \textbf{100} & \textbf{1000} & \textbf{10000} & \textbf{100000} \\
 \hline
  \multirow{3}{*}{\smallmath{$\texttt{preorder}$}} & \textbf{Unlifted} &  $\phantom{1}0.0$ & $\phantom{6}0.0$ & $\phantom{20}0.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{313}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{555}37.0\ \phantom{512}(1.00\mathrm{x})$  \\ \cline{2-7}
- & \textbf{\toolnamec} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{Pi} & $71.5$ & $71.0$ & $\phantom{1}69.0\ \phantom{(33.50\mathrm{x})}$ & $\phantom{12}75.0\ \phantom{4}(25.00\mathrm{x})$ & $\phantom{25}109.0\ \phantom{513}(2.95\mathrm{x})$ \\ \cline{2-7}
  & \textbf{UP} & $\phantom{1}1.0$ & $11.0$ & $152.0\ \phantom{(33.50\mathrm{x})}$ & $2976.5\ (992.17\mathrm{x})$ & $56636.5\ (1530.72\mathrm{x})$ \\ \hline
  \multirow{3}{*}{\smallmath{$\texttt{search}$}} & \textbf{Unlifted} & $\phantom{1}0.0$ & $\phantom{6}0.0$  & $\phantom{22}2.0\ \phantom{1}(1.00\mathrm{x})$  & $\phantom{123}3.0\ \phantom{42}(1.00\mathrm{x})$ & $\phantom{312}29.0\ \phantom{513}(1.00\mathrm{x})$ \\ \cline{2-7}
- & \textbf{\toolnamec} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
+ & \textbf{Pi} & $12.0$ & $14.0$ & $\phantom{1}12.0\ \phantom{1}(6.00\mathrm{x})$  & $\phantom{12}15.0\ \phantom{45}(5.00\mathrm{x})$ & $\phantom{512}50.0\ \phantom{555}(1.72\mathrm{x})$ \\ \cline{2-7}
  & \textbf{UP} & $\phantom{1}1.0$ & $\phantom{6}5.0$ & $\phantom{1}67.0\ (33.50\mathrm{x})$ & $1062.0\ (354.00\mathrm{x})$ & $15370.5\ \phantom{5}(530.02\mathrm{x})$  \\
 \hline
 \end{tabular}
@@ -433,7 +433,7 @@ runtime in the second scenario for \lstinline{preorder} and \lstinline{search}.
 The \lstinline{inorder} and \lstinline{postorder} functions performed similarly to \lstinline{preorder}.
 The functions \toolnamec produced imposed modest overhead for smaller inputs, but were
 tens to hundreds of times faster than the functions that UP produced for larger inputs.
-This performance gap was more pronounced over multiple iterations of lifting.
+This performance gap was more pronounced over multiple iterations.
 
 \toolnamec also produced smaller terms:
 in the first scenario, 13 vs. 25 LOC for \lstinline{preorder},

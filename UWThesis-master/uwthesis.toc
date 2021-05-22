@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Design}{38}{subsection.3.3.1}% 
 \contentsline {paragraph}{Historical Note}{38}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Limitations}{41}{subsection.3.3.2}% 
-\contentsline {paragraph}{Heuristics}{41}{subsection.3.3.2}% 
+\contentsline {paragraph}{Ad Hoc Nature}{41}{subsection.3.3.2}% 
 \contentsline {paragraph}{Isolating Changes}{41}{subsection.3.3.2}% 
 \contentsline {section}{\numberline {3.4}Transformation}{41}{section.3.4}% 
 \contentsline {subsection}{\numberline {3.4.1}Design}{42}{subsection.3.4.1}% 
@@ -150,7 +150,7 @@
 \contentsline {paragraph}{Deriving the Configuration}{85}{figure.caption.34}% 
 \contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-206.1}% 
 \contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
-\contentsline {paragraph}{Heuristics}{87}{subsection.4.3.5}% 
+\contentsline {paragraph}{Ad Hoc Nature}{87}{subsection.4.3.5}% 
 \contentsline {paragraph}{Isolating Changes}{87}{subsection.4.3.5}% 
 \contentsline {section}{\numberline {4.4}Transformation}{87}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Unification Heuristics}{89}{subsection.4.4.1}% 

@@ -52,11 +52,11 @@ Instead, I describe them at a high level, as heuristics in CIC$_{\omega}$.
 For the sake of presentation, I still refer to the judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ as the interface,
 even though I do not provide the derivations.
 In Chapter~\ref{chapt:pi}, I will formalize a more elegant differencing algorithm for the \toolnamec extension,
-building on some of the insights from differencing in the \sysname prototype.
+building on some of the insights from differencing in this prototype.
 
 \subsubsection*{Identity}
 The simplest patch is the identity patch.
-When two terms are definitionally equal, % TODO need to explain this somewhere, using latest text from PUMPKIN Pi
+When two terms are \kl{definitionally equal}, % TODO need to explain this somewhere, using latest text from PUMPKIN Pi
 differencing infers that the goal is identity,
 and returns a singleton list containing only the identity function instantiated to the appropriate type.
 
@@ -111,10 +111,10 @@ differencing acts similarly, but it substitutes the changed hypothesis type in t
 It also has some additional logic to remove hypothesis that need not show up in the goal type.
 
 \subsubsection*{Eliminators} % From implementation, plus some additional stuff
-Recall that inductive types in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.
+Recall that \kl{inductive types} in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.
 The semantic differencing algorithms views inductive types as \emph{trees} that represent these eliminators.
 In these trees, every node is a type context, and every edge is an extension to that type context 
-with a new term.\footnote{These trees are inspired by categorical models of dependent type theory~\cite{Hofmann97}.}
+with a new term. %\footnote{These trees are inspired by categorical models of dependent type theory~\cite{Hofmann97}.}
 Correspondingly, type differencing (to identify goal types) compares nodes, 
 and term differencing (to find candidates) compares edges. 
 
@@ -127,7 +127,7 @@ and term differencing (to find candidates) compares edges.
 \end{figure}
 
 The key benefit to this model is that it provides a natural way to express inductive proofs, so
-that differencing can efficiently identify good candidates.
+that differencing can efficiently identify candidates.
 Consider, for example, searching for a patch between conclusions of two inductive proofs of theorems about the natural numbers:
 
 \begin{lstlisting}
@@ -146,9 +146,10 @@ try to find a term that maps between conclusions of that case:
 
 \begin{lstlisting}[language=coq]
   $\Gamma \vdash (f_0,\ g_0,\ Q\ 0 \rightarrow P\ 0) \Downarrow_{d} \vec{t_0}$
-  $\Gamma \vdash (f_S,\ g_S,\ \Pi (n : nat) . Q\ (S\ n) \rightarrow P\ (S\ n)) \Downarrow_{d} \vec{t_S}$
+  $\Gamma \vdash (f_S,\ g_S,\ \Pi (n : \mathrm{nat}) . Q\ (S\ n) \rightarrow P\ (S\ n)) \Downarrow_{d} \vec{t_S}$
 \end{lstlisting}
-In the inductive case, differencing also knows that the change in the type of the inductive hypothesis is not semantically relevant (it occurs for any change in the inductive motive).
+where \lstinline{O} is shorthand for \lstinline{Constr (0, nat)}, and \lstinline{S} is shorthand for \lstinline{Constr (1, nat)}.
+In the inductive case, differencing also knows that the change in the type of the \kl{inductive hypothesis} is not semantically relevant (it occurs for any change in the inductive \kl{motive}).
 Furthermore, it knows that the inductive hypothesis cannot show up in the patch itself, since the goal type does not reference the inductive hypothesis,
 so it attempts to remove any occurrences of the inductive hypothesis in any candidate.
 
@@ -164,23 +165,26 @@ This section describes two fundamental limitations of differencing in \sysname,
 and whether they are addressed in the later \toolnamec extension.
 Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-diff}.
 
-\paragraph{Heuristics}
-Differencing in \sysname is heuristic-based.
+\paragraph{Ad Hoc Nature}
+Differencing in \sysname is ad hoc.
 This is to some degree inevitable, as the space of possible changes is infinite.\footnote{In particular, it is the cartesian product of the 
 space of every possible old term and type,
 combined with every possible new term and type.}
-Still, the limitations imposed by this are partly historical: for the \sysname prototype, the heuristics were designed bottom-up, and were in many cases too narrow or redundant.
+Still, this is partly historical: for the \sysname prototype, differencing was designed bottom-up, and so the corresponding heuristics
+are in many cases too narrow or redundant.
 The extension to differencing in \toolnamec not only supports a large class of changes not supported by \sysname,
-but also abstracts many more details of heuristics.
+but does so much more generically.
 
 \paragraph{Isolating Changes} Differencing supports only incremental changes.
-The \kl{\textsc{REPLica}} user study showed that, during proof development,
+The \contour[2]{violet}{\kl{\textsc{REPLica}}} user study showed that, during proof development,
 proof engineers often make incremental changes---so this should be helpful for development already.
 But changes in existing artifacts like Git repositories may capture multiple changes at the same time.
 An outstanding challenge for differencing that neither \sysname nor \toolnamec yet support
 is to break down large, composite changes into small, isolated changes.
 Isolating changes would help with extracting repair benchmarks from artifacts, supporting library and version updates, and integrating with CI systems.
-One idea for this is to draw on work in change and dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes,
-then use the factoring transformation to break those changes into smaller parts.
+Chapter~\ref{chapt:conclusions} describes some ideas for how to do this.
+
+%One idea for this is to draw on work in change and dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes,
+%then use the factoring transformation to break those changes into smaller parts.
 
 

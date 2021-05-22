@@ -911,19 +911,20 @@ This consists of four judgments: one for each configuration part \lstinline{DepC
 \subsection{Revisiting Limitations}
 \label{sec:pi-diff-limits}
 
-Differencing in \sysname had a two fundamental limitations: its heuristic-based nature
+Differencing in \sysname had a two fundamental limitations: its ad hoc nature
 and the difficulty of isolating changes.
 With \toolnamec in the \sysnamelong repair suite, these limitations are substantially addressed.
 As in the previous chapter, limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pi-details-diff}.
 
-\paragraph{Heuristics}
-The \toolnamec differencing algorithms---like the \sysname differencing algorithms---are still heuristics, as is fundamental.
-For \toolnamec, these heuristics are much more carefully chosen: the domain of each search procedure for \kl{automatic configuration} is defined as a large class of type equivalences,
+\paragraph{Ad Hoc Nature}
+The differencing algorithms in \toolnamec are much less ad hoc than those from \sysname.
+For one, the supported changes are much more carefully chosen:
+the domain of each search procedure for \kl{automatic configuration} is defined as a large class of type equivalences,
 drawing on inspiration from type theory and from the needs of proof engineers.
 In addition, a number of the algorithms presented in this section, like the algorithm the prove an equivalence from a configuration,
-are generic over any possible type equivalence.
+are generic over \textit{any} possible type equivalence, and so are not limited to automatic configurations implemented so far.
 Most notably, the heuristics in \toolnamec---unlike those in \sysname---are abstracted away from the transformation entirely,
-since the transformation is fully general over any configuration.
+since the transformation is fully generic over any configuration.
 
 \paragraph{Isolating Changes}
 While \toolnamec adds support for a large class of changes,

@@ -468,12 +468,6 @@ Kesha Hietala, Robert Rand, Shih-Han Hung, Xiaodi Wu, and Michael Hicks.
 \newblock {\em Proceedings of the ACM on Programming Languages}, 5(POPL):1--29,
   2021.
 
-\bibitem{Hofmann97}
-Martin Hofmann.
-\newblock Syntax and semantics of dependent types.
-\newblock In {\em Semantics and Logics of Computation}, pages 79--130.
-  Cambridge University Press, 1997.
-
 \bibitem{hollight}
 {HOL Light Development Team}.
 \newblock {HOL Light}, 1996-2021.

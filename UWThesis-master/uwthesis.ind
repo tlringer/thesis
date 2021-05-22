@@ -176,16 +176,17 @@
 		\hyperpage{87}, \hyperpage{110}, \hyperpage{115}
     \subitem External, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
     \subitem Inductive Types, \hyperpage{16}, \hyperpage{20}, 
-		\hyperpage{73}, \hyperpage{81}, \hyperpage{114}
+		\hyperpage{40}, \hyperpage{73}, \hyperpage{81}, 
+		\hyperpage{114}
       \subsubitem Constructors, \hyperpage{16, 17}, \hyperpage{20}, 
 		\hyperpage{73}, \hyperpage{79}, \hyperpage{114}
       \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{20}, 
 		\hyperpage{38}, \hyperpage{71, 72}, \hyperpage{76}, 
 		\hyperpage{79}, \hyperpage{107}, \hyperpage{115}
       \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{38}, 
-		\hyperpage{79}, \hyperpage{84}
+		\hyperpage{40}, \hyperpage{79}, \hyperpage{84}
       \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
-		\hyperpage{38}, \hyperpage{83}
+		\hyperpage{38}, \hyperpage{40}, \hyperpage{83}
     \subitem Initial Algebra, \hyperpage{76, 77}
     \subitem Internal, \hyperpage{71}, \hyperpage{105}, \hyperpage{115}
     \subitem Intuitionistic Logic, \hyperpage{109, 110}, 
@@ -269,9 +270,10 @@
 		\hyperpage{123}, \hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
-		\hyperpage{31, 32}, \hyperpage{34, 35}, \hyperpage{37}, 
-		\hyperpage{47}, \hyperpage{72}, \hyperpage{114, 115}, 
-		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{31, 32}, \hyperpage{34, 35}, 
+		\hyperpage{37, 38}, \hyperpage{47}, \hyperpage{72}, 
+		\hyperpage{114, 115}, \hyperpage{119, 120}, 
+		\hyperpage{123}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{46}, 
 		\hyperpage{67}, \hyperpage{91}
@@ -345,7 +347,7 @@
 		\hyperpage{14--16}, \hyperpage{27}, \hyperpage{65}, 
 		\hyperpage{95}
       \subsubitem Gallina, \hyperpage{10--13}, \hyperpage{15, 16}, 
-		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{37}, 
+		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{38}, 
 		\hyperpage{65}, \hyperpage{95}, \hyperpage{109, 110}, 
 		\hyperpage{113}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{32}, 

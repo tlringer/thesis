@@ -113,6 +113,7 @@
 \indexentry{Acknowledgments!Coq Community!Robert Rand|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Carlo Angiuli|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Conor McBride|hyperpage}{xv}
+\indexentry{Acknowledgments!PL Community!Michael Shulman|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Matthew Dwyer|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Matt Might|hyperpage}{xv}
 \indexentry{Acknowledgments!PL Community!Bas Spitters|hyperpage}{xv}
@@ -602,14 +603,21 @@
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{72}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{72}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{72}
+\indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{72}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{72}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{73}
-\indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{73}
+\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{74}
+\indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{74}
@@ -618,10 +626,15 @@
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{75}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{75}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{75}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{75}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{75}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{75}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{76}
+\indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{76}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{76}
 \indexentry{Logic \& Type Theory!Initial Algebra|hyperpage}{76}
+\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{77}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{77}
 \indexentry{Acknowledgments!PL Community!Michael Shulman|hyperpage}{77}
 \indexentry{Acknowledgments!PL Community!Carlo Angiuli|hyperpage}{77}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{77}

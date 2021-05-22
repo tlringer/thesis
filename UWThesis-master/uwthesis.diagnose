@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-19 undefined knowledge(s).
+18 undefined knowledge(s).
 3 autoreference(s) are introduced twice.
-5 autoreference(s) are used but not introduced.
+4 autoreference(s) are used but not introduced.
 
-123 autoreference(s) are properly used.
-102 autoreference(s) are defined but not used.
+127 autoreference(s) are properly used.
+99 autoreference(s) are defined but not used.
 
 
 ********
@@ -34,7 +34,6 @@
  | propositionally equal
  | proof scripts
  | proof terms
- | contructors
  | CIC${_\omega }$
  | Proof refactoring
  | program refactoring
@@ -63,7 +62,6 @@ approach.tex:9: {example patched proof}{default}{base}
 \nointro{default}{base}{proof object}
 \nointro{default}{base}{intensional}
 \nointro{default}{base}{programming languages community}
-\nointro{default}{base}{Michael Shulman}
 \nointro{default}{base}{Anders M\"{o}rtberg}
 
 
@@ -77,7 +75,6 @@ index.tex:82: {proof maintenance}{default}{base}
 index.tex:104: {RedPRL}{default}{base}
 index.tex:173: {polymorphism}{default}{base}
 index.tex:176: {dependent types}{default}{base}
-index.tex:182: {$\Sigma $}{default}{base}
 index.tex:222: {John Leo}{default}{base}
 index.tex:225: {Ilya Sergey}{default}{base}
 index.tex:228: {Milos Gligoric}{default}{base}
@@ -168,8 +165,6 @@ index.tex:628: {Nathanael}{default}{base}
 index.tex:630: {Daniel-Nikpayuk}{default}{base}
 index.tex:632: {Michelle Lee}{default}{base}
 index.tex:634: {Quinn Wilton}{default}{base}
-index.tex:699: {dependent constructors}{default}{base}
-index.tex:703: {dependent eliminators}{default}{base}
 index.tex:734: {\toolnamec }{default}{base}
 index.tex:752: {results}{default}{base}
 index.tex:761: {Adapting Proof Automation to Adapt Proofs}{default}{base}

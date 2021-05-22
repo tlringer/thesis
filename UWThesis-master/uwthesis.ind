@@ -165,13 +165,14 @@
       \subsubitem Uniqueness of Identity Proofs, \hyperpage{110}, 
 		\hyperpage{116}, \hyperpage{124}
       \subsubitem Univalence, \hyperpage{69}, \hyperpage{71}, 
-		\hyperpage{110}, \hyperpage{115, 116}, \hyperpage{124}
+		\hyperpage{77}, \hyperpage{110}, \hyperpage{115, 116}, 
+		\hyperpage{124}
     \subitem Dependent Types, \hyperpage{20}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{74}, 
 		\hyperpage{109}
-      \subsubitem Transport, \hyperpage{71, 72}, \hyperpage{87}, 
-		\hyperpage{115}, \hyperpage{117}
+      \subsubitem Transport, \hyperpage{71, 72}, \hyperpage{74}, 
+		\hyperpage{87}, \hyperpage{115}, \hyperpage{117}
       \subsubitem Type Equivalences, \hyperpage{66}, \hyperpage{68--72}, 
 		\hyperpage{87}, \hyperpage{110}, \hyperpage{115}
     \subitem External, \hyperpage{71}, \hyperpage{104}, \hyperpage{115}
@@ -179,7 +180,7 @@
 		\hyperpage{40}, \hyperpage{73}, \hyperpage{81}, 
 		\hyperpage{114}
       \subsubitem Constructors, \hyperpage{16, 17}, \hyperpage{20}, 
-		\hyperpage{73}, \hyperpage{79}, \hyperpage{114}
+		\hyperpage{76}, \hyperpage{79}, \hyperpage{114}
       \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{20}, 
 		\hyperpage{38}, \hyperpage{71, 72}, \hyperpage{76}, 
 		\hyperpage{79}, \hyperpage{107}, \hyperpage{115}
@@ -195,13 +196,13 @@
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
 		\hyperpage{30}, \hyperpage{40}, \hyperpage{58}, 
 		\hyperpage{73}, \hyperpage{92, 93}
-    \subitem Sigma Types, \hyperpage{21}
+    \subitem Sigma Types, \hyperpage{21}, \hyperpage{73}
     \subitem Type Theories
       \subsubitem Calculus of Constructions, \hyperpage{19, 20}
       \subsubitem Calculus of Inductive Constructions, \hyperpage{16}, 
 		\hyperpage{19}, \hyperpage{27}, \hyperpage{38}, 
-		\hyperpage{71}, \hyperpage{73}, \hyperpage{109}, 
-		\hyperpage{115}, \hyperpage{117}
+		\hyperpage{71}, \hyperpage{73}, \hyperpage{77}, 
+		\hyperpage{109}, \hyperpage{115}, \hyperpage{117}
       \subsubitem Cubical Type Theory, \hyperpage{110}, \hyperpage{125}
       \subsubitem Homotopy Type Theory, \hyperpage{69}, \hyperpage{71}, 
 		\hyperpage{77}, \hyperpage{115}
@@ -227,14 +228,14 @@
 		\hyperpage{63}
       \subsubitem Automatic Configuration, \hyperpage{64}, 
 		\hyperpage{66}, \hyperpage{68}, \hyperpage{70}, 
-		\hyperpage{72}, \hyperpage{80}, \hyperpage{87}, 
-		\hyperpage{92}
+		\hyperpage{72}, \hyperpage{74}, \hyperpage{80}, 
+		\hyperpage{87}, \hyperpage{92}
       \subsubitem Configuration, \hyperpage{63}, \hyperpage{72}, 
 		\hyperpage{76}
       \subsubitem Dependent Constructors, \hyperpage{73}
       \subsubitem Dependent Eliminators, \hyperpage{73}
-      \subsubitem Eta, \hyperpage{75}, \hyperpage{114}
-      \subsubitem Iota, \hyperpage{75}, \hyperpage{114}, 
+      \subsubitem Eta, \hyperpage{73}, \hyperpage{75}, \hyperpage{114}
+      \subsubitem Iota, \hyperpage{73}, \hyperpage{75}, \hyperpage{114}, 
 		\hyperpage{116}
       \subsubitem Manual Configuration, \hyperpage{63}, \hyperpage{66}, 
 		\hyperpage{68}, \hyperpage{70}, \hyperpage{72}, 

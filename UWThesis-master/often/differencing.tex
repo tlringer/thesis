@@ -2,7 +2,7 @@
 \label{sec:pi-diff}
 
 \kl{Differencing}---whether done by the tool (\kl{automatic configuration}) or by the proof engineer (\kl{manual configuration})---identifies 
-and proves a type equivalence. But differening further decomposes that equivalence into a form called a \kl{configuration}. 
+and proves a \kl{type equivalence}. But differening further decomposes that equivalence into a form called a \kl{configuration}. 
 The configuration is the key to building a proof term transformation that implements transport in a way that is suitable for repair.
 
 Each configuration is a deconstruction of a particular equivalence \Aa $\simeq$ \B.
@@ -16,16 +16,16 @@ At a high level, the configuration helps the transformation achieve two goals:
 \item preserve equality up to transport across the equivalence between \Aa and \B (Section~\ref{sec:pi-diff-equiv}), and 
 \item produce well-typed terms (Section~\ref{sec:pi-diff-equal}).
 \end{enumerate}
-To differencing, this configuration is a pair of pairs of terms:
+To differencing, this configuration is a pair of pairs:
 
 \begin{lstlisting}
   ((DepConstr, DepElim), (Eta, Iota))
 \end{lstlisting}
-each of which corresponds to one of the two goals:
-\lstinline{DepConstr} and \lstinline{DepElim} define how to transform dependent constructors and eliminators, thereby preserving the equivalence, and 
-\lstinline{Eta} and \lstinline{Iota} define how to transform $\eta$-expansion and $\iota$-reduction of dependent constructors and eliminators, thereby producing well-typed terms.
+each of which corresponds to one of the goals:
+\lstinline{DepConstr} and \lstinline{DepElim} define how to transform \intro{dependent constructors} and \intro{dependent eliminators}, thereby preserving the equivalence, and 
+\lstinline{Eta} and \lstinline{Iota} define how to transform \intro{$\eta$}-expansion and \intro{$\iota$}-reduction of dependent constructors and dependent eliminators, thereby producing well-typed terms.
 
-The connection between the configuration parts and constructors and eliminators is a bit of an analogy---though one with formal meaning by way of
+The connection between the configuration parts and constructors and eliminators is an analogy---though one with formal meaning by way of
 category theory (Section~\ref{sec:algebra}).
 Configurations and equivalences are equally expressive: every configuration induces an equivalence, and every equivalence induces a configuration
 (Section~\ref{sec:correct-cic}).
@@ -47,10 +47,10 @@ inductive proofs about \Aa with inductive proofs about \B, %, then recursively t
 all without changing the order or number of arguments.
 
 The two configuration parts responsible for this are \lstinline{DepConstr}
-and \lstinline{DepElim} (\intro{dependent constructors} and \intro{dependent eliminators}).
+and \lstinline{DepElim} (\kl{dependent constructors} and \kl{dependent eliminators}).
 These describe how to construct and eliminate \Aa and \B, wrapping the types with a common inductive structure.
 The transformation requires the same number of dependent constructors and cases in dependent eliminators for \Aa and \B,
-even if \Aa and \B are \kl{inductive types} with different numbers of \kl{constructors}
+even if \Aa and \B themselves are \kl{inductive types} with different numbers of constructors
 (\Aa and \B need not even be inductive; see Sections~\ref{sec:art} and~\ref{sec:pi-results}).
 
 \begin{figure*}
@@ -99,15 +99,14 @@ For the \lstinline{list} change from Section~\ref{sec:overview},
 the configuration that \toolnamec discovers uses the dependent constructors
 and eliminators in Figure~\ref{fig:listconfig}. The dependent constructors for \lstinline{Old.list}
 are the normal constructors with the order unchanged,
-while the dependent constructors for \lstinline{New.list} swap constructors
-back to the original order.
+while the dependent constructors for \lstinline{New.list} swap the order of constructors.
 Similarly, the dependent eliminator for \lstinline{Old.list} is the normal eliminator for \lstinline{Old.list},
 while the dependent eliminator for \lstinline{New.list} swaps cases.
 
 As the name hints, these constructors and eliminators can be dependent.
 For example, let \B be the type of
 vectors of some arbitrary, unspecified length,
-packed into a $\Sigma$ type:
+packed into a \kl{$\Sigma$} type:
 
 \begin{lstlisting}
   $\Sigma$(n : nat).vector T n
@@ -131,17 +130,18 @@ and the eliminator it discovers eliminates the projections:
 
 In both these examples, the interesting work moves into the configuration:
 the configuration for the first swaps constructors and cases,
-and the configuration for the second maps constructors and cases over \lstinline{list} to constructors and cases over \lstinline{packed_vect}. %packs constructors and eliminates projections.
+and the configuration for the second maps constructors and cases over \lstinline{list T} to constructors and 
+cases over $\Sigma$\lstinline{(n : nat).vector T n}. % \lstinline{packed_vect}. %packs constructors and eliminates projections.
 That way, the transformation need not add, drop, or reorder arguments---it can truly be generic over type equivalences.
 %In essence, all of the difficult work moves into the configuration.
-Furthermore, both examples use automatic configuration, so differencing in \toolnamec's \textbf{Configure} component
+Furthermore, both examples use \kl{automatic configuration}, so differencing in \toolnamec's \textbf{Configure} component
 discovers \lstinline{DepConstr} and \lstinline{DepElim} from just the types \Aa and \B, taking care of even the difficult work.
 
 \subsection{Producing Well-Typed Terms}
 \label{sec:pi-diff-equal}
 
 The other configuration parts \lstinline{Eta} and \lstinline{Iota} deal with producing well-typed terms,
-in particular by transporting equalities.
+in particular by \kl{transporting} equalities.
 Recall that CIC$_{\omega}$ is an \kl{intensional} type theory,
 and so distinguishes between \kl{definitional} and \kl{propositional} equality.
 When a datatype changes, sometimes, definitional equalities defined over the old version of that type must become propositional.
@@ -150,7 +150,7 @@ Otherwise, if the transformation transforms a term $t : T$ to some $t' : T'$, it
 transform $T$ to $T'$~\cite{tabareau2019marriage}.
 
 \lstinline{Eta} and \lstinline{Iota} describe how to transport equalities.
-More formally, they define \intro{$\eta$}-expansion and \intro{$\iota$}-reduction of \Aa and \B,
+More formally, they define \kl{$\eta$}-expansion and \kl{$\iota$}-reduction of \Aa and \B,
 which may be propositional rather than definitional,
 and so must be explicit in the transformation.
 $\eta$-expansion describes how to expand a term to apply a constructor to an eliminator in a way that preserves propositional equality,
@@ -193,13 +193,13 @@ For example, in Coq, while \lstinline{S (n + m)  = S n + m} holds by reflexivity
 when we define \lstinline{+} with \lstinline{DepElim} over \lstinline{N},
 the corresponding theorem over \lstinline{N} does not hold by reflexivity.
 
-To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \kl{definitional} $\iota$-reduction over \lstinline{nat} to 
-\kl{propositional} $\iota$-reduction over \lstinline{N}.
+To transform proofs about \lstinline{nat} to proofs about \lstinline{N}, we must transform \kl{definitional} \kl{$\iota$}-reduction over \lstinline{nat} to 
+\kl{propositional} \kl{$\iota$}-reduction over \lstinline{N}.
 For our choice of \lstinline{DepConstr} and \lstinline{DepElim},
 $\iota$-reduction is definitional over \lstinline{nat}, since a proof of:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat),
+  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat),
     DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
     (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
@@ -208,7 +208,7 @@ holds by reflexivity.
 with type:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat) (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),
+  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : nat) (Q: P (DepConstr(1, nat) n) $\rightarrow$ s),
     Iota(1, nat, Q) :
       Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
       Q (DepElim((@\codediff{DepConstr(1, nat) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
@@ -217,7 +217,7 @@ In contrast, $\iota$ for \lstinline{N} is propositional, since the
 theorem: %over \lstinline{N}:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N),
+  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : N),
     DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ } =
     (@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
 \end{lstlisting}
@@ -226,7 +226,7 @@ no longer holds by reflexivity.
 with type:
 
 \begin{lstlisting}
-  $\forall$ P p$_\texttt{0}$ p$_\texttt{S}$ (n : N) (Q: P (DepConstr(1, N) n) $\rightarrow$ s),
+  (@\ltacforall@) P p$_\texttt{0}$ p$_\texttt{S}$ (n : N) (Q: P (DepConstr(1, N) n) $\rightarrow$ s),
     Iota(1, N, Q) :
       Q ((@\codediff{p$_\texttt{S}$}@) n (DepElim(n, P) { p$_\texttt{0}$, p$_\texttt{S}$ })) $\rightarrow$
       Q (DepElim((@\codediff{DepConstr(1, N) n}@), P) { p$_\texttt{0}$, p$_\texttt{S}$ }).
@@ -256,12 +256,12 @@ to an equivalence, some of which will produce terms that are more useful or effi
 
 Thankfully, while it is not possible to control for intentions,
 it \textit{is} possible to specify what it means for a chosen configuration to be correct.
-In particular, the analogy tying the \kl{configuration} to \kl{contructors} and \kl{eliminators} by way of the 
-names \lstinline{DepConstr} and \lstinline{DepElim} is not a coincidence.
-In fact, it has meaning in terms of what in category theory are known as \intro{initial algebras of endofunctors},
+In particular, the analogy tying the \kl{configuration} to \kl{constructors} and \kl{eliminators}
+has meaning in terms of what in category theory are known as \intro{initial algebras of endofunctors},
 and correctness---that configurations and equivalences are isomorphic---follows by Lambek's 
 theorem (Section~\ref{sec:algebra}).
-A more syntactic version of this claim can be used to specify and prove correctness of configurations in CIC$_{\omega}$ (Section~\ref{sec:correct-cic}).
+A more syntactic version of this claim can be used to specify and prove correctness of configurations in a \kl{univalent} metatheory,
+or on an ad hoc basis in \kl{CIC$_{\omega}$} (Section~\ref{sec:correct-cic}).
 
 \paragraph{Historical Note}
 When I met with \kl{Michael Shulman} over coffee a few years ago, he said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.

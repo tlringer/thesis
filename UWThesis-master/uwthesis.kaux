@@ -2003,6 +2003,7 @@
 \KAuxAutorefTarget {default}{base}{Carlo Angiuli}
 \KAuxErrorKnowledgeUnknown {default}{}{Anders M\"ortberg}{Anders M\"ortberg}{\intro }
 \KAuxAutorefTarget {default}{base}{Conor McBride}
+\KAuxAutorefTarget {default}{base}{Michael Shulman}
 
 \KAuxFileAt {acks.tex}{201}
 \KAuxAutorefTarget {default}{base}{Matthew Dwyer}
@@ -2479,29 +2480,26 @@
 \KAuxAutorefTarget {default}{base}{external}
 \KAuxDeclaredScopeTag {sec:pi-diff}
 \KAuxNewLinkScopetagInstance {sec:pi-diff}{document}
-\KAuxDeclaredScopeTag {sec:pi-diff-equiv}
-\KAuxNewLinkScopetagInstance {sec:pi-diff-equiv}{document}
 
-\KAuxFileAt {differencing.tex}{50}
+\KAuxFileAt {differencing.tex}{25}
 \KAuxAutorefTarget {default}{base}{dependent constructors}
 \KAuxAutorefTarget {default}{base}{dependent eliminators}
+
+\KAuxFileAt {differencing.tex}{26}
+\KAuxAutorefTarget {default}{base}{$\eta $}
+\KAuxAutorefTarget {default}{base}{$\iota $}
+\KAuxDeclaredScopeTag {sec:pi-diff-equiv}
+\KAuxNewLinkScopetagInstance {sec:pi-diff-equiv}{document}
 \KAuxDeclaredScopeTag {fig:listconfig}
 \KAuxNewLinkScopetagInstance {fig:listconfig}{document}
 \KAuxDeclaredScopeTag {sec:pi-diff-equal}
 \KAuxNewLinkScopetagInstance {sec:pi-diff-equal}{document}
-
-\KAuxFileAt {differencing.tex}{153}
-\KAuxAutorefTarget {default}{base}{$\eta $}
-\KAuxAutorefTarget {default}{base}{$\iota $}
 \KAuxDeclaredScopeTag {fig:nattobin}
 \KAuxNewLinkScopetagInstance {fig:nattobin}{document}
 \KAuxDeclaredScopeTag {sec:art}
 \KAuxNewLinkScopetagInstance {sec:art}{document}
 
-\KAuxFileAt {differencing.tex}{259}
-\KAuxErrorKnowledgeUnknown {default}{}{contructors}{contructors}{\kl }
-
-\KAuxFileAt {differencing.tex}{261}
+\KAuxFileAt {differencing.tex}{260}
 \KAuxAutorefTarget {default}{base}{initial algebras of endofunctors}
 \KAuxDeclaredScopeTag {sec:algebra}
 \KAuxNewLinkScopetagInstance {sec:algebra}{document}

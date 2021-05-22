@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-21 undefined knowledge(s).
+19 undefined knowledge(s).
 3 autoreference(s) are introduced twice.
 5 autoreference(s) are used but not introduced.
 
-122 autoreference(s) are properly used.
-103 autoreference(s) are defined but not used.
+123 autoreference(s) are properly used.
+102 autoreference(s) are defined but not used.
 
 
 ********
@@ -30,8 +30,6 @@
  | maintenance
  | generalizes
  | specializes
- | Specialization
- | Generalization
  | factors
  | verifying
  | proof scripts
@@ -113,7 +111,6 @@ index.tex:458: {Matt Might}{default}{base}
 index.tex:460: {Bas Spitters}{default}{base}
 index.tex:462: {Jon Sterling}{default}{base}
 index.tex:464: {Bob Harper}{default}{base}
-index.tex:466: {Edward Z. Yang}{default}{base}
 index.tex:468: {James Decker}{default}{base}
 index.tex:470: {Gerwin Klein}{default}{base}
 index.tex:472: {Jonathan Aldrich}{default}{base}
@@ -171,10 +168,10 @@ index.tex:628: {Nathanael}{default}{base}
 index.tex:630: {Daniel-Nikpayuk}{default}{base}
 index.tex:632: {Michelle Lee}{default}{base}
 index.tex:634: {Quinn Wilton}{default}{base}
-index.tex:695: {dependent constructors}{default}{base}
-index.tex:699: {dependent eliminators}{default}{base}
-index.tex:730: {\toolnamec }{default}{base}
-index.tex:748: {results}{default}{base}
-index.tex:757: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:699: {dependent constructors}{default}{base}
+index.tex:703: {dependent eliminators}{default}{base}
+index.tex:734: {\toolnamec }{default}{base}
+index.tex:752: {results}{default}{base}
+index.tex:761: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 
 

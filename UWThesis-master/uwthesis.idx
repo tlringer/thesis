@@ -466,12 +466,19 @@
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{41}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{41}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{41}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{41}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{41}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{41}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{42}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{42}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{42}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{43}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{44}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{44}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{45}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{46}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{46}
+\indexentry{Acknowledgments!PL Community!Edward Z. Yang|hyperpage}{46}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{47}
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{47}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{47}

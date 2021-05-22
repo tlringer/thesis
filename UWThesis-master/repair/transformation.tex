@@ -1,11 +1,11 @@
 \section{Transformation}
 \label{sec:pumpkin-trans}
 
-The proof term transformations together transform a patch candidate into a reusable proof patch.
+The \kl{proof term transformations} together transform a \kl{patch candidate} into a \kl{reusable proof patch}.
 At a high level, these transformations adapt the candidate to the context of the goal type that \sysname infers.
 As with differencing, the transformations are aware of and guided by the semantics of Gallina's type theory CIC$_{\omega}$.
 This section describes the design (Section~\ref{sec:pumpkin-trans-design}) and limitations (Section~\ref{sec:pumpkin-trans-limitations}) of these transformations.
-Section~\ref{sec:pumpkin-impl-trans} describes the implementation in \sysname.
+Section~\ref{sec:pumpkin-impl-trans} describes the implementation.
 
 % TODO could write more probably
 
@@ -34,13 +34,13 @@ building on some of the insights from the transformations in the \sysname protot
 \subsubsection*{Specialization}
 Sometimes, patch candidates are too general.
 \kl{Specialization} takes a candidate that is too general,
-and specializes it to specific arguments as determined by the difference in terms.
+and specializes it to particular arguments as determined by the difference in terms.
 To find a patch for Figure~\ref{fig:example}, for example, \sysname
-specialized the patch candidate to \lstinline{p} to produce the final patch.
+specialized the candidate to \lstinline{p}.
 
 Specialization takes a single patch candidate, some arguments, and a reduction strategy, and returns a new candidate.
 It first applies the function to the argument, then applies the reduction strategy on the result.
-The default reducer, for example, uses $\beta\iota$-reduction in Coq---two of the \kl{definitional equality} reductions.\footnote{$\iota$-reduction is basically $\beta$-reduction for inductive types. This will come up in Chapter~\ref{chapt:pi}.}
+The default reducer, for example, uses $\beta\iota$-reduction in Coq---two of the \kl{definitional equality} reductions.\footnote{$\iota$-reduction is basically $\beta$-reduction for inductive types.}
 Section~\ref{sec:pumpkin-impl-trans} decribes other reducers.
 The only requirement for a reducer is that the end result should be definitionally equal to the original.
 
@@ -68,7 +68,7 @@ the reduction strategy $\Downarrow_{r}$ is itself a transformation that reduces 
 \kl{Generalization} takes a candidate that is too specific and generalizes it.
 We saw this for the example in Figure~\ref{fig:example} as well:
 to go from the candidate that \sysname found in the base case to the eventual reusable patch,
-\sysname generalized the candidate by the argument \lstinline{m} (before applying specialization).
+\sysname generalized the candidate by \lstinline{m} (before applying \kl{specialization}).
 
 There are two kinds of generalization.
 The first generalizes candidates that map between types that share a common argument, like: % TODO need to explain the arrow syntax and assume we can do it for CIC somewhere
@@ -98,30 +98,37 @@ Generalization takes a patch candidate, the goal type, and the function argument
 It first wraps the candidate inside of a lambda from the type of the term by which to generalize.
 Then, it substitutes terms inside the body with the generalized term.
 It continues to do this until there is nothing left to generalize, then filters results by the goal type.
-Consider, for example, generalizing the candidate from Figure~\ref{fig:example} by $m$ (represented in CIC$_{\omega}$ this time): % TODO note it's from the thing
+
+Consider, for example, generalizing the candidate from Figure~\ref{fig:example} by $m$ (represented in CIC$_{\omega}$ syntax this time,
+but using shorthand for Gallina constants that were defined in the example): % TODO note it's from the thing
 
 \begin{lstlisting}[language=coq]
-  $\lambda (H : \le n m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H$
-  $: \le n m \rightarrow \le n (\mathrm{plus}\ m\ (S\ O))$
+  $\lambda$ (H : le n m) . le_plus_trans n m (S O) H
+  : le n m $\rightarrow$
+    le n (plus m (S O)).
 \end{lstlisting}
-where $\le$ is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
-The first step wraps this in a lambda from some \lstinline{nat}, the type of $m$:
+where \lstinline{le} is an inductive type, and \lstinline{le_plus_trans} and \lstinline{plus} are both functions in the current context.
+The first step wraps this in a lambda from some \lstinline{nat}, the type of \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (n_0 : \mathrm{nat}) . \lambda (H : \le n m) . \mathrm{le\_plus\_trans}\ n\ m\ (S\ O)\ H)$
-  $: \Pi (n_0 : \mathrm{nat}), \le n m \rightarrow \le n (\mathrm{plus}\ m\ 1)$
+  $\lambda$ (n$_0$ : nat) (H : le n m) . le_plus_trans n m (S O) H
+  : (@\diff{$\Pi$ (n$_0$ : nat),}@)
+      le n m $\rightarrow$
+      le n (plus m (S O)).
 \end{lstlisting}
-The second step substitutes $n_0$ for $m$:
+The second step substitutes \lstinline{n}$_0$ for \lstinline{m}:
 
 \begin{lstlisting}[language=coq]
-  $\lambda (n_0 : \mathrm{nat}) . \lambda (H : \le n n_0) . \mathrm{le\_plus\_trans}\ n\ n_0\ (S\ O)\ H)$
-  $: \Pi (n_0 : \mathrm{nat}), \le n n_0 \rightarrow \le n (\mathrm{plus}\ n_O\ 1)$
+  $\lambda$ (n$_0$ : nat) (H : le n n$_0$) . le_plus_trans n n$_0$ (S O) H
+  : $\Pi$ (n$_0$ : nat),
+      le n (@\diff{n$_0$}@) $\rightarrow$
+      le n (plus (@\diff{n$_0$}@) (S O)).
 \end{lstlisting}
 
 In general, generalization is %a kind of anti-unification problem, % TODO cite and so on
 undecidable,
 as the terms and types may be reduced,
-so that the common function or argument does not appear explicitly.ss
+so that the common function or argument does not appear explicitly.
 This poses a challenge for generalization in the second step---substitution.
 
 To handle this challenge, generalization uses a list of \textit{substitution strategies}\footnote{I originally called these \textit{abstraction strategies}, but this is more accurate.}
@@ -139,14 +146,14 @@ and moves on to more complex strategies only if that strategy fails.
 This design makes generalization simple to extend with new strategies and simple to call with different strategies
 for different instances, or even as an optimization for the proof engineer.
 
-\subsubsection*{Inversion} Sometimes, when two types are \kl{propositionally} equal, explanation
+\subsubsection*{Inversion} Sometimes, when two types are \kl{propositionally} equal,
 candidate patches may appear in the wrong direction.
 For example, consider two list lemmas:\footnote{It is too difficult to port this entire example, including the proof, to CIC$_{\omega}$ for demonstration.
 So I leave it in Gallina and Ltac, but still use it to give intuition for inversion.}
 
 \begin{lstlisting}[language=coq]
-  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l
-  new : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length (rev l)
+  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l.
+  new : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length (rev l).
 \end{lstlisting} 
 If \sysname searches the difference in proofs of these lemmas for a patch from the 
 conclusion of \lstinline{new} to the conclusion of \lstinline{old},
@@ -154,15 +161,15 @@ it may find a candidate \emph{backwards}:
 
 \begin{lstlisting}
   candidate l' l (H : (@\diff{old}@) l' l) :=
-    eq_rect_r ... (@\diff{(rev\_length l)}@)
-  : (@\ltacforall@) l' l, (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l
+    eq_rect_r $\ldots$ (@\diff{(rev\_length l)}@)
+  : (@\ltacforall@) l' l, (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l.
 \end{lstlisting}
 The component can \kl{invert} this to get the patch: %from \lstinline{new} to \lstinline{old}:
 
 \begin{lstlisting}
   patch l' l (H : (@\diff{new}@) l' l) :=
-    eq_rect_r ... (@\diff{(eq\_sym (rev\_length l))}@)
-  : (@\ltacforall@) l' l, (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l
+    eq_rect_r $\ldots$ (@\diff{(eq\_sym (rev\_length l))}@)
+  : (@\ltacforall@) l' l, (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l.
 \end{lstlisting}
 We can then use this patch to port proofs.
 For example, if we add this patch to a hint database~\cite{hints},
@@ -245,7 +252,7 @@ there are always infinitely many factors if factors can compose to identity.
 Determining all possible \textit{nontrivial} factors---those that contain no subsets of factors
 that compose to identity---reduces to detecting whether an arbitrary function is extensionally equal
 to the identity function at a fixed but arbitrary type,
-which is itself undecidable.\footnote{Edward Z. Yang wrote a very cute proof of this \href{https://twitter.com/ezyang/status/1391546552989241346}{on Twitter}: Let the function be an arbitrary Turing complete program parameterized by fuel, returning
+which is itself undecidable.\footnote{\kl{Edward Z. Yang} wrote a cute proof of this \href{https://twitter.com/ezyang/status/1391546552989241346}{on Twitter}: Let the function be an arbitrary Turing complete program parameterized by fuel, returning
 the number of steps taken when it does not terminate within that number of steps, or otherwise returning zero when it does terminate.
 Then determining whether or not the function is extensionally equal to identity reduces to determining whether or not
 the program terminates.}

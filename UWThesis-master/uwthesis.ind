@@ -90,7 +90,7 @@
       \subsubitem Carlo Angiuli, \hyperpage{xv}, \hyperpage{77}
       \subsubitem Conor McBride, \hyperpage{xv}
       \subsubitem David van Horn, \hyperpage{xv}
-      \subsubitem Edward Z. Yang, \hyperpage{xv}
+      \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{46}
       \subsubitem Emery Berger, \hyperpage{xv}
       \subsubitem Gerwin Klein, \hyperpage{xv}
       \subsubitem James Decker, \hyperpage{xv}
@@ -245,17 +245,19 @@
 		\hyperpage{31, 32}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{45}, 
 		\hyperpage{48}
-      \subsubitem Generalization, \hyperpage{36, 37}, \hyperpage{48}
+      \subsubitem Generalization, \hyperpage{36, 37}, \hyperpage{42}, 
+		\hyperpage{48}
       \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}
       \subsubitem Inversion, \hyperpage{36}, \hyperpage{44}, 
 		\hyperpage{48}
       \subsubitem Patch Candidate, \hyperpage{31, 32}, 
-		\hyperpage{34--37}
+		\hyperpage{34--37}, \hyperpage{41}
       \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31, 32}, 
-		\hyperpage{34--37}
+		\hyperpage{34--37}, \hyperpage{41}
       \subsubitem Search Procedure Instance, \hyperpage{34--36}, 
 		\hyperpage{47}, \hyperpage{52}
-      \subsubitem Specialization, \hyperpage{36, 37}, \hyperpage{48}
+      \subsubitem Specialization, \hyperpage{36, 37}, 
+		\hyperpage{42, 43}, \hyperpage{48}
 
   \indexspace
 
@@ -265,9 +267,9 @@
     \subitem Design, \hyperpage{4, 5}
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
-		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{48}, 
-		\hyperpage{72}, \hyperpage{87}, \hyperpage{114}, 
-		\hyperpage{123}, \hyperpage{126}
+		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{41}, 
+		\hyperpage{48}, \hyperpage{72}, \hyperpage{87}, 
+		\hyperpage{114}, \hyperpage{123}, \hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34, 35}, 

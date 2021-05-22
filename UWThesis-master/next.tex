@@ -58,31 +58,34 @@ We need to create tools with scalable automation and smooth workflow integration
 and continually improve them in response to feedback from user studies.
 
 \paragraph{Scalable Automation}
-Proof repair tools should feature scalable automation that elegantly supports repair over large libraries when many changes occur at once,
+Proof repair still struggles with repair over large libraries when many changes occur at once.
+The tools of the future should feature scalable automation that supports this elegantly,
 all while imposing little effort on the proof engineer.
-And they should be simple to extend with new optimizations, all while preserving correctness.
-Integrating the \toolnamec transformation with e-graphs (Section~\ref{sec:automation}) may help with this,
+They should also be simple to extend with new optimizations, all while preserving correctness.
+One promising path toward this is integrating the \toolnamec transformation with e-graphs (Section~\ref{sec:automation}),
 as e-graphs were built with these kinds of problems in mind.
 E-graphs were recently adapted to express path equality in \kl{cubical type theory}~\cite{egraph6}---a perfect fit for the \toolnamec transformation.
-E-graphs in other proof assistants, like those in Lean~\cite{selsam:lean}, may help with similar automation for repair tools for other proof assistants.
+E-graphs in other proof assistants, like those in \kl{Lean}~\cite{selsam:lean}, may help with similar automation for repair tools for other proof assistants.
 
 \paragraph{Smooth Integration}
-Proof repair tools should integrate smoothly into IDEs like Proof General~\cite{proofgeneral},
-and into continuous integration (CI) systems like Travis~\cite{travis}.
+A natural place for proof repair integration is at the level of an Integrated Development Environment (IDE)
+or continuous integration (CI) system.
+The tools of the future should integrate smoothly with IDEs like Proof General~\cite{proofgeneral},
+and with CI systems like Travis~\cite{travis}.
 CI support hinges on the ability to break large changes into smaller pieces---an outstanding challenge.
-At the level of the IDE, perhaps recording changes during development using the infrastructure
-\kl{\textsc{REPLica}} will help circumvent this problem.
+At the level of the IDE, perhaps recording changes during development using the infrastructure from
+\contour[2]{violet}{\kl{\textsc{REPLica}}} will help circumvent this problem.
 Program repair tools with IDE integration like CatchUp!~\cite{Henkel:2005:CCR:1062455.1062512} can
 serve as inspiration for both infrastructure and user experience.
 
 \paragraph{User Feedback} 
 Proof repair tools should continually adapt to feedback from the proof engineers who use them.
-This means user studies not just of proof engineers using proof assistants (as with \kl{\textsc{REPLica}}),
+This means user studies not just of proof engineers using proof assistants (as with \contour[2]{violet}{\kl{\textsc{REPLica}}}),
 but also of proof engineers using the proof repair tools themselves.
 The same principle applies to other proof engineering tools.
 Of particular use would be a large user study, enough to run statistically significant quantitative analyses
 and gather useful data for machine learning tools.
-Reaching enough users for this was one of the major challenges of \kl{\textsc{REPLica}}.
+Reaching enough users for this was one of the major challenges of \contour[2]{violet}{\kl{\textsc{REPLica}}}.
 Setting fewer barriers to registration and improving user study incentives may help address this.
 
 \subsection*{Proof Engineering for Software Engineers}
@@ -99,6 +102,7 @@ assist software engineers in redesiging software systems for verification,
 and help software engineers ensure those systems are robust to change.
 
 \paragraph{Familiar Tools}
+Software engineers famously resist new tools.
 Proof engineering tools should integrate naturally with tools already familiar to software engineers.
 They should, for example, lift programs from familiar languages to proof assistants in a verified manner.
 They should help software engineers interactively generalize tests to specifications for writing proofs,
@@ -109,11 +113,12 @@ fix incorrect programs or specifications.
 They should prove as much as possible automatically, then prompt the software engineer with only the relevant questions
 needed to finish off the proofs.
 And they should integrate with proof repair tools to automatically adapt those proofs in response to changes.
-The experience of the future should exist along a continuum from testing to formal verification.
+The experience of the future ought to exist along a continuum from testing to formal verification.
 
 % TODO ensure James Wilcox gets credit for this idea to some degree, either here or in acks
 \paragraph{Tool-Assisted Redesign} 
-Proof engineering tools should help software engineers redesign systems to be more amenable to verification.
+Proof engineering often hinges on redesigning a system to be more amenable to verification.\footnote{A fun conversation with \kl{James Wilcox} inspired this whole paragraph.}
+The tools of the future should help software engineers with this.
 They should, for example, automatically identify relevant proof design principles (Section~\ref{sec:design}).
 They should help guide proof engineers through the process of redesigning software systems to use those principles,
 automating the manual effort by way of proof refactoring and repair.
@@ -138,29 +143,32 @@ Accounting for this in proof engineering tools will mean partnering with domain 
 building new abstractions for critical domains like machine learning, cryptography, and medicine.
 
 \paragraph{Machine Learning}
-Proof engineering tools for machine learning experts should bring strong safety, fairness, and robustness guarantees to
+There has been only very preliminary verification of machine learning tools using proof assistants so far.
+This is a loss---proof engineering tools for machine learning experts could perhaps bring strong safety, fairness, and robustness guarantees to
 complex systems like autonomous vehicles or robots, or even to the social media, search, and advertising algorithms that many of us interact with
-on a daily basis. These tools should also make it possible to build more reliable, understandable, and explainable neural networks.
+on a daily basis. These tools could perhaps also help us build more reliable, understandable, and explainable neural networks.
 Current methods for verifying neural networks are not sufficient for this: 
 automated checking of guarantees is slow for some properties, and fails on large 
 neural networks.\footnote{This whole paragraph---but especially this sentence---is based on a really fun conversation with \kl{Matthew Dwyer} at Virginia this past spring.}
-One possible approach is to interactively factor neural networks into two parts: a program with strong guarantees,
+One possible path to formally verifiable neural networks is to interactively factor neural networks into two parts: a program with strong guarantees,
 and some ``fuzz'' that captures the counterexamples that cannot easily be explained.
 The former can hopefully be verified, with the latter capturing some margin of error.
 
 \paragraph{Cryptography}
-Proof engineering tools for cryptography should help ensure that cryptographic systems are not just designed, but also implemented correctly.
+Proof engineering tools for cryptography already help ensure that cryptographic systems are not just designed, but also implemented correctly.
+But cryptography is constantly evolving, and proof engineering for cryptography is not keeping up.
 The tools of the future should keep up with the a variety of cryptographic technologies as they evolve---everything from quantum and post-quantum cryptography
 to emerging cryptographic proof systems to lattice-based cryptography.\footnote{My \href{https://twitter.com/TaliaRinger/status/1391943048465055750}{Twitter followers}
 helped me learn about some of the ongoing trends in cryptography and---unfortunately---also cryptocurrencies.} 
 
 \paragraph{Medicine} 
+Medical devices are a natural domain for proof engineering, since strong guarantees about medical devices can save lives.
 Proof engineering tools for medical experts should bring strong guarantees to the medical devices of tomorrow.
 This should empower medical experts to build safer and more reliable medical devices,
 like pacemakers, insulin pumps, hearing aides, surgical robots, medication pumps, artifical organs,
 genetic arrays, neuromodulation implants, and genetic sequencing hardware and 
 software.\footnote{Most of these suggestions came from many of my wonderful \href{https://twitter.com/TaliaRinger/status/1388282607926857731}{Twitter followers}.
-One also came from \kl{Matthew Dwyer} at Virginia. All who contributed are acknowledged.}
+One also came from \kl{Matthew Dwyer} at Virginia, and one came from \kl{Matt Might}. All who contributed are acknowledged.}
 
 % https://twitter.com/TaliaRinger/status/1388282607926857731
 % acks: Nathanael from Twitter, Matt Might, UVA folks, Jared Roesch, Quinn Wilton

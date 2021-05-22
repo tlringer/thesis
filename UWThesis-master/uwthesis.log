@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 01:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 02:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2364,11 +2364,9 @@ s---in the for-mer of changes to datatypes
 ]
 chapter 6.
 (./next.tex [123] [124]
-Overfull \hbox (5.59465pt too wide) in paragraph at lines 70--77
-[] []\T1/pplj/m/sc/10.95 (-20) s m o o t h i n -t e -g r a -t i o n[] \T1/pplj/
-m/n/10.95 (-20) Proof re-pair tools should in-te-grate smoothly
- []
-
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 77.
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 83.
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 88.
 [125] [126] [127])) (./uwthesis.ind [128]
 Overfull \hbox (10.04045pt too wide) in paragraph at lines 74--75
 []| \T1/pplj/m/n/10.95 (-20) Daniel Schwartz-Narbonne,
@@ -2564,11 +2562,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51940 strings out of 492609
- 1051351 string characters out of 6129033
+ 51936 strings out of 492609
+ 1051318 string characters out of 6129033
  1328102 words of memory out of 5000000
  52375 multiletter control sequences out of 15000+600000
- 680184 words of font info for 890 fonts, out of 8000000 for 9000
+ 679903 words of font info for 886 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -2593,10 +2591,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1881673 bytes).
+Output written on uwthesis.pdf (164 pages, 1883267 bytes).
 PDF statistics:
- 4982 PDF objects out of 5155 (max. 8388607)
- 4692 compressed objects within 47 object streams
- 1618 named destinations out of 1728 (max. 500000)
+ 4993 PDF objects out of 5155 (max. 8388607)
+ 4702 compressed objects within 48 object streams
+ 1619 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -6,8 +6,8 @@
 4 autoreference(s) are introduced twice.
 3 autoreference(s) are used but not introduced.
 
-130 autoreference(s) are properly used.
-96 autoreference(s) are defined but not used.
+132 autoreference(s) are properly used.
+94 autoreference(s) are defined but not used.
 
 
 ********
@@ -86,7 +86,6 @@ index.tex:253: {Ben Kushigian}{default}{base}
 index.tex:256: {Steven Lyubomirsky}{default}{base}
 index.tex:259: {Jacob Van Geffen}{default}{base}
 index.tex:262: {Marisa Kirisame}{default}{base}
-index.tex:268: {James Wilcox}{default}{base}
 index.tex:271: {Doug Woos}{default}{base}
 index.tex:277: {Remy Wang}{default}{base}
 index.tex:280: {Konstantin Weitz}{default}{base}
@@ -102,7 +101,6 @@ index.tex:354: {Rashmi Mudduluru}{default}{base}
 index.tex:357: {Sorawee Porncharoenwase}{default}{base}
 index.tex:379: {Taylor Blau}{default}{base}
 index.tex:456: {Conor McBride}{default}{base}
-index.tex:460: {Matt Might}{default}{base}
 index.tex:462: {Bas Spitters}{default}{base}
 index.tex:464: {Jon Sterling}{default}{base}
 index.tex:466: {Bob Harper}{default}{base}

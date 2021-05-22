@@ -137,7 +137,7 @@ is the successor (\lstinline{S}) of the result of recursively calling \lstinline
 Indeed, \lstinline{list_rect}---like all eliminators in Coq---is a constant that refers to a function itself defined using pattern matching and recursion
 with a syntactic guard condition.
 In fact, eliminators are equally expressive to pattern matching and recursion with a syntactic guard~\cite{recursion-elimination, jesper}.\footnote{What may be confusing, though, is that \textit{Coq's} automatically 
-generated eliminators are \textit{not} as expressive Coq's pattern matching and recursion. This is an artifact of Coq's history.}
+generated eliminators are \textit{not} as expressive Coq's pattern matching and recursion, though it \textit{is} possible to manually define sufficiently expressive eliminators in Coq. This is an artifact of Coq's history.}
 
 \begin{figure}
 \begin{lstlisting}
@@ -179,7 +179,7 @@ That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are de
 reduce\footnote{Reduction uses a sequence of predefined reduction rules, which are described by various Greek letters. $\beta$-reducton, for example,
 has the standard meaning. $\delta$-reduction unfolds constants. Chapter 10 of Certified Programming with Dependent Types~\cite{chlipala:cpdt} includes a nice summary of reduction and its relationship to \kl{definitional equality}.} 
 to the same normal form,
-and propositionally equal if there is a proof that \lstinline{t = t'} the inductive
+and propositionally equal if there is a proof that \lstinline{t = t'} using the inductive
 equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
 the converse is not in general true. % TODO this should probably go into an earlier section
 

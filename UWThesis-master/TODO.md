@@ -24,9 +24,6 @@
 
 - example in proof repair section (nice to have)
 - REPLICA diagram and a bit more, maybe (nice to have)
-- de Bruijn versus variables, somewhere
-- explain Greek when you explain definitional equality
-- dependent types and polymorphism knowledge
 
 # Chapter 3
 

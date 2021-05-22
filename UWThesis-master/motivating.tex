@@ -1,8 +1,10 @@
 \chapter{Motivating Proof Repair}
 \label{chapt:mot}
 
-This thesis describes techniques and tools for automatically repairing broken proofs in a \kl{proof assistant}.
-It focuses in particular on proofs about formally \kl{verified} programs, though many of the techniques and tools carry over to mathematical proofs as well.
+This thesis describes techniques and tools for automatically \kl{repairing} broken \kl{proofs} in a \kl{proof assistant}.
+It focuses in particular on proofs about formally \kl{verified} \kl{programs}, though many of the techniques and tools carry over to mathematical proofs as well.
+
+\paragraph{Why Verify Programs?}
 
 Formal verification of a program can improve actual and perceived reliability.
 It can help the programmer think about the desired and actual behavior of the program,
@@ -24,6 +26,8 @@ This is not unusual for large proof developments. The initial correctness proofs
 for example, consisted of 480000 lines of specifications and proofs~\cite{Klein2014micro}.
 \kl{Proof engineering} technologies make it possible to develop verified systems at this scale.
 See \kl{QED at Large} for a comprehensive overview of proof engineering.
+
+\paragraph{Why Repair Proofs?}
 
 \kl{Proof repair}---the focus of this thesis---is a new proof engineering technology that focuses in particular on minimizing the burden of change as verified systems evolve over time.
 But for the sake of this chapter, I motivate proof repair not on a large verified system like a C compiler or an OS microkernel.

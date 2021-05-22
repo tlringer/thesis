@@ -19,15 +19,23 @@ as well as the \lstinline{length} function.
 It also uses the equality type \lstinline{=}.
 All of these can be found inside of the Coq standard library.
 But dissecting them already points to many important features of Gallina:
-inductive types and intensionality.
+\intro{inductive types} and \intro{intensionality}.
 All of these arise in our proof development, and will continue to arise throughout this thesis.
+
+\paragraph{Inductive Types}
+
+Each of \lstinline{nat} and \lstinline{list} in Gallina is an \kl{inductive type}:
+it is defined by its \intro{constructors} (ways of constructing a term with that type).
+A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
+is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
+these are the two constructors of \lstinline{nat}.
 
 \begin{figure}
 \begin{minipage}{0.30\textwidth}
 \begin{lstlisting}
 Inductive nat :=
-| O : nat
-| S : nat $\rightarrow$ nat.
+| (@\codesimb{O : nat}@)
+| (@\codesima{S : nat $\rightarrow$ nat}@).
 \end{lstlisting}
 \end{minipage}
 \hfill
@@ -35,24 +43,14 @@ Inductive nat :=
 \begin{lstlisting}
 nat_rect :
   (@\ltacforall@) (P : nat $\rightarrow$ Type),
-    P O $\rightarrow$ (* base case *)
-    ((@\ltacforall@) (n : nat),
-      (* inductive case *)
-      P n $\rightarrow$ P (S n)) $\rightarrow$
+    (@\codesimb{P O}@) $\rightarrow$
+    (@\codesima{(\ltacforall (n : nat), P n $\rightarrow$ P (S n))}@) $\rightarrow$
     (@\ltacforall@) (n : nat), P n.
 \end{lstlisting}
 \end{minipage}
-\caption{The type of natural numbers \lstinline{nat} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{nat_rect} that Coq generates (right).}
+\caption{The type of natural numbers \lstinline{nat} in Coq defined inductively by its two \kl{constructors} (left), and the type of the corresponding \kl{eliminator} or induction principle \lstinline{nat_rect} that Coq generates (right).}
 \label{fig:nat}
 \end{figure}
-
-\paragraph{Inductive Types}
-
-Each of \lstinline{nat} and \lstinline{list} in Gallina is an \intro{inductive type}:
-it is defined by its \intro{constructors} (ways of constructing a term with that type).
-A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
-is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
-these are the two constructors of \lstinline{nat}.
 
 Every inductive type in Gallina comes equipped with an \intro{eliminator} (also called an induction principle)
 that the proof engineer can use to write functions and proofs about the datatype.
@@ -68,9 +66,9 @@ assuming the \intro{inductive hypothesis} that it holds for some \lstinline{n}, 
 \begin{minipage}{0.44\textwidth}
 \begin{lstlisting}
 Inductive list {T : Type} :=
-| nil : list T
-| cons :
-    T $\rightarrow$ list T $\rightarrow$ list T.
+| (@\codesimb{nil : list T}@)
+| (@\codesimans{cons :}@)(@\vspace{-0.04cm}@)
+    (@\codesima{T $\rightarrow$ list T $\rightarrow$ list T.}@)
 \end{lstlisting}
 \end{minipage}
 \hfill
@@ -78,14 +76,13 @@ Inductive list {T : Type} :=
 \begin{lstlisting}
 list_rect {T : Type} :
   (@\ltacforall@) (P : list T $\rightarrow$ Type),
-    P nil $\rightarrow$ (* base case *)
-    ((@\ltacforall@) (t : T) (tl : list T),
-      (* inductive case *)
-      P tl $\rightarrow$ P (cons t tl)) $\rightarrow$
+    (@\codesimb{P nil}@) $\rightarrow$
+    (@\codesimans{((\ltacforall (t : T) (tl : list T),}@)(@\vspace{-0.04cm}@)
+      (@\codesima{P tl $\rightarrow$ P (cons t tl))}@) $\rightarrow$
     (@\ltacforall@) (l : list T), P l.
 \end{lstlisting}
 \end{minipage}
-\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two constructors (left), and the type of the corresponding eliminator or induction principle \lstinline{list_rect} that Coq generates (right).}
+\caption{The type of polymorphic lists \lstinline{list} in Coq defined inductively by its two \kl{constructors} (left), and the type of the corresponding \kl{eliminator} or induction principle \lstinline{list_rect} that Coq generates (right).}
 \label{fig:list}
 \end{figure}
 
@@ -109,9 +106,9 @@ Gallina's type system is expressive enough to include universal quantification o
 \begin{lstlisting}
 Fixpoint length {T} l :=
   match l with
-  | nil => O
-  | cons t tl =>
-      S (length tl)
+  | (@\codesimb{nil => O}@)
+  | (@\codesimans{cons t tl =>}@)(@\vspace{-0.04cm}@)
+      (@\codesima{S (length tl)}@)
   end.
 \end{lstlisting}
 \end{minipage}
@@ -120,25 +117,26 @@ Fixpoint length {T} l :=
 \begin{lstlisting}
 Definition length {T} l :=
   list_rect T (fun _ => nat)
-    O
-    (fun t tl (length_tl : nat) =>
-      S length_tl)
+    (@\codesimb{O}@)
+    (@\codesimans{(fun t tl (length\_tl : nat) =>}@)(@\vspace{-0.04cm}@)
+      (@\codesima{S length\_tl)}@)
     l.
 \end{lstlisting}
 \end{minipage}
-\caption{The list \lstinline{length} function, defined both by pattern matching and recursion (left) and using the eliminator \lstinline{list_rect} (right).}
+\caption{The list \lstinline{length} function, defined by pattern matching and recursion (left) and using the eliminator \lstinline{list_rect} (right).}
 \label{fig:length}
 \end{figure}
 
 We can use these eliminators to write not just proofs, but also functions, like the \lstinline{length} function (Figure~\ref{fig:length}, right).
-For functions, though, it is more standard to instead use pattern matching and guarded recursion, like 
-the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
-Both of these two functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
+For functions, though, it is more standard to instead use pattern matching and recursion with a 
+syntactic guard condition,\footnote{Coq does not support arbitrary recursion. The syntactic guard on recursion forces recursive functions in Coq to terminate. \kl{QED at Large} explains ways to reason about possibly nonterminating functions in spite of this.}
+like the \lstinline{length} function from the Coq standard library (Figure~\ref{fig:length}, left).
+Both of these functions behave the same way, but the function on the left is perhaps a bit easier to understand from a traditional programming background:
 the \lstinline{length} of the empty list \lstinline{nil} is \lstinline{0}, and the length of any other list
-is just the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
-Indeed, \lstinline{list_rect}---like all eliminators in Coq---is just a constant that refers to a function itself defined using pattern matching and recursion
+is the successor (\lstinline{S}) of the result of recursively calling \lstinline{length} on everything but the first element of the list.
+Indeed, \lstinline{list_rect}---like all eliminators in Coq---is a constant that refers to a function itself defined using pattern matching and recursion
 with a syntactic guard condition.
-In fact, eliminators are equally expressive to pattern matching and recursion with a syntactic guard condition~\cite{recursion-elimination, jesper}.\footnote{What may be confusing, though, is that \textit{Coq's} automatically 
+In fact, eliminators are equally expressive to pattern matching and recursion with a syntactic guard~\cite{recursion-elimination, jesper}.\footnote{What may be confusing, though, is that \textit{Coq's} automatically 
 generated eliminators are \textit{not} as expressive Coq's pattern matching and recursion. This is an artifact of Coq's history.}
 
 \begin{figure}
@@ -160,14 +158,14 @@ zip {T$_1$} {T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$
 \end{figure}
 
 For the sake of this thesis, however, I will assume \intro{primitive eliminators}: eliminators that are a part of the core syntax and theory itself,
-and that do not reduce to terms that use pattern matching and guarded recursion.
+rather than being defined by way of pattern matching and recursion.
 Likewise, when I show Gallina code, from this point forward, I will favor functions that apply eliminators rather than pattern matching, like the \lstinline{length} function from Figure~\ref{fig:length}
 on the right.
 %I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
 
-To handle practical code that uses pattern matching and guarded recursion,
+To handle practical code that uses pattern matching and recursion,
 I preprocesss the code using a tool by \kl{Nate}.
-This preprocessing tool that transforms functions that use simple pattern matching and guarded recursion
+This preprocessing tool transforms functions that use simple pattern matching and recursion
 to instead use Coq's automatically generated eliminators (Section~\ref{sec:pi-details-trans}).
 Figure~\ref{fig:zip-elim}, for example, shows the \lstinline{zip} function after running the preprocessing tool.
 In the rest of this thesis, I skip the step of running this preprocessing tool in examples,
@@ -175,18 +173,21 @@ though the corresponding code invokes it explicitly.
 
 \paragraph{Intensionality}
 
-Gallina is based on what is called an \intro{intensional} type theory:
+Gallina is based on what is called an \kl{intensional} type theory:
 a type theory that distinguishes between equalities that hold by reducton (\intro{definitional equality}), and those that hold by proof (\intro{propositional} equality).
-That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they reduce to the same normal form,
-and propositionally equal if there is a proof that \lstinline{t = t'} using a special inductive
+That is, two terms \lstinline{t} and \lstinline{t'} of type \lstinline{T} are definitionally equal if they
+reduce\footnote{Reduction uses a sequence of predefined reduction rules, which are described by various Greek letters. $\beta$-reducton, for example,
+has the standard meaning. $\delta$-reduction unfolds constants. Chapter 10 of Certified Programming with Dependent Types~\cite{chlipala:cpdt} includes a nice summary of reduction and its relationship to \kl{definitional equality}.} 
+to the same normal form,
+and propositionally equal if there is a proof that \lstinline{t = t'} the inductive
 equality type \lstinline{=} at type \lstinline{T}. Definitionally equal terms are necessarily propositionally equal, but 
 the converse is not in general true. % TODO this should probably go into an earlier section
 
 The inductive equality type also shows up inside of our proof development---that is what the \lstinline{=} sign in our theorem statement means.
-The \lstinline{=} type has exactly one constructor, \lstinline{eq_refl}, which can be applied to two terms exactly when those terms are definitionally equal.
+The \lstinline{=} type has exactly one constructor, \lstinline{eq_refl} (reflexivity), which can be applied to two terms exactly when those terms are definitionally equal.
 Propositional equality is more general, though, because it comes equipped with an eliminator \lstinline{eq_rect} (or the reverse, \lstinline{eq_rect_r})
 that encodes rewriting: if \lstinline{t = t'}, and some motive \lstinline{P} holds on \lstinline{t}, then the motive must also hold on \lstinline{t'}.
-It is possible to use this eliminator to prove equalities by sequences of rewrites, substituting equal terms for one another until the goal is reached by reflexivity.
+It is possible to use this eliminator to prove equalities by sequences of rewrites, substituting equal terms for one another until the goal holds by reflexivity.
 
 \paragraph{Back to our Proof}
 
@@ -212,31 +213,36 @@ but produce Ltac proof scripts that the proof engineer can use going forward.
 \begin{grammar}
 <i> $\in \mathbbm{N}$, <v> $\in$ Vars, <s> $\in$ \{ Prop, Set, Type<i> \}
 
-<t> ::= <v> \hspace{0.06cm} | \hspace{0.06cm} <s> \hspace{0.06cm} | \hspace{0.06cm} $\Pi$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} $\lambda$ (<v> : <t>) . <t> \hspace{0.06cm} | \hspace{0.06cm} <t> <t>
+<t> ::= <v>\\
+| <s> \\
+| $\Pi$ (<v> : <t>) . <t>\\
+| $\lambda$ (<v> : <t>) . <t>\\
+|  <t> <t>
 \end{grammar}
-\vspace{-0.3cm}
-\caption{Syntax for CoC$_\omega$ with (from left to right) variables, sorts, dependent types, functions, and application.}
+\caption{Syntax for CoC$_\omega$ with (from top to bottom) variables, sorts, function types, functions, and application.}
 \label{fig:coc-syntax}
 \end{figure*}
 
 The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Calculus of Inductive Constructions}.
-CIC$_{\omega}$ is based on the Calculus of Constructions (CoC), a variant of the lambda calculus with polymorphism (types that dependent on types) and dependent types (types that depend on terms)~\cite{coquand:inria-00076024}.
+CIC$_{\omega}$ is based on the \intro{Calculus of Constructions} (CoC), a variant of the lambda calculus with two kinds of universally quantified function types: \intro{polymorphism} (types that dependent on types) and \intro{dependent types} (types that depend on terms)~\cite{coquand:inria-00076024}.
 CoC with an infinite universe hieararchy---basically a trick for consistency---is 
-called CoC$_{\omega}$.\footnote{The need for the infinite universe hiearchy is too confusing for me to explain in detail here, but it is also not important for this thesis.}
+called CoC$_{\omega}$.\footnote{The need for the infinite universe hiearchy is too distracting for me to explain in detail here, but it is also not important for this thesis.}
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 Note that whereas in Gallina we represent universal quantification over terms or types with \ltacforall, here we represent it with $\Pi$, as is standard.
 
 \begin{figure*}
 \small
 \begin{grammar}
-<t> ::= ... | \hspace{0.06cm} Ind (<v> : <t>)\{<t>,\ldots,<t>\} \hspace{0.06cm} | \hspace{0.06cm} Constr (<i>, <t>) \hspace{0.06cm} | \hspace{0.06cm} Elim(<t>, <t>)\{<t>,\ldots,<t>\}
+<t> ::= \ldots\\
+| Ind (<v> : <t>)\{<t>,\ldots,<t>\} \\
+| Constr (<i>, <t>)\\
+| Elim(<t>, <t>)\{<t>,\ldots,<t>\}
 \end{grammar}
-\vspace{-0.3cm}
-\caption{CIC$_\omega$ is CoC$_\omega$ with inductive types, inductive constructors, and \kl{primitive eliminators}.}
+\caption{CIC$_\omega$ is CoC$_\omega$ with \kl{inductive types}, inductive \kl{constructors}, and \kl{primitive eliminators}.}
 \label{fig:cic-syntax}
 \end{figure*}
 
-CIC$_{\omega}$ extends CoC$_{\omega}$ with inductive types~\cite{inductive};
+CIC$_{\omega}$ extends \kl{CoC$_{\omega}$} with \kl{inductive types}~\cite{inductive};
 the syntax for CIC$_{\omega}$ (building on syntax from an existing paper~\cite{Timany2015FirstST}) is in Figure~\ref{fig:cic-syntax},
 and the typing rules are standard and omitted.
 As in Gallina, inductive types are defined by their constructors and eliminators.
@@ -245,24 +251,24 @@ this time in CIC$_{\omega}$: % TODO explain sorts
 
 \begin{lstlisting}
   Ind (nat : Set) {
-    nat,
-    nat $\rightarrow$ nat
+    (@\codesimb{nat}@),
+    (@\codesima{nat $\rightarrow$ nat}@)
   }
 \end{lstlisting}
 where the \lstinline{O} constructor type is the zeroth element in the list, and the \lstinline{S} constructor type is the first element.
 Accordingly, the terms:
 
 \begin{lstlisting}
-  Constr (O, nat)
+  (@\codesimb{Constr (0, nat)}@)
 \end{lstlisting}
 and:
 
 \begin{lstlisting}
-  Constr (1, nat)
+  (@\codesima{Constr (1, nat)}@)
 \end{lstlisting}
 refer to the constructors \lstinline{O} and \lstinline{S}, respectively.
 
-As in Gallina, \lstinline{nat} comes associated with an eliminator.
+As in Gallina, inductive types like \lstinline{nat} come associated with \kl{eliminators}.
 Unlike in Gallina, here we truly assume \kl{primitive eliminators}---that these eliminators
 do not reduce at all.
 Instead, we represent them explicitly with the \lstinline{Elim} construct.
@@ -271,39 +277,44 @@ we write: % TODO check
 
 \begin{lstlisting}
   Elim (n, P) {
-    f$_O$,
-    f$_S$
+    (@\codesimb{f$_0$}@),
+    (@\codesima{f$_1$}@)
   }
 \end{lstlisting}
 where functions:
 
 \begin{lstlisting}
-  f$_O$ : P O
+  (@\codesimb{f$_0$ : P (Constr (0, nat))}@)
 \end{lstlisting}
 and:
 
 \begin{lstlisting}
-  f$_S$ : $\Pi$ (n : nat) . $\Pi$ (IHn : P n) . P (S n)
+  (@\codesima{f$_1$ : $\Pi$ (n : nat) (IHn : P n) . P ((Constr (1, nat)) n)}@)
 \end{lstlisting}
 prove the base and inductive cases, respectively.
-When \lstinline{n}, \lstinline{P}, \lstinline{f}$_O$, and \lstinline{f}$_S$ are arbitrary,
+When \lstinline{n}, \lstinline{P}, \lstinline{f}$_0$, and \lstinline{f}$_1$ are arbitrary,
 this statement has the same type as \lstinline{nat_rect} in Gallina.
 
 % TODO use knowledge below to index this stuff:
 \paragraph{Conventions}
-Throughout this thesis, I assume an inductive type $\Sigma$ with constructor $\exists$ and projections $\pi_l$ and $\pi_r$,
-and a \kl{propositional} equality type \lstinline{=} with constructor \lstinline{eq_refl}.
-I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms.
-I often present algorithms over CIC$_{\omega}$ relationally, using a set of judgments; % TODO maybe move this up too
+Throughout this thesis, I assume an inductive \kl{propositional} equality type \lstinline{=} with constructor \lstinline{eq_refl}
+and eliminator \lstinline{eq_rect}.
+I also assume an inductive type \intro{$\Sigma$} for existential or refinement types,
+with constructor $\exists$ and projections $\pi_l$ and $\pi_r$.
+For simplicity of presentation, when I write terms in CIC$_{\omega}$, I assume variables are names, and that all names are fresh.
+
+I often present \kl{semantic differencing} algorithms and \kl{proof term transformations} over CIC$_{\omega}$ relationally, using a set of judgments; % TODO maybe move this up too
 to turn these relations into algorithms, prioritize the rules by running the derivations in
 order, falling back to the original term when no rules match.
-The default derivation for a list of terms is to run the derivation on each element of the list individually. 
+I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms;
+the default derivation for a list of terms is to run the derivation on each element of the list individually. 
 
 \paragraph{From CIC$_{\omega}$ back to Gallina}
 Gallina implements CIC$_{\omega}$, but with some important differences.
-Two differences are especially relevant to this thesis:
+Three differences are especially relevant:
 The first is that Gallina lacks \kl{primitive eliminators}, as I mentioned earlier.
-The second notable difference is that Gallina has constants that define terms---later on, this will help with building optimizations for proof repair tools.
+The second is that Gallina has constants that define terms---later on, this will help with building optimizations for proof repair tools.
+The third is that variables in Gallina are de Bruijn indices rather than names---the implementation handles this discrepancy.
 
 Otherwise, a proof repair tool for Gallina can harness the power of CIC$_{\omega}$.
 In particular, $\Pi$ makes it possible to quantify over both terms and types,
@@ -315,6 +326,9 @@ and as we will soon see, that structure makes a proof repair tool's job much eas
 \paragraph{From Gallina back to Ltac}
 This very same structure that helps proof repair tools can be difficult for proof engineers to work with,
 which is why proof engineers typically rely on the \kl{Ltac} \kl{tactics} we saw in Section~\ref{sec:mot-workflow}.
+Chapter~\ref{chapt:pi} will introduce a prototype decompiler by \kl{RanDair} from \kl{Gallina} back up to \kl{Ltac},
+so that proof repair tools can suggest tactics in the end.
+
 Tactics more generally are a form of \intro{proof automation}, or tools that automatically search for proofs.
 This proof automation makes it much simpler to develop proofs to begin with.
 But it turns out this proof automation is a bit naive when it comes to \textit{maintaining} proofs

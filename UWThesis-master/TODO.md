@@ -5,12 +5,11 @@
 - clean citations
 - pronoun check
 - space hack removal
-- paragraph style: add periods?
 - code links: consistency and so on
 - color of Proof keyword and other stylistic things
 - url style
 - TODOs in source
-- user -> proof engineer in diagrams (nice to have)
+- user -> proof engineer in remaining diagram (nice to have)
 - revision passes
 - spell check
 - check for we/ours/us
@@ -20,7 +19,6 @@
 # Chapter 1
 
 - authorship statements or detailed acknowledgments for other authors (nice to have)
-- note in reading guide about the knowledge package
 
 # Chapter 2
 
@@ -28,6 +26,7 @@
 - REPLICA diagram and a bit more, maybe (nice to have)
 - de Bruijn versus variables, somewhere
 - explain Greek when you explain definitional equality
+- dependent types and polymorphism knowledge
 
 # Chapter 3
 

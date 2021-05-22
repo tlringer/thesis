@@ -176,11 +176,16 @@
   \colorbox{orange!25}{\reducedstrut#1\/}%
   \endgroup
 } % to highlight the difference between two code blocks
-
 \newcommand{\codesima}[1]{%
   \begingroup
   \setlength{\fboxsep}{0pt}%
   \colorbox{orange!25}{\reducedstrut#1\raisebox{0.8ex}{\scalebox{0.66}{2}}\/}%
+  \endgroup
+}
+\newcommand{\codesimans}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{orange!25}{\reducedstrut#1\/}%
   \endgroup
 } % to highlight the similarities between two code blocks
 \newcommand{\codesimb}[1]{%

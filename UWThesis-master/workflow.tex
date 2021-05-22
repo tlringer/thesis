@@ -1,7 +1,6 @@
 \subsection{The Workflow}
 \label{sec:mot-workflow}
 
-% TODO move this back to pattern matching!!! since eliminator stuff will come later
 For a moment, let us assume some primitives from the Coq standard library: the type \lstinline{nat} of natural numbers,
 the type \lstinline{list} of polymorphic lists, and the \lstinline{length} function that computes the length of a list as a natural number.
 We will start by writing the list \lstinline{zip} program, then specify what it means to preserve its length, and then finally
@@ -17,11 +16,11 @@ zip {T$_1$ T$_2$} (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) : list (T$_1$ * T$_2
   | cons t$_1$ tl$_1$, cons t$_2$ tl$_2$ => cons (t$_1$, t$_2$) (zip tl$_1$ tl$_2$)
   end.
 \end{lstlisting}
-\caption{The list \lstinline{zip} function, taken from an existing proof development~\cite{hstocoqv}. The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.} % TODO hs-to-coq cite
+\caption{The list \lstinline{zip} function, taken from an existing proof development~\cite{hstocoqv}. The curly brace notation means that the type parameter \lstinline{T} is implicit in applications.}
 \label{fig:zip}
 \end{figure}
 
-\paragraph{Program} Let our program be the list \lstinline{zip} function, written in \kl{Gallina} in Figure~\ref{fig:zip}.
+\paragraph{Program} Let our \kl{program} be the list \lstinline{zip} function, written in \kl{Gallina} in Figure~\ref{fig:zip}.
 The list zip function takes as arguments two lists \lstinline{l}$_1$ and \lstinline{l}$_2$ of possibly different types \lstinline{T}$_1$ and \lstinline{T}$_2$, and zips them together into
 a list of pairs \lstinline{(T}$_1$\lstinline{ * T}$_2$\lstinline{)}.
 For example, if the inputs are a list of numbers and a list of characters, like:
@@ -33,7 +32,7 @@ For example, if the inputs are a list of numbers and a list of characters, like:
   (* ["x"; "y"; "z"] *)
   l$_2$ := cons "x" (cons "y" (cons "z" nil)).
 \end{lstlisting}
-then \lstinline{zip} applied to those two lists return a list of number-character pairs, like:
+then \lstinline{zip} applied to those two lists returns a list of number-character pairs, like:
 
 \begin{lstlisting}
   (* [(1, "x"); (2, "y"); (3, "z")] *)
@@ -41,8 +40,8 @@ then \lstinline{zip} applied to those two lists return a list of number-characte
 \end{lstlisting}
 
 It is worth noting that the implementation of \lstinline{zip} has to make some decision about
-how to behave whe the input lists are different lengths---that is, what to do with the extra elements,
-like the extra \lstinline{4} at the end above.
+how to behave when the input lists are different lengths---that is, what to do with the extra elements,
+like the extra \lstinline{4} at the end of \lstinline{l}$_1$ above.
 The decision that this implementation makes is to just ignore those extra elements.
 
 Otherwise, the implementation is fairly standard.
@@ -71,7 +70,7 @@ Theorem zip_presserves_length {T$_1$ T$_2$} :
 \label{fig:zip-pres}
 \end{figure}
 
-\paragraph{Specification} Once we have written our \lstinline{zip} function, we can then specify what we 
+\paragraph{Specification} Once we have written our \lstinline{zip} function, we can then \kl{specify} what we 
 want to prove about it: that the \lstinline{zip} function preserves the lengths of the inputs \lstinline{l}$_1$ and \lstinline{l}$_2$.
 We do this by defining a type \lstinline{zip_preserves_length} (Figure~\ref{fig:zip-pres}, top), which in Coq 
 we state as a \lstinline{Theorem}.\footnote{We can also call this a \lstinline{Lemma} if we'd like; these are equivalent in Coq.}
@@ -85,7 +84,7 @@ that states that the length of the output is the \textit{minimum} of the lengths
 This is also true for our \lstinline{zip} implementation, and in fact it is stronger---it implies the original theorem as well.
 But regardless of which version we choose, we then get to the fun part of actually writing our proof.
 
-\paragraph{Proof} As I mentioned earlier, it is possible to write proofs directly in \kl{Gallina}---but this can be difficult.
+\paragraph{Proof} As I mentioned earlier, it is possible to write \kl{proofs} directly in \kl{Gallina}---but this can be difficult.
 Instead, it is more common to write proofs interactively using the \kl{tactic} language \kl{Ltac}.
 Each tactic in Ltac is effectively a search procedure for a proof term, given the context and goals at each step of the proof.
 The way that this works is, after we state the theorem that we want to prove, say:
@@ -108,7 +107,7 @@ After each tactic we type and step past, Coq responds by refining the goal into 
 and updating the context.
 We continue this until no goals remain.
 The \kl{QED at Large} survey paper has a good overview of tactic languages in Coq and in other proof assistants,
-plus different interfaces and IDEs for writing proofs interactively and screenshots of them in action.
+plus different interfaces and IDEs for writing proofs interactively, and screenshots of those interfaces in action.
 
 In this case, after stepping past \lstinline{Proof} in our IDE, 
 our initial context (above the line) is empty, and our initial goal (below the line) is the original theorem:
@@ -206,15 +205,15 @@ fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
     (@\codesimb{l$_1$}@)
     l$_2$.
 \end{lstlisting}
-\caption{A proof script (top) and corresponding proof term (bottom) in Coq that shows that the list zip function preserves its length.
+\caption{An \kl{Ltac} \kl{proof script} (top) and a corresponding \kl{Gallina} \kl{proof term} (bottom) in \kl{Coq} that shows that the list zip function preserves its length.
 Some details of the proof term are omitted for simplicity.
-Corresponding parts of the proof are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
+Corresponding parts are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
 \label{fig:zip-proof}
 \end{figure}
 
 Figure~\ref{fig:zip-proof} shows the resulting proof script for this theorem (top), along with the corresponding proof term (bottom).
 As we can see, the proof term is quite complicated---I will explain what it means soon, in Section~\ref{sec:mot-theory}.
-The important thing to note for now is that the details of this low-level proof term do not matter to us,
+The important thing to note for now is that the details of this low-level proof term do not matter much to us as proof engineers,
 since we can write the high-level proof script on the top instead.
 Even though this proof script is still a bit manual (for the sake of demonstration),
 it is much simpler than the low-level proof term.

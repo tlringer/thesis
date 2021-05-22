@@ -198,6 +198,7 @@
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{4}
 \indexentry{Proof Repair|hyperpage}{4}
 \indexentry{Proof Repair!By Example|hyperpage}{4}
+\indexentry{Proof Repair!Across Type Equivalences|hyperpage}{4}
 \indexentry{Results|hyperpage}{4}
 \indexentry{Results!Design|hyperpage}{4}
 \indexentry{Results!Implementation|hyperpage}{4}
@@ -253,11 +254,16 @@
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{8}
+\indexentry{Proof Repair|hyperpage}{9}
+\indexentry{Verification!Proof Development!Proof|hyperpage}{9}
 \indexentry{Verification!Proof Assistants|hyperpage}{9}
 \indexentry{Verification|hyperpage}{9}
+\indexentry{Verification!Proof Development!Program|hyperpage}{9}
 \indexentry{Verification!Proof Engineering|hyperpage}{9}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{9}
+\indexentry{Proof Repair|hyperpage}{9}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{10}
+\indexentry{Verification!Proof Development|hyperpage}{10}
 \indexentry{Verification!Proof Assistants|hyperpage}{10}
 \indexentry{Verification!Proof Development!Program|hyperpage}{10}
 \indexentry{Verification!Proof Development!Specification|hyperpage}{10}
@@ -268,14 +274,17 @@
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{10}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{10}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{10}
-\indexentry{Verification!Proof Script|hyperpage}{11}
+\indexentry{Verification!Proof Script|hyperpage}{10}
 \indexentry{Verification!Proof Term|hyperpage}{11}
 \indexentry{Verification!Kernel|hyperpage}{11}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{11}
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{11}
+\indexentry{Verification!Proof Development!Program|hyperpage}{11}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{11}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{11}
+\indexentry{Verification!Proof Development!Specification|hyperpage}{12}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{12}
+\indexentry{Verification!Proof Development!Proof|hyperpage}{13}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{13}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{13}
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{13}
@@ -283,32 +292,58 @@
 \indexentry{Verification!Proof Script|hyperpage}{14}
 \indexentry{Verification!Proof Term|hyperpage}{14}
 \indexentry{Verification!Kernel|hyperpage}{14}
+\indexentry{Verification!Proof Script!Ltac|hyperpage}{15}
+\indexentry{Verification!Proof Script|hyperpage}{15}
+\indexentry{Verification!Proof Term!Gallina|hyperpage}{15}
+\indexentry{Verification!Proof Term|hyperpage}{15}
+\indexentry{Verification!Proof Assistants!Coq|hyperpage}{15}
+\indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{16}
+\indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{16}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{16}
 \indexentry{Verification!Kernel|hyperpage}{16}
 \indexentry{Verification!Proof Term|hyperpage}{16}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{16}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{16}
+\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{16}
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{16}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{16}
+\indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{17}
+\indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{17}
 \indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{17}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{17}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{18}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{18}
-\indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{18}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{18}
+\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{18}
+\indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{19}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Constructions|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Polymorphism|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Constructions|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{20}
+\indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{21}
+\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{21}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{21}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{21}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{21}
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{21}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{21}
-\indexentry{Verification!Proof Automation|hyperpage}{21}
-\indexentry{Verification!Proof Maintenance|hyperpage}{21}
-\indexentry{Verification|hyperpage}{21}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{22}
+\indexentry{Verification!Proof Term!Gallina|hyperpage}{22}
+\indexentry{Verification!Proof Script!Ltac|hyperpage}{22}
+\indexentry{Verification!Proof Automation|hyperpage}{22}
+\indexentry{Verification!Proof Maintenance|hyperpage}{22}
+\indexentry{Verification|hyperpage}{22}
 \indexentry{Proof Repair|hyperpage}{22}
 \indexentry{Verification!Proof Development!Program|hyperpage}{22}
 \indexentry{Verification!Proof Development!Specification|hyperpage}{22}
@@ -316,15 +351,24 @@
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{24}
 \indexentry{Verification!Coq Plugins|hyperpage}{24}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
-\indexentry{Thesis Statement!Formal|hyperpage}{26}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
+\indexentry{Proof Repair|hyperpage}{26}
+\indexentry{Verification!Proof Automation|hyperpage}{26}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{26}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{26}
-\indexentry{Verification!Proof Script!Tactics|hyperpage}{26}
-\indexentry{Verification!Proof Script!Ltac|hyperpage}{26}
-\indexentry{Verification!Proof Term|hyperpage}{26}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{26}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{26}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{27}
+\indexentry{Verification!Proof Script!Tactics|hyperpage}{27}
+\indexentry{Verification!Proof Script!Ltac|hyperpage}{27}
+\indexentry{Verification!Proof Term|hyperpage}{27}
+\indexentry{Verification!Proof Term!Gallina|hyperpage}{27}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{27}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{27}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{27}
+\indexentry{Proof Repair!By Example|hyperpage}{28}
+\indexentry{Proof Repair!Across Type Equivalences|hyperpage}{28}
 \indexentry{Verification!Coq Plugins|hyperpage}{29}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{29}
 \indexentry{Proof Repair!By Example|hyperpage}{29}

@@ -29,6 +29,8 @@
 \contentsline {paragraph}{Alex Sanchez-Stern}{8}{Item.12}% 
 \contentsline {paragraph}{Karl Palmskog}{8}{Item.12}% 
 \contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Motivating Proof Repair}}{9}{chapter.2}% 
+\contentsline {paragraph}{Why Verify Programs?}{9}{chapter.2}% 
+\contentsline {paragraph}{Why Repair Proofs?}{9}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Proof Development}{10}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}The Workflow}{11}{subsection.2.1.1}% 
 \contentsline {paragraph}{Program}{11}{figure.caption.5}% 
@@ -36,19 +38,19 @@
 \contentsline {paragraph}{Proof}{13}{figure.caption.6}% 
 \contentsline {subsection}{\numberline {2.1.2}The Theory Beneath}{16}{subsection.2.1.2}% 
 \contentsline {subsubsection}{\numberline {2.1.2.1}Gallina}{16}{subsubsection.2.1.2.1}% 
-\contentsline {paragraph}{Inductive Types}{16}{figure.caption.8}% 
-\contentsline {paragraph}{Intensionality}{18}{figure.caption.11}% 
+\contentsline {paragraph}{Inductive Types}{16}{subsubsection.2.1.2.1}% 
+\contentsline {paragraph}{Intensionality}{19}{figure.caption.11}% 
 \contentsline {paragraph}{Back to our Proof}{19}{figure.caption.11}% 
 \contentsline {subsubsection}{\numberline {2.1.2.2}Calculus of Inductive Constructions}{19}{subsubsection.2.1.2.2}% 
 \contentsline {paragraph}{Conventions}{21}{lstnumber.-27.1}% 
 \contentsline {paragraph}{From CIC$_{\omega }$ back to Gallina}{21}{lstnumber.-27.1}% 
 \contentsline {paragraph}{From Gallina back to Ltac}{21}{lstnumber.-27.1}% 
-\contentsline {section}{\numberline {2.2}Proof Maintenance}{21}{section.2.2}% 
+\contentsline {section}{\numberline {2.2}Proof Maintenance}{22}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Breaking Changes}{22}{subsection.2.2.1}% 
 \contentsline {paragraph}{Changing our Program}{22}{subsection.2.2.1}% 
 \contentsline {paragraph}{Changing our Specification}{23}{lstnumber.-29.10}% 
 \contentsline {subsection}{\numberline {2.2.2}Even Experts are Human}{24}{subsection.2.2.2}% 
-\contentsline {section}{\numberline {2.3}Proof Repair}{25}{section.2.3}% 
+\contentsline {section}{\numberline {2.3}Proof Repair}{26}{section.2.3}% 
 \contentsline {subsection}{\numberline {2.3.1}How Proof Repair Works}{26}{subsection.2.3.1}% 
 \contentsline {subsection}{\numberline {2.3.2}The Key to Proof Repair}{27}{subsection.2.3.2}% 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Proof Repair by Example}}{29}{chapter.3}% 
@@ -58,9 +60,9 @@
 \contentsline {subsection}{\numberline {3.2.1}Workflow: Repair by Example}{32}{subsection.3.2.1}% 
 \contentsline {subsection}{\numberline {3.2.2}Scope: Changes in Content}{34}{subsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.2.3}Differencing: Candidates from Examples}{35}{subsection.3.2.3}% 
-\contentsline {paragraph}{Summary}{35}{lstnumber.-65.1}% 
+\contentsline {paragraph}{Summary}{35}{lstnumber.-67.1}% 
 \contentsline {subsection}{\numberline {3.2.4}Transformations: Patches from Candidates}{36}{subsection.3.2.4}% 
-\contentsline {paragraph}{Summary}{37}{lstnumber.-69.6}% 
+\contentsline {paragraph}{Summary}{37}{lstnumber.-71.6}% 
 \contentsline {section}{\numberline {3.3}Differencing}{38}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Design}{38}{subsection.3.3.1}% 
 \contentsline {paragraph}{Historical Note}{38}{subsection.3.3.1}% 
@@ -81,41 +83,41 @@
 \contentsline {paragraph}{Specialization}{48}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Generalization}{48}{subsubsection.3.5.1.3}% 
 \contentsline {paragraph}{Inversion}{49}{subsubsection.3.5.1.3}% 
-\contentsline {paragraph}{Factoring}{49}{lstnumber.-96.2}% 
+\contentsline {paragraph}{Factoring}{49}{lstnumber.-98.2}% 
 \contentsline {subsubsection}{\numberline {3.5.1.4}Trusted Computing Base}{50}{subsubsection.3.5.1.4}% 
 \contentsline {subsection}{\numberline {3.5.2}Extensions}{50}{subsection.3.5.2}% 
 \contentsline {paragraph}{Git Integration}{50}{subsection.3.5.2}% 
-\contentsline {paragraph}{Patch Application}{50}{lstnumber.-99.1}% 
-\contentsline {paragraph}{Proof Optimization}{51}{lstnumber.-100.1}% 
+\contentsline {paragraph}{Patch Application}{50}{lstnumber.-101.1}% 
+\contentsline {paragraph}{Proof Optimization}{51}{lstnumber.-102.1}% 
 \contentsline {subsection}{\numberline {3.5.3}Testing Boundaries}{51}{subsection.3.5.3}% 
 \contentsline {subsubsection}{\numberline {3.5.3.1}Patch Generation Suite}{52}{subsubsection.3.5.3.1}% 
 \contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{53}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Differencing}{53}{subsubsection.3.5.3.2}% 
-\contentsline {paragraph}{A Challenge for Inversion}{53}{lstnumber.-102.9}% 
-\contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-105.4}% 
+\contentsline {paragraph}{A Challenge for Inversion}{53}{lstnumber.-104.9}% 
+\contentsline {paragraph}{A Challenge for Generalization}{54}{lstnumber.-107.4}% 
 \contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{55}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{55}{section.3.6}% 
-\contentsline {paragraph}{Identifying Changes}{56}{Item.38}% 
+\contentsline {paragraph}{Identifying Changes}{56}{Item.40}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{56}{subsection.3.6.1}% 
 \contentsline {paragraph}{Replay}{57}{subsection.3.6.1}% 
-\contentsline {paragraph}{Search}{57}{lstnumber.-130.1}% 
-\contentsline {paragraph}{Apply}{57}{lstnumber.-131.1}% 
+\contentsline {paragraph}{Search}{57}{lstnumber.-132.1}% 
+\contentsline {paragraph}{Apply}{57}{lstnumber.-133.1}% 
 \contentsline {subsubsection}{\numberline {3.6.1.1}Instance}{57}{subsubsection.3.6.1.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{58}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{58}{subsection.3.6.2}% 
-\contentsline {paragraph}{Search}{58}{lstnumber.-138.2}% 
-\contentsline {paragraph}{Apply}{58}{lstnumber.-139.2}% 
+\contentsline {paragraph}{Search}{58}{lstnumber.-140.2}% 
+\contentsline {paragraph}{Apply}{58}{lstnumber.-141.2}% 
 \contentsline {subsubsection}{\numberline {3.6.2.1}Instance}{59}{subsubsection.3.6.2.1}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{60}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{60}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{60}{lstnumber.-148.2}% 
-\contentsline {paragraph}{Apply}{60}{lstnumber.-149.2}% 
+\contentsline {paragraph}{Search}{60}{lstnumber.-150.2}% 
+\contentsline {paragraph}{Apply}{60}{lstnumber.-151.2}% 
 \contentsline {subsubsection}{\numberline {3.6.3.1}Instance}{60}{subsubsection.3.6.3.1}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{61}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{63}{chapter.4}% 
-\contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{63}{Item.43}% 
-\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{63}{Item.43}% 
-\contentsline {paragraph}{Bringing it Together}{64}{Item.43}% 
+\contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{63}{Item.45}% 
+\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{63}{Item.45}% 
+\contentsline {paragraph}{Bringing it Together}{64}{Item.45}% 
 \contentsline {section}{\numberline {4.1}Motivating Example}{64}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Approach}{66}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{67}{subsection.4.2.1}% 
@@ -123,9 +125,9 @@
 \contentsline {paragraph}{Factoring out Constructors}{68}{figure.caption.26}% 
 \contentsline {paragraph}{Adding a Dependent Index}{69}{figure.caption.27}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{70}{subsection.4.2.3}% 
-\contentsline {paragraph}{Summary}{70}{lstnumber.-170.1}% 
+\contentsline {paragraph}{Summary}{70}{lstnumber.-172.1}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{71}{subsection.4.2.4}% 
-\contentsline {paragraph}{Summary}{72}{lstnumber.-171.2}% 
+\contentsline {paragraph}{Summary}{72}{lstnumber.-173.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{72}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{73}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{74}{subsection.4.3.2}% 
@@ -138,15 +140,15 @@
 \contentsline {paragraph}{Correctness}{80}{figure.caption.31}% 
 \contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.31}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{80}{subsection.4.3.4}% 
-\contentsline {paragraph}{Common Definitions}{82}{lstnumber.-191.1}% 
+\contentsline {paragraph}{Common Definitions}{82}{lstnumber.-193.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{82}{subsubsection.4.3.4.1}% 
 \contentsline {paragraph}{Generating the Motive}{83}{figure.caption.33}% 
-\contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-194.1}% 
-\contentsline {paragraph}{Composing the Result}{84}{lstnumber.-198.3}% 
+\contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-196.1}% 
+\contentsline {paragraph}{Composing the Result}{84}{lstnumber.-200.3}% 
 \contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{85}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Discovering the Equivalence Parts}{85}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Deriving the Configuration}{85}{figure.caption.34}% 
-\contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-204.1}% 
+\contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-206.1}% 
 \contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
 \contentsline {paragraph}{Heuristics}{87}{subsection.4.3.5}% 
 \contentsline {paragraph}{Isolating Changes}{87}{subsection.4.3.5}% 
@@ -186,8 +188,8 @@
 \contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.41}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.41}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
-\contentsline {paragraph}{Historical Note}{105}{Item.58}% 
-\contentsline {paragraph}{Setup}{105}{Item.58}% 
+\contentsline {paragraph}{Historical Note}{105}{Item.60}% 
+\contentsline {paragraph}{Setup}{105}{Item.60}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{106}{subsubsection.4.6.2.1}% 
 \contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{106}{subsubsection.4.6.2.2}% 
 \contentsline {section}{\numberline {4.7}Conclusion}{107}{section.4.7}% 
@@ -196,7 +198,7 @@
 \contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{109}{subsection.5.1.1}% 
 \contentsline {paragraph}{Foundations}{109}{subsection.5.1.1}% 
 \contentsline {paragraph}{Proof Objects}{110}{subsection.5.1.1}% 
-\contentsline {paragraph}{Automation}{111}{Item.61}% 
+\contentsline {paragraph}{Automation}{111}{Item.63}% 
 \contentsline {subsection}{\numberline {5.1.2}Proof Design}{111}{subsection.5.1.2}% 
 \contentsline {paragraph}{Robust Abstractions}{112}{subsection.5.1.2}% 
 \contentsline {paragraph}{Robust Automation}{112}{subsection.5.1.2}% 

@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-17 undefined knowledge(s).
+15 undefined knowledge(s).
 4 autoreference(s) are introduced twice.
 3 autoreference(s) are used but not introduced.
 
 132 autoreference(s) are properly used.
-94 autoreference(s) are defined but not used.
+97 autoreference(s) are defined but not used.
 
 
 ********
@@ -38,8 +38,6 @@
  | program refactoring
  | proof reuse
  | generalizaton
- | Emily
- | Yuriy
 
 
 ****************************
@@ -115,53 +113,56 @@ index.tex:484: {Alexandra Silva}{default}{base}
 index.tex:486: {Lindsey Kuper}{default}{base}
 index.tex:488: {Nate Foster}{default}{base}
 index.tex:490: {Stephanie Weirich}{default}{base}
-index.tex:492: {Derek Dreyer}{default}{base}
-index.tex:496: {Roy Or-El}{default}{base}
-index.tex:499: {Vikram Iyer}{default}{base}
-index.tex:505: {Ellie Berry}{default}{base}
-index.tex:508: {Mer Joyce}{default}{base}
-index.tex:511: {Jasper Tran O'Leary}{default}{base}
-index.tex:513: {Wade Gordon}{default}{base}
-index.tex:516: {Anne Spencer Ross}{default}{base}
-index.tex:519: {Anna Kornfeld Simpson}{default}{base}
-index.tex:522: {Qi Cheng}{default}{base}
-index.tex:525: {Misha Kolmogorov}{default}{base}
-index.tex:528: {Grace Uchida}{default}{base}
-index.tex:531: {Marcela Mendoza}{default}{base}
-index.tex:534: {Laura Chick}{default}{base}
-index.tex:537: {Ezgi Akg\"{u}l}{default}{base}
-index.tex:540: {Chris Maines}{default}{base}
-index.tex:543: {Melanie Walker}{default}{base}
-index.tex:549: {Chabad of Queen Anne}{default}{base}
-index.tex:552: {Tom Cotner}{default}{base}
-index.tex:555: {David Lasky}{default}{base}
-index.tex:558: {Danielle Antosh}{default}{base}
-index.tex:561: {Erica Iantuono}{default}{base}
-index.tex:564: {Cyril Cohen}{default}{base}
-index.tex:569: {Tej Chajed}{default}{base}
-index.tex:572: {Emilio J. Gallego Arias}{default}{base}
-index.tex:575: {Enrico Tassi}{default}{base}
-index.tex:578: {Ga\"{e}tan Gilbert}{default}{base}
-index.tex:581: {Maxime D\'{e}n\`{e}s}{default}{base}
-index.tex:584: {Matthieu Sozeau}{default}{base}
-index.tex:587: {Vincent Laporte}{default}{base}
-index.tex:590: {Th\'{e}o Zimmermann}{default}{base}
-index.tex:593: {Jason Gross}{default}{base}
-index.tex:596: {Nicolas Tabareau}{default}{base}
-index.tex:599: {Pierre-Marie P\'{e}drot}{default}{base}
-index.tex:602: {Yves Bertot}{default}{base}
-index.tex:605: {Ben Delaware}{default}{base}
-index.tex:607: {Janno}{default}{base}
-index.tex:609: {Valentin Robert}{default}{base}
-index.tex:612: {Robert Rand}{default}{base}
-index.tex:621: {Hillel Wayne}{default}{base}
-index.tex:626: {Ymir Vigfusson}{default}{base}
-index.tex:628: {Benjamin Lipp}{default}{base}
-index.tex:630: {Nathanael}{default}{base}
-index.tex:632: {Daniel-Nikpayuk}{default}{base}
-index.tex:634: {Michelle Lee}{default}{base}
-index.tex:636: {Quinn Wilton}{default}{base}
-index.tex:754: {results}{default}{base}
-index.tex:763: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:492: {Yuriy Brun}{default}{base}
+index.tex:495: {Emily First}{default}{base}
+index.tex:498: {Stephanie Weirich}{default}{base}
+index.tex:500: {Derek Dreyer}{default}{base}
+index.tex:504: {Roy Or-El}{default}{base}
+index.tex:507: {Vikram Iyer}{default}{base}
+index.tex:513: {Ellie Berry}{default}{base}
+index.tex:516: {Mer Joyce}{default}{base}
+index.tex:519: {Jasper Tran O'Leary}{default}{base}
+index.tex:521: {Wade Gordon}{default}{base}
+index.tex:524: {Anne Spencer Ross}{default}{base}
+index.tex:527: {Anna Kornfeld Simpson}{default}{base}
+index.tex:530: {Qi Cheng}{default}{base}
+index.tex:533: {Misha Kolmogorov}{default}{base}
+index.tex:536: {Grace Uchida}{default}{base}
+index.tex:539: {Marcela Mendoza}{default}{base}
+index.tex:542: {Laura Chick}{default}{base}
+index.tex:545: {Ezgi Akg\"{u}l}{default}{base}
+index.tex:548: {Chris Maines}{default}{base}
+index.tex:551: {Melanie Walker}{default}{base}
+index.tex:557: {Chabad of Queen Anne}{default}{base}
+index.tex:560: {Tom Cotner}{default}{base}
+index.tex:563: {David Lasky}{default}{base}
+index.tex:566: {Danielle Antosh}{default}{base}
+index.tex:569: {Erica Iantuono}{default}{base}
+index.tex:572: {Cyril Cohen}{default}{base}
+index.tex:577: {Tej Chajed}{default}{base}
+index.tex:580: {Emilio J. Gallego Arias}{default}{base}
+index.tex:583: {Enrico Tassi}{default}{base}
+index.tex:586: {Ga\"{e}tan Gilbert}{default}{base}
+index.tex:589: {Maxime D\'{e}n\`{e}s}{default}{base}
+index.tex:592: {Matthieu Sozeau}{default}{base}
+index.tex:595: {Vincent Laporte}{default}{base}
+index.tex:598: {Th\'{e}o Zimmermann}{default}{base}
+index.tex:601: {Jason Gross}{default}{base}
+index.tex:604: {Nicolas Tabareau}{default}{base}
+index.tex:607: {Pierre-Marie P\'{e}drot}{default}{base}
+index.tex:610: {Yves Bertot}{default}{base}
+index.tex:613: {Ben Delaware}{default}{base}
+index.tex:615: {Janno}{default}{base}
+index.tex:617: {Valentin Robert}{default}{base}
+index.tex:620: {Robert Rand}{default}{base}
+index.tex:629: {Hillel Wayne}{default}{base}
+index.tex:634: {Ymir Vigfusson}{default}{base}
+index.tex:636: {Benjamin Lipp}{default}{base}
+index.tex:638: {Nathanael}{default}{base}
+index.tex:640: {Daniel-Nikpayuk}{default}{base}
+index.tex:642: {Michelle Lee}{default}{base}
+index.tex:644: {Quinn Wilton}{default}{base}
+index.tex:762: {results}{default}{base}
+index.tex:771: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 
 

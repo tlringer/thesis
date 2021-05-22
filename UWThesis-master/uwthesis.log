@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 02:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 MAY 2021 02:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,6 +1486,10 @@ Package knowledge Warning: knowledge 'John' (namespace=default, scope=base) is
 Package knowledge Warning: knowledge 'Michael' (namespace=default, scope=base)
 (knowledge)                is redefined.
 
+
+Package knowledge Warning: knowledge 'Stephanie Weirich' (namespace=default,
+(knowledge)                scope=base) is redefined.
+
 \@indexfile=\write5
 \openout5 = `uwthesis.idx'.
 
@@ -1615,16 +1619,16 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `autoref-255' multiply defined.
+LaTeX Warning: Label `autoref-258' multiply defined.
 
 
 LaTeX Warning: Label `autoref-4' multiply defined.
 
 
-LaTeX Warning: Label `autoref-229' multiply defined.
+LaTeX Warning: Label `autoref-232' multiply defined.
 
 
-LaTeX Warning: Label `autoref-246' multiply defined.
+LaTeX Warning: Label `autoref-249' multiply defined.
 
 
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
@@ -2488,6 +2492,11 @@ Overfull \hbox (0.51068pt too wide) in paragraph at lines 336--339
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []109[]--[]111[],
  []
 
+
+Overfull \hbox (0.1531pt too wide) in paragraph at lines 339--341
+[]| \T1/pplj/m/n/10.95 (-20) Lean, []2[], []109[], []110[], []116[], []124[],
+ []
+
 [132]) (./uwthesis.bbl [133
 
 
@@ -2562,10 +2571,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51936 strings out of 492609
- 1051318 string characters out of 6129033
- 1328102 words of memory out of 5000000
- 52375 multiletter control sequences out of 15000+600000
+ 51940 strings out of 492609
+ 1051410 string characters out of 6129033
+ 1328384 words of memory out of 5000000
+ 52379 multiletter control sequences out of 15000+600000
  679903 words of font info for 886 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2591,10 +2600,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1883267 bytes).
+Output written on uwthesis.pdf (164 pages, 1883567 bytes).
 PDF statistics:
- 4993 PDF objects out of 5155 (max. 8388607)
- 4702 compressed objects within 48 object streams
+ 4997 PDF objects out of 5155 (max. 8388607)
+ 4706 compressed objects within 48 object streams
  1619 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

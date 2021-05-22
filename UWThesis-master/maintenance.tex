@@ -66,7 +66,7 @@ If we have many proofs about \lstinline{zip}, they may break in similar ways, an
 This can be painful!
 
 \paragraph{Changing our Specification}
-Suppose we instead wish to switch to use the stronger specficiation on the bottom of Figure~\ref{fig:zip-pres},
+Suppose we instead wish to switch to use the stronger specification on the bottom of Figure~\ref{fig:zip-pres},
 and keep our \lstinline{zip} function the same.
 We can then update our proof accordingly, but after changing this specification, other proofs may break.
 For example, if we had proven a lemma for the \lstinline{cons} case:
@@ -190,7 +190,7 @@ like CompCert or seL4 (Section~\ref{sec:refrep}).
 The reason that experts still struggle with change is that
 design principles all rely on proof engineers having the right foresight to choose the 
 right abstractions in the right places, and hide the right information behind them.
-But proof enginers do not always have perfect foresight.
+But proof engineers do not always have perfect foresight.
 They may write proofs that depend on details like the names of variables or the names of lemmas,
 much like our proofs in Section~\ref{sec:changes}.
 Or they may choose abstractions to hide information, but those may not be the abstractions they still want after the change,
@@ -201,7 +201,7 @@ in libraries upon which their proof developments depend.
 In other words, even experts are human.
 And with traditional proof automation, the burden of change largely falls on those very humans.
 This is because traditional proof automation considers only the current state of programs, specifications, and proofs.
-It has no way of respresenting changes in programs, specifications, and proofs over time.
+It has no way of representing changes in programs, specifications, and proofs over time.
 So when traditional proof automation breaks in response to change, it cannot help the proof engineer fix the broken proof.
 But proof repair---smarter proof automation---can.
 

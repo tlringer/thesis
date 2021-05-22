@@ -98,8 +98,8 @@
       \subsubitem Jonathan Aldrich, \hyperpage{xv}
       \subsubitem Kenny Foner, \hyperpage{xv}
       \subsubitem Lindsey Kuper, \hyperpage{xv}
-      \subsubitem Matt Might, \hyperpage{xv}
-      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{127}
+      \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{128}
+      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{127, 128}
       \subsubitem Michael Hicks, \hyperpage{xv}
       \subsubitem Michael Shulman, \hyperpage{xv}, \hyperpage{77}
       \subsubitem Nate Foster, \hyperpage{xv}
@@ -131,7 +131,7 @@
       \subsubitem Doug Woos, \hyperpage{xiv}
       \subsubitem Gus Smith, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
-      \subsubitem James Wilcox, \hyperpage{xiv}
+      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{126}
       \subsubitem Jared Roesch, \hyperpage{xiv}
       \subsubitem Joe Redmond, \hyperpage{xiv}
       \subsubitem John Toman, \hyperpage{xiv}
@@ -287,7 +287,7 @@
 		\hyperpage{48}, \hyperpage{57}, \hyperpage{59}, 
 		\hyperpage{66}, \hyperpage{72}, \hyperpage{87}, 
 		\hyperpage{93}, \hyperpage{114}, \hyperpage{123}, 
-		\hyperpage{126}
+		\hyperpage{127}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34, 35}, 
@@ -295,7 +295,7 @@
 		\hyperpage{57}, \hyperpage{59}, \hyperpage{61}, 
 		\hyperpage{66}, \hyperpage{70}, \hyperpage{72}, 
 		\hyperpage{92}, \hyperpage{114, 115}, 
-		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{126}
+		\hyperpage{119, 120}, \hyperpage{123}, \hyperpage{127}
     \subitem Implementation, \hyperpage{4, 5}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{46}, 
 		\hyperpage{63}, \hyperpage{66}, \hyperpage{91}
@@ -337,7 +337,7 @@
 		\hyperpage{114}, \hyperpage{116}, \hyperpage{119}, 
 		\hyperpage{124}
       \subsubitem Lean, \hyperpage{2}, \hyperpage{109, 110}, 
-		\hyperpage{116}, \hyperpage{124}
+		\hyperpage{116}, \hyperpage{124, 125}
       \subsubitem NuPRL, \hyperpage{2}, \hyperpage{109}
       \subsubitem RedPRL, \hyperpage{110}
     \subitem Proof Automation, \hyperpage{22}, \hyperpage{26}, 

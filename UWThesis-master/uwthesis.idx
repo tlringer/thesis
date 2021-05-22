@@ -452,13 +452,13 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{37}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{37}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{37}
-\indexentry{Verification!Proof Term!Gallina|hyperpage}{37}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{37}
-\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{37}
+\indexentry{Verification!Proof Term!Gallina|hyperpage}{38}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{38}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{38}
-\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{39}
+\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{40}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{41}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{42}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{44}
@@ -466,7 +466,7 @@
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{45}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{46}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{46}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{46}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{47}
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{47}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{47}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{48}

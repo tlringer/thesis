@@ -192,13 +192,13 @@
 		\hyperpage{117, 118}
     \subitem Polymorphism, \hyperpage{20}
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
-		\hyperpage{30}, \hyperpage{39}, \hyperpage{56}, 
+		\hyperpage{30}, \hyperpage{40}, \hyperpage{56}, 
 		\hyperpage{73}, \hyperpage{92, 93}
     \subitem Sigma Types, \hyperpage{21}
     \subitem Type Theories
       \subsubitem Calculus of Constructions, \hyperpage{19, 20}
       \subsubitem Calculus of Inductive Constructions, \hyperpage{16}, 
-		\hyperpage{19}, \hyperpage{27}, \hyperpage{37}, 
+		\hyperpage{19}, \hyperpage{27}, \hyperpage{38}, 
 		\hyperpage{71}, \hyperpage{73}, \hyperpage{109}, 
 		\hyperpage{115}, \hyperpage{117}
       \subsubitem Cubical Type Theory, \hyperpage{110}, \hyperpage{125}
@@ -252,7 +252,7 @@
 		\hyperpage{34--37}
       \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31, 32}, 
 		\hyperpage{34--37}
-      \subsubitem Search Procedure Instance, \hyperpage{34--37}, 
+      \subsubitem Search Procedure Instance, \hyperpage{34--36}, 
 		\hyperpage{47}, \hyperpage{52}
       \subsubitem Specialization, \hyperpage{36, 37}, \hyperpage{48}
 
@@ -349,7 +349,7 @@
 		\hyperpage{65}, \hyperpage{95}, \hyperpage{109, 110}, 
 		\hyperpage{113}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{32}, 
-		\hyperpage{46}, \hyperpage{50}, \hyperpage{67}, 
+		\hyperpage{47}, \hyperpage{50}, \hyperpage{67}, 
 		\hyperpage{71}, \hyperpage{90, 91}, \hyperpage{95}
 
 \end{theindex}

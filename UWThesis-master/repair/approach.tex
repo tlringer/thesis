@@ -265,14 +265,18 @@ The candidate patch that differencing found has this type:
 \begin{lstlisting}[language=coq]
   candidate :=
     fun (H : n <= m) => (@\diff{le\_plus\_trans n m 1}@) H
-  : (@\diff{n <= m}@) $\rightarrow$ (@\diff{n <= m + 1}@).
+  : (@\diff{n <= m}@) $\rightarrow$
+    (@\diff{n <= m + 1}@).
 \end{lstlisting}
 in an environment with fixed \lstinline{n} and \lstinline{m}.
 The reusable patch that \sysname is looking for, however, should have this type:
 
 \begin{lstlisting}[language=coq]
   (@\ltacforall@) n m p,
-    n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
+    n <= m $\rightarrow$
+    m <= p $\rightarrow$
+    (@\diff{n <= p}@) $\rightarrow$
+    (@\diff{n <= p + 1}@).
 \end{lstlisting}
 as this is the \kl{goal} that \sysname inferred for this \kl{instance}.
 The transformations that \sysname runs will attempt to transform the candidate
@@ -310,7 +314,10 @@ That is, first, \sysname \kl{generalizes} the candidate by \lstinline{m} (line 1
   fun (@\diff{n0}@) n m p H0 H1 =>
     (fun (H : n <= (@\diff{n0}@)) => le_plus_trans n (@\diff{n0}@) 1 H)
   : (@\ltacforall@) (@\diff{n0}@) n m p,
-      n <= m $\rightarrow$ m <= p $\rightarrow$ n <= (@\diff{n0}@) $\rightarrow$ n <= (@\diff{n0}@) + 1.
+      n <= m $\rightarrow$
+      m <= p $\rightarrow$
+      n <= (@\diff{n0}@) $\rightarrow$
+      n <= (@\diff{n0}@) + 1.
 \end{lstlisting}
 \sysname then \kl{specializes} this generalized candidate to \lstinline{p} (line 23), the argument
 to the conclusion of \lstinline{le_ind}. This produces a patch:
@@ -319,7 +326,10 @@ to the conclusion of \lstinline{le_ind}. This produces a patch:
   patch n m p H0 H1 :=
     (fun (H : n <= (@\diff{p}@)) => le_plus_trans n (@\diff{p}@) 1 H)
   : (@\ltacforall@) n m p,
-      n <= m $\rightarrow$ m <= p $\rightarrow$ n <= (@\diff{p}@) $\rightarrow$ n <= (@\diff{p}@) + 1.
+      n <= m $\rightarrow$
+      m <= p $\rightarrow$
+      n <= (@\diff{p}@) $\rightarrow$
+      n <= (@\diff{p}@) + 1.
 \end{lstlisting}
 which has the goal type, so \sysname is done.
 

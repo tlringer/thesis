@@ -16,10 +16,7 @@ constructors (\codediff{orange}).}
 \label{fig:listswap}
 \end{figure*}
 
-Consider a simple example of using \toolnamec: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
-This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:pi-results}).
-Even such a simple change can cause trouble, as in this proof from the Coq standard library (comments mine for clarity):
-
+\begin{figure*}
 \begin{lstlisting}
   Lemma rev_app_distr {A} :
     $\forall$ (x y : list A),
@@ -33,6 +30,14 @@ Even such a simple change can cause trouble, as in this proof from the Coq stand
     rewrite (IHl y). rewrite app_assoc; trivial.
   Defined.
 \end{lstlisting}
+\caption{The proof of the lemma \lstinline{rev_app_distr} from the Coq standard library. Comments mine for clarity.}
+\label{fig:rev-app-distr}
+\end{figure*}
+
+Consider a simple example of using \toolnamec: repairing proofs after swapping the two constructors of the \lstinline{list} datatype (Figure~\ref{fig:listswap}).
+This is inspired by a similar change from a user study of proof engineers (Section~\ref{sec:pi-results}).
+Even such a simple change can cause trouble, as in the proof of the lemma \lstinline{rev_app_distr} from the
+Coq standard library (Figure~\ref{fig:rev-app-distr}).
 This lemma says that appending (\lstinline{++}) two lists and reversing (\lstinline{rev}) the result behaves the same as appending
 the reverse of the second list onto the reverse of the first list.
 The proof script works by induction over the input lists \lstinline{x} and \lstinline{y}:

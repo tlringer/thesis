@@ -3,16 +3,16 @@
 
 % From PUMPKIN Pi intro, modified
 
-This chapter presents the \intro{\toolnamec} extension to the \kl{\sysnamelong} proof repair plugin suite.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}{\lstinline{GUIDE.md}}.} % TODO update links
-\toolnamec is a \kl{plugin} that adds support for proof repair across a broad class of changes in datatypes called 
+This chapter presents the \intro{\toolnamec} extension to the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in the artifact guide: \url{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}.}
+\toolnamec is a plugin that supports proof repair across a broad class of changes in datatypes called 
 \textit{type equivalences} (Section~\ref{sec:pi-scope}),
 thereby supporting a large class of practical repair scenarios.
-Proof repair \kl{across type equivalences} with \toolnamec makes progress on two challenges that the \sysname prototype had left open:
+Proof repair \kl{across type equivalences} with \toolnamec makes progress on two challenges that \contour[2]{violet}{\kl{\sysname}} had left open:
 
 \begin{enumerate}
 \item \sysname supported a very limited classes of changes in datatypes, namely those that do not change structure.
 Similar tools developed since still supported only a predefined set of changes~\cite{robert2018, wibergh2019}.
-As the \kl{\textsc{REPLica}} user study showed, none of these were informed by the current needs of proof engineers. %~\cite{replica}. TODO elaborate?
+As the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study showed, none of these were informed by the current needs of proof engineers. %~\cite{replica}. TODO elaborate?
 \item \sysname had only preliminary integration with typical proof engineering workflows.
 Similar tools developed since likewise lacked support for workflow integration~\cite{PGL-045, robert2018},
 or imposed additional proof obligations like always proving relations corresponding to changes~\cite{tabareau2019marriage}.

@@ -119,8 +119,8 @@
 \contentsline {section}{\numberline {4.2}Approach}{66}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{67}{subsection.4.2.1}% 
 \contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{68}{subsection.4.2.2}% 
-\contentsline {paragraph}{Factoring out Constructors}{68}{figure.caption.26}% 
-\contentsline {paragraph}{Adding a Dependent Index}{69}{figure.caption.27}% 
+\contentsline {paragraph}{Factoring out Constructors}{68}{figure.caption.27}% 
+\contentsline {paragraph}{Adding a Dependent Index}{69}{figure.caption.28}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{70}{subsection.4.2.3}% 
 \contentsline {paragraph}{Summary}{70}{lstnumber.-172.1}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{71}{subsection.4.2.4}% 
@@ -132,19 +132,19 @@
 \contentsline {paragraph}{Historical Note}{77}{subsection.4.3.3}% 
 \contentsline {subsubsection}{\numberline {4.3.3.1}Categorical Intuition for Correctness}{77}{subsubsection.4.3.3.1}% 
 \contentsline {subsubsection}{\numberline {4.3.3.2}Correctness in CIC$_{\omega }$}{78}{subsubsection.4.3.3.2}% 
-\contentsline {paragraph}{Equivalence}{78}{figure.caption.31}% 
-\contentsline {paragraph}{Equality}{78}{figure.caption.31}% 
-\contentsline {paragraph}{Correctness}{80}{figure.caption.31}% 
-\contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.31}% 
+\contentsline {paragraph}{Equivalence}{78}{figure.caption.32}% 
+\contentsline {paragraph}{Equality}{78}{figure.caption.32}% 
+\contentsline {paragraph}{Correctness}{80}{figure.caption.32}% 
+\contentsline {paragraph}{Equivalences from Configurations}{80}{figure.caption.32}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{80}{subsection.4.3.4}% 
 \contentsline {paragraph}{Common Definitions}{82}{lstnumber.-193.1}% 
-\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{82}{subsubsection.4.3.4.1}% 
-\contentsline {paragraph}{Generating the Motive}{83}{figure.caption.33}% 
+\contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{83}{subsubsection.4.3.4.1}% 
+\contentsline {paragraph}{Generating the Motive}{83}{figure.caption.34}% 
 \contentsline {paragraph}{Generating Each Case}{83}{lstnumber.-196.1}% 
 \contentsline {paragraph}{Composing the Result}{84}{lstnumber.-200.3}% 
 \contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{85}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Discovering the Equivalence Parts}{85}{subsubsection.4.3.4.2}% 
-\contentsline {paragraph}{Deriving the Configuration}{85}{figure.caption.34}% 
+\contentsline {paragraph}{Deriving the Configuration}{85}{figure.caption.35}% 
 \contentsline {paragraph}{Proving Correctness}{86}{lstnumber.-206.1}% 
 \contentsline {subsection}{\numberline {4.3.5}Revisiting Limitations}{87}{subsection.4.3.5}% 
 \contentsline {paragraph}{Ad Hoc Nature}{87}{subsection.4.3.5}% 
@@ -168,22 +168,22 @@
 \contentsline {subsection}{\numberline {4.5.2}Workflow Integration}{95}{subsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Decompiling to Tactics}{95}{subsubsection.4.5.2.1}% 
 \contentsline {paragraph}{First Pass: Basic Proof Scripts}{95}{subsubsection.4.5.2.1}% 
-\contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.38}% 
-\contentsline {paragraph}{From Qtac to Ltac}{98}{figure.caption.39}% 
-\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Forfeiting Soundness}{99}{figure.caption.39}% 
-\contentsline {paragraph}{Pretty Printing}{99}{figure.caption.39}% 
+\contentsline {paragraph}{Second Pass: Better Proof Scripts}{98}{figure.caption.39}% 
+\contentsline {paragraph}{From Qtac to Ltac}{98}{figure.caption.40}% 
+\contentsline {paragraph}{From CIC$_{\omega }$ to Gallina}{99}{figure.caption.40}% 
+\contentsline {paragraph}{Forfeiting Soundness}{99}{figure.caption.40}% 
+\contentsline {paragraph}{Pretty Printing}{99}{figure.caption.40}% 
 \contentsline {subsubsection}{\numberline {4.5.2.2}Reaching Real Proof Engineers}{99}{subsubsection.4.5.2.2}% 
 \contentsline {section}{\numberline {4.6}Results}{100}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{100}{subsection.4.6.1}% 
-\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{100}{table.caption.40}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Constructors: Modifying a Language}{102}{figure.caption.41}% 
-\contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.41}% 
-\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.41}% 
+\contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{100}{table.caption.41}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{102}{figure.caption.42}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{102}{figure.caption.42}% 
+\contentsline {paragraph}{Permute Constructors: Modifying a Language}{102}{figure.caption.42}% 
+\contentsline {paragraph}{Add new Constructors: Extending a Language}{103}{figure.caption.42}% 
+\contentsline {paragraph}{Factor out Constructors: External Example}{103}{figure.caption.42}% 
+\contentsline {paragraph}{Permute Hypotheses: External Example}{103}{figure.caption.42}% 
+\contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{104}{figure.caption.42}% 
 \contentsline {subsection}{\numberline {4.6.2}Evaluation: \textsc {Pumpkin P}i\xspace for Transport}{104}{subsection.4.6.2}% 
 \contentsline {paragraph}{Historical Note}{105}{Item.60}% 
 \contentsline {paragraph}{Setup}{105}{Item.60}% 

@@ -2,12 +2,12 @@
 * Summary *
 ***********
 
-25 undefined knowledge(s).
-2 autoreference(s) are introduced twice.
+21 undefined knowledge(s).
+3 autoreference(s) are introduced twice.
 5 autoreference(s) are used but not introduced.
 
 122 autoreference(s) are properly used.
-104 autoreference(s) are defined but not used.
+103 autoreference(s) are defined but not used.
 
 
 ********
@@ -28,10 +28,6 @@
  | intensionality
  | development
  | maintenance
- | example patched proof
- | candidate proof patches
- | patch candidates
- | goals
  | generalizes
  | specializes
  | Specialization
@@ -58,6 +54,8 @@ intro.tex:165: {Case studies}{default}{base}
 intro.tex:206: {Case studies}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
 theory.tex:226: {Calculus of Inductive Constructions}{default}{base}
+pumpkinpatch.tex:9: {example patched proof}{default}{base}
+approach.tex:9: {example patched proof}{default}{base}
 
 
 ******************************
@@ -173,11 +171,10 @@ index.tex:627: {Nathanael}{default}{base}
 index.tex:629: {Daniel-Nikpayuk}{default}{base}
 index.tex:631: {Michelle Lee}{default}{base}
 index.tex:633: {Quinn Wilton}{default}{base}
-index.tex:656: {exampled patched proof}{default}{base}
-index.tex:690: {dependent constructors}{default}{base}
-index.tex:694: {dependent eliminators}{default}{base}
-index.tex:725: {\toolnamec }{default}{base}
-index.tex:743: {results}{default}{base}
-index.tex:752: {Adapting Proof Automation to Adapt Proofs}{default}{base}
+index.tex:694: {dependent constructors}{default}{base}
+index.tex:698: {dependent eliminators}{default}{base}
+index.tex:729: {\toolnamec }{default}{base}
+index.tex:747: {results}{default}{base}
+index.tex:756: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 
 

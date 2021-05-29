@@ -70,6 +70,7 @@ index.tex:5: {type theory}{default}{base}
 index.tex:40: {proof development}{default}{base}
 index.tex:82: {proof maintenance}{default}{base}
 index.tex:104: {RedPRL}{default}{base}
+index.tex:206: {UCSD ProgSys}{default}{base}
 index.tex:223: {John Leo}{default}{base}
 index.tex:226: {Ilya Sergey}{default}{base}
 index.tex:229: {Milos Gligoric}{default}{base}
@@ -162,6 +163,5 @@ index.tex:640: {Daniel-Nikpayuk}{default}{base}
 index.tex:642: {Michelle Lee}{default}{base}
 index.tex:644: {Quinn Wilton}{default}{base}
 index.tex:762: {results}{default}{base}
-index.tex:771: {Adapting Proof Automation to Adapt Proofs}{default}{base}
 
 

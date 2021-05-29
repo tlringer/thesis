@@ -19,11 +19,11 @@
 \contentsline {paragraph}{Implementation}{5}{Item.9}% 
 \contentsline {paragraph}{Case Studies}{5}{Item.9}% 
 \contentsline {section}{\numberline {1.5}Reading Guide}{6}{section.1.5}% 
-\contentsline {paragraph}{Adapting Proof Automation to Adapt Proofs}{6}{section.1.5}% 
-\contentsline {paragraph}{Proof Repair across Type Equivalences}{7}{section.1.5}% 
-\contentsline {paragraph}{Ornaments for Proof Reuse in Coq}{7}{section.1.5}% 
-\contentsline {paragraph}{\textsc {REPLica}}{7}{section.1.5}% 
-\contentsline {paragraph}{QED at Large}{7}{section.1.5}% 
+\contentsline {paragraph}{}{7}{section.1.5}% 
+\contentsline {paragraph}{}{7}{section.1.5}% 
+\contentsline {paragraph}{}{7}{section.1.5}% 
+\contentsline {paragraph}{}{7}{section.1.5}% 
+\contentsline {paragraph}{}{7}{section.1.5}% 
 \contentsline {paragraph}{Nathaniel Yazdani}{7}{section.1.5}% 
 \contentsline {paragraph}{RanDair Porter}{8}{Item.12}% 
 \contentsline {paragraph}{Alex Sanchez-Stern}{8}{Item.12}% 

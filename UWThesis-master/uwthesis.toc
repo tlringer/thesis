@@ -1,7 +1,7 @@
 \vspace {-\cftbeforepartskip }
 \contentsline {paragraph}{Lymor}{xi}{chapter*.3}% 
 \contentsline {paragraph}{Undergraduate Mentors \& Advisors}{xi}{chapter*.3}% 
-\contentsline {paragraph}{Jeff}{xii}{chapter*.3}% 
+\contentsline {paragraph}{Jeff \& Kris}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Industry Mentors \& Managers}{xii}{chapter*.3}% 
 \contentsline {paragraph}{Dan}{xii}{chapter*.3}% 
 \contentsline {paragraph}{UW PLSE}{xiii}{Item.3}% 

@@ -6,8 +6,8 @@
 4 autoreference(s) are introduced twice.
 2 autoreference(s) are used but not introduced.
 
-133 autoreference(s) are properly used.
-99 autoreference(s) are defined but not used.
+135 autoreference(s) are properly used.
+100 autoreference(s) are defined but not used.
 
 
 ********
@@ -97,71 +97,72 @@ index.tex:354: {Rashmi Mudduluru}{default}{base}
 index.tex:357: {Sorawee Porncharoenwase}{default}{base}
 index.tex:379: {Taylor Blau}{default}{base}
 index.tex:444: {Ras Bodik}{default}{base}
-index.tex:459: {Conor McBride}{default}{base}
-index.tex:465: {Bas Spitters}{default}{base}
-index.tex:467: {Jon Sterling}{default}{base}
-index.tex:469: {Bob Harper}{default}{base}
-index.tex:473: {James Decker}{default}{base}
-index.tex:475: {Gerwin Klein}{default}{base}
-index.tex:477: {Jonathan Aldrich}{default}{base}
-index.tex:479: {David van Horn}{default}{base}
-index.tex:481: {Michael Hicks}{default}{base}
-index.tex:483: {Emery Berger}{default}{base}
-index.tex:485: {Kenny Foner}{default}{base}
-index.tex:487: {Alexandra Silva}{default}{base}
-index.tex:489: {Lindsey Kuper}{default}{base}
-index.tex:491: {Nate Foster}{default}{base}
-index.tex:493: {Stephanie Weirich}{default}{base}
-index.tex:495: {Yuriy Brun}{default}{base}
-index.tex:498: {Emily First}{default}{base}
-index.tex:501: {Stephanie Weirich}{default}{base}
-index.tex:503: {Derek Dreyer}{default}{base}
-index.tex:507: {Karl Koscher}{default}{base}
-index.tex:509: {Roy Or-El}{default}{base}
-index.tex:512: {Vikram Iyer}{default}{base}
-index.tex:518: {Ellie Berry}{default}{base}
-index.tex:521: {Mer Joyce}{default}{base}
-index.tex:524: {Jasper Tran O'Leary}{default}{base}
-index.tex:526: {Wade Gordon}{default}{base}
-index.tex:529: {Anne Spencer Ross}{default}{base}
-index.tex:532: {Anna Kornfeld Simpson}{default}{base}
-index.tex:535: {Qi Cheng}{default}{base}
-index.tex:538: {Misha Kolmogorov}{default}{base}
-index.tex:541: {Grace Uchida}{default}{base}
-index.tex:544: {Marcela Mendoza}{default}{base}
-index.tex:547: {Laura Chick}{default}{base}
-index.tex:550: {Ezgi Akg\"{u}l}{default}{base}
-index.tex:553: {Chris Maines}{default}{base}
-index.tex:556: {Melanie Walker}{default}{base}
-index.tex:562: {Chabad of Queen Anne}{default}{base}
-index.tex:565: {Tom Cotner}{default}{base}
-index.tex:568: {David Lasky}{default}{base}
-index.tex:571: {Danielle Antosh}{default}{base}
-index.tex:574: {Erica Iantuono}{default}{base}
-index.tex:577: {Cyril Cohen}{default}{base}
-index.tex:582: {Tej Chajed}{default}{base}
-index.tex:585: {Emilio J. Gallego Arias}{default}{base}
-index.tex:588: {Enrico Tassi}{default}{base}
-index.tex:591: {Ga\"{e}tan Gilbert}{default}{base}
-index.tex:594: {Maxime D\'{e}n\`{e}s}{default}{base}
-index.tex:597: {Matthieu Sozeau}{default}{base}
-index.tex:600: {Vincent Laporte}{default}{base}
-index.tex:603: {Th\'{e}o Zimmermann}{default}{base}
-index.tex:606: {Jason Gross}{default}{base}
-index.tex:609: {Nicolas Tabareau}{default}{base}
-index.tex:612: {Pierre-Marie P\'{e}drot}{default}{base}
-index.tex:615: {Yves Bertot}{default}{base}
-index.tex:618: {Ben Delaware}{default}{base}
-index.tex:620: {Janno}{default}{base}
-index.tex:622: {Valentin Robert}{default}{base}
-index.tex:625: {Robert Rand}{default}{base}
-index.tex:634: {Hillel Wayne}{default}{base}
-index.tex:639: {Ymir Vigfusson}{default}{base}
-index.tex:641: {Benjamin Lipp}{default}{base}
-index.tex:643: {Nathanael}{default}{base}
-index.tex:645: {Daniel-Nikpayuk}{default}{base}
-index.tex:647: {Michelle Lee}{default}{base}
-index.tex:649: {Quinn Wilton}{default}{base}
-index.tex:767: {results}{default}{base}
+index.tex:462: {Conor McBride}{default}{base}
+index.tex:468: {Bas Spitters}{default}{base}
+index.tex:470: {Jon Sterling}{default}{base}
+index.tex:472: {Bob Harper}{default}{base}
+index.tex:476: {James Decker}{default}{base}
+index.tex:478: {Gerwin Klein}{default}{base}
+index.tex:480: {Jonathan Aldrich}{default}{base}
+index.tex:482: {David van Horn}{default}{base}
+index.tex:484: {Michael Hicks}{default}{base}
+index.tex:486: {Emery Berger}{default}{base}
+index.tex:488: {Kenny Foner}{default}{base}
+index.tex:490: {Alexandra Silva}{default}{base}
+index.tex:492: {Lindsey Kuper}{default}{base}
+index.tex:494: {Nate Foster}{default}{base}
+index.tex:496: {Stephanie Weirich}{default}{base}
+index.tex:498: {Yuriy Brun}{default}{base}
+index.tex:501: {Emily First}{default}{base}
+index.tex:504: {Stephanie Weirich}{default}{base}
+index.tex:506: {Derek Dreyer}{default}{base}
+index.tex:510: {Dhruv Jain}{default}{base}
+index.tex:512: {Karl Koscher}{default}{base}
+index.tex:514: {Roy Or-El}{default}{base}
+index.tex:517: {Vikram Iyer}{default}{base}
+index.tex:523: {Ellie Berry}{default}{base}
+index.tex:526: {Mer Joyce}{default}{base}
+index.tex:529: {Jasper Tran O'Leary}{default}{base}
+index.tex:531: {Wade Gordon}{default}{base}
+index.tex:534: {Anne Spencer Ross}{default}{base}
+index.tex:537: {Anna Kornfeld Simpson}{default}{base}
+index.tex:540: {Qi Cheng}{default}{base}
+index.tex:543: {Misha Kolmogorov}{default}{base}
+index.tex:546: {Grace Uchida}{default}{base}
+index.tex:549: {Marcela Mendoza}{default}{base}
+index.tex:552: {Laura Chick}{default}{base}
+index.tex:555: {Ezgi Akg\"{u}l}{default}{base}
+index.tex:558: {Chris Maines}{default}{base}
+index.tex:561: {Melanie Walker}{default}{base}
+index.tex:570: {Chabad of Queen Anne}{default}{base}
+index.tex:573: {Tom Cotner}{default}{base}
+index.tex:576: {David Lasky}{default}{base}
+index.tex:579: {Danielle Antosh}{default}{base}
+index.tex:582: {Erica Iantuono}{default}{base}
+index.tex:585: {Cyril Cohen}{default}{base}
+index.tex:590: {Tej Chajed}{default}{base}
+index.tex:593: {Emilio J. Gallego Arias}{default}{base}
+index.tex:596: {Enrico Tassi}{default}{base}
+index.tex:599: {Ga\"{e}tan Gilbert}{default}{base}
+index.tex:602: {Maxime D\'{e}n\`{e}s}{default}{base}
+index.tex:605: {Matthieu Sozeau}{default}{base}
+index.tex:608: {Vincent Laporte}{default}{base}
+index.tex:611: {Th\'{e}o Zimmermann}{default}{base}
+index.tex:614: {Jason Gross}{default}{base}
+index.tex:617: {Nicolas Tabareau}{default}{base}
+index.tex:620: {Pierre-Marie P\'{e}drot}{default}{base}
+index.tex:623: {Yves Bertot}{default}{base}
+index.tex:626: {Ben Delaware}{default}{base}
+index.tex:628: {Janno}{default}{base}
+index.tex:630: {Valentin Robert}{default}{base}
+index.tex:633: {Robert Rand}{default}{base}
+index.tex:642: {Hillel Wayne}{default}{base}
+index.tex:647: {Ymir Vigfusson}{default}{base}
+index.tex:649: {Benjamin Lipp}{default}{base}
+index.tex:651: {Nathanael}{default}{base}
+index.tex:653: {Daniel-Nikpayuk}{default}{base}
+index.tex:655: {Michelle Lee}{default}{base}
+index.tex:657: {Quinn Wilton}{default}{base}
+index.tex:775: {results}{default}{base}
 
 

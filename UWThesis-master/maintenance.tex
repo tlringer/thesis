@@ -25,7 +25,8 @@ Any of these changes can break proofs in our proof development.
 
 \paragraph{Changing our Program}
 
-Our specification of \lstinline{zip_preserves_length} gives us some freedom to change how our \lstinline{zip} function from Figure~\ref{fig:zip} behaves on edge cases,
+Since we chose the weaker specification of \lstinline{zip_preserves_length},
+we are free to change how our \lstinline{zip} function from Figure~\ref{fig:zip} behaves on edge cases,
 when the lengths of input lists are not equal.
 Suppose we change our \lstinline{zip} function to always return \lstinline{nil} in those cases,
 by just returning the old behavior when the lengths are equal, and otherwise returning \lstinline{nil}.

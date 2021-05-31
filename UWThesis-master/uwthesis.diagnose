@@ -46,7 +46,7 @@
 intro.tex:165: {Case studies}{default}{base}
 intro.tex:206: {Case studies}{default}{base}
 theory.tex:7: {Calculus of Inductive Constructions}{default}{base}
-theory.tex:226: {Calculus of Inductive Constructions}{default}{base}
+theory.tex:225: {Calculus of Inductive Constructions}{default}{base}
 pumpkinpatch.tex:9: {example patched proof}{default}{base}
 approach.tex:9: {example patched proof}{default}{base}
 transformation.tex:132: {unification heuristics}{default}{base}

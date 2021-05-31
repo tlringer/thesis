@@ -2248,22 +2248,22 @@
 \KAuxDeclaredScopeTag {sec:gallina}
 \KAuxNewLinkScopetagInstance {sec:gallina}{document}
 
-\KAuxFileAt {theory.tex}{22}
+\KAuxFileAt {theory.tex}{21}
 \KAuxAutorefTarget {default}{base}{inductive type}
 \KAuxErrorKnowledgeUnknown {default}{}{intensionality}{intensionality}{\intro }
 
-\KAuxFileAt {theory.tex}{28}
+\KAuxFileAt {theory.tex}{27}
 \KAuxAutorefTarget {default}{base}{constructors}
 \KAuxDeclaredScopeTag {fig:nat}
 \KAuxNewLinkScopetagInstance {fig:nat}{document}
 
-\KAuxFileAt {theory.tex}{55}
+\KAuxFileAt {theory.tex}{54}
 \KAuxAutorefTarget {default}{base}{eliminators}
 
-\KAuxFileAt {theory.tex}{61}
+\KAuxFileAt {theory.tex}{60}
 \KAuxAutorefTarget {default}{base}{motive}
 
-\KAuxFileAt {theory.tex}{63}
+\KAuxFileAt {theory.tex}{62}
 \KAuxAutorefTarget {default}{base}{inductive hypothesis}
 \KAuxDeclaredScopeTag {fig:list}
 \KAuxNewLinkScopetagInstance {fig:list}{document}
@@ -2272,10 +2272,10 @@
 \KAuxDeclaredScopeTag {fig:zip-elim}
 \KAuxNewLinkScopetagInstance {fig:zip-elim}{document}
 
-\KAuxFileAt {theory.tex}{160}
+\KAuxFileAt {theory.tex}{159}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 
-\KAuxFileAt {theory.tex}{177}
+\KAuxFileAt {theory.tex}{176}
 \KAuxAutorefTarget {default}{base}{definitional equality}
 \KAuxAutorefTarget {default}{base}{propositional equality}
 \KAuxDeclaredScopeTag {sec:cic}
@@ -2283,20 +2283,20 @@
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
 
-\KAuxFileAt {theory.tex}{226}
+\KAuxFileAt {theory.tex}{225}
 \KAuxAutorefTarget {default}{base}{Calculus of Inductive Constructions}
 
-\KAuxFileAt {theory.tex}{227}
+\KAuxFileAt {theory.tex}{226}
 \KAuxAutorefTarget {default}{base}{Calculus of Constructions}
 \KAuxAutorefTarget {default}{base}{polymorphism}
 \KAuxAutorefTarget {default}{base}{dependent types}
 \KAuxDeclaredScopeTag {fig:cic-syntax}
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
 
-\KAuxFileAt {theory.tex}{302}
+\KAuxFileAt {theory.tex}{301}
 \KAuxAutorefTarget {default}{base}{$\Sigma $}
 
-\KAuxFileAt {theory.tex}{332}
+\KAuxFileAt {theory.tex}{331}
 \KAuxAutorefTarget {default}{base}{proof automation}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}
@@ -2310,7 +2310,7 @@
 \KAuxDeclaredScopeTag {fig:patch}
 \KAuxNewLinkScopetagInstance {fig:patch}{document}
 
-\KAuxFileAt {maintenance.tex}{179}
+\KAuxFileAt {maintenance.tex}{180}
 \KAuxErrorKnowledgeUnknown {default}{}{development}{development}{\kl }
 \KAuxErrorKnowledgeUnknown {default}{}{maintenance}{maintenance}{\kl }
 \KAuxDeclaredScopeTag {sec:mot-rep}

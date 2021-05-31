@@ -11,21 +11,20 @@ and have a small part of Coq---the \kl{kernel}---check those proofs in the end.
 \subsubsection{Gallina}
 \label{sec:gallina}
 
-Coq's \kl{proof term} language \kl{Gallina} is a rich functional programming language with support for writing proofs.
-To see the power of Gallina, let us dissect our proof that \lstinline{zip} preserves its length.
-
+%Coq's \kl{proof term} language \kl{Gallina} is a rich functional programming language with support for writing proofs.
+To see the power of Coq's \kl{proof term} language \kl{Gallina}, let us dissect our proof that \lstinline{zip} preserves its length.
 Our proof development about \lstinline{zip} uses the \lstinline{nat} and \lstinline{list} datatypes,
 as well as the \lstinline{length} function.
 It also uses the equality type \lstinline{=}.
 All of these can be found inside of the Coq standard library.
-But dissecting them already points to many important features of Gallina:
+But dissecting them already points to two important features of Gallina:
 \intro{inductive types} and \intro{intensionality}.
-All of these arise in our proof development, and will continue to arise throughout this thesis.
+Both of these arise in our proof development, and will continue to arise throughout this thesis.
 
 \paragraph{Inductive Types}
 
-Each of \lstinline{nat} and \lstinline{list} in Gallina is an \kl{inductive type}:
-it is defined by its \intro{constructors} (ways of constructing a term with that type).
+Each of \lstinline{nat} and \lstinline{list} in Gallina is what is called an \kl{inductive type}.
+An inductive type is defined by its \intro{constructors}: the ways of constructing a term with that type.
 A \lstinline{nat} (Figure~\ref{fig:nat}, left), for example,
 is either \lstinline{0} or the successor \lstinline{S} of another \lstinline{nat};
 these are the two constructors of \lstinline{nat}.
@@ -98,7 +97,7 @@ but with an argument corresponding to the parameter \lstinline{T} over which \ls
 and with an additional argument corresponding to the new element in the inductive case.
 
 One interesting thing about the types of these eliminators \lstinline{list_rect} and \lstinline{nat_rect}
-include universal quantification over all inputs, written \ltacforall.
+is that they include universal quantification over all inputs, written \ltacforall.
 Gallina's type system is expressive enough to include universal quantification over inputs, as we will soon see.
 
 \begin{figure}
@@ -164,7 +163,7 @@ on the right.
 %I remove the \lstinline{Definition} and \lstinline{Fixpoint} keywords, since everything from here on out is a \lstinline{Definition}.
 
 To handle practical code that uses pattern matching and recursion,
-I preprocesss the code using a tool by \kl{Nate}.
+I preprocess the code using a tool by \kl{Nate}.
 This preprocessing tool transforms functions that use simple pattern matching and recursion
 to instead use Coq's automatically generated eliminators (Section~\ref{sec:pi-details-trans}).
 Figure~\ref{fig:zip-elim}, for example, shows the \lstinline{zip} function after running the preprocessing tool.
@@ -224,8 +223,8 @@ but produce Ltac proof scripts that the proof engineer can use going forward.
 \end{figure*}
 
 The type theory that Gallina implements is \intro{CIC$_{\omega}$}, or the \kl{Calculus of Inductive Constructions}.
-CIC$_{\omega}$ is based on the \intro{Calculus of Constructions} (CoC), a variant of the lambda calculus with two kinds of universally quantified function types: \intro{polymorphism} (types that dependent on types) and \intro{dependent types} (types that depend on terms)~\cite{coquand:inria-00076024}.
-CoC with an infinite universe hierarchy---basically a trick for consistency---is 
+CIC$_{\omega}$ is based on the \intro{Calculus of Constructions} (CoC), a variant of the lambda calculus with two kinds of universally quantified function types: \intro{polymorphism} (types that depend on types) and \intro{dependent types} (types that depend on terms)~\cite{coquand:inria-00076024}.
+CoC with an infinite universe hierarchy---basically a trick for logical consistency---is 
 called CoC$_{\omega}$.\footnote{The need for the infinite universe hierarchy is too distracting for me to explain in detail here, but it is also not important for this thesis.}
 The syntax for CoC$_{\omega}$ is in Figure~\ref{fig:coc-syntax}.
 Note that whereas in Gallina we represent universal quantification over terms or types with \ltacforall, here we represent it with $\Pi$, as is standard.
@@ -246,37 +245,37 @@ CIC$_{\omega}$ extends \kl{CoC$_{\omega}$} with \kl{inductive types}~\cite{induc
 the syntax for CIC$_{\omega}$ (building on syntax from an existing paper~\cite{Timany2015FirstST}) is in Figure~\ref{fig:cic-syntax},
 and the typing rules are standard and omitted.
 As in Gallina, inductive types are defined by their constructors and eliminators.
-Consider the inductive type \lstinline{nat} of unary natural numbers that we saw in Figure~\ref{fig:nat},
+Consider the inductive type \lstinline{list} of polymorphic lists that we saw in Figure~\ref{fig:list} (fixing a type parameter \lstinline{T}),
 this time in CIC$_{\omega}$: % TODO explain sorts
 
 \begin{lstlisting}
-  Ind (nat : Set) {
-    (@\codesimb{nat}@),
-    (@\codesima{nat $\rightarrow$ nat}@)
+  Ind (list T : Type) {
+    (@\codesimb{list T}@),
+    (@\codesima{T $\rightarrow$ list T $\rightarrow$ list T}@)
   }
 \end{lstlisting}
-where the \lstinline{O} constructor type is the zeroth element in the list, and the \lstinline{S} constructor type is the first element.
+where the \lstinline{nil} constructor type is the zeroth constructor, and the \lstinline{cons} constructor type is the first constructor.
 Accordingly, the terms:
 
 \begin{lstlisting}
-  (@\codesimb{Constr (0, nat)}@)
+  (@\codesimb{Constr (0, list T)}@)
 \end{lstlisting}
 and:
 
 \begin{lstlisting}
-  (@\codesima{Constr (1, nat)}@)
+  (@\codesima{Constr (1, list T)}@)
 \end{lstlisting}
-refer to the constructors \lstinline{O} and \lstinline{S}, respectively.
+refer to the constructors \lstinline{nil} and \lstinline{cons}, respectively.
 
-As in Gallina, inductive types like \lstinline{nat} come associated with \kl{eliminators}.
+As in Gallina, inductive types like \lstinline{list} come associated with \kl{eliminators}.
 Unlike in Gallina, here we truly assume \kl{primitive eliminators}---that these eliminators
 do not reduce at all.
 Instead, we represent them explicitly with the \lstinline{Elim} construct.
-Thus, to eliminate over a natural number \lstinline{n} with motive \lstinline{P},
+Thus, to eliminate over a list \lstinline{l} with motive \lstinline{P},
 we write: % TODO check
 
 \begin{lstlisting}
-  Elim (n, P) {
+  Elim (l, P) {
     (@\codesimb{f$_0$}@),
     (@\codesima{f$_1$}@)
   }
@@ -284,26 +283,26 @@ we write: % TODO check
 where functions:
 
 \begin{lstlisting}
-  (@\codesimb{f$_0$ : P (Constr (0, nat))}@)
+  (@\codesimb{f$_0$ : P (Constr (0, list T))}@)
 \end{lstlisting}
 and:
 
 \begin{lstlisting}
-  (@\codesima{f$_1$ : $\Pi$ (n : nat) (IHn : P n) . P ((Constr (1, nat)) n)}@)
+  (@\codesima{f$_1$ : $\Pi$ (t : T) (l : list T) (IHl : P l) . P ((Constr (1, list T)) t l)}@)
 \end{lstlisting}
 prove the base and inductive cases, respectively.
-When \lstinline{n}, \lstinline{P}, \lstinline{f}$_0$, and \lstinline{f}$_1$ are arbitrary,
-this statement has the same type as \lstinline{nat_rect} in Gallina.
+When \lstinline{l}, \lstinline{P}, \lstinline{f}$_0$, and \lstinline{f}$_1$ are arbitrary,
+this statement has the same type as \lstinline{list_rect} in Gallina.
 
 % TODO use knowledge below to index this stuff:
 \paragraph{Conventions}
-Throughout this thesis, I assume an inductive \kl{propositional} equality type \lstinline{=} with constructor \lstinline{eq_refl}
+Throughout this thesis, I assume the existence of an inductive \kl{propositional} equality type \lstinline{=} with constructor \lstinline{eq_refl}
 and eliminator \lstinline{eq_rect}.
 I also assume an inductive type \intro{$\Sigma$} for existential or refinement types,
 with constructor $\exists$ and projections $\pi_l$ and $\pi_r$.
 For simplicity of presentation, when I write terms in CIC$_{\omega}$, I assume variables are names, and that all names are fresh.
 
-I often present \kl{semantic differencing} algorithms and \kl{proof term transformations} over CIC$_{\omega}$ relationally, using a set of judgments; % TODO maybe move this up too
+I often present \kl{differencing} algorithms and \kl{transformations} over CIC$_{\omega}$ relationally, using a set of judgments; % TODO maybe move this up too
 to turn these relations into algorithms, prioritize the rules by running the derivations in
 order, falling back to the original term when no rules match.
 I use $\vec{t}$ and $\{t_1, \ldots, t_n\}$ to denote lists of terms;

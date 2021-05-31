@@ -2,11 +2,11 @@
 * Summary *
 ***********
 
-14 undefined knowledge(s).
+13 undefined knowledge(s).
 4 autoreference(s) are introduced twice.
-3 autoreference(s) are used but not introduced.
+2 autoreference(s) are used but not introduced.
 
-132 autoreference(s) are properly used.
+133 autoreference(s) are properly used.
 97 autoreference(s) are defined but not used.
 
 
@@ -23,7 +23,6 @@
 ************************
 
 \knowledge{ignore}
- | programming languages
  | intensionality
  | development
  | maintenance
@@ -59,7 +58,6 @@ transformation.tex:160: {unification heuristics}{default}{base}
 
 \nointro{default}{base}{proof object}
 \nointro{default}{base}{intensional}
-\nointro{default}{base}{programming languages community}
 
 
 ***********************************

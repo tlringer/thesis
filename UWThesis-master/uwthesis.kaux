@@ -2020,7 +2020,7 @@
 \KAuxAutorefTarget {default}{base}{Robert Rand}
 
 \KAuxFileAt {acks.tex}{198}
-\KAuxErrorKnowledgeUnknown {default}{}{programming languages}{programming languages}{\intro }
+\KAuxAutorefTarget {default}{base}{programming languages community}
 
 \KAuxFileAt {acks.tex}{199}
 \KAuxAutorefTarget {default}{base}{Carlo Angiuli}

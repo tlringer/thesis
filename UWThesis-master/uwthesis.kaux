@@ -2676,44 +2676,44 @@
 \KAuxFileAt {related.tex}{41}
 \KAuxAutorefTarget {default}{base}{intuitionistic}
 
-\KAuxFileAt {related.tex}{43}
+\KAuxFileAt {related.tex}{42}
 \KAuxAutorefTarget {default}{base}{law of the excluded middle}
 
-\KAuxFileAt {related.tex}{45}
+\KAuxFileAt {related.tex}{44}
 \KAuxAutorefTarget {default}{base}{double negation elimination}
 
-\KAuxFileAt {related.tex}{52}
+\KAuxFileAt {related.tex}{51}
 \KAuxAutorefTarget {default}{base}{classical}
 
-\KAuxFileAt {related.tex}{55}
+\KAuxFileAt {related.tex}{54}
 \KAuxAutorefTarget {default}{base}{uniqueness of identity proofs}
 
-\KAuxFileAt {related.tex}{59}
+\KAuxFileAt {related.tex}{58}
 \KAuxAutorefTarget {default}{base}{cubical type theory}
 
-\KAuxFileAt {related.tex}{61}
+\KAuxFileAt {related.tex}{60}
 \KAuxAutorefTarget {default}{base}{RedPRL}
 \KAuxAutorefTarget {default}{base}{Cubical Agda}
 
-\KAuxFileAt {related.tex}{74}
+\KAuxFileAt {related.tex}{73}
 \KAuxAutorefTarget {default}{base}{explicit proof objects}
 
-\KAuxFileAt {related.tex}{76}
+\KAuxFileAt {related.tex}{75}
 \KAuxAutorefTarget {default}{base}{ephemeral proof objects}
 \KAuxDeclaredScopeTag {sec:design}
 \KAuxNewLinkScopetagInstance {sec:design}{document}
 \KAuxDeclaredScopeTag {sec:refrep}
 \KAuxNewLinkScopetagInstance {sec:refrep}{document}
 
-\KAuxFileAt {related.tex}{163}
+\KAuxFileAt {related.tex}{162}
 \KAuxErrorKnowledgeUnknown {default}{}{Proof refactoring}{Proof refactoring}{\intro }
 
-\KAuxFileAt {related.tex}{165}
+\KAuxFileAt {related.tex}{164}
 \KAuxErrorKnowledgeUnknown {default}{}{program refactoring}{program refactoring}{\intro }
 \KAuxDeclaredScopeTag {sec:reuse}
 \KAuxNewLinkScopetagInstance {sec:reuse}{document}
 
-\KAuxFileAt {related.tex}{206}
+\KAuxFileAt {related.tex}{205}
 \KAuxErrorKnowledgeUnknown {default}{}{proof reuse}{proof reuse}{\intro }
 \KAuxDeclaredScopeTag {sec:automation}
 \KAuxNewLinkScopetagInstance {sec:automation}{document}

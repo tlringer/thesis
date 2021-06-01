@@ -39,8 +39,7 @@ Differences in proof assistants along these dimensions have different implicatio
 The foundations that make up proof assistants vary by proof assistant.
 The foundations of Coq, for example, build on the \kl{intensional} type theory \kl{CIC$_{\omega}$}.
 CIC$_{\omega}$ is \intro{intuitionistic}~\cite{Heyting1956} (or \kl{constructive}) in that
-proofs in CIC$_{\omega}$ must be constructed from basic principles.
-For example, CIC$_{\omega}$ does not assume the \intro{law of the excluded middle} (\kl{LEM}),
+proofs in CIC$_{\omega}$ do not assume the \intro{law of the excluded middle} (\kl{LEM}),
 which states that for any proposition, either that proposition is true, or its negation is true.
 CIC$_{\omega}$ also does not assume \intro{double negation elimination} (\kl{DNE}),
 which states that the negation of the negation is the original proposition or type.
@@ -49,7 +48,7 @@ nonexistence implies a contradiction.
 Instead, one must supply a witness to the existential.\footnote{Perhaps notably, though, the witness to the existential can be that 
 \kl{DNE} \emph{provably} holds for a particular instance. This is true for decidable domains in CIC$_{\omega}$.} 
 
-The proof assistants Isabelle/HOL~\cite{isabelle}, HOL Light~\cite{hollight}, and HOL4~\cite{hol4-interact} are built on \intro{classical} foundations
+The proof assistants Isabelle/HOL~\cite{isabelle}, HOL4~\cite{hol4-interact}, and HOL Light~\cite{hollight} are built on \intro{classical} foundations
 in that they assume both \kl{LEM} and \kl{DNE}.
 The proof assistants Agda and Lean are built on \kl{constructive} foundations that are similar to Coq, though with some minor differences.
 Lean in particular further assumes an axiom called \intro{uniqueness of identity proofs} (\kl{UIP}), which states that all proofs of
@@ -138,7 +137,7 @@ Another approach to robust design is to use heavy \kl{proof automation}, for exa
 custom program-specific \kl{tactics}~\cite{chlipala:cpdt}
 %implementations of decision procedures~\cite{Pugh1991},
 or general-purpose hammers~\cite{Blanchette2016b, Blanchette2013, Kaliszyk2014, Czajka2018}.
-The degree to which proof engineers rely on automation varies, as seen in the data from the \kl{\textsc{REPLica}} user study.
+The degree to which proof engineers rely on automation varies, as seen in the data from the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study.
 Automation-heavy proof engineering styles localize the burden of change to the automation,
 but can result in \kl{proof terms} that are large and slow to type check,
 and tactics that can be difficult to debug.
@@ -156,7 +155,7 @@ A review~\cite{Elphinstone2013} of the evolution of the seL4 verified
 OS microkernel~\cite{Klein2009}, for example, notes that while
 customizing the kernel to different environments may be desirable, 
 ``the formal verification of seL4 creates a powerful disincentive to changing the kernel.''
-Leroy and friends 2012~\cite{leroy2012} motivates and describes updates to the initial CompCert memory model
+Another paper~\cite{leroy2012} motivates and describes updates to the initial CompCert memory model
 that include changes in specifications, automation, and proofs~\cite{leroy-mem-2010}.
 
 As I have shown in this thesis, breaking changes are not always in the proof engineer's control.
@@ -249,13 +248,13 @@ implement more complex transformations for generalization.
 Magaud \& Bertot 2000~\cite{magaud2000changing} implement a proof term transformation between
 unary and binary numbers that fits into a \toolnamec configuration.
 The expansion algorithm from the paper describing this transformation may help guide the design
-of better unification heuristics for \toolnamec, in particular when identifying applications of \kl{definitional} \kl{\lstinline{Eta}}
-and \kl{\lstinline{Iota}}.
+of better unification heuristics for \toolnamec, in particular when identifying applications of \kl{definitional} \contour[2]{violet}{\kl{\lstinline{Eta}}}
+and \contour[2]{violet}{\kl{\lstinline{Iota}}}.
 
 The refinement framework CoqEAL~\cite{cohen:hal-01113453} transforms functions across relations in Coq,
 and these relations can be more general than \toolnamec's equivalences.
 However, while \toolnamec supports both functions and proofs, CoqEAL supports only simple functions
-due to the problem with \kl{definitional equality} that \kl{\lstinline{Iota}} addresses.
+due to the problem with \kl{definitional equality} that \contour[2]{violet}{\kl{\lstinline{Iota}}} addresses.
 CoqEAL may be most useful to chain with \toolnamec to get faster functions,
 or to help support better workflows for changes that do not correspond to equivalences.
 
@@ -265,7 +264,7 @@ This automatic configuration formed the basis of the first tool for ornamentatio
 initially called \textsc{Devoid}---but later generalized to arbitrary equivalences and renamed to \toolnamec.
 This stands in contrast to the many existing embedded implementations of 
 ornaments~\cite{Dagand:2013:CTO:2591370.2591396, ko2013relational, dagand2014transporting, ko2016programming, dagand2017essence}
-that had arose since their discovery~\cite{mcbride}.
+that had arisen since their discovery~\cite{mcbride}.
 \textsc{Devoid} essentially moved the automation-heavy approach of Ornamentation in ML~\cite{Williams2017},
 which operates on non-embedded ML code, into \kl{CIC$_{\omega}$}.
 It also introduced the first differencing algorithm to identify ornaments, which in the past 
@@ -311,7 +310,7 @@ However, the white-box transformation imposes proof obligations on the proof eng
 In addition, it comes with neither \kl{differencing} algorithms for equivalences nor \kl{proof script} generation.
 It also does not support changes in inductive structure,
 instead relying on its original black-box functionality;
-\kl{\lstinline{Iota}} solves this in \toolnamec, and is based on lessons learned from reading that article.
+\contour[2]{violet}{\kl{\lstinline{Iota}}} solves this in \toolnamec, and is based on lessons learned from reading that article.
 The most fruitful progress may come from combining these tools. % to take advantage of the benefits of both.
 
 \subsection{Other Proof Automation}
@@ -430,9 +429,8 @@ Among behavioral repair tools, it focuses on regression repair, specification-ba
 repair by example, and other techniques that bring a human into the loop.
 
 \paragraph{Regression Repair}
-Regression repair tools target regression bugs, or bugs introduced by changes in code.
-Test-based regression repair tools repair code that causes a set of tests (the \textit{regressed tests}) that used to pass to no longer pass,
-such that regressed tests pass on the repaired code.
+Regression repair tools target regression bugs, like changes that cause a set of tests (the \textit{regressed tests}) that used to pass to no longer pass.
+Test-based regression repair tools repair code such that regressed tests pass on the repaired code.
 In some sense, proof repair is a kind of regression repair, as it repairs
 proofs that used to succeed, but after some change, no longer do (the \textit{regressed proofs}).
 A section by \kl{Karl} in \kl{QED at Large} describes the correspondence between regressed proofs and regressed tests in more detail,
@@ -478,7 +476,7 @@ then shows some examples using those techniques with existing tools.
 It does not yet automate it in a tool.
 Still, perhaps using partial proofs as in proof-directed repair can help a proof repair tool like \sysnamelong
 better repair functions.
-It also matches the workflow of proof engineers seen in the \kl{\textsc{REPLica}} user study. % TODO say it's mine somehow 
+It also matches the workflow of proof engineers seen in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study.
 
 \paragraph{Repair by Example}
 Some program repair tools work \kl{by example}, like \sysname.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  31 MAY 2021 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  31 MAY 2021 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2324,31 +2324,35 @@ Overfull \hbox (5.39363pt too wide) in paragraph at lines 202--209
 
 ]
 chapter 5.
-[109]
-Overfull \hbox (16.902pt too wide) in paragraph at lines 52--62
-[]\T1/pplj/m/n/10.95 (-20) The proof as-sis-tants Is-abelle/HOL [[]], HOL Light
- [[]], and HOL4 [[]]
- []
-
-[110] [111] [112] [113] [114] [115]
-Overfull \hbox (4.452pt too wide) in paragraph at lines 329--340
+[109] [110] [111]
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 140.
+[112] [113]
+contour: Using 2 copies for `\kl {\lstinline{Eta}}' on input line 251.
+contour: Using 2 copies for `\kl {\lstinline{Iota}}' on input line 252.
+contour: Using 2 copies for `\kl {\lstinline{Iota}}' on input line 257.
+[114]
+contour: Using 2 copies for `\kl {\lstinline{Iota}}' on input line 313.
+[115]
+Overfull \hbox (4.452pt too wide) in paragraph at lines 328--339
 [] []\T1/pplj/m/sc/10.95 (-20) k n o w l -e d g e s h a r -i n g m e t h -o d s
 [] \T1/pplj/m/n/10.95 (-20) Knowl-edge shar-ing meth-ods [[]]
  []
 
 [116]
-Overfull \hbox (1.78976pt too wide) in paragraph at lines 367--373
+Overfull \hbox (1.78976pt too wide) in paragraph at lines 366--372
 []\T1/pplj/m/n/10.95 (-20) A re-cent re-view [[]] of a pop-u-lar test-based pro
 -gram re-pair tool [[]]
  []
 
 [117]
-Overfull \hbox (6.93776pt too wide) in paragraph at lines 403--408
+Overfull \hbox (6.93776pt too wide) in paragraph at lines 402--407
 []\T1/pplj/m/sc/10.95 (-20) Pumpkin Patch \T1/pplj/m/n/10.95 (-20) uses example
 s---in the for-mer of changes to datatypes
  []
 
-[118] [119] [120]) (./conclusion.tex [121] [122
+[118]
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 479.
+[119] [120]) (./conclusion.tex [121] [122
 
 
 ]
@@ -2358,7 +2362,7 @@ contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 77.
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 83.
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 88.
 [125] [126] [127])) (./uwthesis.ind [128]
-Overfull \hbox (10.04045pt too wide) in paragraph at lines 76--77
+Overfull \hbox (10.04045pt too wide) in paragraph at lines 75--76
 []| \T1/pplj/m/n/10.95 (-20) Daniel Schwartz-Narbonne,
  []
 
@@ -2369,118 +2373,98 @@ Overfull \hbox (10.04045pt too wide) in paragraph at lines 76--77
 
 
 ]
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 155--156
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 152--153
 []| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 
-Overfull \hbox (7.97986pt too wide) in paragraph at lines 166--168
+Overfull \hbox (7.97986pt too wide) in paragraph at lines 163--165
 []| \T1/pplj/m/n/10.95 (-20) Or-na-men-tal Pro-mo-tion Iso-
  []
 
-[130]
-Overfull \hbox (0.26569pt too wide) in paragraph at lines 171--172
+
+Overfull \hbox (0.26569pt too wide) in paragraph at lines 168--169
 []| \T1/pplj/m/n/10.95 (-20) Law of the Ex-cluded Mid-
  []
 
 
-Overfull \hbox (21.43654pt too wide) in paragraph at lines 172--174
+Overfull \hbox (21.43654pt too wide) in paragraph at lines 169--170
 []| \T1/pplj/m/n/10.95 (-20) Unique-ness of Iden-tity Proofs,
  []
 
-
-Overfull \hbox (3.33537pt too wide) in paragraph at lines 174--177
-[]| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []69[], []71[], []77[], []110[],
+[130]
+Overfull \hbox (2.02138pt too wide) in paragraph at lines 170--172
+[]| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []69[], []71[], []77[], []110[] 
  []
 
 
-Overfull \hbox (2.9659pt too wide) in paragraph at lines 184--187
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 179--181
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []66[], []68[]--
  []
 
 
-Overfull \hbox (2.94571pt too wide) in paragraph at lines 204--206
-[]| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []109[], []110[],
+Overfull \hbox (1.63171pt too wide) in paragraph at lines 196--197
+[]| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []109[], []110[] 
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 207--210
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 198--201
 []| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []18[], []20[],
  []
 
 
-Overfull \hbox (3.07237pt too wide) in paragraph at lines 213--214
+Overfull \hbox (3.07237pt too wide) in paragraph at lines 204--205
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of Con-struc-tions,
  []
 
 
-Overfull \hbox (4.15424pt too wide) in paragraph at lines 214--218
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 205--209
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 229--231
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 220--222
 []| \T1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 233--237
+Overfull \hbox (2.00206pt too wide) in paragraph at lines 224--227
 \T1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 242--246
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 232--236
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (7.0995pt too wide) in paragraph at lines 250--252
+Overfull \hbox (7.0995pt too wide) in paragraph at lines 240--242
 []| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []73[],
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 256--259
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 246--249
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []63[],
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 259--261
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 249--251
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []89[],
  []
 
-[131]
-Overfull \hbox (0.44196pt too wide) in paragraph at lines 278--281
+
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 267--270
 []| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 281--283
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 270--272
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
-
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 330--331
+[131]
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 317--318
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []109[], []110[] 
- []
-
-
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 333--334
-[]| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
- []
-
-
-Overfull \hbox (1.87816pt too wide) in paragraph at lines 336--338
-[]| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []109[]--[]111[], []113[], []124[] 
- []
-
-
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 344--347
-[]| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []109[]--[]111[],
- []
-
-
-Overfull \hbox (0.1531pt too wide) in paragraph at lines 347--349
-[]| \T1/pplj/m/n/10.95 (-20) Lean, []2[], []109[], []110[], []116[], []124[],
  []
 
 [132]) (./uwthesis.bbl [133
@@ -2586,10 +2570,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1884670 bytes).
+Output written on uwthesis.pdf (164 pages, 1881157 bytes).
 PDF statistics:
- 5006 PDF objects out of 5155 (max. 8388607)
- 4715 compressed objects within 48 object streams
+ 4951 PDF objects out of 5155 (max. 8388607)
+ 4661 compressed objects within 47 object streams
  1619 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

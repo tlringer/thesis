@@ -778,7 +778,7 @@
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{109}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{109}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{109}
-\indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{110}
+\indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{109}
 \indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{110}
 \indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{110}
 \indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{110}
@@ -826,6 +826,8 @@
 \indexentry{Verification!Proof Automation|hyperpage}{112}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{112}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{112}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{112}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{112}
 \indexentry{Proof Repair|hyperpage}{112}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{113}
 \indexentry{Verification!Proof Assistants!Agda|hyperpage}{113}
@@ -837,8 +839,14 @@
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{114}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{114}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{114}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{114}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{115}
@@ -857,8 +865,10 @@
 \indexentry{Logic \& Type Theory!Internal|hyperpage}{115}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{115}
 \indexentry{Verification!Proof Script|hyperpage}{115}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{115}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{115}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{115}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{115}
-\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{116}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{116}
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{116}
 \indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{116}
@@ -873,6 +883,8 @@
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{118}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{119}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{119}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{119}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{119}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{119}
 \indexentry{Proof Repair!By Example|hyperpage}{119}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{120}

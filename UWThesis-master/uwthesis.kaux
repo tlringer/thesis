@@ -2389,12 +2389,12 @@
 \KAuxDeclaredScopeTag {sec:pumpkin-workflow}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-workflow}{document}
 
-\KAuxFileAt {approach.tex}{32}
+\KAuxFileAt {approach.tex}{29}
 \KAuxAutorefTarget {default}{base}{commands}
 \KAuxDeclaredScopeTag {alg:patching}
 \KAuxNewLinkScopetagInstance {alg:patching}{document}
 
-\KAuxFileAt {approach.tex}{67}
+\KAuxFileAt {approach.tex}{64}
 \KAuxAutorefTarget {default}{base}{goal type}
 \KAuxDeclaredScopeTag {fig:example}
 \KAuxNewLinkScopetagInstance {fig:example}{document}
@@ -2456,8 +2456,8 @@
 \KAuxNewLinkScopetagInstance {sec:tcb}{document}
 \KAuxDeclaredScopeTag {sec:workflow}
 \KAuxNewLinkScopetagInstance {sec:workflow}{document}
-\KAuxDeclaredScopeTag {sec:eval}
-\KAuxNewLinkScopetagInstance {sec:eval}{document}
+\KAuxDeclaredScopeTag {sec:bound-eval}
+\KAuxNewLinkScopetagInstance {sec:bound-eval}{document}
 \KAuxDeclaredScopeTag {sec:suite}
 \KAuxNewLinkScopetagInstance {sec:suite}{document}
 \KAuxDeclaredScopeTag {fig:stronger}

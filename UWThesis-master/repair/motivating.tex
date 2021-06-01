@@ -67,7 +67,7 @@ Many of these changes were simple. For example, the developer wrote a lemma that
   Lemma INR_IPR : (@\ltacforall@)p, INR (Pos.to_nat p) = IPR p.
 \end{lstlisting}
 The developer then used this lemma to fix broken proofs within the standard library. 
-For example, the one proof broke on this line:
+For example, one proof broke on this line:
 
 \begin{lstlisting}
   (@\fails{rewrite Pos2Nat.inj\_sub by trivial.}@)
@@ -94,8 +94,6 @@ that resulted from the change in definition (in this case, rewriting by the lemm
 It could extract a reusable patch from those changes, which it could automatically apply within broken user proofs. % TODO sometimes
 The proof engineer would never have to consider how the definition had changed.
 
-The \sysname prototype presented in this chapter took the first steps toward realizing this vision,
-and saw preliminary success (Section~\ref{sec:pumpkin-results}).
-The later \toolnamec extension to \sysnamelong brought this vision to life (Chapter~\ref{chapt:pi}).
+The \sysname prototype presented in this chapter took the first steps toward realizing this vision.
 
 

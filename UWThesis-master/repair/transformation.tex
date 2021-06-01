@@ -202,7 +202,7 @@ It first \kl{factors} the candidate using the factoring component, then calls th
 function on each factor, then finally folds the resulting list in reverse.
 The primitive inversion function exploits symmetry. 
 For example, propositional equality is symmetric, so the component can invert any application of the equality eliminators.
-I will explain this more in Section~\ref{sec:pumpkin-impl-diff}.
+I will explain this more in Section~\ref{sec:pumpkin-impl-trans}.
 
 \subsubsection*{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
 This can break other problems, like generalization, into smaller subproblems.
@@ -223,7 +223,7 @@ is of course:
 \begin{lstlisting}
   $f\inv \circ g\inv$ : $Z \rightarrow X$ 
 \end{lstlisting}
-This shows up often for inverting sequences of rewrites, as I will show in Section~\ref{sec:pumpkin-impl-diff}.
+This shows up often for inverting sequences of rewrites, as I will show in Section~\ref{sec:pumpkin-impl-trans}.
 To invert a term like this, \sysname identifies the factors \lstinline{[f; g]}, 
 inverts each factor to \lstinline{[f}$\inv$\lstinline{; g}$\inv$\lstinline{]}, 
 then folds and applies the inverse factors in the opposite direction.

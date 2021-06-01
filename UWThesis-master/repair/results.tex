@@ -187,8 +187,8 @@ User A cut an inline lemma in an inductive case and proved it using a rewrite:
   assert ((@\ltacforall@) a, S (a + S (@\diff{(a + 0)}@)) = S (S (a + (@\diff{(a + 0)}@)))).
   - $\ldots$ (@\diff{rewrite $\leftarrow$ plus\_n\_O.}@) rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A
-When I ported User A's solution to use User B's definition of \lstinline{bin_to_nat}, 
-the application of this inline lemma failed. I changed the conclusion of the inline lemma 
+When I ported the solution by User A to use User B's definition of \lstinline{bin_to_nat}, 
+the application of this inline lemma failed. I changed the conclusion of the lemma 
 and removed the corresponding rewrite:
 
 \begin{lstlisting}[language=coq]
@@ -196,8 +196,7 @@ and removed the corresponding rewrite:
   - $\ldots$ rewrite $\rightarrow$ plus_comm.
 \end{lstlisting} % blindFS / user A, adapted
 
-\paragraph{Search} I used \sysname to search in the difference between the old and new versions of the example
-patched proof for a patch that corresponds to the change in \lstinline{bin_to_nat}.
+\paragraph{Search} I used \sysname to search for a patch that corresponds to the change in \lstinline{bin_to_nat}.
 It found an isomorphism:
 
 \begin{lstlisting}[language=coq]
@@ -210,7 +209,7 @@ It found an isomorphism:
 
 \begin{lstlisting}[language=coq]
   Theorem normalize_correctness:
-    (@\ltacforall@)b, nat_to_bin (bin_to_nat b) = normalize b.
+    (@\ltacforall@) b, nat_to_bin (bin_to_nat b) = normalize b.
   Proof.
     $\ldots$ (@\fails{rewrite $\rightarrow$ plus\_0\_r.}@)
 \end{lstlisting}

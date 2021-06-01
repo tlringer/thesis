@@ -3,9 +3,9 @@
 
 Proof repair by example takes advantage of the fact that an example patch to a broken proof can carry enough 
 information (like the rewrite by \lstinline{INR_IPR}) to fix other proofs broken by the same change (like the broken
-client proofs). \sysname implements a prototype of this.
+client proofs).
 
-To use \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide 
+To repair proofs by example with \sysname (Section~\ref{sec:pumpkin-workflow}), the proof engineer modifies a single proof script to provide 
 an \intro{example patched proof}: an example of how to adapt a proof to a change.
 \sysname extracts the information that example carries into a \intro{patch candidate}: a function that describes the change 
 in the example patched proof,
@@ -19,12 +19,9 @@ Differencing (Section~\ref{sec:pumpkin-spec-diff}) looks at the difference betwe
 The proof term transformations (Section~\ref{sec:pumpkin-spec-trans}) then modify that candidate to produce the reusable proof patch.
 All of this happens over proof terms in Gallina, since tactics may hide necessary information. % as I will soon show.
 
-In other words, looking back to the thesis statement, the information corresponding to changes in programs and specifications
+In other words, looking back to the \kl{thesis} statement, the information corresponding to changes in programs and specifications
 shows up in the difference between versions of the example patched proof.
 \sysname can extract and generalize that information.
-\sysname has only preliminary support for automatically \textit{applying} the extracted
-and generalized information (see Section~\ref{sec:pumpkin-impl}),
-though the later \toolnamec extension addresses this limitation (Chapter~\ref{chapt:pi}).
 
 \subsection{Workflow: Repair by Example}
 \label{sec:pumpkin-workflow}
@@ -52,7 +49,7 @@ All terms that \sysname defines are type checked in the end, so \sysname does no
     \STATE \diff{\kl{diff} terms old\_proof and new\_proof for \kl{candidates}}
     \IF{there are \kl{candidates}}
       \STATE \diff{\kl{transform} \kl{candidates}}
-      \IFRETURN{there are \kl{patches}}{\kl{patches}}
+      \IFRETURN{there is a \kl{patch}}{\kl{patch}}
     \ENDIF
     \RETURN failure
 \end{algorithmic}
@@ -116,8 +113,11 @@ When we call:
 Here, it infers the following goal:
 
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) n m p,
-    n <= m $\rightarrow$ m <= p $\rightarrow$ (@\diff{n <= p}@) $\rightarrow$ (@\diff{n <= p + 1}@)
+  (@\ltacforall@) (n m p : nat),
+    n <= m $\rightarrow$
+    m <= p $\rightarrow$
+    (@\diff{n <= p}@) $\rightarrow$
+    (@\diff{n <= p + 1}@)
 \end{lstlisting}
 which maps from the conclusion of \lstinline{new} back to the conclusion of \lstinline{old} in a common context.
 It then differences the terms \lstinline{old} and \lstinline{new} to identify \kl{candidate proof patches} (Section~\ref{sec:pumpkin-spec-diff}),

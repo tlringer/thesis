@@ -22,10 +22,18 @@ on major proof developments (Section~\ref{sec:pumpkin-results}).
 
 \paragraph{Historical Note}
 The \sysname plugin is a prototype that I implemented in 2018 to show that proof repair is possible.
-Because of this, it includes only preliminary automation for \textit{applying} the patches that it finds,
-and supports changes that are limited in scope in a way that is fundamental to the approach.
-The results for \sysname are also preliminary, and the implementation does not yet integrate smoothly into proof engineering workflows.
-The \toolnamec extension that I will show you in Chapter~\ref{chapt:pi} will address these limitations.
+Because of this, it includes little automation for \textit{applying} the patches that it finds,
+and it does not yet integrate smoothly into proof engineering workflows.
+Chapter~\ref{chapt:pi} will introduce technologies that address these limitations,
+and that can also be used with \sysname if desired.
+
+\sysname also supports changes that are limited in scope in a way that is fundamental to the approach,
+and it only \textit{could have helped} proof engineers retroactively.
+Chapter~\ref{chapt:pi} will introduce an extension to the \sysnamelong plugin suite that
+adds support for a broad class of changes beyond those supported by \sysname,
+and that \textit{can help} and \textit{has helped} proof engineers on real repair scenarios.
+
+%clarify solving 2 different problems for 2 chapters, but chapter 4 does better job because was later, could port back to PP but haven't
 
 \input{repair/motivating}
 

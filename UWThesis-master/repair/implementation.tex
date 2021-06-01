@@ -3,14 +3,14 @@
 
 % TODO somewhere, something about plugins, either here or earlier. LOC and so on.
 
-The source code of the \contour[2]{violet}{\kl{\sysnamelong}} proof repair plugin suite is on Github.\footnote{Latest version: \url{http://github.com/uwplse/PUMPKIN-PATCH}. Stable thesis release: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/v1.0}. Coq 8.9.1 branch: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/8.9.1}. Original 2018 prototype release: \url{https://github.com/uwplse/PUMPKIN-PATCH/releases/tag/cpp18}.}
+The source code of the \contour[2]{violet}{\kl{\sysnamelong}} proof repair plugin suite is on Github.\footnote{Latest version: \url{http://github.com/uwplse/PUMPKIN-PATCH}.\\ Stable thesis release: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/v1.0}.\\ Coq 8.9.1 branch: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/8.9.1}.\\ 2018 release: \url{https://github.com/uwplse/PUMPKIN-PATCH/releases/tag/cpp18}.}
 It includes the source code of the \contour[2]{violet}{\kl{\sysname}} prototype plugin, extended with a number of new features,
 including the more advanced \toolnamec plugin that I will present in Chapter~\ref{chapt:pi}.
 The thesis release supports Coq 8.8, with Coq 8.9.1 support in a branch.
 
 This section describes the implementation of the \sysname prototype (Section~\ref{sec:tool}),
 along with some new features that go beyond the original prototype and help with workflow integration (Section~\ref{sec:workflow}),
-plus an evaluation of the boundaries of the \sysname prototype that still stand (Section~\ref{sec:eval}).
+plus an evaluation of the boundaries of the \sysname prototype that still stand (Section~\ref{sec:bound-eval}).
 The interested reader can follow along in the repository.
 
 % TODO somewhere, need to mention some of the things to consider in implementation, like constants
@@ -30,7 +30,7 @@ than just in the theory is one of my biggest regrets three years later.
 This representation is useful for understanding how differencing works over inductive types, but implementing it adds clutter that makes \sysname difficult to maintain.
 \toolnamec represents proof terms as terms, and avoids this representation.}
 The implementation always maintains pointers to easily switch between the tree and AST representations of the terms.
-Differencing (Section~\ref{sec:pumpkin-impl-diff} operates over trees, 
+Differencing (Section~\ref{sec:pumpkin-impl-diff}) operates over trees, 
 while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directly over the terms those trees represent.
 \sysname has no impact on the \kl{TCB} (Section~\ref{sec:tcb}).
 
@@ -65,7 +65,7 @@ The first five correspond to changes in:
 \item cases of fixpoints.
 \end{enumerate}
 The final instance is useful for proof optimization (Section~\ref{sec:workflow}).
-The support for these changes is limited in expressiveness in power;
+The support for these changes is limited in expressiveness and power;
 more information on limitations in scope can be found in the repository. % TODO link
 Extending \sysname with new instances of the search procedure amounts to extending key functions in the implementation
 with a case corresponding to the new instance.
@@ -104,7 +104,7 @@ so that proof engineers can call them outside of the proof patching procedure.
 \paragraph{Specialization} \kl{Specialization} (\lstinline{specialize.ml}) takes a patch candidate and some arguments,
 all of which are Gallina terms.
 It also takes a custom reducer (\lstinline{reducers.ml}) % in coq-plugin-lib
-as a higher-order function that reducers a Coq term.
+as a higher-order function that reduces a Coq term.
 It applies the candidate function to the arguments, then reduces the result using the supplied reducer.
 
 The default specializer reduces the result using Coq's
@@ -265,7 +265,7 @@ to automatically remove extra calls to induction.
 See \lstinline{Optimization.v} for more information.
 
 \subsection{Testing Boundaries}
-\label{sec:eval}
+\label{sec:bound-eval}
 
 In this section, I explore the boundary between what the semantic differencing
 and transformation implementations in the \sysname prototype can and cannot handle.

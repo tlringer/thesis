@@ -405,6 +405,9 @@
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{31}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{31}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{31}
+\indexentry{Thesis Statement!Formal|hyperpage}{31}
+\indexentry{Verification!Coq Commands|hyperpage}{31}
+\indexentry{Verification!Proof Script!Tactics|hyperpage}{31}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{32}
@@ -414,8 +417,6 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
-\indexentry{Verification!Coq Commands|hyperpage}{32}
-\indexentry{Verification!Proof Script!Tactics|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Exampled Patched Proof|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{32}

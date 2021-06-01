@@ -526,15 +526,13 @@ versions of a program for relative correctness with respect to a specification.
 Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
 All of these may be useful for improving semantic differencing.
 
-Several of the repair by example tools identify examples from code repositories and libraries.
+Some of the program repair tools above use machine learning to generalize examples---I discuss some ideas combining proof repair
+with machine learning in Chapter~\ref{chapt:conclusions}.
+Several of the tools identify examples from code repositories and libraries.
 These tools may offer some insights for how to break down the large composite changes typically found in static artifacts or in code repositories
 into smaller incremental changes like those made during development in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study.
 Isolating changes may help with extracting repair benchmarks from artifacts, supporting library and version
 updates, and integrating with \intro{Continuous Integration} (CI) systems.
-
-These tools may offer some insights for how to approach this problem.
-Some of the program repair tools above also use machine learning---I discuss some ideas combining proof repair
-with machine learning in Chapter~\ref{chapt:conclusions}.
 
 \paragraph{Human in the Loop}
 Some tools avoid using test suites to judge correctness of candidate patches, and instead

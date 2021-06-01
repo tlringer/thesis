@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2333,7 +2333,7 @@ s---in the for-mer of changes to datatypes
 [114]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 479.
 [115]
-contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 531.
+contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 533.
 [116]) (./conclusion.tex [117] [118
 
 
@@ -2582,7 +2582,7 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (160 pages, 1872950 bytes).
+Output written on uwthesis.pdf (160 pages, 1873024 bytes).
 PDF statistics:
  4979 PDF objects out of 5155 (max. 8388607)
  4693 compressed objects within 47 object streams

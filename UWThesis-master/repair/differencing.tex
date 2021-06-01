@@ -43,13 +43,13 @@ That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarro
 where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
 The details of this vary by subterm-instance combination.
 
-\subsubsection*{Identity}
+\paragraph{Identity}
 The simplest patch is the identity patch.
 When two terms are \kl{definitionally equal}, % TODO need to explain this somewhere, using latest text from PUMPKIN Pi
 differencing infers that the goal is identity,
 and returns a singleton list containing only the identity function instantiated to the appropriate type.
 
-\subsubsection*{Application}
+\paragraph{Application}
 When one proof term is a function application, for example:
 
 \begin{lstlisting}
@@ -69,7 +69,7 @@ and the previous heuristic fails,
 differencing may recurse into both the functions and the arguments, search for patches, and then compose the results.
 How to compose those results varies by instance of the search procedure.
 
-\subsubsection*{Functions} % TODO in Chapter 2, need to mention hypos versus debruijn
+\paragraph{Functions} % TODO in Chapter 2, need to mention hypos versus debruijn
 The treatment of functions depends on whether a hypothesis or a conclusion has changed.
 When recursing into the body of two functions, each with a hypothesis of the same type:
 
@@ -99,7 +99,7 @@ When a hypothesis type has changed:
 differencing acts similarly, but it substitutes the changed hypothesis type in the body in order to recurse into a well-typed environment.
 It also has some additional logic to remove hypothesis that need not show up in the goal type.
 
-\subsubsection*{Eliminators} % From implementation, plus some additional stuff
+\paragraph{Eliminators} % From implementation, plus some additional stuff
 Recall that \kl{inductive types} in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.
 The semantic differencing algorithms views inductive types as \emph{trees} that represent these eliminators.
 In these trees, every node is a type context, and every edge is an extension to that type context 

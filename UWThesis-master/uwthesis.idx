@@ -426,26 +426,26 @@
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{33}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{33}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{33}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{33}
-\indexentry{Verification!Proof Automation|hyperpage}{33}
-\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{33}
-\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{33}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{32}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
+\indexentry{Verification!Proof Automation|hyperpage}{32}
+\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{34}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{34}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{34}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{34}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{34}
-\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{34}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{34}
+\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{34}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{35}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
+\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{35}
 \indexentry{Proof Repair!By Example!Exampled Patched Proof|hyperpage}{35}
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{35}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{35}
@@ -453,11 +453,11 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{35}
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{35}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{35}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{35}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{35}
-\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{35}
-\indexentry{Proof Repair!By Example!Specialization|hyperpage}{35}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{36}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{36}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{36}
+\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{36}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{36}
@@ -469,31 +469,30 @@
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{36}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{36}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{36}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{37}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{37}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{37}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{37}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{37}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{37}
 \indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{37}
-\indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{37}
+\indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{39}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{39}
-\indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{39}
-\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{39}
+\indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{40}
+\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{40}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{40}
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{40}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{40}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{40}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{40}
-\indexentry{Proof Repair!By Example!Generalization|hyperpage}{40}
+\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{41}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{41}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{41}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{42}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{42}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{43}
-\indexentry{Acknowledgments!PL Community!Edward Z. Yang|hyperpage}{43}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
@@ -501,43 +500,44 @@
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{44}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{44}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{44}
-\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{44}
+\indexentry{Acknowledgments!PL Community!Edward Z. Yang|hyperpage}{44}
+\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{45}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{45}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{45}
-\indexentry{Proof Repair!By Example!Specialization|hyperpage}{45}
-\indexentry{Proof Repair!By Example!Generalization|hyperpage}{45}
-\indexentry{Proof Repair!By Example!Inversion|hyperpage}{45}
-\indexentry{Proof Repair!By Example!Factoring|hyperpage}{45}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{46}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{46}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{46}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{46}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{46}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{46}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{46}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{47}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{47}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{47}
-\indexentry{Verification!Coq Plugins|hyperpage}{47}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{48}
+\indexentry{Verification!Coq Plugins|hyperpage}{48}
 \indexentry{Verification!Proof Engineering|hyperpage}{48}
-\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{49}
+\indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{50}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{50}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{51}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{51}
-\indexentry{Results!Case Studies|hyperpage}{52}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{54}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{54}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{54}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{54}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{54}
-\indexentry{Proof Repair!By Example!Inversion|hyperpage}{54}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{54}
+\indexentry{Results!Case Studies|hyperpage}{53}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{55}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{56}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{56}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Specialization|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Factoring|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Generalization|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Inversion|hyperpage}{56}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{56}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{55}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{55}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{55}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{55}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{55}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{55}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{55}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Specialization|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{57}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{57}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{58}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{58}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{58}
@@ -546,7 +546,7 @@
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{58}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{58}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{58}
-\indexentry{Thesis Statement!Formal|hyperpage}{58}
+\indexentry{Thesis Statement!Formal|hyperpage}{59}
 \indexentry{Thesis Statement!Informal|hyperpage}{59}
 \indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{61}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{61}

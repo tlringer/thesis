@@ -256,9 +256,9 @@ that the proof engineer would have to make to use these patches.
 %I will discuss this decompiler and more in Chapter~\ref{chapt:pi}.
 
 \paragraph{Proof Optimization}
-Five of the implemented search procedure instances correspond to changes, but the sixth instance is special:
-it corresponds to the absence of change.
-This makes it possible to reuse all of the \sysname infrastructure to optimize proofs
+Five of the implemented search procedure instances correspond to changes, but the sixth is special:
+it corresponds to the \textit{absence} of change.
+This makes it possible to reuse the \sysname infrastructure to optimize proofs
 to automatically remove extra calls to induction.
 See \lstinline{Optimization.v} for more information.
 
@@ -385,6 +385,7 @@ A patch may show up deep in the difference between \lstinline{le_plus_trans}
 and \lstinline{le_S}, but even if we $\delta$-reduce (unfold the definition of) \lstinline{le_plus_trans}, this is not obvious:
 
 \begin{lstlisting}
+
   le_plus_trans n m p (H : n <= m) :=
     (fun lemma : m <= m + p =>
       trans_contra_inv_impl_morphism

@@ -94,7 +94,7 @@
       \subsubitem Carlo Angiuli, \hyperpage{xv}, \hyperpage{75}
       \subsubitem Conor McBride, \hyperpage{xv}
       \subsubitem David van Horn, \hyperpage{xv}
-      \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{43}
+      \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{44}
       \subsubitem Emery Berger, \hyperpage{xv}
       \subsubitem Emily First, \hyperpage{120}
       \subsubitem Gerwin Klein, \hyperpage{xv}
@@ -195,10 +195,10 @@
 		\hyperpage{37}, \hyperpage{69, 70}, \hyperpage{74}, 
 		\hyperpage{77}, \hyperpage{98}, \hyperpage{104}, 
 		\hyperpage{111}
-      \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{37}, 
-		\hyperpage{39}, \hyperpage{77}, \hyperpage{82}
-      \subsubitem Motive, \hyperpage{17}, \hyperpage{34}, 
-		\hyperpage{37}, \hyperpage{39}, \hyperpage{80}, 
+      \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{38}, 
+		\hyperpage{40}, \hyperpage{77}, \hyperpage{82}
+      \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
+		\hyperpage{37}, \hyperpage{40}, \hyperpage{80}, 
 		\hyperpage{95}
     \subitem Initial Algebra, \hyperpage{74, 75}
     \subitem Internal, \hyperpage{69}, \hyperpage{101}, \hyperpage{111}
@@ -264,47 +264,46 @@
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
 		\hyperpage{31}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{43}, 
-		\hyperpage{45}, \hyperpage{47}, \hyperpage{56}, 
-		\hyperpage{58}
-      \subsubitem Generalization, \hyperpage{36}, \hyperpage{40}, 
-		\hyperpage{45, 46}, \hyperpage{51}, \hyperpage{56}, 
-		\hyperpage{58}, \hyperpage{110}
-      \subsubitem Goal Type, \hyperpage{32--37}, \hyperpage{54}, 
-		\hyperpage{58}
+		\hyperpage{46, 47}, \hyperpage{57, 58}
+      \subsubitem Generalization, \hyperpage{36}, \hyperpage{41}, 
+		\hyperpage{46}, \hyperpage{51}, \hyperpage{57, 58}, 
+		\hyperpage{110}
+      \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}, 
+		\hyperpage{55}, \hyperpage{58}
       \subsubitem Inversion, \hyperpage{36}, \hyperpage{42}, 
-		\hyperpage{45, 46}, \hyperpage{51}, \hyperpage{54}, 
-		\hyperpage{56}, \hyperpage{58}
-      \subsubitem Patch Candidate, \hyperpage{31--36}, \hyperpage{40}, 
-		\hyperpage{54}, \hyperpage{56}, \hyperpage{58}
-      \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31--36}, 
-		\hyperpage{40}, \hyperpage{54}, \hyperpage{56}, 
-		\hyperpage{58}
-      \subsubitem Search Procedure Instance, \hyperpage{33}, 
-		\hyperpage{35}, \hyperpage{44}, \hyperpage{49}
-      \subsubitem Specialization, \hyperpage{35, 36}, 
-		\hyperpage{40, 41}, \hyperpage{45, 46}, \hyperpage{56}
+		\hyperpage{46, 47}, \hyperpage{51}, \hyperpage{55}, 
+		\hyperpage{57, 58}
+      \subsubitem Patch Candidate, \hyperpage{31, 32}, 
+		\hyperpage{35, 36}, \hyperpage{40}, \hyperpage{55}, 
+		\hyperpage{57, 58}
+      \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31, 32}, 
+		\hyperpage{35--37}, \hyperpage{40}, \hyperpage{55}, 
+		\hyperpage{57, 58}
+      \subsubitem Search Procedure Instance, \hyperpage{34--36}, 
+		\hyperpage{45}, \hyperpage{50}
+      \subsubitem Specialization, \hyperpage{36}, \hyperpage{40, 41}, 
+		\hyperpage{46}, \hyperpage{57}
 
   \indexspace
 
   \item Results, \hyperpage{4}, \hyperpage{28}
     \subitem Case Studies, \hyperpage{5}, \hyperpage{28, 29}, 
-		\hyperpage{52}, \hyperpage{97}, \hyperpage{119}
+		\hyperpage{53}, \hyperpage{97}, \hyperpage{119}
     \subitem Design, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
-		\hyperpage{31, 32}, \hyperpage{34, 35}, \hyperpage{40}, 
-		\hyperpage{45}, \hyperpage{54}, \hyperpage{56}, 
+		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{40}, 
+		\hyperpage{46}, \hyperpage{55}, \hyperpage{57}, 
 		\hyperpage{64}, \hyperpage{70}, \hyperpage{85}, 
 		\hyperpage{90}, \hyperpage{110}, \hyperpage{119}, 
 		\hyperpage{122}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
-		\hyperpage{31, 32}, \hyperpage{34}, \hyperpage{36, 37}, 
-		\hyperpage{45}, \hyperpage{50}, \hyperpage{54}, 
-		\hyperpage{56}, \hyperpage{58}, \hyperpage{64}, 
-		\hyperpage{68}, \hyperpage{70}, \hyperpage{89}, 
-		\hyperpage{110, 111}, \hyperpage{115, 116}, 
-		\hyperpage{119}, \hyperpage{122}
+		\hyperpage{31, 32}, \hyperpage{34--37}, \hyperpage{45}, 
+		\hyperpage{50}, \hyperpage{55}, \hyperpage{57, 58}, 
+		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
+		\hyperpage{89}, \hyperpage{110, 111}, 
+		\hyperpage{115, 116}, \hyperpage{119}, \hyperpage{122}
     \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
 		\hyperpage{61}, \hyperpage{64}, \hyperpage{88}
@@ -316,8 +315,8 @@
   \indexspace
 
   \item Thesis Statement
-    \subitem Formal, \hyperpage{3}, \hyperpage{31}, \hyperpage{58}, 
-		\hyperpage{104}
+    \subitem Formal, \hyperpage{3}, \hyperpage{26}, \hyperpage{31}, 
+		\hyperpage{59}, \hyperpage{104}
     \subitem Informal, \hyperpage{1, 2}, \hyperpage{59}, 
 		\hyperpage{104}, \hyperpage{119}
 
@@ -329,7 +328,7 @@
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
 		\hyperpage{89}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
-		\hyperpage{47}, \hyperpage{61}, \hyperpage{88}
+		\hyperpage{48}, \hyperpage{61}, \hyperpage{88}
     \subitem de Bruijn Criterion, \hyperpage{105, 106}
     \subitem Integrated Development Environment, \hyperpage{109}, 
 		\hyperpage{121}
@@ -354,7 +353,7 @@
       \subsubitem NuPRL, \hyperpage{2}, \hyperpage{105}
       \subsubitem RedPRL, \hyperpage{106}
     \subitem Proof Automation, \hyperpage{22}, \hyperpage{26}, 
-		\hyperpage{29}, \hyperpage{33}, \hyperpage{107, 108}
+		\hyperpage{29}, \hyperpage{32}, \hyperpage{107, 108}
     \subitem Proof Development, \hyperpage{10}
       \subsubitem Program, \hyperpage{2}, \hyperpage{9--11}, 
 		\hyperpage{22}
@@ -387,7 +386,7 @@
 		\hyperpage{64}, \hyperpage{92}, \hyperpage{105, 106}, 
 		\hyperpage{109}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{31}, 
-		\hyperpage{44}, \hyperpage{47}, \hyperpage{65}, 
+		\hyperpage{44}, \hyperpage{48}, \hyperpage{65}, 
 		\hyperpage{69}, \hyperpage{88}, \hyperpage{92}
 
 \end{theindex}

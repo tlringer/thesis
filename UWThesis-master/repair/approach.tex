@@ -67,32 +67,6 @@ which are themselves proof terms.
 Finally, it transforms those patch candidates directly into a reusable patch.
 If it finds a reusable patch with the goal type, it succeeds and defines it as a term.
 
-\begin{figure*}
-\begin{minipage}{0.50\textwidth}
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=4]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introex.tex}
-\lstinputlisting[firstline=6, lastline=11]{repair/introex.tex}
-\lstinputlisting[firstline=1, lastline=7]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/introexterm.tex}
-\lstinputlisting[firstline=9, lastline=13]{repair/introexterm.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.50\textwidth}
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=12, lastline=15]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=16]{repair/introex.tex}
-\lstinputlisting[firstline=17, lastline=22]{repair/introex.tex}
-\lstinputlisting[firstline=15, lastline=21]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=22,lastline=22]{repair/introexterm.tex}
-\lstinputlisting[firstline=23, lastline=27]{repair/introexterm.tex}
-\end{minipage}
-\caption{Two proofs with different conclusions (top) and the
-corresponding proof terms (bottom). Highlighted lines correspond to
-the change in theorem conclusion (top) and the difference in terms that correspond to a patch (bottom).}
-\label{fig:example}
-\end{figure*}
-
 To demonstrate this workflow, consider the change from the theorem \lstinline{old} to the slightly stronger theorem \lstinline{new} in Figure~\ref{fig:example}.
 Changing \lstinline{old} to \lstinline{new} can break proofs that used to successfully apply \lstinline{old}:
 
@@ -129,6 +103,32 @@ This is something that we can use to fix other proofs broken by this change, eit
   (@\diff{apply patch.}@) (@\succeeds{apply new.}@)
 \end{lstlisting}
 or by using the automation in Section~\ref{sec:pumpkin-impl}.
+
+\begin{figure*}
+\begin{minipage}{0.50\textwidth}
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=1, lastline=4]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introex.tex}
+\lstinputlisting[firstline=6, lastline=11]{repair/introex.tex}
+\lstinputlisting[firstline=1, lastline=7]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/introexterm.tex}
+\lstinputlisting[firstline=9, lastline=13]{repair/introexterm.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.50\textwidth}
+\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
+\lstinputlisting[firstline=12, lastline=15]{repair/introex.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=16]{repair/introex.tex}
+\lstinputlisting[firstline=17, lastline=22]{repair/introex.tex}
+\lstinputlisting[firstline=15, lastline=21]{repair/introexterm.tex}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=22,lastline=22]{repair/introexterm.tex}
+\lstinputlisting[firstline=23, lastline=27]{repair/introexterm.tex}
+\end{minipage}
+\caption{Two proofs with different conclusions (top) and the
+corresponding proof terms (bottom). Highlighted lines correspond to
+the change in theorem conclusion (top) and the difference in terms that correspond to a patch (bottom).}
+\label{fig:example}
+\end{figure*}
 
 \subsection{Scope: Changes in Content}
 \label{sec:pumpkin-scope}
@@ -246,17 +246,17 @@ In summary, differencing has the following specification:
 \item each term in \lstinline{candidates} has type \lstinline{candidate_goal}.
 \end{itemize}
 \end{itemize}
-\sysname infers the instance of the procedure and the candidate goal type from the change in the example patched proof itself, so the proof engineer does not have to provide this information.
+\sysname infers the instance of the procedure and the candidate goal type from the change in the example patched proof, so the proof engineer does not have to provide this information.
 \sysname could in theory infer the wrong instance or the wrong candidate goal type, but this would not sacrifice soundness---it would mean only that
-the patch procedure would either fail to produce a patch, or produce a patch that is not useful in the end.
-All terms that \sysname produces type check in the end. % TODO hyphen or no hyphen?
+the patch procedure would either fail to produce a patch, or produce a patch that is not useful.
+All terms that \sysname produces type check. % TODO hyphen or no hyphen?
 
 \subsection{Transformations: Patches from Candidates}
 \label{sec:pumpkin-spec-trans}
 
 Differencing produces \kl{patch candidates} that are localized to a particular context according to the inferred goal for that change,
 but do not yet generalize to other contexts.
-The \kl{transformations} are what take each candidate and try to modify it to produce a term that \textit{does} generalize to other contexts.
+The \kl{transformations} take each candidate and try to modify it to produce a term that \textit{does} generalize.
 If they succeed, \sysname has found a \kl{reusable patch}.
 
 Consider once more the example in Figure~\ref{fig:example}.

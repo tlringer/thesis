@@ -20,7 +20,7 @@ of the search procedure.
 
 % From Motivating the Core and Implementation
 
-\subsubsection*{Specialization}
+\paragraph{Specialization}
 Sometimes, patch candidates are too general.
 \kl{Specialization} takes a candidate that is too general,
 and specializes it to particular arguments as determined by the difference in terms.
@@ -53,7 +53,7 @@ There is just one super weird thing I do not even know if I am allowed to do her
 the reduction strategy $\Downarrow_{r}$ is itself a transformation that reduces a term in an arbitrary way.
 \fi
 
-\subsubsection*{Generalization} In other cases, a patch candidate is too specific.
+\paragraph{Generalization} In other cases, a patch candidate is too specific.
 \kl{Generalization} takes a candidate that is too specific and generalizes it.
 We saw this for the example in Figure~\ref{fig:example} as well:
 to go from the candidate that \sysname found in the base case to the eventual reusable patch,
@@ -136,7 +136,7 @@ and moves on to more complex strategies only if that strategy fails.
 This design makes generalization simple to extend with new strategies and simple to call with different strategies
 for different instances, or even as an optimization for the proof engineer.
 
-\subsubsection*{Inversion} Sometimes, when two types are \kl{propositionally} equal,
+\paragraph{Inversion} Sometimes, when two types are \kl{propositionally} equal,
 candidate patches may appear in the wrong direction.
 For example, consider two list lemmas:\footnote{It is too difficult to port this entire example, including the proof, to CIC$_{\omega}$ for demonstration.
 So I leave it in Gallina and Ltac, but still use it to give intuition for inversion.}
@@ -152,14 +152,16 @@ it may find a candidate \emph{backwards}:
 \begin{lstlisting}
   candidate l' l (H : (@\diff{old}@) l' l) :=
     eq_rect_r $\ldots$ (@\diff{(rev\_length l)}@)
-  : (@\ltacforall@) l' l, (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l.
+  : (@\ltacforall@) l' l,
+      (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l.
 \end{lstlisting}
 The component can \kl{invert} this to get the patch: %from \lstinline{new} to \lstinline{old}:
 
 \begin{lstlisting}
   patch l' l (H : (@\diff{new}@) l' l) :=
     eq_rect_r $\ldots$ (@\diff{(eq\_sym (rev\_length l))}@)
-  : (@\ltacforall@) l' l, (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l.
+  : (@\ltacforall@) l' l,
+      (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l.
 \end{lstlisting}
 We can then use this patch to port proofs.
 For example, if we add this patch to a hint database~\cite{hints},
@@ -194,7 +196,7 @@ The primitive inversion function exploits symmetry.
 For example, propositional equality is symmetric, so the component can invert any application of the equality eliminators.
 I will explain this more in Section~\ref{sec:pumpkin-impl-trans}.
 
-\subsubsection*{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
+\paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.
 This can break other problems, like generalization, into smaller subproblems.
 It is also necessary to invert certain terms, since the inverse of:
 

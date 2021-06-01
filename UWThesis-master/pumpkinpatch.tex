@@ -1,8 +1,8 @@
 \chapter{Proof Repair by Example}
 \label{ch:example}
 
-The first tool in the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite is the namesake \sysnamelong plugin.
-To prevent confusion, when I refer to the \sysnamelong plugin and not to the tool suite as a whole, I will abbreviate it as \intro{\sysname}.
+The first tool in the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite is the namesake \sysnamelong prototype plugin.
+To prevent confusion, when I refer to the \sysnamelong prototype and not to the tool suite as a whole, I will abbreviate it as \intro{\sysname}.
 
 % From PUMPKIN PATCH intro:
 \sysname implements \kl{proof repair by example}---so called because of its resemblance to programming by example~\cite{DBLP:journals/ftpl/GulwaniPS17}.
@@ -19,19 +19,6 @@ semantics-aware \kl{proof term transformations} (Section~\ref{sec:pumpkin-trans}
 \contour[2]{violet}{\kl{\sysname}} automates this process (Section~\ref{sec:pumpkin-impl}).
 \kl{Case studies} show retroactively that \sysname could have saved work for proof engineers
 on major proof developments (Section~\ref{sec:pumpkin-results}).
-
-\paragraph{Historical Note}
-The \sysname plugin is a prototype that I implemented in 2018 to show that proof repair is possible.
-Because of this, it includes little automation for \textit{applying} the patches that it finds,
-and it does not yet integrate smoothly into proof engineering workflows.
-Chapter~\ref{chapt:pi} will introduce technologies that address these limitations,
-and that can also be used with \sysname if desired.
-
-\sysname also supports changes that are limited in scope in a way that is fundamental to the approach,
-and it only \textit{could have helped} proof engineers retroactively.
-Chapter~\ref{chapt:pi} will introduce an extension to the \sysnamelong plugin suite that
-adds support for a broad class of changes beyond those supported by \sysname,
-and that \textit{can help} and \textit{has helped} proof engineers on real repair scenarios.
 
 %clarify solving 2 different problems for 2 chapters, but chapter 4 does better job because was later, could port back to PP but haven't
 

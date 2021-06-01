@@ -136,15 +136,15 @@ or by using the automation in Section~\ref{sec:pumpkin-impl}.
 The search procedure in Figure~\ref{alg:patching} searches for patches to proofs broken by changes in the \textit{content} of programs and specifications.
 For example, \sysname can support the change in Figure~\ref{fig:example}, since some of the content (the conclusion of the theorem) changes,
 but the structure remains identical.
-In general, the \sysname prototype does not support any changes that add, remove, or rearrange any hypotheses.
-The \toolnamec extension to \sysnamelong in Chapter~\ref{chapt:pi} supports a broad class of changes
-in datatypes that may change in these ways.
+In general, the \sysname prototype supports only changes that do not add, remove, or rearrange any hypotheses.
+%The \toolnamec extension to \sysnamelong in Chapter~\ref{chapt:pi} supports a broad class of changes
+%in datatypes that may change in these ways.
 
 The search procedure can be instantiated to different classes of change in the content of programs and specifications.
 Thus, before running the search procedure, \sysname infers an \intro{instance} of the search 
 procedure from the example change.\footnote{In the original 2018 \sysnamelong paper, I called this a \textit{configuration}.
 In this chapter, I rename configuration to \kl{instance} everywhere to avoid overloading this term,
-since I unfortunately used this word again for something different when developing \toolnamec.}
+since I unfortunately used this word again for something different later.}
 This instance customizes the highlighted lines for an entire class of changes:
 it determines what to diff on lines 1 and 2,
 and what transformations to run to achieve what goal on line 4.

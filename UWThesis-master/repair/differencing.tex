@@ -31,11 +31,8 @@ Notably, though, the type of \lstinline{IHle} changes for \emph{any} two inducti
 with different conclusions. A syntactic differencing component 
 may identify this change as a candidate.
 My semantic differencing algorithms know that they can ignore this change.
-This section describes the design (Section~\ref{sec:pumpkin-diff-design}) and limitations (Section~\ref{sec:pumpkin-diff-limitations}) of these algorithms.
+This section describes the design of these algorithms.
 Section~\ref{sec:pumpkin-impl-diff} describes the implementation in \sysname.
-
-\subsection{Design}
-\label{sec:pumpkin-diff-design}
 
 % TODO show examples, formalize if time!!!
 
@@ -45,14 +42,6 @@ In each case, it carries a goal type $G$, and returns a list of patch candidates
 That is, we can view it as a judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$,
 where in the end, for every $t$ in $\vec{t}$, $\Gamma \vdash t : G$.
 The details of this vary by subterm-instance combination.
-
-\paragraph{Historical Note}
-For historical reasons, as \sysname was a prototype, these algorithms are not formalized.
-Instead, I describe them at a high level, as heuristics in CIC$_{\omega}$.
-For the sake of presentation, I still refer to the judgment $\Gamma\ \vdash\ (t_a,\ t_b,\ G) \Downarrow_{d} \vec{t}$ as the interface,
-even though I do not provide the derivations.
-In Chapter~\ref{chapt:pi}, I will formalize a more elegant differencing algorithm for the \toolnamec extension,
-building on some of the insights from differencing in this prototype.
 
 \subsubsection*{Identity}
 The simplest patch is the identity patch.
@@ -156,33 +145,6 @@ so it attempts to remove any occurrences of the inductive hypothesis in any cand
 When differencing finds a candidate, it knows $Q$ and $P$ as well as the arguments $0$ or $S\ n$.
 This makes it simple for \sysname to later query the transformations for the final patch, with type $Q \rightarrow P$.
 
-\subsection{Limitations}
-\label{sec:pumpkin-diff-limitations}
-
-% Some from future work, some from us. Needs better framing.
-
-This section describes two fundamental limitations of differencing in \sysname,
-and whether they are addressed in the later \toolnamec extension.
-Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-diff}.
-
-\paragraph{Ad Hoc Nature}
-Differencing in \sysname is ad hoc.
-This is to some degree inevitable, as the space of possible changes is infinite.\footnote{In particular, it is the cartesian product of the 
-space of every possible old term and type,
-combined with every possible new term and type.}
-Still, this is partly historical: for the \sysname prototype, differencing was designed bottom-up, and so the corresponding heuristics
-are in many cases too narrow or redundant.
-The extension to differencing in \toolnamec not only supports a large class of changes not supported by \sysname,
-but does so much more generically.
-
-\paragraph{Isolating Changes} Differencing supports only incremental changes.
-The \contour[2]{violet}{\kl{\textsc{REPLica}}} user study showed that, during proof development,
-proof engineers often make incremental changes---so this should be helpful for development already.
-But changes in existing artifacts like Git repositories may capture multiple changes at the same time.
-An outstanding challenge for differencing that neither \sysname nor \toolnamec yet support
-is to break down large, composite changes into small, isolated changes.
-Isolating changes would help with extracting repair benchmarks from artifacts, supporting library and version updates, and integrating with CI systems.
-Chapter~\ref{chapt:conclusions} describes some ideas for how to do this.
 
 %One idea for this is to draw on work in change and dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes,
 %then use the factoring transformation to break those changes into smaller parts.

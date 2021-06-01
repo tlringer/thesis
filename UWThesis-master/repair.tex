@@ -51,11 +51,9 @@ But---and this is the key to proof repair---the unforgiving nature of Gallina ac
 
 The key to proof repair in this thesis is using the structure and information carried by Gallina proof terms.
 In other words, differencing operates over Gallina terms,
-and is guided by their semantics to narrow down the search space---this is what
-makes differencing a kind of \kl{semantic differencing}.
-The transformations then use the result of differencing to transform some proof term to a more general patch (in Chapter~\ref{ch:example})
-or the patched proof itself (in Chapter~\ref{chapt:pi})---this is what
-makes the transformations \kl{proof term transformations}.
+and is guided by their semantics to narrow down the search space---it is \kl{semantic differencing}.
+The transformations use the result of differencing to transform some proof term to a more general patch (in Chapter~\ref{ch:example})
+or the patched proof itself (in Chapter~\ref{chapt:pi})---they are \kl{proof term transformations}.
 
 This approach circumvents two of the biggest challenges in program repair:
 gathering enough information to efficiently search for a patch,
@@ -70,10 +68,9 @@ like how to deal with the unforgiving nature of proof terms,
 and how to produce friendly proof scripts in the end.
 So Chapters~\ref{ch:example} and~\ref{chapt:pi} will show two tools that instantiate this approach,
 and describe how these tools tackle these challenges.
-Each chapter will introduce a different tool that supports a different class of changes.
+Each chapter will introduce a tool that supports a different class of changes.
 The first tool (Chapter~\ref{ch:example}) implements proof repair \kl{by example},
 while the second tool (Chapter~\ref{chapt:pi}) implements proof repair \kl{across equivalences}.
-
 Chapters~\ref{ch:example} and~\ref{chapt:pi} will follow a parallel structure:
 
 \begin{itemize}
@@ -92,5 +89,33 @@ results from case studies and experiments that show the tool can save work for p
 \item \textbf{Conclusion} (Sections~\ref{sec:pumpkin-concl} and~\ref{sec:pi-concl}):
 a conclusion and reflection on how the thesis is validated so far.
 \end{itemize}
+
 Enjoy.
+
+\paragraph{Historical Note}
+Chapter~\ref{ch:example} draws on the 2018 work that introduced the original proof repair vision,
+while Chapter~\ref{chapt:pi} draws on the more mature work that followed.
+This difference in maturity permeates the \kl{results} of each chapter:
+
+\begin{itemize}
+\item \kl{Design}: Chapter~\ref{ch:example} describes its algorithms at a high level, as ad hoc heuristics
+that sometimes struggle with undecidability.
+It defines judgments for these algorithms as interfaces, but does not provide the derivations.
+Chapter~\ref{chapt:pi} formalizes more elegant algorithms, building on insights from Chapter~\ref{ch:example},
+and cleanly separating the decidable and undecidable parts.
+\item \kl{Implementation}:
+Chapter~\ref{ch:example} describes a \textit{prototype} plugin.
+This prototype includes little automation for \textit{applying} patches,
+integrates poorly into proof engineering workflows,
+and does not properly unfold constants ($\delta$-reduce).
+Chapter~\ref{chapt:pi} details technologies that address these limitations,
+some of which can be used with the Chapter~\ref{ch:example} prototype if desired.
+\item \kl{Case studies}:
+Chapter~\ref{ch:example} shows only that a tool \textit{could have helped} proof engineers retroactively
+on a few repair scenarios over small proofs of a fixed style.
+Chapter~\ref{chapt:pi} shows that a tool
+\textit{can help} and in fact \textit{has helped} proof engineers on a variety of real repair scenarios,
+supporting larger proof developments (about 10000 LOC) in an order of seconds,
+regardless of proof style.
+\end{itemize}
 

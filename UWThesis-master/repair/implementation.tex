@@ -4,8 +4,7 @@
 % TODO somewhere, something about plugins, either here or earlier. LOC and so on.
 
 The source code of the \contour[2]{violet}{\kl{\sysnamelong}} proof repair plugin suite is on Github.\footnote{Latest version: \url{http://github.com/uwplse/PUMPKIN-PATCH}.\\ Stable thesis release: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/v1.0}.\\ Coq 8.9.1 branch: \url{https://github.com/uwplse/PUMPKIN-PATCH/tree/8.9.1}.\\ 2018 release: \url{https://github.com/uwplse/PUMPKIN-PATCH/releases/tag/cpp18}.}
-It includes the source code of the \contour[2]{violet}{\kl{\sysname}} prototype plugin, extended with a number of new features,
-including the more advanced \toolnamec plugin that I will present in Chapter~\ref{chapt:pi}.
+It includes the source code of the \contour[2]{violet}{\kl{\sysname}} prototype plugin, extended with a number of new features.
 The thesis release supports Coq 8.8, with Coq 8.9.1 support in a branch.
 
 This section describes the implementation of the \sysname prototype (Section~\ref{sec:tool}),
@@ -28,7 +27,7 @@ starts with a preprocessing step which compiles the proof terms to
 trees (like the tree in Figure~\ref{fig:cattree}).\footnote{Representing proof terms directly as trees in the implementation rather
 than just in the theory is one of my biggest regrets three years later.
 This representation is useful for understanding how differencing works over inductive types, but implementing it adds clutter that makes \sysname difficult to maintain.
-\toolnamec represents proof terms as terms, and avoids this representation.}
+My later work represents proof terms as terms, and avoids this representation.}
 The implementation always maintains pointers to easily switch between the tree and AST representations of the terms.
 Differencing (Section~\ref{sec:pumpkin-impl-diff}) operates over trees, 
 while the transformations (Section~\ref{sec:pumpkin-impl-trans}) operate directly over the terms those trees represent.
@@ -114,8 +113,8 @@ one that does weak head reduction, one that completely normalizes terms, % one t
 and one that $\delta$-reduces to unwrap constants.
 There are also higher-order combinators for reducers,
 including chain reduction with errors, chain reduction without errors, and reduction over the types of supplied terms.
-This makes it possible for search procedure instances to highly customize specialization,
-and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
+This makes it possible for search procedure instances to highly customize specialization.
+%and further ends up being a useful programming paradigm for developing the \toolnamec extension in Chapter~\ref{chapt:pi}.
 I expose these reducers and combinators in the Coq plugin library. % TODO link and explain
 
 \paragraph{Generalization} \kl{Generalization} (\lstinline{abstraction.ml}) % TODO rename
@@ -218,10 +217,9 @@ and so does not increase the TCB. % ugh whatever. I think there's better text on
 
 Since releasing the \sysname prototype, I have extended it with many features
 for better integration into \kl{proof engineering} workflows.
-This section summarizes three: Git integration, support for applying patches,
+This section summarizes three early extensions: Git integration, preliminary support for applying patches,
 and proof optimization.
-I detail tactic generation and more when I discuss the \toolnamec extension
-in Chapter~\ref{chapt:pi}.
+%I will detail tactic generation and more in Chapter~\ref{chapt:pi}.
 
 % new, from Git repo though
 \paragraph{Git Integration} \sysnamelong exposes a Git interface to \sysname
@@ -238,8 +236,8 @@ or otherwise save the results to a temporary file. There are many options to con
 all of which can be found in the repository.
 
 \paragraph{Patch Application}
-For the \sysname prototype, the differencing algorithm and proof term transformations extract and generalize information form example patched proofs
-in the form of reusable patches. The prototype does not yet support applying the patches that it finds automatically.
+For the \sysname prototype, the differencing algorithm and proof term transformations extract and generalize information from example patched proofs
+in the form of reusable patch, but do not yet help apply those patches automatically.
 Since implementing the prototype, I have extended \sysname-git with preliminary support for patch application via hint generation.
 The interface is: % TODO cite and explain
 
@@ -250,12 +248,12 @@ This places the generated patch in a hint database in Coq.
 Coq applies hints in its hint databases automatically, in some cases taking care of the changes at the proof script level
 that the proof engineer would have to make to use these patches.
 
-Since the \sysname prototype, I have also extended \sysnamelong with the \toolnamec plugin.
-The \toolnamec plugin does apply the changes that it finds in all cases.
-Furthermore, it exposes a decompiler from proof terms back up to tactic scripts---this
-decompiler is exposed to the \sysname plugin as well, so that proof engineers can decompile patches
-back to tactics by calling the \lstinline{Decompile} command.
-I will discuss this decompiler and more in Chapter~\ref{chapt:pi}.
+%Since the \sysname prototype, I have also extended \sysnamelong with the \toolnamec plugin.
+%The \toolnamec plugin does apply the changes that it finds in all cases.
+%Furthermore, it exposes a decompiler from proof terms back up to tactic scripts---this
+%decompiler is exposed to the \sysname plugin as well, so that proof engineers can decompile patches
+%back to tactics by calling the \lstinline{Decompile} command.
+%I will discuss this decompiler and more in Chapter~\ref{chapt:pi}.
 
 \paragraph{Proof Optimization}
 Five of the implemented search procedure instances correspond to changes, but the sixth instance is special:
@@ -292,7 +290,8 @@ Simple changes could make \sysname more efficient. (Section~\ref{sec:perf})
 \subsubsection{Patch Generation Suite}
 \label{sec:suite}
 
-I wrote a suite\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH/blob/cpp18/plugin/coq/Variants.v}} of 50 pairs of proofs. % TODO update link
+I wrote a suite\footnote{\url{http://github.com/uwplse/PUMPKIN-PATCH/blob/cpp18/plugin/coq/Variants.v}} of 50 pairs of proofs,
+proving a total of 11 pairs of theorems.
 I wrote these proofs myself since there was no existing benchmark suite to work with.
 I used the following methodology:
 %We designed 11 pairs to succeed, then modified these pairs to produce the remaining 39 pairs
@@ -306,8 +305,6 @@ I used the following methodology:
 \item Search for patches from \lstinline{new} to \lstinline{old}.
 \item If possible, search for patches from \lstinline{old} to \lstinline{new}.
 \end{enumerate}
-In total, I chose 11 pairs of theorems \lstinline{old} and \lstinline{new}, and I wrote
-50 pairs of proofs of those theorems.
 
 \iffalse
 For example, one pair of theorems \lstinline{old} and \lstinline{new} was a 
@@ -373,7 +370,9 @@ in one try.
 The pairs that \sysname failed to patch and the successful pairs that stressed generalization
 reveal key information about how to improve differencing and the transformations.
 I walk through three examples below.
-Future tools can use these as challenge problems to improve upon \sysname.
+%Future tools can use these as challenge problems to 
+%improve upon \sysname.\footnote{The tool in Chapter~\ref{chapt:pi} already does, to some degree.
+%For example, it is deliberately strategic about $\delta$-reduction, building on the insights from these challenges.}
 
 \paragraph{A Challenge for Differencing} For one pair of proofs of theorems 
 with \kl{propositionally equal} conclusions (Figure~\ref{fig:stronger}),
@@ -398,9 +397,7 @@ and \lstinline{le_S}, but even if we $\delta$-reduce (unfold the definition of) 
 \end{lstlisting}
 This points to two difficulties in finding patches: Knowing when to $\delta$-reduce terms 
 is difficult; exploring the appropriate time for reduction
-may produce patches for pairs that \sysname currently cannot patch
-(the \toolnamec extension in Chapter~\ref{chapt:pi} is deliberately strategic about $\delta$-reduction,
-building on this insight).
+may produce patches for pairs that \sysname currently cannot patch.
 Furthermore, finding patches is more challenging
 when neither theorem has a conclusion that is as strong as possible.
 
@@ -434,7 +431,7 @@ It then needs to swap the hypothesis with the conclusion in \lstinline{H} to pro
 
 Inversion currently swaps subterms when it is not
 aware of any symmetry properties about the inductive type. However,
-it does not know when to $\delta$-reduce function definitions (again, something the \toolnamec extension in Chapter~\ref{chapt:pi} is deliberately strategic about). Furthermore, 
+it does not know when to $\delta$-reduce function definitions. Furthermore, 
 there are many possible subterms to swap;
 for inversion to know to only swap the subterms of \lstinline{H}, it must have a better
 understanding of the structure of the term. Both of these are ways to improve inversion.
@@ -508,15 +505,14 @@ This would produce a patch in one candidate:
       (max_comm (@\diff{m0}@) n0)      (* : p1 (@\diff{m0}@) = p2 (@\diff{m0}@) *)
 \end{lstlisting}
 This strategy would find a patch for one of the pairs that \sysname failed to generalize.
-This is a natural future direction for generalization.
+This is a natural future direction.
 
 \subsubsection{Performance}
 \label{sec:perf}
 
 \sysname performed well for all pairs. The slowest success took \SI{48}{\ms}.\footnote{i7-4790K, at 4.00 GHz, 32 GB RAM}
 When \sysname failed, it failed fast. The slowest failure took \SI{7}{\ms}.
-While I found this promising, proof terms were very small ($\le$ 67 LOC);
-the later \toolnamec extension in Chapter~\ref{chapt:pi} can support larger proof developments (about 10000 LOC) in an order of seconds.
+Though proof terms were small ($\le$ 67 LOC), I found this promising.
 
 %\sysname was slowest %at finding patches 
 %when the patch showed up inverted in the difference of proofs,

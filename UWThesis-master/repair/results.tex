@@ -5,7 +5,7 @@
 
 % below: case studies
 
-To show how \sysname could save work for proof engineers on real proof developments, I used the \sysname prototype on three \kl{case studies} to emulate three motivating scenarios from real-world proof developments:
+To show how \sysname could save work for proof engineers, I used the \sysname prototype on three \kl{case studies} to emulate three motivating scenarios from real proof developments:
 
 \begin{enumerate}
 \item \textbf{Updating definitions} within a project \\
@@ -31,16 +31,15 @@ I emulated each scenario as follows:
 \end{enumerate}
 My goal was to simulate incremental use of a repair tool,
 at the level of a small change or a commit that follows best practices.
-I favored commits with changes that I could isolate.
+I favored commits with changes that I could isolate,
+and that fit into the scope of changes supported by the \sysname prototype.
 When isolating examples for \sysname, I replayed changes from the bottom up,
 as if I was making the changes myself.
 This means that I did not always make the same change as the user. For example,
 the real change from Section~\ref{sec:compcert} updated multiple definitions;
 I updated only one.
 
-\sysname does not yet handle structural changes like adding constructors or parameters, 
-so I focused on changes that preserve structure, like modifying constructors.
-Chapter~\ref{chapt:pi} describes an extension to \sysnamelong that supports changes in structure.
+%Chapter~\ref{chapt:pi} describes an extension to \sysnamelong that supports changes in structure.
 
 \begin{figure*}
 \begin{minipage}{0.49\textwidth}

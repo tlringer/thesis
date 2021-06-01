@@ -82,53 +82,54 @@
 \KAuxFileAt {index.tex}{32}
 
 \KAuxFileAt {index.tex}{33}
-\KAuxAutoref {default}{base}{mixed methods verification}
+\KAuxAutoref {default}{base}{Continuous Integration}
 
 \KAuxFileAt {index.tex}{34}
 
 \KAuxFileAt {index.tex}{35}
-\KAuxAutoref {default}{base}{de Bruijn criterion}
 
 \KAuxFileAt {index.tex}{36}
+\KAuxAutoref {default}{base}{Integrated Development Environment}
 
 \KAuxFileAt {index.tex}{37}
-\KAuxAutoref {default}{base}{proof automation}
 
 \KAuxFileAt {index.tex}{38}
 
 \KAuxFileAt {index.tex}{39}
+\KAuxAutoref {default}{base}{mixed methods verification}
 
 \KAuxFileAt {index.tex}{40}
-\KAuxAutoref {default}{base}{proof development}
 
 \KAuxFileAt {index.tex}{41}
+\KAuxAutoref {default}{base}{de Bruijn criterion}
 
 \KAuxFileAt {index.tex}{42}
 
 \KAuxFileAt {index.tex}{43}
+\KAuxAutoref {default}{base}{proof automation}
 
 \KAuxFileAt {index.tex}{44}
-\KAuxAutoref {default}{base}{program}
 
 \KAuxFileAt {index.tex}{45}
 
 \KAuxFileAt {index.tex}{46}
+\KAuxAutoref {default}{base}{proof development}
 
 \KAuxFileAt {index.tex}{47}
-\KAuxAutoref {default}{base}{specification}
 
 \KAuxFileAt {index.tex}{48}
 
 \KAuxFileAt {index.tex}{49}
 
 \KAuxFileAt {index.tex}{50}
+\KAuxAutoref {default}{base}{program}
 
 \KAuxFileAt {index.tex}{51}
 
 \KAuxFileAt {index.tex}{52}
-\KAuxAutoref {default}{base}{proof}
 
 \KAuxFileAt {index.tex}{53}
+\KAuxAutoref {default}{base}{specification}
 
 \KAuxFileAt {index.tex}{54}
 
@@ -137,178 +138,178 @@
 \KAuxFileAt {index.tex}{56}
 
 \KAuxFileAt {index.tex}{57}
-\KAuxAutoref {default}{base}{tactics}
 
 \KAuxFileAt {index.tex}{58}
+\KAuxAutoref {default}{base}{proof}
 
 \KAuxFileAt {index.tex}{59}
 
 \KAuxFileAt {index.tex}{60}
-\KAuxAutoref {default}{base}{proof script}
 
 \KAuxFileAt {index.tex}{61}
 
 \KAuxFileAt {index.tex}{62}
-\KAuxAutoref {default}{base}{proof term}
 
 \KAuxFileAt {index.tex}{63}
+\KAuxAutoref {default}{base}{tactics}
 
 \KAuxFileAt {index.tex}{64}
-\KAuxAutoref {default}{base}{Gallina}
 
 \KAuxFileAt {index.tex}{65}
 
 \KAuxFileAt {index.tex}{66}
-\KAuxAutoref {default}{base}{Ltac}
+\KAuxAutoref {default}{base}{proof script}
 
 \KAuxFileAt {index.tex}{67}
 
 \KAuxFileAt {index.tex}{68}
-\KAuxAutoref {default}{base}{plugins}
+\KAuxAutoref {default}{base}{proof term}
 
 \KAuxFileAt {index.tex}{69}
 
 \KAuxFileAt {index.tex}{70}
+\KAuxAutoref {default}{base}{Gallina}
 
 \KAuxFileAt {index.tex}{71}
-\KAuxAutoref {default}{base}{commands}
 
 \KAuxFileAt {index.tex}{72}
+\KAuxAutoref {default}{base}{Ltac}
 
 \KAuxFileAt {index.tex}{73}
 
 \KAuxFileAt {index.tex}{74}
-\KAuxAutoref {default}{base}{proof object}
+\KAuxAutoref {default}{base}{plugins}
 
 \KAuxFileAt {index.tex}{75}
 
 \KAuxFileAt {index.tex}{76}
-\KAuxAutoref {default}{base}{ephemeral proof objects}
 
 \KAuxFileAt {index.tex}{77}
+\KAuxAutoref {default}{base}{commands}
 
 \KAuxFileAt {index.tex}{78}
 
 \KAuxFileAt {index.tex}{79}
-\KAuxAutoref {default}{base}{explicit proof objects}
 
 \KAuxFileAt {index.tex}{80}
+\KAuxAutoref {default}{base}{proof object}
 
 \KAuxFileAt {index.tex}{81}
 
 \KAuxFileAt {index.tex}{82}
-\KAuxAutoref {default}{base}{proof maintenance}
+\KAuxAutoref {default}{base}{ephemeral proof objects}
 
 \KAuxFileAt {index.tex}{83}
 
 \KAuxFileAt {index.tex}{84}
 
 \KAuxFileAt {index.tex}{85}
+\KAuxAutoref {default}{base}{explicit proof objects}
 
 \KAuxFileAt {index.tex}{86}
-\KAuxAutoref {default}{base}{Trusted Computing Base}
 
 \KAuxFileAt {index.tex}{87}
 
 \KAuxFileAt {index.tex}{88}
+\KAuxAutoref {default}{base}{proof maintenance}
 
 \KAuxFileAt {index.tex}{89}
-\KAuxAutoref {default}{base}{proof assistants}
 
 \KAuxFileAt {index.tex}{90}
 
 \KAuxFileAt {index.tex}{91}
 
 \KAuxFileAt {index.tex}{92}
-\KAuxAutoref {default}{base}{Coq}
+\KAuxAutoref {default}{base}{Trusted Computing Base}
 
 \KAuxFileAt {index.tex}{93}
 
 \KAuxFileAt {index.tex}{94}
-\KAuxAutoref {default}{base}{Isabelle/HOL}
 
 \KAuxFileAt {index.tex}{95}
+\KAuxAutoref {default}{base}{proof assistants}
 
 \KAuxFileAt {index.tex}{96}
-\KAuxAutoref {default}{base}{HOL Light}
 
 \KAuxFileAt {index.tex}{97}
 
 \KAuxFileAt {index.tex}{98}
-\KAuxAutoref {default}{base}{HOL4}
+\KAuxAutoref {default}{base}{Coq}
 
 \KAuxFileAt {index.tex}{99}
 
 \KAuxFileAt {index.tex}{100}
-\KAuxAutoref {default}{base}{Agda}
+\KAuxAutoref {default}{base}{Isabelle/HOL}
 
 \KAuxFileAt {index.tex}{101}
 
 \KAuxFileAt {index.tex}{102}
-\KAuxAutoref {default}{base}{Cubical Agda}
+\KAuxAutoref {default}{base}{HOL Light}
 
 \KAuxFileAt {index.tex}{103}
 
 \KAuxFileAt {index.tex}{104}
-\KAuxAutoref {default}{base}{RedPRL}
+\KAuxAutoref {default}{base}{HOL4}
 
 \KAuxFileAt {index.tex}{105}
 
 \KAuxFileAt {index.tex}{106}
-\KAuxAutoref {default}{base}{Lean}
+\KAuxAutoref {default}{base}{Agda}
 
 \KAuxFileAt {index.tex}{107}
 
 \KAuxFileAt {index.tex}{108}
-\KAuxAutoref {default}{base}{NuPRL}
+\KAuxAutoref {default}{base}{Cubical Agda}
 
 \KAuxFileAt {index.tex}{109}
 
 \KAuxFileAt {index.tex}{110}
-\KAuxAutoref {default}{base}{initial algebras of endofunctors}
+\KAuxAutoref {default}{base}{RedPRL}
 
 \KAuxFileAt {index.tex}{111}
 
 \KAuxFileAt {index.tex}{112}
+\KAuxAutoref {default}{base}{Lean}
 
 \KAuxFileAt {index.tex}{113}
 
 \KAuxFileAt {index.tex}{114}
-\KAuxAutoref {default}{base}{law of the excluded middle}
+\KAuxAutoref {default}{base}{NuPRL}
 
 \KAuxFileAt {index.tex}{115}
 
 \KAuxFileAt {index.tex}{116}
+\KAuxAutoref {default}{base}{initial algebras of endofunctors}
 
 \KAuxFileAt {index.tex}{117}
-\KAuxAutoref {default}{base}{double negation elimination}
 
 \KAuxFileAt {index.tex}{118}
 
 \KAuxFileAt {index.tex}{119}
 
 \KAuxFileAt {index.tex}{120}
-\KAuxAutoref {default}{base}{uniqueness of identity proofs}
+\KAuxAutoref {default}{base}{law of the excluded middle}
 
 \KAuxFileAt {index.tex}{121}
 
 \KAuxFileAt {index.tex}{122}
 
 \KAuxFileAt {index.tex}{123}
-\KAuxAutoref {default}{base}{internal}
+\KAuxAutoref {default}{base}{double negation elimination}
 
 \KAuxFileAt {index.tex}{124}
 
 \KAuxFileAt {index.tex}{125}
 
 \KAuxFileAt {index.tex}{126}
+\KAuxAutoref {default}{base}{uniqueness of identity proofs}
 
 \KAuxFileAt {index.tex}{127}
 
 \KAuxFileAt {index.tex}{128}
-\KAuxAutoref {default}{base}{external}
 
 \KAuxFileAt {index.tex}{129}
+\KAuxAutoref {default}{base}{internal}
 
 \KAuxFileAt {index.tex}{130}
 
@@ -317,85 +318,84 @@
 \KAuxFileAt {index.tex}{132}
 
 \KAuxFileAt {index.tex}{133}
-\KAuxAutoref {default}{base}{algebraic ornaments}
 
 \KAuxFileAt {index.tex}{134}
+\KAuxAutoref {default}{base}{external}
 
 \KAuxFileAt {index.tex}{135}
 
 \KAuxFileAt {index.tex}{136}
-\KAuxAutoref {default}{base}{indexer}
 
 \KAuxFileAt {index.tex}{137}
 
 \KAuxFileAt {index.tex}{138}
-\KAuxAutoref {default}{base}{ornamental promotion isomorphism}
 
 \KAuxFileAt {index.tex}{139}
+\KAuxAutoref {default}{base}{algebraic ornaments}
 
 \KAuxFileAt {index.tex}{140}
-\KAuxAutoref {default}{base}{coherence}
 
 \KAuxFileAt {index.tex}{141}
 
 \KAuxFileAt {index.tex}{142}
+\KAuxAutoref {default}{base}{indexer}
 
 \KAuxFileAt {index.tex}{143}
-\KAuxAutoref {default}{base}{type equivalences}
 
 \KAuxFileAt {index.tex}{144}
+\KAuxAutoref {default}{base}{ornamental promotion isomorphism}
 
 \KAuxFileAt {index.tex}{145}
 
 \KAuxFileAt {index.tex}{146}
+\KAuxAutoref {default}{base}{coherence}
 
 \KAuxFileAt {index.tex}{147}
 
 \KAuxFileAt {index.tex}{148}
 
 \KAuxFileAt {index.tex}{149}
-\KAuxAutoref {default}{base}{univalence}
+\KAuxAutoref {default}{base}{type equivalences}
 
 \KAuxFileAt {index.tex}{150}
 
 \KAuxFileAt {index.tex}{151}
 
 \KAuxFileAt {index.tex}{152}
-\KAuxAutoref {default}{base}{transport}
 
 \KAuxFileAt {index.tex}{153}
 
 \KAuxFileAt {index.tex}{154}
 
 \KAuxFileAt {index.tex}{155}
+\KAuxAutoref {default}{base}{univalence}
 
 \KAuxFileAt {index.tex}{156}
-\KAuxAutoref {default}{base}{propositional equality}
 
 \KAuxFileAt {index.tex}{157}
 
 \KAuxFileAt {index.tex}{158}
+\KAuxAutoref {default}{base}{transport}
 
 \KAuxFileAt {index.tex}{159}
 
 \KAuxFileAt {index.tex}{160}
-\KAuxAutoref {default}{base}{definitional equality}
 
 \KAuxFileAt {index.tex}{161}
 
 \KAuxFileAt {index.tex}{162}
+\KAuxAutoref {default}{base}{propositional equality}
 
 \KAuxFileAt {index.tex}{163}
 
 \KAuxFileAt {index.tex}{164}
 
 \KAuxFileAt {index.tex}{165}
-\KAuxAutoref {default}{base}{intensional}
 
 \KAuxFileAt {index.tex}{166}
+\KAuxAutoref {default}{base}{definitional equality}
 
 \KAuxFileAt {index.tex}{167}
-\KAuxAutoref {default}{base}{intuitionistic}
 
 \KAuxFileAt {index.tex}{168}
 
@@ -404,12 +404,12 @@
 \KAuxFileAt {index.tex}{170}
 
 \KAuxFileAt {index.tex}{171}
-\KAuxAutoref {default}{base}{classical}
+\KAuxAutoref {default}{base}{intensional}
 
 \KAuxFileAt {index.tex}{172}
 
 \KAuxFileAt {index.tex}{173}
-\KAuxAutoref {default}{base}{polymorphism}
+\KAuxAutoref {default}{base}{intuitionistic}
 
 \KAuxFileAt {index.tex}{174}
 
@@ -418,11 +418,12 @@
 \KAuxFileAt {index.tex}{176}
 
 \KAuxFileAt {index.tex}{177}
-\KAuxAutoref {default}{base}{dependent types}
+\KAuxAutoref {default}{base}{classical}
 
 \KAuxFileAt {index.tex}{178}
 
 \KAuxFileAt {index.tex}{179}
+\KAuxAutoref {default}{base}{polymorphism}
 
 \KAuxFileAt {index.tex}{180}
 
@@ -431,7 +432,7 @@
 \KAuxFileAt {index.tex}{182}
 
 \KAuxFileAt {index.tex}{183}
-\KAuxAutoref {default}{base}{$\Sigma $}
+\KAuxAutoref {default}{base}{dependent types}
 
 \KAuxFileAt {index.tex}{184}
 
@@ -440,1190 +441,1190 @@
 \KAuxFileAt {index.tex}{186}
 
 \KAuxFileAt {index.tex}{187}
-\KAuxAutoref {default}{base}{inductive type}
 
 \KAuxFileAt {index.tex}{188}
 
 \KAuxFileAt {index.tex}{189}
+\KAuxAutoref {default}{base}{$\Sigma $}
 
 \KAuxFileAt {index.tex}{190}
-\KAuxAutoref {default}{base}{constructors}
 
 \KAuxFileAt {index.tex}{191}
 
 \KAuxFileAt {index.tex}{192}
 
 \KAuxFileAt {index.tex}{193}
-\KAuxAutoref {default}{base}{eliminators}
+\KAuxAutoref {default}{base}{inductive type}
 
 \KAuxFileAt {index.tex}{194}
 
 \KAuxFileAt {index.tex}{195}
 
 \KAuxFileAt {index.tex}{196}
-\KAuxAutoref {default}{base}{motive}
+\KAuxAutoref {default}{base}{constructors}
 
 \KAuxFileAt {index.tex}{197}
 
 \KAuxFileAt {index.tex}{198}
 
 \KAuxFileAt {index.tex}{199}
-\KAuxAutoref {default}{base}{inductive hypothesis}
+\KAuxAutoref {default}{base}{eliminators}
 
 \KAuxFileAt {index.tex}{200}
 
 \KAuxFileAt {index.tex}{201}
 
 \KAuxFileAt {index.tex}{202}
+\KAuxAutoref {default}{base}{motive}
 
 \KAuxFileAt {index.tex}{203}
-\KAuxAutoref {default}{base}{UW PLSE}
 
 \KAuxFileAt {index.tex}{204}
 
 \KAuxFileAt {index.tex}{205}
+\KAuxAutoref {default}{base}{inductive hypothesis}
 
 \KAuxFileAt {index.tex}{206}
-\KAuxAutoref {default}{base}{UCSD ProgSys}
 
 \KAuxFileAt {index.tex}{207}
 
 \KAuxFileAt {index.tex}{208}
 
 \KAuxFileAt {index.tex}{209}
+\KAuxAutoref {default}{base}{UW PLSE}
 
 \KAuxFileAt {index.tex}{210}
-\KAuxAutoref {default}{base}{RanDair Porter}
 
 \KAuxFileAt {index.tex}{211}
 
 \KAuxFileAt {index.tex}{212}
+\KAuxAutoref {default}{base}{UCSD ProgSys}
 
 \KAuxFileAt {index.tex}{213}
-\KAuxAutoref {default}{base}{Nathaniel Yazdani}
 
 \KAuxFileAt {index.tex}{214}
 
 \KAuxFileAt {index.tex}{215}
 
 \KAuxFileAt {index.tex}{216}
+\KAuxAutoref {default}{base}{RanDair Porter}
 
 \KAuxFileAt {index.tex}{217}
-\KAuxAutoref {default}{base}{Karl Palmskog}
 
 \KAuxFileAt {index.tex}{218}
 
 \KAuxFileAt {index.tex}{219}
+\KAuxAutoref {default}{base}{Nathaniel Yazdani}
 
 \KAuxFileAt {index.tex}{220}
-\KAuxAutoref {default}{base}{Alex Sanchez-Stern}
 
 \KAuxFileAt {index.tex}{221}
 
 \KAuxFileAt {index.tex}{222}
 
 \KAuxFileAt {index.tex}{223}
-\KAuxAutoref {default}{base}{John Leo}
+\KAuxAutoref {default}{base}{Karl Palmskog}
 
 \KAuxFileAt {index.tex}{224}
 
 \KAuxFileAt {index.tex}{225}
 
 \KAuxFileAt {index.tex}{226}
-\KAuxAutoref {default}{base}{Ilya Sergey}
+\KAuxAutoref {default}{base}{Alex Sanchez-Stern}
 
 \KAuxFileAt {index.tex}{227}
 
 \KAuxFileAt {index.tex}{228}
 
 \KAuxFileAt {index.tex}{229}
-\KAuxAutoref {default}{base}{Milos Gligoric}
+\KAuxAutoref {default}{base}{John Leo}
 
 \KAuxFileAt {index.tex}{230}
 
 \KAuxFileAt {index.tex}{231}
 
 \KAuxFileAt {index.tex}{232}
-\KAuxAutoref {default}{base}{Sorin Lerner}
+\KAuxAutoref {default}{base}{Ilya Sergey}
 
 \KAuxFileAt {index.tex}{233}
 
 \KAuxFileAt {index.tex}{234}
 
 \KAuxFileAt {index.tex}{235}
-\KAuxAutoref {default}{base}{Chandrakana Nandi}
+\KAuxAutoref {default}{base}{Milos Gligoric}
 
 \KAuxFileAt {index.tex}{236}
 
 \KAuxFileAt {index.tex}{237}
 
 \KAuxFileAt {index.tex}{238}
-\KAuxAutoref {default}{base}{Max Willsey}
+\KAuxAutoref {default}{base}{Sorin Lerner}
 
 \KAuxFileAt {index.tex}{239}
 
 \KAuxFileAt {index.tex}{240}
 
 \KAuxFileAt {index.tex}{241}
-\KAuxAutoref {default}{base}{Martin Kellog}
+\KAuxAutoref {default}{base}{Chandrakana Nandi}
 
 \KAuxFileAt {index.tex}{242}
 
 \KAuxFileAt {index.tex}{243}
 
 \KAuxFileAt {index.tex}{244}
-\KAuxAutoref {default}{base}{Jared Roesch}
+\KAuxAutoref {default}{base}{Max Willsey}
 
 \KAuxFileAt {index.tex}{245}
 
 \KAuxFileAt {index.tex}{246}
 
 \KAuxFileAt {index.tex}{247}
-\KAuxAutoref {default}{base}{Gus Smith}
+\KAuxAutoref {default}{base}{Martin Kellog}
 
 \KAuxFileAt {index.tex}{248}
 
 \KAuxFileAt {index.tex}{249}
 
 \KAuxFileAt {index.tex}{250}
-\KAuxAutoref {default}{base}{Bill Zorn}
+\KAuxAutoref {default}{base}{Jared Roesch}
 
 \KAuxFileAt {index.tex}{251}
 
 \KAuxFileAt {index.tex}{252}
 
 \KAuxFileAt {index.tex}{253}
-\KAuxAutoref {default}{base}{Ben Kushigian}
+\KAuxAutoref {default}{base}{Gus Smith}
 
 \KAuxFileAt {index.tex}{254}
 
 \KAuxFileAt {index.tex}{255}
 
 \KAuxFileAt {index.tex}{256}
-\KAuxAutoref {default}{base}{Steven Lyubomirsky}
+\KAuxAutoref {default}{base}{Bill Zorn}
 
 \KAuxFileAt {index.tex}{257}
 
 \KAuxFileAt {index.tex}{258}
 
 \KAuxFileAt {index.tex}{259}
-\KAuxAutoref {default}{base}{Jacob Van Geffen}
+\KAuxAutoref {default}{base}{Ben Kushigian}
 
 \KAuxFileAt {index.tex}{260}
 
 \KAuxFileAt {index.tex}{261}
 
 \KAuxFileAt {index.tex}{262}
-\KAuxAutoref {default}{base}{Marisa Kirisame}
+\KAuxAutoref {default}{base}{Steven Lyubomirsky}
 
 \KAuxFileAt {index.tex}{263}
 
 \KAuxFileAt {index.tex}{264}
 
 \KAuxFileAt {index.tex}{265}
-\KAuxAutoref {default}{base}{Audrey Seo}
+\KAuxAutoref {default}{base}{Jacob Van Geffen}
 
 \KAuxFileAt {index.tex}{266}
 
 \KAuxFileAt {index.tex}{267}
 
 \KAuxFileAt {index.tex}{268}
-\KAuxAutoref {default}{base}{James Wilcox}
+\KAuxAutoref {default}{base}{Marisa Kirisame}
 
 \KAuxFileAt {index.tex}{269}
 
 \KAuxFileAt {index.tex}{270}
 
 \KAuxFileAt {index.tex}{271}
-\KAuxAutoref {default}{base}{Doug Woos}
+\KAuxAutoref {default}{base}{Audrey Seo}
 
 \KAuxFileAt {index.tex}{272}
 
 \KAuxFileAt {index.tex}{273}
 
 \KAuxFileAt {index.tex}{274}
-\KAuxAutoref {default}{base}{Eric Mullen}
+\KAuxAutoref {default}{base}{James Wilcox}
 
 \KAuxFileAt {index.tex}{275}
 
 \KAuxFileAt {index.tex}{276}
 
 \KAuxFileAt {index.tex}{277}
-\KAuxAutoref {default}{base}{Remy Wang}
+\KAuxAutoref {default}{base}{Doug Woos}
 
 \KAuxFileAt {index.tex}{278}
 
 \KAuxFileAt {index.tex}{279}
 
 \KAuxFileAt {index.tex}{280}
-\KAuxAutoref {default}{base}{Konstantin Weitz}
+\KAuxAutoref {default}{base}{Eric Mullen}
 
 \KAuxFileAt {index.tex}{281}
 
 \KAuxFileAt {index.tex}{282}
 
 \KAuxFileAt {index.tex}{283}
-\KAuxAutoref {default}{base}{Mike He}
+\KAuxAutoref {default}{base}{Remy Wang}
 
 \KAuxFileAt {index.tex}{284}
 
 \KAuxFileAt {index.tex}{285}
 
 \KAuxFileAt {index.tex}{286}
-\KAuxAutoref {default}{base}{Alex Polozov}
+\KAuxAutoref {default}{base}{Konstantin Weitz}
 
 \KAuxFileAt {index.tex}{287}
 
 \KAuxFileAt {index.tex}{288}
-\KAuxAutoref {default}{base}{Sarah Chasins}
 
 \KAuxFileAt {index.tex}{289}
+\KAuxAutoref {default}{base}{Mike He}
 
 \KAuxFileAt {index.tex}{290}
 
 \KAuxFileAt {index.tex}{291}
-\KAuxAutoref {default}{base}{John Toman}
 
 \KAuxFileAt {index.tex}{292}
+\KAuxAutoref {default}{base}{Alex Polozov}
 
 \KAuxFileAt {index.tex}{293}
 
 \KAuxFileAt {index.tex}{294}
-\KAuxAutoref {default}{base}{Ryan Doenges}
+\KAuxAutoref {default}{base}{Sarah Chasins}
 
 \KAuxFileAt {index.tex}{295}
 
 \KAuxFileAt {index.tex}{296}
 
 \KAuxFileAt {index.tex}{297}
-\KAuxAutoref {default}{base}{Melissa Hovik}
+\KAuxAutoref {default}{base}{John Toman}
 
 \KAuxFileAt {index.tex}{298}
 
 \KAuxFileAt {index.tex}{299}
 
 \KAuxFileAt {index.tex}{300}
-\KAuxAutoref {default}{base}{Julie Newcomb}
+\KAuxAutoref {default}{base}{Ryan Doenges}
 
 \KAuxFileAt {index.tex}{301}
 
 \KAuxFileAt {index.tex}{302}
 
 \KAuxFileAt {index.tex}{303}
-\KAuxAutoref {default}{base}{James Bornholt}
+\KAuxAutoref {default}{base}{Melissa Hovik}
 
 \KAuxFileAt {index.tex}{304}
 
 \KAuxFileAt {index.tex}{305}
-\KAuxAutoref {default}{base}{Daryl Zuniga}
 
 \KAuxFileAt {index.tex}{306}
+\KAuxAutoref {default}{base}{Julie Newcomb}
 
 \KAuxFileAt {index.tex}{307}
 
 \KAuxFileAt {index.tex}{308}
-\KAuxAutoref {default}{base}{Joe Redmond}
 
 \KAuxFileAt {index.tex}{309}
+\KAuxAutoref {default}{base}{James Bornholt}
 
 \KAuxFileAt {index.tex}{310}
 
 \KAuxFileAt {index.tex}{311}
-\KAuxAutoref {default}{base}{Amanda Swearngin}
+\KAuxAutoref {default}{base}{Daryl Zuniga}
 
 \KAuxFileAt {index.tex}{312}
 
 \KAuxFileAt {index.tex}{313}
 
 \KAuxFileAt {index.tex}{314}
-\KAuxAutoref {default}{base}{Ali K\"{o}skal}
+\KAuxAutoref {default}{base}{Joe Redmond}
 
 \KAuxFileAt {index.tex}{315}
 
 \KAuxFileAt {index.tex}{316}
 
 \KAuxFileAt {index.tex}{317}
-\KAuxAutoref {default}{base}{Calvin Loncaric}
+\KAuxAutoref {default}{base}{Amanda Swearngin}
 
 \KAuxFileAt {index.tex}{318}
 
 \KAuxFileAt {index.tex}{319}
 
 \KAuxFileAt {index.tex}{320}
-\KAuxAutoref {default}{base}{Chenglong Wang}
+\KAuxAutoref {default}{base}{Ali K\"{o}skal}
 
 \KAuxFileAt {index.tex}{321}
 
 \KAuxFileAt {index.tex}{322}
 
 \KAuxFileAt {index.tex}{323}
-\KAuxAutoref {default}{base}{Mangpo Phitchaya Phothilimthana}
+\KAuxAutoref {default}{base}{Calvin Loncaric}
 
 \KAuxFileAt {index.tex}{324}
 
 \KAuxFileAt {index.tex}{325}
 
 \KAuxFileAt {index.tex}{326}
-\KAuxAutoref {default}{base}{Rohin Shah}
+\KAuxAutoref {default}{base}{Chenglong Wang}
 
 \KAuxFileAt {index.tex}{327}
 
 \KAuxFileAt {index.tex}{328}
 
 \KAuxFileAt {index.tex}{329}
-\KAuxAutoref {default}{base}{Stuart Pernsteiner}
+\KAuxAutoref {default}{base}{Mangpo Phitchaya Phothilimthana}
 
 \KAuxFileAt {index.tex}{330}
 
 \KAuxFileAt {index.tex}{331}
 
 \KAuxFileAt {index.tex}{332}
-\KAuxAutoref {default}{base}{Spencer Pearson}
+\KAuxAutoref {default}{base}{Rohin Shah}
 
 \KAuxFileAt {index.tex}{333}
 
 \KAuxFileAt {index.tex}{334}
 
 \KAuxFileAt {index.tex}{335}
-\KAuxAutoref {default}{base}{Sam Elliott}
+\KAuxAutoref {default}{base}{Stuart Pernsteiner}
 
 \KAuxFileAt {index.tex}{336}
 
 \KAuxFileAt {index.tex}{337}
 
 \KAuxFileAt {index.tex}{338}
-\KAuxAutoref {default}{base}{Maaz Ahmad}
+\KAuxAutoref {default}{base}{Spencer Pearson}
 
 \KAuxFileAt {index.tex}{339}
 
 \KAuxFileAt {index.tex}{340}
 
 \KAuxFileAt {index.tex}{341}
-\KAuxAutoref {default}{base}{Dan Cascaval}
+\KAuxAutoref {default}{base}{Sam Elliott}
 
 \KAuxFileAt {index.tex}{342}
 
 \KAuxFileAt {index.tex}{343}
-\KAuxAutoref {default}{base}{Krzysztof Drewniak}
 
 \KAuxFileAt {index.tex}{344}
+\KAuxAutoref {default}{base}{Maaz Ahmad}
 
 \KAuxFileAt {index.tex}{345}
 
 \KAuxFileAt {index.tex}{346}
-\KAuxAutoref {default}{base}{Michael Flanders}
 
 \KAuxFileAt {index.tex}{347}
+\KAuxAutoref {default}{base}{Dan Cascaval}
 
 \KAuxFileAt {index.tex}{348}
 
 \KAuxFileAt {index.tex}{349}
-\KAuxAutoref {default}{base}{Eunice Jun}
+\KAuxAutoref {default}{base}{Krzysztof Drewniak}
 
 \KAuxFileAt {index.tex}{350}
 
 \KAuxFileAt {index.tex}{351}
 
 \KAuxFileAt {index.tex}{352}
-\KAuxAutoref {default}{base}{Sam Kaufman}
+\KAuxAutoref {default}{base}{Michael Flanders}
 
 \KAuxFileAt {index.tex}{353}
 
 \KAuxFileAt {index.tex}{354}
-\KAuxAutoref {default}{base}{Rashmi Mudduluru}
 
 \KAuxFileAt {index.tex}{355}
+\KAuxAutoref {default}{base}{Eunice Jun}
 
 \KAuxFileAt {index.tex}{356}
 
 \KAuxFileAt {index.tex}{357}
-\KAuxAutoref {default}{base}{Sorawee Porncharoenwase}
 
 \KAuxFileAt {index.tex}{358}
+\KAuxAutoref {default}{base}{Sam Kaufman}
 
 \KAuxFileAt {index.tex}{359}
 
 \KAuxFileAt {index.tex}{360}
+\KAuxAutoref {default}{base}{Rashmi Mudduluru}
 
 \KAuxFileAt {index.tex}{361}
-\KAuxAutoref {default}{base}{Thomas Schweizer}
 
 \KAuxFileAt {index.tex}{362}
 
 \KAuxFileAt {index.tex}{363}
+\KAuxAutoref {default}{base}{Sorawee Porncharoenwase}
 
 \KAuxFileAt {index.tex}{364}
-\KAuxAutoref {default}{base}{Luis Vega}
 
 \KAuxFileAt {index.tex}{365}
 
 \KAuxFileAt {index.tex}{366}
 
 \KAuxFileAt {index.tex}{367}
-\KAuxAutoref {default}{base}{Sahil Verma}
+\KAuxAutoref {default}{base}{Thomas Schweizer}
 
 \KAuxFileAt {index.tex}{368}
 
 \KAuxFileAt {index.tex}{369}
 
 \KAuxFileAt {index.tex}{370}
-\KAuxAutoref {default}{base}{Zhen Zhang}
+\KAuxAutoref {default}{base}{Luis Vega}
 
 \KAuxFileAt {index.tex}{371}
 
 \KAuxFileAt {index.tex}{372}
 
 \KAuxFileAt {index.tex}{373}
-\KAuxAutoref {default}{base}{Amy Zhu}
+\KAuxAutoref {default}{base}{Sahil Verma}
 
 \KAuxFileAt {index.tex}{374}
 
 \KAuxFileAt {index.tex}{375}
 
 \KAuxFileAt {index.tex}{376}
-\KAuxAutoref {default}{base}{Jasper Hugunin}
+\KAuxAutoref {default}{base}{Zhen Zhang}
 
 \KAuxFileAt {index.tex}{377}
 
 \KAuxFileAt {index.tex}{378}
 
 \KAuxFileAt {index.tex}{379}
-\KAuxAutoref {default}{base}{Taylor Blau}
+\KAuxAutoref {default}{base}{Amy Zhu}
 
 \KAuxFileAt {index.tex}{380}
 
 \KAuxFileAt {index.tex}{381}
 
 \KAuxFileAt {index.tex}{382}
-\KAuxAutoref {default}{base}{Logan Weber}
+\KAuxAutoref {default}{base}{Jasper Hugunin}
 
 \KAuxFileAt {index.tex}{383}
 
 \KAuxFileAt {index.tex}{384}
 
 \KAuxFileAt {index.tex}{385}
-\KAuxAutoref {default}{base}{Max Ruttenberg}
+\KAuxAutoref {default}{base}{Taylor Blau}
 
 \KAuxFileAt {index.tex}{386}
 
 \KAuxFileAt {index.tex}{387}
-\KAuxAutoref {default}{base}{Josh Pollock}
 
 \KAuxFileAt {index.tex}{388}
+\KAuxAutoref {default}{base}{Logan Weber}
 
 \KAuxFileAt {index.tex}{389}
 
 \KAuxFileAt {index.tex}{390}
-\KAuxAutoref {default}{base}{Luke Nelson}
 
 \KAuxFileAt {index.tex}{391}
+\KAuxAutoref {default}{base}{Max Ruttenberg}
 
 \KAuxFileAt {index.tex}{392}
 
 \KAuxFileAt {index.tex}{393}
-\KAuxAutoref {default}{base}{Shumo Chu}
+\KAuxAutoref {default}{base}{Josh Pollock}
 
 \KAuxFileAt {index.tex}{394}
 
 \KAuxFileAt {index.tex}{395}
 
 \KAuxFileAt {index.tex}{396}
-\KAuxAutoref {default}{base}{Lymor Ringer Barnhard}
+\KAuxAutoref {default}{base}{Luke Nelson}
 
 \KAuxFileAt {index.tex}{397}
 
 \KAuxFileAt {index.tex}{398}
 
 \KAuxFileAt {index.tex}{399}
-\KAuxAutoref {default}{base}{Belle}
+\KAuxAutoref {default}{base}{Shumo Chu}
 
 \KAuxFileAt {index.tex}{400}
 
 \KAuxFileAt {index.tex}{401}
-\KAuxAutoref {default}{base}{Saba}
 
 \KAuxFileAt {index.tex}{402}
+\KAuxAutoref {default}{base}{Lymor Ringer Barnhard}
 
 \KAuxFileAt {index.tex}{403}
-\KAuxAutoref {default}{base}{Savta}
 
 \KAuxFileAt {index.tex}{404}
 
 \KAuxFileAt {index.tex}{405}
-\KAuxAutoref {default}{base}{Grandpa}
+\KAuxAutoref {default}{base}{Belle}
 
 \KAuxFileAt {index.tex}{406}
 
 \KAuxFileAt {index.tex}{407}
-\KAuxAutoref {default}{base}{parents}
+\KAuxAutoref {default}{base}{Saba}
 
 \KAuxFileAt {index.tex}{408}
 
 \KAuxFileAt {index.tex}{409}
+\KAuxAutoref {default}{base}{Savta}
 
 \KAuxFileAt {index.tex}{410}
 
 \KAuxFileAt {index.tex}{411}
-\KAuxAutoref {default}{base}{Kasso Okoudjou}
+\KAuxAutoref {default}{base}{Grandpa}
 
 \KAuxFileAt {index.tex}{412}
 
 \KAuxFileAt {index.tex}{413}
+\KAuxAutoref {default}{base}{parents}
 
 \KAuxFileAt {index.tex}{414}
-\KAuxAutoref {default}{base}{Larry Washington}
 
 \KAuxFileAt {index.tex}{415}
 
 \KAuxFileAt {index.tex}{416}
 
 \KAuxFileAt {index.tex}{417}
-\KAuxAutoref {default}{base}{Ida Chan}
+\KAuxAutoref {default}{base}{Kasso Okoudjou}
 
 \KAuxFileAt {index.tex}{418}
 
 \KAuxFileAt {index.tex}{419}
 
 \KAuxFileAt {index.tex}{420}
-\KAuxAutoref {default}{base}{Brandi K. Adams}
+\KAuxAutoref {default}{base}{Larry Washington}
 
 \KAuxFileAt {index.tex}{421}
 
 \KAuxFileAt {index.tex}{422}
 
 \KAuxFileAt {index.tex}{423}
-\KAuxAutoref {default}{base}{Ernesto}
+\KAuxAutoref {default}{base}{Ida Chan}
 
 \KAuxFileAt {index.tex}{424}
 
 \KAuxFileAt {index.tex}{425}
 
 \KAuxFileAt {index.tex}{426}
-\KAuxAutoref {default}{base}{Musachy}
+\KAuxAutoref {default}{base}{Brandi K. Adams}
 
 \KAuxFileAt {index.tex}{427}
 
 \KAuxFileAt {index.tex}{428}
 
 \KAuxFileAt {index.tex}{429}
-\KAuxAutoref {default}{base}{Jeff Foster}
+\KAuxAutoref {default}{base}{Ernesto}
 
 \KAuxFileAt {index.tex}{430}
 
 \KAuxFileAt {index.tex}{431}
 
 \KAuxFileAt {index.tex}{432}
-\KAuxAutoref {default}{base}{Serdar}
+\KAuxAutoref {default}{base}{Musachy}
 
 \KAuxFileAt {index.tex}{433}
 
 \KAuxFileAt {index.tex}{434}
 
 \KAuxFileAt {index.tex}{435}
-\KAuxAutoref {default}{base}{Daniel Schwartz-Narbonne}
+\KAuxAutoref {default}{base}{Jeff Foster}
 
 \KAuxFileAt {index.tex}{436}
 
 \KAuxFileAt {index.tex}{437}
 
 \KAuxFileAt {index.tex}{438}
-\KAuxAutoref {default}{base}{Dan Grossman}
+\KAuxAutoref {default}{base}{Serdar}
 
 \KAuxFileAt {index.tex}{439}
 
 \KAuxFileAt {index.tex}{440}
 
 \KAuxFileAt {index.tex}{441}
-\KAuxAutoref {default}{base}{Zach Tatlock}
+\KAuxAutoref {default}{base}{Daniel Schwartz-Narbonne}
 
 \KAuxFileAt {index.tex}{442}
 
 \KAuxFileAt {index.tex}{443}
 
 \KAuxFileAt {index.tex}{444}
-\KAuxAutoref {default}{base}{Ras Bodik}
+\KAuxAutoref {default}{base}{Dan Grossman}
 
 \KAuxFileAt {index.tex}{445}
 
 \KAuxFileAt {index.tex}{446}
-\KAuxAutoref {default}{base}{Kris Micinski}
 
 \KAuxFileAt {index.tex}{447}
+\KAuxAutoref {default}{base}{Zach Tatlock}
 
 \KAuxFileAt {index.tex}{448}
 
 \KAuxFileAt {index.tex}{449}
-\KAuxAutoref {default}{base}{programming languages community}
 
 \KAuxFileAt {index.tex}{450}
+\KAuxAutoref {default}{base}{Ras Bodik}
 
 \KAuxFileAt {index.tex}{451}
 
 \KAuxFileAt {index.tex}{452}
-\KAuxAutoref {default}{base}{Michael Shulman}
+\KAuxAutoref {default}{base}{Kris Micinski}
 
 \KAuxFileAt {index.tex}{453}
 
 \KAuxFileAt {index.tex}{454}
 
 \KAuxFileAt {index.tex}{455}
-\KAuxAutoref {default}{base}{Carlo Angiuli}
+\KAuxAutoref {default}{base}{programming languages community}
 
 \KAuxFileAt {index.tex}{456}
 
 \KAuxFileAt {index.tex}{457}
 
 \KAuxFileAt {index.tex}{458}
-\KAuxAutoref {default}{base}{Anders M\"{o}rtberg}
+\KAuxAutoref {default}{base}{Michael Shulman}
 
 \KAuxFileAt {index.tex}{459}
 
 \KAuxFileAt {index.tex}{460}
 
 \KAuxFileAt {index.tex}{461}
+\KAuxAutoref {default}{base}{Carlo Angiuli}
 
 \KAuxFileAt {index.tex}{462}
-\KAuxAutoref {default}{base}{Conor McBride}
 
 \KAuxFileAt {index.tex}{463}
 
 \KAuxFileAt {index.tex}{464}
-\KAuxAutoref {default}{base}{Matthew Dwyer}
+\KAuxAutoref {default}{base}{Anders M\"{o}rtberg}
 
 \KAuxFileAt {index.tex}{465}
 
 \KAuxFileAt {index.tex}{466}
-\KAuxAutoref {default}{base}{Matt Might}
 
 \KAuxFileAt {index.tex}{467}
 
 \KAuxFileAt {index.tex}{468}
-\KAuxAutoref {default}{base}{Bas Spitters}
+\KAuxAutoref {default}{base}{Conor McBride}
 
 \KAuxFileAt {index.tex}{469}
 
 \KAuxFileAt {index.tex}{470}
-\KAuxAutoref {default}{base}{Jon Sterling}
+\KAuxAutoref {default}{base}{Matthew Dwyer}
 
 \KAuxFileAt {index.tex}{471}
 
 \KAuxFileAt {index.tex}{472}
-\KAuxAutoref {default}{base}{Bob Harper}
+\KAuxAutoref {default}{base}{Matt Might}
 
 \KAuxFileAt {index.tex}{473}
 
 \KAuxFileAt {index.tex}{474}
-\KAuxAutoref {default}{base}{Edward Z. Yang}
+\KAuxAutoref {default}{base}{Bas Spitters}
 
 \KAuxFileAt {index.tex}{475}
 
 \KAuxFileAt {index.tex}{476}
-\KAuxAutoref {default}{base}{James Decker}
+\KAuxAutoref {default}{base}{Jon Sterling}
 
 \KAuxFileAt {index.tex}{477}
 
 \KAuxFileAt {index.tex}{478}
-\KAuxAutoref {default}{base}{Gerwin Klein}
+\KAuxAutoref {default}{base}{Bob Harper}
 
 \KAuxFileAt {index.tex}{479}
 
 \KAuxFileAt {index.tex}{480}
-\KAuxAutoref {default}{base}{Jonathan Aldrich}
+\KAuxAutoref {default}{base}{Edward Z. Yang}
 
 \KAuxFileAt {index.tex}{481}
 
 \KAuxFileAt {index.tex}{482}
-\KAuxAutoref {default}{base}{David van Horn}
+\KAuxAutoref {default}{base}{James Decker}
 
 \KAuxFileAt {index.tex}{483}
 
 \KAuxFileAt {index.tex}{484}
-\KAuxAutoref {default}{base}{Michael Hicks}
+\KAuxAutoref {default}{base}{Gerwin Klein}
 
 \KAuxFileAt {index.tex}{485}
 
 \KAuxFileAt {index.tex}{486}
-\KAuxAutoref {default}{base}{Emery Berger}
+\KAuxAutoref {default}{base}{Jonathan Aldrich}
 
 \KAuxFileAt {index.tex}{487}
 
 \KAuxFileAt {index.tex}{488}
-\KAuxAutoref {default}{base}{Kenny Foner}
+\KAuxAutoref {default}{base}{David van Horn}
 
 \KAuxFileAt {index.tex}{489}
 
 \KAuxFileAt {index.tex}{490}
-\KAuxAutoref {default}{base}{Alexandra Silva}
+\KAuxAutoref {default}{base}{Michael Hicks}
 
 \KAuxFileAt {index.tex}{491}
 
 \KAuxFileAt {index.tex}{492}
-\KAuxAutoref {default}{base}{Lindsey Kuper}
+\KAuxAutoref {default}{base}{Emery Berger}
 
 \KAuxFileAt {index.tex}{493}
 
 \KAuxFileAt {index.tex}{494}
-\KAuxAutoref {default}{base}{Nate Foster}
+\KAuxAutoref {default}{base}{Kenny Foner}
 
 \KAuxFileAt {index.tex}{495}
 
 \KAuxFileAt {index.tex}{496}
-\KAuxAutoref {default}{base}{Stephanie Weirich}
+\KAuxAutoref {default}{base}{Alexandra Silva}
 
 \KAuxFileAt {index.tex}{497}
 
 \KAuxFileAt {index.tex}{498}
-\KAuxAutoref {default}{base}{Yuriy Brun}
+\KAuxAutoref {default}{base}{Lindsey Kuper}
 
 \KAuxFileAt {index.tex}{499}
 
 \KAuxFileAt {index.tex}{500}
+\KAuxAutoref {default}{base}{Nate Foster}
 
 \KAuxFileAt {index.tex}{501}
-\KAuxAutoref {default}{base}{Emily First}
 
 \KAuxFileAt {index.tex}{502}
+\KAuxAutoref {default}{base}{Stephanie Weirich}
 
 \KAuxFileAt {index.tex}{503}
 
 \KAuxFileAt {index.tex}{504}
-\KAuxAutoref {default}{base}{Stephanie Weirich}
+\KAuxAutoref {default}{base}{Yuriy Brun}
 
 \KAuxFileAt {index.tex}{505}
 
 \KAuxFileAt {index.tex}{506}
-\KAuxAutoref {default}{base}{Derek Dreyer}
 
 \KAuxFileAt {index.tex}{507}
+\KAuxAutoref {default}{base}{Emily First}
 
 \KAuxFileAt {index.tex}{508}
-\KAuxAutoref {default}{base}{friends}
 
 \KAuxFileAt {index.tex}{509}
 
 \KAuxFileAt {index.tex}{510}
-\KAuxAutoref {default}{base}{Dhruv Jain}
+\KAuxAutoref {default}{base}{Stephanie Weirich}
 
 \KAuxFileAt {index.tex}{511}
 
 \KAuxFileAt {index.tex}{512}
-\KAuxAutoref {default}{base}{Karl Koscher}
+\KAuxAutoref {default}{base}{Derek Dreyer}
 
 \KAuxFileAt {index.tex}{513}
 
 \KAuxFileAt {index.tex}{514}
-\KAuxAutoref {default}{base}{Roy Or-El}
+\KAuxAutoref {default}{base}{friends}
 
 \KAuxFileAt {index.tex}{515}
 
 \KAuxFileAt {index.tex}{516}
+\KAuxAutoref {default}{base}{Dhruv Jain}
 
 \KAuxFileAt {index.tex}{517}
-\KAuxAutoref {default}{base}{Vikram Iyer}
 
 \KAuxFileAt {index.tex}{518}
+\KAuxAutoref {default}{base}{Karl Koscher}
 
 \KAuxFileAt {index.tex}{519}
 
 \KAuxFileAt {index.tex}{520}
-\KAuxAutoref {default}{base}{Esther Jang}
+\KAuxAutoref {default}{base}{Roy Or-El}
 
 \KAuxFileAt {index.tex}{521}
 
 \KAuxFileAt {index.tex}{522}
 
 \KAuxFileAt {index.tex}{523}
-\KAuxAutoref {default}{base}{Ellie Berry}
+\KAuxAutoref {default}{base}{Vikram Iyer}
 
 \KAuxFileAt {index.tex}{524}
 
 \KAuxFileAt {index.tex}{525}
 
 \KAuxFileAt {index.tex}{526}
-\KAuxAutoref {default}{base}{Mer Joyce}
+\KAuxAutoref {default}{base}{Esther Jang}
 
 \KAuxFileAt {index.tex}{527}
 
 \KAuxFileAt {index.tex}{528}
 
 \KAuxFileAt {index.tex}{529}
-\KAuxAutoref {default}{base}{Jasper Tran O'Leary}
+\KAuxAutoref {default}{base}{Ellie Berry}
 
 \KAuxFileAt {index.tex}{530}
 
 \KAuxFileAt {index.tex}{531}
-\KAuxAutoref {default}{base}{Wade Gordon}
 
 \KAuxFileAt {index.tex}{532}
+\KAuxAutoref {default}{base}{Mer Joyce}
 
 \KAuxFileAt {index.tex}{533}
 
 \KAuxFileAt {index.tex}{534}
-\KAuxAutoref {default}{base}{Anne Spencer Ross}
 
 \KAuxFileAt {index.tex}{535}
+\KAuxAutoref {default}{base}{Jasper Tran O'Leary}
 
 \KAuxFileAt {index.tex}{536}
 
 \KAuxFileAt {index.tex}{537}
-\KAuxAutoref {default}{base}{Anna Kornfeld Simpson}
+\KAuxAutoref {default}{base}{Wade Gordon}
 
 \KAuxFileAt {index.tex}{538}
 
 \KAuxFileAt {index.tex}{539}
 
 \KAuxFileAt {index.tex}{540}
-\KAuxAutoref {default}{base}{Qi Cheng}
+\KAuxAutoref {default}{base}{Anne Spencer Ross}
 
 \KAuxFileAt {index.tex}{541}
 
 \KAuxFileAt {index.tex}{542}
 
 \KAuxFileAt {index.tex}{543}
-\KAuxAutoref {default}{base}{Misha Kolmogorov}
+\KAuxAutoref {default}{base}{Anna Kornfeld Simpson}
 
 \KAuxFileAt {index.tex}{544}
 
 \KAuxFileAt {index.tex}{545}
 
 \KAuxFileAt {index.tex}{546}
-\KAuxAutoref {default}{base}{Grace Uchida}
+\KAuxAutoref {default}{base}{Qi Cheng}
 
 \KAuxFileAt {index.tex}{547}
 
 \KAuxFileAt {index.tex}{548}
 
 \KAuxFileAt {index.tex}{549}
-\KAuxAutoref {default}{base}{Marcela Mendoza}
+\KAuxAutoref {default}{base}{Misha Kolmogorov}
 
 \KAuxFileAt {index.tex}{550}
 
 \KAuxFileAt {index.tex}{551}
 
 \KAuxFileAt {index.tex}{552}
-\KAuxAutoref {default}{base}{Laura Chick}
+\KAuxAutoref {default}{base}{Grace Uchida}
 
 \KAuxFileAt {index.tex}{553}
 
 \KAuxFileAt {index.tex}{554}
 
 \KAuxFileAt {index.tex}{555}
-\KAuxAutoref {default}{base}{Ezgi Akg\"{u}l}
+\KAuxAutoref {default}{base}{Marcela Mendoza}
 
 \KAuxFileAt {index.tex}{556}
 
 \KAuxFileAt {index.tex}{557}
 
 \KAuxFileAt {index.tex}{558}
-\KAuxAutoref {default}{base}{Chris Maines}
+\KAuxAutoref {default}{base}{Laura Chick}
 
 \KAuxFileAt {index.tex}{559}
 
 \KAuxFileAt {index.tex}{560}
 
 \KAuxFileAt {index.tex}{561}
-\KAuxAutoref {default}{base}{Melanie Walker}
+\KAuxAutoref {default}{base}{Ezgi Akg\"{u}l}
 
 \KAuxFileAt {index.tex}{562}
 
 \KAuxFileAt {index.tex}{563}
 
 \KAuxFileAt {index.tex}{564}
-\KAuxAutoref {default}{base}{Club Northwest}
+\KAuxAutoref {default}{base}{Chris Maines}
 
 \KAuxFileAt {index.tex}{565}
 
 \KAuxFileAt {index.tex}{566}
 
 \KAuxFileAt {index.tex}{567}
-\KAuxAutoref {default}{base}{Race Condition Running}
+\KAuxAutoref {default}{base}{Melanie Walker}
 
 \KAuxFileAt {index.tex}{568}
 
 \KAuxFileAt {index.tex}{569}
 
 \KAuxFileAt {index.tex}{570}
-\KAuxAutoref {default}{base}{Chabad of Queen Anne}
+\KAuxAutoref {default}{base}{Club Northwest}
 
 \KAuxFileAt {index.tex}{571}
 
 \KAuxFileAt {index.tex}{572}
 
 \KAuxFileAt {index.tex}{573}
-\KAuxAutoref {default}{base}{Tom Cotner}
+\KAuxAutoref {default}{base}{Race Condition Running}
 
 \KAuxFileAt {index.tex}{574}
 
 \KAuxFileAt {index.tex}{575}
 
 \KAuxFileAt {index.tex}{576}
-\KAuxAutoref {default}{base}{David Lasky}
+\KAuxAutoref {default}{base}{Chabad of Queen Anne}
 
 \KAuxFileAt {index.tex}{577}
 
 \KAuxFileAt {index.tex}{578}
 
 \KAuxFileAt {index.tex}{579}
-\KAuxAutoref {default}{base}{Danielle Antosh}
+\KAuxAutoref {default}{base}{Tom Cotner}
 
 \KAuxFileAt {index.tex}{580}
 
 \KAuxFileAt {index.tex}{581}
 
 \KAuxFileAt {index.tex}{582}
-\KAuxAutoref {default}{base}{Erica Iantuono}
+\KAuxAutoref {default}{base}{David Lasky}
 
 \KAuxFileAt {index.tex}{583}
 
 \KAuxFileAt {index.tex}{584}
 
 \KAuxFileAt {index.tex}{585}
-\KAuxAutoref {default}{base}{Cyril Cohen}
+\KAuxAutoref {default}{base}{Danielle Antosh}
 
 \KAuxFileAt {index.tex}{586}
 
 \KAuxFileAt {index.tex}{587}
 
 \KAuxFileAt {index.tex}{588}
-\KAuxAutoref {default}{base}{Coq community}
+\KAuxAutoref {default}{base}{Erica Iantuono}
 
 \KAuxFileAt {index.tex}{589}
 
 \KAuxFileAt {index.tex}{590}
-\KAuxAutoref {default}{base}{Tej Chajed}
 
 \KAuxFileAt {index.tex}{591}
+\KAuxAutoref {default}{base}{Cyril Cohen}
 
 \KAuxFileAt {index.tex}{592}
 
 \KAuxFileAt {index.tex}{593}
-\KAuxAutoref {default}{base}{Emilio J. Gallego Arias}
 
 \KAuxFileAt {index.tex}{594}
+\KAuxAutoref {default}{base}{Coq community}
 
 \KAuxFileAt {index.tex}{595}
 
 \KAuxFileAt {index.tex}{596}
-\KAuxAutoref {default}{base}{Enrico Tassi}
+\KAuxAutoref {default}{base}{Tej Chajed}
 
 \KAuxFileAt {index.tex}{597}
 
 \KAuxFileAt {index.tex}{598}
 
 \KAuxFileAt {index.tex}{599}
-\KAuxAutoref {default}{base}{Ga\"{e}tan Gilbert}
+\KAuxAutoref {default}{base}{Emilio J. Gallego Arias}
 
 \KAuxFileAt {index.tex}{600}
 
 \KAuxFileAt {index.tex}{601}
 
 \KAuxFileAt {index.tex}{602}
-\KAuxAutoref {default}{base}{Maxime D\'{e}n\`{e}s}
+\KAuxAutoref {default}{base}{Enrico Tassi}
 
 \KAuxFileAt {index.tex}{603}
 
 \KAuxFileAt {index.tex}{604}
 
 \KAuxFileAt {index.tex}{605}
-\KAuxAutoref {default}{base}{Matthieu Sozeau}
+\KAuxAutoref {default}{base}{Ga\"{e}tan Gilbert}
 
 \KAuxFileAt {index.tex}{606}
 
 \KAuxFileAt {index.tex}{607}
 
 \KAuxFileAt {index.tex}{608}
-\KAuxAutoref {default}{base}{Vincent Laporte}
+\KAuxAutoref {default}{base}{Maxime D\'{e}n\`{e}s}
 
 \KAuxFileAt {index.tex}{609}
 
 \KAuxFileAt {index.tex}{610}
 
 \KAuxFileAt {index.tex}{611}
-\KAuxAutoref {default}{base}{Th\'{e}o Zimmermann}
+\KAuxAutoref {default}{base}{Matthieu Sozeau}
 
 \KAuxFileAt {index.tex}{612}
 
 \KAuxFileAt {index.tex}{613}
 
 \KAuxFileAt {index.tex}{614}
-\KAuxAutoref {default}{base}{Jason Gross}
+\KAuxAutoref {default}{base}{Vincent Laporte}
 
 \KAuxFileAt {index.tex}{615}
 
 \KAuxFileAt {index.tex}{616}
 
 \KAuxFileAt {index.tex}{617}
-\KAuxAutoref {default}{base}{Nicolas Tabareau}
+\KAuxAutoref {default}{base}{Th\'{e}o Zimmermann}
 
 \KAuxFileAt {index.tex}{618}
 
 \KAuxFileAt {index.tex}{619}
 
 \KAuxFileAt {index.tex}{620}
-\KAuxAutoref {default}{base}{Pierre-Marie P\'{e}drot}
+\KAuxAutoref {default}{base}{Jason Gross}
 
 \KAuxFileAt {index.tex}{621}
 
 \KAuxFileAt {index.tex}{622}
 
 \KAuxFileAt {index.tex}{623}
-\KAuxAutoref {default}{base}{Yves Bertot}
+\KAuxAutoref {default}{base}{Nicolas Tabareau}
 
 \KAuxFileAt {index.tex}{624}
 
 \KAuxFileAt {index.tex}{625}
 
 \KAuxFileAt {index.tex}{626}
-\KAuxAutoref {default}{base}{Ben Delaware}
+\KAuxAutoref {default}{base}{Pierre-Marie P\'{e}drot}
 
 \KAuxFileAt {index.tex}{627}
 
 \KAuxFileAt {index.tex}{628}
-\KAuxAutoref {default}{base}{Janno}
 
 \KAuxFileAt {index.tex}{629}
+\KAuxAutoref {default}{base}{Yves Bertot}
 
 \KAuxFileAt {index.tex}{630}
-\KAuxAutoref {default}{base}{Valentin Robert}
 
 \KAuxFileAt {index.tex}{631}
 
 \KAuxFileAt {index.tex}{632}
+\KAuxAutoref {default}{base}{Ben Delaware}
 
 \KAuxFileAt {index.tex}{633}
-\KAuxAutoref {default}{base}{Robert Rand}
 
 \KAuxFileAt {index.tex}{634}
+\KAuxAutoref {default}{base}{Janno}
 
 \KAuxFileAt {index.tex}{635}
 
 \KAuxFileAt {index.tex}{636}
-\KAuxAutoref {default}{base}{Twitter}
+\KAuxAutoref {default}{base}{Valentin Robert}
 
 \KAuxFileAt {index.tex}{637}
 
 \KAuxFileAt {index.tex}{638}
 
 \KAuxFileAt {index.tex}{639}
-\KAuxAutoref {default}{base}{PL Twitter community}
+\KAuxAutoref {default}{base}{Robert Rand}
 
 \KAuxFileAt {index.tex}{640}
 
 \KAuxFileAt {index.tex}{641}
 
 \KAuxFileAt {index.tex}{642}
-\KAuxAutoref {default}{base}{Hillel Wayne}
+\KAuxAutoref {default}{base}{Twitter}
 
 \KAuxFileAt {index.tex}{643}
 
 \KAuxFileAt {index.tex}{644}
-\KAuxAutoref {default}{base}{Rebecca Turner}
 
 \KAuxFileAt {index.tex}{645}
+\KAuxAutoref {default}{base}{PL Twitter community}
 
 \KAuxFileAt {index.tex}{646}
 
 \KAuxFileAt {index.tex}{647}
-\KAuxAutoref {default}{base}{Ymir Vigfusson}
 
 \KAuxFileAt {index.tex}{648}
+\KAuxAutoref {default}{base}{Hillel Wayne}
 
 \KAuxFileAt {index.tex}{649}
-\KAuxAutoref {default}{base}{Benjamin Lipp}
 
 \KAuxFileAt {index.tex}{650}
+\KAuxAutoref {default}{base}{Rebecca Turner}
 
 \KAuxFileAt {index.tex}{651}
-\KAuxAutoref {default}{base}{Nathanael}
 
 \KAuxFileAt {index.tex}{652}
 
 \KAuxFileAt {index.tex}{653}
-\KAuxAutoref {default}{base}{Daniel-Nikpayuk}
+\KAuxAutoref {default}{base}{Ymir Vigfusson}
 
 \KAuxFileAt {index.tex}{654}
 
 \KAuxFileAt {index.tex}{655}
-\KAuxAutoref {default}{base}{Michelle Lee}
+\KAuxAutoref {default}{base}{Benjamin Lipp}
 
 \KAuxFileAt {index.tex}{656}
 
 \KAuxFileAt {index.tex}{657}
-\KAuxAutoref {default}{base}{Quinn Wilton}
+\KAuxAutoref {default}{base}{Nathanael}
 
 \KAuxFileAt {index.tex}{658}
 
 \KAuxFileAt {index.tex}{659}
-\KAuxAutoref {default}{base}{Google}
+\KAuxAutoref {default}{base}{Daniel-Nikpayuk}
 
 \KAuxFileAt {index.tex}{660}
 
 \KAuxFileAt {index.tex}{661}
+\KAuxAutoref {default}{base}{Michelle Lee}
 
 \KAuxFileAt {index.tex}{662}
-\KAuxAutoref {default}{base}{Amazon}
 
 \KAuxFileAt {index.tex}{663}
+\KAuxAutoref {default}{base}{Quinn Wilton}
 
 \KAuxFileAt {index.tex}{664}
-\KAuxAutoref {default}{base}{Carr Astronautics}
 
 \KAuxFileAt {index.tex}{665}
+\KAuxAutoref {default}{base}{Google}
 
 \KAuxFileAt {index.tex}{666}
-\KAuxAutoref {default}{base}{no reason to believe}
 
 \KAuxFileAt {index.tex}{667}
 
 \KAuxFileAt {index.tex}{668}
+\KAuxAutoref {default}{base}{Amazon}
 
 \KAuxFileAt {index.tex}{669}
-\KAuxAutoref {default}{base}{thesis}
 
 \KAuxFileAt {index.tex}{670}
+\KAuxAutoref {default}{base}{Carr Astronautics}
 
 \KAuxFileAt {index.tex}{671}
 
 \KAuxFileAt {index.tex}{672}
-\KAuxAutoref {default}{base}{Proof repair}
+\KAuxAutoref {default}{base}{no reason to believe}
 
 \KAuxFileAt {index.tex}{673}
 
 \KAuxFileAt {index.tex}{674}
 
 \KAuxFileAt {index.tex}{675}
+\KAuxAutoref {default}{base}{thesis}
 
 \KAuxFileAt {index.tex}{676}
 
 \KAuxFileAt {index.tex}{677}
-\KAuxAutoref {default}{base}{proof repair by example}
 
 \KAuxFileAt {index.tex}{678}
+\KAuxAutoref {default}{base}{Proof repair}
 
 \KAuxFileAt {index.tex}{679}
 
 \KAuxFileAt {index.tex}{680}
-\KAuxAutoref {default}{base}{example patched proof}
 
 \KAuxFileAt {index.tex}{681}
 
 \KAuxFileAt {index.tex}{682}
 
 \KAuxFileAt {index.tex}{683}
-\KAuxAutoref {default}{base}{patch candidate}
+\KAuxAutoref {default}{base}{proof repair by example}
 
 \KAuxFileAt {index.tex}{684}
 
 \KAuxFileAt {index.tex}{685}
 
 \KAuxFileAt {index.tex}{686}
+\KAuxAutoref {default}{base}{example patched proof}
 
 \KAuxFileAt {index.tex}{687}
 
 \KAuxFileAt {index.tex}{688}
 
 \KAuxFileAt {index.tex}{689}
-\KAuxAutoref {default}{base}{reusable patch}
+\KAuxAutoref {default}{base}{patch candidate}
 
 \KAuxFileAt {index.tex}{690}
 
@@ -1634,21 +1635,20 @@
 \KAuxFileAt {index.tex}{693}
 
 \KAuxFileAt {index.tex}{694}
-\KAuxAutoref {default}{base}{goal type}
 
 \KAuxFileAt {index.tex}{695}
+\KAuxAutoref {default}{base}{reusable patch}
 
 \KAuxFileAt {index.tex}{696}
 
 \KAuxFileAt {index.tex}{697}
 
 \KAuxFileAt {index.tex}{698}
-\KAuxAutoref {default}{base}{instance}
 
 \KAuxFileAt {index.tex}{699}
 
 \KAuxFileAt {index.tex}{700}
-\KAuxAutoref {default}{base}{generalization}
+\KAuxAutoref {default}{base}{goal type}
 
 \KAuxFileAt {index.tex}{701}
 
@@ -1657,48 +1657,48 @@
 \KAuxFileAt {index.tex}{703}
 
 \KAuxFileAt {index.tex}{704}
-\KAuxAutoref {default}{base}{specialization}
+\KAuxAutoref {default}{base}{instance}
 
 \KAuxFileAt {index.tex}{705}
 
 \KAuxFileAt {index.tex}{706}
+\KAuxAutoref {default}{base}{generalization}
 
 \KAuxFileAt {index.tex}{707}
 
 \KAuxFileAt {index.tex}{708}
-\KAuxAutoref {default}{base}{inversion}
 
 \KAuxFileAt {index.tex}{709}
 
 \KAuxFileAt {index.tex}{710}
+\KAuxAutoref {default}{base}{specialization}
 
 \KAuxFileAt {index.tex}{711}
 
 \KAuxFileAt {index.tex}{712}
-\KAuxAutoref {default}{base}{factoring}
 
 \KAuxFileAt {index.tex}{713}
 
 \KAuxFileAt {index.tex}{714}
+\KAuxAutoref {default}{base}{inversion}
 
 \KAuxFileAt {index.tex}{715}
 
 \KAuxFileAt {index.tex}{716}
-\KAuxAutoref {default}{base}{proof repair across type equivalences}
 
 \KAuxFileAt {index.tex}{717}
 
 \KAuxFileAt {index.tex}{718}
+\KAuxAutoref {default}{base}{factoring}
 
 \KAuxFileAt {index.tex}{719}
 
 \KAuxFileAt {index.tex}{720}
-\KAuxAutoref {default}{base}{configuration}
 
 \KAuxFileAt {index.tex}{721}
 
 \KAuxFileAt {index.tex}{722}
-\KAuxAutoref {default}{base}{dependent constructors}
+\KAuxAutoref {default}{base}{proof repair across type equivalences}
 
 \KAuxFileAt {index.tex}{723}
 
@@ -1707,52 +1707,53 @@
 \KAuxFileAt {index.tex}{725}
 
 \KAuxFileAt {index.tex}{726}
-\KAuxAutoref {default}{base}{dependent eliminators}
+\KAuxAutoref {default}{base}{configuration}
 
 \KAuxFileAt {index.tex}{727}
 
 \KAuxFileAt {index.tex}{728}
+\KAuxAutoref {default}{base}{dependent constructors}
 
 \KAuxFileAt {index.tex}{729}
 
 \KAuxFileAt {index.tex}{730}
-\KAuxAutoref {default}{base}{$\eta $}
 
 \KAuxFileAt {index.tex}{731}
 
 \KAuxFileAt {index.tex}{732}
+\KAuxAutoref {default}{base}{dependent eliminators}
 
 \KAuxFileAt {index.tex}{733}
-\KAuxAutoref {default}{base}{$\iota $}
 
 \KAuxFileAt {index.tex}{734}
 
 \KAuxFileAt {index.tex}{735}
 
 \KAuxFileAt {index.tex}{736}
-\KAuxAutoref {default}{base}{manual configuration}
+\KAuxAutoref {default}{base}{$\eta $}
 
 \KAuxFileAt {index.tex}{737}
 
 \KAuxFileAt {index.tex}{738}
 
 \KAuxFileAt {index.tex}{739}
+\KAuxAutoref {default}{base}{$\iota $}
 
 \KAuxFileAt {index.tex}{740}
-\KAuxAutoref {default}{base}{automatic configuration}
 
 \KAuxFileAt {index.tex}{741}
 
 \KAuxFileAt {index.tex}{742}
+\KAuxAutoref {default}{base}{manual configuration}
 
 \KAuxFileAt {index.tex}{743}
 
 \KAuxFileAt {index.tex}{744}
-\KAuxAutoref {default}{base}{unification heuristics}
 
 \KAuxFileAt {index.tex}{745}
 
 \KAuxFileAt {index.tex}{746}
+\KAuxAutoref {default}{base}{automatic configuration}
 
 \KAuxFileAt {index.tex}{747}
 
@@ -1761,51 +1762,51 @@
 \KAuxFileAt {index.tex}{749}
 
 \KAuxFileAt {index.tex}{750}
-\KAuxAutoref {default}{base}{implementation}
+\KAuxAutoref {default}{base}{unification heuristics}
 
 \KAuxFileAt {index.tex}{751}
 
 \KAuxFileAt {index.tex}{752}
-\KAuxAutoref {default}{base}{\sysnamelong }
 
 \KAuxFileAt {index.tex}{753}
 
 \KAuxFileAt {index.tex}{754}
 
 \KAuxFileAt {index.tex}{755}
-\KAuxAutoref {default}{base}{\sysname }
 
 \KAuxFileAt {index.tex}{756}
+\KAuxAutoref {default}{base}{implementation}
 
 \KAuxFileAt {index.tex}{757}
-\KAuxAutoref {default}{base}{\toolnamec }
 
 \KAuxFileAt {index.tex}{758}
 
 \KAuxFileAt {index.tex}{759}
-\KAuxAutoref {default}{base}{design}
+\KAuxAutoref {default}{base}{\sysnamelong }
 
 \KAuxFileAt {index.tex}{760}
 
 \KAuxFileAt {index.tex}{761}
-\KAuxAutoref {default}{base}{semantic differencing}
 
 \KAuxFileAt {index.tex}{762}
+\KAuxAutoref {default}{base}{\sysname }
 
 \KAuxFileAt {index.tex}{763}
 
 \KAuxFileAt {index.tex}{764}
+\KAuxAutoref {default}{base}{\toolnamec }
 
 \KAuxFileAt {index.tex}{765}
 
 \KAuxFileAt {index.tex}{766}
+\KAuxAutoref {default}{base}{design}
 
 \KAuxFileAt {index.tex}{767}
 
 \KAuxFileAt {index.tex}{768}
-\KAuxAutoref {default}{base}{proof term transformations}
 
 \KAuxFileAt {index.tex}{769}
+\KAuxAutoref {default}{base}{semantic differencing}
 
 \KAuxFileAt {index.tex}{770}
 
@@ -1818,14 +1819,13 @@
 \KAuxFileAt {index.tex}{774}
 
 \KAuxFileAt {index.tex}{775}
-\KAuxAutoref {default}{base}{results}
 
 \KAuxFileAt {index.tex}{776}
+\KAuxAutoref {default}{base}{proof term transformations}
 
 \KAuxFileAt {index.tex}{777}
 
 \KAuxFileAt {index.tex}{778}
-\KAuxAutoref {default}{base}{Case studies}
 
 \KAuxFileAt {index.tex}{779}
 
@@ -1836,37 +1836,55 @@
 \KAuxFileAt {index.tex}{782}
 
 \KAuxFileAt {index.tex}{783}
+\KAuxAutoref {default}{base}{results}
 
 \KAuxFileAt {index.tex}{784}
-\KAuxAutoref {default}{base}{Adapting Proof Automation to Adapt Proofs}
 
 \KAuxFileAt {index.tex}{785}
 
 \KAuxFileAt {index.tex}{786}
-\KAuxAutoref {default}{base}{Proof Repair across Type Equivalences}
+\KAuxAutoref {default}{base}{Case studies}
 
 \KAuxFileAt {index.tex}{787}
 
 \KAuxFileAt {index.tex}{788}
-\KAuxAutoref {default}{base}{Ornaments for Proof Reuse in Coq}
 
 \KAuxFileAt {index.tex}{789}
 
 \KAuxFileAt {index.tex}{790}
-\KAuxAutoref {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
 
 \KAuxFileAt {index.tex}{791}
 
 \KAuxFileAt {index.tex}{792}
+\KAuxAutoref {default}{base}{Adapting Proof Automation to Adapt Proofs}
 
 \KAuxFileAt {index.tex}{793}
 
 \KAuxFileAt {index.tex}{794}
+\KAuxAutoref {default}{base}{Proof Repair across Type Equivalences}
 
 \KAuxFileAt {index.tex}{795}
-\KAuxAutoref {default}{base}{QED at Large}
 
 \KAuxFileAt {index.tex}{796}
+\KAuxAutoref {default}{base}{Ornaments for Proof Reuse in Coq}
+
+\KAuxFileAt {index.tex}{797}
+
+\KAuxFileAt {index.tex}{798}
+\KAuxAutoref {default}{base}{\textsc {REPLica}: REPL Instrumentation for Coq Analysis}
+
+\KAuxFileAt {index.tex}{799}
+
+\KAuxFileAt {index.tex}{800}
+
+\KAuxFileAt {index.tex}{801}
+
+\KAuxFileAt {index.tex}{802}
+
+\KAuxFileAt {index.tex}{803}
+\KAuxAutoref {default}{base}{QED at Large}
+
+\KAuxFileAt {index.tex}{804}
 
 \KAuxFileAt {uwthesis.tex}{122}
 \KAuxScopeNewInstance {base}{base}{}
@@ -2427,21 +2445,13 @@
 \KAuxErrorKnowledgeUnknown {default}{}{specializes}{specializes}{\kl }
 \KAuxDeclaredScopeTag {sec:pumpkin-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-diff}{document}
-\KAuxDeclaredScopeTag {sec:pumpkin-diff-design}
-\KAuxNewLinkScopetagInstance {sec:pumpkin-diff-design}{document}
 \KAuxDeclaredScopeTag {fig:cattree}
 \KAuxNewLinkScopetagInstance {fig:cattree}{document}
-\KAuxDeclaredScopeTag {sec:pumpkin-diff-limitations}
-\KAuxNewLinkScopetagInstance {sec:pumpkin-diff-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-trans}{document}
-\KAuxDeclaredScopeTag {sec:pumpkin-trans-design}
-\KAuxNewLinkScopetagInstance {sec:pumpkin-trans-design}{document}
 
-\KAuxFileAt {transformation.tex}{201}
+\KAuxFileAt {transformation.tex}{191}
 \KAuxErrorKnowledgeUnknown {default}{}{factors}{factors}{\kl }
-\KAuxDeclaredScopeTag {sec:pumpkin-trans-limitations}
-\KAuxNewLinkScopetagInstance {sec:pumpkin-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-impl}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-impl}{document}
 \KAuxDeclaredScopeTag {sec:tool}
@@ -2465,7 +2475,7 @@
 \KAuxDeclaredScopeTag {sec:fail}
 \KAuxNewLinkScopetagInstance {sec:fail}{document}
 
-\KAuxFileAt {implementation.tex}{379}
+\KAuxFileAt {implementation.tex}{378}
 \KAuxErrorKnowledgeUnknown {default}{}{propositionally equal}{propositionally equal}{\kl }
 \KAuxDeclaredScopeTag {sec:perf}
 \KAuxNewLinkScopetagInstance {sec:perf}{document}
@@ -2566,14 +2576,14 @@
 \KAuxDeclaredScopeTag {sec:art}
 \KAuxNewLinkScopetagInstance {sec:art}{document}
 
-\KAuxFileAt {differencing.tex}{260}
+\KAuxFileAt {differencing.tex}{259}
 \KAuxAutorefTarget {default}{base}{initial algebras of endofunctors}
 \KAuxDeclaredScopeTag {sec:algebra}
 \KAuxNewLinkScopetagInstance {sec:algebra}{document}
 \KAuxDeclaredScopeTag {fig:lambek}
 \KAuxNewLinkScopetagInstance {fig:lambek}{document}
 
-\KAuxFileAt {differencing.tex}{313}
+\KAuxFileAt {differencing.tex}{312}
 \KAuxErrorKnowledgeUnknown {default}{}{CIC${_\omega }$}{CIC${_\omega }$}{\kl }
 \KAuxDeclaredScopeTag {sec:correct-cic}
 \KAuxNewLinkScopetagInstance {sec:correct-cic}{document}
@@ -2582,16 +2592,16 @@
 \KAuxDeclaredScopeTag {sec:proc}
 \KAuxNewLinkScopetagInstance {sec:proc}{document}
 
-\KAuxFileAt {differencing.tex}{432}
+\KAuxFileAt {differencing.tex}{431}
 \KAuxAutorefTarget {default}{base}{algebraic ornaments}
 
-\KAuxFileAt {differencing.tex}{434}
+\KAuxFileAt {differencing.tex}{433}
 \KAuxAutorefTarget {default}{base}{indexer}
 
-\KAuxFileAt {differencing.tex}{453}
+\KAuxFileAt {differencing.tex}{452}
 \KAuxAutorefTarget {default}{base}{coherence}
 
-\KAuxFileAt {differencing.tex}{489}
+\KAuxFileAt {differencing.tex}{488}
 \KAuxAutorefTarget {default}{base}{ornamental promotion isomorphism}
 \KAuxDeclaredScopeTag {fig:common}
 \KAuxNewLinkScopetagInstance {fig:common}{document}
@@ -2599,8 +2609,6 @@
 \KAuxNewLinkScopetagInstance {fig:searchindexer}{document}
 \KAuxDeclaredScopeTag {fig:searchpromote}
 \KAuxNewLinkScopetagInstance {fig:searchpromote}{document}
-\KAuxDeclaredScopeTag {sec:pi-diff-limits}
-\KAuxNewLinkScopetagInstance {sec:pi-diff-limits}{document}
 \KAuxDeclaredScopeTag {sec:pi-trans}
 \KAuxNewLinkScopetagInstance {sec:pi-trans}{document}
 \KAuxDeclaredScopeTag {fig:final}
@@ -2617,8 +2625,6 @@
 \KAuxAutorefTarget {default}{base}{unification heuristics}
 \KAuxDeclaredScopeTag {sec:trans-correctness}
 \KAuxNewLinkScopetagInstance {sec:trans-correctness}{document}
-\KAuxDeclaredScopeTag {sec:pi-trans-limitations}
-\KAuxNewLinkScopetagInstance {sec:pi-trans-limitations}{document}
 \KAuxDeclaredScopeTag {sec:pi-implementation}
 \KAuxNewLinkScopetagInstance {sec:pi-implementation}{document}
 \KAuxDeclaredScopeTag {sec:pi-details}
@@ -2710,6 +2716,9 @@
 
 \KAuxFileAt {related.tex}{164}
 \KAuxErrorKnowledgeUnknown {default}{}{program refactoring}{program refactoring}{\intro }
+
+\KAuxFileAt {related.tex}{173}
+\KAuxAutorefTarget {default}{base}{Integrated Development Environment}
 \KAuxDeclaredScopeTag {sec:reuse}
 \KAuxNewLinkScopetagInstance {sec:reuse}{document}
 
@@ -2723,6 +2732,9 @@
 \KAuxNewLinkScopetagInstance {sec:lessons}{document}
 \KAuxDeclaredScopeTag {sec:techniques}
 \KAuxNewLinkScopetagInstance {sec:techniques}{document}
+
+\KAuxFileAt {related.tex}{533}
+\KAuxAutorefTarget {default}{base}{Continuous Integration}
 \KAuxDeclaredScopeTag {chapt:conclusions}
 \KAuxNewLinkScopetagInstance {chapt:conclusions}{document}
 
@@ -2730,6 +2742,6 @@
 \KAuxAutorefTarget {default}{base}{Emily First}
 \KAuxAutorefTarget {default}{base}{Yuriy Brun}
 
-\KAuxFileAt {next.tex}{96}
+\KAuxFileAt {next.tex}{95}
 \KAuxAutorefTarget {default}{base}{mixed methods verification}
 \KAuxEOF {}

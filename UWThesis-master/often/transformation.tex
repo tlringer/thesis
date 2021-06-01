@@ -133,7 +133,7 @@ terms explicitly.
 running the transformation (Section~\ref{sec:trans-unification}).
 It then runs the proof term transformation, which transports proofs across the equivalence that corresponds to the configuration,
 replacing \Aa with \B (Section~\ref{sec:trans-correctness}).
-In doing so, it addresses several of the limitations from the \sysname transformations (Section~\ref{sec:pi-trans-limitations}).
+%In doing so, it addresses several of the limitations from the \sysname transformations (Section~\ref{sec:pi-trans-limitations}).
 
 \subsection{Unification Heuristics}
 \label{sec:trans-unification}
@@ -165,6 +165,12 @@ by the time it runs.
 \toolnamec falls back to Coq's unification for manual configuration and when these custom heuristics fail.
 When even Coq's unification is not enough, \toolnamec relies on proof engineers to provide hints
 in the form of annotations~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/nonorn.v}{\circled{5}}.
+
+The unification heuristics largely move the burden of undecidability outside of the details of the proof term transformation.
+Most notably, since unification heuristics are abstracted from the transformation itself,
+this makes it relatively simple to hook in a human-assisted workflow using annotations.
+Still, the \toolnamec transformation does struggle sometimes with termination.
+I describe this more in Section~\ref{sec:pi-implementation}.
 
 \iffalse
 \begin{figure}
@@ -412,28 +418,4 @@ The key steps in this transformation that make this possible are porting terms a
 The rest is straightforward.
 For metatheoretical reasons, without additional axioms, a proof of this theorem in Coq can only be approximated~\cite{tabareau2017equivalences}.
 It would be possible to generate per-transformation proofs of correctness, but this does not serve an engineering need.
-
-\subsection{Revisiting Limitations}
-\label{sec:pi-trans-limitations}
-
-The transformations in \sysname struggled with undecidability and modeling diverse proof styles.
-The \toolnamec transformation partially addresses this.
-As in the previous chapter, limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pi-details-trans}.
-
-\paragraph{Undecidability}
-\toolnamec cannot totally get rid of undecidability, but what it can do is move
-the burden of undecidability outside of the details of the algorithm.
-This is what the \kl{unification heuristics} accomplish.
-Most notably, since unification heuristics are abstracted from the transformation itself,
-this makes it relatively simple to hook in a human-assisted workflow using annotations.
-\toolnamec implements this.
-Still, the \toolnamec transformation does struggle sometimes with termination.
-I describe this more in Section~\ref{sec:pi-implementation}.
-
-\paragraph{Modeling Diverse Proof Styles}
-Unlike the transformations from \sysname, the \toolnamec transformation is generic over the proof term structure.
-This benefit again comes from decoupling unification from the transformation,
-and from the fact that a single transformation is defined over any possible CIC$_{\omega}$ term.
-The only difficulties show up at the level of the implementation,
-which I will describe in Section~\ref{sec:pi-implementation}.
 

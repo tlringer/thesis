@@ -4,14 +4,10 @@
 The \kl{proof term transformations} together transform a \kl{patch candidate} into a \kl{reusable proof patch}.
 At a high level, these transformations adapt the candidate to the context of the goal type that \sysname infers.
 As with differencing, the transformations are aware of and guided by the semantics of Gallina's type theory CIC$_{\omega}$.
-This section describes the design (Section~\ref{sec:pumpkin-trans-design}) and limitations (Section~\ref{sec:pumpkin-trans-limitations}) of these transformations.
+This section describes the design of these transformations.
 Section~\ref{sec:pumpkin-impl-trans} describes the implementation.
 
 % TODO could write more probably
-
-\subsection{Design}
-\label{sec:pumpkin-trans-design}
-
 % TODO honestly this should go in spec then? both of these in each section? and just say we don't show too much here since prototype?
 The transformations together recurse over the structure of each term in the list of candidates $\vec{t}$ in an environment $\Gamma$,
 and adapt that candidate to some new context in a goal-directed manner.
@@ -21,13 +17,6 @@ $\Gamma\ \vdash\ (\vec{t},\ G)\ \Downarrow_{t} p$, where in the end, $\Gamma \vd
 The details vary by transformation,
 and the details of which transformations run at all and in what order to reach the goal vary by the instance
 of the search procedure.
-
-\paragraph{Historical Note}
-For historical reasons, as \sysname was a prototype, these transformations are not formalized. % TODO formalize if time
-Instead, I describe at a high level the design of each of the four transformations in CIC${_\omega}$.
-For the sake of presentation, I still refer to the corresponding judgments as the interfaces, even though I do not provide the derivations.
-In Chapter~\ref{chapt:pi}, I will formalize a more elegant proof term transformation for the \toolnamec extension,
-building on some of the insights from the transformations in the \sysname prototype.
 
 % From Motivating the Core and Implementation
 
@@ -129,6 +118,7 @@ In general, generalization is %a kind of anti-unification problem, % TODO cite a
 undecidable,
 as the terms and types may be reduced,
 so that the common function or argument does not appear explicitly.
+That is, generalization fundamentally relies on a kind of unification.
 This poses a challenge for generalization in the second step---substitution.
 
 To handle this challenge, generalization uses a list of \textit{substitution strategies}\footnote{I originally called these \textit{abstraction strategies}, but this is more accurate.}
@@ -237,17 +227,7 @@ It maintains all possible
 paths of factors along the way, discarding any paths that cannot reach \lstinline{Z}.
 It does not yet support paths where \lstinline{Y} depends on \lstinline{X}.
 
-\subsection{Limitations}
-\label{sec:pumpkin-trans-limitations}
-
-This section describes two fundamental limitations of the transformations in \sysname,
-and whether they are addressed in the later \toolnamec extension.
-Limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pumpkin-impl-trans}.
-
-\paragraph{Undecidability}
-Several of the transformations are undecidable.
-For example, generalization will necessarily sometimes fail, since fundamentally it relies on a kind of unification.
-The general problem of finding all possible nontrivial factors of a function is likewise undecidable:
+Factoring will necessarily sometimes fail, as the general problem of finding all possible nontrivial factors of a function is undecidable:
 there are always infinitely many factors if factors can compose to identity.
 Determining all possible \textit{nontrivial} factors---those that contain no subsets of factors
 that compose to identity---reduces to detecting whether an arbitrary function is extensionally equal
@@ -256,14 +236,5 @@ which is itself undecidable.\footnote{\kl{Edward Z. Yang} wrote a cute proof of 
 the number of steps taken when it does not terminate within that number of steps, or otherwise returning zero when it does terminate.
 Then determining whether or not the function is extensionally equal to identity reduces to determining whether or not
 the program terminates.}
-Inversion will also sometimes fail, in part because it depends on factoring,
-and in part because not every term is invertible to begin with.
-The later \toolnamec transformation more cleanly separates its decidable and undecidable pieces.
-
-\paragraph{Modeling Diverse Proof Styles}
-Some of the transformations make assumptions about the proof style.
-For example, proofs about decidable domains that work by provable double negation elimination
-(see Section~\ref{sec:ass}) pose difficulties for generalization and inversion.
-The later \toolnamec transformation, in contrast, is generic over the
-proof style.
+Factoring, like generalization, relies on a kind of unification to attempt this problem in spite of undecidability.
 

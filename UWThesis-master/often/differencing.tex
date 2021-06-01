@@ -33,8 +33,7 @@ Each search procedure for automatic configuration produces both the configuratio
 Manual configuration takes as input the configuration directly.
 
 All terms that I introduce in this section are in \kl{CIC$_{\omega}$} with \kl{primitive eliminators}. % TODO point to other conventions again
-Section~\ref{sec:pi-diff-limits} revisits the limitations of differencing from \sysname, 
-and Section~\ref{sec:pi-implementation} describes how I scale this from CIC$_{\omega}$ to Coq.
+Section~\ref{sec:pi-implementation} describes how I scale this from CIC$_{\omega}$ to Coq.
 
 \subsection{Preserving the Equivalence}
 \label{sec:pi-diff-equiv}
@@ -908,36 +907,6 @@ This consists of four judgments: one for each configuration part \lstinline{DepC
 
 \subparagraph*{Composing the Result.} % TODO note about assigning the reserved names somewhere, including A and B
 \fi
-
-\subsection{Revisiting Limitations}
-\label{sec:pi-diff-limits}
-
-Differencing in \sysname had a two fundamental limitations: its ad hoc nature
-and the difficulty of isolating changes.
-With \toolnamec in the \sysnamelong repair suite, these limitations are substantially addressed.
-As in the previous chapter, limitations that are due to the choice of implementation strategy are in Section~\ref{sec:pi-details-diff}.
-
-\paragraph{Ad Hoc Nature}
-The differencing algorithms in \toolnamec are much less ad hoc than those from \sysname.
-For one, the supported changes are much more carefully chosen:
-the domain of each search procedure for \kl{automatic configuration} is defined as a large class of type equivalences,
-drawing on inspiration from type theory and from the needs of proof engineers.
-In addition, a number of the algorithms presented in this section, like the algorithm the prove an equivalence from a configuration,
-are generic over \textit{any} possible type equivalence, and so are not limited to automatic configurations implemented so far.
-Most notably, the heuristics in \toolnamec---unlike those in \sysname---are abstracted away from the transformation entirely,
-since the transformation is fully generic over any configuration.
-
-\paragraph{Isolating Changes}
-While \toolnamec adds support for a large class of changes,
-the challenge of isolating changes from \sysname's differencing algorithms remain.
-Most search procedures allow for only a single change at once,
-and further impose some syntactic restrictions on input types and how they change.
-However, \kl{manual configuration} in \toolnamec now makes it possible for proof engineers to describe
-changes themselves, circumventing this difficulty.
-Some search procedures for automatic configuration, like the one for swapping constructors,
-further prompt the human for input to choose among multiple choices and resolve ambiguities.
-This fits with the typical interactive workflows of proof engineers,
-but makes it possible to dodge many of the challenges of isolating changes seen earlier.
 
 \iffalse
 \paragraph{Syntactic Restrictions} Basically syntactic restrictions on inputs for automatic differencing, documented in \toolnamec.

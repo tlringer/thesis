@@ -2737,11 +2737,15 @@
 \KAuxAutorefTarget {default}{base}{Continuous Integration}
 \KAuxDeclaredScopeTag {chapt:conclusions}
 \KAuxNewLinkScopetagInstance {chapt:conclusions}{document}
+\KAuxDeclaredScopeTag {sec:more}
+\KAuxNewLinkScopetagInstance {sec:more}{document}
+\KAuxDeclaredScopeTag {sec:forall}
+\KAuxNewLinkScopetagInstance {sec:forall}{document}
 
-\KAuxFileAt {next.tex}{48}
+\KAuxFileAt {next.tex}{88}
 \KAuxAutorefTarget {default}{base}{Emily First}
 \KAuxAutorefTarget {default}{base}{Yuriy Brun}
 
-\KAuxFileAt {next.tex}{95}
+\KAuxFileAt {next.tex}{135}
 \KAuxAutorefTarget {default}{base}{mixed methods verification}
 \KAuxEOF {}

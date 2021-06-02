@@ -1,4 +1,45 @@
-\section*{The Next Era: Proof Engineering for All}
+\section{Future Work: Patching the Gaps of Repair}
+\label{sec:more}
+
+In this thesis, I have shown you two kinds of proof repair: \kl{by example} and \kl{across equivalences}.
+The corresponding tools together support just a small chunk of the repair scenarios that proof engineers encounter---albeit a practical chunk.
+Solving proof repair hinges on broadening the scope of changes and terms that these tools can support.
+
+\paragraph{Scope of Changes}
+Proof repair tools should ideally support changes in datatypes that correspond to arbitrary relations, not just equivalences.
+The tool CoqEAL~\cite{cohen:hal-01113453} may help with this.
+CoqEAL already supports relations that are not equivalences, though only for functions and not yet for proofs;
+extending CoqEAL and integrating it with \toolnamec is a natural first step toward supporting arbitrary relations.
+This may help with supporting changes in datatypes that cannot be expressed as equivalences without quotient types~\cite{angiuli2020internalizing}, which Coq lacks.
+It may also help with supporting changes that can be expressed as equivalences only with some resistance,
+like the change adding a constructor in Figure~\ref{fig:replica} on page~\pageref{fig:replica},
+or any of the many similar changes extending inductive types in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study data.
+Integrating CoqEAL may also help support changes in algorithms, like replacing slow unary addition with fast binary addition---a step
+left to the proof engineer with \toolnamec.
+
+None of the repair tools so far support changes in the implementation of tactics.
+Proof repair tools should ideally help proof engineers fix broken proofs in response to changes in the implementations of tactics,
+and should even help proof engineers repair the implementations of tactics themselves.
+The same holds for changes in notation.
+Supporting either of these will require innovations beyond those seen in this thesis.
+
+% TODO!
+%Extending proof repair tools with new search procedures is currently very difficult
+%custom changes: some way of making extensible without forcing people to learn OCaml. custom unification heuristics to better handle
+%things like nat to bin (honestly though that one may be doable by always reifying definitional equalities).
+%obv. prototype could improve too.
+%more search procedures, especially capturing common patterns.
+
+\paragraph{Scope of Terms}
+% TODO!
+basically Coq has more features than we support natively. fixpoints: some of these now but whatever. more general transformation. or direct support? 
+pattern matching: direct support? or postprocessing step for the end, which for now is manual. (compiles down but not to exactly the original term).
+nested induction: still hard for PUMPKIN PATCH prototype tbh. Not a problem at all for PUMPKIN Pi though.
+coinduction \& cofixpoints: this is a thing. 
+better dealing with evars.
+
+\section{The Next Era: Proof Engineering for All}
+\label{sec:forall}
 
 % 2030? could do decades for each of this lol. I guess only if energy
 % Do just 2-3 sentences per project.
@@ -7,7 +48,7 @@
 
 So, what \textit{would} it take to empower programmers of all skill levels across all domains to formally \kl{verify} software systems?
 Since I first asked this question at the beginning of this thesis, I have introduced proof repair tools that bring us closer to this dream.
-But these tools still mostly target expert proof engineers, and to a small degree practitioners in industry.
+But these tools still target expert proof engineers.
 There is a lot more that we as a community can do to make proof engineering accessible more broadly.
 
 I conclude with a discussion of twelve future project ideas building up to the next era of proof engineering for all.
@@ -16,7 +57,7 @@ I hope that these ideas inspire you!
 \subsection*{Proof Engineering for Experts}
 
 In the future, I want maintaining proofs to be \emph{seamless} for expert proof engineers.
-I want experts to have easy access to proof repair tools that leave only the creative parts of maintenance to the experts, and automate the rest.
+I want experts to have easy access to proof repair tools that automate all but the creative parts of maintenance.
 But for that to happen, we need to make proof repair tools more widely available, powerful, and natural to use.
 
 \paragraph{Availability}
@@ -39,7 +80,7 @@ In the future, proof repair tools should run fully automatically in response to 
 They should break down large changes into smaller pieces---perhaps by drawing on work in change and 
 dependency management~\cite{873647, Autexier:2010:CMH:1986659.1986663, Celik:2017:IRP:3155562.3155588} to identify changes, then use the factoring transformation
 to break those changes into smaller parts.
-And they should support an even broader and more practical class of changes than they do now, like arbitrary relations.
+And they should support an even broader and more practical class of changes than they do now, like all of the changes identified in Section~\ref{sec:more}.
 
 \paragraph{Natural Use}
 The decompiler is a step toward a natural proof repair tool, but it still produces proof scripts heuristically,

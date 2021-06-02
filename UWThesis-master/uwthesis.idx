@@ -900,37 +900,42 @@
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{121}
 \indexentry{Results!Case Studies|hyperpage}{121}
 \indexentry{Thesis Statement!Informal|hyperpage}{121}
-\indexentry{Verification|hyperpage}{121}
-\indexentry{Verification!Proof Assistants!Coq|hyperpage}{122}
-\indexentry{Verification!Proof Assistants!Agda|hyperpage}{122}
-\indexentry{Verification!Proof Assistants!Lean|hyperpage}{122}
-\indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{122}
-\indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{122}
-\indexentry{Verification!Proof Object!Ephemeral Proof Object|hyperpage}{122}
-\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{122}
-\indexentry{Acknowledgments!PL Community!Emily First|hyperpage}{122}
-\indexentry{Acknowledgments!PL Community!Yuriy Brun|hyperpage}{122}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{122}
-\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{122}
-\indexentry{Logic \& Type Theory!Type Theories!Cubical Type Theory|hyperpage}{123}
+\indexentry{Proof Repair!By Example|hyperpage}{121}
+\indexentry{Proof Repair!Across Type Equivalences|hyperpage}{121}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{122}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{122}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{122}
+\indexentry{Verification|hyperpage}{122}
+\indexentry{Verification!Proof Assistants!Coq|hyperpage}{123}
+\indexentry{Verification!Proof Assistants!Agda|hyperpage}{123}
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{123}
-\indexentry{Verification!Integrated Development Environment|hyperpage}{123}
-\indexentry{Verification!Continuous Integration|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Verification!Mixed Methods Verification|hyperpage}{124}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{124}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{124}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{124}
-\indexentry{Acknowledgments!UW PLSE!James Wilcox|hyperpage}{124}
+\indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{123}
+\indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{123}
+\indexentry{Verification!Proof Object!Ephemeral Proof Object|hyperpage}{123}
+\indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{123}
+\indexentry{Acknowledgments!PL Community!Emily First|hyperpage}{123}
+\indexentry{Acknowledgments!PL Community!Yuriy Brun|hyperpage}{123}
+\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{123}
+\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{123}
+\indexentry{Logic \& Type Theory!Type Theories!Cubical Type Theory|hyperpage}{124}
+\indexentry{Verification!Proof Assistants!Lean|hyperpage}{124}
+\indexentry{Verification!Integrated Development Environment|hyperpage}{124}
+\indexentry{Verification!Continuous Integration|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
+\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{124}
 \indexentry{Verification!Mixed Methods Verification|hyperpage}{125}
-\indexentry{Acknowledgments!PL Community!Matthew Dwyer|hyperpage}{125}
+\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{125}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{125}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{125}
+\indexentry{Acknowledgments!UW PLSE!James Wilcox|hyperpage}{125}
+\indexentry{Verification!Mixed Methods Verification|hyperpage}{126}
 \indexentry{Acknowledgments!PL Community!Matthew Dwyer|hyperpage}{126}
-\indexentry{Acknowledgments!PL Community!Matt Might|hyperpage}{126}
+\indexentry{Acknowledgments!PL Community!Matthew Dwyer|hyperpage}{127}
+\indexentry{Acknowledgments!PL Community!Matt Might|hyperpage}{127}

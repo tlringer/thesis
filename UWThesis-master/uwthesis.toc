@@ -214,15 +214,19 @@
 \contentsline {paragraph}{Repair by Example}{117}{subsection.5.2.2}% 
 \contentsline {paragraph}{Human in the Loop}{119}{subsection.5.2.2}% 
 \contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusions \& Future Work}}{121}{chapter.6}% 
-\contentsline {paragraph}{Availability}{122}{chapter.6}% 
-\contentsline {paragraph}{Power}{122}{chapter.6}% 
-\contentsline {paragraph}{Natural Use}{122}{chapter.6}% 
-\contentsline {paragraph}{Scalable Automation}{123}{chapter.6}% 
-\contentsline {paragraph}{Smooth Integration}{123}{chapter.6}% 
-\contentsline {paragraph}{User Feedback}{123}{chapter.6}% 
-\contentsline {paragraph}{Familiar Tools}{124}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Redesign}{124}{chapter.6}% 
-\contentsline {paragraph}{Tool-Assisted Robustness}{124}{chapter.6}% 
-\contentsline {paragraph}{Machine Learning}{125}{chapter.6}% 
-\contentsline {paragraph}{Cryptography}{125}{chapter.6}% 
-\contentsline {paragraph}{Medicine}{126}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Future Work: Patching the Gaps of Repair}{121}{section.6.1}% 
+\contentsline {paragraph}{Scope of Changes}{122}{section.6.1}% 
+\contentsline {paragraph}{Scope of Terms}{122}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}The Next Era: Proof Engineering for All}{122}{section.6.2}% 
+\contentsline {paragraph}{Availability}{123}{section.6.2}% 
+\contentsline {paragraph}{Power}{123}{section.6.2}% 
+\contentsline {paragraph}{Natural Use}{123}{section.6.2}% 
+\contentsline {paragraph}{Scalable Automation}{124}{section.6.2}% 
+\contentsline {paragraph}{Smooth Integration}{124}{section.6.2}% 
+\contentsline {paragraph}{User Feedback}{124}{section.6.2}% 
+\contentsline {paragraph}{Familiar Tools}{125}{section.6.2}% 
+\contentsline {paragraph}{Tool-Assisted Redesign}{125}{section.6.2}% 
+\contentsline {paragraph}{Tool-Assisted Robustness}{125}{section.6.2}% 
+\contentsline {paragraph}{Machine Learning}{126}{section.6.2}% 
+\contentsline {paragraph}{Cryptography}{126}{section.6.2}% 
+\contentsline {paragraph}{Medicine}{127}{section.6.2}% 

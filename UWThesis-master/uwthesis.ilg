@@ -55,8 +55,8 @@ Scanning input file uwthesis.idx....
 
 !! Input index error (file = uwthesis.idx, line = 857):
    -- Extra `!' at position 45 of first argument.
-done (916 entries accepted, 20 rejected).
-Sorting entries..........done (9900 comparisons).
+done (918 entries accepted, 20 rejected).
+Sorting entries..........done (10187 comparisons).
 Generating output file uwthesis.ind....done (392 lines written, 0 warnings).
 Output written in uwthesis.ind.
 Transcript written in uwthesis.ilg.

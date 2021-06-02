@@ -14,7 +14,7 @@
 		\hyperpage{91}, \hyperpage{97}, \hyperpage{102, 103}
       \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{7, 8}, 
 		\hyperpage{19}, \hyperpage{22}, \hyperpage{93}, 
-		\hyperpage{95, 96}, \hyperpage{122}
+		\hyperpage{95, 96}, \hyperpage{123}
       \subsubitem Sorin Lerner, \hyperpage{7}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xii}
@@ -96,7 +96,7 @@
       \subsubitem David van Horn, \hyperpage{xv}
       \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{44}
       \subsubitem Emery Berger, \hyperpage{xv}
-      \subsubitem Emily First, \hyperpage{122}
+      \subsubitem Emily First, \hyperpage{123}
       \subsubitem Gerwin Klein, \hyperpage{xv}
       \subsubitem James Decker, \hyperpage{xv}
       \subsubitem Jon Sterling, \hyperpage{xv}
@@ -104,12 +104,12 @@
       \subsubitem Kenny Foner, \hyperpage{xv}
       \subsubitem Lindsey Kuper, \hyperpage{xv}
       \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{126}
-      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{125, 126}
+      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{126}
       \subsubitem Michael Hicks, \hyperpage{xv}
       \subsubitem Michael Shulman, \hyperpage{xv}, \hyperpage{75}
       \subsubitem Nate Foster, \hyperpage{xv}
       \subsubitem Stephanie Weirich, \hyperpage{xv}
-      \subsubitem Yuriy Brun, \hyperpage{122}
+      \subsubitem Yuriy Brun, \hyperpage{123}
     \subitem Running Community
       \subsubitem Club Northwest, \hyperpage{xv}
       \subsubitem Race Condition Running, \hyperpage{xv}
@@ -138,7 +138,7 @@
       \subsubitem Doug Woos, \hyperpage{xiv}
       \subsubitem Gus Smith, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
-      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{124}
+      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{125}
       \subsubitem Jared Roesch, \hyperpage{xiv}
       \subsubitem Joe Redmond, \hyperpage{xiv}
       \subsubitem John Toman, \hyperpage{xiv}
@@ -166,15 +166,15 @@
       \subsubitem Indexer, \hyperpage{78, 79}, \hyperpage{85}
       \subsubitem Ornamental Promotion Isomorphism, \hyperpage{79}, 
 		\hyperpage{102}
-    \subitem Classical Logic, \hyperpage{108}, \hyperpage{122}
+    \subitem Classical Logic, \hyperpage{108}, \hyperpage{123}
     \subitem Common Axioms
       \subsubitem Double Negation Elimination, \hyperpage{108}
       \subsubitem Law of the Excluded Middle, \hyperpage{107, 108}
       \subsubitem Uniqueness of Identity Proofs, \hyperpage{108}, 
-		\hyperpage{114}, \hyperpage{122}
+		\hyperpage{114}, \hyperpage{123}
       \subsubitem Univalence, \hyperpage{67}, \hyperpage{69}, 
 		\hyperpage{74}, \hyperpage{108}, \hyperpage{113, 114}, 
-		\hyperpage{122}
+		\hyperpage{123}
     \subitem Dependent Types, \hyperpage{20}, \hyperpage{76}, 
 		\hyperpage{79}, \hyperpage{88}, \hyperpage{99}
     \subitem Equality
@@ -216,7 +216,7 @@
 		\hyperpage{19}, \hyperpage{27}, \hyperpage{37}, 
 		\hyperpage{69}, \hyperpage{71}, \hyperpage{74}, 
 		\hyperpage{107}, \hyperpage{113}, \hyperpage{115}
-      \subsubitem Cubical Type Theory, \hyperpage{108}, \hyperpage{123}
+      \subsubitem Cubical Type Theory, \hyperpage{108}, \hyperpage{124}
       \subsubitem Homotopy Type Theory, \hyperpage{67}, \hyperpage{69}, 
 		\hyperpage{75}, \hyperpage{113}
 
@@ -226,7 +226,7 @@
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{6--8}, \hyperpage{24}, \hyperpage{61}, 
 		\hyperpage{98, 99}, \hyperpage{110}, \hyperpage{117}, 
-		\hyperpage{119}, \hyperpage{123}
+		\hyperpage{119}, \hyperpage{124}
     \subitem Adapting Proof Automation to Adapt Proofs, 
 		\hyperpage{6, 7}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{6, 7}
@@ -239,7 +239,7 @@
 		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
 		\hyperpage{61}, \hyperpage{110}, \hyperpage{121}
     \subitem Across Type Equivalences, \hyperpage{4, 5}, \hyperpage{28}, 
-		\hyperpage{61}
+		\hyperpage{61}, \hyperpage{121}
       \subsubitem Automatic Configuration, \hyperpage{62}, 
 		\hyperpage{64}, \hyperpage{66}, \hyperpage{68}, 
 		\hyperpage{70}, \hyperpage{72}, \hyperpage{78}, 
@@ -260,7 +260,7 @@
       \subsubitem Unification Heuristics, \hyperpage{85}, 
 		\hyperpage{88}, \hyperpage{99}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
-		\hyperpage{117}
+		\hyperpage{117}, \hyperpage{121}
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
 		\hyperpage{31}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{43}, 
@@ -296,14 +296,14 @@
 		\hyperpage{46}, \hyperpage{55}, \hyperpage{57}, 
 		\hyperpage{64}, \hyperpage{70}, \hyperpage{85}, 
 		\hyperpage{91}, \hyperpage{112}, \hyperpage{121}, 
-		\hyperpage{124}
+		\hyperpage{125}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34--37}, \hyperpage{45}, 
 		\hyperpage{50}, \hyperpage{55}, \hyperpage{57, 58}, 
 		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
 		\hyperpage{90}, \hyperpage{112, 113}, 
-		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{124}
+		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{125}
     \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
 		\hyperpage{61}, \hyperpage{64}, \hyperpage{89}
@@ -323,22 +323,22 @@
   \indexspace
 
   \item Verification, \hyperpage{1, 2}, \hyperpage{9}, \hyperpage{22}, 
-		\hyperpage{107}, \hyperpage{121}
-    \subitem Continuous Integration, \hyperpage{119}, \hyperpage{123}
+		\hyperpage{107}, \hyperpage{122}
+    \subitem Continuous Integration, \hyperpage{119}, \hyperpage{124}
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
 		\hyperpage{89}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
 		\hyperpage{48}, \hyperpage{61}, \hyperpage{89}
     \subitem de Bruijn Criterion, \hyperpage{107, 108}
     \subitem Integrated Development Environment, \hyperpage{111}, 
-		\hyperpage{123}
+		\hyperpage{124}
     \subitem Kernel, \hyperpage{2}, \hyperpage{4}, \hyperpage{11}, 
 		\hyperpage{14}, \hyperpage{16}, \hyperpage{107--109}
     \subitem Mixed Methods Verification, \hyperpage{124, 125}
     \subitem Proof Assistants, \hyperpage{2, 3}, \hyperpage{6}, 
 		\hyperpage{9, 10}, \hyperpage{107}
       \subsubitem Agda, \hyperpage{2}, \hyperpage{107--109}, 
-		\hyperpage{111}, \hyperpage{122}
+		\hyperpage{111}, \hyperpage{123}
       \subsubitem Coq, \hyperpage{2, 3}, \hyperpage{6}, \hyperpage{10}, 
 		\hyperpage{15}, \hyperpage{107, 108}, \hyperpage{115}, 
 		\hyperpage{122}
@@ -347,9 +347,9 @@
       \subsubitem HOL4, \hyperpage{2}, \hyperpage{107, 108}
       \subsubitem Isabelle/HOL, \hyperpage{2}, \hyperpage{107--109}, 
 		\hyperpage{112}, \hyperpage{114}, \hyperpage{117}, 
-		\hyperpage{122}
+		\hyperpage{123}
       \subsubitem Lean, \hyperpage{2}, \hyperpage{107, 108}, 
-		\hyperpage{114}, \hyperpage{122, 123}
+		\hyperpage{114}, \hyperpage{123, 124}
       \subsubitem NuPRL, \hyperpage{2}, \hyperpage{107}
       \subsubitem RedPRL, \hyperpage{108}
     \subitem Proof Automation, \hyperpage{22}, \hyperpage{26}, 
@@ -367,7 +367,7 @@
     \subitem Proof Maintenance, \hyperpage{22}
     \subitem Proof Object, \hyperpage{108}
       \subsubitem Ephemeral Proof Object, \hyperpage{108}, 
-		\hyperpage{122}
+		\hyperpage{123}
       \subsubitem Explicit Proof Object, \hyperpage{108}
     \subitem Proof Script, \hyperpage{3}, \hyperpage{10}, 
 		\hyperpage{14, 15}, \hyperpage{64}, \hyperpage{113}

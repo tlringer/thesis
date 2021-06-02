@@ -94,18 +94,6 @@ though the suggested tactics did need massaging.
 %Additional effort is needed to improve tactic suggestions for dependent types.
 %Section~\ref{sec:eval} describes benefits for both workflow integration and performance over a comparable tool for this use case.
 
-\begin{figure*}
-\begin{minipage}{0.49\textwidth}
-   \lstinputlisting[firstline=1, lastline=9]{often/replica.tex}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\textwidth}
-   \lstinputlisting[firstline=10, lastline=18]{often/replica.tex}
-\end{minipage}
-\caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
-\label{fig:replica}
-\end{figure*}
-
 \paragraph{Unpack Sigma Types: Vectors of Particular Lengths}
 %The previous case study showed how to get between lists and vectors of \textit{some} length.
 In the same file~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}, I then ported functions and proofs to 
@@ -166,6 +154,18 @@ followed by later returns.
 %and 2) they waited only about ten seconds at most for \toolnamec to return.
 %Both informed improvements to \toolnamec, like better error messages, caching,
 %and a way to tell \toolnamec not to $\delta$-reduce certain terms.
+
+\begin{figure*}
+\begin{minipage}{0.49\textwidth}
+   \lstinputlisting[firstline=1, lastline=9]{often/replica.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+   \lstinputlisting[firstline=10, lastline=18]{often/replica.tex}
+\end{minipage}
+\caption{A simple language (left) and the same language with two swapped constructors and an added constructor (right).}
+\label{fig:replica}
+\end{figure*}
 
 \paragraph{Permute Constructors: Modifying a Language}
 The swapping example from Section~\ref{sec:overview} was inspired by benchmarks 
@@ -286,9 +286,9 @@ After annotating, I obtained automatically repaired proofs about slow binary add
 which I found simple to port to fast binary addition.
 I hope to automate this last step in the future using CoqEAL. %~\cite{cohen:hal-01113453}.
 Repaired tactics were partially useful, but failed to understand custom eliminators like \lstinline{N.peano_rect}, and to generate useful
-tactics for applications of \lstinline{Iota}; both of these are clear paths to more useful tactics.
+tactics for \lstinline{Iota}; both of these are clear paths to more useful tactics.
 The development time for this proof with \toolnamec was comparable to reference manual repairs by external proof engineers.
-Custom unification heuristics would help bring returns on investment for experts in this use case.
+Custom unification heuristics would help bring returns on investment for experts.
 
 \subsection{Evaluation: External Transport}
 \label{sec:eval}
@@ -305,11 +305,10 @@ corresponding to these ornaments for two scenarios:
 \item Single Iteration: from binary trees to sized binary trees
 \item Multiple Iterations: from binary trees to binary search trees to AVL trees
 \end{enumerate}
-At the time, the decompiler was not yet implemented, so we focused solely on proof terms.
-For comparison, we also used the ornaments that \toolnamec discovered to transport functions
-and proofs using an internal approximation of transport in Coq from UP~\cite{tabareau2017equivalences}.
+At the time, the decompiler was not yet implemented, so we focused on proof terms.
+For comparison, we also used the ornaments that \toolnamec discovered to transport terms using an internal approximation of transport in Coq from UP~\cite{tabareau2017equivalences}.
 \toolnamec produced faster functions and smaller terms, especially when composing multiple iterations of repair.
-In addition, \toolnamec imposed little burden on the user, and the equivalences \toolnamec discovered proved useful to UP.
+In addition, \toolnamec imposed little user burden, and the equivalences it discovered proved useful to UP.
 
 %We chose UP for comparison because it also implements transport across equivalences in Coq,
 %and because doing so demonstrates the benefits of specialized automation for classes of equivalences like ornaments.
@@ -344,8 +343,8 @@ and he lifted a search function from BSTs (\lstinline{bst}) to AVL trees through
 one intermediate type. 
 Both scenarios considered only full binary trees.
 
-To fit \lstinline{bst} and \lstinline{avl} into algebraic ornaments for \toolnamec,
-we decided to use boolean indices to track invariants.
+To fit \lstinline{bst} and \lstinline{avl} into algebraic ornaments,
+we used boolean indices to track invariants.
 While the resulting types are not the most natural definitions,
 this scenario demonstrates that it is possible to express interesting changes to structured types as algebraic ornaments,
 and that lifting across these types in \toolnamec produces efficient functions.
@@ -373,8 +372,8 @@ In this scenario, using UP differently or using \toolnamec with a manual configu
 since with those workflows, it is possible to skip 
 the intermediate type;\footnote{The performances of the terms that the UP black-box transformation produces are sensitive to the equivalence used;
 for a 100 node tree, this alternate workflow in UP produced a search function
-which is hundreds of times slower and traversal functions which are thousands of times slower
-than the functions that \toolnamec produced. In addition, the lifted proof of \lstinline{pre_permutes} using UP failed to normalize
+hundreds of times slower and traversal functions thousands of times slower
+than the functions that \toolnamec produced. The lifted proof of \lstinline{pre_permutes} using UP failed to normalize
 with a timeout of one hour.}
 \toolnamec with automatic configuration is best fit where an incremental workflow is desirable.
 

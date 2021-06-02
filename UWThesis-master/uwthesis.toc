@@ -171,19 +171,19 @@
 \contentsline {section}{\numberline {4.6}Results}{97}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}\textsc {Pumpkin P}i\xspace Eight Ways}{97}{subsection.4.6.1}% 
 \contentsline {paragraph}{Algebraic Ornaments: Lists to Packed Vectors}{97}{table.caption.41}% 
-\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{99}{figure.caption.42}% 
-\contentsline {paragraph}{Tuples \& Records: Industrial Use}{99}{figure.caption.42}% 
+\contentsline {paragraph}{Unpack Sigma Types: Vectors of Particular Lengths}{99}{table.caption.41}% 
+\contentsline {paragraph}{Tuples \& Records: Industrial Use}{99}{table.caption.41}% 
 \contentsline {paragraph}{Permute Constructors: Modifying a Language}{99}{figure.caption.42}% 
 \contentsline {paragraph}{Add new Constructors: Extending a Language}{100}{figure.caption.42}% 
 \contentsline {paragraph}{Factor out Constructors: External Example}{100}{figure.caption.42}% 
-\contentsline {paragraph}{Permute Hypotheses: External Example}{100}{figure.caption.42}% 
+\contentsline {paragraph}{Permute Hypotheses: External Example}{101}{figure.caption.42}% 
 \contentsline {paragraph}{Change Inductive Structure: Unary to Binary}{101}{figure.caption.42}% 
-\contentsline {subsection}{\numberline {4.6.2}Evaluation: External Transport}{101}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.2}Evaluation: External Transport}{102}{subsection.4.6.2}% 
 \contentsline {paragraph}{Historical Note}{102}{Item.60}% 
 \contentsline {paragraph}{Setup}{102}{Item.60}% 
 \contentsline {subsubsection}{\numberline {4.6.2.1}User Experience}{103}{subsubsection.4.6.2.1}% 
-\contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{103}{subsubsection.4.6.2.2}% 
-\contentsline {section}{\numberline {4.7}Conclusion}{104}{section.4.7}% 
+\contentsline {subsubsection}{\numberline {4.6.2.2}Performance}{104}{subsubsection.4.6.2.2}% 
+\contentsline {section}{\numberline {4.7}Conclusion}{105}{section.4.7}% 
 \contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Related Work}}{107}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Proof Engineering}{107}{section.5.1}% 
 \contentsline {subsection}{\numberline {5.1.1}Proof Assistants}{107}{subsection.5.1.1}% 

@@ -9,14 +9,14 @@ Given an equivalence between types \Aa and \B,
 It does this in a way that allows for removing references to \Aa, which is essential for proof repair,
 since \Aa may be an old version of an updated type.
 
-The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically patch broken proofs in response to a broad class of changes in datatypes.
-\toolnamec in particular repairs proofs in response to changes in types that correspond to \intro{type equivalences}~\cite{univalent2013homotopy},
+The proof engineer can use \toolnamec (Section~\ref{sec:pi-workflow}) to automatically repair proofs in response to a broad class of changes in datatypes.
+\toolnamec in particular repairs proofs in response to changes that correspond to \intro{type equivalences}~\cite{univalent2013homotopy},
 or pairs of functions that map between two types (possibly with some additional information) and are mutual 
 inverses (Section~\ref{sec:pi-scope}).\footnote{Every equivalence induces something called an \textit{adjoint} equivalence~\cite{univalent2013homotopy},
 and those adjoint equivalences can be nicer to work with.
 \kl{Jasper} proved this fact for me in a way that does not rely on any axioms beyond those assumed by Coq~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/theories/Adjoint.v}{\circled{23}},
 and \kl{Nate} used that proof to build machinery for \toolnamec to derive the adjoint equivalence from the equivalence itself~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/search/equivalence.ml}{\circled{10}}.}
-In other words, looking back to the thesis statement, the information shows up in the difference between versions of the changed datatype.
+Looking back to the \kl{thesis} statement, the information shows up in the difference between versions of the changed datatype.
 With \kl{automatic configuration}, \toolnamec can extract and generalize that information to a type equivalence, then apply it to fix other broken proofs.
 With \kl{manual configuration}, the \textit{proof engineer} extracts and generalizes that information herself, but \toolnamec can still apply the result
 to fix other broken proofs.
@@ -98,8 +98,8 @@ When a type equivalence between types \Aa and \B exists, we can say that those t
 Figure~\ref{fig:equivalence} shows a type equivalence between the two versions of \lstinline{list}
 from Figure~\ref{fig:listswap} that \toolnamec discovered and proved automatically~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/Swap.v}{\circled{1}}.
 
-To give some intuition for what kinds of changes can be described by equivalences, I preview two changes below.
-See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more examples.
+To give intuition for what kinds of changes can be described by equivalences, I preview two changes.
+See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more.
 
 \begin{figure}
 \begin{minipage}{0.48\columnwidth}
@@ -185,6 +185,8 @@ from a relation, even when the relation is not an equivalence~\cite{angiuli2020i
 A less general result holds in Coq, which lacks quotient types:
 it is possible to achieve a similar outcome and use \toolnamec for changes that add or remove information
 whenever those changes can be expressed as equivalences between $\Sigma$ types or sum types.
+With some creativity, this can even support adding new constructors to types,
+though not yet in a way that saves work proof engineers.
 
 \subsection{Differencing: Equivalences from Changes}
 \label{sec:pi-spec-diff}

@@ -567,10 +567,11 @@
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{62}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{62}
 \indexentry{Verification!Proof Engineering|hyperpage}{62}
-\indexentry{Verification!Proof Script|hyperpage}{63}
-\indexentry{Verification!Proof Term|hyperpage}{63}
+\indexentry{Verification!Proof Script|hyperpage}{64}
+\indexentry{Verification!Proof Term|hyperpage}{64}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{64}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{64}
+\indexentry{Thesis Statement!Formal|hyperpage}{64}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{64}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{64}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{64}
@@ -582,8 +583,8 @@
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{64}
 \indexentry{Verification!Coq Commands|hyperpage}{65}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{65}
-\indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{65}
-\indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{65}
+\indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{66}
+\indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{66}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{66}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{66}
 \indexentry{Logic \& Type Theory!Type Theories!Homotopy Type Theory|hyperpage}{67}

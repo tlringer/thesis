@@ -99,7 +99,16 @@ In contrast, updating the poorly structured proof script directly would not be s
 Even for the simple proof script above, grouping tactics by line, there are $6! = 720$ permutations of this proof script.
 It is not clear which lines to swap since these tactics do not have a semantics beyond the searches their evaluation performs.
 Furthermore, just swapping lines is not enough: even for such a simple change, we must also swap
-arguments, so \lstinline{induction x as [| a l IHl]} becomes \lstinline{induction x as [a l IHl|]}.
+arguments, so that:
+
+\begin{lstlisting}
+    induction x as [|(@\codediff{a l IHl}@)].
+\end{lstlisting}
+becomes:
+
+\begin{lstlisting}
+    induction x as [(@\codediff{a l IHl}@)|].
+\end{lstlisting}
 %Handling even swapping constructors this way would require a search procedure that would not generalize to other changes.
 Valentin Robert's thesis~\cite{robert2018} describes the challenges of repairing tactics in detail.
 \toolnamec's approach circumvents this challenge.

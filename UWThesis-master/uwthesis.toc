@@ -117,12 +117,12 @@
 \contentsline {section}{\numberline {4.2}Approach}{64}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{65}{subsection.4.2.1}% 
 \contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{66}{subsection.4.2.2}% 
-\contentsline {paragraph}{Factoring out Constructors}{67}{figure.caption.27}% 
+\contentsline {paragraph}{Factoring out Constructors}{66}{figure.caption.27}% 
 \contentsline {paragraph}{Adding a Dependent Index}{67}{figure.caption.28}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{68}{subsection.4.2.3}% 
-\contentsline {paragraph}{Summary}{68}{lstnumber.-172.1}% 
+\contentsline {paragraph}{Summary}{68}{lstnumber.-174.1}% 
 \contentsline {subsection}{\numberline {4.2.4}Transformation: Transport with a Twist}{69}{subsection.4.2.4}% 
-\contentsline {paragraph}{Summary}{70}{lstnumber.-173.2}% 
+\contentsline {paragraph}{Summary}{70}{lstnumber.-175.2}% 
 \contentsline {section}{\numberline {4.3}Differencing}{70}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Preserving the Equivalence}{71}{subsection.4.3.1}% 
 \contentsline {subsection}{\numberline {4.3.2}Producing Well-Typed Terms}{72}{subsection.4.3.2}% 
@@ -136,16 +136,16 @@
 \contentsline {paragraph}{Equivalences from Configurations}{78}{figure.caption.32}% 
 \contentsline {subsection}{\numberline {4.3.4}Search Procedures}{78}{subsection.4.3.4}% 
 \contentsline {paragraph}{Algebraic Ornaments}{78}{Item.54}% 
-\contentsline {paragraph}{Differencing for Algebraic Ornaments}{79}{lstnumber.-190.1}% 
-\contentsline {paragraph}{Common Definitions}{80}{lstnumber.-193.1}% 
+\contentsline {paragraph}{Differencing for Algebraic Ornaments}{79}{lstnumber.-192.1}% 
+\contentsline {paragraph}{Common Definitions}{80}{lstnumber.-195.1}% 
 \contentsline {subsubsection}{\numberline {4.3.4.1}Differencing for the Indexer}{80}{subsubsection.4.3.4.1}% 
 \contentsline {paragraph}{Generating the Motive}{82}{figure.caption.34}% 
-\contentsline {paragraph}{Generating Each Case}{82}{lstnumber.-196.1}% 
-\contentsline {paragraph}{Composing the Result}{83}{lstnumber.-200.3}% 
+\contentsline {paragraph}{Generating Each Case}{82}{lstnumber.-198.1}% 
+\contentsline {paragraph}{Composing the Result}{83}{lstnumber.-202.3}% 
 \contentsline {subsubsection}{\numberline {4.3.4.2}Differencing for the Configuration}{83}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Discovering the Equivalence Parts}{83}{subsubsection.4.3.4.2}% 
 \contentsline {paragraph}{Deriving the Configuration}{83}{figure.caption.35}% 
-\contentsline {paragraph}{Proving Correctness}{85}{lstnumber.-206.1}% 
+\contentsline {paragraph}{Proving Correctness}{85}{lstnumber.-208.1}% 
 \contentsline {section}{\numberline {4.4}Transformation}{85}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Unification Heuristics}{85}{subsection.4.4.1}% 
 \contentsline {subsection}{\numberline {4.4.2}Specifying a Correct Transformation}{88}{subsection.4.4.2}% 

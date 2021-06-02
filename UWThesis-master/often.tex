@@ -21,8 +21,8 @@ or imposed additional proof obligations like always proving relations correspond
 \paragraph{Challenge 1: Flexible Type Support}
 The case studies in Section~\ref{sec:pi-results}---summarized in Table~\ref{fig:changes} on page~\pageref{fig:changes}---show that \toolnamec is flexible enough to support
 a wide range of proof repair use cases. % can support a flexible class of changes informed by the needs of proof engineers within a unified framework.
-In general, \toolnamec can support any change described by an equivalence, though it takes the equivalence in a
-deconstructed form that I call a \intro{configuration}.
+In general, \toolnamec can support any change described by an equivalence---a scope that even includes changes like adding indices to datatypes.
+\toolnamec takes the equivalence in a deconstructed form that I call a \intro{configuration}.
 The configuration expresses to the proof term transformation how to translate terms defined over the old version of a type
 to refer only to the new version, and how to do so without breaking \kl{definitional equality}.
 The proof engineer can write this configuration in Coq and feed it to \toolnamec (\intro{manual configuration} in Table~\ref{fig:changes}),

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2183,18 +2183,12 @@ Overfull \hbox (3.15834pt too wide) in paragraph at lines 13--16
 lim-ited classes of changes in datatypes,
  []
 
-
-Overfull \hbox (5.8084pt too wide) in paragraph at lines 32--42
-[] []\T1/pplj/m/sc/10.95 (-20) a d -d r e s s -i n g c h a l -l e n g e 2 : w o
- r k -f l o w i n -t e -g r a -t i o n[] \T1/pplj/m/n/10.95 (-20) Re-search
- []
-
 [61] (./often/motivating.tex (./often/listswap.tex) (./often/listswap.tex)
 [62] [63]) (./often/approach.tex
 contour: Using 2 copies for `\kl {\textsc {Pumpkin}\xspace }' on input line 24.
 
 [64]
-<often/workflowa.pdf, id=2146, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=2147, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2210,7 +2204,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [73] [74]
-<often/Diagram.pdf, id=2505, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2508, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 280.
@@ -2553,11 +2547,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51936 strings out of 492609
- 1051247 string characters out of 6129033
- 1329049 words of memory out of 5000000
+ 51931 strings out of 492609
+ 1051207 string characters out of 6129033
+ 1329033 words of memory out of 5000000
  52380 multiletter control sequences out of 15000+600000
- 679898 words of font info for 886 fonts, out of 8000000 for 9000
+ 679617 words of font info for 882 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -2582,10 +2576,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (160 pages, 1873525 bytes).
+Output written on uwthesis.pdf (160 pages, 1873619 bytes).
 PDF statistics:
- 4983 PDF objects out of 5155 (max. 8388607)
- 4697 compressed objects within 47 object streams
+ 4986 PDF objects out of 5155 (max. 8388607)
+ 4700 compressed objects within 47 object streams
  1614 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

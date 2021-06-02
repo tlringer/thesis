@@ -3,7 +3,7 @@
 
 % From PUMPKIN Pi intro, modified
 
-This chapter presents the \intro{\toolnamec} extension to the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite.\footnote{I annotate each claim to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in the artifact guide: \url{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}.}
+This chapter presents the \intro{\toolnamec} extension to the \contour[2]{violet}{\kl{\sysnamelong}} \kl{proof repair} \kl{plugin} suite.\footnote{I annotate each claim in this chapter to which code is relevant with a circled number like \circled{1}. These circled numbers are links to code, and are detailed in a guide that can be found here: \url{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/GUIDE.md}.}
 \toolnamec is a plugin that supports proof repair across a broad class of changes in datatypes called 
 \textit{type equivalences} (Section~\ref{sec:pi-scope}),
 thereby supporting a large class of practical repair scenarios.
@@ -12,23 +12,23 @@ Proof repair \kl{across type equivalences} with \toolnamec makes progress on two
 \begin{enumerate}
 \item \sysname supported a very limited classes of changes in datatypes, namely those that do not change structure.
 Similar tools developed since still supported only a predefined set of changes~\cite{robert2018, wibergh2019}.
-As the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study showed, none of these were informed by the current needs of proof engineers. %~\cite{replica}. TODO elaborate?
+As the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study showed, these were not informed by the current needs of proof engineers. %~\cite{replica}. TODO elaborate?
 \item \sysname had only preliminary integration with typical proof engineering workflows.
 Similar tools developed since likewise lacked support for workflow integration~\cite{PGL-045, robert2018},
 or imposed additional proof obligations like always proving relations corresponding to changes~\cite{tabareau2019marriage}.
 \end{enumerate}
 
-\paragraph{Addressing Challenge 1: Flexible Type Support}
+\paragraph{Challenge 1: Flexible Type Support}
 The case studies in Section~\ref{sec:pi-results}---summarized in Table~\ref{fig:changes} on page~\pageref{fig:changes}---show that \toolnamec is flexible enough to support
-a wide range of proof engineering use cases. % can support a flexible class of changes informed by the needs of proof engineers within a unified framework.
+a wide range of proof repair use cases. % can support a flexible class of changes informed by the needs of proof engineers within a unified framework.
 In general, \toolnamec can support any change described by an equivalence, though it takes the equivalence in a
 deconstructed form that I call a \intro{configuration}.
-The configuration expresses to the proof term transformation how to translate functions and proofs defined over the old version of a type
-to refer only to the new version, and how to do so in a way that does not break \kl{definitional equality}.
+The configuration expresses to the proof term transformation how to translate terms defined over the old version of a type
+to refer only to the new version, and how to do so without breaking \kl{definitional equality}.
 The proof engineer can write this configuration in Coq and feed it to \toolnamec (\intro{manual configuration} in Table~\ref{fig:changes}),
 configuring \toolnamec to support the change. %from directly within Coq.
 
-\paragraph{Addressing Challenge 2: Workflow Integration}
+\paragraph{Challenge 2: Workflow Integration}
 Research on workflow integration for proof repair tools is in its infancy.
 \toolnamec is built with workflow integration in mind.
 For example, \toolnamec produces suggested \kl{proof scripts} (rather than \kl{proof terms}) for repaired proofs,
@@ -42,7 +42,7 @@ My partnership with an industrial proof engineer has informed other changes to f
 
 \paragraph{Bringing it Together}
 In the frame of the thesis, proof repair across type equivalences is a new form of proof automation that extracts general information from breaking 
-changes in the datatypes that programs, specifications, and proofs refer to, 
+changes in the \textit{datatypes} that programs, specifications, and proofs refer to, 
 then applies that information to fix any program, specification, or proof broken by that change (Section~\ref{sec:pi-approach}).
 This extraction, generalization, and application works at the level of proof terms, through a combination of novel semantic differencing algorithms over datatypes (Section~\ref{sec:pi-diff}) and a configurable proof term transformation (Section~\ref{sec:pi-trans}).
 \toolnamec automates this process,

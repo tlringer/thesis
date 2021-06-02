@@ -110,14 +110,14 @@
 \contentsline {paragraph}{Apply}{58}{lstnumber.-151.2}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{59}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{61}{chapter.4}% 
-\contentsline {paragraph}{Addressing Challenge 1: Flexible Type Support}{61}{Item.45}% 
-\contentsline {paragraph}{Addressing Challenge 2: Workflow Integration}{61}{Item.45}% 
+\contentsline {paragraph}{Challenge 1: Flexible Type Support}{61}{Item.45}% 
+\contentsline {paragraph}{Challenge 2: Workflow Integration}{61}{Item.45}% 
 \contentsline {paragraph}{Bringing it Together}{62}{Item.45}% 
 \contentsline {section}{\numberline {4.1}Motivating Example}{62}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Approach}{64}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}Workflow: Configure, Transform, Decompile}{65}{subsection.4.2.1}% 
 \contentsline {subsection}{\numberline {4.2.2}Scope: Type Equivalences}{66}{subsection.4.2.2}% 
-\contentsline {paragraph}{Factoring out Constructors}{66}{figure.caption.27}% 
+\contentsline {paragraph}{Factoring out Constructors}{67}{figure.caption.27}% 
 \contentsline {paragraph}{Adding a Dependent Index}{67}{figure.caption.28}% 
 \contentsline {subsection}{\numberline {4.2.3}Differencing: Equivalences from Changes}{68}{subsection.4.2.3}% 
 \contentsline {paragraph}{Summary}{68}{lstnumber.-172.1}% 

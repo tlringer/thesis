@@ -69,46 +69,36 @@
 \end{figure*}
 
 \begin{figure*}
-\begin{minipage}{0.49\textwidth}
 \begin{lstlisting}
 (* 1: original *)
 $\lambda$ (T: Type) (l m: Old.list T) .
  Elim(l, $\lambda$(l: Old.list T).Old.list T $\rightarrow$ Old.list T)) {
    ($\lambda$ m . m),
-   ($\lambda$ t _ IHl m .
-     Constr(1, Old.list T) t (IHl m))
+   ($\lambda$ t _ IHl m . Constr(1, Old.list T) t (IHl m))
  } m.
 
 (* 2: unified *)
 $\lambda$ (T: Type) (l m: (@\codediff{A}@)) .
  (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{A}@)).(@\codediff{A}@) $\rightarrow$ (@\codediff{A}@))) {
    ($\lambda$ m . m)
-   ($\lambda$ t _ IHl m .
-     (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))
- } m.
-\end{lstlisting}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\textwidth}
-\begin{lstlisting}
-(* 4: reduced *)
-$\lambda$ (T: Type) (l m: New.list T) .
- Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {
-   ($\lambda$ t _ IHl m .
-     Constr(0, New.list T) t (IHl m)),
-   ($\lambda$ m . m)
+   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{A}@)) t (IHl m))
  } m.
 
 (* 3: transformed *)
 $\lambda$ (T: Type) (l m: (@\codediff{B}@)) .
  (@\codediff{DepElim}@)(l, $\lambda$(l: (@\codediff{B}@)).(@\codediff{B}@) $\rightarrow$ (@\codediff{B}@))) {
    ($\lambda$ m . m)
-   ($\lambda$ t _ IHl m .
-     (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))
+   ($\lambda$ t _ IHl m . (@\codediff{DepConstr}@)(1, (@\codediff{B}@)) t (IHl m))
+ } m.
+
+(* 4: reduced *)
+$\lambda$ (T: Type) (l m: New.list T) .
+ Elim(l, $\lambda$(l: New.list T).New.list T $\rightarrow$ New.list T)) {
+   ($\lambda$ t _ IHl m . Constr(0, New.list T) t (IHl m)),
+   ($\lambda$ m . m)
  } m.
 \end{lstlisting}
-\end{minipage}
-\caption{Swapping cases of the append function, counterclockwise, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the new version of the type, and 4) reduced to the output.}
+\caption{Swapping cases of the append function, from top to bottom, the input term: 1) unmodified, 2) unified with the configuration, 3) ported to the new version of the type, and 4) reduced to the output.}
 \label{fig:appswap1}
 \end{figure*}
 
@@ -146,12 +136,12 @@ to configuration terms over \B.
 Reducing the result produces the output term defined over \B.
 
 Figure~\ref{fig:appswap1} shows this with the list append function \lstinline{++} from Section~\ref{sec:overview}.
-To update \lstinline{++} (top left), \toolnamec unifies \lstinline{Old.list T} with \Aa, and \lstinline{Constr} and \lstinline{Elim}
-with \kl{\lstinline{DepConstr}} and \kl{\lstinline{DepElim}} (bottom left).
+To update \lstinline{++} (top), \toolnamec unifies \lstinline{Old.list T} with \Aa, and \lstinline{Constr} and \lstinline{Elim}
+with \kl{\lstinline{DepConstr}} and \kl{\lstinline{DepElim}} (second from the top).
 After unification, the transformation recursively substitutes \B
 for \Aa, which moves \lstinline{DepConstr} and \lstinline{DepElim}
-to construct and eliminate over the updated type (bottom right).
-This reduces to a term with swapped constructors and cases over \lstinline{New.list T} (top right).
+to construct and eliminate over the updated type (second from the bottom).
+This reduces to a term with swapped constructors and cases over \lstinline{New.list T} (bottom).
 
 In this case, unification is straightforward.
 This can be more challenging when configuration terms are dependent.

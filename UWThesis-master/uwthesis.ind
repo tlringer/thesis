@@ -6,15 +6,15 @@
 		\hyperpage{24}
       \subsubitem Ilya Sergey, \hyperpage{7}
       \subsubitem John Leo, \hyperpage{7}
-      \subsubitem Karl Palmskog, \hyperpage{7, 8}, \hyperpage{106}, 
-		\hyperpage{114}
+      \subsubitem Karl Palmskog, \hyperpage{7, 8}, \hyperpage{108}, 
+		\hyperpage{116}
       \subsubitem Milos Gligoric, \hyperpage{7}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiv}, \hyperpage{7, 8}, 
-		\hyperpage{18}, \hyperpage{64}, \hyperpage{89, 90}, 
-		\hyperpage{96, 97}, \hyperpage{101, 102}
+		\hyperpage{18}, \hyperpage{64}, \hyperpage{89}, 
+		\hyperpage{91}, \hyperpage{97}, \hyperpage{102, 103}
       \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{7, 8}, 
-		\hyperpage{19}, \hyperpage{22}, \hyperpage{92, 93}, 
-		\hyperpage{95, 96}, \hyperpage{120}
+		\hyperpage{19}, \hyperpage{22}, \hyperpage{93}, 
+		\hyperpage{95, 96}, \hyperpage{122}
       \subsubitem Sorin Lerner, \hyperpage{7}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xii}
@@ -88,7 +88,7 @@
     \subitem PL Community, \hyperpage{xv, xvi}
       \subsubitem Alexandra Silva, \hyperpage{xv}
       \subsubitem Anders M\"ortberg, \hyperpage{xv}, \hyperpage{75}, 
-		\hyperpage{97}, \hyperpage{100}
+		\hyperpage{98}, \hyperpage{100}
       \subsubitem Bas Spitters, \hyperpage{xv}
       \subsubitem Bob Harper, \hyperpage{xv}
       \subsubitem Carlo Angiuli, \hyperpage{xv}, \hyperpage{75}
@@ -96,20 +96,20 @@
       \subsubitem David van Horn, \hyperpage{xv}
       \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{44}
       \subsubitem Emery Berger, \hyperpage{xv}
-      \subsubitem Emily First, \hyperpage{120}
+      \subsubitem Emily First, \hyperpage{122}
       \subsubitem Gerwin Klein, \hyperpage{xv}
       \subsubitem James Decker, \hyperpage{xv}
       \subsubitem Jon Sterling, \hyperpage{xv}
       \subsubitem Jonathan Aldrich, \hyperpage{xv}
       \subsubitem Kenny Foner, \hyperpage{xv}
       \subsubitem Lindsey Kuper, \hyperpage{xv}
-      \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{124}
-      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{123, 124}
+      \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{126}
+      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{125, 126}
       \subsubitem Michael Hicks, \hyperpage{xv}
       \subsubitem Michael Shulman, \hyperpage{xv}, \hyperpage{75}
       \subsubitem Nate Foster, \hyperpage{xv}
       \subsubitem Stephanie Weirich, \hyperpage{xv}
-      \subsubitem Yuriy Brun, \hyperpage{120}
+      \subsubitem Yuriy Brun, \hyperpage{122}
     \subitem Running Community
       \subsubitem Club Northwest, \hyperpage{xv}
       \subsubitem Race Condition Running, \hyperpage{xv}
@@ -138,7 +138,7 @@
       \subsubitem Doug Woos, \hyperpage{xiv}
       \subsubitem Gus Smith, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
-      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{122}
+      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{124}
       \subsubitem Jared Roesch, \hyperpage{xiv}
       \subsubitem Joe Redmond, \hyperpage{xiv}
       \subsubitem John Toman, \hyperpage{xiv}
@@ -159,114 +159,115 @@
   \indexspace
 
   \item Logic \& Type Theory, \hyperpage{6}
-    \subitem Algebraic Ornaments, \hyperpage{78, 79}, \hyperpage{84}, 
-		\hyperpage{98}, \hyperpage{101}, \hyperpage{110}
-      \subsubitem Coherence, \hyperpage{79}, \hyperpage{84}
-      \subsubitem Indexer, \hyperpage{78, 79}, \hyperpage{84}
+    \subitem Algebraic Ornaments, \hyperpage{78, 79}, 
+		\hyperpage{84, 85}, \hyperpage{97}, \hyperpage{102}, 
+		\hyperpage{112}
+      \subsubitem Coherence, \hyperpage{79}, \hyperpage{85}
+      \subsubitem Indexer, \hyperpage{78, 79}, \hyperpage{85}
       \subsubitem Ornamental Promotion Isomorphism, \hyperpage{79}, 
 		\hyperpage{102}
-    \subitem Classical Logic, \hyperpage{106}, \hyperpage{120}
+    \subitem Classical Logic, \hyperpage{108}, \hyperpage{122}
     \subitem Common Axioms
-      \subsubitem Double Negation Elimination, \hyperpage{106}
-      \subsubitem Law of the Excluded Middle, \hyperpage{105, 106}
-      \subsubitem Uniqueness of Identity Proofs, \hyperpage{106}, 
-		\hyperpage{112}, \hyperpage{120}
+      \subsubitem Double Negation Elimination, \hyperpage{108}
+      \subsubitem Law of the Excluded Middle, \hyperpage{107, 108}
+      \subsubitem Uniqueness of Identity Proofs, \hyperpage{108}, 
+		\hyperpage{114}, \hyperpage{122}
       \subsubitem Univalence, \hyperpage{67}, \hyperpage{69}, 
-		\hyperpage{74}, \hyperpage{106}, \hyperpage{111, 112}, 
-		\hyperpage{120}
+		\hyperpage{74}, \hyperpage{108}, \hyperpage{113, 114}, 
+		\hyperpage{122}
     \subitem Dependent Types, \hyperpage{20}, \hyperpage{76}, 
-		\hyperpage{79}, \hyperpage{87}, \hyperpage{98}
+		\hyperpage{79}, \hyperpage{88}, \hyperpage{99}
     \subitem Equality
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{72}, 
-		\hyperpage{105}
+		\hyperpage{107}
       \subsubitem Transport, \hyperpage{69, 70}, \hyperpage{72}, 
-		\hyperpage{86}, \hyperpage{111}, \hyperpage{113}
+		\hyperpage{85}, \hyperpage{113}, \hyperpage{115}
       \subsubitem Type Equivalences, \hyperpage{64}, \hyperpage{66--70}, 
-		\hyperpage{79}, \hyperpage{86}, \hyperpage{106}, 
-		\hyperpage{111}
-    \subitem External, \hyperpage{69}, \hyperpage{101}, \hyperpage{111}
+		\hyperpage{79}, \hyperpage{85}, \hyperpage{108}, 
+		\hyperpage{113}
+    \subitem External, \hyperpage{69}, \hyperpage{101}, \hyperpage{113}
     \subitem Inductive Types, \hyperpage{16}, \hyperpage{20}, 
 		\hyperpage{39}, \hyperpage{71}, \hyperpage{78, 79}, 
-		\hyperpage{110}
+		\hyperpage{112}
       \subsubitem Constructors, \hyperpage{16, 17}, \hyperpage{20}, 
-		\hyperpage{74}, \hyperpage{77}, \hyperpage{110}
+		\hyperpage{74}, \hyperpage{77}, \hyperpage{112}
       \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{21}, 
 		\hyperpage{37}, \hyperpage{69, 70}, \hyperpage{74}, 
-		\hyperpage{77}, \hyperpage{98}, \hyperpage{104}, 
-		\hyperpage{111}
+		\hyperpage{77}, \hyperpage{99}, \hyperpage{104}, 
+		\hyperpage{113}
       \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{38}, 
 		\hyperpage{40}, \hyperpage{77}, \hyperpage{82}
       \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
-		\hyperpage{37}, \hyperpage{40}, \hyperpage{81}, 
-		\hyperpage{95}
+		\hyperpage{37}, \hyperpage{40}, \hyperpage{80}, 
+		\hyperpage{96}
     \subitem Initial Algebra, \hyperpage{74, 75}
-    \subitem Internal, \hyperpage{69}, \hyperpage{101}, \hyperpage{111}
-    \subitem Intuitionistic Logic, \hyperpage{105, 106}, 
-		\hyperpage{113, 114}
-    \subitem Polymorphism, \hyperpage{20}, \hyperpage{87}
+    \subitem Internal, \hyperpage{69}, \hyperpage{102}, \hyperpage{113}
+    \subitem Intuitionistic Logic, \hyperpage{107, 108}, 
+		\hyperpage{115, 116}
+    \subitem Polymorphism, \hyperpage{20}, \hyperpage{88}
     \subitem Primitive Eliminators, \hyperpage{18}, \hyperpage{20, 21}, 
 		\hyperpage{30}, \hyperpage{39}, \hyperpage{55}, 
-		\hyperpage{71}, \hyperpage{89, 90}
+		\hyperpage{71}, \hyperpage{90, 91}
     \subitem Sigma Types, \hyperpage{21}, \hyperpage{71}, 
-		\hyperpage{83}, \hyperpage{98}
+		\hyperpage{83}, \hyperpage{99}
     \subitem Type Theories
       \subsubitem Calculus of Constructions, \hyperpage{19, 20}
       \subsubitem Calculus of Inductive Constructions, \hyperpage{16}, 
 		\hyperpage{19}, \hyperpage{27}, \hyperpage{37}, 
 		\hyperpage{69}, \hyperpage{71}, \hyperpage{74}, 
-		\hyperpage{105}, \hyperpage{111}, \hyperpage{113}
-      \subsubitem Cubical Type Theory, \hyperpage{106}, \hyperpage{121}
+		\hyperpage{107}, \hyperpage{113}, \hyperpage{115}
+      \subsubitem Cubical Type Theory, \hyperpage{108}, \hyperpage{123}
       \subsubitem Homotopy Type Theory, \hyperpage{67}, \hyperpage{69}, 
-		\hyperpage{75}, \hyperpage{111}
+		\hyperpage{75}, \hyperpage{113}
 
   \indexspace
 
   \item Previously Published Material
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{6--8}, \hyperpage{24}, \hyperpage{61}, 
-		\hyperpage{97}, \hyperpage{99}, \hyperpage{108}, 
-		\hyperpage{115}, \hyperpage{117}, \hyperpage{121}
+		\hyperpage{98, 99}, \hyperpage{110}, \hyperpage{117}, 
+		\hyperpage{119}, \hyperpage{123}
     \subitem Adapting Proof Automation to Adapt Proofs, 
 		\hyperpage{6, 7}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{6, 7}
     \subitem Proof Repair across Type Equivalences, \hyperpage{6, 7}
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
 		\hyperpage{6--9}, \hyperpage{11}, \hyperpage{13}, 
-		\hyperpage{18}, \hyperpage{62}, \hyperpage{105, 106}, 
-		\hyperpage{111}, \hyperpage{114}, \hyperpage{122}
+		\hyperpage{18}, \hyperpage{62}, \hyperpage{107, 108}, 
+		\hyperpage{113}, \hyperpage{116}, \hyperpage{124}
   \item Proof Repair, \hyperpage{2}, \hyperpage{4}, \hyperpage{9}, 
 		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
-		\hyperpage{61}, \hyperpage{108}, \hyperpage{119}
+		\hyperpage{61}, \hyperpage{110}, \hyperpage{121}
     \subitem Across Type Equivalences, \hyperpage{4, 5}, \hyperpage{28}, 
 		\hyperpage{61}
       \subsubitem Automatic Configuration, \hyperpage{62}, 
 		\hyperpage{64}, \hyperpage{66}, \hyperpage{68}, 
 		\hyperpage{70}, \hyperpage{72}, \hyperpage{78}, 
-		\hyperpage{88}
+		\hyperpage{89}
       \subsubitem Configuration, \hyperpage{61}, \hyperpage{70}, 
 		\hyperpage{74}
       \subsubitem Dependent Constructors, \hyperpage{71}, 
-		\hyperpage{83}, \hyperpage{87}
+		\hyperpage{83}, \hyperpage{88}
       \subsubitem Dependent Eliminators, \hyperpage{71}, \hyperpage{84}, 
-		\hyperpage{87}
+		\hyperpage{88}
       \subsubitem Eta, \hyperpage{71, 72}, \hyperpage{84}, 
-		\hyperpage{87}, \hyperpage{110}
+		\hyperpage{88}, \hyperpage{112}
       \subsubitem Iota, \hyperpage{71--73}, \hyperpage{84}, 
-		\hyperpage{87}, \hyperpage{110, 111}
+		\hyperpage{88}, \hyperpage{112, 113}
       \subsubitem Manual Configuration, \hyperpage{61}, \hyperpage{64}, 
 		\hyperpage{66}, \hyperpage{68}, \hyperpage{70}, 
-		\hyperpage{88}
-      \subsubitem Unification Heuristics, \hyperpage{86, 87}, 
-		\hyperpage{98}
+		\hyperpage{89}
+      \subsubitem Unification Heuristics, \hyperpage{85}, 
+		\hyperpage{88}, \hyperpage{99}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
-		\hyperpage{115}
+		\hyperpage{117}
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
 		\hyperpage{31}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{43}, 
 		\hyperpage{46, 47}, \hyperpage{57, 58}
       \subsubitem Generalization, \hyperpage{36}, \hyperpage{41}, 
 		\hyperpage{46}, \hyperpage{51}, \hyperpage{57, 58}, 
-		\hyperpage{110}
+		\hyperpage{112}
       \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}, 
 		\hyperpage{55}, \hyperpage{58}
       \subsubitem Inversion, \hyperpage{36}, \hyperpage{42}, 
@@ -287,72 +288,72 @@
 
   \item Results, \hyperpage{4}, \hyperpage{28}
     \subitem Case Studies, \hyperpage{5}, \hyperpage{28, 29}, 
-		\hyperpage{53}, \hyperpage{97}, \hyperpage{119}
+		\hyperpage{53}, \hyperpage{97}, \hyperpage{121}
     \subitem Design, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem Proof Term Transformations, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{35, 36}, \hyperpage{40}, 
 		\hyperpage{46}, \hyperpage{55}, \hyperpage{57}, 
-		\hyperpage{64}, \hyperpage{70}, \hyperpage{86}, 
-		\hyperpage{90}, \hyperpage{110}, \hyperpage{119}, 
-		\hyperpage{122}
+		\hyperpage{64}, \hyperpage{70}, \hyperpage{85}, 
+		\hyperpage{91}, \hyperpage{112}, \hyperpage{121}, 
+		\hyperpage{124}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34--37}, \hyperpage{45}, 
 		\hyperpage{50}, \hyperpage{55}, \hyperpage{57, 58}, 
 		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
-		\hyperpage{89}, \hyperpage{110, 111}, 
-		\hyperpage{115, 116}, \hyperpage{119}, \hyperpage{122}
+		\hyperpage{90}, \hyperpage{112, 113}, 
+		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{124}
     \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
-		\hyperpage{61}, \hyperpage{64}, \hyperpage{88}
+		\hyperpage{61}, \hyperpage{64}, \hyperpage{89}
       \subsubitem \sysnamelong Plugin Suite, \hyperpage{5}, 
 		\hyperpage{29}, \hyperpage{44}, \hyperpage{61}, 
-		\hyperpage{88}, \hyperpage{119}
-      \subsubitem \toolnamec Plugin, \hyperpage{61}, \hyperpage{88}
+		\hyperpage{89}, \hyperpage{121}
+      \subsubitem \toolnamec Plugin, \hyperpage{61}, \hyperpage{89}
 
   \indexspace
 
   \item Thesis Statement
     \subitem Formal, \hyperpage{3}, \hyperpage{26}, \hyperpage{31}, 
-		\hyperpage{59}, \hyperpage{64}, \hyperpage{104}
+		\hyperpage{59}, \hyperpage{64}, \hyperpage{105}
     \subitem Informal, \hyperpage{1, 2}, \hyperpage{59}, 
-		\hyperpage{104}, \hyperpage{119}
+		\hyperpage{105}, \hyperpage{121}
 
   \indexspace
 
   \item Verification, \hyperpage{1, 2}, \hyperpage{9}, \hyperpage{22}, 
-		\hyperpage{105}, \hyperpage{119}
-    \subitem Continuous Integration, \hyperpage{117}, \hyperpage{121}
+		\hyperpage{107}, \hyperpage{121}
+    \subitem Continuous Integration, \hyperpage{119}, \hyperpage{123}
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
-		\hyperpage{88}
+		\hyperpage{89}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
-		\hyperpage{48}, \hyperpage{61}, \hyperpage{88}
-    \subitem de Bruijn Criterion, \hyperpage{105, 106}
-    \subitem Integrated Development Environment, \hyperpage{109}, 
-		\hyperpage{121}
+		\hyperpage{48}, \hyperpage{61}, \hyperpage{89}
+    \subitem de Bruijn Criterion, \hyperpage{107, 108}
+    \subitem Integrated Development Environment, \hyperpage{111}, 
+		\hyperpage{123}
     \subitem Kernel, \hyperpage{2}, \hyperpage{4}, \hyperpage{11}, 
-		\hyperpage{14}, \hyperpage{16}, \hyperpage{105--107}
-    \subitem Mixed Methods Verification, \hyperpage{122, 123}
+		\hyperpage{14}, \hyperpage{16}, \hyperpage{107--109}
+    \subitem Mixed Methods Verification, \hyperpage{124, 125}
     \subitem Proof Assistants, \hyperpage{2, 3}, \hyperpage{6}, 
-		\hyperpage{9, 10}, \hyperpage{105}
-      \subsubitem Agda, \hyperpage{2}, \hyperpage{105--107}, 
-		\hyperpage{109}, \hyperpage{120}
+		\hyperpage{9, 10}, \hyperpage{107}
+      \subsubitem Agda, \hyperpage{2}, \hyperpage{107--109}, 
+		\hyperpage{111}, \hyperpage{122}
       \subsubitem Coq, \hyperpage{2, 3}, \hyperpage{6}, \hyperpage{10}, 
-		\hyperpage{15}, \hyperpage{105, 106}, \hyperpage{113}, 
-		\hyperpage{120}
-      \subsubitem Cubical Agda, \hyperpage{106}, \hyperpage{112}
-      \subsubitem HOL Light, \hyperpage{2}, \hyperpage{105, 106}
-      \subsubitem HOL4, \hyperpage{2}, \hyperpage{105, 106}
-      \subsubitem Isabelle/HOL, \hyperpage{2}, \hyperpage{105--107}, 
-		\hyperpage{110}, \hyperpage{112}, \hyperpage{115}, 
-		\hyperpage{120}
-      \subsubitem Lean, \hyperpage{2}, \hyperpage{105, 106}, 
-		\hyperpage{112}, \hyperpage{120, 121}
-      \subsubitem NuPRL, \hyperpage{2}, \hyperpage{105}
-      \subsubitem RedPRL, \hyperpage{106}
+		\hyperpage{15}, \hyperpage{107, 108}, \hyperpage{115}, 
+		\hyperpage{122}
+      \subsubitem Cubical Agda, \hyperpage{108}, \hyperpage{114}
+      \subsubitem HOL Light, \hyperpage{2}, \hyperpage{107, 108}
+      \subsubitem HOL4, \hyperpage{2}, \hyperpage{107, 108}
+      \subsubitem Isabelle/HOL, \hyperpage{2}, \hyperpage{107--109}, 
+		\hyperpage{112}, \hyperpage{114}, \hyperpage{117}, 
+		\hyperpage{122}
+      \subsubitem Lean, \hyperpage{2}, \hyperpage{107, 108}, 
+		\hyperpage{114}, \hyperpage{122, 123}
+      \subsubitem NuPRL, \hyperpage{2}, \hyperpage{107}
+      \subsubitem RedPRL, \hyperpage{108}
     \subitem Proof Automation, \hyperpage{22}, \hyperpage{26}, 
-		\hyperpage{29}, \hyperpage{32}, \hyperpage{107, 108}
+		\hyperpage{29}, \hyperpage{32}, \hyperpage{109, 110}
     \subitem Proof Development, \hyperpage{10}
       \subsubitem Program, \hyperpage{2}, \hyperpage{9--11}, 
 		\hyperpage{22}
@@ -362,30 +363,30 @@
 		\hyperpage{12}, \hyperpage{22}
     \subitem Proof Engineering, \hyperpage{2}, \hyperpage{6}, 
 		\hyperpage{9}, \hyperpage{48}, \hyperpage{62}, 
-		\hyperpage{105}
+		\hyperpage{107}
     \subitem Proof Maintenance, \hyperpage{22}
-    \subitem Proof Object, \hyperpage{106}
-      \subsubitem Ephemeral Proof Object, \hyperpage{106}, 
-		\hyperpage{120}
-      \subsubitem Explicit Proof Object, \hyperpage{106}
+    \subitem Proof Object, \hyperpage{108}
+      \subsubitem Ephemeral Proof Object, \hyperpage{108}, 
+		\hyperpage{122}
+      \subsubitem Explicit Proof Object, \hyperpage{108}
     \subitem Proof Script, \hyperpage{3}, \hyperpage{10}, 
-		\hyperpage{14, 15}, \hyperpage{64}, \hyperpage{111}
+		\hyperpage{14, 15}, \hyperpage{64}, \hyperpage{113}
       \subsubitem Ltac, \hyperpage{11}, \hyperpage{13}, \hyperpage{15}, 
-		\hyperpage{22}, \hyperpage{27}, \hyperpage{92}, 
-		\hyperpage{105}, \hyperpage{107}
+		\hyperpage{22}, \hyperpage{27}, \hyperpage{93}, 
+		\hyperpage{107}, \hyperpage{109}
       \subsubitem Tactics, \hyperpage{3}, \hyperpage{10}, 
 		\hyperpage{13}, \hyperpage{22}, \hyperpage{27}, 
-		\hyperpage{31}, \hyperpage{92}, \hyperpage{105}, 
-		\hyperpage{107, 108}
+		\hyperpage{31}, \hyperpage{93}, \hyperpage{107}, 
+		\hyperpage{109, 110}
     \subitem Proof Term, \hyperpage{3}, \hyperpage{11}, 
 		\hyperpage{14--16}, \hyperpage{27}, \hyperpage{64}, 
-		\hyperpage{92}
+		\hyperpage{93}
       \subsubitem Gallina, \hyperpage{10--13}, \hyperpage{15, 16}, 
 		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{37}, 
-		\hyperpage{64}, \hyperpage{92}, \hyperpage{105, 106}, 
-		\hyperpage{109}
+		\hyperpage{64}, \hyperpage{93}, \hyperpage{107, 108}, 
+		\hyperpage{111}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{31}, 
 		\hyperpage{44}, \hyperpage{48}, \hyperpage{65}, 
-		\hyperpage{69}, \hyperpage{87, 88}, \hyperpage{91}
+		\hyperpage{69}, \hyperpage{88, 89}, \hyperpage{92}
 
 \end{theindex}

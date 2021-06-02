@@ -2616,12 +2616,12 @@
 \KAuxDeclaredScopeTag {fig:appswap1}
 \KAuxNewLinkScopetagInstance {fig:appswap1}{document}
 
-\KAuxFileAt {transformation.tex}{132}
+\KAuxFileAt {transformation.tex}{122}
 \KAuxAutorefTarget {default}{base}{unification heuristics}
 \KAuxDeclaredScopeTag {sec:trans-unification}
 \KAuxNewLinkScopetagInstance {sec:trans-unification}{document}
 
-\KAuxFileAt {transformation.tex}{160}
+\KAuxFileAt {transformation.tex}{150}
 \KAuxAutorefTarget {default}{base}{unification heuristics}
 \KAuxDeclaredScopeTag {sec:trans-correctness}
 \KAuxNewLinkScopetagInstance {sec:trans-correctness}{document}

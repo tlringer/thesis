@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  1 JUN 2021 21:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2223,14 +2223,14 @@ lj/m/n/10.95 (-20) The first search pro-ce-dure dis-cov-ers equiv-
 
 [78] [79]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 548.
+LaTeX Font Warning: Command \small invalid in math mode on input line 549.
 
 [80] [81] [82]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 685.
+LaTeX Font Warning: Command \small invalid in math mode on input line 686.
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 725.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 726.
 [83] [84]) (./often/transformation.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
@@ -2370,7 +2370,7 @@ Overfull \hbox (21.43654pt too wide) in paragraph at lines 172--174
 
 
 Overfull \hbox (3.33537pt too wide) in paragraph at lines 174--177
-[]| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []67[], []69[], []75[], []106[],
+[]| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []67[], []69[], []74[], []106[],
  []
 
 
@@ -2551,7 +2551,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
 Here is how much of TeX's memory you used:
  51940 strings out of 492609
  1051333 string characters out of 6129033
- 1328981 words of memory out of 5000000
+ 1328986 words of memory out of 5000000
  52383 multiletter control sequences out of 15000+600000
  679617 words of font info for 882 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2578,10 +2578,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (162 pages, 1874475 bytes).
+Output written on uwthesis.pdf (162 pages, 1874805 bytes).
 PDF statistics:
- 4996 PDF objects out of 5155 (max. 8388607)
- 4707 compressed objects within 48 object streams
+ 4999 PDF objects out of 5155 (max. 8388607)
+ 4710 compressed objects within 48 object streams
  1620 named destinations out of 1728 (max. 500000)
  105817 words of extra memory for PDF output out of 106986 (max. 10000000)
 

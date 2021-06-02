@@ -430,7 +430,7 @@ I will also explain how the search procedures are implemented.
 \paragraph{Algebraic Ornaments}
 The first search procedure discovers equivalences that correspond to \intro{algebraic ornaments}.
 An algebraic ornament relates an \kl{inductive type} to an indexed version of that type,
-where the new index is fully determined by a unique fold over \Aa (I call this fold the \intro{indexer}). 
+where the new index is fully determined by a fold over \Aa (I call this fold the \intro{indexer}). 
 For example, \lstinline{vector} is exactly \lstinline{list} with a new index of type \lstinline{nat},
 where the new index is fully determined by the \lstinline{length} function (recall Figure~\ref{fig:listtovect} on page~\pageref{fig:listtovect}).
 The equivalence that we already saw in Section~\ref{sec:pi-scope} follows from this:
@@ -460,7 +460,7 @@ The second configuration uses a search procedure that discovers how to unpack ve
 The first configuration nicely demonstrates how differencing works, so let us look at this in detail.
 
 \paragraph{Differencing for Algebraic Ornaments}
-Assume the existence of \kl{inductive types} \Aa and \AI, related by an \kl{algebraic ornament} with the index of type \I.
+Assume \kl{inductive types} \Aa and \AI, related by an \kl{algebraic ornament} with the index of type \I.
 In the scope of this thesis, further assume that \Aa and \I are not indexed (\kl{dependent}) types.\footnote{The original paper that this is from lets all of \Aa,
 \AI, and \I be indexed inductive types, with the new index of type \I appearing anywhere within the list of indices of \AI;
 the implementation makes the same decision.
@@ -469,7 +469,7 @@ even though handling them is one of the trickiest parts of implementing an algor
 In this thesis, however, I decided to simplify the presentation and assume the types are not indexed,
 and so the new index is the only index of \AI.
 I do recommend checking out the original paper if you would really like to implement something like this over indexed types---it is formalized
-those who are \textit{sufficiently fanatical}.}
+for those who are \textit{sufficiently fanatical}.}
 Then there is a \kl{type equivalence}:
 
 \begin{lstlisting}
@@ -493,7 +493,8 @@ some new type \AI. Differencing inverts this process for algebraic ornaments: gi
 it searches for the configuration that induces the ornamental promotion isomorphism between them.
 This is possible for algebraic ornaments precisely because the indexer is extensionally unique.
 For example, all possible indexers for \lstinline{list} and \lstinline{vector} must compute
-the length of a list; if we were to try doubling the length instead, we would not be able to satisfy the equivalence.
+the length of a list; if we were to try doubling the length instead, we would not be able to satisfy the equivalence,
+since no lists would map to the vectors of odd lengths.
 
 % DEVOID 4.1 mostly unchanged
 
@@ -537,7 +538,7 @@ the derivations for generating \lstinline{g} are omitted.
 
 \subsubsection{Differencing for the Indexer}
 
-Then differencing algorithm generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
+The differencing algorithm generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
 which consists of three judgments: one to generate the \kl{motive}, one to generate each case,
 and one to compose the motive and cases.
 
@@ -752,7 +753,7 @@ To derive this, differencing applies \lstinline{f} to the conclusion of the cons
       ((Constr (1, vector T)) t ($\pi$ l) (f l))).
 \end{lstlisting}
 It then lifts the hypothesis of type \lstinline{list T}, and removes remaining references to the indexer $\pi$ and to \lstinline{f},
-replacing then instead with the projections $\pi_l$ and $\pi_r$.
+replacing them instead with the projections $\pi_l$ and $\pi_r$.
 
 Deriving \kl{\lstinline{DepElim}} over \B works similarly, except that it lifts not just the hypotheses of types \Aa, but 
 also the motive and inductive hypotheses.

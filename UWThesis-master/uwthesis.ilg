@@ -30,11 +30,11 @@ Scanning input file uwthesis.idx....
    -- Extra `!' at position 45 of first argument.
 !! Input index error (file = uwthesis.idx, line = 638):
    -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 639):
-   -- Extra `!' at position 45 of first argument.
-!! Input index error (file = uwthesis.idx, line = 640):
-   -- Extra `!' at position 45 of first argument.
 
+!! Input index error (file = uwthesis.idx, line = 641):
+   -- Extra `!' at position 45 of first argument.
+!! Input index error (file = uwthesis.idx, line = 642):
+   -- Extra `!' at position 45 of first argument.
 !! Input index error (file = uwthesis.idx, line = 643):
    -- Extra `!' at position 45 of first argument.
 
@@ -56,7 +56,7 @@ Scanning input file uwthesis.idx....
 !! Input index error (file = uwthesis.idx, line = 857):
    -- Extra `!' at position 45 of first argument.
 done (916 entries accepted, 20 rejected).
-Sorting entries..........done (9901 comparisons).
+Sorting entries..........done (10206 comparisons).
 Generating output file uwthesis.ind....done (391 lines written, 0 warnings).
 Output written in uwthesis.ind.
 Transcript written in uwthesis.ilg.

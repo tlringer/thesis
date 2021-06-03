@@ -2,41 +2,57 @@
 \label{sec:more}
 
 In this thesis, I have shown you two kinds of proof repair: \kl{by example} and \kl{across equivalences}.
-The corresponding tools together support just a small chunk of the repair scenarios that proof engineers encounter---albeit a practical chunk.
-Solving proof repair hinges on broadening the scope of changes and terms that these tools can support.
+The corresponding tools together support just a small chunk of the proof repair scenarios that proof engineers encounter---albeit a practical chunk.
+Solving proof repair more generally hinges on broadening the scope of changes and terms that proof repair tools can support.
 
 \paragraph{Scope of Changes}
-Proof repair tools should ideally support changes in datatypes that correspond to arbitrary relations, not just equivalences.
-The tool CoqEAL~\cite{cohen:hal-01113453} may help with this.
-CoqEAL already supports relations that are not equivalences, though only for functions and not yet for proofs;
-extending CoqEAL and integrating it with \toolnamec is a natural first step toward supporting arbitrary relations.
-This may help with supporting changes in datatypes that cannot be expressed as equivalences without quotient types~\cite{angiuli2020internalizing}, which Coq lacks.
+The \toolnamec transformation supports equivalences; ideally, it should support arbitrary relations.
+The refinement framework CoqEAL~\cite{cohen:hal-01113453} already supports relations that are not equivalences, though only for functions and not yet for proofs;
+extending CoqEAL and integrating it with the \toolnamec transformation is a natural first step toward supporting arbitrary relations.
+Integrating CoqEAL may help with supporting changes in datatypes that---without quotient types---cannot be expressed as equivalences~\cite{angiuli2020internalizing}.
 It may also help with supporting changes that can be expressed as equivalences only with some resistance,
 like the change adding a constructor in Figure~\ref{fig:replica} on page~\pageref{fig:replica},
-or any of the many similar changes extending inductive types in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study data.
-Integrating CoqEAL may also help support changes in algorithms, like replacing slow unary addition with fast binary addition---a step
-left to the proof engineer with \toolnamec.
+or any of the many similar changes in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study data.
+And it may help with supporting changes in algorithms, like replacing slow unary addition with fast binary addition---a step still
+left to the proof engineer.
 
-None of the repair tools so far support changes in the implementation of tactics.
+Differencing for an arbitrary change is of course undecidable, but that does not mean each proof engineer should resign herself to only the differencing 
+algorithms that ship with the proof repair tools she uses.
+Proof repair tools should make it easy for each proof engineer to implement new differencing algorithms to support the classes of changes that matter to her.
+\sysnamelong lets only those proof engineers who are OCaml and Coq experts implement these differencing algorithms;
+future proof repair tools ought to expose frameworks that help even non-experts do the same.
+
+%None of the repair tools so far support changes in the implementation of tactics.
 Proof repair tools should ideally help proof engineers fix broken proofs in response to changes in the implementations of tactics,
 and should even help proof engineers repair the implementations of tactics themselves.
 The same holds for changes in notation.
 Supporting either of these will require innovations beyond those seen in this thesis.
 
-% TODO!
-%Extending proof repair tools with new search procedures is currently very difficult
-%custom changes: some way of making extensible without forcing people to learn OCaml. custom unification heuristics to better handle
-%things like nat to bin (honestly though that one may be doable by always reifying definitional equalities).
-%obv. prototype could improve too.
-%more search procedures, especially capturing common patterns.
-
 \paragraph{Scope of Terms}
-% TODO!
-basically Coq has more features than we support natively. fixpoints: some of these now but whatever. more general transformation. or direct support? 
-pattern matching: direct support? or postprocessing step for the end, which for now is manual. (compiles down but not to exactly the original term).
-nested induction: still hard for PUMPKIN PATCH prototype tbh. Not a problem at all for PUMPKIN Pi though.
-coinduction \& cofixpoints: this is a thing. 
-better dealing with evars.
+Both \sysname and \toolnamec place some restrictions on \kl{Gallina} terms.
+For example, the preprocessing tool by \kl{Nate} translates only \textit{some} fixpoints to \kl{eliminators},
+even though in principle it ought to be possible to translate \textit{all} fixpoints to eliminators (Section~\ref{sec:pi-details-trans}).
+Furthermore, there is not yet a corresponding \textit{postprocessing} tool to get back from transformed eliminators to fixpoints.
+That is, even though eliminators in Gallina \textit{do} reduce to fixpoints, preprocessing a fixpoint and then reducing the result does not necessarily 
+produce a fixpoint that is \kl{definitionally equal} to the original. Right now, the step of getting from a proof about the preprocessed term
+back to a proof about the original term---while easy in my experience---is left to the proof engineer.
+A postprocessing tool ought to automate this step with strong guarantees and a smooth user experience.
+
+An alternative way to support pattern matching and fixpoints is to support them in the proof term transformations natively.
+I have found reasoning about pattern matching and fixpoints more difficult than reasoning about eliminators,
+but of course not everyone is me.
+This may prove not to be so difficult, and if so, it may be an approach worth taking in a future repair tool.
+
+Neither \sysname nor \toolnamec supports the two features that make it possible
+to construct infinite streams of data in Gallina:
+cofixpoints and coinduction.
+Differencing in \sysname struggles to reason about nested induction.
+The \toolnamec transformation sometimes fails to reason properly about terms with existential variables,
+which may show up in terms when the \kl{unification} step is unable to fully resolve parameters and indices.
+And \toolnamec does not yet make it possible to write custom unification heuristics, and so
+sometimes forces proof engineers to write manual annotations instead.
+Supporting all of these ought to help build an even more useful proof repair tool---so that we may
+look to the next era.
 
 \section{The Next Era: Proof Engineering for All}
 \label{sec:forall}

@@ -83,7 +83,7 @@ One possible way to apply the same techniques to proof assistants with ephemeral
 \item Apply differencing and transformations over those objects.
 \item Decompile the transformed proof objects to automation.
 \end{enumerate}
-Chapter~\ref{chapt:conclusions} describes a potential specific instance of this workflow for \kl{Isabelle/HOL}.
+Section~\ref{sec:forall} describes a potential specific instance of this workflow for \kl{Isabelle/HOL}.
 
 \paragraph{Automation} %Like different tactic languages.
 Typically, layers of \kl{proof automation} act as an interface between the proof engineer and the \kl{kernel}.
@@ -281,7 +281,7 @@ engineers~\cite{magaud2000changing, Barthe2001, magaud2003changing}.
 Particular successful is the widely used Transfer~\cite{Huffman2013} package, which supports proof reuse in Isabelle/HOL. % TODO somewhere discuss other proof assistants
 Transfer works by combining a set of extensible transfer rules with a type inference algorithm.
 Transfer is not yet suitable for repair, as it necessitates maintaining references to both datatypes.
-Chapter~\ref{chapt:conclusions} describes one possible path building on Transfer to implement a proof repair tool for Isabelle/HOL.
+Section~\ref{sec:forall} describes one possible path building on Transfer to implement a proof repair tool for Isabelle/HOL.
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 
 The \toolnamec transformation implements a particular kind of transfer called automatic \kl{transport}.
@@ -343,7 +343,7 @@ A number of modern rewrite systems use data structures called \textit{e-graphs}~
 E-graphs have been implemented in \kl{Lean}~\cite{selsam:lean} (assuming \kl{UIP}),
 and in \kl{Cubical Agda}~\cite{egraph6} (implying \kl{univalence}).
 Similar implementations of e-graphs could help improve \toolnamec and similar tools to support
-type-directed search and more (see Chapter~\ref{chapt:conclusions}).
+type-directed search and more (see Section~\ref{sec:forall}).
 
 \section{Program Repair}
 \label{sec:repair}
@@ -527,7 +527,7 @@ Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a 
 All of these may be useful for improving semantic differencing.
 
 Some of the program repair tools above use machine learning to generalize examples---I discuss some ideas combining proof repair
-with machine learning in Chapter~\ref{chapt:conclusions}.
+with machine learning in Section~\ref{sec:forall}.
 Several of the tools identify examples from code repositories and libraries.
 These tools may offer some insights for how to break down the large composite changes typically found in static artifacts or in code repositories
 into smaller incremental changes like those made during development in the \contour[2]{violet}{\kl{\textsc{REPLica}}} user study.

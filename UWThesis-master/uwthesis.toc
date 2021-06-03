@@ -217,16 +217,16 @@
 \contentsline {section}{\numberline {6.1}Future Work: Patching the Gaps of Repair}{121}{section.6.1}% 
 \contentsline {paragraph}{Scope of Changes}{122}{section.6.1}% 
 \contentsline {paragraph}{Scope of Terms}{122}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}The Next Era: Proof Engineering for All}{122}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}The Next Era: Proof Engineering for All}{123}{section.6.2}% 
 \contentsline {paragraph}{Availability}{123}{section.6.2}% 
-\contentsline {paragraph}{Power}{123}{section.6.2}% 
-\contentsline {paragraph}{Natural Use}{123}{section.6.2}% 
+\contentsline {paragraph}{Power}{124}{section.6.2}% 
+\contentsline {paragraph}{Natural Use}{124}{section.6.2}% 
 \contentsline {paragraph}{Scalable Automation}{124}{section.6.2}% 
-\contentsline {paragraph}{Smooth Integration}{124}{section.6.2}% 
-\contentsline {paragraph}{User Feedback}{124}{section.6.2}% 
+\contentsline {paragraph}{Smooth Integration}{125}{section.6.2}% 
+\contentsline {paragraph}{User Feedback}{125}{section.6.2}% 
 \contentsline {paragraph}{Familiar Tools}{125}{section.6.2}% 
-\contentsline {paragraph}{Tool-Assisted Redesign}{125}{section.6.2}% 
-\contentsline {paragraph}{Tool-Assisted Robustness}{125}{section.6.2}% 
+\contentsline {paragraph}{Tool-Assisted Redesign}{126}{section.6.2}% 
+\contentsline {paragraph}{Tool-Assisted Robustness}{126}{section.6.2}% 
 \contentsline {paragraph}{Machine Learning}{126}{section.6.2}% 
-\contentsline {paragraph}{Cryptography}{126}{section.6.2}% 
+\contentsline {paragraph}{Cryptography}{127}{section.6.2}% 
 \contentsline {paragraph}{Medicine}{127}{section.6.2}% 

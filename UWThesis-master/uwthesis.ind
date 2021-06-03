@@ -11,10 +11,11 @@
       \subsubitem Milos Gligoric, \hyperpage{7}
       \subsubitem Nathaniel Yazdani, \hyperpage{xiv}, \hyperpage{7, 8}, 
 		\hyperpage{18}, \hyperpage{64}, \hyperpage{89}, 
-		\hyperpage{91}, \hyperpage{97}, \hyperpage{102, 103}
+		\hyperpage{91}, \hyperpage{97}, \hyperpage{102, 103}, 
+		\hyperpage{122}
       \subsubitem RanDair Porter, \hyperpage{xiv}, \hyperpage{7, 8}, 
 		\hyperpage{19}, \hyperpage{22}, \hyperpage{93}, 
-		\hyperpage{95, 96}, \hyperpage{123}
+		\hyperpage{95, 96}, \hyperpage{124}
       \subsubitem Sorin Lerner, \hyperpage{7}
     \subitem Companies
       \subsubitem Amazon, \hyperpage{xii}
@@ -96,20 +97,20 @@
       \subsubitem David van Horn, \hyperpage{xv}
       \subsubitem Edward Z. Yang, \hyperpage{xv}, \hyperpage{44}
       \subsubitem Emery Berger, \hyperpage{xv}
-      \subsubitem Emily First, \hyperpage{123}
+      \subsubitem Emily First, \hyperpage{124}
       \subsubitem Gerwin Klein, \hyperpage{xv}
       \subsubitem James Decker, \hyperpage{xv}
       \subsubitem Jon Sterling, \hyperpage{xv}
       \subsubitem Jonathan Aldrich, \hyperpage{xv}
       \subsubitem Kenny Foner, \hyperpage{xv}
       \subsubitem Lindsey Kuper, \hyperpage{xv}
-      \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{126}
-      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{126}
+      \subsubitem Matt Might, \hyperpage{xv}, \hyperpage{127}
+      \subsubitem Matthew Dwyer, \hyperpage{xv}, \hyperpage{127}
       \subsubitem Michael Hicks, \hyperpage{xv}
       \subsubitem Michael Shulman, \hyperpage{xv}, \hyperpage{75}
       \subsubitem Nate Foster, \hyperpage{xv}
       \subsubitem Stephanie Weirich, \hyperpage{xv}
-      \subsubitem Yuriy Brun, \hyperpage{123}
+      \subsubitem Yuriy Brun, \hyperpage{124}
     \subitem Running Community
       \subsubitem Club Northwest, \hyperpage{xv}
       \subsubitem Race Condition Running, \hyperpage{xv}
@@ -138,7 +139,7 @@
       \subsubitem Doug Woos, \hyperpage{xiv}
       \subsubitem Gus Smith, \hyperpage{xiv}
       \subsubitem Jacob Van Geffen, \hyperpage{xiv}
-      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{125}
+      \subsubitem James Wilcox, \hyperpage{xiv}, \hyperpage{126}
       \subsubitem Jared Roesch, \hyperpage{xiv}
       \subsubitem Joe Redmond, \hyperpage{xiv}
       \subsubitem John Toman, \hyperpage{xiv}
@@ -194,7 +195,7 @@
       \subsubitem Eliminators, \hyperpage{16, 17}, \hyperpage{21}, 
 		\hyperpage{37}, \hyperpage{69, 70}, \hyperpage{74}, 
 		\hyperpage{77}, \hyperpage{99}, \hyperpage{104}, 
-		\hyperpage{113}
+		\hyperpage{113}, \hyperpage{122}
       \subsubitem Inductive Hypothesis, \hyperpage{17}, \hyperpage{38}, 
 		\hyperpage{40}, \hyperpage{77}, \hyperpage{82}
       \subsubitem Motive, \hyperpage{17}, \hyperpage{35}, 
@@ -226,7 +227,7 @@
     \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
 		\hyperpage{6--8}, \hyperpage{24}, \hyperpage{61}, 
 		\hyperpage{98, 99}, \hyperpage{110}, \hyperpage{117}, 
-		\hyperpage{119}, \hyperpage{124}
+		\hyperpage{119}, \hyperpage{122}, \hyperpage{125}
     \subitem Adapting Proof Automation to Adapt Proofs, 
 		\hyperpage{6, 7}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{6, 7}
@@ -234,7 +235,7 @@
     \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
 		\hyperpage{6--9}, \hyperpage{11}, \hyperpage{13}, 
 		\hyperpage{18}, \hyperpage{62}, \hyperpage{107, 108}, 
-		\hyperpage{113}, \hyperpage{116}, \hyperpage{124}
+		\hyperpage{113}, \hyperpage{116}, \hyperpage{125}
   \item Proof Repair, \hyperpage{2}, \hyperpage{4}, \hyperpage{9}, 
 		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
 		\hyperpage{61}, \hyperpage{110}, \hyperpage{121}
@@ -258,7 +259,7 @@
 		\hyperpage{66}, \hyperpage{68}, \hyperpage{70}, 
 		\hyperpage{89}
       \subsubitem Unification Heuristics, \hyperpage{85}, 
-		\hyperpage{88}, \hyperpage{99}
+		\hyperpage{88}, \hyperpage{99}, \hyperpage{123}
     \subitem By Example, \hyperpage{4, 5}, \hyperpage{28, 29}, 
 		\hyperpage{117}, \hyperpage{121}
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
@@ -296,14 +297,14 @@
 		\hyperpage{46}, \hyperpage{55}, \hyperpage{57}, 
 		\hyperpage{64}, \hyperpage{70}, \hyperpage{85}, 
 		\hyperpage{91}, \hyperpage{112}, \hyperpage{121}, 
-		\hyperpage{125}
+		\hyperpage{126}
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34--37}, \hyperpage{45}, 
 		\hyperpage{50}, \hyperpage{55}, \hyperpage{57, 58}, 
 		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
 		\hyperpage{90}, \hyperpage{112, 113}, 
-		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{125}
+		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
 		\hyperpage{61}, \hyperpage{64}, \hyperpage{89}
@@ -323,25 +324,25 @@
   \indexspace
 
   \item Verification, \hyperpage{1, 2}, \hyperpage{9}, \hyperpage{22}, 
-		\hyperpage{107}, \hyperpage{122}
+		\hyperpage{107}, \hyperpage{123}
     \subitem Continuous Integration, \hyperpage{119}, \hyperpage{124}
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
 		\hyperpage{89}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
 		\hyperpage{48}, \hyperpage{61}, \hyperpage{89}
     \subitem de Bruijn Criterion, \hyperpage{107, 108}
-    \subitem Integrated Development Environment, \hyperpage{111}, 
+    \subitem Integrated Development Environment, \hyperpage{110}, 
 		\hyperpage{124}
     \subitem Kernel, \hyperpage{2}, \hyperpage{4}, \hyperpage{11}, 
 		\hyperpage{14}, \hyperpage{16}, \hyperpage{107--109}
-    \subitem Mixed Methods Verification, \hyperpage{124, 125}
+    \subitem Mixed Methods Verification, \hyperpage{125, 126}
     \subitem Proof Assistants, \hyperpage{2, 3}, \hyperpage{6}, 
 		\hyperpage{9, 10}, \hyperpage{107}
       \subsubitem Agda, \hyperpage{2}, \hyperpage{107--109}, 
 		\hyperpage{111}, \hyperpage{123}
       \subsubitem Coq, \hyperpage{2, 3}, \hyperpage{6}, \hyperpage{10}, 
 		\hyperpage{15}, \hyperpage{107, 108}, \hyperpage{115}, 
-		\hyperpage{122}
+		\hyperpage{123}
       \subsubitem Cubical Agda, \hyperpage{108}, \hyperpage{114}
       \subsubitem HOL Light, \hyperpage{2}, \hyperpage{107, 108}
       \subsubitem HOL4, \hyperpage{2}, \hyperpage{107, 108}
@@ -384,7 +385,7 @@
       \subsubitem Gallina, \hyperpage{10--13}, \hyperpage{15, 16}, 
 		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{37}, 
 		\hyperpage{64}, \hyperpage{93}, \hyperpage{107, 108}, 
-		\hyperpage{111}
+		\hyperpage{111}, \hyperpage{122}
     \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{31}, 
 		\hyperpage{44}, \hyperpage{48}, \hyperpage{65}, 
 		\hyperpage{69}, \hyperpage{88, 89}, \hyperpage{92}

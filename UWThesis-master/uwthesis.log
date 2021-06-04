@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  4 JUN 2021 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  4 JUN 2021 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2090,7 +2090,7 @@ Overfull \hbox (7.31798pt too wide) in paragraph at lines 70--74
 [23]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 148.
 [24]
-<maintenance/fig/patch.png, id=932, 660.4675pt x 397.485pt>
+<maintenance/fig/patch.png, id=931, 660.4675pt x 397.485pt>
 File: maintenance/fig/patch.png Graphic file (type png)
 <use maintenance/fig/patch.png>
 Package pdftex.def Info: maintenance/fig/patch.png  used on input line 161.
@@ -2136,7 +2136,7 @@ Overfull \hbox (2.41995pt too wide) in paragraph at lines 108--129
  []
 
 [32] [33] [34] [35] [36]) (./repair/differencing.tex [37] [38]
-<repair/nat_ind.pdf, id=1379, 391.4625pt x 200.75pt>
+<repair/nat_ind.pdf, id=1378, 391.4625pt x 200.75pt>
 File: repair/nat_ind.pdf Graphic file (type pdf)
 <use repair/nat_ind.pdf>
 Package pdftex.def Info: repair/nat_ind.pdf  used on input line 112.
@@ -2183,7 +2183,7 @@ lim-ited classes of changes in datatypes,
 contour: Using 2 copies for `\kl {\textsc {Pumpkin}\xspace }' on input line 24.
 
 [64]
-<often/workflowa.pdf, id=2154, 799.98875pt x 348.30125pt>
+<often/workflowa.pdf, id=2153, 799.98875pt x 348.30125pt>
 File: often/workflowa.pdf Graphic file (type pdf)
 <use often/workflowa.pdf>
 Package pdftex.def Info: often/workflowa.pdf  used on input line 51.
@@ -2199,7 +2199,7 @@ proves the $\OML/zplm/m/it/10.95 ^^S$\T1/pplj/m/n/10.95 (-20) -reduction
  []
 
 [73] [74]
-<often/Diagram.pdf, id=2513, 706.80057pt x 376.52669pt>
+<often/Diagram.pdf, id=2512, 706.80057pt x 376.52669pt>
 File: often/Diagram.pdf Graphic file (type pdf)
 <use often/Diagram.pdf>
 Package pdftex.def Info: often/Diagram.pdf  used on input line 280.
@@ -2585,10 +2585,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (166 pages, 1880718 bytes).
+Output written on uwthesis.pdf (166 pages, 1880436 bytes).
 PDF statistics:
- 5049 PDF objects out of 5155 (max. 8388607)
- 4756 compressed objects within 48 object streams
+ 5048 PDF objects out of 5155 (max. 8388607)
+ 4755 compressed objects within 48 object streams
  1623 named destinations out of 1728 (max. 500000)
  105833 words of extra memory for PDF output out of 106986 (max. 10000000)
 

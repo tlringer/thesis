@@ -97,7 +97,7 @@ When a hypothesis type has changed:
   $\Gamma \vdash (\lambda (t_a : T_a) . b_a,\ \lambda (t_b : T_b) . b_b,\ G) \Downarrow_{d} \vec{t}$
 \end{lstlisting}
 differencing acts similarly, but it substitutes the changed hypothesis type in the body in order to recurse into a well-typed environment.
-It also has some additional logic to remove hypothesis that need not show up in the goal type.
+It also has some additional logic to remove hypotheses that need not show up in the goal type.
 
 \paragraph{Eliminators} % From implementation, plus some additional stuff
 Recall that \kl{inductive types} in CIC$_{\omega}$ come equipped with \kl{primitive eliminators}.

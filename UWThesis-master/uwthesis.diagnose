@@ -7,7 +7,7 @@
 2 autoreference(s) are used but not introduced.
 
 138 autoreference(s) are properly used.
-100 autoreference(s) are defined but not used.
+101 autoreference(s) are defined but not used.
 
 
 ********
@@ -158,11 +158,12 @@ index.tex:636: {Janno}{default}{base}
 index.tex:638: {Valentin Robert}{default}{base}
 index.tex:641: {Robert Rand}{default}{base}
 index.tex:650: {Hillel Wayne}{default}{base}
-index.tex:655: {Ymir Vigfusson}{default}{base}
-index.tex:657: {Benjamin Lipp}{default}{base}
-index.tex:659: {Nathanael}{default}{base}
-index.tex:661: {Daniel-Nikpayuk}{default}{base}
-index.tex:663: {Michelle Lee}{default}{base}
-index.tex:665: {Quinn Wilton}{default}{base}
+index.tex:652: {Dionna Glaze}{default}{base}
+index.tex:657: {Ymir Vigfusson}{default}{base}
+index.tex:659: {Benjamin Lipp}{default}{base}
+index.tex:661: {Nathanael}{default}{base}
+index.tex:663: {Daniel-Nikpayuk}{default}{base}
+index.tex:665: {Michelle Lee}{default}{base}
+index.tex:667: {Quinn Wilton}{default}{base}
 
 

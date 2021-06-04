@@ -121,6 +121,7 @@
     \subitem Twitter Community, \hyperpage{xv, xvi}
       \subsubitem Benjamin Lipp, \hyperpage{xvi}
       \subsubitem Daniel-Nikpayuk, \hyperpage{xvi}
+      \subsubitem Dionna Glaze, \hyperpage{xvi}
       \subsubitem Hillel Wayne, \hyperpage{xvi}
       \subsubitem Michelle Lee, \hyperpage{xvi}
       \subsubitem Nathanael, \hyperpage{xvi}
@@ -329,8 +330,9 @@
     \subitem Continuous Integration, \hyperpage{119}, \hyperpage{125}
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
 		\hyperpage{89}
-    \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
-		\hyperpage{48}, \hyperpage{61}, \hyperpage{89}
+    \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, 
+		\hyperpage{28, 29}, \hyperpage{48}, \hyperpage{61}, 
+		\hyperpage{89}
     \subitem de Bruijn Criterion, \hyperpage{107, 108}
     \subitem Integrated Development Environment, \hyperpage{111}, 
 		\hyperpage{125}

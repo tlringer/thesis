@@ -288,7 +288,8 @@ where functions:
 and:
 
 \begin{lstlisting}
-  (@\codesima{f$_1$ : $\Pi$ (t : T) (l : list T) (IHl : P l) . P ((Constr (1, list T)) t l)}@)
+  (@\codesimans{f$_1$ : $\Pi$ (t : T) (l : list T) (IHl : P l) .}@)(@\vspace{-0.04cm}@)
+          (@\codesima{P ((Constr (1, list T)) t l)}@)
 \end{lstlisting}
 prove the base and inductive cases, respectively.
 When \lstinline{l}, \lstinline{P}, \lstinline{f}$_0$, and \lstinline{f}$_1$ are arbitrary,

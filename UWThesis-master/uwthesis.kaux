@@ -2363,10 +2363,10 @@
 \KAuxDeclaredScopeTag {fig:cic-syntax}
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
 
-\KAuxFileAt {theory.tex}{301}
+\KAuxFileAt {theory.tex}{302}
 \KAuxAutorefTarget {default}{base}{$\Sigma $}
 
-\KAuxFileAt {theory.tex}{331}
+\KAuxFileAt {theory.tex}{332}
 \KAuxAutorefTarget {default}{base}{proof automation}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}

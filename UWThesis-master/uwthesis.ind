@@ -130,6 +130,7 @@
       \subsubitem Ymir Vigfusson, \hyperpage{xvi}
     \subitem UCSD ProgSys, \hyperpage{xv}
     \subitem UW PLSE, \hyperpage{xiii--xv}
+      \subsubitem Adrian Sampson, \hyperpage{xiv}
       \subsubitem Alex Polozov, \hyperpage{xiv}
       \subsubitem Amanda Swearngin, \hyperpage{xiv}
       \subsubitem Ben Kushigian, \hyperpage{xiv}
@@ -325,14 +326,14 @@
 
   \item Verification, \hyperpage{1, 2}, \hyperpage{9}, \hyperpage{22}, 
 		\hyperpage{107}, \hyperpage{123}
-    \subitem Continuous Integration, \hyperpage{119}, \hyperpage{124}
+    \subitem Continuous Integration, \hyperpage{119}, \hyperpage{125}
     \subitem Coq Commands, \hyperpage{31}, \hyperpage{65}, 
 		\hyperpage{89}
     \subitem Coq Plugins, \hyperpage{5}, \hyperpage{24}, \hyperpage{29}, 
 		\hyperpage{48}, \hyperpage{61}, \hyperpage{89}
     \subitem de Bruijn Criterion, \hyperpage{107, 108}
-    \subitem Integrated Development Environment, \hyperpage{110}, 
-		\hyperpage{124}
+    \subitem Integrated Development Environment, \hyperpage{111}, 
+		\hyperpage{125}
     \subitem Kernel, \hyperpage{2}, \hyperpage{4}, \hyperpage{11}, 
 		\hyperpage{14}, \hyperpage{16}, \hyperpage{107--109}
     \subitem Mixed Methods Verification, \hyperpage{125, 126}

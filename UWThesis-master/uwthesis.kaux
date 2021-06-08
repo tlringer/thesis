@@ -2360,10 +2360,10 @@
 \KAuxDeclaredScopeTag {fig:zip-elim}
 \KAuxNewLinkScopetagInstance {fig:zip-elim}{document}
 
-\KAuxFileAt {theory.tex}{159}
+\KAuxFileAt {theory.tex}{158}
 \KAuxAutorefTarget {default}{base}{primitive eliminators}
 
-\KAuxFileAt {theory.tex}{176}
+\KAuxFileAt {theory.tex}{175}
 \KAuxAutorefTarget {default}{base}{definitional equality}
 \KAuxAutorefTarget {default}{base}{propositional equality}
 \KAuxDeclaredScopeTag {sec:cic}
@@ -2371,20 +2371,20 @@
 \KAuxDeclaredScopeTag {fig:coc-syntax}
 \KAuxNewLinkScopetagInstance {fig:coc-syntax}{document}
 
-\KAuxFileAt {theory.tex}{225}
+\KAuxFileAt {theory.tex}{224}
 \KAuxAutorefTarget {default}{base}{Calculus of Inductive Constructions}
 
-\KAuxFileAt {theory.tex}{226}
+\KAuxFileAt {theory.tex}{225}
 \KAuxAutorefTarget {default}{base}{Calculus of Constructions}
 \KAuxAutorefTarget {default}{base}{polymorphism}
 \KAuxAutorefTarget {default}{base}{dependent types}
 \KAuxDeclaredScopeTag {fig:cic-syntax}
 \KAuxNewLinkScopetagInstance {fig:cic-syntax}{document}
 
-\KAuxFileAt {theory.tex}{302}
+\KAuxFileAt {theory.tex}{301}
 \KAuxAutorefTarget {default}{base}{$\Sigma $}
 
-\KAuxFileAt {theory.tex}{332}
+\KAuxFileAt {theory.tex}{331}
 \KAuxAutorefTarget {default}{base}{proof automation}
 \KAuxDeclaredScopeTag {sec:mot-mai}
 \KAuxNewLinkScopetagInstance {sec:mot-mai}{document}

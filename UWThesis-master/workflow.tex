@@ -26,11 +26,8 @@ a list of pairs \lstinline{(T}$_1$\lstinline{ * T}$_2$\lstinline{)}.
 For example, if the inputs are a list of numbers and a list of characters, like:
 
 \begin{lstlisting}
-  (* [1; 2; 3; 4] *)
-  l$_1$ := cons 1 (cons 2 (cons 3 (cons 4 nil))).
-
-  (* ["x"; "y"; "z"] *)
-  l$_2$ := cons "x" (cons "y" (cons "z" nil)).
+  l$_1$ := cons 1 (cons 2 (cons 3 (cons 4 nil))).$\hspace{-0.14cm}$ (* [1; 2; 3; 4] *)
+  l$_2$ := cons "x" (cons "y" (cons "z" nil)).$\hspace{-0.14cm}$ (* ["x"; "y"; "z"] *)
 \end{lstlisting}
 then \lstinline{zip} applied to those two lists returns a list of number-character pairs, like:
 
@@ -41,7 +38,7 @@ then \lstinline{zip} applied to those two lists returns a list of number-charact
 
 It is worth noting that the implementation of \lstinline{zip} has to make some decision about
 how to behave when the input lists are different lengths---that is, what to do with the extra elements,
-like the extra \lstinline{4} at the end of \lstinline{l}$_1$ above.
+like the extra \lstinline{4} at the end of \lstinline{l}$_1$.
 The decision that this implementation makes is to just ignore those extra elements.
 
 Otherwise, the implementation is fairly standard.
@@ -103,7 +100,7 @@ we then add one more word:
 then step down past that word inside of an Integrated Development Environment (IDE). % TODO expand acronym? or something?
 The IDE then drops into an interactive proof mode.
 In that proof mode, it tracks the context of the proof so far, along with the goal we want to prove.
-After each tactic we type and step past, Coq responds by refining the goal into some subgoal
+After each tactic we add and step past, Coq responds by refining the goal into some subgoal
 and updating the context.
 We continue this until no goals remain.
 The \kl{QED at Large} survey paper has a good overview of tactic languages in Coq and in other proof assistants,
@@ -139,6 +136,7 @@ From this state, we can induct over the input list (choosing names for variables
     induction l$_1$ as [|t$_1$ tl$_1$ IHtl$_1$].
 \end{lstlisting}
 This breaks into two subgoals and subcontexts: one for the base case and one for the inductive case.
+
 The base case:
 \begin{lstlisting}
   ______________________________________(1/2)
@@ -154,11 +152,11 @@ In the inductive case:
   t$_1$ : T$_1$
   tl$_1$ : list T$_1$
   IHtl$_1$ :
-    (@\ltacforall@) l$_2$ : list T$_2$,
+    (@\ltacforall@) (l$_2$ : list T$_2$),
       length tl$_1$ = length l$_2$ $\rightarrow$
       length (zip tl$_1$ l$_2$) = length tl$_1$
   ______________________________________(2/2)
-  (@\ltacforall@) l$_2$ : list T2,
+  (@\ltacforall@) (l$_2$ : list T$_2$),
     length (cons t$_1$ tl$_1$) = length l$_2$ $\rightarrow$
     length (zip (cons t$_1$ tl$_1$) l$_2$) = length (cons t$_1$ tl$_1$).
 \end{lstlisting}
@@ -205,7 +203,7 @@ fun (T$_1$ T$_2$ : Type) (l$_1$ : list T$_1$) (l$_2$ : list T$_2$) =>
     (@\codesimb{l$_1$}@)
     l$_2$.
 \end{lstlisting}
-\caption{An \kl{Ltac} \kl{proof script} (top) and a corresponding \kl{Gallina} \kl{proof term} (bottom) in \kl{Coq} that shows that the list zip function preserves its length.
+\caption{An \kl{Ltac} \kl{proof script} (top) and a corresponding \kl{Gallina} \kl{proof term} (bottom) in \kl{Coq} that shows that the list zip function preserves the lengths of the input lists.
 Some details of the proof term are omitted for simplicity.
 Corresponding parts are highlighted in the same color and annotated with the same number; the rest is boilerplate.}
 \label{fig:zip-proof}

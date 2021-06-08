@@ -91,8 +91,7 @@ A \lstinline{list} (Figure~\ref{fig:list}, left) is similar to a \lstinline{nat}
 but with two differences: \lstinline{list} is polymorphic over some type \lstinline{T} (so we can have a list of natural numbers,
 for example, written \lstinline{list nat}), and the second constructor adds a new element of the type \lstinline{T} to the front of the list.
 Otherwise, \lstinline{list} also has two constructors, \lstinline{nil} and \lstinline{cons}, where \lstinline{nil} represents the empty list,
-and \lstinline{cons} sticks a new element in front of any existing list.
-Similarly, the eliminator for \lstinline{list} (Figure~\ref{fig:list}, right) looks like the eliminator for \lstinline{nat} 
+and \lstinline{cons} sticks a new element in front of any existing list. Similarly, the eliminator for \lstinline{list} (Figure~\ref{fig:list}, right) looks like the eliminator for \lstinline{nat},
 but with an argument corresponding to the parameter \lstinline{T} over which \lstinline{list} is polymorphic,
 and with an additional argument corresponding to the new element in the inductive case.
 

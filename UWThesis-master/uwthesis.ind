@@ -242,8 +242,8 @@
   \item Proof Repair, \hyperpage{2}, \hyperpage{4}, \hyperpage{9}, 
 		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
 		\hyperpage{61}, \hyperpage{110}, \hyperpage{121}
-    \subitem Across Type Equivalences, \hyperpage{4}, \hyperpage{6}, 
-		\hyperpage{28}, \hyperpage{61}, \hyperpage{121}
+    \subitem Across Type Equivalences, \hyperpage{4, 5}, \hyperpage{28}, 
+		\hyperpage{61}, \hyperpage{121}
       \subsubitem Automatic Configuration, \hyperpage{62}, 
 		\hyperpage{64}, \hyperpage{66}, \hyperpage{68}, 
 		\hyperpage{70}, \hyperpage{72}, \hyperpage{78}, 
@@ -308,7 +308,7 @@
 		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
 		\hyperpage{90}, \hyperpage{112, 113}, 
 		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{126}
-    \subitem Implementation, \hyperpage{5}, \hyperpage{28}
+    \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
 		\hyperpage{61}, \hyperpage{64}, \hyperpage{89}
       \subsubitem \sysnamelong Plugin Suite, \hyperpage{5}, 

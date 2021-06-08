@@ -417,7 +417,6 @@
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{31}
 \indexentry{Proof Repair!By Example!Exampled Patched Proof|hyperpage}{31}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{31}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{31}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{32}
@@ -427,6 +426,7 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Goal Type|hyperpage}{32}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{32}
@@ -493,7 +493,7 @@
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{41}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{41}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{42}
-\indexentry{Proof Repair!By Example!Inversion|hyperpage}{42}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{43}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{43}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
@@ -501,8 +501,8 @@
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{44}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{44}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{44}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{44}
 \indexentry{Acknowledgments!PL Community!Edward Z. Yang|hyperpage}{44}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{45}
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{45}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{45}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{46}
@@ -520,7 +520,7 @@
 \indexentry{Proof Repair!By Example!Search Procedure Instance|hyperpage}{50}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{50}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{51}
-\indexentry{Proof Repair!By Example!Generalization|hyperpage}{51}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{52}
 \indexentry{Results!Case Studies|hyperpage}{53}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{55}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{55}
@@ -540,14 +540,14 @@
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{57}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{57}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{57}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{58}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Generalization|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Factoring|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Inversion|hyperpage}{58}
-\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{58}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Goal Type|hyperpage}{59}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Generalization|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Factoring|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Inversion|hyperpage}{59}
+\indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{59}
 \indexentry{Thesis Statement!Formal|hyperpage}{59}
 \indexentry{Thesis Statement!Informal|hyperpage}{59}
 \indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{61}

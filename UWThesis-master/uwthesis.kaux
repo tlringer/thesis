@@ -2445,29 +2445,29 @@
 \KAuxDeclaredScopeTag {sec:pumpkin-scope}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-scope}{document}
 
-\KAuxFileAt {approach.tex}{144}
+\KAuxFileAt {approach.tex}{142}
 \KAuxAutorefTarget {default}{base}{instance}
 \KAuxDeclaredScopeTag {sec:pumpkin-spec-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-spec-diff}{document}
 \KAuxDeclaredScopeTag {sec:pumpkin-spec-trans}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-spec-trans}{document}
 
-\KAuxFileAt {approach.tex}{289}
+\KAuxFileAt {approach.tex}{287}
 \KAuxAutorefTarget {default}{base}{specialization}
 
-\KAuxFileAt {approach.tex}{290}
+\KAuxFileAt {approach.tex}{288}
 \KAuxAutorefTarget {default}{base}{generalization}
 
-\KAuxFileAt {approach.tex}{291}
+\KAuxFileAt {approach.tex}{289}
 \KAuxAutorefTarget {default}{base}{inversion}
 
-\KAuxFileAt {approach.tex}{292}
+\KAuxFileAt {approach.tex}{290}
 \KAuxAutorefTarget {default}{base}{factoring}
 
-\KAuxFileAt {approach.tex}{311}
+\KAuxFileAt {approach.tex}{309}
 \KAuxErrorKnowledgeUnknown {default}{}{generalizes}{generalizes}{\kl }
 
-\KAuxFileAt {approach.tex}{322}
+\KAuxFileAt {approach.tex}{320}
 \KAuxErrorKnowledgeUnknown {default}{}{specializes}{specializes}{\kl }
 \KAuxDeclaredScopeTag {sec:pumpkin-diff}
 \KAuxNewLinkScopetagInstance {sec:pumpkin-diff}{document}

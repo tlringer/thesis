@@ -21,9 +21,9 @@ of the search procedure.
 % From Motivating the Core and Implementation
 
 \paragraph{Specialization}
-Sometimes, patch candidates are too general.
+Sometimes, candidates are too general.
 \kl{Specialization} takes a candidate that is too general,
-and specializes it to particular arguments as determined by the difference in terms.
+and specializes it to arguments as determined by the difference in terms.
 To find a patch for Figure~\ref{fig:example}, for example, \sysname
 specialized the candidate to \lstinline{p}.
 
@@ -142,25 +142,25 @@ For example, consider two list lemmas:\footnote{It is too difficult to port this
 So I leave it in Gallina and Ltac, but still use it to give intuition for inversion.}
 
 \begin{lstlisting}[language=coq]
-  old : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length l.
-  new : (@\ltacforall@) l' l, length (l' ++ l) = length l' + length (rev l).
+  old : (@\ltacforall@) {T} l' l, length (l' ++ l) = length l' + length l.
+  new : (@\ltacforall@) {T} l' l, length (l' ++ l) = length l' + length (rev l).
 \end{lstlisting} 
 If \sysname searches the difference in proofs of these lemmas for a patch from the 
 conclusion of \lstinline{new} to the conclusion of \lstinline{old},
 it may find a candidate \emph{backwards}:
 
 \begin{lstlisting}
-  candidate l' l (H : (@\diff{old}@) l' l) :=
+  candidate {T} l' l (H : (@\diff{old}@) l' l) :=
     eq_rect_r $\ldots$ (@\diff{(rev\_length l)}@)
-  : (@\ltacforall@) l' l,
+  : (@\ltacforall@) {T : Type} (l' l : list T),
       (@\diff{old}@) l' l $\rightarrow$ (@\diff{new}@) l' l.
 \end{lstlisting}
-The component can \kl{invert} this to get the patch: %from \lstinline{new} to \lstinline{old}:
+The transformation can \kl{invert} this to get the patch: %from \lstinline{new} to \lstinline{old}:
 
 \begin{lstlisting}
-  patch l' l (H : (@\diff{new}@) l' l) :=
+  patch {T} l' l (H : (@\diff{new}@) l' l) :=
     eq_rect_r $\ldots$ (@\diff{(eq\_sym (rev\_length l))}@)
-  : (@\ltacforall@) l' l,
+  : (@\ltacforall@) {T : Type} (l' l : list T),
       (@\diff{new}@) l' l $\rightarrow$ (@\diff{old}@) l' l.
 \end{lstlisting}
 We can then use this patch to port proofs.
@@ -168,7 +168,7 @@ For example, if we add this patch to a hint database~\cite{hints},
 we can port this proof:
 
 \begin{lstlisting}
-  Theorem app_rev_len : (@\ltacforall@) l l',
+  Theorem app_rev_len {T : Type} : (@\ltacforall@) (l l' : list T),
     length (rev (l' ++ l)) = length (rev l) + length (rev l').
   Proof.
     intros. rewrite rev_app_distr. (@\succeeds{apply old.}@)
@@ -177,7 +177,7 @@ we can port this proof:
 to this proof:
 
 \begin{lstlisting}
-  Theorem app_rev_len : (@\ltacforall@) l l',
+  Theorem app_rev_len {T : Type} : (@\ltacforall@) (l l' : list T),
     length (rev (l' ++ l)) = length (rev l) + length (rev l').
   Proof.
     intros. rewrite rev_app_distr. (@\succeeds{apply new.}@)
@@ -190,10 +190,10 @@ In contrast, it is not possible to invert the patch \sysname
 found for Figure~\ref{fig:example}.
 
 When a candidate is invertible, patch inversion exploits symmetry to try to reverse the conclusions of a candidate patch.
-It first \kl{factors} the candidate using the factoring component, then calls the primitive inversion
+It first \kl{factors} the candidate using the factoring transformation, then calls the primitive inversion
 function on each factor, then finally folds the resulting list in reverse.
 The primitive inversion function exploits symmetry. 
-For example, propositional equality is symmetric, so the component can invert any application of the equality eliminators.
+For example, propositional equality is symmetric, so the transformation can invert any application of the equality eliminators.
 I will explain this more in Section~\ref{sec:pumpkin-impl-trans}.
 
 \paragraph{Factoring} The other transformations sometimes need help breaking a large function into smaller subterms.

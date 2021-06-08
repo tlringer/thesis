@@ -66,7 +66,7 @@ The first five correspond to changes in:
 The final instance is useful for proof optimization (Section~\ref{sec:workflow}).
 The support for these changes is limited in expressiveness and power;
 more information on limitations in scope can be found in the repository. % TODO link
-Extending \sysname with new instances of the search procedure amounts to extending key functions in the implementation
+Extending \sysname with a new instance of the search procedure amounts to extending key functions in the implementation
 with a case corresponding to the new instance.
 
 \subsubsection{Differencing} 
@@ -145,12 +145,12 @@ then exploiting symmetry properties to invert those factors,
 then finally composing the inverted factors in the opposite order.
 
 For example, recall that the equality eliminator in Gallina is \lstinline{eq_rect}.
-The \lstinline{rewrite} tactic in Ltac often compiles down to an application of \lstinline{eq_rect} % TODO be consistent about this vs eq_ind, including intermediate arguments
+The \lstinline{rewrite} tactic in Ltac often compiles down to an application of \lstinline{eq_rect}. % TODO be consistent about this vs eq_ind, including intermediate arguments
 Since equality is symmetric, the Coq standard library also comes equipped with an inverse function \lstinline{eq_rect_r},
 related to \lstinline{eq_rect} by symmetry of equality:
 
 \begin{lstlisting}[language=coq]
-  (@\diff{eq\_rect\_r}@) A x P (H : P x) y (H0 : y = x) :=(@\vspace{-0.04cm}@)
+  (@\diff{eq\_rect\_r}@) A x P (H : P x) y (H0 : y = x) :=
     (@\diff{eq\_rect}@) x (fun y0 : A => P y0) H y ((@\diff{eq\_sym}@) H0)	
 \end{lstlisting} % TODO types
 When inversion encounters an \lstinline{eq_rect} in one of its factors,
@@ -230,7 +230,7 @@ To call \sysname-git, the proof engineer simply runs the (command line) command:
 \begin{lstlisting}
   pumpkin-git example_proof file.v -rev rev
 \end{lstlisting}
-This will search for a patch that corresponds to the change in \lstinline{example_proof} in \lstinline{file.v} compared to the the revision \lstinline{rev}
+This searches for a patch corresponding to the change in \lstinline{example_proof} in \lstinline{file.v} compared to the the revision \lstinline{rev}
 of the local repository. It will then prompt the proof engineer with the patch it finds, and either overwrite the file (with consent) 
 or otherwise save the results to a temporary file. There are many options to control the behavior of \sysname-git,
 all of which can be found in the repository.
@@ -279,9 +279,9 @@ that tested \sysname's limitations:
 \begin{enumerate}
 \item \textbf{The failed pairs drive improvements.} \\
 \sysname failed on 17 of 50 pairs. These pairs inform how to improve differencing and transformations in the future. (Section~\ref{sec:fail})
-\item \textbf{The pairs reveal potential generalization strategies.} \\
+\item \textbf{The pairs reveal potential substitution strategies.} \\
 \sysname produced an exponential number of candidates in 5 of 50 pairs.
-New generalization strategies would dramatically reduce the number of candidates. (Section~\ref{sec:fail})
+New substitution strategies would dramatically reduce the number of candidates. (Section~\ref{sec:fail})
 \item \contour[2]{violet}{\sysname} \textbf{was fast, but it could be even faster.} \\
 The slowest successful patch took \SI{48}{\ms}. The slowest failure took \SI{7}{\ms}.
 Simple changes could make \sysname more efficient. (Section~\ref{sec:perf})
@@ -330,14 +330,14 @@ and \lstinline{new} were propositionally equal.
 \begin{figure*}
 \begin{lstlisting}[language=coq]
 fun n m p (H : n <= m) (H0 : m <= p) =>
-  (@\diff{le\_S n p}@) (* ... proof of stronger lemma *)
+  (@\diff{le\_S n p}@) $\ldots$ (* proof of stronger lemma *)
 : (@\ltacforall@) n m p,
     n <= m $\rightarrow$
     m <= p $\rightarrow$
     n <= (@\diff{S p}@).
 
 fun n m p (H : n <= m) (H0 : m <= p) =>
-  (@\diff{le\_plus\_trans n p 1}@) (* ... proof of stronger lemma *)
+  (@\diff{le\_plus\_trans n p 1}@) $\ldots$ (* proof of stronger lemma *)
 : (@\ltacforall@) n m p,
     n <= m $\rightarrow$
     m <= p $\rightarrow$
@@ -420,14 +420,18 @@ To invert this, inversion needs to know to $\delta$-reduce \lstinline{gt_le_S}:
 \begin{lstlisting}[language=coq]
   gt_le_S n m :=
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{n0 < m0}@) $\rightarrow$ (@\diff{S n0 <= m0}@)) => H n m) $\ldots$
-  : (@\ltacforall@) n m, (@\diff{n < m}@) $\rightarrow$ (@\diff{S n <= m}@).
+  : (@\ltacforall@) n m,
+      (@\diff{n < m}@) $\rightarrow$
+      (@\diff{S n <= m}@).
 \end{lstlisting}
 It then needs to swap the hypothesis with the conclusion in \lstinline{H} to produce the inverse:
 
 \begin{lstlisting}[language=coq]
   gt_le_S$\inv$ n m :=
     (fun (H : (@\ltacforall@) n0 m0, (@\diff{S n0 <= m0}@) $\rightarrow$ (@\diff{n0 < m0}@)) => H n m) $\ldots$
-   : (@\ltacforall@) n m, (@\diff{S n <= m}@) $\rightarrow$ (@\diff{n < m}@).
+   : (@\ltacforall@) n m,
+       (@\diff{S n <= m}@) $\rightarrow$
+       (@\diff{n < m}@).
 \end{lstlisting}
 
 Inversion currently swaps subterms when it is not
@@ -488,7 +492,8 @@ Then the candidate type is exactly this:
 
 \begin{lstlisting}
   (@\ltacforall@) n n0,
-    (fun n1 => n <= n1) (@\diff{(p2 n)}@) $\rightarrow$ (fun n1 => n <= n1) (@\diff{(p1 n)}@)
+    (fun n1 => n <= n1) (@\diff{(p2 n)}@) $\rightarrow$
+    (fun n1 => n <= n1) (@\diff{(p1 n)}@)
 \end{lstlisting}
 Generalization should thus generalize the highlighted subterms and the
 terms that have types constrained by those subterms.

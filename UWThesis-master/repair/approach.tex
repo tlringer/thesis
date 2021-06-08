@@ -106,22 +106,20 @@ or by using the automation in Section~\ref{sec:pumpkin-impl}.
 
 \begin{figure*}
 \begin{minipage}{0.50\textwidth}
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=4]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introex.tex}
-\lstinputlisting[firstline=6, lastline=11]{repair/introex.tex}
-\lstinputlisting[firstline=1, lastline=7]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/introexterm.tex}
+\lstinputlisting[firstline=1, lastline=4]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=5,lastline=5]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[firstline=6, lastline=11]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[firstline=1, lastline=7]{repair/introexterm.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=8,lastline=8]{repair/introexterm.tex}\vspace{-0.42cm}
 \lstinputlisting[firstline=9, lastline=13]{repair/introexterm.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.50\textwidth}
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=12, lastline=15]{repair/introex.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=16]{repair/introex.tex}
-\lstinputlisting[firstline=17, lastline=22]{repair/introex.tex}
-\lstinputlisting[firstline=15, lastline=21]{repair/introexterm.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=22,lastline=22]{repair/introexterm.tex}
+\lstinputlisting[firstline=12, lastline=15]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=16,lastline=16]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[firstline=17, lastline=22]{repair/introex.tex}\vspace{-0.42cm}
+\lstinputlisting[firstline=15, lastline=21]{repair/introexterm.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=22,lastline=22]{repair/introexterm.tex}\vspace{-0.42cm}
 \lstinputlisting[firstline=23, lastline=27]{repair/introexterm.tex}
 \end{minipage}
 \caption{Two proofs with different conclusions (top) and the
@@ -156,7 +154,7 @@ Given two such proofs of theorems:
 %such procedure in this section; we descibe three more
 %in Section~\ref{sec:case}.
 \begin{lstlisting}[language=coq]
-  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P}@) x(@\vspace{-0.1cm}@)
+  (@\ltacforall@) x, H x $\rightarrow$ (@\diff{P}@) x
   (@\ltacforall@) x, H x $\rightarrow$ (@\diff{Q}@) x
 \end{lstlisting}
 for any \lstinline{x}, \lstinline{H}, \lstinline{P}, and \lstinline{Q},

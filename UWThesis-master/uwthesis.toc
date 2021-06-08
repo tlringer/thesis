@@ -93,8 +93,8 @@
 \contentsline {subsubsection}{\numberline {3.5.3.2}Three Challenges}{50}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Differencing}{50}{subsubsection.3.5.3.2}% 
 \contentsline {paragraph}{A Challenge for Inversion}{51}{lstnumber.-104.10}% 
-\contentsline {paragraph}{A Challenge for Generalization}{51}{lstnumber.-107.3}% 
-\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{52}{subsubsection.3.5.3.3}% 
+\contentsline {paragraph}{A Challenge for Generalization}{52}{lstnumber.-107.5}% 
+\contentsline {subsubsection}{\numberline {3.5.3.3}Performance}{53}{subsubsection.3.5.3.3}% 
 \contentsline {section}{\numberline {3.6}Results}{53}{section.3.6}% 
 \contentsline {paragraph}{Identifying Changes}{53}{Item.40}% 
 \contentsline {subsection}{\numberline {3.6.1}Updating Definitions}{54}{subsection.3.6.1}% 
@@ -103,11 +103,11 @@
 \contentsline {paragraph}{Apply}{54}{lstnumber.-123.1}% 
 \contentsline {subsection}{\numberline {3.6.2}Porting Definitions}{55}{subsection.3.6.2}% 
 \contentsline {paragraph}{Replay}{55}{figure.caption.21}% 
-\contentsline {paragraph}{Search}{55}{lstnumber.-140.2}% 
+\contentsline {paragraph}{Search}{56}{lstnumber.-140.2}% 
 \contentsline {paragraph}{Apply}{56}{lstnumber.-141.2}% 
 \contentsline {subsection}{\numberline {3.6.3}Updating Proof Assistant Versions}{57}{subsection.3.6.3}% 
 \contentsline {paragraph}{Replay}{57}{subsection.3.6.3}% 
-\contentsline {paragraph}{Search}{57}{lstnumber.-150.2}% 
+\contentsline {paragraph}{Search}{58}{lstnumber.-150.2}% 
 \contentsline {paragraph}{Apply}{58}{lstnumber.-151.2}% 
 \contentsline {section}{\numberline {3.7}Conclusion}{59}{section.3.7}% 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Proof Repair Across Type Equivalences}}{61}{chapter.4}% 

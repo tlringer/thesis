@@ -268,21 +268,21 @@
       \subsubitem Exampled Patched Proof, \hyperpage{29}, 
 		\hyperpage{31}, \hyperpage{35}
       \subsubitem Factoring, \hyperpage{36}, \hyperpage{43}, 
-		\hyperpage{46, 47}, \hyperpage{57, 58}
+		\hyperpage{46, 47}, \hyperpage{57}, \hyperpage{59}
       \subsubitem Generalization, \hyperpage{36}, \hyperpage{41}, 
-		\hyperpage{46}, \hyperpage{51}, \hyperpage{57, 58}, 
-		\hyperpage{112}
+		\hyperpage{46}, \hyperpage{51}, \hyperpage{57}, 
+		\hyperpage{59}, \hyperpage{112}
       \subsubitem Goal Type, \hyperpage{32}, \hyperpage{35--37}, 
-		\hyperpage{55}, \hyperpage{58}
-      \subsubitem Inversion, \hyperpage{36}, \hyperpage{42}, 
+		\hyperpage{55}, \hyperpage{59}
+      \subsubitem Inversion, \hyperpage{36}, \hyperpage{43}, 
 		\hyperpage{46, 47}, \hyperpage{51}, \hyperpage{55}, 
-		\hyperpage{57, 58}
+		\hyperpage{57}, \hyperpage{59}
       \subsubitem Patch Candidate, \hyperpage{31, 32}, 
 		\hyperpage{35, 36}, \hyperpage{40}, \hyperpage{55}, 
-		\hyperpage{57, 58}
+		\hyperpage{57}, \hyperpage{59}
       \subsubitem Reusable Patch, \hyperpage{29}, \hyperpage{31, 32}, 
 		\hyperpage{35--37}, \hyperpage{40}, \hyperpage{55}, 
-		\hyperpage{57, 58}
+		\hyperpage{57}, \hyperpage{59}
       \subsubitem Search Procedure Instance, \hyperpage{34--36}, 
 		\hyperpage{45}, \hyperpage{50}
       \subsubitem Specialization, \hyperpage{36}, \hyperpage{40, 41}, 
@@ -304,9 +304,9 @@
       \subsubitem Semantic Differencing, \hyperpage{4, 5}, 
 		\hyperpage{21}, \hyperpage{26, 27}, \hyperpage{29}, 
 		\hyperpage{31, 32}, \hyperpage{34--37}, \hyperpage{45}, 
-		\hyperpage{50}, \hyperpage{55}, \hyperpage{57, 58}, 
-		\hyperpage{64}, \hyperpage{68}, \hyperpage{70}, 
-		\hyperpage{90}, \hyperpage{112, 113}, 
+		\hyperpage{50}, \hyperpage{55}, \hyperpage{57}, 
+		\hyperpage{59}, \hyperpage{64}, \hyperpage{68}, 
+		\hyperpage{70}, \hyperpage{90}, \hyperpage{112, 113}, 
 		\hyperpage{117, 118}, \hyperpage{121}, \hyperpage{126}
     \subitem Implementation, \hyperpage{4, 5}, \hyperpage{28}
       \subsubitem \sysname Prototype, \hyperpage{29}, \hyperpage{44}, 
@@ -390,8 +390,8 @@
 		\hyperpage{22}, \hyperpage{26, 27}, \hyperpage{37}, 
 		\hyperpage{64}, \hyperpage{93}, \hyperpage{107, 108}, 
 		\hyperpage{111}, \hyperpage{122}
-    \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{31}, 
-		\hyperpage{44}, \hyperpage{48}, \hyperpage{65}, 
+    \subitem Trusted Computing Base, \hyperpage{5}, \hyperpage{32}, 
+		\hyperpage{45}, \hyperpage{48}, \hyperpage{65}, 
 		\hyperpage{69}, \hyperpage{88, 89}, \hyperpage{92}
 
 \end{theindex}

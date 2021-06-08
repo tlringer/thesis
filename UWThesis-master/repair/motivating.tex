@@ -29,17 +29,15 @@ when change occurs outside of the proof engineers's control.
 \begin{figure*}
 \begin{minipage}{0.55\textwidth}
 \centering
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=1, lastline=3]{repair/izr.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=4,lastline=5]{repair/izr.tex}
+\lstinputlisting[firstline=1, lastline=3]{repair/izr.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=4,lastline=5]{repair/izr.tex}\vspace{-0.42cm}
 \lstinputlisting[firstline=6, lastline=6]{repair/izr.tex}
 \end{minipage}
 \hfill
 \begin{minipage}{0.44\textwidth}
 \centering
-\lstset{language=coq, aboveskip=0pt, belowskip=0pt}
-\lstinputlisting[firstline=8, lastline=10]{repair/izr.tex}
-\lstinputlisting[backgroundcolor=\color{orange!35},firstline=11,lastline=12]{repair/izr.tex}
+\lstinputlisting[firstline=8, lastline=10]{repair/izr.tex}\vspace{-0.42cm}
+\lstinputlisting[backgroundcolor=\color{orange!35},firstline=11,lastline=12]{repair/izr.tex}\vspace{-0.42cm}
 \lstinputlisting[firstline=13, lastline=13]{repair/izr.tex}
 \end{minipage}
 %\setlength{\belowcaptionskip}{-2pt}
@@ -62,7 +60,6 @@ The developer then made an additional 12 commits to address the change in \lstin
 a regression suite of projects that the Coq standard library developers maintain as Coq versions change.
 Many of these changes were simple. For example, the developer wrote a lemma that describes the change:
 
-\lstset{language=coq, aboveskip=3pt, belowskip=3pt}
 \begin{lstlisting}
   Lemma INR_IPR : (@\ltacforall@)p, INR (Pos.to_nat p) = IPR p.
 \end{lstlisting}

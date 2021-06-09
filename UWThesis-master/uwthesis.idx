@@ -791,16 +791,16 @@
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{105}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{105}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{105}
-\indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{105}
-\indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!LEM|hyperpage}{105}
+\indexentry{Logic \& Type Theory!Common Axioms!LEM|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!DNE|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!DNE|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Law of the Excluded Middle|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!LEM|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!DNE|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{106}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{106}
@@ -810,7 +810,7 @@
 \indexentry{Verification!Proof Assistants!Cubical Agda|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{106}
 \indexentry{Verification!de Bruijn Criterion|hyperpage}{106}
 \indexentry{Verification!Proof Object|hyperpage}{106}
@@ -828,7 +828,7 @@
 \indexentry{Verification!Proof Assistants!HOL4|hyperpage}{106}
 \indexentry{Verification!Proof Object!Explicit|hyperpage}{106}
 \indexentry{Verification!Proof Object!Ephemeral|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Common Axioms!DNE|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{107}
 \indexentry{Verification!Proof Automation|hyperpage}{107}
 \indexentry{Verification!Kernel|hyperpage}{107}
@@ -885,7 +885,7 @@
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{111}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{112}
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{112}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{112}
+\indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{112}
 \indexentry{Verification!Proof Assistants!Cubical Agda|hyperpage}{112}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{112}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{113}
@@ -929,7 +929,7 @@
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{121}
 \indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{121}
 \indexentry{Verification!Proof Object!Ephemeral|hyperpage}{121}
-\indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{121}
+\indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{121}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{121}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{122}
 \indexentry{Acknowledgments!PL Community!Emily First|hyperpage}{122}

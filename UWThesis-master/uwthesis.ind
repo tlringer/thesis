@@ -172,18 +172,25 @@
 		\hyperpage{102}
     \subitem Classical Logic, \hyperpage{106}, \hyperpage{121}
     \subitem Common Axioms
-      \subsubitem Double Negation Elimination, \hyperpage{106}
-      \subsubitem Law of the Excluded Middle, \hyperpage{105, 106}
-      \subsubitem Uniqueness of Identity Proofs, \hyperpage{106}, 
-		\hyperpage{112}, \hyperpage{121}
+      \subsubitem DNE, \hyperpage{106}
+      \subsubitem LEM, \hyperpage{105, 106}
+      \subsubitem UIP, \hyperpage{106}, \hyperpage{112}, 
+		\hyperpage{121}
       \subsubitem Univalence, \hyperpage{67}, \hyperpage{69}, 
 		\hyperpage{75}, \hyperpage{106}, \hyperpage{111, 112}, 
 		\hyperpage{121}
     \subitem Dependent Types, \hyperpage{20}, \hyperpage{76}, 
 		\hyperpage{79}, \hyperpage{87}, \hyperpage{98}
     \subitem Equality
+      \subsubitem Definitional, \hyperpage{19}, \hyperpage{38}, 
+		\hyperpage{41}, \hyperpage{56}, \hyperpage{61}, 
+		\hyperpage{72, 73}, \hyperpage{76}, \hyperpage{110}, 
+		\hyperpage{120}
       \subsubitem Intensionality, \hyperpage{19}, \hyperpage{72}, 
 		\hyperpage{105}
+      \subsubitem Propositional, \hyperpage{19}, \hyperpage{21}, 
+		\hyperpage{42}, \hyperpage{67}, \hyperpage{72, 73}, 
+		\hyperpage{106}, \hyperpage{111}
       \subsubitem Transport, \hyperpage{69, 70}, \hyperpage{72}, 
 		\hyperpage{85}, \hyperpage{92}, \hyperpage{111}, 
 		\hyperpage{113}
@@ -375,9 +382,8 @@
 		\hyperpage{105}
     \subitem Proof Maintenance, \hyperpage{22}
     \subitem Proof Object, \hyperpage{106}
-      \subsubitem Ephemeral Proof Object, \hyperpage{106}, 
-		\hyperpage{121}
-      \subsubitem Explicit Proof Object, \hyperpage{106}
+      \subsubitem Ephemeral, \hyperpage{106}, \hyperpage{121}
+      \subsubitem Explicit, \hyperpage{106}
     \subitem Proof Script, \hyperpage{3}, \hyperpage{10}, 
 		\hyperpage{14, 15}, \hyperpage{64}, \hyperpage{111}
       \subsubitem Ltac, \hyperpage{11}, \hyperpage{13}, \hyperpage{15}, 

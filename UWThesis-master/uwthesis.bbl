@@ -2,16 +2,20 @@
 
 \bibitem{hints}
 Coq reference manual, section 8.9: Controlling automation, 2017.
+\newblock URL: \url{http://coq.inria.fr/refman/tactics.html}.
 
 \bibitem{proofgeneral}
 Proof general, 2017.
+\newblock URL: \url{http://proofgeneral.github.io/}.
 
 \bibitem{travis}
 Travis ci, 2017.
+\newblock URL: \url{http://travis-ci.org/}.
 
 \bibitem{usera}
 User A.
 \newblock Software foundations solution, 2017.
+\newblock URL: \url{http://github.com/blindFS/Software-Foundations-Solutions}.
 
 \bibitem{adams2015}
 Mark Adams.
@@ -19,14 +23,19 @@ Mark Adams.
 \newblock In Domenico Bianculli, Radu Calinescu, and Bernhard Rumpe, editors,
   {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
   Heidelberg, 2015. Springer Berlin Heidelberg.
+\newblock \href {http://dx.doi.org/10.1007/978-3-662-49224-6_6}
+  {\path{doi:10.1007/978-3-662-49224-6_6}}.
 
 \bibitem{cubical-agda}
 {Agda Development Team}.
 \newblock Cubical type theory in agda -- agda 2.6.0 documentation, 2005-2018.
+\newblock URL:
+  \url{http://agda.readthedocs.io/en/latest/language/cubical.html}.
 
 \bibitem{agda}
 {Agda Development Team}.
 \newblock The {Agda} wiki, 2007-2021.
+\newblock URL: \url{http://wiki.portal.chalmers.se/agda/pmwiki.php}.
 
 \bibitem{andersen2010generic}
 Jesper Andersen and Julia~L Lawall.
@@ -34,8 +43,11 @@ Jesper Andersen and Julia~L Lawall.
 \newblock {\em Automated software engineering}, 17(2):119--148, 2010.
 
 \bibitem{angiuli2020internalizing}
-Carlo Angiuli, Evan Cavallo, Anders Mörtberg, and Max Zeuner.
-\newblock Internalizing representation independence with univalence, 2020.
+Carlo Angiuli, Evan Cavallo, Anders M\"{o}rtberg, and Max Zeuner.
+\newblock Internalizing representation independence with univalence.
+\newblock {\em Proc. ACM Program. Lang.}, 5(POPL), January 2021.
+\newblock URL: \url{https://doi.org/10.1145/3434293}, \href
+  {http://dx.doi.org/10.1145/3434293} {\path{doi:10.1145/3434293}}.
 
 \bibitem{angiuli2017cubical}
 Carlo Angiuli, Robert Harper, and Todd Wilson.
@@ -43,12 +55,16 @@ Carlo Angiuli, Robert Harper, and Todd Wilson.
 \newblock In {\em Proceedings of the 44th ACM SIGPLAN Symposium on Principles
   of Programming Languages}, POPL 2017, page 680–693, New York, NY, USA,
   2017. Association for Computing Machinery.
+\newblock URL: \url{https://doi.org/10.1145/3009837.3009861}, \href
+  {http://dx.doi.org/10.1145/3009837.3009861}
+  {\path{doi:10.1145/3009837.3009861}}.
 
 \bibitem{Autexier:2010:CMH:1986659.1986663}
 Serge Autexier, Dieter Hutter, and Till Mossakowski.
 \newblock Verification, induction termination analysis.
 \newblock chapter Change Management for Heterogeneous Development Graphs, pages
   54--80. Springer-Verlag, Berlin, Heidelberg, 2010.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=1986659.1986663}.
 
 \bibitem{Autexier:2010:SCI:1860559.1860580}
 Serge Autexier and Normen M\"{u}ller.
@@ -56,6 +72,9 @@ Serge Autexier and Normen M\"{u}ller.
   of documents.
 \newblock In {\em Proceedings of the 10th ACM Symposium on Document
   Engineering}, DocEng '10, pages 97--106, New York, NY, USA, 2010. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/1860559.1860580}, \href
+  {http://dx.doi.org/10.1145/1860559.1860580}
+  {\path{doi:10.1145/1860559.1860580}}.
 
 \bibitem{Aydemir2008}
 Brian Aydemir, Arthur Chargu{\'e}raud, Benjamin~C. Pierce, Randy Pollack, and
@@ -64,27 +83,36 @@ Brian Aydemir, Arthur Chargu{\'e}raud, Benjamin~C. Pierce, Randy Pollack, and
 \newblock In {\em Proceedings of the 35th Annual ACM SIGPLAN-SIGACT Symposium
   on Principles of Programming Languages}, POPL '08, pages 3--15, New York, NY,
   USA, 2008. ACM.
+\newblock \href {http://dx.doi.org/10.1145/1328438.1328443}
+  {\path{doi:10.1145/1328438.1328443}}.
 
 \bibitem{userb}
 User B.
 \newblock Software foundations solution, 2017.
+\newblock URL: \url{http://github.com/marshall-lee/software_foundations}.
 
 \bibitem{Barendregt2013}
 Henk Barendregt.
 \newblock {\em Foundations of Mathematics from the Perspective of Computer
   Verification}, pages 1--49.
 \newblock Springer International Publishing, Cham, 2013.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-00966-7_1}
+  {\path{doi:10.1007/978-3-319-00966-7_1}}.
 
 \bibitem{Barendregt2002}
 Henk Barendregt and Erik Barendsen.
 \newblock Autarkic computations in formal proofs.
 \newblock {\em Journal of Automated Reasoning}, 28(3):321--336, 2002.
+\newblock \href {http://dx.doi.org/10.1023/A:1015761529444}
+  {\path{doi:10.1023/A:1015761529444}}.
 
 \bibitem{Barendregt2351}
 Henk Barendregt and Freek Wiedijk.
 \newblock The challenge of computer mathematics.
 \newblock {\em Philosophical Transactions of the Royal Society of London A:
   Mathematical, Physical and Engineering Sciences}, 363(1835):2351--2375, 2005.
+\newblock \href {http://dx.doi.org/10.1098/rsta.2005.1650}
+  {\path{doi:10.1098/rsta.2005.1650}}.
 
 \bibitem{Barras2013}
 Bruno Barras, Lourdes del Carmen Gonz{\'a}lez~Huesca, Hugo Herbelin, Yann
@@ -94,6 +122,8 @@ Bruno Barras, Lourdes del Carmen Gonz{\'a}lez~Huesca, Hugo Herbelin, Yann
 \newblock In {\em Intelligent Computer Mathematics: MKM, Calculemus, DML, and
   Systems and Projects 2013, Held as Part of CICM 2013, Bath, UK, July 8-12,
   2013. Proceedings}, pages 359--363, Berlin, Heidelberg, 2013. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-39320-4_29}
+  {\path{doi:10.1007/978-3-642-39320-4_29}}.
 
 \bibitem{Barras2015}
 Bruno Barras, Carst Tankink, and Enrico Tassi.
@@ -102,6 +132,8 @@ Bruno Barras, Carst Tankink, and Enrico Tassi.
 \newblock In {\em Interactive Theorem Proving: 6th International Conference,
   ITP 2015, Nanjing, China, August 24-27, 2015, Proceedings}, pages 51--66,
   Cham, 2015. Springer International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-22102-1_4}
+  {\path{doi:10.1007/978-3-319-22102-1_4}}.
 
 \bibitem{Barthe2001}
 Gilles Barthe and Olivier Pons.
@@ -109,6 +141,7 @@ Gilles Barthe and Olivier Pons.
 \newblock In {\em Proceedings of the 4th International Conference on
   Foundations of Software Science and Computation Structures}, FoSSaCS '01,
   pages 57--71, London, UK, UK, 2001. Springer-Verlag.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=646793.704711}.
 
 \bibitem{blanchette2018verified}
 Jasmin~Christian Blanchette, Mathias Fleury, Peter Lammich, and Christoph
@@ -116,12 +149,16 @@ Jasmin~Christian Blanchette, Mathias Fleury, Peter Lammich, and Christoph
 \newblock A verified {SAT} solver framework with learn, forget, restart, and
   incrementality.
 \newblock {\em Journal of Automated Reasoning}, 61(1):333--365, Jun 2018.
+\newblock \href {http://dx.doi.org/10.1007/s10817-018-9455-7}
+  {\path{doi:10.1007/s10817-018-9455-7}}.
 
 \bibitem{Blanchette2016b}
 Jasmin~Christian Blanchette, David Greenaway, Cezary Kaliszyk, Daniel
   K{\"u}hlwein, and Josef Urban.
 \newblock A learning-based fact selector for {Isabelle/HOL}.
 \newblock {\em Journal of Automated Reasoning}, 57(3):219--244, Oct 2016.
+\newblock \href {http://dx.doi.org/10.1007/s10817-016-9362-8}
+  {\path{doi:10.1007/s10817-016-9362-8}}.
 
 \bibitem{Boite2004}
 Olivier Boite.
@@ -129,17 +166,22 @@ Olivier Boite.
 \newblock In {\em Theorem Proving in Higher Order Logics: 17th International
   Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
   Proceedings}, pages 50--65, Berlin, Heidelberg, 2004. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-30142-4_4}
+  {\path{doi:10.1007/978-3-540-30142-4_4}}.
 
 \bibitem{Bourke12}
 Timothy Bourke, Matthias Daum, Gerwin Klein, and Rafal Kolanski.
 \newblock Challenges and experiences in managing large-scale proofs.
 \newblock In {\em Intelligent Computer Mathematics}, pages 32--48, Berlin,
   Heidelberg, 2012. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-31374-5_3}
+  {\path{doi:10.1007/978-3-642-31374-5_3}}.
 
 \bibitem{boutillier:tel-01054723}
 Pierre Boutillier.
 \newblock {\em {New tool to compute with inductive in Coq}}.
 \newblock Theses, {Universit{\'e} Paris-Diderot - Paris VII}, February 2014.
+\newblock URL: \url{https://tel.archives-ouvertes.fr/tel-01054723}.
 
 \bibitem{Cai:2014:TCH:2594291.2594304}
 Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
@@ -148,6 +190,9 @@ Yufei Cai, Paolo~G. Giarrusso, Tillmann Rendel, and Klaus Ostermann.
 \newblock In {\em Proceedings of the 35th ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '14, pages 145--155, New York, NY,
   USA, 2014. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/2594291.2594304}, \href
+  {http://dx.doi.org/10.1145/2594291.2594304}
+  {\path{doi:10.1145/2594291.2594304}}.
 
 \bibitem{Celik:2017:IRP:3155562.3155588}
 Ahmet Celik, Karl Palmskog, and Milos Gligoric.
@@ -156,6 +201,7 @@ Ahmet Celik, Karl Palmskog, and Milos Gligoric.
 \newblock In {\em Proceedings of the 32nd IEEE/ACM International Conference on
   Automated Software Engineering}, ASE 2017, pages 171--182, Piscataway, NJ,
   USA, 2017. IEEE Press.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=3155562.3155588}.
 
 \bibitem{Chajed2019}
 Tej Chajed, Joseph Tassarotti, M.~Frans Kaashoek, and Nickolai Zeldovich.
@@ -163,6 +209,8 @@ Tej Chajed, Joseph Tassarotti, M.~Frans Kaashoek, and Nickolai Zeldovich.
 \newblock In {\em Proceedings of the 40th ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI 2019, pages 1054--1068, New York,
   NY, USA, 2019. ACM.
+\newblock \href {http://dx.doi.org/10.1145/3314221.3314585}
+  {\path{doi:10.1145/3314221.3314585}}.
 
 \bibitem{chan2011galileo}
 Michael Chan, Jos Lehmann, and Alan Bundy.
@@ -176,6 +224,8 @@ Haogang Chen, Tej Chajed, Alex Konradi, Stephanie Wang, Atalay \.{I}leri, Adam
   specification.
 \newblock In {\em Proceedings of the 26th Symposium on Operating Systems
   Principles}, SOSP '17, pages 270--286, New York, NY, USA, 2017. ACM.
+\newblock \href {http://dx.doi.org/10.1145/3132747.3132776}
+  {\path{doi:10.1145/3132747.3132776}}.
 
 \bibitem{Chen2015}
 Haogang Chen, Daniel Ziegler, Tej Chajed, Adam Chlipala, M.~Frans Kaashoek, and
@@ -183,18 +233,24 @@ Haogang Chen, Daniel Ziegler, Tej Chajed, Adam Chlipala, M.~Frans Kaashoek, and
 \newblock Using crash {Hoare} logic for certifying the {FSCQ} file system.
 \newblock In {\em Proceedings of the 25th Symposium on Operating Systems
   Principles}, SOSP '15, pages 18--37, New York, NY, USA, 2015. ACM.
+\newblock \href {http://dx.doi.org/10.1145/2815400.2815402}
+  {\path{doi:10.1145/2815400.2815402}}.
 
 \bibitem{chlipala:cpdt}
 Adam Chlipala.
 \newblock {\em Certified Programming with Dependent Types - {A} Pragmatic
   Introduction to the Coq Proof Assistant}.
 \newblock {MIT} Press, 2013.
+\newblock URL:
+  \url{http://mitpress.mit.edu/books/certified-programming-dependent-types}.
 
 \bibitem{Chrzaszcz2004}
 Jacek Chrz{\k{a}}szcz.
 \newblock Modules in {Coq} are and will be correct.
 \newblock In {\em Types for Proofs and Programs}, pages 130--146, Berlin,
   Heidelberg, 2004. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-24849-1_9}
+  {\path{doi:10.1007/978-3-540-24849-1_9}}.
 
 \bibitem{jesper}
 Jesper Cockx.
@@ -209,29 +265,39 @@ Cyril Cohen, Thierry Coquand, Simon Huber, and Anders M{\"o}rtberg.
   for Proofs and Programs (TYPES 2015)}, volume~69 of {\em Leibniz
   International Proceedings in Informatics (LIPIcs)}, pages 5:1--5:34,
   Dagstuhl, Germany, 2018. Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
+\newblock \href {http://dx.doi.org/10.4230/LIPIcs.TYPES.2015.5}
+  {\path{doi:10.4230/LIPIcs.TYPES.2015.5}}.
 
 \bibitem{cohen:hal-01113453}
 Cyril Cohen, Maxime D{\'e}n{\`e}s, and Anders M{\"o}rtberg.
 \newblock {Refinements for Free!}
 \newblock In {\em {Certified Programs and Proofs}}, pages 147 -- 162,
   Melbourne, Australia, December 2013.
+\newblock URL: \url{https://hal.inria.fr/hal-01113453}, \href
+  {http://dx.doi.org/10.1007/978-3-319-03545-1\_10}
+  {\path{doi:10.1007/978-3-319-03545-1\_10}}.
 
 \bibitem{leroy-mem-2010}
 {CompCert Development Team}.
 \newblock Merge of the newmem and newextcalls branches, 2010.
+\newblock URL:
+  \url{http://github.com/AbsInt/CompCert/commit/a74f6b45d72834b5b8417297017bd81424123d98}.
 
 \bibitem{coq}
 {Coq Development Team}.
 \newblock The {Coq} proof assistant, 1989-2021.
+\newblock URL: \url{http://coq.inria.fr}.
 
 \bibitem{coq-tactics}
 {Coq Development Team}.
 \newblock Tactics, 1999-2021.
+\newblock URL: \url{http://coq.inria.fr/refman/proof-engine/tactics.html}.
 
 \bibitem{coquand:inria-00076024}
 Thierry Coquand and G{\'e}rard Huet.
 \newblock {The calculus of constructions}.
 \newblock Technical Report RR-0530, {INRIA}, May 1986.
+\newblock URL: \url{https://hal.inria.fr/inria-00076024}.
 
 \bibitem{inductive}
 Thierry Coquand and Christine Paulin.
@@ -243,11 +309,15 @@ Thierry Coquand and Christine Paulin.
 {\L}ukasz Czajka and Cezary Kaliszyk.
 \newblock Hammer for {Coq}: Automation for dependent type theory.
 \newblock {\em Journal of Automated Reasoning}, 61(1):423--453, June 2018.
+\newblock \href {http://dx.doi.org/10.1007/s10817-018-9458-4}
+  {\path{doi:10.1007/s10817-018-9458-4}}.
 
 \bibitem{dagand2017essence}
 Pierre{-}{\'{E}}variste Dagand.
 \newblock The essence of ornaments.
 \newblock {\em Journal of Functional Programming}, 27:e9, 2017.
+\newblock \href {http://dx.doi.org/10.1017/S0956796816000356}
+  {\path{doi:10.1017/S0956796816000356}}.
 
 \bibitem{Dagand:2013:CTO:2591370.2591396}
 Pierre-Evariste Dagand and Conor McBride.
@@ -255,6 +325,8 @@ Pierre-Evariste Dagand and Conor McBride.
 \newblock In {\em Proceedings of the 2013 28th Annual ACM/IEEE Symposium on
   Logic in Computer Science}, LICS '13, pages 530--539, Washington, DC, USA,
   2013. IEEE Computer Society.
+\newblock \href {http://dx.doi.org/10.1109/LICS.2013.60}
+  {\path{doi:10.1109/LICS.2013.60}}.
 
 \bibitem{dagand2014transporting}
 Pierre-Evariste Dagand and Conor McBride.
@@ -274,6 +346,8 @@ Leonardo de~Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
 \newblock In {\em Automated Deduction - CADE-25: 25th International Conference
   on Automated Deduction, Berlin, Germany, August 1-7, 2015, Proceedings},
   pages 378--388, Cham, 2015. Springer International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-21401-6_26}
+  {\path{doi:10.1007/978-3-319-21401-6_26}}.
 
 \bibitem{Delaware2013POPL}
 Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
@@ -281,6 +355,8 @@ Benjamin Delaware, Bruno~C. d.~S.~Oliveira, and Tom Schrijvers.
 \newblock In {\em Proceedings of the 40th Annual ACM SIGPLAN-SIGACT Symposium
   on Principles of Programming Languages}, POPL '13, pages 207--218, New York,
   NY, USA, 2013. ACM.
+\newblock \href {http://dx.doi.org/10.1145/2429069.2429094}
+  {\path{doi:10.1145/2429069.2429094}}.
 
 \bibitem{Delaware2013ICFP}
 Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
@@ -288,6 +364,8 @@ Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
 \newblock In {\em Proceedings of the 18th ACM SIGPLAN International Conference
   on Functional Programming}, ICFP '13, pages 319--330, New York, NY, USA,
   2013. ACM.
+\newblock \href {http://dx.doi.org/10.1145/2500365.2500587}
+  {\path{doi:10.1145/2500365.2500587}}.
 
 \bibitem{Demers95reflectionin}
 Francois-Nicola Demers and Jacques Malenfant.
@@ -302,6 +380,8 @@ Richard~A. DeMillo, Richard~J. Lipton, and Alan~J. Perlis.
 \newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN Symposium on
   Principles of Programming Languages}, POPL '77, pages 206--214, New York, NY,
   USA, 1977. ACM.
+\newblock \href {http://dx.doi.org/10.1145/512950.512970}
+  {\path{doi:10.1145/512950.512970}}.
 
 \bibitem{dennis2006proof}
 Louise~A Dennis, Raul Monroy, and Pablo Nogueira.
@@ -314,10 +394,14 @@ Dominik Dietrich, Iain Whiteside, and David Aspinall.
 \newblock Polar: A framework for proof refactoring.
 \newblock In {\em Logic for Programming, Artificial Intelligence, and
   Reasoning}, pages 776--791, Berlin, Heidelberg, 2013. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-45221-5_52}
+  {\path{doi:10.1007/978-3-642-45221-5_52}}.
 
 \bibitem{article}
 Mike Dodds.
 \newblock Proofs should repair themselves, 2020.
+\newblock URL:
+  \url{https://galois.com/blog/2020/12/proofs-should-repair-themselves/}.
 
 \bibitem{Elphinstone2013}
 Kevin Elphinstone and Gernot Heiser.
@@ -325,17 +409,22 @@ Kevin Elphinstone and Gernot Heiser.
   microkernels?
 \newblock In {\em Proceedings of the Twenty-Fourth ACM Symposium on Operating
   Systems Principles}, SOSP '13, pages 133--150, New York, NY, USA, 2013. ACM.
+\newblock \href {http://dx.doi.org/10.1145/2517349.2522720}
+  {\path{doi:10.1145/2517349.2522720}}.
 
 \bibitem{escardo2018self}
 Martin~H{\"o}tzel Escard{\'o}.
 \newblock A self-contained, brief and complete formulation of {Voevodsky's}
   univalence axiom.
 \newblock {\em CoRR}, abs/1803.02294, 2018.
+\newblock \href {http://arxiv.org/abs/1803.02294} {\path{arXiv:1803.02294}}.
 
 \bibitem{10.1145/3428299}
 Emily First, Yuriy Brun, and Arjun Guha.
 \newblock Tactok: Semantics-aware proof synthesis.
 \newblock {\em Proc. ACM Program. Lang.}, 4(OOPSLA), November 2020.
+\newblock URL: \url{https://doi.org/10.1145/3428299}, \href
+  {http://dx.doi.org/10.1145/3428299} {\path{doi:10.1145/3428299}}.
 
 \bibitem{Frana2011}
 Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
@@ -346,6 +435,8 @@ Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
   in Embedded Systems}, volume~18 of {\em OpenAccess Series in Informatics
   (OASIcs)}, pages 59--68, Dagstuhl, Germany, 2011. Schloss
   Dagstuhl--Leibniz-Zentrum fuer Informatik.
+\newblock \href {http://dx.doi.org/10.4230/OASIcs.PPES.2011.59}
+  {\path{doi:10.4230/OASIcs.PPES.2011.59}}.
 
 \bibitem{gao2015fixing}
 Qing Gao, Hansheng Zhang, Jie Wang, Yingfei Xiong, Lu~Zhang, and Hong Mei.
@@ -358,6 +449,8 @@ Thibault Gauthier and Cezary Kaliszyk.
 \newblock Matching concepts across {HOL} libraries.
 \newblock In {\em Intelligent Computer Mathematics}, pages 267--281, Cham,
   2014. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-08434-3_20}
+  {\path{doi:10.1007/978-3-319-08434-3_20}}.
 
 \bibitem{Gauthier2015}
 Thibault Gauthier and Cezary Kaliszyk.
@@ -366,18 +459,25 @@ Thibault Gauthier and Cezary Kaliszyk.
   Reasoning: 20th International Conference, LPAR-20 2015, Suva, Fiji, November
   24-28, 2015, Proceedings}, pages 372--386, Berlin, Heidelberg, 2015.
   Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-662-48899-7_26}
+  {\path{doi:10.1007/978-3-662-48899-7_26}}.
 
 \bibitem{gauthier2017}
 Thibault Gauthier and Cezary Kaliszyk.
 \newblock Aligning concepts across proof assistant libraries.
 \newblock {\em Journal of Symbolic Computation}, 90:89--123, 2019.
 \newblock Symbolic Computation in Software Science.
+\newblock \href {http://dx.doi.org/10.1016/j.jsc.2018.04.005}
+  {\path{doi:10.1016/j.jsc.2018.04.005}}.
 
 \bibitem{Gazzola:2018:ASR:3180155.3182526}
 Luca Gazzola, Daniela Micucci, and Leonardo Mariani.
 \newblock Automatic software repair: A survey.
 \newblock In {\em Proceedings of the 40th International Conference on Software
   Engineering}, ICSE '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/3180155.3182526}, \href
+  {http://dx.doi.org/10.1145/3180155.3182526}
+  {\path{doi:10.1145/3180155.3182526}}.
 
 \bibitem{recursion-elimination}
 Eduarde Gim{\'e}nez.
@@ -391,17 +491,21 @@ Emil~Holm Gj{\o}rup and Bas Spitters.
 \newblock Congruence closure in cubical type theory.
 \newblock In {\em Workshop on Homotopy Type Theory / Univalent Foundations},
   2020.
+\newblock URL: \url{https://www.cs.au.dk/~spitters/Emil.pdf}.
 
 \bibitem{Gonthier2008}
 Georges Gonthier.
 \newblock Formal proof---the four-color theorem.
 \newblock {\em Notices of the American Mathematical Society},
   55(11):1382--1393, 2008.
+\newblock URL: \url{http://www.ams.org/notices/200811/tx081101382p.pdf}.
 
 \bibitem{Gonthier2010}
 Georges Gonthier and Assia Mahboubi.
 \newblock An introduction to small scale reflection in {Coq}.
 \newblock {\em Journal of Formalized Reasoning}, 3(2):95--152, 2010.
+\newblock \href {http://dx.doi.org/10.6092/issn.1972-5787/1979}
+  {\path{doi:10.6092/issn.1972-5787/1979}}.
 
 \bibitem{gopinath2011specification}
 Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
@@ -416,6 +520,8 @@ Michael J.~C. Gordon, Robin Milner, L.~Morris, Malcolm~C. Newey, and
 \newblock In {\em Proceedings of the 5th ACM SIGACT-SIGPLAN Symposium on
   Principles of Programming Languages}, POPL '78, pages 119--130, New York, NY,
   USA, 1978. ACM.
+\newblock \href {http://dx.doi.org/10.1145/512760.512773}
+  {\path{doi:10.1145/512760.512773}}.
 
 \bibitem{certikos}
 Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
@@ -424,18 +530,23 @@ Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
   concurrent {OS} kernels.
 \newblock In {\em 12th {USENIX} Symposium on Operating Systems Design and
   Implementation ({OSDI} 16)}, pages 653--669, GA, 2016. {USENIX} Association.
+\newblock URL:
+  \url{https://www.usenix.org/conference/osdi16/technical-sessions/presentation/gu}.
 
 \bibitem{DBLP:journals/ftpl/GulwaniPS17}
 Sumit Gulwani, Oleksandr Polozov, and Rishabh Singh.
 \newblock Program synthesis.
 \newblock {\em Foundations and Trends in Programming Languages}, 4(1-2):1--119,
   2017.
+\newblock URL: \url{https://doi.org/10.1561/2500000010}, \href
+  {http://dx.doi.org/10.1561/2500000010} {\path{doi:10.1561/2500000010}}.
 
 \bibitem{harrison-reflection}
 John Harrison.
 \newblock Metatheory and reflection in theorem proving: A survey and critique.
 \newblock Technical Report CRC-053, SRI Cambridge, Millers Yard, Cambridge, UK,
   1995.
+\newblock URL: \url{http://www.cl.cam.ac.uk/~jrh13/papers/reflect.dvi.gz}.
 
 \bibitem{hasker1992generalization}
 Robert~W Hasker and Uday~S Reddy.
@@ -456,6 +567,9 @@ Johannes Henkel and Amer Diwan.
   evolution.
 \newblock In {\em Proceedings of the 27th International Conference on Software
   Engineering}, ICSE '05, pages 274--283, New York, NY, USA, 2005. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/1062455.1062512}, \href
+  {http://dx.doi.org/10.1145/1062455.1062512}
+  {\path{doi:10.1145/1062455.1062512}}.
 
 \bibitem{Heyting1956}
 Arend Heyting.
@@ -471,6 +585,7 @@ Kesha Hietala, Robert Rand, Shih-Han Hung, Xiaodi Wu, and Michael Hicks.
 \bibitem{hollight}
 {HOL Light Development Team}.
 \newblock {HOL Light}, 1996-2021.
+\newblock URL: \url{http://www.cl.cam.ac.uk/~jrh13/hol-light}.
 
 \bibitem{Huffman2013}
 Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
@@ -479,15 +594,20 @@ Brian Huffman and Ond{\v{r}}ej Kun{\v{c}}ar.
 \newblock In {\em Certified Programs and Proofs: Third International
   Conference}, CPP 2013, pages 131--146, Cham, 2013. Springer International
   Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-03545-1_9}
+  {\path{doi:10.1007/978-3-319-03545-1_9}}.
 
 \bibitem{873647}
 D.~Hutter.
 \newblock Management of change in structured verification.
 \newblock In {\em ASE 2000}, pages 23--31, Sept 2000.
+\newblock \href {http://dx.doi.org/10.1109/ASE.2000.873647}
+  {\path{doi:10.1109/ASE.2000.873647}}.
 
 \bibitem{isabelle}
 {Isabelle Development Team}.
 \newblock Isabelle, 1994-2021.
+\newblock URL: \url{http://isabelle.in.tum.de}.
 
 \bibitem{Jang2012}
 Dongseok Jang, Zachary Tatlock, and Sorin Lerner.
@@ -503,11 +623,15 @@ Einar~Broch Johnsen and Christoph L{\"u}th.
 \newblock In {\em Theorem Proving in Higher Order Logics: 17th International
   Conference, TPHOLs 2004, Park City, Utah, USA, September 14-17, 2004.
   Proceedings}, pages 152--167. Springer, Berlin, Heidelberg, 2004.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-30142-4_12}
+  {\path{doi:10.1007/978-3-540-30142-4_12}}.
 
 \bibitem{Kaliszyk2014}
 Cezary Kaliszyk and Josef Urban.
 \newblock Learning-assisted automated reasoning with {Flyspeck}.
 \newblock {\em Journal of Automated Reasoning}, 53(2):173--213, Aug 2014.
+\newblock \href {http://dx.doi.org/10.1007/s10817-014-9303-3}
+  {\path{doi:10.1007/s10817-014-9303-3}}.
 
 \bibitem{Kaestner2017}
 Daniel K{\"a}stner, Xavier Leroy, Sandrine Blazy, Bernhard Schommer, Michael
@@ -518,6 +642,7 @@ Daniel K{\"a}stner, Xavier Leroy, Sandrine Blazy, Bernhard Schommer, Michael
   Developments in System Safety Engineering: Proceedings of the Twenty-fifth
   Safety-critical Systems Symposium, pages 163--180, Bristol, United Kingdom,
   February 2017. {CreateSpace}.
+\newblock URL: \url{https://hal.inria.fr/hal-01399482}.
 
 \bibitem{Ke:2015:RPS:2916135.2916260}
 Yalin Ke, Kathryn~T. Stolee, Claire~Le Goues, and Yuriy Brun.
@@ -525,6 +650,8 @@ Yalin Ke, Kathryn~T. Stolee, Claire~Le Goues, and Yuriy Brun.
 \newblock In {\em Proceedings of the 2015 30th IEEE/ACM International
   Conference on Automated Software Engineering (ASE)}, ASE '15, pages 295--306,
   Washington, DC, USA, 2015. IEEE Computer Society.
+\newblock URL: \url{https://doi.org/10.1109/ASE.2015.60}, \href
+  {http://dx.doi.org/10.1109/ASE.2015.60} {\path{doi:10.1109/ASE.2015.60}}.
 
 \bibitem{Klein2014}
 Gerwin Klein.
@@ -532,12 +659,16 @@ Gerwin Klein.
 \newblock In {\em FM 2014: Formal Methods: 19th International Symposium,
   Singapore, May 12-16, 2014. Proceedings}, pages 16--21, Cham, 2014. Springer
   International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-06410-9_2}
+  {\path{doi:10.1007/978-3-319-06410-9_2}}.
 
 \bibitem{Klein2014micro}
 Gerwin Klein, June Andronick, Kevin Elphinstone, Toby Murray, Thomas Sewell,
   Rafal Kolanski, and Gernot Heiser.
 \newblock Comprehensive formal verification of an {OS} microkernel.
 \newblock {\em ACM Trans. Comput. Syst.}, 32(1):2:1--2:70, February 2014.
+\newblock \href {http://dx.doi.org/10.1145/2560537}
+  {\path{doi:10.1145/2560537}}.
 
 \bibitem{Klein2009}
 Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
@@ -546,6 +677,8 @@ Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
 \newblock {seL4}: Formal verification of an {OS} kernel.
 \newblock In {\em Proceedings of the ACM SIGOPS 22Nd Symposium on Operating
   Systems Principles}, SOSP '09, pages 207--220, New York, NY, USA, 2009. ACM.
+\newblock \href {http://dx.doi.org/10.1145/1629575.1629596}
+  {\path{doi:10.1145/1629575.1629596}}.
 
 \bibitem{ko2013relational}
 Hsiang-Shang Ko and Jeremy Gibbons.
@@ -562,6 +695,8 @@ Hsiang-Shang Ko and Jeremy Gibbons.
 Thomas Kolbe and Christoph Walther.
 \newblock {\em Proof Analysis, Generalization and Reuse}, pages 189--219.
 \newblock Springer, Dordrecht, 1998.
+\newblock \href {http://dx.doi.org/10.1007/978-94-017-0435-9_8}
+  {\path{doi:10.1007/978-94-017-0435-9_8}}.
 
 \bibitem{Kumar2014}
 Ramana Kumar, Magnus~O. Myreen, Michael Norrish, and Scott Owens.
@@ -569,17 +704,23 @@ Ramana Kumar, Magnus~O. Myreen, Michael Norrish, and Scott Owens.
 \newblock In {\em Proceedings of the 41st ACM SIGPLAN-SIGACT Symposium on
   Principles of Programming Languages}, POPL '14, pages 179--191, New York, NY,
   USA, 2014. ACM.
+\newblock \href {http://dx.doi.org/10.1145/2535838.2535841}
+  {\path{doi:10.1145/2535838.2535841}}.
 
 \bibitem{differential-assertion-checking-2}
 Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.
 \newblock Differential assertion checking.
 \newblock In {\em Foundations of Software Engineering (FSE'13)}. ACM, August
   2013.
+\newblock URL:
+  \url{https://www.microsoft.com/en-us/research/publication/differential-assertion-checking-2/}.
 
 \bibitem{lampropoulos2017generating}
 Leonidas Lampropoulos, Zoe Paraskevopoulou, and Benjamin~C. Pierce.
 \newblock Generating good generators for inductive relations.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):45:1--45:30, December 2017.
+\newblock \href {http://dx.doi.org/10.1145/3158133}
+  {\path{doi:10.1145/3158133}}.
 
 \bibitem{LeGoues:2012:SSA:2337223.2337225}
 Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
@@ -587,10 +728,12 @@ Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
   bugs for \$8 each.
 \newblock In {\em Proceedings of the 34th International Conference on Software
   Engineering}, ICSE '12, pages 3--13, Piscataway, NJ, USA, 2012. IEEE Press.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=2337223.2337225}.
 
 \bibitem{lean}
 {Lean Development Team}.
 \newblock Theorem proving in lean, 2014-2021.
+\newblock URL: \url{http://leanprover.github.io/tutorial/}.
 
 \bibitem{Leroy:POPL06}
 Xavier Leroy.
@@ -599,25 +742,34 @@ Xavier Leroy.
 \newblock In {\em Conference Record of the 33rd ACM SIGPLAN-SIGACT Symposium on
   Principles of Programming Languages}, POPL '06, pages 42--54, New York, NY,
   USA, 2006. ACM.
+\newblock \href {http://dx.doi.org/10.1145/1111037.1111042}
+  {\path{doi:10.1145/1111037.1111042}}.
 
 \bibitem{Leroy2009}
 Xavier Leroy.
 \newblock Formal verification of a realistic compiler.
 \newblock {\em Commun. ACM}, 52(7):107--115, July 2009.
+\newblock \href {http://dx.doi.org/10.1145/1538788.1538814}
+  {\path{doi:10.1145/1538788.1538814}}.
 
 \bibitem{compcertcommit}
 Xavier Leroy.
 \newblock Commit to compcert: lib/integers.v, 2013.
+\newblock URL:
+  \url{http://github.com/AbsInt/CompCert/commit/6f3225b0623b9c97eed7d40ddc320b08c79c6518}.
 
 \bibitem{leroy2012}
 Xavier Leroy, Andrew~W. Appel, Sandrine Blazy, and Gordon Stewart.
 \newblock {The CompCert Memory Model, Version 2}.
 \newblock Research Report RR-7987, {INRIA}, June 2012.
+\newblock URL: \url{https://hal.inria.fr/hal-00703441}.
 
 \bibitem{coq84commit}
 letouzey.
 \newblock Commit to coq: change definition of divide (compat with znumtheory),
   2011.
+\newblock URL:
+  \url{http://github.com/coq/coq/commit/81c4c8bc418cdf42cc88249952dbba465068202c}.
 
 \bibitem{Long:2016:APG:2837614.2837617}
 Fan Long and Martin Rinard.
@@ -625,6 +777,9 @@ Fan Long and Martin Rinard.
 \newblock In {\em Proceedings of the 43rd Annual ACM SIGPLAN-SIGACT Symposium
   on Principles of Programming Languages}, POPL '16, pages 298--312, New York,
   NY, USA, 2016. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/2837614.2837617}, \href
+  {http://dx.doi.org/10.1145/2837614.2837617}
+  {\path{doi:10.1145/2837614.2837617}}.
 
 \bibitem{magaud2003changing}
 Nicolas Magaud.
@@ -644,15 +799,21 @@ Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
 \newblock Automatic repair of real bugs in java: {A} large-scale experiment on
   the defects4j dataset.
 \newblock {\em CoRR}, abs/1811.02429, 2018.
+\newblock URL: \url{http://arxiv.org/abs/1811.02429}, \href
+  {http://arxiv.org/abs/1811.02429} {\path{arXiv:1811.02429}}.
 
 \bibitem{Matichuk2015EisbachAP}
 Daniel Matichuk, Toby Murray, and Makarius Wenzel.
 \newblock Eisbach: A proof method language for {Isabelle}.
 \newblock {\em Journal of Automated Reasoning}, 56(3):261--282, Mar 2016.
+\newblock \href {http://dx.doi.org/10.1007/s10817-015-9360-2}
+  {\path{doi:10.1007/s10817-015-9360-2}}.
 
 \bibitem{mcbride}
 Conor McBride.
 \newblock Ornamental algebras, algebraic ornaments, 2011.
+\newblock URL:
+  \url{http://plv.mpi-sws.org/plerg/papers/mcbride-ornaments-2up.pdf}.
 
 \bibitem{Mechtaev:2015:DLS:2818754.2818811}
 Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
@@ -660,11 +821,14 @@ Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
 \newblock In {\em Proceedings of the 37th International Conference on Software
   Engineering - Volume 1}, ICSE '15, pages 448--458, Piscataway, NJ, USA, 2015.
   IEEE Press.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=2818754.2818811}.
 
 \bibitem{coq87commit}
 Guillaume Melquiond.
 \newblock Commit to coq: Make izr use a compact representation of integers,
   2017.
+\newblock URL:
+  \url{http://github.com/coq/coq/commit/a4a76c253474ac4ce523b70d0150ea5dcf546385}.
 
 \bibitem{meng2011systematic}
 Na~Meng, Miryung Kim, and Kathryn~S McKinley.
@@ -685,11 +849,16 @@ Victor~Cacciari Miraldo, Pierre-\'{E}variste Dagand, and Wouter Swierstra.
 \newblock In {\em Proceedings of the 2Nd ACM SIGPLAN International Workshop on
   Type-Driven Development}, TyDe 2017, pages 2--15, New York, NY, USA, 2017.
   ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/3122975.3122976}, \href
+  {http://dx.doi.org/10.1145/3122975.3122976}
+  {\path{doi:10.1145/3122975.3122976}}.
 
 \bibitem{Monperrus:2018:ASR:3177787.3105906}
 Martin Monperrus.
 \newblock Automatic software repair: A bibliography.
 \newblock {\em ACM Comput. Surv.}, 51(1):17:1--17:24, January 2018.
+\newblock URL: \url{http://doi.acm.org/10.1145/3105906}, \href
+  {http://dx.doi.org/10.1145/3105906} {\path{doi:10.1145/3105906}}.
 
 \bibitem{Mulhern06proofweaving}
 Anne Mulhern.
@@ -702,10 +871,13 @@ Toby Murray and P.~C. van Oorschot.
 \newblock {BP}: Formal proofs, the fine print and side effects.
 \newblock In {\em IEEE Cybersecurity Development (SecDev)}, pages 1--10, Sep.
   2018.
+\newblock \href {http://dx.doi.org/10.1109/SecDev.2018.00009}
+  {\path{doi:10.1109/SecDev.2018.00009}}.
 
 \bibitem{hol4-interact}
 Magnus~O. Myreen.
 \newblock Guide to hol4 interaction and basic proofs, 2008-2021.
+\newblock URL: \url{http://hol-theorem-prover.org/HOL-interaction.pdf}.
 
 \bibitem{egraph1}
 Charles~Gregory Nelson.
@@ -745,6 +917,7 @@ Hoang Duong~Thien Nguyen, Dawei Qi, Abhik Roychoudhury, and Satish Chandra.
 \bibitem{nuprl}
 {NuPRL Development Team}.
 \newblock Nuprl, 1986-2021.
+\newblock URL: \url{http://www.nuprl.org/}.
 
 \bibitem{opdyke1992}
 William~F Opdyke.
@@ -764,6 +937,8 @@ Karl Palmskog, Ahmet Celik, and Milos Gligoric.
 \newblock {piCoq}: Parallel regression proving for large-scale verification
   projects.
 \newblock In {\em ISSTA}, pages 344--355, New York, NY, USA, 2018. ACM.
+\newblock \href {http://dx.doi.org/10.1145/3213846.3213877}
+  {\path{doi:10.1145/3213846.3213877}}.
 
 \bibitem{Paraskevopoulou2015}
 Zoe Paraskevopoulou, C{\u{a}}t{\u{a}}lin Hrit{\c{c}}u, Maxime D{\'e}n{\`e}s,
@@ -772,6 +947,8 @@ Zoe Paraskevopoulou, C{\u{a}}t{\u{a}}lin Hrit{\c{c}}u, Maxime D{\'e}n{\`e}s,
 \newblock In {\em Interactive Theorem Proving: 6th International Conference,
   ITP 2015, Nanjing, China, August 24-27, 2015, Proceedings}, pages 325--343,
   Cham, 2015. Springer International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-22102-1_22}
+  {\path{doi:10.1007/978-3-319-22102-1_22}}.
 
 \bibitem{Blanchette2013}
 Lawrence~C. Paulson and Jasmin~Christian Blanchette.
@@ -819,16 +996,22 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
 \newblock In {\em Proceedings of the 2015 International Symposium on Software
   Testing and Analysis}, ISSTA 2015, pages 24--36, New York, NY, USA, 2015.
   ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/2771783.2771791}, \href
+  {http://dx.doi.org/10.1145/2771783.2771791}
+  {\path{doi:10.1145/2771783.2771791}}.
 
 \bibitem{redprl}
 {RedPRL Development Team}.
 \newblock The redprl proof assistant, 2015-2021.
+\newblock URL: \url{http://www.redprl.org}.
 
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
 \newblock Qed at large: A survey of engineering of formally verified software.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
+\newblock URL: \url{http://dx.doi.org/10.1561/2500000045}, \href
+  {http://dx.doi.org/10.1561/2500000045} {\path{doi:10.1561/2500000045}}.
 
 \bibitem{Ringer2021}
 Talia Ringer, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman.
@@ -842,10 +1025,14 @@ Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
 \newblock In {\em Proceedings of the 9th ACM SIGPLAN International Conference
   on Certified Programs and Proofs}, CPP 2020, page 99–113, New York, NY,
   USA, 2020. Association for Computing Machinery.
+\newblock URL: \url{https://doi.org/10.1145/3372885.3373823}, \href
+  {http://dx.doi.org/10.1145/3372885.3373823}
+  {\path{doi:10.1145/3372885.3373823}}.
 
 \bibitem{pumpkin-git}
 Talia Ringer and Nathaniel Yazdani.
 \newblock Pumpkin-git, 2018.
+\newblock URL: \url{http://github.com/uwplse/PUMPKIN-git}.
 
 \bibitem{ringer2018adapting}
 Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
@@ -861,6 +1048,9 @@ Talia Ringer, Nathaniel Yazdani, John Leo, and Dan Grossman.
   volume 141 of {\em Leibniz International Proceedings in Informatics
   (LIPIcs)}, pages 26:1--26:19, Dagstuhl, Germany, 2019. Schloss
   Dagstuhl--Leibniz-Zentrum fuer Informatik.
+\newblock URL: \url{http://drops.dagstuhl.de/opus/volltexte/2019/11081}, \href
+  {http://dx.doi.org/10.4230/LIPIcs.ITP.2019.26}
+  {\path{doi:10.4230/LIPIcs.ITP.2019.26}}.
 
 \bibitem{robert2018}
 Valentin Robert.
@@ -874,6 +1064,8 @@ Kenneth Roe and Scott Smith.
 \newblock In {\em Interactive Theorem Proving: 7th International Conference,
   ITP 2016, Nancy, France, August 22-25, 2016, Proceedings}, pages 491--499,
   Cham, 2016. Springer International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-43144-4_32}
+  {\path{doi:10.1007/978-3-319-43144-4_32}}.
 
 \bibitem{Saibi:PhD}
 Amokrane Saibi.
@@ -888,6 +1080,9 @@ Daniel Selsam and Leonardo de~Moura.
 \newblock In Nicola Olivetti and Ashish Tiwari, editors, {\em Automated
   Reasoning: 8th International Joint Conference}, IJCAR 2016, pages 99--115,
   Cham, 2016. Springer International Publishing.
+\newblock URL: \url{http://dx.doi.org/10.1007/978-3-319-40229-1_8}, \href
+  {http://dx.doi.org/10.1007/978-3-319-40229-1_8}
+  {\path{doi:10.1007/978-3-319-40229-1_8}}.
 
 \bibitem{pmlr-v70-selsam17a}
 Daniel Selsam, Percy Liang, and David~L. Dill.
@@ -896,6 +1091,7 @@ Daniel Selsam, Percy Liang, and David~L. Dill.
   34th International Conference on Machine Learning}, volume~70 of {\em
   Proceedings of Machine Learning Research}, pages 3047--3056. PMLR, 06--11 Aug
   2017.
+\newblock URL: \url{http://proceedings.mlr.press/v70/selsam17a.html}.
 
 \bibitem{sozeau:equations}
 Matthieu Sozeau.
@@ -910,6 +1106,8 @@ Matthieu Sozeau and Nicolas Oury.
 \newblock In {\em Theorem Proving in Higher Order Logics: 21st International
   Conference, TPHOLs 2008, Montreal, Canada, August 18-21, 2008. Proceedings},
   pages 278--293, Berlin, Heidelberg, 2008. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-71067-7_23}
+  {\path{doi:10.1007/978-3-540-71067-7_23}}.
 
 \bibitem{hstocoqv}
 Antal Spector-Zabusky, Joachim Breitner, Christine Rizkallah, and Stephanie
@@ -923,11 +1121,15 @@ Nicolas Tabareau, \'{E}ric Tanter, and Matthieu Sozeau.
 \newblock Equivalences for free: Univalent parametricity for effective
   transport.
 \newblock {\em Proc. ACM Program. Lang.}, 2(ICFP):92:1--92:29, July 2018.
+\newblock URL: \url{http://doi.acm.org/10.1145/3236787}, \href
+  {http://dx.doi.org/10.1145/3236787} {\path{doi:10.1145/3236787}}.
 
 \bibitem{tabareau2019marriage}
 Nicolas Tabareau, {\'E}ric Tanter, and Matthieu Sozeau.
 \newblock The marriage of univalence and parametricity.
 \newblock {\em Journal of the ACM}, 68(1):5:1--5:44, January 2021.
+\newblock \href {http://dx.doi.org/https://doi.org/10.1145/3429979}
+  {\path{doi:https://doi.org/10.1145/3429979}}.
 
 \bibitem{Tan:2015:RAR:2818754.2818813}
 Shin~Hwei Tan and Abhik Roychoudhury.
@@ -935,6 +1137,7 @@ Shin~Hwei Tan and Abhik Roychoudhury.
 \newblock In {\em Proceedings of the 37th International Conference on Software
   Engineering - Volume 1}, ICSE '15, pages 471--482, Piscataway, NJ, USA, 2015.
   IEEE Press.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=2818754.2818813}.
 
 \bibitem{Timany2015FirstST}
 Amin Timany and Bart Jacobs.
@@ -945,12 +1148,15 @@ Amin Timany and Bart Jacobs.
 {Univalent Foundations Program}.
 \newblock {\em Homotopy Type Theory: Univalent Foundations of Mathematics}.
 \newblock Institute for Advanced Study, 2013.
+\newblock URL: \url{https://homotopytypetheory.org/book}.
 
 \bibitem{van2012engineering}
 Paul Van Der~Walt and Wouter Swierstra.
 \newblock Engineering proof by reflection in {Agda}.
 \newblock In {\em Symposium on Implementation and Application of Functional
   Languages}, pages 157--173. Springer, 2012.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-41582-1_10}
+  {\path{doi:10.1007/978-3-642-41582-1_10}}.
 
 \bibitem{Wei:2010:AFP:1831708.1831716}
 Yi~Wei, Yu~Pei, Carlo~A. Furia, Lucas~S. Silva, Stefan Buchholz, Bertrand
@@ -958,6 +1164,9 @@ Yi~Wei, Yu~Pei, Carlo~A. Furia, Lucas~S. Silva, Stefan Buchholz, Bertrand
 \newblock Automated fixing of programs with contracts.
 \newblock In {\em Proceedings of the 19th International Symposium on Software
   Testing and Analysis}, ISSTA '10, pages 61--72, New York, NY, USA, 2010. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/1831708.1831716}, \href
+  {http://dx.doi.org/10.1145/1831708.1831716}
+  {\path{doi:10.1145/1831708.1831716}}.
 
 \bibitem{Wenzel2007isar}
 Makarius Wenzel.
@@ -970,6 +1179,7 @@ Makarius Wenzel.
 Makarius Wenzel.
 \newblock {PIDE} as front-end technology for {Coq}.
 \newblock {\em CoRR}, abs/1304.6626, 2013.
+\newblock \href {http://arxiv.org/abs/1304.6626} {\path{arXiv:1304.6626}}.
 
 \bibitem{Wenzel2013MultiProcessing}
 Makarius Wenzel.
@@ -977,6 +1187,8 @@ Makarius Wenzel.
 \newblock In {\em Interactive Theorem Proving: 4th International Conference,
   ITP 2013, Rennes, France, July 22-26, 2013. Proceedings}, pages 418--434,
   Berlin, Heidelberg, 2013. Springer.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-39634-2_30}
+  {\path{doi:10.1007/978-3-642-39634-2_30}}.
 
 \bibitem{Wenzel2014}
 Makarius Wenzel.
@@ -986,14 +1198,20 @@ Makarius Wenzel.
   ITP 2014, Held as Part of the Vienna Summer of Logic, VSL 2014, Vienna,
   Austria, July 14-17, 2014. Proceedings}, pages 515--530, Cham, 2014. Springer
   International Publishing.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-08970-6_33}
+  {\path{doi:10.1007/978-3-319-08970-6_33}}.
 
 \bibitem{WenzelScalingIsabelle}
 Makarius Wenzel.
 \newblock Scaling {Isabelle} proof document processing, December 2017.
+\newblock URL:
+  \url{http://sketis.net/wp-content/uploads/2017/12/Isabelle_Scaling_Dec-2017.pdf}.
 
 \bibitem{WenzelFurtherScalingIsabelle}
 Makarius Wenzel.
 \newblock Further scaling of isabelle technology, April 2018.
+\newblock URL:
+  \url{https://files.sketis.net/Isabelle_Workshop_2018/Isabelle_2018_paper_1.pdf}.
 
 \bibitem{wenzel1999isar}
 Markus Wenzel.
@@ -1001,11 +1219,14 @@ Markus Wenzel.
   documents.
 \newblock In {\em Theorem Proving in Higher Order Logics}, pages 167--183,
   Berlin, Heidelberg, 1999. Springer.
+\newblock \href {http://dx.doi.org/10.1007/3-540-48256-3_12}
+  {\path{doi:10.1007/3-540-48256-3_12}}.
 
 \bibitem{WhitesidePhD}
 Iain~Johnston Whiteside.
 \newblock {\em Refactoring proofs}.
 \newblock PhD thesis, University of Edinburgh, November 2013.
+\newblock URL: \url{http://hdl.handle.net/1842/7970}.
 
 \bibitem{wibergh2019}
 Karin Wibergh.
@@ -1022,6 +1243,8 @@ Ambre Williams.
 Thomas Williams and Didier R{\'e}my.
 \newblock A principled approach to ornamentation in {ML}.
 \newblock {\em Proc. ACM Program. Lang.}, 2(POPL):21:1--21:30, December 2017.
+\newblock \href {http://dx.doi.org/10.1145/3158109}
+  {\path{doi:10.1145/3158109}}.
 
 \bibitem{Woos:2016:PCF:2854065.2854081}
 Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
@@ -1030,6 +1253,9 @@ Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
   protocol.
 \newblock In {\em Proceedings of the 5th ACM SIGPLAN Conference on Certified
   Programs and Proofs}, CPP 2016, pages 154--165, New York, NY, USA, 2016. ACM.
+\newblock URL: \url{http://doi.acm.org/10.1145/2854065.2854081}, \href
+  {http://dx.doi.org/10.1145/2854065.2854081}
+  {\path{doi:10.1145/2854065.2854081}}.
 
 \bibitem{Xuan:2017:NAR:3071893.3071964}
 Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas
@@ -1037,6 +1263,9 @@ Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas
 \newblock Nopol: Automatic repair of conditional statement bugs in java
   programs.
 \newblock {\em IEEE Trans. Softw. Eng.}, 43(1):34--55, January 2017.
+\newblock URL: \url{https://doi.org/10.1109/TSE.2016.2560811}, \href
+  {http://dx.doi.org/10.1109/TSE.2016.2560811}
+  {\path{doi:10.1109/TSE.2016.2560811}}.
 
 \bibitem{Yang2011}
 Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.
@@ -1044,6 +1273,8 @@ Xuejun Yang, Yang Chen, Eric Eide, and John Regehr.
 \newblock In {\em Proceedings of the 32nd ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '11, pages 283--294, New York, NY,
   USA, 2011. ACM.
+\newblock \href {http://dx.doi.org/10.1145/1993498.1993532}
+  {\path{doi:10.1145/1993498.1993532}}.
 
 \bibitem{Zhang:2017:ATD:3097368.3097448}
 Tianyi Zhang and Miryung Kim.
@@ -1051,5 +1282,7 @@ Tianyi Zhang and Miryung Kim.
 \newblock In {\em Proceedings of the 39th International Conference on Software
   Engineering}, ICSE '17, pages 665--676, Piscataway, NJ, USA, 2017. IEEE
   Press.
+\newblock URL: \url{https://doi.org/10.1109/ICSE.2017.67}, \href
+  {http://dx.doi.org/10.1109/ICSE.2017.67} {\path{doi:10.1109/ICSE.2017.67}}.
 
 \end{thebibliography}

@@ -1,7 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: uwthesis.aux
-The style file: plain.bst
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: uwthesis.bib
 Warning--to sort, need author or key in hints
 Warning--to sort, need author or key in proofgeneral
@@ -15,38 +19,38 @@ Warning--empty school in pons1999conception
 Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
 You've used 171 entries,
-            2118 wiz_defined-function locations,
-            1497 strings with 35507 characters,
-and the built_in function-call counts, 65165 in all, are:
-= -- 6748
-> -- 2745
+            2849 wiz_defined-function locations,
+            1763 strings with 41466 characters,
+and the built_in function-call counts, 88823 in all, are:
+= -- 9915
+> -- 2951
 < -- 97
 + -- 1096
 - -- 907
-* -- 4181
-:= -- 10109
-add.period$ -- 570
+* -- 4906
+:= -- 12125
+add.period$ -- 696
 call.type$ -- 171
 change.case$ -- 941
 chr.to.int$ -- 0
 cite$ -- 182
-duplicate$ -- 2740
-empty$ -- 5206
+duplicate$ -- 2877
+empty$ -- 8223
 format.name$ -- 907
-if$ -- 14400
+if$ -- 23219
 int.to.chr$ -- 0
 int.to.str$ -- 171
-missing$ -- 133
-newline$ -- 837
+missing$ -- 134
+newline$ -- 963
 num.names$ -- 356
-pop$ -- 1169
+pop$ -- 1788
 preamble$ -- 1
 purify$ -- 784
 quote$ -- 0
-skip$ -- 2174
+skip$ -- 6432
 stack$ -- 0
 substring$ -- 4014
-swap$ -- 936
+swap$ -- 1100
 text.length$ -- 97
 text.prefix$ -- 0
 top$ -- 0
@@ -54,5 +58,5 @@ type$ -- 674
 warning$ -- 11
 while$ -- 646
 width$ -- 174
-write$ -- 1988
+write$ -- 2265
 (There were 11 warnings)

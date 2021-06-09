@@ -1687,13 +1687,23 @@ doi = {10.1017/S0956796812000056}
   HAL_VERSION = {v1},
 }
 
-@misc{angiuli2020internalizing,
-      title={Internalizing Representation Independence with Univalence}, 
-      author={Carlo Angiuli and Evan Cavallo and Anders Mörtberg and Max Zeuner},
-      year={2020},
-      eprint={2009.05547},
-      archivePrefix={arXiv},
-      primaryClass={cs.PL}
+@article{angiuli2020internalizing,
+author = {Angiuli, Carlo and Cavallo, Evan and M\"{o}rtberg, Anders and Zeuner, Max},
+title = {Internalizing Representation Independence with Univalence},
+year = {2021},
+issue_date = {January 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {5},
+number = {POPL},
+url = {https://doi.org/10.1145/3434293},
+doi = {10.1145/3434293},
+abstract = {In their usual form, representation independence metatheorems provide an external guarantee that two implementations of an abstract interface are interchangeable when they are related by an operation-preserving correspondence. If our programming language is dependently-typed, however, we would like to appeal to such invariance results within the language itself, in order to obtain correctness theorems for complex implementations by transferring them from simpler, related implementations. Recent work in proof assistants has shown that Voevodsky's univalence principle allows transferring theorems between isomorphic types, but many instances of representation independence in programming involve non-isomorphic representations.  In this paper, we develop techniques for establishing internal relational representation independence results in dependent type theory, by using higher inductive types to simultaneously quotient two related implementation types by a heterogeneous correspondence between them. The correspondence becomes an isomorphism between the quotiented types, thereby allowing us to obtain an equality of implementations by univalence. We illustrate our techniques by considering applications to matrices, queues, and finite multisets. Our results are all formalized in Cubical Agda, a recent extension of Agda which supports univalence and higher inductive types in a computationally well-behaved way.},
+journal = {Proc. ACM Program. Lang.},
+month = jan,
+articleno = {12},
+numpages = {30},
+keywords = {Univalence, Cubical Type Theory, Representation Independence, Proof Assistants, Higher Inductive Types}
 }
 
 @inproceedings{Klein2009,

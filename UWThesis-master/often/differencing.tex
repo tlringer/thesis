@@ -180,8 +180,8 @@ Consequentially, \kl{definitional} equalities over \lstinline{nat} may become \k
 \label{fig:nattobin}
 \end{figure}
 
-Each \lstinline{Iota}---one per constructor---describes and proves the $\iota$-reduction behavior
-of \lstinline{DepElim} on the corresponding case.
+Each \lstinline{Iota}---one per constructor---describes and proves the behavior of $\iota$-reduction
+for \lstinline{DepElim} on the corresponding case.
 This is needed, for example, to port proofs about unary numbers \lstinline{nat} to
 proofs about binary numbers \lstinline{N} (Figure~\ref{fig:nattobin}).
 While we can define \lstinline{DepConstr} and \lstinline{DepElim} to induce an equivalence
@@ -263,7 +263,7 @@ A more syntactic version of this claim can be used to specify and prove correctn
 or on an ad hoc basis in \kl{CIC$_{\omega}$} (Section~\ref{sec:correct-cic}).
 
 \paragraph{Historical Note}
-When I met with \kl{Michael Shulman} over coffee a few years ago, he said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I didn't understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
+When I met with \kl{Michael Shulman} over coffee a few years ago, he said that a preliminary version of this work ``feels like univalence,'' ``feels like coherence,'' and ``feels like an endofunctor.'' All three were correct! But I did not understand the connection to endofunctors by way of Lambek's until a few months before writing this thesis.
 \kl{Carlo Angiuli} and \kl{Anders M\"{o}rtberg} identified this connection, and \kl{Carlo} explained it to me.
 It is quite beautiful!
 
@@ -289,7 +289,7 @@ This is why the configuration is most natural when the types \Aa and \B are indu
 But the configuration is in fact more general than that---it can support any two equivalent types \Aa and \B (by Lambek's theorem).
 
 Figure~\ref{fig:lambek} shows this for an arbitrary configuration for an equivalence between \Aa and \B.
-Here, $F\ A$ is the shape of \Aa.
+Here, $F\ A$ is the inductive structure of \Aa.
 \lstinline{DepConstr} maps from $F\ A$ to \Aa, and \lstinline{Eta} maps from \Aa back to $F\ A$.
 \lstinline{DepElim} (not pictured explicitly) is the arrow corresponding to \lstinline{DepConstr} defined over the analogous diagram
 lifted to $A \rightarrow$ $s$ for some sort $s$ (also not pictured explicitly);
@@ -366,7 +366,7 @@ These criteria relate \lstinline{DepConstr}, \lstinline{DepElim}, \lstinline{Eta
 in a way that preserves equivalence coherently with equality.
 
 \paragraph{Equivalence}
-To preserve the equivalence (Figure~\ref{fig:spec}, top), \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
+To preserve the equivalence (Figure~\ref{fig:spec}, top), together \lstinline{DepConstr} and \lstinline{DepElim} must form an equivalence
 (\lstinline{section} and \lstinline{retraction} must hold for \lstinline{f} and \lstinline{g}).
 \lstinline{DepConstr} over \Aa and \B must be equal up to transport across that equivalence (\lstinline{constr_ok}), 
 and similarly for \lstinline{DepElim} (\lstinline{elim_ok}).
@@ -451,13 +451,13 @@ In addition, for algebraic ornaments, there is a proof of this theorem:
 \end{lstlisting}
 which states that the \lstinline{length} function is \intro{coherent} with this equivalence.
 
-In Section~\ref{sec:pi-results}, I will show you a case study of porting functions and proofs from lists to length-indexed vectors.
-Nominally this works by porting the functions and proofs along the equivalence from Section~\ref{sec:pi-scope},
-but in practice this works by chaining two different automatic configurations with some human input.
-The first configuration uses a search procedure that discovers the equivalence between lists and vectors of some length above,
+In Section~\ref{sec:pi-results}, I will show you a case study moving from lists to length-indexed vectors.
+Nominally this works by porting functions and proofs along the equivalence from Section~\ref{sec:pi-scope},
+but in practice this works by chaining two automatic configurations with some human input.
+The first configuration uses a search procedure that discovers the equivalence between lists and vectors of \textit{some} length above,
 as well as the proof of coherence.
 The second configuration uses a search procedure that discovers how to unpack vectors of some length to vectors of a \textit{particular} length.
-The first configuration nicely demonstrates how differencing works, so let us look at this in detail.
+The first configuration nicely demonstrates how differencing works, so let us look at it in detail.
 
 \paragraph{Differencing for Algebraic Ornaments}
 Assume \kl{inductive types} \Aa and \AI, related by an \kl{algebraic ornament} with the index of type \I.
@@ -538,7 +538,7 @@ the derivations for generating \lstinline{g} are omitted.
 
 \subsubsection{Differencing for the Indexer}
 
-The differencing algorithm generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
+Differencing generates the \lstinline{indexer} by traversing the types of the eliminators for \Aa\ and \AI\ in parallel using the algorithm from Figure~\ref{fig:searchindexer},
 which consists of three judgments: one to generate the \kl{motive}, one to generate each case,
 and one to compose the motive and cases.
 
@@ -590,8 +590,8 @@ It does this by constructing a function from \Aa to \I.
 Consider \lstinline{list} and \lstinline{vector}:
 
 \begin{lstlisting}
-  list T := Ind (Ty$_A$ : $s$) {$\ldots$}
-  vector T := Ind (Ty$_B$ : $\Pi$(@\codediff{(n : nat)}@).$s$) {$\ldots$}
+  list T := Ind (Ty$_A$ : $s$) { $\ldots$ }
+  vector T := Ind (Ty$_B$ : $\Pi$(@\codediff{(n : nat)}@).$s$) { $\ldots$ }
 \end{lstlisting}
 For these types, \textsc{Index-Motive} computes the motive:
 
@@ -778,10 +778,10 @@ Each \lstinline{Iota} follows by rewriting by reflexivity, since \Aa and \AI hav
 
 \paragraph{Proving Correctness}
 In the end, \toolnamec generates proofs of \lstinline{section} and \lstinline{retraction},
-as well as the \kl{coherence} theorem \lstinline{coherence} for \kl{algebraic ornaments}.
+as well as \lstinline{coherence}.
 This proves the correctness property that the configuration induces an equivalence, thereby
-increasing confidence in the output of the search procedure.
-The proof of coherence follows by reflexivity, thanks to the construction of \lstinline{f} 
+increasing confidence in the output of differencing.
+The proof of \kl{coherence} follows by reflexivity, thanks to the construction of \lstinline{f} 
 applying the \kl{indexer} as the left projection.
 The proofs of \lstinline{section} and \lstinline{retraction} follow from the algorithm presented earlier.
 

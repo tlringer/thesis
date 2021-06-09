@@ -6,8 +6,8 @@
 4 autoreference(s) are introduced twice.
 2 autoreference(s) are used but not introduced.
 
-135 autoreference(s) are properly used.
-105 autoreference(s) are defined but not used.
+136 autoreference(s) are properly used.
+104 autoreference(s) are defined but not used.
 
 
 ********
@@ -159,7 +159,6 @@ index.tex:631: {Pierre-Marie P\'{e}drot}{default}{base}
 index.tex:634: {Yves Bertot}{default}{base}
 index.tex:637: {Ben Delaware}{default}{base}
 index.tex:639: {Janno}{default}{base}
-index.tex:641: {Valentin Robert}{default}{base}
 index.tex:644: {Robert Rand}{default}{base}
 index.tex:653: {Hillel Wayne}{default}{base}
 index.tex:655: {Dionna Glaze}{default}{base}

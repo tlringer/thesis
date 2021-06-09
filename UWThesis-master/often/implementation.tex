@@ -38,7 +38,7 @@ If that fails, it prompts the proof engineer to supply a configuration \kl{manua
 Proof engineers can supply manual configurations by defining them as Gallina terms and
 providing them to the \lstinline{Configure Repair} command.
 
-Once \toolnamec has found a configuration, the next step---\textsc{Transform}---runs the transformation.
+Once \toolnamec has found a configuration, the second step---\textsc{Transform}---runs the transformation.
 It transforms \lstinline{old_proof} into some new proof term, then defines the new proof term as \lstinline{new_proof}.
 It is also possible to ask \toolnamec to automatically generate a name. % TODO is it?
 The final step---\textsc{Decompile}---runs in the end to suggest a proof script.
@@ -48,10 +48,10 @@ Notably, the \lstinline{Repair Module} command uses higher-order functions writt
 to operate over entire modules at once and define new, repaired versions of those modules.
 The \lstinline{Preprocess} command converts functions to use eliminators, so that the transformation
 can assume \kl{primitive eliminators}.
-The \lstinline{Lift} and \lstinline{Lift Module} commands skip the decompilation step,
+The commands \lstinline{Lift} and \lstinline{Lift Module} skip the decompilation step,
 when only the term is desired in the end.
 Several options make it possible to control whether \toolnamec generates correctness proofs,
-as well as how aggressively it runs optimizations, and what it considers in its optimizations.
+as well as how aggressively it runs optimizations.
 The repository includes more information on all of these.
 
 \subsubsection{Differencing}
@@ -61,8 +61,8 @@ As mentioned in Section~\ref{sec:proc}, \kl{differencing} inside of
 \toolnamec implements four search procedures for automatic configuration~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}}:
 
 \begin{enumerate}
-\item algebraic ornaments,
-\item unpacking $\Sigma$ types,
+\item \kl{algebraic ornaments},
+\item unpacking \kl{$\Sigma$} types,
 \item swapping constructors, and
 \item moving between nested pairs and records.
 \end{enumerate}
@@ -105,7 +105,7 @@ reusing existing functions defined in other search procedures.
 I would not expect the average proof engineer to be able to do the same, and I have not yet asked anyone else to write a search procedure
 to gauge the effort involved for others.
 It is notable that manual configuration is always an option when search procedures do not exist,
-but the results in Section~\ref{sec:pi-results} suggest that automatic configuration is very helpful for saving developer effort,
+but the results in Section~\ref{sec:pi-results} suggest that automatic configuration is very helpful for saving work for proof engineers,
 and so worth implementing for useful classes of equivalences.
 
 \subsubsection{Transformation}
@@ -116,7 +116,7 @@ of the \kl{transformation} from Section~\ref{sec:pi-trans} operates over terms i
 It takes as input two types \Aa and \B, along with a configuration that induces an equivalence between them.
 \Aa and \B may not necessarily be the inputs to differencing---in the case of algebraic ornaments, for example,
 differencing takes \Aa and \AI as inputs, but the transformation takes \Aa and \B as inputs,
-where \B is $\Sigma (i : I).A_I i$.
+where \B is $\Sigma (i : I).A_I\ i$.
 
 The unification heuristics run before the transformation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/liftconfig.ml}{\circled{6}},
 and in the end return which transformation derivation to run,
@@ -126,8 +126,8 @@ on page~\pageref{fig:final}, but with a few differences highlighted below.
 
 \paragraph{From CIC$_{\omega}$ to Gallina}
 The implementation~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/src/automation/lift/lift.ml}{\circled{4}} % lift.ml
-of the transformation handles language differences to scale from CIC$_{\omega}$ to Gallina.
-For example, recall that the transformation assumes \kl{primitive eliminators}, while Gallina implements eliminators in terms of pattern matching and fixpoints. 
+of the transformation handles language differences to scale from \kl{CIC$_{\omega}$} to Gallina.
+For example, recall that the transformation assumes \kl{primitive eliminators}, while Gallina implements eliminators using pattern matching and fixpoints. 
 To handle terms that use these features, \kl{Nate} implemented a \lstinline{Preprocess} command in \toolnamec that 
 translates these terms into corresponding eliminator applications.
 This command can preprocess a definition (like \lstinline{length} from Figure~\ref{fig:length} on page~\pageref{fig:length}) or an entire module
@@ -136,9 +136,9 @@ It currently supports fixpoints that are structurally recursive on only
 immediate substructures.\footnote{This is enough to preprocess many practical terms, including the entire \lstinline{List} module.
 But it is not as general as it could be~\cite{recursion-elimination, jesper}.
 A more general translation may help \toolnamec support more terms, and discussions
-with Coq developers a couple of years ago suggest that the implementation of such a translation
+with Coq developers a couple of years ago suggested that the implementation of such a translation
 building on work from the equations~\cite{sozeau:equations} plugin was in progress.
-I do not know the current status of that project.}
+I do not know the current status.}
 To translate such a fixpoint, it first extracts a motive, then generates each case
 by partially reducing the function's body under a hypothetical context for the constructor arguments.
 The implementation documents this and other language differences.
@@ -178,7 +178,7 @@ with plans for automatic support in the future. % minimal_records.v, but show th
 
 As with \sysname, \toolnamec is implemented as a Coq plugin, and produces terms that Coq type checks in the end.
 \toolnamec does not modify the type checker, and furthermore does not add any axioms, so it does not increase the \kl{TCB}.
-This is perhaps even more notable for \toolnamec, since all other implementations of transport across equivalences
+This is perhaps even more notable for \toolnamec, since all other implementations of \kl{transport} across equivalences
 that I am aware of at least sometimes add axioms.
 Since \toolnamec implements transport as a proof term transformation, it is able to circumvent this and not increase the TCB in any way.
 
@@ -224,14 +224,14 @@ The second pass improves on suggested tactics by simplifying arguments, substitu
 hints like custom tactics and decision procedures. % TODO not quite true anymore? IDK what to do about that, though.
 
 \paragraph{First Pass: Basic Proof Scripts}
-The first pass takes Coq terms and produces tactics in Ltac, the proof script language for Coq.
+The first pass takes \kl{Gallina} terms and produces tactics in \kl{Ltac}. % the proof script language for Coq.
 Ltac can be confusing to reason about, since Ltac tactics can refer to Gallina terms, and the semantics of Ltac depends both on the
 semantics of Gallina and on the implementation of proof search procedures written in OCaml.
 To give a sense of how the first pass works without the clutter of these details, I start by defining a mini decompiler that 
 implements a simplified version of the first pass.
 I then explain how \kl{RanDair} scaled this to the implementation.
 
-The mini decompiler takes CIC$_{\omega}$ terms and produces tactics in a 
+The mini decompiler takes \kl{CIC$_{\omega}$} terms and produces tactics in a 
 mini version of Ltac which I call Qtac.
 The syntax for Qtac is in Figure~\ref{fig:ltacsyntax1}.
 Qtac includes hypothesis introduction (\lstinline{intro}),
@@ -360,7 +360,7 @@ simplifying rewrites,
 and turning applications of \lstinline{eq_refl} into \lstinline{reflexivity} or \lstinline{auto}.
 
 \paragraph{Second Pass: Better Proof Scripts}
-The implementation of \textbf{Decompile} first runs something similar to the mini decompiler, then modifies the suggested tactics to produce a more natural proof script~\href{https://github.com/uwplse/coq-plugin-lib/tree/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}}. % decompiler.ml
+The implementation of \textbf{Decompile} first runs something like the mini decompiler, then modifies the suggested tactics to produce a more natural proof script~\href{https://github.com/uwplse/coq-plugin-lib/tree/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}}. % decompiler.ml
 For example, it cancels out sequences of \lstinline{intros} and \lstinline{revert},
 inserts semicolons, and removes extra arguments to \lstinline{apply} and \lstinline{rewrite}. %, ensuring the result still holds. % TODO rewrite
 It can also take tactics from the proof engineer (like part of the old proof script) as hints,
@@ -369,15 +369,15 @@ This makes it possible for suggested scripts to include custom tactics and decis
 
 \begin{figure}
 \begin{lstlisting}
-fun (@\codesimb{(y0 : list A)}@) =>(@\vspace{-0.04cm}@)
-  (@\codesima{list\_rect}@) _ _  (fun (@\codesima{a l H}@) =>(@\vspace{-0.04cm}@)
-    (@\codesimc{eq\_ind\_r}@) _ (@\codesimd{eq\_refl}@) (@\codesimc{(app\_nil\_r (rev l) (a::[]))}@))(@\vspace{-0.04cm}@)
-    (@\codesime{eq\_refl}@)(@\vspace{-0.04cm}@)
-    (@\codesima{y0}@)(@\vspace{-0.04cm}@)
-(@\vspace{-0.04cm}@)
-- (@\codesimb{intro y0.}@) (@\codesima{induction y0 as [a l H|].}@)(@\vspace{-0.04cm}@)
-  + (@\codesimc{simpl. rewrite app\_nil\_r.}@) (@\codesimd{auto.}@)(@\vspace{-0.04cm}@)
-  + (@\codesime{auto.}@)(@\vspace{-0.04cm}@)
+fun (@\codesimb{(y0 : list A)}@) =>
+  (@\codesima{list\_rect}@) _ _  (fun (@\codesima{a l H}@) =>
+    (@\codesimc{eq\_ind\_r}@) _ (@\codesimd{eq\_refl}@) (@\codesimc{(app\_nil\_r (rev l) (a::[]))}@))
+    (@\codesime{eq\_refl}@)
+    (@\codesima{y0}@)
+
+- (@\codesimb{intro y0.}@) (@\codesima{induction y0 as [a l H|].}@)
+  + (@\codesimc{simpl. rewrite app\_nil\_r.}@) (@\codesimd{auto.}@)
+  + (@\codesime{auto.}@)
 \end{lstlisting}
 \vspace{-0.3cm}
 \caption{Proof term (top) and decompiled proof script (bottom) for the base case of 
@@ -412,7 +412,7 @@ may help with cases for which Coq cannot infer the correct motive.
 Scaling the decompiler to Gallina introduces let bindings, which are generated by 
 tactics like \lstinline{rewrite in}, \lstinline{apply in}, and \lstinline{pose}.
 \textbf{Decompile} implements~\href{https://github.com/uwplse/coq-plugin-lib/blob/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}} % decompiler.ml
-support for \lstinline{rewrite in} and \lstinline{apply in} similarly to how it supports
+support for the tactics \lstinline{rewrite in} and \lstinline{apply in} similarly to how it supports
 \lstinline{rewrite} and \lstinline{apply}, except that it ensures that the unmanipulated hypothesis does not occur in the body of the let expression,
 it swaps the direction of the rewrite, and it recurses into any generated subgoals.
 In all other cases, it uses \lstinline{pose}, a catch-all for let bindings.
@@ -420,17 +420,17 @@ In all other cases, it uses \lstinline{pose}, a catch-all for let bindings.
 \paragraph{Forfeiting Soundness}
 While there is a way to always produce a correct proof script,
 by default, \textbf{Decompile} deliberately forfeits soundness to suggest more useful tactics.
-For example, it may suggest the \lstinline{induction} tactic, but leave motive inference to the proof engineer.
+For example, it may suggest \lstinline{induction}, but leave motive inference to the proof engineer.
 I have found these suggested tactics easier to work with (Section~\ref{sec:pi-results}).
-Note that in the case the suggested proof script is not quite correct,
+In the case the suggested proof script is not quite correct,
 it is still possible to use the generated proof term directly.
-Still, in the event that soundness is desirable, \kl{RanDair} has since implemented a simplified sound
+\kl{RanDair} has also implemented a simplified sound
 version of the decompiler in a branch. % TODO link
 %Work in progress is integrating this with a machine learning tool for friendlier suggested proof scripts
 %that preserve soundness. TODO if we don't mention elsewhere, mention here
 
 \paragraph{Pretty Printing}
-After decompiling proof terms, \textbf{Decompile} pretty prints the result~\href{https://github.com/uwplse/coq-plugin-lib/blob/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}}.
+After decompiling proof terms, the implementation of \textbf{Decompile} pretty prints the result~\href{https://github.com/uwplse/coq-plugin-lib/blob/9ef05815c261de9c99b604c6b581ba1c4fbc1a46/src/coq/decompiler/decompiler.ml}{\circled{11}}.
 Like the mini decompiler, \textbf{Decompile} represents its output using a predefined grammar of Ltac tactics,
 albeit one that is larger than Qtac, and that also includes tacticals.
 It maintains the recursive proof structure for formatting. %, then uses that to print proofs of subgoals using bullet points.

@@ -2563,23 +2563,23 @@
 \KAuxDeclaredScopeTag {fig:listtovect}
 \KAuxNewLinkScopetagInstance {fig:listtovect}{document}
 
-\KAuxFileAt {approach.tex}{180}
+\KAuxFileAt {approach.tex}{182}
 \KAuxAutorefTarget {default}{base}{homotopy type theory}
 
-\KAuxFileAt {approach.tex}{181}
+\KAuxFileAt {approach.tex}{183}
 \KAuxAutorefTarget {default}{base}{univalence}
 \KAuxDeclaredScopeTag {sec:pi-spec-diff}
 \KAuxNewLinkScopetagInstance {sec:pi-spec-diff}{document}
 \KAuxDeclaredScopeTag {sec:pi-spec-trans}
 \KAuxNewLinkScopetagInstance {sec:pi-spec-trans}{document}
 
-\KAuxFileAt {approach.tex}{249}
+\KAuxFileAt {approach.tex}{251}
 \KAuxAutorefTarget {default}{base}{transport}
 
-\KAuxFileAt {approach.tex}{257}
+\KAuxFileAt {approach.tex}{259}
 \KAuxAutorefTarget {default}{base}{internal}
 
-\KAuxFileAt {approach.tex}{262}
+\KAuxFileAt {approach.tex}{264}
 \KAuxAutorefTarget {default}{base}{external}
 \KAuxDeclaredScopeTag {sec:pi-diff}
 \KAuxNewLinkScopetagInstance {sec:pi-diff}{document}

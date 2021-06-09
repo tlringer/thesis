@@ -22,7 +22,7 @@ With \kl{manual configuration}, the \textit{proof engineer} extracts and general
 to fix other broken proofs.
 
 Like the original \contour[2]{violet}{\kl{\sysname}} prototype, \toolnamec also does this using a combination of \kl{differencing} and \kl{proof term transformations}.
-The corresponding differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.
+The differencing algorithms (Section~\ref{sec:pi-spec-diff}) run in response to a breaking change in a datatype that corresponds to a type equivalence.
 When they succeed, the diff that they find is that type equivalence.
 The proof engineer can also pass the type equivalence to \toolnamec directly, effectively doing differencing by hand.
 In either case, the proof term transformation (Section~\ref{sec:pi-spec-trans}) then transforms a proof term defined over the old version of the datatype
@@ -33,8 +33,8 @@ with real payoffs for proof engineers (Section~\ref{sec:pi-results}).
 \subsection{Workflow: Configure, Transform, Decompile}
 \label{sec:pi-workflow}
 
-As with \sysname, the interface to \toolnamec is exposed to the proof engineer as a \kl{command}.
-\toolnamec extends \sysnamelong with a new command called \lstinline{Repair},
+%As with \sysname, the interface to \toolnamec is exposed to the proof engineer as a \kl{command}.
+\toolnamec extends \sysnamelong with a new \kl{command} called \lstinline{Repair},
 with the syntax:
 
 \begin{lstlisting}
@@ -109,6 +109,7 @@ See Table~\ref{fig:changes} on page~\pageref{fig:changes} for more.
 \begin{minipage}{0.48\columnwidth}
 \lstinputlisting[firstline=5, lastline=7]{often/equiv2.tex}
 \end{minipage}
+\vspace{-0.2cm}
 \caption{The old type \lstinline{I} (left) is either \lstinline{A} or \lstinline{B}. The new type \lstinline{J} (right) is \lstinline{I} with \lstinline{A} and \lstinline{B} factored out to \lstinline{bool} (\codediff{orange}).}
 \label{fig:equivalence2}
 \end{figure}
@@ -158,6 +159,7 @@ and repairing proofs of De Morgan's laws. % constr_refactor.v
 \begin{minipage}{0.55\textwidth}
    \lstinputlisting[firstline=7, lastline=12]{often/listtovect.tex}
 \end{minipage}
+\vspace{-0.2cm}
 \caption{A vector (right) is a list (left) indexed by its length (\codediff{orange}). Vectors effectively make it possible to enforce length invariants about lists at compile time.}
 \label{fig:listtovect}
 \end{figure}
@@ -173,8 +175,8 @@ But equivalences are more powerful than they may seem.
 Consider, for example, changing a list to a length-indexed vector (Figure~\ref{fig:listtovect}).
 Since $\Sigma$\lstinline{(l:list T).length l = n }$\simeq$\lstinline{ vector T n},
 \toolnamec can repair functions and proofs about lists to functions and proofs about vectors of particular lengths~\href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/examples/Example.v}{\circled{3}}. % Example.v
-From the proof engineer's perspective, after updating specifications from \lstinline{list} to \lstinline{vector},
-to fix her functions and proofs, she must additionally prove invariants about the lengths of her lists.
+From the proof engineer's perspective, after moving from \lstinline{list} to \lstinline{vector},
+to fix her functions and proofs, she must prove invariants about the lengths of her lists.
 \toolnamec makes it easy to separate out that proof obligation, then automates the rest.
 
 A more formal result about the expressiveness of equivalences holds inside of \intro{homotopy type theory}:
@@ -184,7 +186,7 @@ with the help of these quotient types, it is possible to form an equivalence
 from a relation, even when the relation is not an equivalence~\cite{angiuli2020internalizing}.
 A less general result holds in Coq, which lacks quotient types:
 it is possible to achieve a similar outcome and use \toolnamec for changes that add or remove information
-whenever those changes can be expressed as equivalences between $\Sigma$ types or sum types.
+whenever those changes can be expressed as equivalences between \kl{$\Sigma$} types or sum types.
 With some creativity, this can even support adding new constructors to types,
 though not yet in a way that saves work proof engineers.
 
@@ -206,7 +208,7 @@ In the end, it returns a configuration that corresponds to the equivalence (see 
 along with the equivalence itself.
 
 \kl{Manual configuration} makes it possible for the proof engineer to skip differencing, so that \toolnamec is not limited by the 
-search procedures currently implemented, or by the undecidability of differencing arbitrary types.
+search procedures currently implemented, nor by the undecidability of differencing arbitrary types.
 Manual configuration supports any change that can be described by a type equivalence.
 To configure \toolnamec manually, the proof engineer can pass the configuration corresponding to the equivalence to \toolnamec's \lstinline{Configure Repair} command before invoking \lstinline{Repair}.
 This is what I did for the change in Figure~\ref{fig:equivalence2} \href{https://github.com/uwplse/pumpkin-pi/blob/v2.0.0/plugin/coq/playground/constr_refactor.v}{\circled{2}}.

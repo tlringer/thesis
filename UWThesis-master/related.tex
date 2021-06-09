@@ -285,7 +285,7 @@ Section~\ref{sec:forall} describes one possible path building on Transfer to imp
 %In addition, the proof assistant Isabelle/HOL that Transfer works for lacks both dependent types and proof terms.
 
 The \toolnamec transformation implements a particular kind of transfer called automatic \kl{transport}.
-The name here is a potentially confusing: \kl{transport} itself refers to a particular form of 
+The name is potentially confusing: \kl{transport} itself refers to a particular form of 
 rewriting along a \kl{propositional equality}, or inhabitance of the identity type.
 It often (but not always) refers to \kl{univalent} \kl{transport}, an application of an \kl{eliminator} derivable
 in \kl{homotopy type theory} from \kl{univalence}~\cite{univalent2013homotopy}
@@ -321,8 +321,8 @@ New proof automation continues to make proof repair more feasible.
 
 \paragraph{Ontology Repair}
 GALILEO~\cite{chan2011galileo} is a tool built on \kl{Isabelle/HOL} for identifying and repairing faulty ontologies in response to contradictory
-evidence; it has been applied to repair faulty physics ontologies, and may have applications for proof repair.
-GALILEO uses repair plans to determine when to trigger a repair, as well as how to repair the ontology.
+evidence. It uses repair plans to determine when to trigger a repair, and how to repair the ontology.
+It has been applied to repair faulty physics ontologies, and may have applications for proof repair.
 
 \paragraph{Knowledge Sharing Methods}
 Knowledge sharing methods~\cite{gauthier2014} match concepts across
@@ -399,7 +399,7 @@ For example, the review found that running the same tool on strengthened version
 One possible reason for this is that the tools could not search for the correct patches efficiently enough.
 Example-based techniques can help navigate a large search space quickly.
 
-\sysnamelong uses examples---in the former of changes to datatypes or proofs---to derive patches.
+\sysnamelong uses examples---in the form of changes to datatypes or proofs---to derive patches.
 The \kl{constructive} foundations of Coq make this especially appealing and powerful.
 For example, existence proofs in Coq must be accompanied by a witness.
 Each of these witnesses is in effect an example that \sysnamelong can extract and generalize,
@@ -526,7 +526,7 @@ versions of a program for relative correctness with respect to a specification.
 Incremental $\lambda$-calculus~\cite{Cai:2014:TCH:2594291.2594304} introduces a general model for program changes.
 All of these may be useful for improving semantic differencing.
 
-Some of the program repair tools above use machine learning to generalize examples---I discuss some ideas combining proof repair
+Some of these program repair tools use machine learning to generalize examples---I discuss some ideas combining proof repair
 with machine learning in Section~\ref{sec:forall}.
 Several of the tools identify examples from code repositories and libraries.
 These tools may offer some insights for how to break down the large composite changes typically found in static artifacts or in code repositories
@@ -548,7 +548,7 @@ It records refactorings that the library developer makes inside of the IDE,
 then replays the refactorings in in client code, reconstructing everything from the recorded trace.
 Future proof repair tools may benefit from IDE integration of this kind.
 For example, it may be useful to record changes within a project inside of an IDE 
-so that \sysnamelong can find patches corresponding to incremental changes without the proof engineering needing to deconstruct them manually.
+so that \sysnamelong can find patches corresponding to incremental changes without the proof engineer needing to deconstruct them manually.
 It may also help to have something like the trace file in CatchUp! so that library developers can easily provide patches for client proof developments.
 
 \iffalse

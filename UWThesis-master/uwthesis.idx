@@ -530,6 +530,7 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{55}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{55}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{55}
+\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{56}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{57}
@@ -611,7 +612,7 @@
 \indexentry{Verification!Trusted Computing Base|hyperpage}{69}
 \indexentry{Logic \& Type Theory!External|hyperpage}{69}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{69}
-\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{69}
+\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{70}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{70}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{70}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{70}
@@ -638,10 +639,10 @@
 \indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{72}
-\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{72}
-\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{73}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
 \indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{73}
@@ -650,8 +651,8 @@
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Initial Algebra|hyperpage}{74}
-\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{74}
-\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{74}
+\indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{75}
+\indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{75}
 \indexentry{Acknowledgments!PL Community!Michael Shulman|hyperpage}{75}
 \indexentry{Acknowledgments!PL Community!Carlo Angiuli|hyperpage}{75}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{75}
@@ -665,74 +666,75 @@
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{77}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{78}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{78}
-\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{78}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{78}
+\indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{79}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{79}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{79}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments!Ornamental Promotion Isomorphism|hyperpage}{79}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{79}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{79}
-\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{80}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments!Ornamental Promotion Isomorphism|hyperpage}{80}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{80}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{80}
+\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{81}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{82}
 \indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{83}
-\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{83}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{84}
 \indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{84}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{84}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{84}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{84}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{85}
-\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{85}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments!Coherence|hyperpage}{84}
+\indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{84}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments!Indexer|hyperpage}{85}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{85}
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{85}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{85}
-\indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{85}
-\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{88}
-\indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{88}
-\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{88}
-\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{88}
-\indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{88}
-\indexentry{Logic \& Type Theory!Polymorphism|hyperpage}{88}
-\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{88}
+\indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{87}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Constructors|hyperpage}{87}
+\indexentry{Proof Repair!Across Type Equivalences!Dependent Eliminators|hyperpage}{87}
+\indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{87}
+\indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{87}
+\indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{87}
+\indexentry{Logic \& Type Theory!Polymorphism|hyperpage}{87}
+\indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{87}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{88}
-\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{89}
-\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{89}
-\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{89}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{89}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{89}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{89}
-\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{89}
-\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{89}
-\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{89}
-\indexentry{Verification!Coq Plugins|hyperpage}{89}
-\indexentry{Verification!Trusted Computing Base|hyperpage}{89}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
+\indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
+\indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
+\indexentry{Verification!Coq Plugins|hyperpage}{88}
+\indexentry{Verification!Trusted Computing Base|hyperpage}{88}
 \indexentry{Verification!Coq Commands|hyperpage}{89}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{89}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{89}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{89}
-\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{90}
-\indexentry{Results!Design!Semantic Differencing|hyperpage}{90}
-\indexentry{Results!Design!Proof Term Transformations|hyperpage}{91}
+\indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{89}
+\indexentry{Results!Design!Semantic Differencing|hyperpage}{89}
+\indexentry{Results!Design!Proof Term Transformations|hyperpage}{90}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{91}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{91}
 \indexentry{Verification!Trusted Computing Base|hyperpage}{92}
-\indexentry{Verification!Proof Term|hyperpage}{93}
-\indexentry{Verification!Proof Script!Tactics|hyperpage}{93}
-\indexentry{Verification!Proof Term!Gallina|hyperpage}{93}
-\indexentry{Verification!Proof Script!Ltac|hyperpage}{93}
+\indexentry{Verification!Proof Term|hyperpage}{92}
+\indexentry{Verification!Proof Script!Tactics|hyperpage}{92}
+\indexentry{Verification!Proof Term!Gallina|hyperpage}{92}
+\indexentry{Verification!Proof Script!Ltac|hyperpage}{92}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{93}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{95}
-\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{96}
+\indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{95}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{97}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{97}
 \indexentry{Results!Case Studies|hyperpage}{97}
 \indexentry{Logic \& Type Theory!Algebraic Ornaments|hyperpage}{97}
+\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{97}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{98}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{98}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{98}
@@ -741,14 +743,13 @@
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{98}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{98}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{98}
-\indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{99}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{99}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{99}
 \indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{99}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
-\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{101}
+\indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
 \indexentry{Logic \& Type Theory!External|hyperpage}{102}
 \indexentry{Logic \& Type Theory!Internal|hyperpage}{102}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{102}

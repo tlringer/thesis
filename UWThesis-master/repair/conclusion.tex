@@ -9,7 +9,7 @@ changes in programs, specifications, and proofs can carry information that a too
 With \sysname, so far, it is fair to say that:
 
 \begin{quote}
-Changes in \diff{the content of} programs, specifications, and proofs can carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
+changes in \diff{the content of} programs, specifications, and proofs can carry information that a tool can extract, generalize, and \diff{sometimes} apply to fix other proofs broken by the same change (Sections~\ref{sec:pumpkin-approach},~\ref{sec:pumpkin-diff}, and~\ref{sec:pumpkin-trans}). A tool that automates this (Section~\ref{sec:pumpkin-impl}) \diff{could have saved} work for proof engineers relative to reference manual repairs in \diff{a few} practical use cases (Section~\ref{sec:pumpkin-results}).
 \end{quote}
 Or, informally, there is \textit{some} \kl{reason to believe} that verifying a modified system \textit{could have} been easier than verifying the original the first time around,
 in \textit{a few} practical use cases.
@@ -21,7 +21,9 @@ a narrow class of changes in an ad hoc manner.
 And as I mentioned earlier, without considering the extension from the next chapter, 
 the \sysname prototype includes very little support for tactics.
 
-The next chapter will address these limitations.
+The next chapter will introduce a repair tool that supports a broad, complementary class of changes beyond that supported
+by \sysname alone.
+In parallel, it will introduce new technologies that address many of the limitations seen in this chapter.
 In doing so, it will show how the thesis holds on a broad class of changes,
 with more principled and better integrated support for patch application and tactic generation.
 It will show how all of this helps proof engineers in the real world---not just retroactively,

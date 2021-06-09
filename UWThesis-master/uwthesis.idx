@@ -330,13 +330,13 @@
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{18}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{18}
 \indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{19}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{19}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{19}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Constructions|hyperpage}{19}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{19}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{20}
@@ -346,7 +346,7 @@
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{20}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{21}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{21}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{21}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{21}
 \indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{21}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{21}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{21}
@@ -480,7 +480,7 @@
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{37}
 \indexentry{Logic \& Type Theory!Inductive Types!Motive|hyperpage}{37}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{38}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{38}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{38}
 \indexentry{Logic \& Type Theory!Inductive Types|hyperpage}{39}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{39}
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{40}
@@ -489,10 +489,10 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{40}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{40}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{40}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{41}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{41}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{41}
 \indexentry{Proof Repair!By Example!Specialization|hyperpage}{41}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{42}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{42}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{43}
 \indexentry{Proof Repair!By Example!Factoring|hyperpage}{43}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{44}
@@ -530,7 +530,7 @@
 \indexentry{Proof Repair!By Example!Patch Candidate|hyperpage}{55}
 \indexentry{Proof Repair!By Example!Inversion|hyperpage}{55}
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{55}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{56}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{56}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{57}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{57}
@@ -565,7 +565,7 @@
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{61}
 \indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{61}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{61}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{61}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{61}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{61}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{62}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{62}
@@ -594,7 +594,7 @@
 \indexentry{Logic \& Type Theory!Type Theories!Homotopy Type Theory|hyperpage}{67}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{67}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{67}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{67}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{67}
 \indexentry{Logic \& Type Theory!Sigma Types|hyperpage}{67}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{68}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{68}
@@ -639,15 +639,15 @@
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{72}
 \indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{72}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{72}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{72}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{73}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{73}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{72}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{72}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{73}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{73}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{73}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{73}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{74}
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{74}
@@ -661,7 +661,7 @@
 \indexentry{Acknowledgments!PL Community!Carlo Angiuli|hyperpage}{75}
 \indexentry{Logic \& Type Theory!Initial Algebra|hyperpage}{75}
 \indexentry{Logic \& Type Theory!Type Theories!Homotopy Type Theory|hyperpage}{75}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{76}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{76}
 \indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{76}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{77}
 \indexentry{Logic \& Type Theory!Inductive Types!Constructors|hyperpage}{77}
@@ -801,7 +801,7 @@
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{106}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{106}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{106}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{106}
@@ -818,16 +818,16 @@
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{106}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{106}
 \indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{106}
-\indexentry{Verification!Proof Object!Explicit Proof Object|hyperpage}{106}
+\indexentry{Verification!Proof Object!Explicit|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Agda|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{106}
-\indexentry{Verification!Proof Object!Ephemeral Proof Object|hyperpage}{106}
+\indexentry{Verification!Proof Object!Ephemeral|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!HOL Light|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!HOL4|hyperpage}{106}
-\indexentry{Verification!Proof Object!Explicit Proof Object|hyperpage}{106}
-\indexentry{Verification!Proof Object!Ephemeral Proof Object|hyperpage}{106}
+\indexentry{Verification!Proof Object!Explicit|hyperpage}{106}
+\indexentry{Verification!Proof Object!Ephemeral|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Double Negation Elimination|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{107}
 \indexentry{Verification!Proof Automation|hyperpage}{107}
@@ -851,14 +851,14 @@
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{110}
 \indexentry{Proof Repair!By Example!Generalization|hyperpage}{110}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{110}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{110}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Eta|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{110}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{110}
@@ -866,7 +866,7 @@
 \indexentry{Logic \& Type Theory!Type Theories!Calculus of Inductive Constructions|hyperpage}{111}
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{111}
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{111}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Propositional Equality|hyperpage}{111}
+\indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{111}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{111}
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{111}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{111}
@@ -920,7 +920,7 @@
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{120}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{120}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{120}
-\indexentry{Logic \& Type Theory!Equality!Intensionality!Definitional Equality|hyperpage}{120}
+\indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{120}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{121}
 \indexentry{Verification|hyperpage}{121}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{121}
@@ -928,7 +928,7 @@
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{121}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{121}
 \indexentry{Logic \& Type Theory!Classical Logic|hyperpage}{121}
-\indexentry{Verification!Proof Object!Ephemeral Proof Object|hyperpage}{121}
+\indexentry{Verification!Proof Object!Ephemeral|hyperpage}{121}
 \indexentry{Logic \& Type Theory!Common Axioms!Uniqueness of Identity Proofs|hyperpage}{121}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{121}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{122}

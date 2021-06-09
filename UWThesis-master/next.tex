@@ -102,7 +102,7 @@ And they should support an even broader and more practical class of changes than
 The decompiler is a step toward a natural proof repair tool, but it still produces proof scripts heuristically,
 with no regard for style.
 Proof repair tools should ideally produce proof scripts that are natural for experts, regardless of style.
-Toward this end, I have just begun a promising project with \kl{RanDair}, \intro{Emily First}, and \intro{Yuriy Brun}
+Toward this end, I have just begun a promising project with \kl{RanDair Porter}, \intro{Emily First}, and \intro{Yuriy Brun}
 on integrating the decompiler with the machine learning proof synthesis tool TacTok~\cite{10.1145/3428299}.
 By ranking hints with TacTok, it should be straightforward to produce more natural proof scripts, even using fixed training data.
 More difficult---but highly valuable---will be to train the decompiler to match the style of the expert using the tool.
@@ -206,9 +206,8 @@ on a daily basis. These tools could perhaps also help us build more reliable, un
 Current methods for verifying neural networks are not sufficient for this: 
 automated checking of guarantees is slow for some properties, and fails on large 
 neural networks.\footnote{This whole paragraph---but especially this sentence---is based on a really fun conversation with \kl{Matthew Dwyer} at Virginia this past spring.}
-One possible path to formally verifiable neural networks is to interactively factor neural networks into two parts: a program with strong guarantees,
-and some ``fuzz'' that captures the counterexamples that cannot easily be explained.
-The former can hopefully be verified, with the latter capturing some margin of error.
+One possible path to formally verifiable neural networks is to interactively factor neural networks into symbolic and neural parts.
+The former can hopefully be verified, with the latter capturing functionality that cannot easily be specified. % some margin of error.
 
 \paragraph{Cryptography}
 Proof engineering tools for cryptography already help ensure that cryptographic systems are not just designed, but also implemented correctly.

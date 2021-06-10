@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1619,16 +1619,16 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `autoref-268' multiply defined.
+LaTeX Warning: Label `autoref-269' multiply defined.
 
 
 LaTeX Warning: Label `autoref-4' multiply defined.
 
 
-LaTeX Warning: Label `autoref-242' multiply defined.
+LaTeX Warning: Label `autoref-243' multiply defined.
 
 
-LaTeX Warning: Label `autoref-259' multiply defined.
+LaTeX Warning: Label `autoref-260' multiply defined.
 
 
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
@@ -2311,42 +2311,42 @@ Overfull \hbox (10.04045pt too wide) in paragraph at lines 77--78
 
 
 ]
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 159--160
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 160--161
 []| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 
-Overfull \hbox (7.97986pt too wide) in paragraph at lines 171--173
+Overfull \hbox (7.97986pt too wide) in paragraph at lines 172--174
 []| \T1/pplj/m/n/10.95 (-20) Or-na-men-tal Pro-mo-tion Iso-
  []
 
 [128]
-Overfull \hbox (3.33537pt too wide) in paragraph at lines 179--182
+Overfull \hbox (3.33537pt too wide) in paragraph at lines 180--183
 []| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []67[], []69[], []75[], []106[],
  []
 
 
-Overfull \hbox (2.9659pt too wide) in paragraph at lines 197--200
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 198--201
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []64[], []66[]--
  []
 
 
-Overfull \hbox (2.94571pt too wide) in paragraph at lines 217--219
+Overfull \hbox (2.94571pt too wide) in paragraph at lines 218--220
 []| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []105[], []106[],
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 220--223
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 221--224
 []| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []18[], []20[],
  []
 
 
-Overfull \hbox (3.07237pt too wide) in paragraph at lines 227--228
+Overfull \hbox (3.07237pt too wide) in paragraph at lines 228--229
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of Con-struc-tions,
  []
 
 
-Overfull \hbox (4.15424pt too wide) in paragraph at lines 228--233
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 229--234
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
  []
 
@@ -2356,8 +2356,8 @@ Overfull \hbox (3.15547pt too wide) in paragraph at lines 245--247
  []
 
 
-Overfull \hbox (2.00206pt too wide) in paragraph at lines 249--253
-\T1/pplj/m/n/10.95 (-20) mally Ver-i-fied Soft-ware,
+Overfull \hbox (2.39438pt too wide) in paragraph at lines 249--253
+[]\T1/pplj/m/n/10.95 (-20) 18[], []62[], []105[], []106[], []111[], []114[],
  []
 
 
@@ -2589,10 +2589,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51966 strings out of 492609
- 1051841 string characters out of 6129033
- 1329284 words of memory out of 5000000
- 52402 multiletter control sequences out of 15000+600000
+ 51969 strings out of 492609
+ 1051918 string characters out of 6129033
+ 1329077 words of memory out of 5000000
+ 52405 multiletter control sequences out of 15000+600000
  679341 words of font info for 878 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2618,10 +2618,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1908800 bytes).
+Output written on uwthesis.pdf (164 pages, 1908794 bytes).
 PDF statistics:
- 5300 PDF objects out of 6186 (max. 8388607)
- 5006 compressed objects within 51 object streams
+ 5301 PDF objects out of 6186 (max. 8388607)
+ 5007 compressed objects within 51 object streams
  1632 named destinations out of 1728 (max. 500000)
  105833 words of extra memory for PDF output out of 106986 (max. 10000000)
 

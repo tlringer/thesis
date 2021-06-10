@@ -154,6 +154,7 @@
 \indexentry{Acknowledgments!Twitter Community!Benjamin Lipp|hyperpage}{xvi}
 \indexentry{Acknowledgments!Twitter Community!Daniel-Nikpayuk|hyperpage}{xvi}
 \indexentry{Acknowledgments!Twitter Community!Dionna Glaze|hyperpage}{xvi}
+\indexentry{Acknowledgments!Twitter Community!Jana Dunfield|hyperpage}{xvi}
 \indexentry{Acknowledgments!Twitter Community!Michelle Lee|hyperpage}{xvi}
 \indexentry{Acknowledgments!Coq Community|hyperpage}{xvi}
 \indexentry{Acknowledgments!PL Community|hyperpage}{xvi}
@@ -238,16 +239,16 @@
 \indexentry{Previously Published Material!Adapting Proof Automation to Adapt Proofs|hyperpage}{6}
 \indexentry{Previously Published Material!Proof Repair across Type Equivalences|hyperpage}{6}
 \indexentry{Previously Published Material!Ornaments for Proof Reuse in Coq|hyperpage}{6}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{6}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{6}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{6}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{6}
 \indexentry{Previously Published Material!Adapting Proof Automation to Adapt Proofs|hyperpage}{7}
 \indexentry{Previously Published Material!Proof Repair across Type Equivalences|hyperpage}{7}
 \indexentry{Previously Published Material!Ornaments for Proof Reuse in Coq|hyperpage}{7}
 \indexentry{Previously Published Material!Proof Repair across Type Equivalences|hyperpage}{7}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{7}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{7}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{7}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{7}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{7}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{7}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{7}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{7}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{7}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{7}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{7}
@@ -261,11 +262,11 @@
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{7}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{8}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{8}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{8}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{8}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{8}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{8}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{8}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{8}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{8}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{8}
@@ -275,7 +276,7 @@
 \indexentry{Verification|hyperpage}{9}
 \indexentry{Verification!Proof Development!Program|hyperpage}{9}
 \indexentry{Verification!Proof Engineering|hyperpage}{9}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{9}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{9}
 \indexentry{Proof Repair|hyperpage}{9}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{10}
 \indexentry{Verification!Proof Development|hyperpage}{10}
@@ -296,14 +297,14 @@
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{11}
 \indexentry{Verification!Proof Development!Program|hyperpage}{11}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{11}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{11}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{11}
 \indexentry{Verification!Proof Development!Specification|hyperpage}{12}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{12}
 \indexentry{Verification!Proof Development!Proof|hyperpage}{13}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{13}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{13}
 \indexentry{Verification!Proof Script!Ltac|hyperpage}{13}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{13}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{13}
 \indexentry{Verification!Proof Script|hyperpage}{14}
 \indexentry{Verification!Proof Term|hyperpage}{14}
 \indexentry{Verification!Kernel|hyperpage}{14}
@@ -328,7 +329,7 @@
 \indexentry{Logic \& Type Theory!Inductive Types!Inductive Hypothesis|hyperpage}{17}
 \indexentry{Logic \& Type Theory!Primitive Eliminators|hyperpage}{18}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{18}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{18}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{18}
 \indexentry{Logic \& Type Theory!Equality!Intensionality|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{19}
 \indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{19}
@@ -365,9 +366,9 @@
 \indexentry{Verification!Proof Development!Proof|hyperpage}{22}
 \indexentry{Acknowledgments!Coauthors!Alex Sanchez-Stern|hyperpage}{24}
 \indexentry{Verification!Coq Plugins|hyperpage}{24}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{24}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{24}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{24}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{24}
 \indexentry{Proof Repair|hyperpage}{26}
 \indexentry{Verification!Proof Automation|hyperpage}{26}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{26}
@@ -551,7 +552,7 @@
 \indexentry{Proof Repair!By Example!Reusable Patch|hyperpage}{59}
 \indexentry{Thesis Statement!Formal|hyperpage}{59}
 \indexentry{Thesis Statement!Informal|hyperpage}{59}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{61}
+\indexentry{Results!Implementation!\toolnamec |hyperpage}{61}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{61}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{61}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{61}
@@ -561,13 +562,13 @@
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{61}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{61}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{61}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{61}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{61}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{61}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{61}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{61}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{61}
 \indexentry{Proof Repair!Across Type Equivalences!Configuration|hyperpage}{61}
 \indexentry{Logic \& Type Theory!Equality!Definitional|hyperpage}{61}
 \indexentry{Proof Repair!Across Type Equivalences!Manual Configuration|hyperpage}{61}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{62}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{62}
 \indexentry{Proof Repair!Across Type Equivalences!Automatic Configuration|hyperpage}{62}
 \indexentry{Verification!Proof Engineering|hyperpage}{62}
 \indexentry{Verification!Proof Script|hyperpage}{64}
@@ -704,9 +705,9 @@
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
 \indexentry{Results!Implementation!\sysname Prototype|hyperpage}{88}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
-\indexentry{Results!Implementation!\toolnamec Plugin|hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec |hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec |hyperpage}{88}
+\indexentry{Results!Implementation!\toolnamec |hyperpage}{88}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
 \indexentry{Results!Implementation!\sysnamelong Plugin Suite|hyperpage}{88}
@@ -739,12 +740,12 @@
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{95}
 \indexentry{Acknowledgments!Coauthors!RanDair Porter|hyperpage}{96}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{96}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{97}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{97}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{97}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{97}
@@ -754,9 +755,9 @@
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{98}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{98}
 \indexentry{Logic \& Type Theory!Dependent Types|hyperpage}{98}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{99}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{99}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{99}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{99}
 \indexentry{Acknowledgments!PL Community!Anders M\"ortberg|hyperpage}{100}
 \indexentry{Proof Repair!Across Type Equivalences!Unification Heuristics|hyperpage}{100}
 \indexentry{Logic \& Type Theory!External|hyperpage}{101}
@@ -772,8 +773,8 @@
 \indexentry{Verification!Proof Engineering|hyperpage}{105}
 \indexentry{Verification|hyperpage}{105}
 \indexentry{Verification!Proof Assistants|hyperpage}{105}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{105}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{105}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{105}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{105}
 \indexentry{Verification!de Bruijn Criterion|hyperpage}{105}
 \indexentry{Verification!Kernel|hyperpage}{105}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{105}
@@ -802,7 +803,7 @@
 \indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Equality!Propositional|hyperpage}{106}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{106}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Common Axioms!Univalence|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Equality!Type Equivalences|hyperpage}{106}
 \indexentry{Logic \& Type Theory!Type Theories!Cubical Type Theory|hyperpage}{106}
@@ -817,7 +818,7 @@
 \indexentry{Verification!Kernel|hyperpage}{106}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{106}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{106}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{106}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{106}
 \indexentry{Verification!Proof Object!Explicit|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Coq|hyperpage}{106}
 \indexentry{Verification!Proof Assistants!Agda|hyperpage}{106}
@@ -838,9 +839,9 @@
 \indexentry{Verification!Proof Assistants!Agda|hyperpage}{107}
 \indexentry{Verification!Proof Automation|hyperpage}{108}
 \indexentry{Verification!Proof Script!Tactics|hyperpage}{108}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{108}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{108}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{108}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{108}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{108}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{108}
 \indexentry{Proof Repair|hyperpage}{108}
 \indexentry{Verification!Integrated Development Environment|hyperpage}{109}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{109}
@@ -882,7 +883,7 @@
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{111}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{111}
 \indexentry{Proof Repair!Across Type Equivalences!Iota|hyperpage}{111}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{111}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{111}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{112}
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{112}
 \indexentry{Logic \& Type Theory!Common Axioms!UIP|hyperpage}{112}
@@ -894,17 +895,17 @@
 \indexentry{Logic \& Type Theory!Equality!Transport|hyperpage}{113}
 \indexentry{Logic \& Type Theory!Intuitionistic Logic|hyperpage}{114}
 \indexentry{Acknowledgments!Coauthors!Karl Palmskog|hyperpage}{114}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{114}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{114}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{115}
 \indexentry{Verification!Proof Assistants!Isabelle/HOL|hyperpage}{115}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{115}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{115}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{115}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{115}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{115}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{115}
 \indexentry{Proof Repair!By Example|hyperpage}{115}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{116}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{117}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{117}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{117}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{117}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{117}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{117}
 \indexentry{Verification!Continuous Integration|hyperpage}{117}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{119}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{119}
@@ -914,9 +915,9 @@
 \indexentry{Thesis Statement!Informal|hyperpage}{119}
 \indexentry{Proof Repair!By Example|hyperpage}{119}
 \indexentry{Proof Repair!Across Type Equivalences|hyperpage}{119}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{120}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{120}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{120}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{120}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{120}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{120}
 \indexentry{Verification!Proof Term!Gallina|hyperpage}{120}
 \indexentry{Acknowledgments!Coauthors!Nathaniel Yazdani|hyperpage}{120}
 \indexentry{Logic \& Type Theory!Inductive Types!Eliminators|hyperpage}{120}
@@ -938,17 +939,17 @@
 \indexentry{Verification!Proof Assistants!Lean|hyperpage}{122}
 \indexentry{Verification!Integrated Development Environment|hyperpage}{123}
 \indexentry{Verification!Continuous Integration|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
-\indexentry{Previously Published Material!\textsc {REPLica}: REPL Instrumentation for Coq Analysis|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
+\indexentry{Previously Published Material!\textsc {REPLica}|hyperpage}{123}
 \indexentry{Verification!Mixed Methods Verification|hyperpage}{123}
-\indexentry{Previously Published Material!QED at Large: A Survey of Engineering of Formally Verified Software|hyperpage}{123}
+\indexentry{Previously Published Material!QED at Large|hyperpage}{123}
 \indexentry{Results!Design!Semantic Differencing|hyperpage}{124}
 \indexentry{Results!Design!Proof Term Transformations|hyperpage}{124}
 \indexentry{Verification!Mixed Methods Verification|hyperpage}{124}

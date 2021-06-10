@@ -124,6 +124,7 @@
       \subsubitem Daniel-Nikpayuk, \hyperpage{xvi}
       \subsubitem Dionna Glaze, \hyperpage{xvi}
       \subsubitem Hillel Wayne, \hyperpage{xvi}
+      \subsubitem Jana Dunfield, \hyperpage{xvi}
       \subsubitem Michelle Lee, \hyperpage{xvi}
       \subsubitem Nathanael, \hyperpage{xvi}
       \subsubitem PL Twitter, \hyperpage{xvi}
@@ -237,19 +238,18 @@
   \indexspace
 
   \item Previously Published Material
-    \subitem \textsc {REPLica}: REPL Instrumentation for Coq Analysis, 
-		\hyperpage{6--8}, \hyperpage{24}, \hyperpage{61}, 
-		\hyperpage{97}, \hyperpage{99}, \hyperpage{108}, 
-		\hyperpage{115}, \hyperpage{117}, \hyperpage{120}, 
-		\hyperpage{123}
+    \subitem \textsc {REPLica}, \hyperpage{6--8}, \hyperpage{24}, 
+		\hyperpage{61}, \hyperpage{97}, \hyperpage{99}, 
+		\hyperpage{108}, \hyperpage{115}, \hyperpage{117}, 
+		\hyperpage{120}, \hyperpage{123}
     \subitem Adapting Proof Automation to Adapt Proofs, 
 		\hyperpage{6, 7}
     \subitem Ornaments for Proof Reuse in Coq, \hyperpage{6, 7}
     \subitem Proof Repair across Type Equivalences, \hyperpage{6, 7}
-    \subitem QED at Large: A Survey of Engineering of Formally Verified Software, 
-		\hyperpage{6--9}, \hyperpage{11}, \hyperpage{13}, 
-		\hyperpage{18}, \hyperpage{62}, \hyperpage{105, 106}, 
-		\hyperpage{111}, \hyperpage{114}, \hyperpage{123}
+    \subitem QED at Large, \hyperpage{6--9}, \hyperpage{11}, 
+		\hyperpage{13}, \hyperpage{18}, \hyperpage{62}, 
+		\hyperpage{105, 106}, \hyperpage{111}, \hyperpage{114}, 
+		\hyperpage{123}
   \item Proof Repair, \hyperpage{2}, \hyperpage{4}, \hyperpage{9}, 
 		\hyperpage{22}, \hyperpage{26}, \hyperpage{29}, 
 		\hyperpage{61}, \hyperpage{108}, \hyperpage{119}

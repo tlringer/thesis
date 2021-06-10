@@ -368,7 +368,7 @@ Benjamin Delaware, Steven Keuchel, Tom Schrijvers, and Bruno~C.d.S. Oliveira.
   {\path{doi:10.1145/2500365.2500587}}.
 
 \bibitem{Demers95reflectionin}
-Francois-Nicola Demers and Jacques Malenfant.
+Fran\c{c}ois-Nicola Demers and Jacques Malenfant.
 \newblock Reflection in logic, functional and object-oriented programming: a
   short comparative study.
 \newblock In {\em In IJCAI '95 Workshop on Reflection and Metalevel
@@ -509,7 +509,7 @@ Georges Gonthier and Assia Mahboubi.
 
 \bibitem{gopinath2011specification}
 Divya Gopinath, Muhammad~Zubair Malik, and Sarfraz Khurshid.
-\newblock Specification-based program repair using sat.
+\newblock {Specification-based program repair using SAT}.
 \newblock In {\em International Conference on Tools and Algorithms for the
   Construction and Analysis of Systems}, pages 173--188. Springer, 2011.
 
@@ -708,7 +708,7 @@ Ramana Kumar, Magnus~O. Myreen, Michael Norrish, and Scott Owens.
   {\path{doi:10.1145/2535838.2535841}}.
 
 \bibitem{differential-assertion-checking-2}
-Shuvendu Lahiri, Kenneth McMillan, , and Chris Hawblitzel.
+Shuvendu Lahiri, Kenneth McMillan, Rahul Sharma, and Chris Hawblitzel.
 \newblock Differential assertion checking.
 \newblock In {\em Foundations of Software Engineering (FSE'13)}. ACM, August
   2013.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2479,21 +2479,9 @@ Underfull \hbox (badness 1057) in paragraph at lines 474--481
  []
 
 [137] [138] [139]
-Underfull \hbox (badness 1264) in paragraph at lines 711--717
-[]\T1/pplj/m/n/10.95 (+20) Shuvendu Lahiri, Ken-neth McMil-lan, , and Chris Haw
--
- []
-
-
-Underfull \hbox (badness 7832) in paragraph at lines 711--717
-\T1/pplj/m/n/10.95 (+20) blitzel.  Dif-fer-en-tial as-ser-tion check-ing.  In \
-T1/pplj/m/it/10.95 (+20) Foun-
- []
-
-
-Underfull \hbox (badness 5288) in paragraph at lines 711--717
-\T1/pplj/m/it/10.95 (+20) da-tions of Soft-ware En-gi-neer-ing (FSE'13)\T1/pplj
-/m/n/10.95 (+20) . ACM, Au-gust
+Underfull \hbox (badness 2158) in paragraph at lines 711--717
+\T1/pplj/m/n/10.95 (+20) Chris Haw-blitzel.  Dif-fer-en-tial as-ser-tion check-
+ing.  In
  []
 
 
@@ -2618,7 +2606,7 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1908794 bytes).
+Output written on uwthesis.pdf (164 pages, 1908805 bytes).
 PDF statistics:
  5301 PDF objects out of 6186 (max. 8388607)
  5007 compressed objects within 51 object streams

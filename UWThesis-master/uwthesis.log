@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1619,16 +1619,16 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./uwthesis.aux
 
-LaTeX Warning: Label `autoref-269' multiply defined.
+LaTeX Warning: Label `autoref-270' multiply defined.
 
 
 LaTeX Warning: Label `autoref-4' multiply defined.
 
 
-LaTeX Warning: Label `autoref-243' multiply defined.
+LaTeX Warning: Label `autoref-244' multiply defined.
 
 
-LaTeX Warning: Label `autoref-260' multiply defined.
+LaTeX Warning: Label `autoref-261' multiply defined.
 
 
 LaTeX Warning: Label `sec:pi-workflow' multiply defined.
@@ -2311,117 +2311,122 @@ Overfull \hbox (10.04045pt too wide) in paragraph at lines 77--78
 
 
 ]
-Overfull \hbox (7.35196pt too wide) in paragraph at lines 160--161
+Overfull \hbox (0.3622pt too wide) in paragraph at lines 123--124
+[]| \T1/pplj/m/n/10.95 (-20) Amarin Phao-sawasdi, []xvi[] 
+ []
+
+
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 161--162
 []| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
  []
 
 
-Overfull \hbox (7.97986pt too wide) in paragraph at lines 172--174
+Overfull \hbox (7.97986pt too wide) in paragraph at lines 173--175
 []| \T1/pplj/m/n/10.95 (-20) Or-na-men-tal Pro-mo-tion Iso-
  []
 
 [128]
-Overfull \hbox (3.33537pt too wide) in paragraph at lines 180--183
+Overfull \hbox (3.33537pt too wide) in paragraph at lines 181--184
 []| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []67[], []69[], []75[], []106[],
  []
 
 
-Overfull \hbox (2.9659pt too wide) in paragraph at lines 198--201
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 199--202
 []| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []64[], []66[]--
  []
 
 
-Overfull \hbox (2.94571pt too wide) in paragraph at lines 218--220
+Overfull \hbox (2.94571pt too wide) in paragraph at lines 219--221
 []| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []105[], []106[],
  []
 
 
-Overfull \hbox (4.17055pt too wide) in paragraph at lines 221--224
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 222--225
 []| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []18[], []20[],
  []
 
 
-Overfull \hbox (3.07237pt too wide) in paragraph at lines 228--229
+Overfull \hbox (3.07237pt too wide) in paragraph at lines 229--230
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of Con-struc-tions,
  []
 
 
-Overfull \hbox (4.15424pt too wide) in paragraph at lines 229--234
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 230--235
 []| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
  []
 
 
-Overfull \hbox (3.15547pt too wide) in paragraph at lines 245--247
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 246--248
 []| \T1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
  []
 
 
-Overfull \hbox (2.39438pt too wide) in paragraph at lines 249--253
+Overfull \hbox (2.39438pt too wide) in paragraph at lines 250--254
 []\T1/pplj/m/n/10.95 (-20) 18[], []62[], []105[], []106[], []111[], []114[],
  []
 
 
-Overfull \hbox (0.21524pt too wide) in paragraph at lines 258--262
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 259--263
 []| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
  []
 
 
-Overfull \hbox (7.0995pt too wide) in paragraph at lines 266--268
+Overfull \hbox (7.0995pt too wide) in paragraph at lines 267--269
 []| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []71[],
  []
 
 
-Overfull \hbox (2.91444pt too wide) in paragraph at lines 272--275
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 273--276
 []| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []61[],
  []
 
 
-Overfull \hbox (0.67168pt too wide) in paragraph at lines 275--277
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 276--278
 []| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []87[],
  []
 
 [129]
-Overfull \hbox (0.44196pt too wide) in paragraph at lines 294--297
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 295--298
 []| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
  []
 
 
-Overfull \hbox (5.36897pt too wide) in paragraph at lines 297--299
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 298--300
 []| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
  []
 
 
-Overfull \hbox (3.31273pt too wide) in paragraph at lines 342--343
+Overfull \hbox (3.31273pt too wide) in paragraph at lines 343--344
 []| \T1/pplj/m/n/10.95 (-20) Con-tin-u-ous In-te-gra-tion, []117[],
  []
 
 
-Overfull \hbox (0.96115pt too wide) in paragraph at lines 348--349
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 349--350
 []| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []105[], []106[] 
  []
 
 
-Overfull \hbox (2.01184pt too wide) in paragraph at lines 349--351
+Overfull \hbox (2.01184pt too wide) in paragraph at lines 350--352
 []| \T1/pplj/m/n/10.95 (-20) In-te-grated De-vel-op-ment En-
  []
 
 
-Overfull \hbox (2.54497pt too wide) in paragraph at lines 353--354
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 354--355
 []| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
  []
 
 
-Overfull \hbox (1.33066pt too wide) in paragraph at lines 356--358
+Overfull \hbox (1.33066pt too wide) in paragraph at lines 357--359
 []| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []105[]--[]107[], []109[], []121[] 
  []
 
 
-Overfull \hbox (0.51068pt too wide) in paragraph at lines 364--367
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 365--368
 []| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []105[]--[]107[],
  []
 
 
-Overfull \hbox (0.1531pt too wide) in paragraph at lines 367--369
+Overfull \hbox (0.1531pt too wide) in paragraph at lines 368--370
 []| \T1/pplj/m/n/10.95 (-20) Lean, []2[], []105[], []106[], []112[], []121[],
  []
 
@@ -2577,39 +2582,42 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
  ) 
 Here is how much of TeX's memory you used:
- 51969 strings out of 492609
- 1051918 string characters out of 6129033
- 1329077 words of memory out of 5000000
- 52405 multiletter control sequences out of 15000+600000
+ 51973 strings out of 492609
+ 1052014 string characters out of 6129033
+ 1329171 words of memory out of 5000000
+ 52408 multiletter control sequences out of 15000+600000
  679341 words of font info for 878 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2351s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/tringer
-/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
-c/cm-super/sfsx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-cm-super/sftt0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm
--super/sftt0900.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-sup
-er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
-lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
-r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1908805 bytes).
+pdfTeX warning (dest): name{page.xvii} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/tringer/.
+texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+cm-super/sfsx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm
+-super/sftt0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-s
+uper/sftt0900.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-sup
+er/sftt1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
+/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplb
+8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on uwthesis.pdf (164 pages, 1908911 bytes).
 PDF statistics:
- 5301 PDF objects out of 6186 (max. 8388607)
- 5007 compressed objects within 51 object streams
- 1632 named destinations out of 1728 (max. 500000)
+ 5304 PDF objects out of 6186 (max. 8388607)
+ 5010 compressed objects within 51 object streams
+ 1633 named destinations out of 1728 (max. 500000)
  105833 words of extra memory for PDF output out of 106986 (max. 10000000)
 

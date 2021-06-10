@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2508,8 +2508,8 @@ crosoft . com / en-[]us / research /
  []
 
 [140]
-Underfull \hbox (badness 6110) in paragraph at lines 757--761
-[]\T1/pplj/m/n/10.95 (+20) Xavier Leroy.  Com-mit to com-pcert: lib/in-te-gers.
+Underfull \hbox (badness 4454) in paragraph at lines 757--761
+[]\T1/pplj/m/n/10.95 (+20) Xavier Leroy.  Com-mit to Com-pCert: lib/in-te-gers.
 v,
  []
 
@@ -2519,44 +2519,62 @@ Underfull \hbox (badness 1286) in paragraph at lines 757--761
 com / AbsInt / CompCert / commit /
  []
 
+
+Underfull \hbox (badness 1874) in paragraph at lines 798--806
+[]\T1/pplj/m/n/10.95 (+20) Matias Mar-tinez, Thomas Durieux, Ro-main Som-mer-ar
+d,
+ []
+
+
+Underfull \hbox (badness 3471) in paragraph at lines 798--806
+\T1/pplj/m/n/10.95 (+20) Jifeng Xuan, and Mar-tin Mon-per-rus.  Au-to-matic Re-
+
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 798--806
+\T1/pplj/m/n/10.95 (+20) pair of Real Bugs in Java: A Large-Scale Ex-per-i-ment
+
+ []
+
 [141]
-Underfull \hbox (badness 2582) in paragraph at lines 814--818
+Underfull \hbox (badness 2582) in paragraph at lines 815--819
 []\T1/pplj/m/n/10.95 (+20) Conor McBride.  Or-na-men-tal al-ge-bras, al-ge-brai
 c or-na-
  []
 
 [142]
-Underfull \hbox (badness 10000) in paragraph at lines 909--917
+Underfull \hbox (badness 10000) in paragraph at lines 910--918
 []\T1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func-
 tor.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 909--917
+Underfull \hbox (badness 10000) in paragraph at lines 910--918
 []$\T1/cmtt/m/n/10.95 http : / / ncatlab . org / nlab / show / initial % 20alge
 bra % 20of %
  []
 
 [143]
-Underfull \hbox (badness 1163) in paragraph at lines 979--985
+Underfull \hbox (badness 1163) in paragraph at lines 980--986
 []\T1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 979--985
+Underfull \hbox (badness 3386) in paragraph at lines 980--986
 \T1/pplj/m/n/10.95 (+20) Hriµcu, Vil-helm Sjöberg, and Brent Yorgey.  \T1/pplj/
 m/it/10.95 (+20) Soft-ware
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 979--985
+Underfull \hbox (badness 3657) in paragraph at lines 980--986
 \T1/pplj/m/it/10.95 (+20) Foun-da-tions\T1/pplj/m/n/10.95 (+20) .  Elec-tronic 
 text-book, 2016.  Ver-sion 4.0.
  []
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
-(Font)              using `OMS/pplj/m/n' instead on input line 1012.
+(Font)              using `OMS/pplj/m/n' instead on input line 1014.
 
 [144] [145] [146] [147]) [148]
 \openout4 = `uwthesis.diagnose'.
@@ -2623,10 +2641,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1908947 bytes).
+Output written on uwthesis.pdf (164 pages, 1908860 bytes).
 PDF statistics:
- 5302 PDF objects out of 6186 (max. 8388607)
- 5008 compressed objects within 51 object streams
+ 5301 PDF objects out of 6186 (max. 8388607)
+ 5007 compressed objects within 51 object streams
  1632 named destinations out of 1728 (max. 500000)
  105833 words of extra memory for PDF output out of 106986 (max. 10000000)
 

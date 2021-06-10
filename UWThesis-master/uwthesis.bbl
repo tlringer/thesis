@@ -336,7 +336,7 @@ Pierre-Evariste Dagand and Conor McBride.
 
 \bibitem{daniel2009reassert}
 Brett Daniel, Vilas Jagannath, Danny Dig, and Darko Marinov.
-\newblock Reassert: Suggesting repairs for broken unit tests.
+\newblock {ReAssert}: Suggesting repairs for broken unit tests.
 \newblock In {\em Automated Software Engineering, 2009. ASE'09. 24th IEEE/ACM
   International Conference on}, pages 433--444. IEEE, 2009.
 
@@ -422,7 +422,7 @@ Martin~H{\"o}tzel Escard{\'o}.
 
 \bibitem{10.1145/3428299}
 Emily First, Yuriy Brun, and Arjun Guha.
-\newblock Tactok: Semantics-aware proof synthesis.
+\newblock {TacTok}: Semantics-aware proof synthesis.
 \newblock {\em Proc. ACM Program. Lang.}, 4(OOPSLA), November 2020.
 \newblock URL: \url{https://doi.org/10.1145/3428299}, \href
   {http://dx.doi.org/10.1145/3428299} {\path{doi:10.1145/3428299}}.
@@ -441,7 +441,7 @@ Ricardo~Bedin Fran{\c{c}}a, Denis Favre-Felix, Xavier Leroy, Marc Pantel, and
 
 \bibitem{gao2015fixing}
 Qing Gao, Hansheng Zhang, Jie Wang, Yingfei Xiong, Lu~Zhang, and Hong Mei.
-\newblock Fixing recurring crash bugs via analyzing q\&a sites (t).
+\newblock Fixing recurring crash bugs via analyzing {Q\&A} sites (t).
 \newblock In {\em Automated Software Engineering (ASE), 2015 30th IEEE/ACM
   International Conference on}, pages 307--318. IEEE, 2015.
 
@@ -564,7 +564,7 @@ Haifeng He and Neelam Gupta.
 
 \bibitem{Henkel:2005:CCR:1062455.1062512}
 Johannes Henkel and Amer Diwan.
-\newblock Catchup!: Capturing and replaying refactorings to support api
+\newblock {CatchUp}!: Capturing and replaying refactorings to support api
   evolution.
 \newblock In {\em Proceedings of the 27th International Conference on Software
   Engineering}, ICSE '05, pages 274--283, New York, NY, USA, 2005. ACM.
@@ -733,7 +733,7 @@ Claire Le~Goues, Michael Dewey-Vogt, Stephanie Forrest, and Westley Weimer.
 
 \bibitem{lean}
 {Lean Development Team}.
-\newblock Theorem proving in lean, 2014-2021.
+\newblock Theorem proving in {Lean}, 2014-2021.
 \newblock URL: \url{http://leanprover.github.io/tutorial/}.
 
 \bibitem{Leroy:POPL06}
@@ -755,7 +755,7 @@ Xavier Leroy.
 
 \bibitem{compcertcommit}
 Xavier Leroy.
-\newblock Commit to compcert: lib/integers.v, 2013.
+\newblock Commit to {CompCert}: lib/integers.v, 2013.
 \newblock URL:
   \url{http://github.com/AbsInt/CompCert/commit/6f3225b0623b9c97eed7d40ddc320b08c79c6518}.
 
@@ -767,8 +767,8 @@ Xavier Leroy, Andrew~W. Appel, Sandrine Blazy, and Gordon Stewart.
 
 \bibitem{coq84commit}
 letouzey.
-\newblock Commit to coq: change definition of divide (compat with znumtheory),
-  2011.
+\newblock Commit to {Coq}: change definition of divide (compat with
+  {Znumtheory}), 2011.
 \newblock URL:
   \url{http://github.com/coq/coq/commit/81c4c8bc418cdf42cc88249952dbba465068202c}.
 
@@ -797,11 +797,12 @@ Nicolas Magaud and Yves Bertot.
 \bibitem{DBLP:journals/corr/abs-1811-02429}
 Matias Martinez, Thomas Durieux, Romain Sommerard, Jifeng Xuan, and Martin
   Monperrus.
-\newblock Automatic repair of real bugs in java: {A} large-scale experiment on
-  the defects4j dataset.
-\newblock {\em CoRR}, abs/1811.02429, 2018.
-\newblock URL: \url{http://arxiv.org/abs/1811.02429}, \href
-  {http://arxiv.org/abs/1811.02429} {\path{arXiv:1811.02429}}.
+\newblock {Automatic Repair of Real Bugs in {Java}: A Large-Scale Experiment on
+  the {Defects4J} Dataset}.
+\newblock {\em {Empirical Software Engineering}}, 22(4):1936--1964, 2017.
+\newblock URL: \url{https://hal.archives-ouvertes.fr/hal-01387556}, \href
+  {http://dx.doi.org/10.1007/s10664-016-9470-4}
+  {\path{doi:10.1007/s10664-016-9470-4}}.
 
 \bibitem{Matichuk2015EisbachAP}
 Daniel Matichuk, Toby Murray, and Makarius Wenzel.
@@ -826,7 +827,7 @@ Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury.
 
 \bibitem{coq87commit}
 Guillaume Melquiond.
-\newblock Commit to coq: Make izr use a compact representation of integers,
+\newblock Commit to {Coq}: Make {IZR} use a compact representation of integers,
   2017.
 \newblock URL:
   \url{http://github.com/coq/coq/commit/a4a76c253474ac4ce523b70d0150ea5dcf546385}.
@@ -877,7 +878,7 @@ Toby Murray and P.~C. van Oorschot.
 
 \bibitem{hol4-interact}
 Magnus~O. Myreen.
-\newblock Guide to hol4 interaction and basic proofs, 2008-2021.
+\newblock Guide to {HOL4} interaction and basic proofs, 2008-2021.
 \newblock URL: \url{http://hol-theorem-prover.org/HOL-interaction.pdf}.
 
 \bibitem{egraph1}
@@ -930,7 +931,7 @@ William~F Opdyke.
 Yoann Padioleau, Julia Lawall, Ren{\'e}~Rydhof Hansen, and Gilles Muller.
 \newblock Documenting and automating collateral evolutions in linux device
   drivers.
-\newblock In {\em Acm sigops operating systems review}, volume~42, pages
+\newblock In {\em ACM SIGOPS operating systems review}, volume~42, pages
   247--260. ACM, 2008.
 
 \bibitem{Palmskog2018}
@@ -985,8 +986,8 @@ Benjamin~C. Pierce, Arthur~Azevedo de~Amorim, Chris Casinghino, Marco Gaboardi,
 
 \bibitem{pons1999conception}
 Olivier Pons.
-\newblock {\em Conception et r{\'E}alisation d'outils d'aide au
-  d{\'E}veloppement de grosses th{\'E}ories dans les syst{\`e}mes de preuves
+\newblock {\em Conception et r{\'e}alisation d'outils d'aide au
+  d{\'e}veloppement de grosses th{\'e}ories dans les syst{\`e}mes de preuves
   interactifs}.
 \newblock PhD thesis, 1999.
 
@@ -1003,12 +1004,13 @@ Zichao Qi, Fan Long, Sara Achour, and Martin Rinard.
 
 \bibitem{redprl}
 {RedPRL Development Team}.
-\newblock The redprl proof assistant, 2015-2021.
+\newblock The {RedPRL} proof assistant, 2015-2021.
 \newblock URL: \url{http://www.redprl.org}.
 
 \bibitem{PGL-045}
 Talia Ringer, Karl Palmskog, Ilya Sergey, Milos Gligoric, and Zachary Tatlock.
-\newblock Qed at large: A survey of engineering of formally verified software.
+\newblock {QED} at large: A survey of engineering of formally verified
+  software.
 \newblock {\em Foundations and Trends® in Programming Languages},
   5(2-3):102--281, 2019.
 \newblock URL: \url{http://dx.doi.org/10.1561/2500000045}, \href
@@ -1022,7 +1024,7 @@ Talia Ringer, RanDair Porter, Nathaniel Yazdani, John Leo, and Dan Grossman.
 
 \bibitem{replica}
 Talia Ringer, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner.
-\newblock Replica: Repl instrumentation for coq analysis.
+\newblock {REPLica}: {REPL} instrumentation for {Coq} analysis.
 \newblock In {\em Proceedings of the 9th ACM SIGPLAN International Conference
   on Certified Programs and Proofs}, CPP 2020, page 99–113, New York, NY,
   USA, 2020. Association for Computing Machinery.
@@ -1210,7 +1212,7 @@ Makarius Wenzel.
 
 \bibitem{WenzelFurtherScalingIsabelle}
 Makarius Wenzel.
-\newblock Further scaling of isabelle technology, April 2018.
+\newblock Further scaling of {Isabelle} technology, April 2018.
 \newblock URL:
   \url{https://files.sketis.net/Isabelle_Workshop_2018/Isabelle_2018_paper_1.pdf}.
 
@@ -1231,7 +1233,7 @@ Iain~Johnston Whiteside.
 
 \bibitem{wibergh2019}
 Karin Wibergh.
-\newblock Automatic refactoring for agda.
+\newblock Automatic refactoring for {Agda}.
 \newblock Master's thesis, Chalmers University of Technology and University of
   Gothenburg, 2019.
 
@@ -1261,7 +1263,7 @@ Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
 \bibitem{Xuan:2017:NAR:3071893.3071964}
 Jifeng Xuan, Matias Martinez, Favio DeMarco, Maxime Clement, Sebastian~Lamelas
   Marcote, Thomas Durieux, Daniel Le~Berre, and Martin Monperrus.
-\newblock Nopol: Automatic repair of conditional statement bugs in java
+\newblock Nopol: Automatic repair of conditional statement bugs in {Java}
   programs.
 \newblock {\em IEEE Trans. Softw. Eng.}, 43(1):34--55, January 2017.
 \newblock URL: \url{https://doi.org/10.1109/TSE.2016.2560811}, \href

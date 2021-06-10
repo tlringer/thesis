@@ -20,24 +20,24 @@ Warning--empty publisher in univalent2013homotopy
 Warning--empty school in williamsphd
 You've used 171 entries,
             2849 wiz_defined-function locations,
-            1764 strings with 41490 characters,
-and the built_in function-call counts, 88823 in all, are:
-= -- 9915
+            1767 strings with 41612 characters,
+and the built_in function-call counts, 88920 in all, are:
+= -- 9925
 > -- 2951
 < -- 97
 + -- 1096
 - -- 907
-* -- 4906
-:= -- 12125
+* -- 4920
+:= -- 12135
 add.period$ -- 696
 call.type$ -- 171
 change.case$ -- 941
 chr.to.int$ -- 0
 cite$ -- 182
-duplicate$ -- 2877
-empty$ -- 8223
+duplicate$ -- 2878
+empty$ -- 8235
 format.name$ -- 907
-if$ -- 23219
+if$ -- 23242
 int.to.chr$ -- 0
 int.to.str$ -- 171
 missing$ -- 134
@@ -47,16 +47,16 @@ pop$ -- 1788
 preamble$ -- 1
 purify$ -- 784
 quote$ -- 0
-skip$ -- 6432
+skip$ -- 6431
 stack$ -- 0
-substring$ -- 4014
+substring$ -- 4041
 swap$ -- 1100
 text.length$ -- 97
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 674
 warning$ -- 11
-while$ -- 646
+while$ -- 647
 width$ -- 174
 write$ -- 2265
 (There were 11 warnings)

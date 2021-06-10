@@ -1,20 +1,21 @@
 \begin{thebibliography}{100}
 
 \bibitem{hints}
-Coq reference manual, section 8.9: Controlling automation, 2017.
-\newblock URL: \url{http://coq.inria.fr/refman/tactics.html}.
+Coq reference manual, programmable proof search, 1999-2020.
+\newblock URL:
+  \url{https://coq.inria.fr/refman/proofs/automatic-tactics/auto.html}.
 
 \bibitem{proofgeneral}
-Proof general, 2017.
+{Proof General}, 2021.
 \newblock URL: \url{http://proofgeneral.github.io/}.
 
 \bibitem{travis}
-Travis ci, 2017.
+Travis {CI}, 2021.
 \newblock URL: \url{http://travis-ci.org/}.
 
 \bibitem{usera}
 User A.
-\newblock Software foundations solution, 2017.
+\newblock {Software Foundations} solution, 2017.
 \newblock URL: \url{http://github.com/blindFS/Software-Foundations-Solutions}.
 
 \bibitem{adams2015}
@@ -88,7 +89,7 @@ Brian Aydemir, Arthur Chargu{\'e}raud, Benjamin~C. Pierce, Randy Pollack, and
 
 \bibitem{userb}
 User B.
-\newblock Software foundations solution, 2017.
+\newblock {Software Foundations} solution, 2017.
 \newblock URL: \url{http://github.com/marshall-lee/software_foundations}.
 
 \bibitem{Barendregt2013}

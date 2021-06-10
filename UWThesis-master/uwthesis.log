@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  10 JUN 2021 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2577,11 +2577,11 @@ Package knowledge Warning: Some knowledge is used but not introduced. See the
 (knowledge)                'uwthesis.diagnose' file for more information.
 
 (./uwthesis.kaux)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
  (./uwthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 461.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 461.
 Package rerunfilecheck Info: File `uwthesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2591,7 +2591,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
  51972 strings out of 492609
@@ -2623,7 +2623,7 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (164 pages, 1908973 bytes).
+Output written on uwthesis.pdf (164 pages, 1908947 bytes).
 PDF statistics:
  5302 PDF objects out of 6186 (max. 8388607)
  5008 compressed objects within 51 object streams

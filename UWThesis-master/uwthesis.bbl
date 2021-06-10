@@ -20,7 +20,7 @@ User A.
 
 \bibitem{adams2015}
 Mark Adams.
-\newblock Refactoring proofs with tactician.
+\newblock Refactoring proofs with {Tactician}.
 \newblock In Domenico Bianculli, Radu Calinescu, and Bernhard Rumpe, editors,
   {\em Software Engineering and Formal Methods}, pages 53--67, Berlin,
   Heidelberg, 2015. Springer Berlin Heidelberg.
@@ -29,7 +29,7 @@ Mark Adams.
 
 \bibitem{cubical-agda}
 {Agda Development Team}.
-\newblock Cubical type theory in agda -- agda 2.6.0 documentation, 2005-2018.
+\newblock Cubical type theory in {Agda}, 2005-2021.
 \newblock URL:
   \url{http://agda.readthedocs.io/en/latest/language/cubical.html}.
 

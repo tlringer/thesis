@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  11 JUN 2021 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.21)  22 JUL 2021 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2296,10 +2296,134 @@ contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 133.
 [122]
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 139.
 contour: Using 2 copies for `\kl {\textsc {REPLica}}' on input line 144.
-[123] [124])) (./uwthesis.ind) (./uwthesis.bbl [125] [126
+[123] [124])) (./uwthesis.ind [125] [126
 
 
 ]
+Overfull \hbox (10.04045pt too wide) in paragraph at lines 77--78
+[]| \T1/pplj/m/n/10.95 (-20) Daniel Schwartz-Narbonne,
+ []
+
+[127
+
+
+
+]
+Overfull \hbox (7.35196pt too wide) in paragraph at lines 161--162
+[]| \T1/pplj/m/n/10.95 (-20) So-rawee Porn-charoen-wase,
+ []
+
+
+Overfull \hbox (7.97986pt too wide) in paragraph at lines 173--175
+[]| \T1/pplj/m/n/10.95 (-20) Or-na-men-tal Pro-mo-tion Iso-
+ []
+
+[128]
+Overfull \hbox (3.33537pt too wide) in paragraph at lines 181--184
+[]| \T1/pplj/m/n/10.95 (-20) Uni-va-lence, []67[], []69[], []75[], []106[],
+ []
+
+
+Overfull \hbox (2.9659pt too wide) in paragraph at lines 199--202
+[]| \T1/pplj/m/n/10.95 (-20) Type Equiv-a-lences, []64[], []66[]--
+ []
+
+
+Overfull \hbox (2.94571pt too wide) in paragraph at lines 219--221
+[]| \T1/pplj/m/n/10.95 (-20) In-tu-ition-is-tic Logic, []105[], []106[],
+ []
+
+
+Overfull \hbox (4.17055pt too wide) in paragraph at lines 222--225
+[]| \T1/pplj/m/n/10.95 (-20) Prim-i-tive Elim-i-na-tors, []18[], []20[],
+ []
+
+
+Overfull \hbox (3.07237pt too wide) in paragraph at lines 229--230
+[]| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of Con-struc-tions,
+ []
+
+
+Overfull \hbox (4.15424pt too wide) in paragraph at lines 230--235
+[]| \T1/pplj/m/n/10.95 (-20) Cal-cu-lus of In-duc-tive Con-
+ []
+
+
+Overfull \hbox (3.15547pt too wide) in paragraph at lines 246--248
+[]| \T1/pplj/m/n/10.95 (-20) Adapt-ing Proof Au-toma-tion
+ []
+
+
+Overfull \hbox (2.39438pt too wide) in paragraph at lines 250--254
+[]\T1/pplj/m/n/10.95 (-20) 18[], []62[], []105[], []106[], []111[], []114[],
+ []
+
+
+Overfull \hbox (0.21524pt too wide) in paragraph at lines 259--263
+[]| \T1/pplj/m/n/10.95 (-20) Au-to-matic Con-fig-u-ra-tion,
+ []
+
+
+Overfull \hbox (7.0995pt too wide) in paragraph at lines 267--269
+[]| \T1/pplj/m/n/10.95 (-20) De-pen-dent Elim-i-na-tors, []71[],
+ []
+
+
+Overfull \hbox (2.91444pt too wide) in paragraph at lines 273--276
+[]| \T1/pplj/m/n/10.95 (-20) Man-ual Con-fig-u-ra-tion, []61[],
+ []
+
+
+Overfull \hbox (0.67168pt too wide) in paragraph at lines 276--278
+[]| \T1/pplj/m/n/10.95 (-20) Uni-fi-ca-tion Heuris-tics, []87[],
+ []
+
+[129]
+Overfull \hbox (0.44196pt too wide) in paragraph at lines 295--298
+[]| \T1/pplj/m/n/10.95 (-20) Reusable Patch, []29[], []31[], []32[],
+ []
+
+
+Overfull \hbox (5.36897pt too wide) in paragraph at lines 298--300
+[]| \T1/pplj/m/n/10.95 (-20) Search Pro-ce-dure In-stance,
+ []
+
+
+Overfull \hbox (3.31273pt too wide) in paragraph at lines 343--344
+[]| \T1/pplj/m/n/10.95 (-20) Con-tin-u-ous In-te-gra-tion, []117[],
+ []
+
+
+Overfull \hbox (0.96115pt too wide) in paragraph at lines 349--350
+[]| \T1/pplj/m/n/10.95 (-20) de Bruijn Cri-te-rion, []105[], []106[] 
+ []
+
+
+Overfull \hbox (2.01184pt too wide) in paragraph at lines 350--352
+[]| \T1/pplj/m/n/10.95 (-20) In-te-grated De-vel-op-ment En-
+ []
+
+
+Overfull \hbox (2.54497pt too wide) in paragraph at lines 354--355
+[]| \T1/pplj/m/n/10.95 (-20) Mixed Meth-ods Ver-i-fi-ca-tion,
+ []
+
+
+Overfull \hbox (1.33066pt too wide) in paragraph at lines 357--359
+[]| \T1/pplj/m/n/10.95 (-20) Agda, []2[], []105[]--[]107[], []109[], []121[] 
+ []
+
+
+Overfull \hbox (0.51068pt too wide) in paragraph at lines 365--368
+[]| \T1/pplj/m/n/10.95 (-20) Is-abelle/HOL, []2[], []105[]--[]107[],
+ []
+
+
+Overfull \hbox (0.1531pt too wide) in paragraph at lines 368--370
+[]| \T1/pplj/m/n/10.95 (-20) Lean, []2[], []105[], []106[], []112[], []121[],
+ []
+
+[130]) (./uwthesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\T1/pplj/m/n/10.95 (+20) Coq ref-er-ence man-ual, pro-grammable proof search,
 
@@ -2311,7 +2435,11 @@ Underfull \hbox (badness 4205) in paragraph at lines 4--7
  . inria . fr / refman / proofs /
  []
 
-[127] [128] [129]
+[131
+
+
+
+] [132] [133]
 Underfull \hbox (badness 3646) in paragraph at lines 241--247
 []\T1/pplj/m/n/10.95 (+20) Adam Chli-pala.  \T1/pplj/m/it/10.95 (+20) Cer-ti-fi
 ed Pro-gram-ming with De-pen-dent
@@ -2332,7 +2460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 282--286
 []$\T1/cmtt/m/n/10.95 http : / / github . com / AbsInt / CompCert / commit /
  []
 
-[130] [131]
+[134] [135]
 Underfull \hbox (badness 10000) in paragraph at lines 402--406
 []\T1/pplj/m/n/10.95 (+20) Mike Dodds.  Proofs should re-pair them-selves,
  []
@@ -2343,7 +2471,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--406
  com / blog / 2020 / 12 /
  []
 
-[132]
+[136]
 Underfull \hbox (badness 1132) in paragraph at lines 449--455
 []\T1/pplj/m/n/10.95 (+20) Thibault Gau-thier and Cezary Kaliszyk.  Match-ing c
 on-
@@ -2360,7 +2488,7 @@ Underfull \hbox (badness 1057) in paragraph at lines 475--482
 \T1/pplj/m/n/10.95 (+20) '18, pages 1219--1219, New York, NY, USA, 2018. ACM.
  []
 
-[133] [134] [135]
+[137] [138] [139]
 Underfull \hbox (badness 2158) in paragraph at lines 712--718
 \T1/pplj/m/n/10.95 (+20) Chris Haw-blitzel.  Dif-fer-en-tial as-ser-tion check-
 ing.  In
@@ -2372,7 +2500,7 @@ Underfull \hbox (badness 1178) in paragraph at lines 712--718
 crosoft . com / en-[]us / research /
  []
 
-[136]
+[140]
 Underfull \hbox (badness 4454) in paragraph at lines 757--761
 []\T1/pplj/m/n/10.95 (+20) Xavier Leroy.  Com-mit to Com-pCert: lib/in-te-gers.
 v,
@@ -2402,13 +2530,13 @@ Underfull \hbox (badness 2197) in paragraph at lines 798--806
 
  []
 
-[137]
+[141]
 Underfull \hbox (badness 2582) in paragraph at lines 815--819
 []\T1/pplj/m/n/10.95 (+20) Conor McBride.  Or-na-men-tal al-ge-bras, al-ge-brai
 c or-na-
  []
 
-[138]
+[142]
 Underfull \hbox (badness 10000) in paragraph at lines 910--918
 []\T1/pplj/m/n/10.95 (+20) nLab au-thors.  ini-tial al-ge-bra of an end-o-func-
 tor.
@@ -2420,7 +2548,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 910--918
 bra % 20of %
  []
 
-[139]
+[143]
 Underfull \hbox (badness 1163) in paragraph at lines 980--986
 []\T1/pplj/m/n/10.95 (+20) Benjamin C. Pierce, Arthur Azevedo de Amorim, Chris
  []
@@ -2441,7 +2569,7 @@ text-book, 2016.  Ver-sion 4.0.
 LaTeX Font Warning: Font shape `OMS/pplj/m/it' undefined
 (Font)              using `OMS/pplj/m/n' instead on input line 1014.
 
-[140] [141] [142] [143]) [144]
+[144] [145] [146] [147]) [148]
 \openout4 = `uwthesis.diagnose'.
 
  (./uwthesis.kaux) (./uwthesis.kaux)
@@ -2477,10 +2605,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 462.
  ) 
 Here is how much of TeX's memory you used:
- 51954 strings out of 492609
- 1051784 string characters out of 6129033
- 1329255 words of memory out of 5000000
- 52397 multiletter control sequences out of 15000+600000
+ 51968 strings out of 492609
+ 1051961 string characters out of 6129033
+ 1329279 words of memory out of 5000000
+ 52406 multiletter control sequences out of 15000+600000
  679341 words of font info for 878 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,83p,9083b,2351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2506,10 +2634,10 @@ er/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on uwthesis.pdf (158 pages, 1874482 bytes).
+Output written on uwthesis.pdf (162 pages, 1908315 bytes).
 PDF statistics:
- 4541 PDF objects out of 5155 (max. 8388607)
- 4261 compressed objects within 43 object streams
- 1625 named destinations out of 1728 (max. 500000)
+ 5291 PDF objects out of 6186 (max. 8388607)
+ 5000 compressed objects within 50 object streams
+ 1630 named destinations out of 1728 (max. 500000)
  105833 words of extra memory for PDF output out of 106986 (max. 10000000)
 
